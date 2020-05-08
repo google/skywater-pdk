@@ -1,0 +1,16 @@
+# This is the list of SkyWater PDK's significant contributors.
+#
+# This does not necessarily list everyone who has contributed code,
+# especially since many employees of one corporation may be contributing.
+# To see the full list of contributors, see the revision history in
+# source control.
+
+# Companies
+Google LLC
+SkyWater Technology Foundry
+efabless corporation
+
+# Individuals
+tansell@google.com, me@mith.ro (Tim 'mithro' Ansell)
+kevin.kelley@skywatertechnology.com, kevin.kelly@skywater.tools (Kevin Kelley)
+tim@efabless.com (Tim Edwards)
