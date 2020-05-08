@@ -7,18 +7,21 @@ SkyWater Open Source PDK
    :alt: GitHub license - Apache 2.0
    :target: https://github.com/google/skywater-pdk
 
+.. image:: https://travis-ci.org/google/skywater-pdk.svg?branch=master
+   :alt: Travis Badge - https://travis-ci.org/google/skywater-pdk
+   :target: https://travis-ci.org/google/skywater-pdk
+
 .. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
    :alt: ReadTheDocs Badge - https://skywater-pdk.rtfd.io
    :target: https://skywater-pdk.rtfd.io
 
 .. image:: https://img.shields.io/github/v/tag/google/skywater-pdk?include_prereleases&sort=semver
-   :alt: GitHub tag (latest SemVer pre-release)
+   :alt: Latest GitHub tag (including pre-releases)
    :target: https://gitHub.com/google/skywater-pdk/commit/
 
-.. image:: https://img.shields.io/github/commits-since/google/skywater-pdk/latest?include_prereleases&sort=semver
-   :alt: GitHub commits since latest release (by SemVer including pre-releases)
+.. image:: https://img.shields.io/github/commits-since/google/skywater-pdk/|TAG_VERSION|
+   :alt: GitHub commits since latest release (|TAG_VERSION|)
    :target: https://gitHub.com/google/skywater-pdk/commit/
-
 
 The SkyWater Open Source PDK is a collaboration between Google and SkyWater Technology Foundry to provide a fully open source `Process Design Kit <https://en.wikipedia.org/wiki/Process_design_kit>`_ and related resources, which can be used to create manufacturable designs at SkyWater’s facility.
 
@@ -32,41 +35,41 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
    :target: https://github.com/google/skywater-pdk
    :width: 80%
 
-.. _CurrentStatus:
 
-Current Status - **Experimental Preview**
------------------------------------------
+.. include:: docs/status.rst
 
-Google and SkyWater are currently treating the current content as an **experimental preview** / **alpha release**.
-
-While the SKY130 process node and the PDK from which this open source release was derived have been used to create many designs that have been successfully manufactured commercially in significant quantities, the open source PDK is not intended to be used for production settings at this current time.
-
-To get notified about future new releases of the PDK, and other important news, please sign up on the
-`skywater-pdk-announce mailing list <https://groups.google.com/forum/#!forum/skywater-pdk-announce>`_
-[`join link <https://groups.google.com/forum/#!forum/skywater-pdk-announce/join>`_].
-
+See both the :ref:`Known Issues` section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
 
 SKY130 Process Node
--------------------
+===================
 
 The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone!
 
 The SKY130 Process node technology stack consists of;
- * Supporting internal 1.8V with 5.0V I/Os (operable at 2.5V)
- * 1 level of local interconnect
- * 5 levels of metal
- * Is Inductor-Capable
- * Has high sheet rho poly resistor
- * Optional MiM capacitors
- * Includes SONOS shrunken cell
- * Supports 10V regulated supply
- * HV extended-drain NMOS and PMOS
+
+* Support for internal 1.8V with 5.0V I/Os (operable at 2.5V)
+* 1 level of local interconnect
+* 5 levels of metal
+* Is inductor-capable
+* Has high sheet rho poly resistor
+* Optional MiM capacitors
+* Includes SONOS shrunken cell
+* Supports 10V regulated supply
+* HV extended-drain NMOS and PMOS
+
+
+The `SKY130 Process Node`_ has is a extremely flexible offering, including many normally *optional* features as standard (feature like the local interconnect, SONOS functionality, MiM capacitors and more). This provides the designer with a **wide range** of flexibility in design choices.
+
+If your needs extend beyond the standard included functionality in the `SKY130 Process Node`_, please see `Contacting SkyWater`_ as they specializes in enabling production volume of process customization include `the addition of specialized materials like Nb, Ge, V2O5, Carbon Nanotubes <https://www.skywatertechnology.com/technology/>`_. Google and SkyWater continuing to explore new options to be included in the `SkyWater Open Source PDK`_ and `SKY130 Process Node`_ that enable new innovative solutions to traditional design problems.
 
 
 Typical usages of 130nm Process Nodes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 The `130nm process <https://en.wikichip.org/wiki/130_nm_lithography_process>`_ was first commercialized around the 2001-2002 time frame and is now primarily used in the area of research, small microcontroller development, and mixed signal embedded designs such as IoT devices.
+
+A living Google document at <https://j.mp/si130nm> has been created to provide **inspiration** from what researchers, commercial entities and other groups have done with similar **sized** process nodes. As there are widely different constraints and possibilities from changes in both the manufacturing process and materials it is important **not** to assumed that the exact results found in the `130nm inspiration document <https://j.mp/si130>`_ can be identically reproduced on the `SKY130 Process Node`_.
+
 
 PDK Contents
 ============

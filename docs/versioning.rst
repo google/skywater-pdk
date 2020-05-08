@@ -1,0 +1,30 @@
+Version Numbering
+-----------------
+
+Version numbers for both the PDK and the supplied libraries are fully specified by a 3-digit version number followed by a git commit count and a git commit short hash.
+
+The 3-digit-number will be tagged in the associated git repository as `vX.Y.Z` and the fully specified value can be found by running `git describe` tool inside the correct git repository.
+
+The version number is broken down as `vX.Y.Z-AAA-gHHHHH`;
+
+- The letter `v`.
+
+- `X` = The "Milestone Release" Number
+
+   - **0** indicates **"alpha"** level. The IP has not undergone full qualification. Parts of the IP may be immature and untested.
+
+   - **1** indicates **"beta"** level. The IP has undergone qualification testing but has not been hardware verified.
+
+   - **2** indicates **production** level. The IP has passed qualification testing and has been hardware verified.
+
+- `Y` = The "Major Release" Number
+
+- `Z` = The "Minor Release" Number
+
+- A single hyphen character `-`
+
+- `AAA` = The git commit count since the version number was tagged.
+
+- A single hyphen character followed by the letter g `-g`
+
+- `HHHH` = A git commit short hash which uniquely identifies a specific git commit inside the associated git repository.
