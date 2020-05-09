@@ -1,0 +1,3 @@
+# rst_include tool as GitHub doesn't support `.. include::` when rendering
+# previews.
+rst_include

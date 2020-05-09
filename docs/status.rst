@@ -9,7 +9,7 @@ While the SKY130 process node and the PDK from which this open source release wa
 
 Google, SkyWater and our partners are currently doing internal validation and test designs, including silicon validation or the released data and plan to publish these results.
 
-The PDK will be tagged with a production version when ready to do production design, see the `"Versioning Information" <>`_ section for a full description of the version numbering scheme.
+The PDK will be tagged with a production version when ready to do production design, see the ":ref:`Versioning Information`" section for a full description of the version numbering scheme.
 
 To get notified about future new releases of the PDK, and other important news, please sign up on the
 `skywater-pdk-announce mailing list <https://groups.google.com/forum/#!forum/skywater-pdk-announce>`_

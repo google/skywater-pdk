@@ -1,5 +1,5 @@
-Version Numbering
------------------
+Version Number Format
+---------------------
 
 Version numbers for both the PDK and the supplied libraries are fully specified by a 3-digit version number followed by a git commit count and a git commit short hash.
 

@@ -1,0 +1,7 @@
+name: skywater-pdk-scripts
+dependencies:
+- python
+- pip
+# Packages installed from PyPI
+- pip:
+  - -r file:requirements.txt
