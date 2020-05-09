@@ -30,6 +30,32 @@ README.rst: README.src.rst docs/status.rst Makefile | $(CONDA_ENV_PYTHON)
 		> README.rst
 
 
+COPYRIGHT_HOLDER := SkyWater PDK Authors
+FIND := find . -path ./env -prune -o -path ./.git -prune -o
+ADDLICENSE := addlicense -f ./docs/license_header.txt
+fix-licenses:
+	@# Makefiles
+	@$(FIND) -type f -name Makefile -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+	@$(FIND) -type f -name \*.mk -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+	@# Scripting files
+	@$(FIND) -type f -name \*.sh -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+	@$(FIND) -type f -name \*.py -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+	@# Configuration files
+	@$(FIND) -type f -name \*.yml  -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+	@# Actual PDK files
+	@$(FIND) -type f -name \*.v  -exec $(ADDLICENSE) $(ADDLICENSE_EXTRA) -v \{\} \+
+
+.PHONY: fix-licenses
+
+check-licenses:
+	@make --no-print-directory ADDLICENSE_EXTRA=--check fix-licenses
+
+.PHONY: check-licenses
+
+
+check: check-licenses
+	@true
+
 all: README.rst
 	@true
 
