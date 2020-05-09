@@ -17,6 +17,19 @@
 include scripts/make/git.mk
 include scripts/make/conda.mk
 
-README.rst: README.src.rst docs/status.rst | $(CONDA_ENV_PYTHON)
+.DEFAULT_GOAL := all
+
+README.rst: README.src.rst docs/status.rst Makefile | $(CONDA_ENV_PYTHON)
 	@rm -f README.rst
-	$(IN_CONDA_ENV) rst_include include --source README.src.rst | sed -e's/|TAG_VERSION|/$(TAG_VERSION)/g' > README.rst
+	$(IN_CONDA_ENV) rst_include include --source README.src.rst \
+		| sed \
+			-e's@|TAG_VERSION|@$(TAG_VERSION)@g' \
+			-e's@:ref:`Versioning Information`@`Versioning Information <docs/versioning.rst>`_@g' \
+			-e's@:ref:`Known Issues`@`Versioning Information <docs/known_issues.rst>`_@g' \
+		> README.rst
+
+
+all: README.rst
+	@true
+
+.PHONY: all
