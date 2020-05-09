@@ -36,7 +36,7 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
 .. _CurrentStatus:
 
 Current Status - **Experimental Preview**
------------------------------------------
+=========================================
 
 Google and SkyWater are currently treating the current content as an **experimental preview** / **alpha release**.
 
@@ -53,7 +53,7 @@ To get notified about future new releases of the PDK, and other important news, 
 See both the :ref:`Known Issues` section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
 
 SKY130 Process Node
--------------------
+===================
 
 The SKY130 is a mature 180nm-130nm hybrid technology originally developed internally by Cypress Semiconductor before being spun out into SkyWater Technology and made accessible to general industry. SkyWater and Google’s collaboration is now making this technology accessible to everyone!
 
