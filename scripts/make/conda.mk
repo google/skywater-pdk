@@ -14,6 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+
 SHELL := /bin/bash
 
 UNAME_S := $(shell uname -s)
@@ -30,7 +31,8 @@ ifneq (, $(findstring MINGW, $(UNAME_S)))
         OSFLAG := Linux
 endif
 
-TOP_DIR	          := $(shell git rev-parse --show-toplevel)
+MAKE_DIR          := $(dir $(lastword $(MAKEFILE_LIST)))
+TOP_DIR           := $(realpath $(MAKE_DIR)/../..)
 ENV_DIR           := $(TOP_DIR)/env
 REQUIREMENTS_FILE := $(TOP_DIR)/requirements.txt
 ENVIRONMENT_FILE  := $(TOP_DIR)/environment.yml
@@ -60,12 +62,14 @@ $(CONDA_PKGS_DEP): $(CONDA_PYTHON)
 
 $(CONDA_PYTHON): $(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh
 	$(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh -p $(CONDA_DIR) -b -f
+	touch $(CONDA_PYTHON)
 
 $(CONDA_DIR)/envs: $(CONDA_PYTHON)
 	$(IN_CONDA_ENV_BASE) conda config --system --add envs_dirs $(CONDA_DIR)/envs
 
 $(CONDA_ENV_PYTHON): $(ENVIRONMENT_FILE) $(REQUIREMENTS_FILE) | $(CONDA_PYTHON) $(CONDA_DIR)/envs $(CONDA_PKGS_DEP)
 	$(IN_CONDA_ENV_BASE) conda env update --name $(CONDA_ENV_NAME) --file $(ENVIRONMENT_FILE)
+	touch $(CONDA_ENV_PYTHON)
 
 env: $(CONDA_ENV_PYTHON)
 	$(IN_CONDA_ENV) conda info
@@ -86,3 +90,25 @@ dist-clean:
 	rm -rf conda
 
 .PHONY: dist-clean
+
+
+FILTER_TOP = sed -e's@$(TOP_DIR)/@$$TOP_DIR/@'
+env-info:
+	@echo "             Top level directory is: '$(TOP_DIR)'"
+	@echo "              The version number is: '$$(git describe)'"
+	@echo "            Git repository is using: $$(du -h -s $(TOP_DIR)/.git | sed -e's/\s.*//')" \
+		| $(FILTER_TOP)
+	@echo
+	@echo "     Environment setup directory is: '$(ENV_DIR)'" \
+		| $(FILTER_TOP)
+	@echo "    Download and cache directory is: '$(DOWNLOADS_DIR)' (using $$(du -h -s $(DOWNLOADS_DIR) | sed -e's/\s.*//'))" \
+		| $(FILTER_TOP)
+	@echo "               Conda's directory is: '$(CONDA_DIR)' (using $$(du -h -s $(CONDA_DIR) | sed -e's/\s.*//'))" \
+		| $(FILTER_TOP)
+	@echo " Conda's packages download cache is: '$(CONDA_PKGS_DIR)' (using $$(du -h -s $(CONDA_PKGS_DIR) | sed -e's/\s.*//'))" \
+		| $(FILTER_TOP)
+	@echo "           Conda's Python binary is: '$(CONDA_ENV_PYTHON)'"\
+		| $(FILTER_TOP)
+
+
+.PHONY: info
