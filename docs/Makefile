@@ -60,3 +60,10 @@ echo: | $(CONDA_ENV_PYTHON)
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 .DEFAULT: | $(CONDA_ENV_PYTHON)
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+
+clean: clean-docs
+
+
+clean-docs:
+	rm -rf _build

@@ -1,7 +1,9 @@
-.. _CurrentStatus:
+.. include:: common.inc
 
-Current Status - **Experimental Preview**
-=========================================
+Current Status -- |current-status|
+==================================
+
+.. current_status_text
 
 .. warning::
    Google and SkyWater are currently treating the current content as an **experimental preview** / **alpha release**.

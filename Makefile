@@ -25,7 +25,7 @@ README.rst: README.src.rst docs/status.rst Makefile | $(CONDA_ENV_PYTHON)
 		| sed \
 			-e's@|TAG_VERSION|@$(TAG_VERSION)@g' \
 			-e's@:ref:`Versioning Information`@`Versioning Information <docs/versioning.rst>`_@g' \
-			-e's@:ref:`Known Issues`@`Versioning Information <docs/known_issues.rst>`_@g' \
+			-e's@:ref:`Known Issues`@`Known Issues <docs/known_issues.rst>`_@g' \
 			-e's@.. warning::@*Warning*@g' \
 		> README.rst
 

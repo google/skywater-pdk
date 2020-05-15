@@ -1,7 +1,4 @@
-Welcome to SkyWater SKY130 PDK's documentation!
-===============================================
-
-TODO: Put documentation here.
+.. include:: common.inc
 
 .. toctree::
     :hidden:
@@ -9,9 +6,25 @@ TODO: Put documentation here.
     contributing
     code-of-conduct
 
+    status
     known_issues
     versioning
-    status
+
+
+Welcome to SkyWater SKY130 PDK's documentation!
+===============================================
+
+.. warning::
+    This documentation is currently a **work in progress**.
+
+
+.. _CurrentStatus:
+
+Current Status - |current-status|
+=================================
+
+.. include:: status.rst
+    :start-after: current_status_text
 
 
 Indices and tables

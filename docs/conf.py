@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
+    'sphinx.ext.autosectionlabel',
     'sphinxcontrib_verilog_diagrams',
 ]
 
@@ -96,10 +97,24 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'env', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    '_build',
+    'env',
+    'Thumbs.db',
+    '.DS_Store',
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
+
+
+# -- Options for HTML output -------------------------------------------------
+
+# Prefix each section label with the name of the document it is in, followed by
+# a colon. For example, index:Introduction for a section called Introduction
+# that appears in document index.rst. Useful for avoiding ambiguity when the
+# same section heading appears in different documents.
+#autosectionlabel_prefix_document = True
 
 
 # -- Options for HTML output -------------------------------------------------

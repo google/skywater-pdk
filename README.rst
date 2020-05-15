@@ -33,10 +33,14 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
    :target: https://github.com/google/skywater-pdk
    :width: 80%
 
-.. _CurrentStatus:
+.. |current-status| replace:: **Experimental Preview**
 
-Current Status - **Experimental Preview**
-=========================================
+.. include:: common.inc
+
+Current Status -- |current-status|
+==================================
+
+.. current_status_text
 
 *Warning*
    Google and SkyWater are currently treating the current content as an **experimental preview** / **alpha release**.
@@ -51,7 +55,7 @@ To get notified about future new releases of the PDK, and other important news, 
 `skywater-pdk-announce mailing list <https://groups.google.com/forum/#!forum/skywater-pdk-announce>`_
 [`join link <https://groups.google.com/forum/#!forum/skywater-pdk-announce/join>`_].
 
-See both the `Versioning Information <docs/known_issues.rst>`_ section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
+See both the `Known Issues <docs/known_issues.rst>`_ section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
 
 SKY130 Process Node
 ===================

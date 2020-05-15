@@ -1,11 +1,15 @@
-.. include:: status.rst
+.. include:: common.inc
 
-Currently Known Issues
-======================
+Known Issues
+============
 
 This section of the documentation provides a list of currently known issues in the currently released files.
 
 See also the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to see the latest reported issues.
+
+
+.. include:: status.rst
+    :start-after: current_status_text
 
 
 Documentation
