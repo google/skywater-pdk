@@ -31,3 +31,6 @@ Community Guidelines
 
 This project follows `Google's Open Source Community
 Guidelines <https://opensource.google/conduct/>`__.
+
+.. include:: code-of-conduct.rst
+    :start-after: community_guidelines_text

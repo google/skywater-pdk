@@ -1,5 +1,7 @@
 Google Open Source Community Guidelines
-=======================================
+---------------------------------------
+
+.. community_guidelines_text
 
 At Google, we recognize and celebrate the creativity and collaboration
 of open source contributors and the diversity of skills, experiences,
@@ -21,15 +23,14 @@ Respectful behavior includes:
    sexualized, or physically threatening behavior, speech, and imagery.
 -  Not engaging in unwanted physical contact.
 
-Some Google open source projects `may
-adopt <https://opensource.google/docs/releasing/preparing/#conduct>`__
+Some Google open source projects
+`may adopt <https://opensource.google/docs/releasing/preparing/#conduct>`__
 an explicit project code of conduct, which may have additional detailed
 expectations for participants. Most of those projects will use our
-`modified Contributor
-Covenant <https://opensource.google/docs/releasing/template/CODE_OF_CONDUCT/>`__.
+`modified Contributor Covenant <https://opensource.google/docs/releasing/template/CODE_OF_CONDUCT/>`__.
 
 Resolve peacefully
-------------------
+~~~~~~~~~~~~~~~~~~
 
 We do not believe that all conflict is necessarily bad; healthy debate
 and disagreement often yields positive results. However, it is never
@@ -44,7 +45,7 @@ We are dedicated to providing an environment where participants feel
 welcome and safe.
 
 Reporting problems
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Some Google open source projects may adopt a project-specific code of
 conduct. In those cases, a Google employee will be identified as the
@@ -62,6 +63,6 @@ be omitted from the details of the report supplied to the accused. In
 potentially harmful situations, such as ongoing harassment or threats to
 anyone's safety, we may take action without notice.
 
-*This document was adapted from the `IndieWeb Code of
-Conduct <https://indieweb.org/code-of-conduct>`__ and can also be found
-at https://opensource.google/conduct/.*
+*This document was adapted from the*
+`IndieWeb Code of Conduct <https://indieweb.org/code-of-conduct>`_
+*and can also be found at* <https://opensource.google/conduct/>.

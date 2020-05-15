@@ -3,12 +3,11 @@
 .. toctree::
     :hidden:
 
-    contributing
-    code-of-conduct
-
     Current Status <status>
     known_issues
     versioning
+
+    contributing
 
 
 Welcome to SkyWater SKY130 PDK's documentation!
