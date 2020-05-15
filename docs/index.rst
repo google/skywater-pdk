@@ -3,9 +3,9 @@
 .. toctree::
     :hidden:
 
+    versioning
     Current Status <status>
     known_issues
-    versioning
 
     contributing
 

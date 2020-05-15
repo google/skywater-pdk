@@ -1,0 +1,39 @@
+span.lib-process {
+	color: green;
+}
+
+span.lib-src {
+	color: purple;
+}
+
+span.lib-type {
+	color: orange;
+}
+
+span.lib-name {
+	color: blue;
+}
+
+span.drc-rule {
+	font-family: monospace;
+	white-space: pre;
+	display: inline-block;
+}
+
+span.drc-tag {
+	font-family: monospace;
+	white-space: pre;
+	display: inline-block;
+}
+
+span.drc-flag {
+	font-family: monospace;
+	white-space: pre;
+	display: inline-block;
+}
+
+span.layer {
+	font-family: monospace;
+	white-space: pre;
+	display: inline-block;
+}
