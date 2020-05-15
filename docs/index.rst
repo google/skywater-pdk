@@ -6,7 +6,7 @@
     contributing
     code-of-conduct
 
-    status
+    Current Status <status>
     known_issues
     versioning
 
