@@ -9,6 +9,8 @@
 
     contributing
 
+    Python API <python-api/index>
+
 
 Welcome to SkyWater SKY130 PDK's documentation!
 ===============================================
