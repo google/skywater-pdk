@@ -42,6 +42,15 @@ def parse_pathname(pathname):
         String containing any filename extracted.
         String containing the file extension
 
+    See Also
+    --------
+    skywater_pdk.base.parse_filename
+    skywater_pdk.base.Cell
+    skywater_pdk.base.Library
+
+    Examples
+    --------
+
     >>> parse_pathname('skywater-pdk/libraries/sky130_fd_sc_hd/v0.0.1/cells/a2111o')
     (Cell(name='a2111o', library=Library(node=LibraryNode.SKY130, source=LibrarySource('fd'), type=LibraryType.sc, name='hd', version=LibraryVersion(milestone=0, major=0, minor=1, commits=0, hash=''))), None)
 
@@ -160,6 +169,15 @@ def parse_filename(pathname) -> Tuple[LibraryOrCell, Optional[str], Optional[str
     ext : str, optional
         String containing the file extension
 
+    See Also
+    --------
+    skywater_pdk.base.parse_pathname
+    skywater_pdk.base.Cell
+    skywater_pdk.base.Library
+
+    Examples
+    --------
+
     >>> t = list(parse_filename('sky130_fd_io__top_ground_padonlyv2__tt_1p80V_3p30V_3p30V_25C.wrap.lib'))
     >>> t.pop(0)
     Cell(name='top_ground_padonlyv2', library=Library(node=LibraryNode.SKY130, source=LibrarySource('fd'), type=LibraryType.io, name='', version=None))
@@ -245,7 +263,17 @@ SEPERATOR = "__"
 @dataclass_json
 @dataclass(order=True, frozen=True)
 class LibraryVersion:
-    """
+    """Version number for a library.
+
+    See Also
+    --------
+    skywater_pdk.base.LibraryNode
+    skywater_pdk.base.LibrarySource
+    skywater_pdk.base.LibraryType
+    skywater_pdk.base.LibraryVersion
+
+    Examples
+    --------
 
     >>> v0 = LibraryVersion.parse("v0.0.0")
     >>> v0
@@ -314,6 +342,8 @@ class LibraryVersion:
 
 
 class LibraryNode(Enum):
+    """Process node for a library."""
+
     SKY130 = "SkyWater 130nm"
 
     @classmethod
@@ -371,6 +401,8 @@ LibrarySource.Known.append(OSU)
 
 
 class LibraryType(Enum):
+    """Type of library contents."""
+
     pr = "Primitives"
     sc = "Standard Cells"
     sp = "Build Space (Flash, SRAM, etc)"
@@ -397,7 +429,20 @@ class LibraryType(Enum):
 @dataclass_json
 @dataclass
 class Library:
-    """
+    """Library of cells.
+
+    See Also
+    --------
+    skywater_pdk.base.parse_pathname
+    skywater_pdk.base.parse_filename
+    skywater_pdk.base.Cell
+    skywater_pdk.base.LibraryNode
+    skywater_pdk.base.LibrarySource
+    skywater_pdk.base.LibraryType
+    skywater_pdk.base.LibraryVersion
+
+    Examples
+    --------
 
     >>> l = Library.parse("sky130_fd_sc_hd")
     >>> l
@@ -463,7 +508,17 @@ class Library:
 @dataclass_json
 @dataclass
 class Cell:
-    """
+    """Cell in a library.
+
+    See Also
+    --------
+    skywater_pdk.base.parse_pathname
+    skywater_pdk.base.parse_filename
+    skywater_pdk.base.Library
+
+    Examples
+    --------
+
     >>> c = Cell.parse("sky130_fd_sc_hd__abc")
     >>> c
     Cell(name='abc', library=Library(node=LibraryNode.SKY130, source=LibrarySource('fd'), type=LibraryType.sc, name='hd', version=None))

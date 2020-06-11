@@ -19,6 +19,7 @@
 
 import dataclasses
 import dataclasses_json
+import functools
 import random
 import sys
 
@@ -63,6 +64,9 @@ def dataclass_json_passthru_sequence_config(*args, **kw):
 
 def comparable_to_none(cls):
     """
+
+    Examples
+    --------
 
     >>> @comparable_to_none
     ... @dataclass(order=True)
@@ -124,11 +128,20 @@ def comparable_to_none(cls):
             s = super().__repr__()
             return s.replace('comparable_to_none.<locals>.ComparableToNoneVersion', cls.__name__)
 
+    for a in functools.WRAPPER_ASSIGNMENTS:
+        if not hasattr(cls, a):
+            continue
+        setattr(ComparableToNoneVersion, a, getattr(cls, a))
+
     return ComparableToNoneVersion
 
 
 def _is_optional_type(t):
     """
+
+    Examples
+    --------
+
     >>> _is_optional_type(Optional[int])
     True
     >>> _is_optional_type(Optional[Tuple])
@@ -141,6 +154,10 @@ def _is_optional_type(t):
 
 def _get_the_optional_type(t):
     """
+
+    Examples
+    --------
+
     >>> _get_the_optional_type(Optional[int])
     <class 'int'>
     >>> _get_the_optional_type(Optional[Tuple])
@@ -158,6 +175,10 @@ def _get_the_optional_type(t):
 
 def _get_type_name(ot):
     """
+
+    Examples
+    --------
+
     >>> _get_type_name(int)
     'int'
     >>> _get_type_name(Tuple)

@@ -65,6 +65,15 @@ class InvalidSuffixError(ValueError):
 class CellSize(abc.ABC):
     """Drive strength variants of a given cell.
 
+    See Also
+    --------
+    skywater_pdk.base.Cell
+    skywater_pdk.sizes.CellSizeNumeric
+    skywater_pdk.sizes.CellSizeLowPower
+    skywater_pdk.sizes.CellSizeMinimum
+
+    Examples
+    --------
     >>> d1 = CellSize.from_suffix("_1")
     >>> d2 = CellSize.from_suffix("_lp")
     >>> d3 = CellSize.from_suffix("_m")
@@ -138,6 +147,16 @@ class CellSize(abc.ABC):
 @dataclass(frozen=True)
 class CellSizeNumeric(CellSize):
     """
+
+    See Also
+    --------
+    skywater_pdk.base.Cell
+    skywater_pdk.sizes.CellSize
+    skywater_pdk.sizes.CellSizeLowPower
+    skywater_pdk.sizes.CellSizeMinimum
+
+    Examples
+    --------
     >>> s1 = CellSizeNumeric.from_suffix("_1")
     >>> s2 = CellSizeNumeric.from_suffix("_2")
     >>> s3 = CellSizeNumeric.from_suffix("_3")
@@ -199,6 +218,16 @@ class CellSizeNumeric(CellSize):
 @dataclass(frozen=True)
 class CellSizeLowPower(CellSize):
     """
+
+    See Also
+    --------
+    skywater_pdk.base.Cell
+    skywater_pdk.sizes.CellSize
+    skywater_pdk.sizes.CellSizeNumeric
+    skywater_pdk.sizes.CellSizeMinimum
+
+    Examples
+    --------
     >>> lp = CellSizeLowPower.from_suffix("_lp")
     >>> lp2 = CellSizeLowPower.from_suffix("_lp2")
     >>> lp3 = CellSizeLowPower.from_suffix("_lp3")
@@ -270,6 +299,17 @@ class CellSizeLowPower(CellSize):
 
 class CellSizeMinimum(CellSize):
     """
+
+    See Also
+    --------
+    skywater_pdk.base.Cell
+    skywater_pdk.sizes.CellSize
+    skywater_pdk.sizes.CellSizeNumeric
+    skywater_pdk.sizes.CellSizeLowPower
+
+
+    Examples
+    --------
     >>> m = CellSizeMinimum.from_suffix("_m")
     >>> CellSizeMinimum.from_suffix("_m2")
     Traceback (most recent call last):
