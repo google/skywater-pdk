@@ -1,3 +1,6 @@
 # rst_include tool as GitHub doesn't support `.. include::` when rendering
 # previews.
 rst_include
+
+# The Python API for the SkyWater PDK.
+-e scripts/python-skywater-pdk
