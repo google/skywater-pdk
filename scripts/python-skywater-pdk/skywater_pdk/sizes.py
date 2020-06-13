@@ -31,6 +31,9 @@ def parse_size(s):
     >>> parse_size('_1')
     CellSizeNumeric(units=1)
 
+    >>> parse_size('a2111o_1')
+    CellSizeNumeric(units=1)
+
     >>> parse_size('sky130_fd_sc_ms__sdfrtp_1.v')
     CellSizeNumeric(units=1)
 
@@ -47,7 +50,7 @@ def parse_size(s):
     dirname, s = os.path.split(s)
     if '.' in s:
         s = s.split('.', 1)[0]
-    if s.count('_') > 1:
+    if s.count('_') > 0:
         s = '_' + (s.rsplit('_', 1)[-1])
     if not s or s == '_':
         return None
