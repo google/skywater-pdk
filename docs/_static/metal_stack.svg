@@ -1,0 +1,521 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="metal_stack" width="100%" height="100%"  viewBox="-6 -6 1857 1665">
+<desc>
+XCircuit Version 3.10
+File "metal_stack.ps" Page 1
+</desc>
+<g stroke="black">
+<path d="M819,555 L819,539 955,539 955,555 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M827,747 L827,715 923,715 923,747 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M835,539 L835,491 931,491 931,539 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M755,1371 L755,1323 851,1323 851,1371 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,1291 L1075,1211 1171,1211 1171,1291 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,1131 L1075,1067 1171,1067 1171,1131 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,987 L1075,923 1171,923 1171,987 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,779 L1075,715 1171,715 1171,779 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,571 L1075,491 1235,491 1235,571 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M1075,1483 L1075,1323 1171,1323 1171,1483 z" fill="#cccccc" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M483,1483 L483,1547 C483,1565 497,1579 515,1579 L1491,1579 C1509,1579 1523,1565 1523,1547 L1523,1483 " fill="#fbfec3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#fbfec3" />
+<path d="M931,1483 L931,1499 C931,1517 945,1531 963,1531 L1443,1531 C1461,1531 1475,1517 1475,1499 L1475,1483 " fill="#faca8a" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#faca8a" />
+<path d="M723,1435 L723,1371 883,1371 883,1435 z" fill="#ffc0cb" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#ffc0cb" />
+<path d="M1235,1467 L1235,1403 1443,1403 1443,1467 z" fill="#ffc0cb" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#ffc0cb" />
+<path d="M643,1323 L643,1291 1555,1291 1555,1323 z" fill="#cffecf" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cffecf" />
+<path d="M643,1211 L643,1131 1587,1131 1587,1211 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M643,1067 L643,987 1587,987 1587,1067 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M643,923 L643,779 1619,779 1619,923 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M643,715 L643,571 1619,571 1619,715 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M659,491 L659,283 1571,283 1571,491 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<g transform="matrix(   1    0   -0    1 579  27)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">SkyWater Sky130A metal stack (not to scale!):</tspan>
+</text></g>
+<path d="M443,1483 L1619,1483 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M931,1483 L931,1499 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1475,1483 L1475,1499 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M931,1499 A32,32 0 0,0 963,1531 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M963,1531 L1443,1531 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1443,1531 A32,32 0 0,0 1475,1499 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M483,1483 L483,1547 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1523,1483 L1523,1547 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M515,1579 L1491,1579 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M483,1547 A32,32 0 0,0 515,1579 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1491,1579 A32,32 0 0,0 1523,1547 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1075 1515)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">diffusion</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 819 1531)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">nwell</tspan>
+</text></g>
+<path d="M1235,1467 L1235,1403 1443,1403 1443,1467 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1347 1435)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-89" y="-6">polysilicon</tspan><tspan x="-33" y="34">gate</tspan>
+</text></g>
+<path d="M1075,1483 L1075,1323 1171,1323 1171,1483 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1411)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-40" y="14">licon</tspan>
+</text></g>
+<path d="M643,1323 L643,1291 1555,1291 1555,1323 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1307)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-11" y="14">li</tspan>
+</text></g>
+<path d="M643,1211 L643,1131 1587,1131 1587,1211 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1179)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-55" y="0">metal1</tspan>
+</text></g>
+<path d="M643,1067 L643,987 1587,987 1587,1067 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1035)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-55" y="0">metal2</tspan>
+</text></g>
+<path d="M643,923 L643,779 1619,779 1619,923 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 859)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-55" y="0">metal3</tspan>
+</text></g>
+<path d="M643,715 L643,571 1619,571 1619,715 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 651)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-55" y="0">metal4</tspan>
+</text></g>
+<path d="M659,491 L659,283 1571,283 1571,491 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 395)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-55" y="0">metal5</tspan>
+</text></g>
+<path d="M1075,1291 L1075,1211 1171,1211 1171,1291 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1259)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-45" y="9">mcon</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 803 1355)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-40" y="0">licon</tspan>
+</text></g>
+<path d="M1075,1131 L1075,1067 1171,1067 1171,1131 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1075,987 L1075,923 1171,923 1171,987 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1075,779 L1075,715 1171,715 1171,779 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1075,571 L1075,491 1235,491 1235,571 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1123 1099)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via1</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1123 955)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via2</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1123 747)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via3</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1155 539)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via4</tspan>
+</text></g>
+<path d="M739,187 L739,139 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1523,187 L1523,139 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1555,107 L1795,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M707,107 L227,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M739,139 A32,32 0 0,0 707,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1555,107 A32,32 0 0,0 1523,139 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1155 155)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-70" y="0">glass cut</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 475 339)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-94" y="0">PI1 K=2.94</tspan>
+</text></g>
+<path d="M1715,1483 L1827,1483 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1539,1531 L1827,1531 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1803,1559 C1798,1549 1798,1546 1795,1531 C1792,1546 1792,1549 1787,1559 C1793,1557 1797,1557 1803,1559 " fill="#000000" stroke="none" />
+<path d="M1803,1455 C1798,1465 1798,1468 1795,1483 C1792,1468 1792,1465 1787,1455 C1793,1457 1797,1457 1803,1455 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 1795 1515)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-63" y="0">0.12<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="22" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M1507,1467 L1747,1467 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1507,1403 L1747,1403 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1683,1403 L1683,1355 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1683,1467 L1683,1515 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1691,1495 C1686,1485 1686,1482 1683,1467 C1680,1482 1680,1485 1675,1495 C1681,1493 1685,1493 1691,1495 " fill="#000000" stroke="none" />
+<path d="M1691,1375 C1686,1385 1686,1388 1683,1403 C1680,1388 1680,1385 1675,1375 C1681,1377 1685,1377 1691,1375 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 1715 1435)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-63" y="14">0.18<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="20" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M1635,1323 L1731,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1563,1291 L1731,1291 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1715,1291 L1715,1243 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1715,1323 L1715,1371 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1723,1351 C1718,1341 1718,1338 1715,1323 C1712,1338 1712,1341 1707,1351 C1713,1349 1717,1349 1723,1351 " fill="#000000" stroke="none" />
+<path d="M1723,1263 C1718,1273 1718,1276 1715,1291 C1712,1276 1712,1273 1707,1263 C1713,1265 1717,1265 1723,1263 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 1747 1307)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.1<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="59" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M1635,1211 L1731,1211 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1635,1131 L1731,1131 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1723,1159 C1718,1149 1718,1146 1715,1131 C1712,1146 1712,1149 1707,1159 C1713,1157 1717,1157 1723,1159 " fill="#000000" stroke="none" />
+<path d="M1723,1183 C1718,1193 1718,1196 1715,1211 C1712,1196 1712,1193 1707,1183 C1713,1185 1717,1185 1723,1183 " fill="#000000" stroke="none" />
+<path d="M1715,1211 L1715,1131 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1747 1179)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">0.36</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="80" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1635,1067 L1731,1067 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1635,987 L1731,987 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1723,1015 C1718,1005 1718,1002 1715,987 C1712,1002 1712,1005 1707,1015 C1713,1013 1717,1013 1723,1015 " fill="#000000" stroke="none" />
+<path d="M1723,1039 C1718,1049 1718,1052 1715,1067 C1712,1052 1712,1049 1707,1039 C1713,1041 1717,1041 1723,1039 " fill="#000000" stroke="none" />
+<path d="M1715,1067 L1715,987 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1747 1035)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">0.36</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="80" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1635,923 L1731,923 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1635,779 L1731,779 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1723,807 C1718,797 1718,794 1715,779 C1712,794 1712,797 1707,807 C1713,805 1717,805 1723,807 " fill="#000000" stroke="none" />
+<path d="M1723,895 C1718,905 1718,908 1715,923 C1712,908 1712,905 1707,895 C1713,897 1717,897 1723,895 " fill="#000000" stroke="none" />
+<path d="M1715,923 L1715,779 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1747 859)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">0.845</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="104" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1635,715 L1731,715 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1635,571 L1731,571 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1723,599 C1718,589 1718,586 1715,571 C1712,586 1712,589 1707,599 C1713,597 1717,597 1723,599 " fill="#000000" stroke="none" />
+<path d="M1723,687 C1718,697 1718,700 1715,715 C1712,700 1712,697 1707,687 C1713,689 1717,689 1723,687 " fill="#000000" stroke="none" />
+<path d="M1715,715 L1715,571 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1747 651)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">0.845</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="104" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1635,491 L1731,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1635,283 L1747,283 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1691,311 C1686,301 1686,298 1683,283 C1680,298 1680,301 1675,311 C1681,309 1685,309 1691,311 " fill="#000000" stroke="none" />
+<path d="M1691,463 C1686,473 1686,476 1683,491 C1680,476 1680,473 1675,463 C1681,465 1685,465 1691,463 " fill="#000000" stroke="none" />
+<path d="M1683,491 L1683,283 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1715 395)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">1.26</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="76" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1795,1483 L1795,1419 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1795,1531 L1795,1595 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M723,1435 L723,1371 883,1371 883,1435 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 803 1403)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-77" y="14">field poly</tspan>
+</text></g>
+<path d="M427,1483 L51,1483 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M387,1435 L299,1435 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M371,1483 L371,1547 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M379,1511 C374,1501 374,1498 371,1483 C368,1498 368,1501 363,1511 C369,1509 373,1509 379,1511 " fill="#000000" stroke="none" />
+<path d="M371,1435 L371,1387 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M379,1407 C374,1417 374,1420 371,1435 C368,1420 368,1417 363,1407 C369,1409 373,1409 379,1407 " fill="#000000" stroke="none" />
+<path d="M355,1323 L251,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M275,1483 L275,1419 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M283,1351 C278,1341 278,1338 275,1323 C272,1338 272,1341 267,1351 C273,1349 277,1349 283,1351 " fill="#000000" stroke="none" />
+<path d="M283,1455 C278,1465 278,1468 275,1483 C272,1468 272,1465 267,1455 C273,1457 277,1457 283,1455 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 363 1467)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">0.3262<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="56" y="0">&#181;m</tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 347 1403)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-166" y="14">0.9361<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-43" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M355,1211 L139,1211 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M275,1387 L275,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M147,1483 L147,1291 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M147,1251 L147,1211 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M155,1455 C150,1465 150,1468 147,1483 C144,1468 144,1465 139,1455 C145,1457 149,1457 155,1455 " fill="#000000" stroke="none" />
+<path d="M155,1239 C150,1229 150,1226 147,1211 C144,1226 144,1229 139,1239 C145,1237 149,1237 155,1239 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 195 1283)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">1.3761</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="25" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M355,1067 L123,1067 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M131,1115 L131,1067 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M139,1095 C134,1085 134,1082 131,1067 C128,1082 128,1085 123,1095 C129,1093 133,1093 139,1095 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 187 1147)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">2.0061</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="45" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M355,923 L107,923 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M115,971 L115,923 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M123,951 C118,941 118,938 115,923 C112,938 112,941 107,951 C113,949 117,949 123,951 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 171 1003)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">2.7861<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="46" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M355,715 L91,715 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M99,779 L99,715 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M107,743 C102,733 102,730 99,715 C96,730 96,733 91,743 C97,741 101,741 107,743 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 155 811)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">4.0211<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="40" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M299,491 L75,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M83,571 L83,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M91,519 C86,509 86,506 83,491 C80,506 80,509 75,519 C81,517 85,517 91,519 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 139 603)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">5.3711<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="30" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M211,107 L35,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cccccc" />
+<path d="M67,219 L67,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M75,135 C70,125 70,122 67,107 C64,122 64,125 59,135 C65,133 69,133 75,135 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 107 251)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-93" y="0">11.8834<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="46" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M403,1435 L675,1435 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 587 1467)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-191" y="0">FOX K=3.9</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1571 1563)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">p-substrate</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 523 1379)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-185" y="14">PSG K=3.9</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1531 1275)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-202" y="14">LINT K=7.3</tspan>
+</text></g>
+<path d="M643,1323 L363,1323 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 547 1251)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-246" y="14">NILD2 K=4.05</tspan>
+</text></g>
+<path d="M371,1211 L643,1211 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<path d="M371,1067 L643,1067 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<path d="M371,923 L643,923 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<path d="M371,715 L643,715 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<path d="M315,491 L635,491 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 1563 1115)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-273" y="0">NILD3_C K=3.5</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 547 1011)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-226" y="0">NILD4 K=4.2</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 547 835)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-226" y="0">NILD5 K=4.1</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 547 627)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-226" y="0">NILD6 K=4.0</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 547 1155)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-226" y="0">NILD3 K=4.5</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1563 971)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-273" y="0">NILD4_C K=3.5</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1427 251)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-244" y="0">TOPOX K=3.9</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7  35 1483)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-50" y="14">0.0</tspan>
+</text></g>
+<path d="M691,1259 L691,1307 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M699,1287 C694,1277 694,1274 691,1259 C688,1274 688,1277 683,1287 C689,1285 693,1285 699,1287 " fill="#000000" stroke="none" />
+<path d="M699,1183 C694,1193 694,1196 691,1211 C688,1196 688,1193 683,1183 C689,1185 693,1185 699,1183 " fill="#000000" stroke="none" />
+<path d="M683,1095 C678,1085 678,1082 675,1067 C672,1082 672,1085 667,1095 C673,1093 677,1093 683,1095 " fill="#000000" stroke="none" />
+<path d="M683,1103 C678,1113 678,1116 675,1131 C672,1116 672,1113 667,1103 C673,1105 677,1105 683,1103 " fill="#000000" stroke="none" />
+<path d="M675,1067 L675,1131 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M683,951 C678,941 678,938 675,923 C672,938 672,941 667,951 C673,949 677,949 683,951 " fill="#000000" stroke="none" />
+<path d="M683,959 C678,969 678,972 675,987 C672,972 672,969 667,959 C673,961 677,961 683,959 " fill="#000000" stroke="none" />
+<path d="M675,923 L675,987 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M683,743 C678,733 678,730 675,715 C672,730 672,733 667,743 C673,741 677,741 683,743 " fill="#000000" stroke="none" />
+<path d="M683,751 C678,761 678,764 675,779 C672,764 672,761 667,751 C673,753 677,753 683,751 " fill="#000000" stroke="none" />
+<path d="M675,715 L675,779 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M683,519 C678,509 678,506 675,491 C672,506 672,509 667,519 C673,517 677,517 683,519 " fill="#000000" stroke="none" />
+<path d="M683,543 C678,553 678,556 675,571 C672,556 672,553 667,543 C673,545 677,545 683,543 " fill="#000000" stroke="none" />
+<path d="M675,491 L675,571 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M939,135 C934,125 934,122 931,107 C928,122 928,125 923,135 C929,133 933,133 939,135 " fill="#000000" stroke="none" />
+<path d="M939,255 C934,265 934,268 931,283 C928,268 928,265 923,255 C929,257 933,257 939,255 " fill="#000000" stroke="none" />
+<path d="M931,107 L931,283 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M739,107 L963,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 651 1235)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.265</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="108" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M755,1371 L755,1323 851,1323 851,1371 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 691 1099)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.27</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="84" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 691 955)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.42</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="84" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 691 747)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.39</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="76" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 691 531)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.505</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="106" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 947 211)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">5.2523</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="126" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1395 1347)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-182" y="14">IOX K=3.9</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1427 1387)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-222" y="14">SPNIT K=7.5</tspan>
+</text></g>
+<path d="M1443,1467 L1443,1403 1459,1403 1459,1467 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1459,1467 L1491,1467 1491,1371 1187,1371 1187,1467 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1587,1211 L1587,1131 1619,1131 1619,1211 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1587,1067 L1587,987 1619,987 1619,1067 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M883,1435 L883,1371 899,1371 899,1435 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M899,1435 L931,1435 931,1339 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M723,1435 L707,1435 707,1371 723,1371 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M707,1435 L675,1435 675,1339 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M675,1339 L755,1339 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M931,1339 L851,1339 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1187,1467 L1219,1467 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1219,1467 L1219,1403 1235,1403 1235,1467 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1507,1371 L1635,1371 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 1523 1387)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.121<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="101" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M1571,955 L1587,955 1603,1003 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1571,1107 L1587,1107 1603,1155 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1451,1411 L1435,1347 1403,1347 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1547,1431 C1542,1421 1542,1418 1539,1403 C1536,1418 1536,1421 1531,1431 C1537,1429 1541,1429 1547,1431 " fill="#000000" stroke="none" />
+<path d="M1539,1403 L1539,1443 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1547,1343 C1542,1353 1542,1356 1539,1371 C1536,1356 1536,1353 1531,1343 C1537,1345 1541,1345 1547,1343 " fill="#000000" stroke="none" />
+<path d="M1539,1371 L1539,1331 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M931,1435 L1075,1435 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 1059 1387)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-166" y="14">0.6099<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-33" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M995,1371 L995,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M995,1403 L995,1435 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1003,1407 C998,1417 998,1420 995,1435 C992,1420 992,1417 987,1407 C993,1409 997,1409 1003,1407 " fill="#000000" stroke="none" />
+<path d="M1003,1351 C998,1341 998,1338 995,1323 C992,1338 992,1341 987,1351 C993,1349 997,1349 1003,1351 " fill="#000000" stroke="none" />
+<path d="M1587,1299 L1587,1259 1171,1259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M979,1259 L915,1259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M955,1231 C950,1241 950,1244 947,1259 C944,1244 944,1241 939,1231 C945,1233 949,1233 955,1231 " fill="#000000" stroke="none" />
+<path d="M955,1319 C950,1309 950,1306 947,1291 C944,1306 944,1309 939,1319 C945,1317 949,1317 955,1319 " fill="#000000" stroke="none" />
+<path d="M947,1291 L947,1339 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M947,1259 L947,1219 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 947 1275)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-73" y="14">0.075</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="33" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1587,1299 L1619,1299 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1619,1323 L1555,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M579,1291 L611,1291 611,1259 1075,1259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M571,1291 L363,1291 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 523 1307)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-202" y="14">LINT K=7.3</tspan>
+</text></g>
+<path d="M355,1291 L203,1291 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M219,1339 L219,1291 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M227,1319 C222,1309 222,1306 219,1291 C216,1306 216,1309 211,1319 C217,1317 221,1317 227,1319 " fill="#000000" stroke="none" />
+<path d="M227,1455 C222,1465 222,1468 219,1483 C216,1468 216,1465 211,1455 C217,1457 221,1457 227,1455 " fill="#000000" stroke="none" />
+<path d="M219,1483 L219,1379 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 267 1355)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-166" y="14">1.0111<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-59" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M691,1211 L691,1163 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M755,283 L755,259 643,259 643,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1475,283 L1475,259 1587,259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1587,259 L1587,491 1571,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1635,259 L1747,259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1739,323 L1739,283 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1739,259 L1739,179 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1747,311 C1742,301 1742,298 1739,283 C1736,298 1736,301 1731,311 C1737,309 1741,309 1747,311 " fill="#000000" stroke="none" />
+<path d="M1747,231 C1742,241 1742,244 1739,259 C1736,244 1736,241 1731,231 C1737,233 1741,233 1747,231 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 1763 283)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">0.09</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="82" y="0"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M1435,243 L1467,243 1491,275 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<g transform="matrix( 0.7    0   -0  0.7 579 475)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-253" y="0">TOPNIT K=7.5</tspan>
+</text></g>
+<path d="M571,443 L611,443 611,187 755,187 755,259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1475,259 L1475,187 1611,187 1611,435 1619,435 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1587,491 L1619,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M571,443 L291,443 " fill="none" style="stroke-dasharray:4,4" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" stroke="#999999" />
+<path d="M299,491 L299,563 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M299,443 L299,379 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M307,415 C302,425 302,428 299,443 C296,428 296,425 291,415 C297,417 301,417 307,415 " fill="#000000" stroke="none" />
+<path d="M307,519 C302,509 302,506 299,491 C296,506 296,509 291,519 C297,517 301,517 307,519 " fill="#000000" stroke="none" />
+<path d="M643,491 L659,491 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M771,187 L859,187 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M763,259 L859,259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M795,259 L795,187 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M803,215 C798,205 798,202 795,187 C792,202 792,205 787,215 C793,213 797,213 803,215 " fill="#000000" stroke="none" />
+<path d="M803,231 C798,241 798,244 795,259 C792,244 792,241 787,231 C793,233 797,233 803,231 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 811 227)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.54</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="80" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 299 475)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">0.3777<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="46" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M339,251 L339,107 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M347,415 C342,425 342,428 339,443 C336,428 336,425 331,415 C337,417 341,417 347,415 " fill="#000000" stroke="none" />
+<path d="M347,135 C342,125 342,122 339,107 C336,122 336,125 331,135 C337,133 341,133 347,135 " fill="#000000" stroke="none" />
+<path d="M339,443 L339,299 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 363 283)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="0">6.1346<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="40" y="0">&#181;m</tspan></text>
+</text></g>
+<path d="M139,1455 C134,1465 134,1468 131,1483 C128,1468 128,1465 123,1455 C129,1457 133,1457 139,1455 " fill="#000000" stroke="none" />
+<path d="M131,1483 L131,1155 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M123,1455 C118,1465 118,1468 115,1483 C112,1468 112,1465 107,1455 C113,1457 117,1457 123,1455 " fill="#000000" stroke="none" />
+<path d="M115,1483 L115,1011 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M107,1455 C102,1465 102,1468 99,1483 C96,1468 96,1465 91,1455 C97,1457 101,1457 107,1455 " fill="#000000" stroke="none" />
+<path d="M99,1483 L99,819 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M91,1455 C86,1465 86,1468 83,1483 C80,1468 80,1465 75,1455 C81,1457 85,1457 91,1455 " fill="#000000" stroke="none" />
+<path d="M83,1483 L83,619 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M67,1483 L67,259 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M75,1455 C70,1465 70,1468 67,1483 C64,1468 64,1465 59,1455 C65,1457 69,1457 75,1455 " fill="#000000" stroke="none" />
+<path d="M819,555 L819,539 955,539 955,555 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M835,539 L835,491 931,491 931,539 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M827,747 L827,715 923,715 923,747 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M811,763 L811,747 947,747 947,763 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
+<path d="M811,763 L811,747 947,747 947,763 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 971 555)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">cap2m</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 883 515)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via4</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 875 731)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-35" y="14">via3</tspan>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 963 763)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">capm</tspan>
+</text></g>
+<path d="M691,1371 L603,1371 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M635,1295 C630,1305 630,1308 627,1323 C624,1308 624,1305 619,1295 C625,1297 629,1297 635,1295 " fill="#000000" stroke="none" />
+<path d="M627,1275 L627,1323 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M635,1399 C630,1389 630,1386 627,1371 C624,1386 624,1389 619,1399 C625,1397 629,1397 635,1399 " fill="#000000" stroke="none" />
+<path d="M627,1371 L627,1419 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 603 1347)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-83" y="14">0.4299</tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="41" y="14"><tspan dx="7">&#181;m</tspan></tspan></text>
+</text></g>
+<path d="M675,1451 L675,1627 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#666666" />
+<path d="M707,1451 L707,1659 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#666666" />
+<path d="M723,1451 L723,1659 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#666666" />
+<path d="M563,363 L611,363 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M643,363 L739,363 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M595,411 L643,411 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M659,411 L739,411 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M583,371 C593,366 596,366 611,363 C596,360 593,360 583,355 C585,361 585,365 583,371 " fill="#000000" stroke="none" />
+<path d="M615,419 C625,414 628,414 643,411 C628,408 625,408 615,403 C617,409 617,413 615,419 " fill="#000000" stroke="none" />
+<path d="M687,419 C677,414 674,414 659,411 C674,408 677,408 687,403 C685,409 685,413 687,419 " fill="#000000" stroke="none" />
+<path d="M671,371 C661,366 658,366 643,363 C658,360 661,360 671,355 C669,361 669,365 671,371 " fill="#000000" stroke="none" />
+<path d="M735,1619 C725,1614 722,1614 707,1611 C722,1608 725,1608 735,1603 C733,1609 733,1613 735,1619 " fill="#000000" stroke="none" />
+<path d="M647,1619 C657,1614 660,1614 675,1611 C660,1608 657,1608 647,1603 C649,1609 649,1613 647,1619 " fill="#000000" stroke="none" />
+<path d="M679,1651 C689,1646 692,1646 707,1643 C692,1640 689,1640 679,1635 C681,1641 681,1645 679,1651 " fill="#000000" stroke="none" />
+<path d="M751,1651 C741,1646 738,1646 723,1643 C738,1640 741,1640 751,1635 C749,1641 749,1645 751,1651 " fill="#000000" stroke="none" />
+<path d="M643,1643 L707,1643 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M723,1643 L803,1643 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M707,1611 L803,1611 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M675,1611 L611,1611 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1667,1035 L1619,1035 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1587,1035 L1507,1035 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1559,1043 C1569,1038 1572,1038 1587,1035 C1572,1032 1569,1032 1559,1027 C1561,1033 1561,1037 1559,1043 " fill="#000000" stroke="none" />
+<path d="M1647,1043 C1637,1038 1634,1038 1619,1035 C1634,1032 1637,1032 1647,1027 C1645,1033 1645,1037 1647,1043 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7    0   -0  0.7 827 1643)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.006<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="119" y="14">&#181;m</tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 827 1611)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.0431<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="127" y="14">&#181;m</tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 747 363)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.4223<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="137" y="14">&#181;m</tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 747 411)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">0.070<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="117" y="14">&#181;m</tspan></text>
+</text></g>
+<g transform="matrix( 0.7    0   -0  0.7 1499 1035)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-146" y="14">0.030<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-31" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M1587,1179 L1507,1179 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1559,1187 C1569,1182 1572,1182 1587,1179 C1572,1176 1569,1176 1559,1171 C1561,1177 1561,1181 1559,1187 " fill="#000000" stroke="none" />
+<g transform="matrix( 0.7 -1.09102e-11 1.09102e-11  0.7 1499 1179)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-146" y="14">0.030<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-31" y="14">&#181;m</tspan></text>
+</text></g>
+<path d="M1667,1179 L1619,1179 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1647,1187 C1637,1182 1634,1182 1619,1179 C1634,1176 1637,1176 1647,1171 C1645,1177 1645,1181 1647,1187 " fill="#000000" stroke="none" />
+<path d="M1555,1283 L1555,1227 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1587,1251 L1587,1227 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#999999" />
+<path d="M1527,1243 C1537,1238 1540,1238 1555,1235 C1540,1232 1537,1232 1527,1227 C1529,1233 1529,1237 1527,1243 " fill="#000000" stroke="none" />
+<path d="M1615,1243 C1605,1238 1602,1238 1587,1235 C1602,1232 1605,1232 1615,1227 C1613,1233 1613,1237 1615,1243 " fill="#000000" stroke="none" />
+<path d="M1667,1235 L1587,1235 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M1555,1235 L1507,1235 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7    0   -0  0.7 1491 1235)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="-146" y="14">0.075<tspan dx="7"></tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="-33" y="14">&#181;m</tspan></text>
+</text></g>
+</g>
+</svg>
