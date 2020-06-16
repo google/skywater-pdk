@@ -101,7 +101,7 @@ Like many open source projects there are multiple ways to get support on the Sky
 
 SkyWater has created a Market Partner Ecosystem to be able to provide support from design through back end package and test.  If you are interested in getting additional support through the ASIC development process, reach out to SkyWater using the information in the `Contacting SkyWater`_ section below.
 
-There is also a `users mailing list  <https://groups.google.com/forum/#!forum/skywater-pdk-users>`_ [`join link <https://groups.google.com/forum/#!forum/skywater-pdk-announce/join>`_] to allow like minded users of the PDK to provide support to each other.
+There is also a `users mailing list  <https://groups.google.com/forum/#!forum/skywater-pdk-users>`_ [`join link <https://groups.google.com/forum/#!forum/skywater-pdk-users/join>`_] to allow like minded users of the PDK to provide support to each other.
 
 Google does not provide external support for using the SkyWater Open Source PDK and is distributing this repository on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the license_ section for the full terms.
 
@@ -140,5 +140,4 @@ The copyright details (which should also be found at the top of every file) are;
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
 
