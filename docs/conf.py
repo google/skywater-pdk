@@ -37,9 +37,9 @@ import re
 
 # -- Project information -----------------------------------------------------
 
-project = 'Skywater SKY130 PDK'
-copyright = '2020, Skywater PDK Authors'
-author = 'Skywater PDK Authors'
+project = 'SkyWater SKY130 PDK'
+copyright = '2020, SkyWater PDK Authors'
+author = 'SkyWater PDK Authors'
 
 # The short X.Y version
 version = ''
@@ -172,36 +172,27 @@ html_theme_options = {
     #
     # Values: amber, blue, brown, cyan deep_orange, deep_purple, green, grey, indigo, light_blue,
     #         light_green, lime, orange, pink, purple, red, teal, yellow(Default: indigo)
-    'primary_color':
-    'light_green',
+    'primary_color': 'light_green',
     # Values: Same as primary_color. (Default: pink)
-    'accent_color':
-    'teal',
+    'accent_color': 'teal',
 
     # Customize layout.
     # For details see link.
     # https://getmdl.io/components/index.html#layout-section
-    'fixed_drawer':
-    True,
-    'fixed_header':
-    True,
-    'header_waterfall':
-    True,
-    'header_scroll':
-    False,
+    'fixed_drawer': True,
+    'fixed_header': True,
+    'header_waterfall': True,
+    'header_scroll': False,
 
     # Render title in header.
     # Values: True, False (Default: False)
-    'show_header_title':
-    False,
+    'show_header_title': False,
     # Render title in drawer.
     # Values: True, False (Default: True)
-    'show_drawer_title':
-    True,
+    'show_drawer_title': True,
     # Render footer.
     # Values: True, False (Default: True)
-    'show_footer':
-    True
+    'show_footer': True
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -216,12 +207,11 @@ html_static_path = ['_static']
 # defined by theme itself.  Builtin themes are using these templates by
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
-#
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SkywaterSKY130PDKdoc'
+htmlhelp_basename = 'skywater-pdk-doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -248,17 +238,26 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SkywaterSKY130PDK.tex', 'Skywater SKY130 PDK Documentation',
-     'Skywater PDK Authors', 'manual'),
+    (
+        # source start file
+        master_doc,
+        # target name
+        'skywater-pdk.tex',
+        # title
+        'SkyWater SKY130 PDK Documentation',
+        # author
+        author,
+        # document class
+        'manual',
+    ),
 ]
-
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'skywaters8pdk', 'Skywater SKY130 PDK Documentation',
+    (master_doc, 'skywater-pdk', 'SkyWater SKY130 PDK Documentation',
      [author], 1)
 ]
 
@@ -269,11 +268,23 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SkywaterSKY130PDK', 'Skywater SKY130 PDK Documentation',
-     author, 'SkywaterSKY130PDK', 'One line description of project.',
-     'Miscellaneous'),
+    (
+        # source start file
+        master_doc,
+        # target name
+        'skywater-pdk',
+        # title
+        'SkyWater SKY130 PDK Documentation',
+        # author
+        author,
+        # dir menu entry
+        'SkyWater SKY130 PDK',
+        # description
+        'Documentation for open source PDK targetting SkyWater SKY130 process node.',
+        # category
+        'Miscellaneous',
+    ),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -291,7 +302,6 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
 
 # -- Extension configuration -------------------------------------------------
 

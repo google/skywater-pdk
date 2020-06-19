@@ -18,6 +18,10 @@ Welcome to SkyWater SKY130 PDK's documentation!
 .. warning::
     This documentation is currently a **work in progress**.
 
+.. image:: _static/skywater-pdk-logo.png
+    :align: center
+    :alt: SkyWater PDK Logo Image.
+
 
 .. _CurrentStatus:
 
