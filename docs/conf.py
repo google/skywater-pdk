@@ -162,7 +162,7 @@ html_theme_options = {
     # https://material.io/icons/
     'header_links': [
         ('Home', 'index', False, 'home'),
-        ("GitHub", "https://github.com/google/skywater-pdk", True, 'link'),
+        ("GitHub", "https://github.com/google/skywater-pdk", True, 'code'),
         ("SkyWater", "https://www.skywatertechnology.com/", True, 'link'),
     ],
 
@@ -192,7 +192,10 @@ html_theme_options = {
     'show_drawer_title': True,
     # Render footer.
     # Values: True, False (Default: True)
-    'show_footer': True
+    'show_footer': True,
+
+    # Hide the symbiflow links
+    'hide_symbiflow_links': True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
