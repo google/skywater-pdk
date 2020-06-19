@@ -1,3 +1,7 @@
+img.align-center {
+	display: block;
+}
+
 span.lib-process {
 	color: green;
 }
