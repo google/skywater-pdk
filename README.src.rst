@@ -66,7 +66,7 @@ Typical usages of 130nm Process Nodes
 
 The `130nm process <https://en.wikichip.org/wiki/130_nm_lithography_process>`_ was first commercialized around the 2001-2002 time frame and is now primarily used in the area of research, small microcontroller development, and mixed signal embedded designs such as IoT devices.
 
-A living Google document at <https://j.mp/si130nm> has been created to provide **inspiration** from what researchers, commercial entities and other groups have done with similar **sized** process nodes. As there are widely different constraints and possibilities from changes in both the manufacturing process and materials it is important **not** to assumed that the exact results found in the `130nm inspiration document <https://j.mp/si130>`_ can be identically reproduced on the `SKY130 Process Node`_.
+A living Google document at <https://j.mp/si130nm> has been created to provide **inspiration** from what researchers, commercial entities and other groups have done with similar **sized** process nodes. As there are widely different constraints and possibilities from changes in both the manufacturing process and materials it is important **not** to assumed that the exact results found in the `130nm inspiration document <https://j.mp/si130nm>`_ can be identically reproduced on the `SKY130 Process Node`_.
 
 
 PDK Contents
