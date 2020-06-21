@@ -1,0 +1,4 @@
+Parameter,,Units,Value,,Variable name
+Space to Draw,, ,S8,, 
+Grid Size - Drawn,,um,0.005,,GSF
+Approximate Scale Factor for R32 data,,,0.3,,sfr32

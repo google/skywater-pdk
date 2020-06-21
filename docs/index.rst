@@ -3,6 +3,8 @@
 .. toctree::
     :hidden:
 
+    Design Rules <rules>
+
     versioning
     Current Status <status>
     known_issues

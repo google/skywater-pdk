@@ -1,0 +1,42 @@
+Layer / Design rule,CD,,space,,Comment
+MOSFET width,0.135,,,,FOMSE
+MOSFET width in standard cells,0.075,,,,FOMSESC
+Spacing of poly on field to diff,,,0.065,,PFDSE
+Spacing of poly on field to tap,,,0.005,,PFTSE
+Enclosure of tap by nwell for pwell res,,,0.22,,PTAP_NWL_SP
+Grid conversion rounding factor,,,0.005,,GRCF
+Licon enclosure rounding,,,0.02,,LICENCLR
+LI1CD add/drop,0.01,,0.04,,
+Huge metal X min. W and L,3,,,,HugeM
+Min Nsdm area ,0.265,,,,MinNsdmArea
+Min Psdm area,0.255,,,,MinPsdmArea
+Min N/Psdm hole area ,0.265,,,,MinNPsdmHole
+Large waffle size must be divisible by 4,7.2,,,,waffle_large
+P1M additional CD control,0.011,,,,P1MCDcontrol
+Li1 proximity correction,,,0.25,,LI1PROXSpace
+"Serif added to nwell convex corner (SXX-572, 573)",0.22,,,,NwellCvxSerif
+"Serif added to nwell concave corner (SXX-572, 573)",0.12,,,,NwellCveSerif
+NWM extension beyond nwell edge straddling de_nFet_source (for GSMC; QZM-133),0.075,,,,NvhvNwellExt
+Min enclosure of pad by pmm for Cu inductor (JNET-80) ,0,,,,padPMMEncInd
+Min enclosure of pmm by cu1m for Cu inductor (JNET-80) ,10.75,,,,pmmCu1mEncInd
+Min enclosure of pbo by cu1m per DECA 000348 Rev S,10,,,,pboCu1mEnc
+Min enclosure of pmm by pmm2 for radio flow in the die (JNET-80) ,13,,,,pmmPmm2EncInd
+Min enclosure of pmm by pmm2 inside frame,7.5,,,,pmmPmm2EncIndFrame
+Min space between pmm2 and Inductor.dg ,,,7.5,,pmm2IndSpc
+Min cu1m PD across full chip,0.35,,,,MinCU1Mpd
+Max cu1m PD across full chip,0.45,,,,MaxCU1Mpd
+Spacing between RDL and outer edge of seal ring,15,,,,RdlSealSpc
+Spacing between RDL and pmm2,6.16,,,,RdlPmm2Spc
+Enclosure of etest module in die by cpmm2,0,,,,EtestCpmm2Enc
+"Keepout of active, poly, li and metal to NSM (TCS-2253)",,,1,,NSMKeepout
+"3 um keepout of active, poly, li and metal to areaid.dt/areaid.ft (TCS-2253)",,,3,,NSMKeepout_3um
+pnp_emitter sizing (S8P GSMC flow),,,0.05,,PnpEmitterSzGSMC
+pnp_emitter sizing (other flows),,,0.03,,PnpEmitterSz
+MiM Capacitor aspect ration,20,,,,MiM_AR
+Min NCM space to be used to preserve NCM CL algorithm (avoid LVL error),,,1.27,,NCM_0LVL
+Min space of NCM between core and periphery due to existing layout restriction,,,0.96,,NcmCorePeriSP
+Multiplication factor,,,0.01,,S8LVconv
+Minimum scribe width,50,,,,scribew
+spacing of p-well  outside deep n-well to deep n-well mask edge,,,0.12,,NWDNWENCL
+p-well in deep n-well to p-sub,,,1.2,,NWDNWOL
+Field oxide etchback after P1ME before implants,,,0.04,,WFDEL
