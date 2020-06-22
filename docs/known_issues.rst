@@ -85,7 +85,7 @@ The SKY130 Oklahoma State University provided standard cells library is currentl
 The SKY130 Oklahoma State University provided standard cells library will be integrated at a future date (see `Issue #10 <https://github.com/google/skywater-pdk/issues/10>`_).
 
 :lib:`sky130_fd_sp_flash` - SKY130 Flash Build Space
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The flash build space is currently empty, only a placeholder is currently provided.
 
