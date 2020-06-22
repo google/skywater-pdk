@@ -1,0 +1,15 @@
+Name,Description,Flags,Value
+(denmos.1),Min width of de_nFet_gate,,1.055
+(denmos.2),Min width of de_nFet_source not overlapping poly,,0.280
+(denmos.3),Min width of de_nFet_source overlapping poly,,0.925
+(denmos.4),Min width of the de_nFet_drain,,0.170
+(denmos.5),Min/Max extension of de_nFet_source over nwell,,0.225
+(denmos.6),Min/Max spacing between de_nFet_drain and de_nFet_source,,1.585
+(denmos.7),Min channel width for de_nFet_gate,,5.000
+(denmos.8),90 degree angles are not permitted for nwell overlapping de_nFET_drain,,
+(denmos.9a),"All bevels on nwell are 45 degree, 0.43 um from corners",NC,
+(denmos.9b),"All bevels on de_nFet_drain are 45 degree, 0.05 um from corners",NC,
+(denmos.10),Min enclosure of de_nFet_drain by nwell,,0.660
+(denmos.11),Min spacing between p+ tap and (nwell overlapping de_nFet_drain),,0.860
+(denmos.12),Min spacing between nwells overlapping de_nFET_drain,,2.400
+(denmos.13),de_nFet_source must be enclosed by nsdm by,,0.130

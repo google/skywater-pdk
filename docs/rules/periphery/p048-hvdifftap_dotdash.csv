@@ -1,0 +1,15 @@
+Name,Description,Flags,Value
+(hvdifftap.14),"Min width of diff inside Hvi, except HV Pdiff resistors (difftap.14a)",P,0.290
+(hvdifftap.14a),"Min width of diff inside Hvi, HV Pdiff resistors only",P,0.150
+(hvdifftap.15a),Min space of Hdiff to Hdiff,P,0.300
+(hvdifftap.15b),Min space of n+diff to non-abutting p+tap inside Hvi,P,0.370
+(hvdifftap.16),Min width tap butting diff on one or two sides inside Hvi (rule exempted inside UHVI),,0.700
+(hvdifftap.17),P+ Hdiff or Pdiff inside areaid:hvnwell must be enclosed by Hv_nwell by at least ….[Rule exempted inside UHVI],DE NE,0.330
+(hvdifftap.18),Spacing of N+ diff to HV_nwell (rule exempted inside UHVI),DE NE,0.430
+(hvdifftap.19),N+ Htap must be enclosed by Hv_nwell by at least …Rule exempted inside UHVI.,NE,0.330
+(hvdifftap.20),Spacing of P+ tap to HV_nwell (Exempted for p+tap butting pwell.rs; rule exempted inside UHVI),,0.430
+(hvdifftap.21),Diff or tap cannot straddle Hvi,P,
+(hvdifftap.22),Min enclosure of Hdiff or Htap by Hvi. Rule exempted inside UHVI.,P,0.180
+(hvdifftap.23),Space between diff or tap outside Hvi and Hvi,P,0.180
+(hvdifftap.24),Spacing of nwell to N+ Hdiff (rule exempted inside UHVI),DE NE,0.430
+(hvdifftap.25),Min space of N+ Hdiff inside HVI across non-abutting P+_tap,NC,1.070

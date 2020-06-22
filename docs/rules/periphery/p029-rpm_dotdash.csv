@@ -1,0 +1,21 @@
+Name,Description,Flags,Value
+(rpm.1a),Min width of rpm,,1.270
+(rpm.1b),Min/Max prec_resistor width xhrpoly_0p35,,0.350
+(rpm.1c),Min/Max prec_resistor width xhrpoly_0p69,,0.690
+(rpm.1d),Min/Max prec_resistor width xhrpoly_1p41,,1.410
+(rpm.1e),Min/Max prec_resistor width xhrpoly_2p85,,2.850
+(rpm.1f),Min/Max prec_resistor width xhrpoly_5p73,,5.730
+(rpm.1g),Only 1 licon is allowed in xhrpoly_0p35 prec_resistor_terminal,,
+(rpm.1h),Only 1 licon is allowed in xhrpoly_0p69 prec_resistor_terminal,,
+(rpm.1i),Only 2 licons are allowed in xhrpoly_1p41 prec_resistor_terminal,,
+(rpm.1j),Only 4 licons are allowed in xhrpoly_2p85 prec_resistor_terminal,,
+(rpm.1k),Only 8 licons are allowed in xhrpoly_5p73 prec_resistor_terminal,,
+(rpm.2),Min spacing of rpm to rpm,,0.840
+(rpm.3),rpm must enclose prec_resistor by atleast,,0.200
+(rpm.4),prec_resistor must be enclosed by psdm by atleast,,0.110
+(rpm.5),prec_resistor must be enclosed by npc by atleast,,0.095
+(rpm.6),"Min spacing, no overlap, of rpm and nsdm",,0.200
+(rpm.7),Min spacing between rpm and poly,,0.200
+(rpm.8),poly must not straddle rpm,,
+(rpm.9),"Min space, no overlap, between prec_resistor and hvntm",,0.185
+(rpm.10),Min spacing of rpm to pwbm,,N/A

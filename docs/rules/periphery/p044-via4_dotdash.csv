@@ -1,0 +1,8 @@
+Name,Description,Flags,Value
+(via4.1),Min and max L and W of via4,,0.800
+(via4.2),Spacing of via4 to via4,,0.800
+(via4.3),Only min. square via4s are allowed except die seal ring where via4s are (Via4 CD)*L,,0.8*L
+(via4.4),Via4 must be enclosed by Met4 by at least …,,0.190
+(via4.irdrop.1),"For 1 <= n <= 4 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0
+(via4.irdrop.2),"For 5 <= n <= 10 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.2
+(via4.irdrop.3),"For 11 <= n <= 100 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.5

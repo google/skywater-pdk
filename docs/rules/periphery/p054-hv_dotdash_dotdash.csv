@@ -1,0 +1,19 @@
+Name,Description,Flags,Value
+(hv.X.1),High voltage source/drain regions must be tagged by diff:hv,,
+(hv.X.3),"High voltage poly can be drawn over multiple diff regions that are ALL reverse-biased by at least 300 mV (existence of reverse-bias is not checked by the CAD flow).  It can also be drawn over multiple diffs when all sources and all drain are shorted together. In these case, the high voltage poly can be tagged with the text:dg label with a value “hv_bb”.  Exceptions to this use of the hv_bb label must be approved by technology.  Under certain bias conditions, high voltage poly tagged with hv_bb can cross an nwell boundary. The poly of the drain extended device crosses nwell by construction and can be tagged with the ""hv_bb"" label. Use of the hv_bb label on high voltage poly crossing an nwell boundary must be approved by technology. All high voltage poly tagged with hv_bb will not be checked to hv.poly.1, hv.poly.2, hv.poly.3 and hv.poly.4.",,
+(hv.X.4),Any piece of layout that is shorted to hv_source/drain becomes a high voltage feature.,,
+(hv.X.5),"In cases where an hv poly gate abuts only low voltage source and drain, the poly gate can be tagged with the text:dg label with a value ""hv_lv"".  In this case, the ""hv_lv"" tagged poly gate and its extensions will not be checked to hv.poly.6, but is checked by rules in the poly.-.- section.  The use of the hv_lv label must be approved by technology.",,
+(hv.X.6),"Nwell biased at voltages >= 7.2V must be tagged with text ""shv_nwell""",NC,
+(hv.nwell.1),"Min spacing of nwell tagged with text ""shv_nwell"" to any nwell on different nets",,2.500
+(hv.diff.1a),Minimum hv_source/drain spacing to diff for edges of hv_source/drain and diff not butting tap,,0.300
+(hv.diff.1b),Minimum spacing of (n+/p+ diff resistors and diodes) connected to hv_source/drain to diff,,0.300
+(hv.diff.2),Minimum spacing of nwell connected to hv_source/drain to n+ diff,DE,0.430
+(hv.diff.3a),Minimum n+ hv_source/drain spacing to nwell,,0.550
+(hv.diff.3b),Minimum spacing of (n+ diff resistors and diodes) connected to hv_source/drain to nwell,,0.550
+(hv.poly.1),Hv poly feature hvPoly (including hv poly resistors) can be drawn over only one diff region and is not allowed to cross nwell boundary except (1) as allowed in rule .X.3 and (2) nwell hole boundary in depmos,,
+(hv.poly.2),Min spacing of hvPoly (including hv poly resistor) on field to diff (diff butting hvPoly are excluded),,0.300
+(hv.poly.3),Min spacing of hvPoly (including hv poly resistor) on field to n-well (exempt poly stradding nwell in a denmos/depmos),,0.550
+(hv.poly.4),Enclosure of hvPoly (including hv poly resistor) on field by n-well (exempt poly stradding nwell in a denmos/depmos),,0.300
+(hv.poly.6a),Min extension of poly beyond hvFET_gate (exempt poly extending beyond diff along the S/D direction in a denmos/depmos),,0.160
+(hv.poly.6b),Extension of hv poly beyond FET_gate (including hvFET_gate; exempt poly extending beyond diff along the S/D direction in a denmos/depmos),,0.160
+(hv.poly.7),Minimum overlap of hv poly ring_FET and diff,,

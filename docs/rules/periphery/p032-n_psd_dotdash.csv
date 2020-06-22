@@ -1,0 +1,12 @@
+Name,Description,Flags,Value
+(n/ psd.1),Width of nsdm(psdm),P,0.380
+(n/ psd.2),Spacing of nsdm(psdm) to nsdm(psdm),P,0.380
+(n/ psd.3),Manual merge if less than minimum,,
+(n/ psd.5a),"Enclosure of diff by nsdm(psdm), except for butting edge",,0.125
+(n/ psd.5b),"Enclosure of tap by nsdm(psdm), except for butting edge",P,0.125
+(n/ psd.6),Enclosure of diff/tap butting edge by nsdm (psdm),,0.000
+(n/ psd.7),Spacing of NSDM/PSDM to opposite implant diff or tap (for non-abutting diff/tap edges),,0.130
+(n/ psd.8),Nsdm and psdm cannot overlap diff/tap regions of opposite doping,DE,
+(n/ psd.9),"Diff and tap must be enclosed by their corresponding implant layers. Rule exempted for\n- diff inside ""advSeal_6um* OR cuPillarAdvSeal_6um*"" pcell for SKY130P*/SP8P*/SKY130DI-5R-CSMC flows\n- diff rings around the die at min total L>1000 um and W=0.3 um\n- gated_npn \n- :drc_tag:`areaid.zer`.",DE,
+(n/ psd.10a),Min area of Nsdm (um^2),,0.265
+(n/ psd.10b),Min area of Psdm (um^2),,0.255

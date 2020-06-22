@@ -1,0 +1,11 @@
+Name,Description,Flags,Value
+(ncm.X.2),Ncm overlapping areaid:ce is checked for core rules only,,
+(ncm.X.3),Ncm overlapping core cannot overlap N+diff in periphery,TC,
+(ncm.1),Width of ncm,,0.380
+(ncm.2a),Spacing of ncm to ncm,,0.380
+(ncm.2b),Manual merge ncm if space is below minimum,,
+(ncm.3),Min enclosure of P+diff by Ncm,P,0.180
+(ncm.4),Min enclosure of P+diff within (areaid:ed AndNot areaid:de) by Ncm,P,0.180
+(ncm.5),"Min space, no overlap, between ncm and (LVTN_gate) OR (diff containing lvtn)",P,0.230
+(ncm.6),"Min space, no overlap, between ncm and nfet",P,0.200
+(ncm.7),Min area of ncm (um^2),,0.265

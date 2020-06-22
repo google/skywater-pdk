@@ -120,7 +120,9 @@ exclude_patterns = [
     'env',
     'Thumbs.db',
     '.DS_Store',
+    # Files included in other rst files.
     'code-of-conduct.rst',
+    'rules/periphery-rules.rst',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.

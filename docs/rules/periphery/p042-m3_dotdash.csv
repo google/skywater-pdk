@@ -1,0 +1,21 @@
+Name,Description,Flags,Value
+(m3.-),"Algorithm should flag errors, for met3, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm3 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.",RC,
+(m3.1),Width of metal 3,,0.300
+(m3.2),Spacing of metal 3 to metal 3,,0.300
+(m3.3a),Min. spacing of features attached to or extending from huge_met3 for a distance of up to 0.480 um to metal3  (rule not checked over non-huge met3 features),,N/A
+(m3.3b),Min. spacing of huge_met3 to metal3 excluding features checked by m3.3a,,N/A
+(m3.3c),Min. spacing of features attached to or extending from huge_met3 for a distance of up to 0.400 um to metal3  (rule not checked over non-huge met3 features),,0.400
+(m3.3d),Min. spacing of huge_met3 to metal3 excluding features checked by m3.3a,,0.400
+(m3.4),Via2 must be enclosed by Met3 by at least …,AL,0.065
+(m3.5),Via2 must be enclosed by Met3 on one of two adjacent sides by at least …,,N/A
+(m3.5a),Via2 must be enclosed by Met3 on all sides by at least …(Rule not checked on a layout when it satisfies both rules m3.4 and m3.5),,N/A
+(m3.6),Min area of metal3,,0.240
+(m3.7),Min area of metal3 holes [um2],CU,0.200
+(m3.pd.1),Min MM3_oxide_Pattern_density,RR,0.7
+(m3.pd.2a),Rule m3.pd.1 has to be checked by dividing the chip into square regions of width and length equal to …,A,700
+(m3.pd.2b),Rule m3.pd.1 has to be checked by dividing the chip into steps of …,A,70
+(m3.11),Max width of metal3,CU,4.000
+(m3.12),Add slots and remove vias and contacts if wider than…..,CU,3.200
+(m3.13),Max pattern density (PD) of metal3,CU,0.77
+(m3.14),Met3 PD window size,CU,50.000
+(m3.14a),Met3 PD window step,CU,25.000

@@ -1,0 +1,5 @@
+Name,Description,Flags,Value
+(hvi.1),Min width of Hvi,P,0.600
+(hvi.2a),Min spacing of Hvi to Hvi,P,0.700
+(hvi.2b),Manual merge if space is below minimum,,
+(hvi.4),Hvi must not overlap tunm,,

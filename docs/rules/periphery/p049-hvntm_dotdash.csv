@@ -1,0 +1,11 @@
+Name,Description,Flags,Value
+(hvntm.X.1 ),Hvntm can be drawn inside HVI. Drawn layer will be OR-ed with the CL and rechecked for CLDRC,,
+(hvntm.1),Width of hvntm,P,0.700
+(hvntm.2),Spacing of hvntm to hvntm,P,0.700
+(hvntm.3),Min. enclosure of (n+_diff inside Hvi) but not overlapping :drc_tag:`areaid.ce` by hvntm,P,0.185
+(hvntm.4),"Space, no overlap, between n+_diff outside Hvi and hvntm",P,0.185
+(hvntm.5),"Space, no overlap, between p+_diff  and hvntm",P DE,0.185
+(hvntm.6a),"Space, no overlap, between p+_tap and hvntm (except along the diff-butting edge)",P,0.185
+(hvntm.6b),"Space, no overlap, between p+_tap and hvntm along the diff-butting edge",P,0.000
+(hvntm.7),hvntm must enclose ESD_nwell_tap inside hvi by atleast,P,0.000
+(hvntm.9),Hvntm must not overlap :drc_tag:`areaid.ce`,,

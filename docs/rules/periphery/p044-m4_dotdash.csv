@@ -1,0 +1,19 @@
+Name,Description,Flags,Value
+(m4.-),"Algorithm should flag errors, for met4, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm4 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.",RC,
+(m4.1),Min width of met4,,0.300
+(m4.2),Min spacing between two met4,,0.300
+(m4.3),via3 must  be enclosed by met4 by atleast,AL,0.065
+(m4.4),Min area of met4 (rule exempted for probe pads which are exactly 1.42um by 1.42um),,N/A
+(m4.4a),Min area of met4,,0.240
+(m4.5a),Min. spacing of features attached to or extending from huge_met4 for a distance of up to  0.400 um to metal4 (rule not checked over non-huge met4 features),,0.400
+(m4.5b),Min. spacing of huge_met4 to metal4 excluding features checked by m4.5a,,0.400
+(m4.7),Min area of meta4 holes [um2],CU,0.200
+(m4.pd.1),Min MM4_oxide_Pattern_density,RR,0.7
+(m4.pd.2a),Rule m4.pd.1 has to be checked by dividing the chip into square regions of width and length equal to …,A,700
+(m4.pd.2b),Rule m4.pd.1 has to be checked by dividing the chip into steps of …,A,70
+(m4.11),Max width of metal4,CU,10.000
+(m4.12),Add slots and remove vias and contacts if wider than…..,CU,10.000
+(m4.13),Max pattern density (PD) of metal4; met4 overlapping pdm areas are excluded from the check,CU,0.77
+(m4.14),Met4 PD window size,CU,50.000
+(m4.14a),Met4 PD window step,CU,25.000
+(m4.15),Via3 must be enclosed by met4 by at least…,CU,0.060

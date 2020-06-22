@@ -6,5 +6,6 @@ SkyWater SKY130 Process Design Rules
     :name: rules
     :maxdepth: 2
 
-    Introduction <rules/background>
-    Design Rule Criteria & Assumptions <rules/assumptions>
+    rules/background
+    rules/assumptions
+    rules/periphery
