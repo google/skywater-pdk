@@ -1,0 +1,1557 @@
+ID,Name,Description
+r0,x.1b,off 0.005 grid nwell vertex
+r1,x.1b,off 0.005 grid diff vertex
+r2,x.1b,off 0.005 grid dnwell vertex
+r3,x.1b,off 0.005 grid tap vertex
+r4,x.1b,off 0.005 grid lvtn vertex
+r5,x.1b,off 0.005 grid hvtp vertex
+r6,x.1b,off 0.005 grid hvi vertex
+r7,x.1b,off 0.005 grid tunm vertex
+r8,x.1b,off 0.005 grid poly vertex
+r9,x.1b,off 0.005 grid npc vertex
+r10,x.1b,off 0.005 grid nsdm vertex
+r11,x.1b,off 0.005 grid psdm vertex
+r12,x.1b,off 0.005 grid licon1 vertex
+r13,x.1b,off 0.005 grid li1 vertex
+r14,x.1b,off 0.005 grid mcon vertex
+r15,x.1b,off 0.005 grid met1 vertex
+r16,x.1b,off 0.005 grid via vertex
+r17,x.1b,off 0.005 grid met2 vertex
+r18,x.1b,off 0.005 grid vhvi vertex
+r19,x.1b,off 0.005 grid via2 vertex
+r20,x.1b,off 0.005 grid met3 vertex
+r21,x.1b,off 0.005 grid via3 vertex
+r22,x.1b,off 0.005 grid met4 vertex
+r23,x.1b,off 0.005 grid via4 vertex
+r24,x.1b,off 0.005 grid met5 vertex
+r25,x.1b,off 0.005 grid nsm vertex
+r26,x.1b,off 0.005 grid pad vertex
+r27,x.1b,off 0.005 grid ldntm vertex
+r28,x.1b,off 0.005 grid hvntm vertex
+r29,x.1b,off 0.005 grid pnp vertex
+r30,x.1b,off 0.005 grid capacitor vertex
+r31,x.1b,off 0.005 grid ncm vertex
+r32,x.1b,off 0.005 grid inductor vertex
+r33,x.1b,off 0.005 grid rpm vertex
+r34,x.1b,off 0.005 grid hvtr vertex
+r35,x.1b,off 0.005 grid metop1 vertex
+r36,x.1b,off 0.005 grid metop2 vertex
+r37,x.1b,off 0.005 grid metop3 vertex
+r38,x.1b,off 0.005 grid metop4 vertex
+r39,x.1b,off 0.005 grid metop5 vertex
+r40,x.1b,off 0.005 grid metop6 vertex
+r41,x.1b,off 0.005 grid metop7 vertex
+r42,x.1b,off 0.005 grid metop8 vertex
+r43,x.1b,off 0.005 grid NTMdrop vertex
+r44,x.1b,off 0.005 grid LVTNMdrop vertex
+r45,x.1b,off 0.005 grid HVTPMdrop vertex
+r46,x.1b,off 0.005 grid LI1Mdrop vertex
+r47,x.1b,off 0.005 grid LICM1drop vertex
+r48,x.1b,off 0.005 grid PSDMdrop vertex
+r49,x.1b,off 0.005 grid NSDMdrop vertex
+r50,x.1b,off 0.005 grid FOMdrop vertex
+r51,x.1b,off 0.005 grid NTMadd vertex
+r52,x.1b,off 0.005 grid LVTNMadd vertex
+r53,x.1b,off 0.005 grid HVTPMadd vertex
+r54,x.1b,off 0.005 grid LI1Madd vertex
+r55,x.1b,off 0.005 grid LICM1add vertex
+r56,x.1b,off 0.005 grid PSDMadd vertex
+r57,x.1b,off 0.005 grid NSDMadd vertex
+r58,x.1b,off 0.005 grid FOMadd vertex
+r59,x.1b,off 0.005 grid PMM2mk vertex
+r60,x.1b,off 0.005 grid CU1Mmk vertex
+r61,x.1b,off 0.005 grid RPMmk vertex
+r62,x.1b,off 0.005 grid PBOmk vertex
+r63,x.1b,off 0.005 grid PDMmk vertex
+r64,x.1b,off 0.005 grid NSMmk vertex
+r65,x.1b,off 0.005 grid MM5mk vertex
+r66,x.1b,off 0.005 grid VIM4mk vertex
+r67,x.1b,off 0.005 grid MM4mk vertex
+r68,x.1b,off 0.005 grid VIM3mk vertex
+r69,x.1b,off 0.005 grid MM3mk vertex
+r70,x.1b,off 0.005 grid VIM2mk vertex
+r71,x.1b,off 0.005 grid CTM1mk vertex
+r72,x.1b,off 0.005 grid LI1Mmk vertex
+r73,x.1b,off 0.005 grid LICM1mk vertex
+r74,x.1b,off 0.005 grid PSDMmk vertex
+r75,x.1b,off 0.005 grid NSDMmk vertex
+r76,x.1b,off 0.005 grid LDNTMmk vertex
+r77,x.1b,off 0.005 grid NPCMmk vertex
+r78,x.1b,off 0.005 grid HVNTMmk vertex
+r79,x.1b,off 0.005 grid NTMmk vertex
+r80,x.1b,off 0.005 grid LVOMmk vertex
+r81,x.1b,off 0.005 grid ONOMmk vertex
+r82,x.1b,off 0.005 grid TUNMmk vertex
+r83,x.1b,off 0.005 grid HVTRMmk vertex
+r84,x.1b,off 0.005 grid HVTPMmk vertex
+r85,x.1b,off 0.005 grid LVTNMmk vertex
+r86,x.1b,off 0.005 grid NWMmk vertex
+r87,x.1b,off 0.005 grid DNMmk vertex
+r88,x.1b,off 0.005 grid FOMmk vertex
+r89,x.1b,off 0.005 grid cfom vertex
+r90,x.1b,off 0.005 grid clvtnm vertex
+r91,x.1b,off 0.005 grid chvtpm vertex
+r92,x.1b,off 0.005 grid conom vertex
+r93,x.1b,off 0.005 grid clvom vertex
+r94,x.1b,off 0.005 grid cntm vertex
+r95,x.1b,off 0.005 grid chvntm vertex
+r96,x.1b,off 0.005 grid cnpc vertex
+r97,x.1b,off 0.005 grid cnsdm vertex
+r98,x.1b,off 0.005 grid cpsdm vertex
+r99,x.1b,off 0.005 grid cli1m vertex
+r100,x.1b,off 0.005 grid cviam3 vertex
+r101,x.1b,off 0.005 grid cviam4 vertex
+r102,x.1a,off 0.001 grid P1Mmk vertex
+r103,x.1a,off 0.001 grid P1Madd vertex
+r104,x.1a,off 0.001 grid P1Mdrop vertex
+r105,x.1a,off 0.001 grid VIMmk vertex
+r106,x.1a,off 0.001 grid MM1mk vertex
+r107,x.1a,off 0.001 grid MM2mk vertex
+r108,x.1a,off 0.001 grid pmm vertex
+r109,x.1a,off 0.001 grid rdl vertex
+r110,x.1a,off 0.001 grid pmm2 vertex
+r111,x.1a,off 0.001 grid ubm vertex
+r112,x.1a,off 0.001 grid bump vertex
+r113,x.2,non-manhattan diffNOtSealUHVI edge
+r114,x.2,non-manhattan tapNotSealUHVI edge
+r115,x.2,non-manhattan poly_noESD_noAnch edge
+r116,x.2,non-manhattan li1Peri_noSEAL_noAnch edge
+r117,x.2,non-manhattan licon_nonSEAL edge
+r118,x.2,non-manhattan mcon_nonSEAL edge
+r119,x.2,non-manhattan via_nonSEAL edge
+r120,x.2,non-manhattan via2_nonSEAL edge
+r121,x.2,non-manhattan via3_nonSEAL edge
+r122,x.2,non-manhattan via4_nonSEAL edge
+r123,x.2a,difftap enclosed in areaid.analog must be rectangular
+r124,x.3a,non-octagonal nwell edge
+r125,x.3a,non-octagonal diff edge
+r126,x.3a,non-octagonal dnwell edge
+r127,x.3a,non-octagonal lvtn edge
+r128,x.3a,non-octagonal hvtp edge
+r129,x.3a,non-octagonal hvi edge
+r130,x.3a,non-octagonal tunm edge
+r131,x.3a,non-octagonal npc edge
+r132,x.3a,non-octagonal nsdm edge
+r133,x.3a,non-octagonal psdm edge
+r134,x.3a,non-octagonal met1 edge
+r135,x.3a,non-octagonal met2 edge
+r136,x.3a,non-octagonal vhvi edge
+r137,x.3a,non-octagonal met3 edge
+r138,x.3a,non-octagonal met4 edge
+r139,x.3a,non-octagonal met5 edge
+r140,x.3a,non-octagonal nsm edge
+r141,x.3a,non-octagonal pad edge
+r142,x.3a,non-octagonal ldntm edge
+r143,x.3a,non-octagonal hvntm edge
+r144,x.3a,non-octagonal pnp edge
+r145,x.3a,non-octagonal capacitor edge
+r146,x.3a,non-octagonal ncm edge
+r147,x.3a,non-octagonal inductor edge
+r148,x.3a,non-octagonal rpm edge
+r149,x.3a,non-octagonal hvtr edge
+r150,x.3a,non-octagonal metop1 edge
+r151,x.3a,non-octagonal metop2 edge
+r152,x.3a,non-octagonal metop3 edge
+r153,x.3a,non-octagonal metop4 edge
+r154,x.3a,non-octagonal metop5 edge
+r155,x.3a,non-octagonal metop6 edge
+r156,x.3a,non-octagonal metop7 edge
+r157,x.3a,non-octagonal metop8 edge
+r158,x.3a,non-octagonal NTMdrop edge
+r159,x.3a,non-octagonal LVTNMdrop edge
+r160,x.3a,non-octagonal HVTPMdrop edge
+r161,x.3a,non-octagonal LI1Mdrop edge
+r162,x.3a,non-octagonal LICM1drop edge
+r163,x.3a,non-octagonal PSDMdrop edge
+r164,x.3a,non-octagonal NSDMdrop edge
+r165,x.3a,non-octagonal P1Mdrop edge
+r166,x.3a,non-octagonal FOMdrop edge
+r167,x.3a,non-octagonal NTMadd edge
+r168,x.3a,non-octagonal LVTNMadd edge
+r169,x.3a,non-octagonal HVTPMadd edge
+r170,x.3a,non-octagonal LI1Madd edge
+r171,x.3a,non-octagonal LICM1add edge
+r172,x.3a,non-octagonal PSDMadd edge
+r173,x.3a,non-octagonal NSDMadd edge
+r174,x.3a,non-octagonal P1Madd edge
+r175,x.3a,non-octagonal FOMadd edge
+r176,x.3a,non-octagonal cfom edge
+r177,x.3a,non-octagonal clvtnm edge
+r178,x.3a,non-octagonal chvtpm edge
+r179,x.3a,non-octagonal conom edge
+r180,x.3a,non-octagonal clvom edge
+r181,x.3a,non-octagonal cntm edge
+r182,x.3a,non-octagonal chvntm edge
+r183,x.3a,non-octagonal cnpc edge
+r184,x.3a,non-octagonal cnsdm edge
+r185,x.3a,non-octagonal cpsdm edge
+r186,x.3a,non-octagonal cli1m edge
+r187,x.3a,non-octagonal cviam3 edge
+r188,x.3a,non-octagonal cviam4 edge
+r189,x.3a,non-octagonal PMM2mk edge
+r190,x.3a,non-octagonal CU1Mmk edge
+r191,x.3a,non-octagonal RPMmk edge
+r192,x.3a,non-octagonal PBOmk edge
+r193,x.3a,non-octagonal PDMmk edge
+r194,x.3a,non-octagonal NSMmk edge
+r195,x.3a,non-octagonal MM5mk edge
+r196,x.3a,non-octagonal VIM4mk edge
+r197,x.3a,non-octagonal MM4mk edge
+r198,x.3a,non-octagonal VIM3mk edge
+r199,x.3a,non-octagonal MM3mk edge
+r200,x.3a,non-octagonal VIM2mk edge
+r201,x.3a,non-octagonal MM2mk edge
+r202,x.3a,non-octagonal VIMmk edge
+r203,x.3a,non-octagonal MM1mk edge
+r204,x.3a,non-octagonal CTM1mk edge
+r205,x.3a,non-octagonal LI1Mmk edge
+r206,x.3a,non-octagonal LICM1mk edge
+r207,x.3a,non-octagonal PSDMmk edge
+r208,x.3a,non-octagonal NSDMmk edge
+r209,x.3a,non-octagonal LDNTMmk edge
+r210,x.3a,non-octagonal NPCMmk edge
+r211,x.3a,non-octagonal HVNTMmk edge
+r212,x.3a,non-octagonal NTMmk edge
+r213,x.3a,non-octagonal P1Mmk edge
+r214,x.3a,non-octagonal LVOMmk edge
+r215,x.3a,non-octagonal ONOMmk edge
+r216,x.3a,non-octagonal TUNMmk edge
+r217,x.3a,non-octagonal HVTRMmk edge
+r218,x.3a,non-octagonal HVTPMmk edge
+r219,x.3a,non-octagonal LVTNMmk edge
+r220,x.3a,non-octagonal NWMmk edge
+r221,x.3a,non-octagonal DNMmk edge
+r222,x.3a,non-octagonal FOMmk edge
+r223,x.3a,non-octagonal tap_SEAL edge
+r224,x.3a,non-octagonal tap_ENID edge
+r225,x.3a,non-octagonal poly_ESD edge
+r226,x.3a,"non-octagonal ""li1"" in core edge"
+r227,x.3a,non-octagonal li1_SEAL edge
+r228,x.3a,non-octagonal licon_SEAL edge
+r229,x.3a,non-octagonal mcon_SEAL edge
+r230,x.3a,non-octagonal via_SEAL edge
+r231,x.3a,non-octagonal via2_SEAL edge
+r232,x.3a,non-octagonal via3_SEAL edge
+r233,x.5,met5Pin must be enclosed by met5
+r234,x.5,met4Pin must be enclosed by met4
+r235,x.5,met3Pin must be enclosed by met3
+r236,x.5,met2Pin must be enclosed by met2
+r237,x.5,met1Pin must be enclosed by met1
+r238,x.5,li1Pin must be enclosed by li1
+r239,x.5,polyPin must be enclosed by poly
+r240,x.5,diffPin must be enclosed by diff
+r241,x.9,NTMdrop must be enclosed by COREID
+r242,x.9,LVTNMdrop must be enclosed by COREID
+r243,x.9,HVTPMdrop must be enclosed by COREID
+r244,x.9,LI1Mdrop must be enclosed by COREID
+r245,x.9,LICM1drop must be enclosed by COREID
+r246,x.9,PSDMdrop must be enclosed by COREID
+r247,x.9,NSDMdrop must be enclosed by COREID
+r248,x.9,P1Mdrop must be enclosed by COREID
+r249,x.9,NTMadd must be enclosed by COREID
+r250,x.9,LVTNMadd must be enclosed by COREID
+r251,x.9,HVTPMadd must be enclosed by COREID
+r252,x.9,LI1Madd must be enclosed by COREID
+r253,x.9,LICM1add must be enclosed by COREID
+r254,x.9,PSDMadd must be enclosed by COREID
+r255,x.9,NSDMadd must be enclosed by COREID
+r256,x.9,P1Madd must be enclosed by COREID
+r257,x.9,FOMadd must be enclosed by COREID
+r258,x.9,FOM outside advSeal_6um must be enclosed by COREID
+r259,x.10,diffres must not overlap licon1
+r260,x.10,polyres must not overlap licon1
+r261,x.12a,0.635 min. spacing of moduleCutAREA & q0nwellnotBuildSpace
+r262,x.12b,0.635 min. enclosure of q0nwellnotBuildSpace by moduleCutAREA
+r263,x.12a,0.135 min. spacing of moduleCutAREA & q0diffnotBuildSpace
+r264,x.12b,0.135 min. enclosure of q0diffnotBuildSpace by moduleCutAREA
+r265,x.12a,3.15 min. spacing of moduleCutAREA & q0dnwellnotBuildSpace
+r266,x.12b,3.15 min. enclosure of q0dnwellnotBuildSpace by moduleCutAREA
+r267,x.12a,0.135 min. spacing of moduleCutAREA & q0tapnotBuildSpace
+r268,x.12b,0.135 min. enclosure of q0tapnotBuildSpace by moduleCutAREA
+r269,x.12a,0.19 min. spacing of moduleCutAREA & q0lvtnnotBuildSpace
+r270,x.12b,0.19 min. enclosure of q0lvtnnotBuildSpace by moduleCutAREA
+r271,x.12a,0.19 min. spacing of moduleCutAREA & q0hvtpnotBuildSpace
+r272,x.12b,0.19 min. enclosure of q0hvtpnotBuildSpace by moduleCutAREA
+r273,x.12a,0.35 min. spacing of moduleCutAREA & q0hvinotBuildSpace
+r274,x.12b,0.35 min. enclosure of q0hvinotBuildSpace by moduleCutAREA
+r275,x.12a,0.25 min. spacing of moduleCutAREA & q0tunmnotBuildSpace
+r276,x.12b,0.25 min. enclosure of q0tunmnotBuildSpace by moduleCutAREA
+r277,x.12a,0.105 min. spacing of moduleCutAREA & q0polynotBuildSpace
+r278,x.12b,0.105 min. enclosure of q0polynotBuildSpace by moduleCutAREA
+r279,x.12a,0.135 min. spacing of moduleCutAREA & q0npcnotBuildSpace
+r280,x.12b,0.135 min. enclosure of q0npcnotBuildSpace by moduleCutAREA
+r281,x.12a,0.19 min. spacing of moduleCutAREA & q0nsdmnotBuildSpace
+r282,x.12b,0.19 min. enclosure of q0nsdmnotBuildSpace by moduleCutAREA
+r283,x.12a,0.19 min. spacing of moduleCutAREA & q0psdmnotBuildSpace
+r284,x.12b,0.19 min. enclosure of q0psdmnotBuildSpace by moduleCutAREA
+r285,x.12a,0.085 min. spacing of moduleCutAREA & q0licon1notBuildSpace
+r286,x.12b,0.085 min. enclosure of q0licon1notBuildSpace by moduleCutAREA
+r287,x.12a,0.085 min. spacing of moduleCutAREA & q0li1notBuildSpace
+r288,x.12b,0.085 min. enclosure of q0li1notBuildSpace by moduleCutAREA
+r289,x.12a,0.095 min. spacing of moduleCutAREA & q0mconnotBuildSpace
+r290,x.12b,0.095 min. enclosure of q0mconnotBuildSpace by moduleCutAREA
+r291,x.12a,0.07 min. spacing of moduleCutAREA & q0met1notBuildSpace
+r292,x.12b,0.07 min. enclosure of q0met1notBuildSpace by moduleCutAREA
+r293,x.12a,0.085 min. spacing of moduleCutAREA & q0vianotBuildSpace
+r294,x.12b,0.085 min. enclosure of q0vianotBuildSpace by moduleCutAREA
+r295,x.12a,0.07 min. spacing of moduleCutAREA & q0met2notBuildSpace
+r296,x.12b,0.07 min. enclosure of q0met2notBuildSpace by moduleCutAREA
+r297,x.12a,0.1 min. spacing of moduleCutAREA & q0via2notBuildSpace
+r298,x.12b,0.1 min. enclosure of q0via2notBuildSpace by moduleCutAREA
+r299,x.12a,0.15 min. spacing of moduleCutAREA & q0met3notBuildSpace
+r300,x.12b,0.15 min. enclosure of q0met3notBuildSpace by moduleCutAREA
+r301,x.12a,0.1 min. spacing of moduleCutAREA & q0via3notBuildSpace
+r302,x.12b,0.1 min. enclosure of q0via3notBuildSpace by moduleCutAREA
+r303,x.12a,0.15 min. spacing of moduleCutAREA & q0met4notBuildSpace
+r304,x.12b,0.15 min. enclosure of q0met4notBuildSpace by moduleCutAREA
+r305,x.12a,0.4 min. spacing of moduleCutAREA & q0via4notBuildSpace
+r306,x.12b,0.4 min. enclosure of q0via4notBuildSpace by moduleCutAREA
+r307,x.12a,0.8 min. spacing of moduleCutAREA & q0met5notBuildSpace
+r308,x.12b,0.8 min. enclosure of q0met5notBuildSpace by moduleCutAREA
+r309,x.12a,2 min. spacing of moduleCutAREA & q0nsmnotBuildSpace
+r310,x.12b,2 min. enclosure of q0nsmnotBuildSpace by moduleCutAREA
+r311,x.12a,0.635 min. spacing of moduleCutAREA & q0padnotBuildSpace
+r312,x.12b,0.635 min. enclosure of q0padnotBuildSpace by moduleCutAREA
+r313,x.12a,0.35 min. spacing of moduleCutAREA & q0ldntmnotBuildSpace
+r314,x.12b,0.35 min. enclosure of q0ldntmnotBuildSpace by moduleCutAREA
+r315,x.12a,0.19 min. spacing of moduleCutAREA & q0hvntmnotBuildSpace
+r316,x.12b,0.19 min. enclosure of q0hvntmnotBuildSpace by moduleCutAREA
+r317,x.12a,0.19 min. spacing of moduleCutAREA & q0ncmnotBuildSpace
+r318,x.12b,0.19 min. enclosure of q0ncmnotBuildSpace by moduleCutAREA
+r319,x.12a,5 min. spacing of moduleCutAREA & q0rdlnotBuildSpace
+r320,x.12b,5 min. enclosure of q0rdlnotBuildSpace by moduleCutAREA
+r321,x.12a,0.19 min. spacing of moduleCutAREA & q0hvtrnotBuildSpace
+r322,x.12b,0.19 min. enclosure of q0hvtrnotBuildSpace by moduleCutAREA
+r323,x.12d,0.14 min. spacing of moduleCutAREA & q1met1notBuildSpace
+r324,x.12e,0.14 min. enclosure of q1met1notBuildSpace by moduleCutAREA
+r325,x.12d,0.14 min. spacing of moduleCutAREA & q1met2notBuildSpace
+r326,x.18b,0.42 min. enclosure of capm by moduleCutAREA
+r327,x.18a,0.42 min. spacing of moduleCutAREA & cap2m
+r328,x.18b,0.42 min. enclosure of cap2m by moduleCutAREA
+r329,x.12d,0.2 min. spacing of moduleCutAREA & q1met4notBuildSpace
+r330,x.12e,0.2 min. enclosure of q1met4notBuildSpace by moduleCutAREA
+r331,x.15a,X.15a: layer cfom allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r332,x.15a,X.15a: layer clvtnm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r333,x.15a,X.15a: layer chvtpm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r334,x.15a,X.15a: layer conom allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r335,x.15a,X.15a: layer clvom allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r336,x.15a,X.15a: layer cntm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r337,x.15a,X.15a: layer chvntm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r338,x.15a,X.15a: layer cnpc allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r339,x.15a,X.15a: layer cnsdm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r340,x.15a,X.15a: layer cpsdm allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r341,x.15a,X.15a: layer cli1m allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r342,x.15a,X.15a: layer cviam3 allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r343,x.15a,X.15a: layer cviam4 allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r344,x.15a,X.15a: layer PMM2mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r345,x.15a,X.15a: layer CU1Mmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r346,x.15a,X.15a: layer RPMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r347,x.15a,X.15a: layer PBOmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r348,x.15a,X.15a: layer PDMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r349,x.15a,X.15a: layer NSMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r350,x.15a,X.15a: layer MM5mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r351,x.15a,X.15a: layer VIM4mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r352,x.15a,X.15a: layer MM4mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r353,x.15a,X.15a: layer VIM3mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r354,x.15a,X.15a: layer MM3mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r355,x.15a,X.15a: layer VIM2mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r356,x.15a,X.15a: layer MM2mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r357,x.15a,X.15a: layer VIMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r358,x.15a,X.15a: layer MM1mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r359,x.15a,X.15a: layer CTM1mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r360,x.15a,X.15a: layer LI1Mmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r361,x.15a,X.15a: layer LICM1mk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r362,x.15a,X.15a: layer PSDMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r363,x.15a,X.15a: layer NSDMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r364,x.15a,X.15a: layer LDNTMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r365,x.15a,X.15a: layer NPCMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r366,x.15a,X.15a: layer HVNTMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r367,x.15a,X.15a: layer NTMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r368,x.15a,X.15a: layer P1Mmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r369,x.15a,X.15a: layer LVOMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r370,x.15a,X.15a: layer ONOMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r371,x.15a,X.15a: layer TUNMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r372,x.15a,X.15a: layer HVTRMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r373,x.15a,X.15a: layer HVTPMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r374,x.15a,X.15a: layer LVTNMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r375,x.15a,X.15a: layer NWMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r376,x.15a,X.15a: layer DNMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r377,x.15a,X.15a: layer FOMmk allowed inside areaid:mt or inside areaid.sl or inside areaid.ft
+r378,x.16,extentDie must not overlap moduleCutAREA
+r379,x.19,"SEAL ring is not at origin (0,0)"
+r380,x.21,prune must overlap areaidMTorSC
+r381,x.23b,diff must not straddle SEALID
+r382,x.23c,tap must not overlap SEALID
+r383,x.23c,poly must not overlap SEALID
+r384,x.23c,li1 must not overlap SEALID
+r385,x.23c,met1 must not overlap SEALID
+r386,x.23c,met2 must not overlap SEALID
+r387,x.23c,met3 must not overlap SEALID
+r388,x.23c,met4 must not overlap SEALID
+r389,x.23c,met5 must not overlap SEALID
+r390,x.26,SEALID_6um must overlap diff
+r391,x.25,pnp layer must be within specified fixed layout cells sky130rf_pnp/sky130rf_pnp5x
+r392,x.28,6 min. width of SEALID
+r393,dnwell.2,3 min. width of dnwell
+r394,dnwell.3,6.3 min. spacing/notch of dnwellNotPhotoNotUHVI
+r395,dnwell.4,dnwell must not overlap pnp
+r396,ulvt.3,LOWVTID must not straddle uhvi
+r397,dnwell.7,dnwell cannot straddle localSub
+r398,nwell.1,0.84 min. width of nwell
+r399,nwell.2a,1.27 min. spacing/notch of nwell
+r400,nwell.4,nwell_nonUHVI must overlap metal contacted tap to nwell
+r401,nwell.5,0.4 min. enclosure of dnwellNotTechCDLOWVTID by filledNwell
+r402,nwell.5,dnwellNotTechCDLOWVTID must be enclosed by filledNwell
+r403,nwell.6,1.03 min enclosure of nwellHole by dnwell
+r404,nwell.7,4.5 min spacing between nwell and dnwell on separate nets
+r405,hvtp.1,0.38 min. width of hvtp
+r406,hvtp.2,0.38 min. spacing/notch of hvtp
+r407,hvtp.3,0.18 min. enclosure of PFET_PERI by hvtp
+r408,hvtp.4,0.18 min. spacing of PFET_PERI & hvtp
+r409,hvtp.5,0.265 min. area of hvtp
+r410,hvtp.6,0.265 min. area of hvtpHoles
+r411,hvtp.c1,Min/Max enclosure of nwell by hvtp
+r412,lvtn.1a,0.38 min. width of lvtn
+r413,lvtn.2,0.38 min. spacing/notch of lvtn
+r414,lvtn.3a,"0.18 min. spacing of Gate in Periphery outside UHVI layer & ""lvtn"" in periphery"
+r415,lvtn.3b,0.19 min spacing of lvtn(peri) to pfet along S/D direction
+r416,lvtn.4b,"0.18 min. enclosure of Gate in Periphery outside UHVI layer by ""lvtn"" in periphery"
+r417,lvtn.9,0.38 min. spacing of lvtn & hvtp
+r418,lvtn.9,lvtn must not overlap hvtp
+r419,lvtn.10,0.38 min enclosure of lvtn by (nwell not overlapping Varactor Channel)
+r420,lvtn.12,0.38 min. spacing of lvtn & coreNwell
+r421,lvtn.13,0.265 min. area of lvtn
+r422,lvtn.14,0.265 min. area of lvtnHoles
+r423,hvtr.1,0.38 min. width of hvtr
+r424,hvtr.2,0.38 min. spacing of hvtr & hvtp
+r425,hvtr.2,hvtr must not overlap hvtp
+r426,hvtr.3,0.18 min. enclosure of PFET by hvtr
+r427,difftap.1,0.15 min. width of diff across areaid:ce
+r428,difftap.1,0.15 min. width of diff in PERI
+r429,difftap.c1,0.14 min. width of diff in COREID
+r430,difftap.1,0.15 min. width of tap across areaid:ce
+r431,difftap.1,0.15 min. width of tap in PERI
+r432,difftap.c1,0.14 min. width of tap in COREID
+r433,difftap.2,0.42 min. width of GATE_PERI_noSC
+r434,difftap.2b,0.36 min. width of GATE_PERI_SC
+r435,difftap.3,0.27 min. spacing/notch of diff or tap
+r436,difftap.4,0.29 min. width of tap butting diff
+r437,difftap.5,"0.4 min. width of ""tap"" in periphery butting & between diff"
+r438,difftap.6,diff and tap are not allowed to extend beyond their abutting edge
+r439,difftap.7,0.13 spacing of diff/tap butting edge to non-coincident diff/tap edge
+r440,difftap.8,0.18 min. enclosure of PDIFF_PERI_nonESDuhvi by nwell
+r441,difftap.9,0.34 min. spacing of NDIFF_PERI_nonESDuhvi & nwell_noesd
+r442,difftap.10,0.18 min. enclosure of NTAP_nonESD_nonuhvi by nwell
+r443,difftap.11,0.13 min. spacing of PTAP_nonUHVI & nwell
+r444,difftap.c1,"0.14 min. width of ""gate"" in core"
+r445,difftap.c5,"0.38 min. width of ""tap"" in core butting & between diff"
+r446,difftap.c8,"0.15 min. enclosure of ""pdiff"" in core by nwell"
+r447,difftap.c10,"0.15 min. enclosure of ""ntap"" in core by nwell"
+r448,difftap.c12,"0.18 min. enclosure of adj. sides of ""pdiff"" in core by nwell"
+r449,difftap.c13,"0.32 min. spacing of ""ndiff"" in core & nwell"
+r450,difftap.c14,"0.34 min. enclosure of adj. sides of ""ndiff"" in core by chipNotNwell"
+r451,tunm.1,0.41 min. width of tunm
+r452,tunm.2,0.5 min. spacing/notch of tunm
+r453,tunm.3,0.095 min. extension of tunm beyond gate
+r454,tunm.4,0.095 min. spacing of GATE_outsidetunm & tunm
+r455,tunm.5,gate must not straddle tunm
+r456,tunm.6a,tunm outside deep nwell is not allowed
+r457,tunm.7,0.672 min. area of tunm
+r458,tunm.8,tunm must be enclosed by COREID
+r459,nsd.1,0.38 min. width of nsdm across areaid:ce
+r460,nsd.1,0.38 min. width of nsdm in PERI
+r461,nsd.c1b,0.29 min. width of nsdm in COREID
+r462,nsd.2,"0.38 min. spacing/notch of ""nsdm"" in periphery"
+r463,nsd.2,0.38 min. spacing of nsdm across COREID boundary
+r464,nsd.5a,0.125 min. enclosure of n+ diff by nsdm
+r465,nsd.5b,0.125 min. enclosure of n+ tap in peri by nsdm
+r466,nsd.7,0.13 min. spacing of nsdm & opposite implant diffTap
+r467,nsd.8,nsdm must not overlap pdiff/ptap (source of extendedDrain fet exempted)
+r468,nsd.9,ndiff/ntap (source of extendedDrain fet and gated_npn exempted) must be enclosed by nsdmZENERID
+r469,nsd.10a,0.265 min. area of nsdm
+r470,nsd.11,0.265 min. area of nsdmHole
+r471,nsd.c1a,0.38 min. width of nsdm (opposite parallel)
+r472,nsd.c2a,"0.38 min. spacing/notch of ""nsdm"" in core"
+r473,nsd.c2b,"0.29 min. spacing/notch of ""nsdm"" in core"
+r474,nsd.c5a,0.13 min. enclosure of n+ tap in core by nsdm
+r475,psd.1,0.38 min. width of psdm across areaid:ce
+r476,psd.1,0.38 min. width of psdm in PERI
+r477,psd.c1b,0.29 min. width of psdm in COREID
+r478,psd.2,"0.38 min. spacing/notch of ""psdm"" in periphery"
+r479,psd.2,0.38 min. spacing of psdm across COREID boundary
+r480,psd.5a,0.125 min. enclosure of p+ diff by psdm
+r481,psd.5b,0.125 min. enclosure of p+ tap in peri by psdm
+r482,psd.7,0.13 min. spacing of psdm & opposite implant diffTap
+r483,psd.8,psdm must not overlap ndiff/ntap (source of extendedDrain fet exempted)
+r484,psd.9,pdiff/ptap (source of extendedDrain fet exempted) must be enclosed by psdmZENERID
+r485,psd.10b,0.255 min. area of psdm
+r486,psd.11,0.265 min. area of psdmHole
+r487,psd.c1a,0.38 min. width of psdm (opposite parallel)
+r488,psd.c2a,"0.38 min. spacing/notch of ""psdm"" in core"
+r489,psd.c2b,"0.29 min. spacing/notch of ""psdm"" in core"
+r490,psd.c5b,0.12 min. enclosure of p+ tap in core by psdm
+r491,hvi.1,0.6 min. width of hvi_peri
+r492,hvi.2a,0.7 min. spacing/notch of hvi_peri
+r493,hvi.4,hvi must not overlap tunm
+r494,hvi.5,0.7 min. spacing between non-butting hvi and nwell
+r495,nwell.8,2 min. spacing of HV_nwell & nwell
+r496,hv.nwell.1,2.5 min. spacing of nwell with text (shv_nwell) & nwell
+r497,nwell.9,HVnwell must be enclosed by hvi
+r498,nwell.10,LVnwell should not be on the same net as HVnwell
+r499,difftap.14,0.29 min. width of Hdiff in periphery not Hv Pdiff Res
+r500,difftap.14a,0.15 min. width of Hv Pdiff Res in periphery
+r501,difftap.15a,0.3 min. spacing/notch of Hdiff in periphery
+r502,difftap.15b,0.37 min. spacing of n+ diff inside hvi in periphery & ptapHV_PERI_noAbut
+r503,difftap.16,0.7 min. width of tapHV butting diffHV_noUHVI
+r504,difftap.16,0.7 min. width of tapHV_noUHVI butting & between Hdiff
+r505,difftap.17,0.33 min. enclosure of p+ Hdiff (no ESD)(no UHVI) by HV_nwell
+r506,difftap.18,0.43 min. spacing of ndiff_nonESDuhvi & HV_nwell
+r507,difftap.19,0.33 min. enclosure of n+ Htap (no ESD)(no UHVI) by HV_nwell
+r508,difftap.20,0.43 min. spacing of PTAP_noPwellRes_noUHVI & HV_nwell
+r509,difftap.21,"""diffTap"" in periphery must not straddle hvi"
+r510,difftap.22,0.18 min. enclosure of Hdiff/Htap in periphery without UHVI by hvi
+r511,difftap.23,0.18 min. spacing of diffTapNoHv_PERI & hvi
+r512,difftap.24,0.43 min. spacing of ndiffHV_nonESDuhvi & nwell
+r513,difftap.c11,0.15 min. width of Hdiff in COREID
+r514,poly.13,0.5 min. width of poly over diff inside hvi in periphery
+r515,poly.14,gate must not straddle hvi
+r516,poly.1a,0.15 min. width of poly
+r517,poly.1b,poly.1b: 0.350 min. channel length of pfet overlapping lvtn
+r518,poly.2,"0.21 min. spacing/notch of ""poly"" in periphery"
+r519,poly.2,0.21 min. spacing of poly2noXmt across COREID boundary
+r520,poly.c3,poly.c3: 0.175 min. spacing of poly (except for poly.c2)
+r521,poly.c2,poly.c2: 0.160 min. spacing of poly for poly core gap
+r522,poly.3,0.33 min. width of poly resistor
+r523,poly.4,"0.075 min. spacing of ""poly"" in periphery & diff"
+r524,poly.5,"0.055 min. spacing of ""poly"" in periphery & tap"
+r525,poly.6,0.3 min. extension of diff edge butting tap beyond gate edge in periphery
+r526,poly.7,0.25 min. extension of diff beyond gate edge in periphery
+r527,poly.8,0.13 min. extension of poly beyond gate end in periphery
+r528,poly.9,0.48 min. spacing of poly resistor & diffTap
+r529,poly.9,poly resistor must not overlap diffTap
+r530,poly.9,0.48 min. spacing of poly resistor & poly
+r531,poly.10,poly must not overlap any inner corner of diff
+r532,poly.11,No 90 degree bends of poly on diff
+r533,poly.12,"PolyNotLvNwellnoUHVI must not overlap ""tap"" in periphery"
+r534,poly.15,poly must not overlap diffres
+r535,poly.c1,"0.03 min. spacing of ""poly"" in core & diff"
+r536,poly.c1,"0.03 min. spacing of ""poly"" in core & tap"
+r537,dnwell.6,rfNMOS must be enclosed by dnwell
+r538,poly.x.1a,0.5 min. width of dummy_nhv
+r539,poly.x.1a,0.15 min. width of dummy_nlowvt
+r540,poly.x.1a,0.15 min. width of dummy_nshort
+r541,poly.x.1a,0.15 min. width of dummy_pshort
+r542,poly.x.1a,0.35 min. width of dummy_plowvt
+r543,poly.x.1,This is an invalid nfet
+r544,poly.x.1,This is an invalid pfet
+r545,poly.x.1,This nhvnative is only allow in the FGR
+r546,poly.x.1,This sky130rf_pmedlvt_W0p84_L0p15_2F device has an invalid W/L. Please see MRGA
+r547,poly.x.1,This sky130rf_pshort_W3p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r548,poly.x.1,This sky130rf_pshort_W5p0_L0p15_2F device has an invalid W/L. Please see MRGA
+r549,poly.x.1,This sky130rf_pshort_W1p65_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r551,poly.x.1,This sky130rf_pshort_W3p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r552,poly.x.1,This sky130rf_pshort_W5p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r553,poly.x.1,This sky130rf_pshort_W5p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r555,poly.x.1,This sky130rf_pshort_W0p84_L0p15_2F device has an invalid W/L. Please see MRGA
+r556,poly.x.1,This sky130rf_pshort_W1p65_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r558,poly.x.1,This sky130rf_pshort_W3p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r559,poly.x.1,This sky130rf_pshort_W5p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r560,poly.x.1,This sky130rf_pshort_W5p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r561,poly.x.1,This sky130rf_pshort_W3p0_L0p15_2F device has an invalid W/L. Please see MRGA
+r562,poly.x.1,This sky130rf_pshort_W5p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r563,poly.x.1,This sky130rf_pshort_W1p68_L0p15_4F device has an invalid W/L. Please see MRGA
+r564,poly.x.1,This sky130rf_pshort_W3p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r565,poly.x.1,This sky130rf_pshort_W5p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r566,poly.x.1,This sky130rf_pshort_W3p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r567,poly.x.1,This sky130rf_pshort_W1p65_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r569,poly.x.1,This ppu device has an invalid W/L. Please see MRGA
+r570,poly.x.1,This sky130rf_pshort_W1p68_L0p15_2F device has an invalid W/L. Please see MRGA
+r571,poly.x.1,This sky130rf_pshort_W1p65_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r572,poly.x.1,This sky130rf_pmedlvt_W1p68_L0p15_4F device has an invalid W/L. Please see MRGA
+r573,poly.x.1,This sky130rf_pshort_W1p65_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r574,poly.x.1,This sky130rf_pshort_W1p65_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r576,poly.x.1,This sky130rf_pshort_W3p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r577,poly.x.1,This sky130rf_pmedlvt_W1p68_L0p15_2F device has an invalid W/L. Please see MRGA
+r578,poly.x.1,This sky130rf_nlowvt_W0p42_L0p15_2F device has an invalid W/L. Please see MRGA
+r579,poly.x.1,This sky130rf_nlowvt_W0p84_L0p15_2F device has an invalid W/L. Please see MRGA
+r580,poly.x.1,This sky130rf_nhv_W7p0_L0p5_M10_b device has an invalid W/L. Please see MRGA
+r582,poly.x.1,This sky130rf_nshort_W5p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r583,poly.x.1,This npass device has an invalid W/L. Please see MRGA
+r584,poly.x.1,This sky130rf_nlowvt_W1p65_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r585,poly.x.1,This sky130rf_nhv_W3p0_L0p5_M10_b device has an invalid W/L. Please see MRGA
+r586,poly.x.1,This sonos_p device has an invalid W/L. Please see MRGA
+r587,poly.x.1,This nhvnativeesd device has an invalid W/L. Please see MRGA
+r588,poly.x.1,This npd device has an invalid W/L. Please see MRGA
+r589,poly.x.1,This ntvnative device has an invalid W/L. Please see MRGA
+r590,poly.x.1,This sky130rf_nhv_W5p0_L0p5_M4_b device has an invalid W/L. Please see MRGA
+r591,poly.x.1,This sky130rf_nshort_W1p65_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r592,poly.x.1,This sky130rf_nlowvt_W3p0_L0p15_4F device has an invalid W/L. Please see MRGA
+r593,poly.x.1,This fnpass device has an invalid W/L. Please see MRGA
+r594,poly.x.1,This sky130rf_nlowvt_W1p65_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r595,poly.x.1,This sky130rf_nlowvt_W3p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r596,poly.x.1,This sky130rf_nlowvt_W3p0_L0p15_8F device has an invalid W/L. Please see MRGA
+r597,poly.x.1,This sky130rf_nlowvt_W3p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r598,poly.x.1,This sky130rf_nlowvt_W3p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r599,poly.x.1,This sky130rf_nlowvt_W3p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r600,poly.x.1,This sky130rf_nlowvt_W5p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r601,poly.x.1,This sky130rf_nlowvt_W0p84_L0p15_4F device has an invalid W/L. Please see MRGA
+r602,poly.x.1,This sky130rf_nshort_W3p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r603,poly.x.1,This sky130rf_nshort_W5p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r604,poly.x.1,This sky130rf_nshort_W5p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r606,poly.x.1,This sky130rf_nshort_W3p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r607,poly.x.1,This sonos_e device has an invalid W/L. Please see MRGA
+r608,poly.x.1,This sky130rf_nshort_W5p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r609,poly.x.1,This sky130rf_nhv_W3p0_L0p5_M4_b device has an invalid W/L. Please see MRGA
+r610,poly.x.1,This sky130rf_nlowvt_W3p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r611,poly.x.1,This sky130rf_nshort_W1p65_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r612,poly.x.1,This sky130rf_nshort_W3p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r614,poly.x.1,This sky130rf_nshort_W5p0_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r615,poly.x.1,This sky130rf_nhv_W5p0_L0p5_M2_b device has an invalid W/L. Please see MRGA
+r616,poly.x.1,This sky130rf_nlowvt_W0p84_L0p15_8F device has an invalid W/L. Please see MRGA
+r617,poly.x.1,This sky130rf_nshort_W1p65_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r618,poly.x.1,This sky130rf_nlowvt_W3p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r619,poly.x.1,This sky130rf_nlowvt_W5p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r620,poly.x.1,This nshortesd device has an invalid W/L. Please see MRGA
+r621,poly.x.1,This sky130rf_nlowvt_W5p0_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r622,poly.x.1,This sky130rf_nshort_W3p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r624,poly.x.1,This sky130rf_nshort_W5p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r625,poly.x.1,This sky130rf_nlowvt_W1p65_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r626,poly.x.1,This sky130rf_nhv_W5p0_L0p5_M10_b device has an invalid W/L. Please see MRGA
+r627,poly.x.1,This sky130rf_nshort_W3p0_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r628,poly.x.1,This sky130rf_nhv_W3p0_L0p5_M2_b device has an invalid W/L. Please see MRGA
+r629,poly.x.1,This sky130rf_nlowvt_W1p65_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r630,poly.x.1,This nlvtpass device has an invalid W/L. Please see MRGA
+r631,poly.x.1,This sky130rf_nshort_W1p65_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r632,poly.x.1,This sky130rf_nlowvt_W5p0_L0p15_M4_b device has an invalid W/L. Please see MRGA
+r633,poly.x.1,This sky130rf_nlowvt_W1p65_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r634,poly.x.1,This sky130rf_nlowvt_W5p0_L0p18_M4_b device has an invalid W/L. Please see MRGA
+r635,poly.x.1,This sky130rf_nlowvt_W3p0_L0p15_2F device has an invalid W/L. Please see MRGA
+r636,poly.x.1,This sky130rf_nshort_W3p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r637,poly.x.1,This sky130rf_nlowvt_W5p0_L0p18_M2_b device has an invalid W/L. Please see MRGA
+r638,poly.x.1,This sky130rf_nhv_W7p0_L0p5_M4_b device has an invalid W/L. Please see MRGA
+r639,poly.x.1,This nhvesd device has an invalid W/L. Please see MRGA
+r640,poly.x.1,This sky130rf_nshort_W1p65_L0p25_M2_b device has an invalid W/L. Please see MRGA
+r641,poly.x.1,This sky130rf_nlowvt_W1p65_L0p25_M4_b device has an invalid W/L. Please see MRGA
+r642,poly.x.1,This sky130rf_nshort_W1p65_L0p15_M2_b device has an invalid W/L. Please see MRGA
+r643,poly.x.1,This pvhv device has an invalid W/L. Please see MRGA
+r644,poly.x.1,This nvhv device has an invalid W/L. Please see MRGA
+r645,diff.13,sky130rf_nlowvt_W0p42_L0p15_2F_cell should be rectangular
+r646,diff.13,0.42 min. width of sky130rf_nlowvt_W0p42_L0p15_2F_cell
+r647,diff.13,0.42 max. width of sky130rf_nlowvt_W0p42_L0p15_2F_cell
+r648,diff.13,1.14 min. length of sky130rf_nlowvt_W0p42_L0p15_2F_cell
+r649,diff.13,1.14 max. length of sky130rf_nlowvt_W0p42_L0p15_2F_cell
+r650,diff.13,sky130rf_nlowvt_W0p84_L0p15_2F_cell should be rectangular
+r651,diff.13,0.84 min. width of sky130rf_nlowvt_W0p84_L0p15_2F_cell
+r652,diff.13,0.84 max. width of sky130rf_nlowvt_W0p84_L0p15_2F_cell
+r653,diff.13,1.14 min. length of sky130rf_nlowvt_W0p84_L0p15_2F_cell
+r654,diff.13,1.14 max. length of sky130rf_nlowvt_W0p84_L0p15_2F_cell
+r655,diff.13,sky130rf_nlowvt_W0p84_L0p15_4F_cell should be rectangular
+r656,diff.13,0.84 min. width of sky130rf_nlowvt_W0p84_L0p15_4F_cell
+r657,diff.13,0.84 max. width of sky130rf_nlowvt_W0p84_L0p15_4F_cell
+r658,diff.13,2 min. length of sky130rf_nlowvt_W0p84_L0p15_4F_cell
+r659,diff.13,2 max. length of sky130rf_nlowvt_W0p84_L0p15_4F_cell
+r660,diff.13,sky130rf_nlowvt_W0p84_L0p15_8F_cell should be rectangular
+r661,diff.13,0.84 min. width of sky130rf_nlowvt_W0p84_L0p15_8F_cell
+r662,diff.13,0.84 max. width of sky130rf_nlowvt_W0p84_L0p15_8F_cell
+r663,diff.13,3.72 min. length of sky130rf_nlowvt_W0p84_L0p15_8F_cell
+r664,diff.13,3.72 max. length of sky130rf_nlowvt_W0p84_L0p15_8F_cell
+r665,diff.13,sky130rf_nlowvt_W3p0_L0p15_2F_cell should be rectangular
+r666,diff.13,1.14 min. width of sky130rf_nlowvt_W3p0_L0p15_2F_cell
+r667,diff.13,1.14 max. width of sky130rf_nlowvt_W3p0_L0p15_2F_cell
+r668,diff.13,3 min. length of sky130rf_nlowvt_W3p0_L0p15_2F_cell
+r669,diff.13,3 max. length of sky130rf_nlowvt_W3p0_L0p15_2F_cell
+r670,diff.13,sky130rf_nlowvt_W3p0_L0p15_4F_cell should be rectangular
+r671,diff.13,2 min. width of sky130rf_nlowvt_W3p0_L0p15_4F_cell
+r672,diff.13,2 max. width of sky130rf_nlowvt_W3p0_L0p15_4F_cell
+r673,diff.13,3 min. length of sky130rf_nlowvt_W3p0_L0p15_4F_cell
+r674,diff.13,3 max. length of sky130rf_nlowvt_W3p0_L0p15_4F_cell
+r675,diff.13,sky130rf_nlowvt_W3p0_L0p15_8F_cell should be rectangular
+r676,diff.13,3 min. width of sky130rf_nlowvt_W3p0_L0p15_8F_cell
+r677,diff.13,3 max. width of sky130rf_nlowvt_W3p0_L0p15_8F_cell
+r678,diff.13,3.72 min. length of sky130rf_nlowvt_W3p0_L0p15_8F_cell
+r679,diff.13,3.72 max. length of sky130rf_nlowvt_W3p0_L0p15_8F_cell
+r680,diff.13,sky130rf_pshort_W0p84_L0p15_2F_cell should be rectangular
+r681,diff.13,0.84 min. width of sky130rf_pshort_W0p84_L0p15_2F_cell
+r682,diff.13,0.84 max. width of sky130rf_pshort_W0p84_L0p15_2F_cell
+r683,diff.13,1.11 min. length of sky130rf_pshort_W0p84_L0p15_2F_cell
+r684,diff.13,1.11 max. length of sky130rf_pshort_W0p84_L0p15_2F_cell
+r685,diff.13,sky130rf_pshort_W1p68_L0p15_2F_cell should be rectangular
+r686,diff.13,1.11 min. width of sky130rf_pshort_W1p68_L0p15_2F_cell
+r687,diff.13,1.11 max. width of sky130rf_pshort_W1p68_L0p15_2F_cell
+r688,diff.13,1.68 min. length of sky130rf_pshort_W1p68_L0p15_2F_cell
+r689,diff.13,1.68 max. length of sky130rf_pshort_W1p68_L0p15_2F_cell
+r690,diff.13,sky130rf_pshort_W1p68_L0p15_4F_cell should be rectangular
+r691,diff.13,1.68 min. width of sky130rf_pshort_W1p68_L0p15_4F_cell
+r692,diff.13,1.68 max. width of sky130rf_pshort_W1p68_L0p15_4F_cell
+r693,diff.13,1.97 min. length of sky130rf_pshort_W1p68_L0p15_4F_cell
+r694,diff.13,1.97 max. length of sky130rf_pshort_W1p68_L0p15_4F_cell
+r695,diff.13,sky130rf_pshort_W3p0_L0p15_2F_cell should be rectangular
+r696,diff.13,1.11 min. width of sky130rf_pshort_W3p0_L0p15_2F_cell
+r697,diff.13,1.11 max. width of sky130rf_pshort_W3p0_L0p15_2F_cell
+r698,diff.13,3 min. length of sky130rf_pshort_W3p0_L0p15_2F_cell
+r699,diff.13,3 max. length of sky130rf_pshort_W3p0_L0p15_2F_cell
+r700,diff.13,sky130rf_pshort_W5p0_L0p15_2F_cell should be rectangular
+r701,diff.13,1.11 min. width of sky130rf_pshort_W5p0_L0p15_2F_cell
+r702,diff.13,1.11 max. width of sky130rf_pshort_W5p0_L0p15_2F_cell
+r703,diff.13,5 min. length of sky130rf_pshort_W5p0_L0p15_2F_cell
+r704,diff.13,5 max. length of sky130rf_pshort_W5p0_L0p15_2F_cell
+r705,poly.16,Poly of the RF FETs defined in Table H5 cannot overlap
+r706,npc.1,0.27 min. width of npc
+r707,npc.2,0.27 min. spacing/notch of npc
+r708,npc.4,0.09 min. spacing of npc & gate
+r709,npc.4,npc must not overlap gate
+r710,npc.5,0.095 max enclosure of poly overlapping slotted_licon by npcm
+r711,licon.2,"0.17 min. spacing/notch of ""licon1"" in periphery"
+r712,licon.2,0.17 min. spacing of licon1 across COREID boundary
+r713,licon.3,0.17 min. width of ring licon1
+r714,licon.3,0.175 max. width of ring licon1
+r715,licon.3,ring licon1 must be enclosed by SEALID
+r716,licon.4,licon1 must overlap li1 and (poly or diff or tap)
+r717,licon.5a,"0.04 min. enclosure of ""licon1"" in periphery by diff"
+r718,licon.5b,0.06 min. spacing of tapLicon_PERI & diffTap butting edge
+r719,licon.5c,"0.06 min. enclosure of adj. sides of ""licon1"" in periphery by diff"
+r720,licon.6,"""licon1"" in periphery must not straddle tap"
+r721,licon.7,"0.12 min. enclosure of adj. sides of ""licon1"" in periphery by noButtTap"
+r722,licon.8,"0.05 min. enclosure of ""poly_licon1"" in periphery by poly"
+r723,licon.8a,"0.08 min. enclosure of adj. sides of ""poly_licon1"" in periphery by poly"
+r724,licon.10,0.25 min. spacing of varLiconPer & varChannel
+r725,licon.11,"0.055 min. spacing of ""licon1 on diffTap"" in periphery & gateNoSC"
+r726,licon.11,"""licon1 on diffTap"" in periphery must not overlap gateNoSC"
+r727,licon.11a,"0.05 min. spacing of ""licon1 on diffTap"" in periphery & (gate and areaid.sc) except 0.15 phighvt"
+r728,licon.11a,"""licon1 on diffTap"" in periphery must not overlap (gate and areaid.sc) except 0.15 phighvt"
+r729,licon.11b,"0.05 min. spacing of ""licon1 on diffTap"" in periphery & gateSCPhighvt"
+r730,licon.11b,"""licon1 on diffTap"" in periphery must not overlap gateSCPhighvt"
+r731,licon.11c,"0.04 min. spacing of ""licon1 on diffTap"" in periphery & licon11cGate"
+r732,licon.11c,"""licon1 on diffTap"" in periphery must not overlap licon11cGate"
+r733,licon.11d,"0.045 min. spacing of ""licon1 on diffTap"" in periphery & licon11dGate"
+r734,licon.11d,"""licon1 on diffTap"" in periphery must not overlap licon11dGate"
+r735,licon.1,rectLCON1OutRpm should be rectangular
+r736,licon.1,0.17 min. width of rectLCON1OutRpm
+r737,licon.1,0.17 max. length of rectLCON1OutRpm
+r738,licon.1b/c,rectLCON1AndRpm should be rectangular
+r739,licon.1b/c,0.19 min. width of rectLCON1AndRpm
+r740,licon.1b/c,0.19 max. width of rectLCON1AndRpm
+r741,licon.1b/c,2 min. length of rectLCON1AndRpm
+r742,licon.1b/c,2 max. length of rectLCON1AndRpm
+r743,licon.2b,0.35 min. spacing/notch of rectLCON1AndRpm
+r744,licon.2c,min spacing between slotted licon in lateral dir is 0.510
+r745,licon.2d,0.51 min. spacing of rectLCON1AndRpm & rectLCON1OutRpm
+r746,licon.9,0.11 min. spacing of polyLicon1OutRpm & psdm
+r747,licon.9,polyLicon1OutRpm must not overlap psdm
+r748,licon.13,"0.09 min. spacing of ""licon1 on diffTap"" in periphery & npc"
+r749,licon.13,"""licon1 on diffTap"" in periphery must not overlap npc"
+r750,licon.14,"0.19 min. spacing of poly_licon1 & ""diffTap"" in periphery"
+r751,licon.15,"0.1 min. enclosure of ""poly_licon1"" in periphery by npc"
+r752,licon.15,"""poly_licon1"" in periphery must be enclosed by npc"
+r753,npcon.c6,"0.045 min. enclosure of ""poly_licon1"" in core by npc"
+r754,npcon.c6,"""poly_licon1"" in core must be enclosed by npc"
+r755,licon.16,source must enclose at least one licon in peri
+r756,licon.16,tap must enclose at least one licon in peri
+r757,licon.17,licon1 overlapping poly must not overlap diffTap
+r758,licon.18,npc must enclose poly_licon
+r759,licon.19,poly on HV varactor must not interact with licon
+r760,licon.c1,"0.13 min. spacing of poly_licon1 & ""diffTap"" in core"
+r761,licon.c3,"0.165 min. spacing/notch of ""licon1"" in core"
+r762,licon.c4,"""poly_licon1"" in core must not overlap psdm"
+r763,li.1,0.17 min. width of liNoVppCaps across areaid:ce
+r764,li.1,0.17 min. width of liNoVppCaps in PERI
+r765,li.c1,0.14 min. width of liNoVppCaps in COREID
+r766,li.1a,0.14 min. width of liVppCaps
+r767,li.3,0.17 min. spacing/notch of li1_3_PERI
+r768,li.3,0.17 min. spacing of li1 across COREID boundary
+r769,li.3a,0.14 min. spacing/notch of li1_3a_PERI
+r770,li.4,"""licon1"" in periphery must be enclosed by li1"
+r771,li.5,"0.08 min. enclosure of adj. sides of ""licon1"" in periphery by li1"
+r772,li.6,0.0561 min. area of li1 across areaid:ce
+r773,li.6,0.0561 min. area of li1
+r774,li.7,0.29 min. width of li1AndResNoESD
+r775,li.c1,"0.14 min. width of ""li1"" in core"
+r776,li.c2,"0.14 min. spacing/notch of ""li1"" in core"
+r777,ct.1,non-ring mcon should be rectangular
+r778,ct.1,0.17 min. width of non-ring mcon
+r779,ct.1,0.17 max. length of non-ring mcon
+r780,ct.2,0.19 min. spacing/notch of mcon
+r781,ct.3,0.17 min. width of ring-shaped mcon
+r782,ct.3,0.175 max. width of ring-shaped mcon
+r783,ct.3,ring-shaped mcon must be enclosed by SEALID
+r784,ct.4,"""mcon"" in periphery must be enclosed by li1"
+r785,ct.c1,"""mcon"" in core must overlap li1"
+r786,ct.c2,"0.19 min. spacing/notch of ""mcon"" in core"
+r787,m1.1,0.14 min. width of met1
+r788,m1.2,0.14 min. spacing/notch of met1
+r789,m1.3b,0.28 min. spacing between huge met1 and normal met1
+r790,m1.3a,0.28 min. spacing/notch of huge met1+nearby met1
+r791,m1.4,0.03 min. enclosure of mcon_PERI_4 by met1
+r792,m1.4,mcon_PERI_4 must be enclosed by met1
+r793,m1.4a,0.005 min. enclosure of mcon_PERI_4a by met1
+r794,m1.4a,mcon_PERI_4a must be enclosed by met1
+r795,m1.5,"0.06 min. enclosure of adj. sides of ""mcon"" in periphery by met1"
+r796,m1.6,0.083 min. area of met1
+r797,m1.7,0.14 min. area of met1Hole
+r798,m1.7,0.14 min. area of met1HoleEmpty
+r799,m1.c1,"""mcon"" in core must be enclosed by met1"
+r800,via.1a,via outside of moduleCut should be rectangular
+r801,via.1a,0.15 min. width of via outside of moduleCut
+r802,via.1a,0.15 max. length of via outside of moduleCut
+r803,via.1b,via size inside module cut must be 0.150 or 0.230 or 0.280
+r804,via.2,0.17 min. spacing/notch of via
+r805,via.3,0.2 min. width of ring-shaped via
+r806,via.3,0.205 max. width of ring-shaped via
+r807,via.3,ring-shaped via must be enclosed by SEALID
+r808,via.4a,0.055 min. enclosure of 0.15um via by met1
+r809,via.4a,0.15um via must be enclosed by met1
+r810,via.4b,0.03 min. enclosure of 0.23 via within modulecut by met1
+r811,via.4b,0.23 via within modulecut must be enclosed by met1
+r812,via.4c,0 min. enclosure of 0.28 via within modulecut by met1
+r813,via.4c,0.28 via within modulecut must be enclosed by met1
+r814,via.5a,0.085 min. enclosure of adj. sides of 0.15um via by met1
+r815,via.5b,0.06 min. enclosure of adj. sides of 0.23 via within modulecut by met1
+r816,via.5c,0 min. enclosure of adj. sides of 0.28 via within modulecut by met1
+r817,m2.1,0.14 min. width of met2
+r818,m2.2,0.14 min. spacing/notch of met2
+r819,m2.3b,0.28 min. spacing between huge met2 and normal met2
+r820,m2.3a,0.28 min. spacing/notch of huge met2+nearby met2
+r821,m2.4,"0.055 min. enclosure of ""via"" in periphery by met2"
+r822,m2.4,"""via"" in periphery must be enclosed by met2"
+r823,m2.5,0.085 min. enclosure of adj. sides of via by met2
+r824,m2.6,0.0676 min. area of met2
+r825,m2.7,0.14 min. area of met2Hole
+r826,m2.7,0.14 min. area of met2HoleEmpty
+r827,m2.c4,"0.04 min. enclosure of ""via"" in core by met2"
+r828,m2.c4,"""via"" in core must be enclosed by met2"
+r829,varac.1,Min channel length of varactor channel is 0.180
+r830,varac.2,Min channel width of varactor channel is 1.000
+r831,varac.3,0.18 min. spacing of varChannel & hvtp
+r832,varac.4,0.25 min. spacing of varChannel & liconOnTap
+r833,varac.5,0.15 min. enclosure of polyonVarChannel by nwell
+r834,varac.6,0.27 min. spacing of taponVarChannel & difftapNotVarChannel
+r835,varac.7,nwell overlapping varacChannel must not overlap p+ diff
+r836,viatop.1,viatop should be rectangular
+r837,viatop.1,0.42 min. width of viatop
+r838,viatop.1,0.42 max. length of viatop
+r839,viatop.2,0.42 min. spacing/notch of viatop
+r840,viatop.3,Only min square ViaTop's are allowed
+r841,viatop.4,0.29 min. enclosure of viatop by met5
+r842,viatop.4,viatop must be enclosed by met5
+r843,viatop.5,ViaTop must not be placed over Pad
+r844,viatop.6,10.00 min. spacing of viatop to pad
+r845,viatop.7,viatop connected to gate must be connected to antenna diode
+r846,photo.11,0.215 min/max enclosure of tap by nwell inside photoDiode
+r847,via2.1d,"via size inside module cut must be 0.200, 0.280, 1.200, OR 1.500"
+r848,via2.1a,rectVIA2noMT should be rectangular
+r849,via2.1a,0.2 min. width of rectVIA2noMT
+r850,via2.1a,0.2 max. length of rectVIA2noMT
+r851,via2.2,0.2 min. spacing/notch of via2
+r852,via2.3,0.2 min. width of ring-shaped via2
+r853,via2.3,0.205 max. width of ring-shaped via2
+r854,via2.3,ring-shaped via2 must be enclosed by SEALID
+r855,via2.4,0.04 min. enclosure of via2 by met2
+r856,via2.4,via2 must be enclosed by met2
+r857,via2.4a,0.14 min. enclosure of rectVIA2Big by met2
+r858,via2.4a,rectVIA2Big must be enclosed by met2
+r859,via2.5,0.085 min. enclosure of adj. sides of via2 by met2
+r860,m3.1,0.3 min. width of met3
+r861,m3.2,0.3 min. spacing/notch of met3
+r862,m3.4,0.065 min. enclosure of via2 by met3
+r863,m3.4,via2 must be enclosed by met3
+r864,m3.6,0.24 min. area of met3
+r865,m3.3d,0.4 min. spacing between huge met3 and normal met3
+r866,m3.3c,0.4 min. spacing/notch of huge met3+nearby met3
+r867,via3.1,rectVIA3noMT should be rectangular
+r868,via3.1,0.2 min. width of rectVIA3noMT
+r869,via3.1,0.2 max. length of rectVIA3noMT
+r870,via3.1a,via size inside module cut must be 0.200 OR 0.800
+r871,via3.2,0.2 min. spacing/notch of via3
+r872,via3.3,0.2 min. width of ring-shaped via3
+r873,via3.3,0.205 max. width of ring-shaped via3
+r874,via3.3,ring-shaped via3 must be enclosed by SEALID
+r875,via3.4,0.06 min. enclosure of non-ring via3 by met3
+r876,via3.4,non-ring via3 must be enclosed by met3
+r877,via3.5,0.09 min. enclosure of adj. sides of via3 by met3
+r878,m4.1,0.3 min. width of met4
+r879,m4.2,0.3 min. spacing/notch of met4
+r880,m4.3,0.065 min. enclosure of via3 by met4
+r881,m4.3,via3 must be enclosed by met4
+r882,m4.4a,0.24 min. area of met4
+r883,m4.5b,0.4 min. spacing between huge met4 and normal met4
+r884,m4.5a,0.4 min. spacing/notch of huge met4+nearby met4
+r885,via4.1,non-ring via4 should be rectangular
+r886,via4.1,0.8 min. width of non-ring via4
+r887,via4.1,0.8 max. length of non-ring via4
+r888,via4.2,0.8 min. spacing/notch of via4
+r889,via4.3,0.8 min. width of ring-shaped via4
+r890,via4.3,0.805 max. width of ring-shaped via4
+r891,via4.3,ring-shaped via4 must be enclosed by SEALID
+r892,via4.4,0.19 min. enclosure of non-ring via4 by met4
+r893,via4.4,non-ring via4 must be enclosed by met4
+r894,m5.1,1.6 min. width of met5
+r895,m5.2,1.6 min. spacing/notch of met5
+r896,m5.3,0.31 min. enclosure of via4 by met5
+r897,m5.3,via4 must be enclosed by met5
+r898,m5.4,4 min. area of met5
+r899,pad.2,1.27 min. spacing/notch of pad
+r900,pad.3,hugepad with area less than 30000.0 not allowed
+r901,denmos.1,1.055 min. width of gate of Drain Extended nFET
+r902,denmos.2,0.28 min. width of deNFetSource not overlapping poly
+r903,denmos.3,0.925 min. width of deNFetSource overlapping poly
+r904,denmos.4,0.17 min. width of drain  of Drain Extended nFET
+r905,denmos.5,min/max extension between de_nFET_source over nwell 0.225
+r906,denmos.6,min/max spacing  between de_nFET_source and de_nFET_drain 1.585
+r907,denmos.7,min channel width 5.000
+r908,denmos.8,90 degree angles are not permitted for nwell over poly
+r909,denmos.10,0.66 min. enclosure of drain  of Drain Extended nFET by nwell
+r910,denmos.11,0.86 min. spacing of ptap & nwellOVRdeNFetDrain
+r911,denmos.12,2.4 min. spacing of nwellOVRdeNFetDrain
+r912,denmos.13,0.13 min. enclosure of source of Drain Extended nFET by nsdm
+r913,denmos.13,source of Drain Extended nFET must be enclosed by nsdm
+r915,depmos.1,1.05 min. width of gate of Drain Extended pFET
+r916,depmos.2,0.28 min. width of dePFetSourceNotpoly
+r917,depmos.3,0.92 min. width of dePFetSource  overlapping poly
+r918,depmos.4,0.17 min. width of drain of Drain Extended pFET
+r919,depmos.5,min/max extension between de_pFET_source beyond nwell 0.260
+r920,depmos.6,min/max spacing  between de_pFET_source and de_pFET_drain 1.190
+r921,depmos.7,min channel width 5.000
+r922,depmos.8,90 degree angles are not permitted for nwellhole over poly
+r923,pwde.6,1.00 min. enclosure of pwde_uhvi by dnwell_uhvi
+r924,pwbm.5,0.84 min. spacing of pwbm_holes
+r925,depmos.12,0.13 min. enclosure of source of Drain Extended pFET by psdm
+r926,depmos.12,source of Drain Extended pFET must be enclosed by psdm
+r927,depmos.13,pvhv_depmos13 must be enclosed by moduleCutAREA
+r928,uhvi.6,UHVI must enclose dnwell
+r929,uhvi.2,poly must not straddle uhvi
+r930,extd.3,deFetPoly must overlap polyGap
+r931,uhvi.3,pwbmNotLOWVTID must be enclosed by uhvi
+r932,pwres.2,PwresDnw should be rectangular
+r933,pwres.2,2.65 min. width of PwresDnw
+r934,pwres.2,2.65 max. width of PwresDnw
+r935,pwres.2,26.5 min. length of PwresDnw
+r936,pwres.2,265 max. length of PwresDnw
+r937,pwres.5,pwres Tap to nwell spacing must be 0.220
+r938,pwres.6,0.53 min. width of PwresTerm
+r939,pwres.6,Exceeds allowed width of pwell res tap
+r940,pwres.7a,Tap in pwell must enclose 12 licon1
+r941,pwres.7b,Tap in pwell must enclose 12 mcon
+r942,pwres.8a,poly must not overlap PwresDnw
+r943,pwres.8b,diff must not overlap PwresDnw
+r944,pwres.9,Nwell around pwell res must have strapped tap with metal
+r945,pwres.11,Pwell res must abut nwell edges on opposite sides
+r946,pwres.10,Pwell res must abut 2 pwres_terminal on opposite sides
+r947,rfdiode.1,non-manhattan RFDIODEID edge
+r948,rfdiode.2,areaid.re must be coincident with nwell for the rf nwell diode
+r949,rfdiode.3,areaid.re must be coincident with inner nwell ring edge for rf pwell-deep nwell diode
+r950,nsm.1,3 min. width of nsm
+r951,nsm.2,4 min. spacing/notch of nsm
+r952,nsm.3,1 min. spacing of diff_not_NSM3_exempt & nsm OR NSMmk
+r953,nsm.3,diff_not_NSM3_exempt must not overlap nsm OR NSMmk
+r954,nsm.3,1 min. spacing of tap_not_NSM3_exempt & nsm OR NSMmk
+r955,nsm.3,tap_not_NSM3_exempt must not overlap nsm OR NSMmk
+r956,nsm.3,1 min. spacing of fomDummyDRC_not_NSM3_exempt & nsm OR NSMmk
+r957,nsm.3,fomDummyDRC_not_NSM3_exempt must not overlap nsm OR NSMmk
+r958,nsm.3,1 min. spacing of FOMmk_not_NSM3_exempt & nsm OR NSMmk
+r959,nsm.3,FOMmk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r960,nsm.3,1 min. spacing of poly_not_NSM3_exempt & nsm OR NSMmk
+r961,nsm.3,poly_not_NSM3_exempt must not overlap nsm OR NSMmk
+r962,nsm.3,1 min. spacing of P1Mmk_not_NSM3_exempt & nsm OR NSMmk
+r963,nsm.3,P1Mmk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r964,nsm.3,1 min. spacing of li1_not_NSM3_exempt & nsm OR NSMmk
+r965,nsm.3,li1_not_NSM3_exempt must not overlap nsm OR NSMmk
+r966,nsm.3,1 min. spacing of LI1Mmk_not_NSM3_exempt & nsm OR NSMmk
+r967,nsm.3,LI1Mmk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r968,nsm.3,1 min. spacing of met1_not_NSM3_exempt & nsm OR NSMmk
+r969,nsm.3,met1_not_NSM3_exempt must not overlap nsm OR NSMmk
+r970,nsm.3,1 min. spacing of MM1mk_not_NSM3_exempt & nsm OR NSMmk
+r971,nsm.3,MM1mk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r972,nsm.3,1 min. spacing of met2_not_NSM3_exempt & nsm OR NSMmk
+r973,nsm.3,met2_not_NSM3_exempt must not overlap nsm OR NSMmk
+r974,nsm.3,1 min. spacing of MM2Mk_not_NSM3_exempt & nsm OR NSMmk
+r975,nsm.3,MM2Mk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r976,nsm.3,1 min. spacing of met3_not_NSM3_exempt & nsm OR NSMmk
+r977,nsm.3,met3_not_NSM3_exempt must not overlap nsm OR NSMmk
+r978,nsm.3,1 min. spacing of MM3mk_not_NSM3_exempt & nsm OR NSMmk
+r979,nsm.3,MM3mk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r980,nsm.3,1 min. spacing of met4_not_NSM3_exempt & nsm OR NSMmk
+r981,nsm.3,met4_not_NSM3_exempt must not overlap nsm OR NSMmk
+r982,nsm.3,1 min. spacing of MM4mk_not_NSM3_exempt & nsm OR NSMmk
+r983,nsm.3,MM4mk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r984,nsm.3,1 min. spacing of met5_not_NSM3_exempt & nsm OR NSMmk
+r985,nsm.3,met5_not_NSM3_exempt must not overlap nsm OR NSMmk
+r986,nsm.3,1 min. spacing of MM5mk_not_NSM3_exempt & nsm OR NSMmk
+r987,nsm.3,MM5mk_not_NSM3_exempt must not overlap nsm OR NSMmk
+r988,nsm.3a,3 min. enclosure of diff_not_NSM3a_exempt by frameBndr
+r989,nsm.3a,3 min. enclosure of tap_not_NSM3a_exempt by frameBndr
+r990,nsm.3a,3 min. enclosure of fomDummyDRC_not_NSM3a_exempt by frameBndr
+r991,nsm.3a,3 min. enclosure of FOMmk_not_NSM3a_exempt by frameBndr
+r992,nsm.3a,3 min. enclosure of poly_not_NSM3a_exempt by frameBndr
+r993,nsm.3a,3 min. enclosure of P1Mmk_not_NSM3a_exempt by frameBndr
+r994,nsm.3a,3 min. enclosure of li1_not_NSM3a_exempt by frameBndr
+r995,nsm.3a,3 min. enclosure of LI1Mmk_not_NSM3a_exempt by frameBndr
+r996,nsm.3a,3 min. enclosure of met1_not_NSM3a_exempt by frameBndr
+r997,nsm.3a,3 min. enclosure of MM1mk_not_NSM3a_exempt by frameBndr
+r998,nsm.3a,3 min. enclosure of met2_not_NSM3a_exempt by frameBndr
+r999,nsm.3a,3 min. enclosure of MM2Mk_not_NSM3a_exempt by frameBndr
+r1000,nsm.3a,3 min. enclosure of met3_not_NSM3a_exempt by frameBndr
+r1001,nsm.3a,3 min. enclosure of MM3mk_not_NSM3a_exempt by frameBndr
+r1002,nsm.3a,3 min. enclosure of met4_not_NSM3a_exempt by frameBndr
+r1003,nsm.3a,3 min. enclosure of MM4mk_not_NSM3a_exempt by frameBndr
+r1004,nsm.3a,3 min. enclosure of met5_not_NSM3a_exempt by frameBndr
+r1005,nsm.3a,3 min. enclosure of MM5mk_not_NSM3a_exempt by frameBndr
+r1006,nsm.3b,3 min. spacing of diff_not_NSM3b_exempt & dieCut
+r1007,nsm.3b,3 min. spacing of tap_not_NSM3b_exempt & dieCut
+r1008,nsm.3b,3 min. spacing of fomDummyDRC_not_NSM3b_exempt & dieCut
+r1009,nsm.3b,3 min. spacing of FOMmk_not_NSM3b_exempt & dieCut
+r1010,nsm.3b,3 min. spacing of poly_not_NSM3b_exempt & dieCut
+r1011,nsm.3b,3 min. spacing of P1Mmk_not_NSM3b_exempt & dieCut
+r1012,nsm.3b,3 min. spacing of li1_not_NSM3b_exempt & dieCut
+r1013,nsm.3b,3 min. spacing of LI1Mmk_not_NSM3b_exempt & dieCut
+r1014,nsm.3b,3 min. spacing of met1_not_NSM3b_exempt & dieCut
+r1015,nsm.3b,3 min. spacing of MM1mk_not_NSM3b_exempt & dieCut
+r1016,nsm.3b,3 min. spacing of met2_not_NSM3b_exempt & dieCut
+r1017,nsm.3b,3 min. spacing of MM2Mk_not_NSM3b_exempt & dieCut
+r1018,nsm.3b,3 min. spacing of met3_not_NSM3b_exempt & dieCut
+r1019,nsm.3b,3 min. spacing of MM3mk_not_NSM3b_exempt & dieCut
+r1020,nsm.3b,3 min. spacing of met4_not_NSM3b_exempt & dieCut
+r1021,nsm.3b,3 min. spacing of MM4mk_not_NSM3b_exempt & dieCut
+r1022,nsm.3b,3 min. spacing of met5_not_NSM3b_exempt & dieCut
+r1023,nsm.3b,3 min. spacing of MM5mk_not_NSM3b_exempt & dieCut
+r1024,ncm.x.3,"ncm_CORE not tech_CD must not overlap ""ndiff"" in periphery"
+r1025,ncm.1,0.38 min. width of ncmPeri
+r1026,ncm.2a,0.38 min. spacing/notch of ncmPeri
+r1027,ncm.7,0.265 min. area of ncm
+r1028,ncm.8,0.265 min. area of ncmHoles
+r1029,ncm.c8,0.235 min. enclosure of PDIFF by ncm_CORE not tech_CD
+r1030,ncm.c9,0.235 min. spacing of ncm_CORE not tech_CD & ndiff
+r1031,ncm.c9,ncm_CORE not tech_CD must not overlap ndiff
+r1032,ncm.c10,0.38 min. spacing of nwellOutCore & ncm_CORE not tech_CD
+r1033,ldntm.c1,0.7 min. width of ldntmCore
+r1034,ldntm.c2,0.7 min. spacing/notch of ldntmCore
+r1035,ldntm.c3,enclosure of ndiff by ldntm must be more than  0.180
+r1036,ldntm.c4,0.125 min. enclosure of nFet by ldntmCore
+r1037,ldntm.c5,ldntm not allowed outside areaid.ce
+r1038,ldntm.c6,0.18 min. spacing of ldntmCoreExempt & pdiff
+r1039,urpm.1a,1.27 min. width of urpm
+r1046,urpm.2,0.84 min. spacing/notch of urpm
+r1047,urpm.3,0.2 min. enclosure of precResistor by rpm
+r1048,rpm.3,precResistor must be enclosed by rpm
+r1049,rpm.4,0.11 min. enclosure of precResistor by psdm
+r1050,rpm.4,precResistor must be enclosed by psdm
+r1051,rpm.5,0.095 min. enclosure of precResistor by npc
+r1052,rpm.5,precResistor must be enclosed by npc
+r1053,rpm.6,0.2 min. spacing of rpm & nsdm
+r1054,rpm.6,rpm must not overlap nsdm
+r1055,rpm.7,0.2 min. spacing of rpm & poly
+r1056,rpm.8,poly must not straddle rpm
+r1057,rpm.9,0.185 min. spacing of precResistor & hvntm
+r1058,rpm.9,precResistor must not overlap hvntm
+r1059,rpm.10,2 min. spacing of rpmNotXmt & pwbm
+r1060,rpm.10,rpmNotXmt must not overlap pwbm
+r1061,hvntm.x.1,hvntm must be drawn inside hvi
+r1062,hvntm.1,0.7 min. width of hvntm_peri
+r1063,hvntm.2,0.7 min. spacing/notch of hvntm_peri
+r1064,hvntm.3,0.185 min. enclosure of ndiffInHviPeri by hvntm_peri
+r1065,hvntm.4,0.185 min. spacing of hvntm_peri & ndiffOutsideHvi
+r1066,hvntm.4,hvntm_peri must not overlap ndiffOutsideHvi
+r1067,hvntm.5,0.185 min. spacing of hvntm_peri & PDIFF_notENID
+r1068,hvntm.5,hvntm_peri must not overlap PDIFF_notENID
+r1069,hvntm.6a,0.185 min. spacing of hvntm_peri & PTAPnoButtDiff
+r1070,hvntm.6a,hvntm_peri must not overlap ptap
+r1071,hvntm.6b,hvntm_peri must not overlap diffpTapButtEdge_sz
+r1072,hvntm.7,0 min. enclosure of ESD_nwell_tap_hvi by hvntm_peri
+r1073,hvntm.7,ESD_nwell_tap_hvi must be enclosed by hvntm_peri
+r1074,hvntm.9,hvntm must not overlap COREID
+r1075,hvntm.10,hvntm must overlap hvi
+r1076,cfom.nikon,FOMmk in the nikon cross has the wrong polarity
+r1077,cfom.nikon,FOMmk is missing from the nikon cross in the layout.
+r1078,cdnm.nikon,DNMmk in the nikon cross has the wrong polarity
+r1079,cdnm.nikon,DNMmk is missing from the nikon cross in the layout.
+r1080,cnwm.nikon,NWMmk in the nikon cross has the wrong polarity
+r1081,cnwm.nikon,NWMmk is missing from the nikon cross in the layout.
+r1082,chvtpm.nikon,HVTPMmk in the nikon cross has the wrong polarity
+r1083,chvtpm.nikon,HVTPMmk is missing from the nikon cross in the layout.
+r1084,clvtnm.nikon,LVTNMmk in the nikon cross has the wrong polarity
+r1085,clvtnm.nikon,LVTNMmk is missing from the nikon cross in the layout.
+r1086,clvom.nikon,LVOMmk in the nikon cross has the wrong polarity
+r1087,clvom.nikon,LVOMmk is missing from the nikon cross in the layout.
+r1088,cp1m.nikon,P1Mmk in the nikon cross has the wrong polarity
+r1089,cp1m.nikon,P1Mmk is missing from the nikon cross in the layout.
+r1090,cntm.nikon,NTMmk in the nikon cross has the wrong polarity
+r1091,cntm.nikon,NTMmk is missing from the nikon cross in the layout.
+r1092,chvntm.nikon,HVNTMmk in the nikon cross has the wrong polarity
+r1093,chvntm.nikon,HVNTMmk is missing from the nikon cross in the layout.
+r1094,cldntm.nikon,LDNTMmk in the nikon cross has the wrong polarity
+r1095,cldntm.nikon,LDNTMmk is missing from the nikon cross in the layout.
+r1096,cnpc.nikon,NPCMmk in the nikon cross has the wrong polarity
+r1097,cnpc.nikon,NPCMmk is missing from the nikon cross in the layout.
+r1098,cnsdm.nikon,NSDMmk in the nikon cross has the wrong polarity
+r1099,cnsdm.nikon,NSDMmk is missing from the nikon cross in the layout.
+r1100,cpsdm.nikon,PSDMmk in the nikon cross has the wrong polarity
+r1101,cpsdm.nikon,PSDMmk is missing from the nikon cross in the layout.
+r1102,clicm1.nikon,LICM1mk in the nikon cross has the wrong polarity
+r1103,clicm1.nikon,LICM1mk is missing from the nikon cross in the layout.
+r1104,cli1m.nikon,LI1Mmk in the nikon cross has the wrong polarity
+r1105,cli1m.nikon,LI1Mmk is missing from the nikon cross in the layout.
+r1106,cctm1.nikon,CTM1mk in the nikon cross has the wrong polarity
+r1107,cctm1.nikon,CTM1mk is missing from the nikon cross in the layout.
+r1108,cmm1.nikon,MM1mk in the nikon cross has the wrong polarity
+r1109,cmm1.nikon,MM1mk is missing from the nikon cross in the layout.
+r1110,cviam.nikon,VIMmk in the nikon cross has the wrong polarity
+r1111,cviam.nikon,VIMmk is missing from the nikon cross in the layout.
+r1112,cmm2.nikon,MM2mk in the nikon cross has the wrong polarity
+r1113,cmm2.nikon,MM2mk is missing from the nikon cross in the layout.
+r1114,cnsm.nikon,NSMmk in the nikon cross has the wrong polarity
+r1115,cnsm.nikon,NSMmk is missing from the nikon cross in the layout.
+r1116,cpdm.nikon,PDMmk in the nikon cross has the wrong polarity
+r1117,cpdm.nikon,PDMmk is missing from the nikon cross in the layout.
+r1118,cviam2.nikon,VIM2mk in the nikon cross has the wrong polarity
+r1119,cviam2.nikon,VIM2mk is missing from the nikon cross in the layout.
+r1120,cmm3.nikon,MM3mk in the nikon cross has the wrong polarity
+r1121,cmm3.nikon,MM3mk is missing from the nikon cross in the layout.
+r1122,cviam3.nikon,VIM3mk in the nikon cross has the wrong polarity
+r1123,cviam3.nikon,VIM3mk is missing from the nikon cross in the layout.
+r1124,cmm4.nikon,MM4mk in the nikon cross has the wrong polarity
+r1125,cmm4.nikon,MM4mk is missing from the nikon cross in the layout.
+r1126,cviam4.nikon,VIM4mk in the nikon cross has the wrong polarity
+r1127,cviam4.nikon,VIM4mk is missing from the nikon cross in the layout.
+r1128,cmm5.nikon,MM5mk in the nikon cross has the wrong polarity
+r1129,cmm5.nikon,MM5mk is missing from the nikon cross in the layout.
+r1130,crpm.nikon,RPMmk in the nikon cross has the wrong polarity
+r1131,crpm.nikon,RPMmk is missing from the nikon cross in the layout.
+r1132,areaid.1,Unapproved cells contain areaid.ce layer
+r1133,vpp.5,"1.5 min spacing of (li1, poly, or met1/2) overlapping cap.dg to other li1"
+r1134,vpp.5,"1.5 min spacing of (li1, poly, or met1/2) overlapping cap.dg to other poly"
+r1135,vpp.5,"1.5 min spacing of (li1, poly, or met1/2) overlapping cap.dg to other met1"
+r1136,vpp.5,"1.5 min spacing of (li1, poly, or met1/2) overlapping cap.dg to other met2"
+r1137,vpp.5a,0.25 max PD ratio of met3.dg to capacitor.dg
+r1138,vpp.5b,0.3 max PD ratio of met4.dg to capacitor.dg
+r1139,vpp.5c,0.4 max PD ratio of met5.dg to capacitor.dg
+r1140,vpp.10,capacitors are not allow to overlap
+r1141,vpp.11,0.87 Minimum vpp_over_MOSCAP density over related gate
+r1142,vpp.12a,capacitor in sky130rf2_xcmvpp8p6x7p9_m3_lim5shield must overlap only 9.0 met4 2.01x2.01 polygons
+r1143,vpp.12b,capacitor in sky130rf2_xcmvpp11p5x11p7_m3_lim5shield must overlap only 16.0 met4 2.01x2.01 polygons
+r1144,vpp.12c,capacitor in sky130rf2_xcmvpp4p4x4p6_m3_lim5shield must overlap only 4.0 met4 1.5x1.5 polygons
+r1145,vpp.1,1.43 min. width of capacitor
+r1146,vpp.1b,11.35 max. width of vpp_1b_err
+r1147,vpp.1c,vppM3shieldA should be rectangular
+r1148,vpp.1c,3.88 min. width of vppM3shieldA
+r1149,vpp.1c,3.88 max. length of vppM3shieldA
+r1150,vpp.3,vpp3NotXmt must not overlap poly
+r1151,vpp.4,capacitor must not straddle nwell
+r1152,vpp.4,capacitor must not straddle dnwell
+r1153,vpp.8,1.5 min. enclosure of capacitor by nwell
+r1154,vpp.9,1.5 min. spacing of capacitor & nwell
+r1155,vhvi.vhv.5,diffusion not in drain-extended devices must not be connected to VHVSrcDrn
+r1156,vhvi.1,0.02 min. width of vhvi
+r1157,vhvi.2,vhvi must not overlap areaid.ce
+r1158,vhvi.3,VHVGate must overlap hvi
+r1159,vhvi.4,poly connected to same net as VHVsourcedrain must be tagged by vhvi
+r1160,vhvi.5,vhvi must not straddle VHVSrcDrn
+r1161,vhvi.6,vhvi overlapping VHVSrcDrn must not overlap poly
+r1162,vhvi.7,vhvi must not straddle VHVPoly
+r1163,vhvi.8,11.24 min. spacing of VHVnwell & VHVnwellNoConn
+r1164,hv.diff.1a,Min space between hv_srcdrn and hv_srcdrn/diff for edges not butting tap is 0.3
+r1165,hv.diff.1b,0.3 min. spacing of diffResButtHV & diff
+r1166,hv.diff.1b,0.3 min. spacing of diffDiodeHV & diff
+r1167,hv.diff.2,0.43 min. spacing of nwellConHVdiff & ndiff (not for source of drain extended device)
+r1168,hv.diff.3a,0.55 min. spacing of HVnSrcDrn & nwell
+r1169,hv.diff.3b,0.55 min. spacing of diffResButtHV & nwell
+r1170,hv.diff.3b,0.55 min. spacing of diffDiodeHV & nwell
+r1171,hv.poly.1,hv poly can be drawn over only one diff
+r1172,hv.poly.1,hvPolyExmpt must not straddle nwell
+r1173,hv.poly.1,hvpoly cannot cross nwell boundary (except nwell hole edge
+r1174,hv.poly.2,0.3 min. spacing of hvPolyExmpt & unrelDiff
+r1175,hv.poly.3,0.55 min. spacing of hvPolyExmpt2 & nwell
+r1176,hv.poly.4,0.3 min. enclosure of hvPolyExmpt2 by nwell
+r1177,hv.poly.6a,0.16 min extension of poly beyond hv gate is
+r1178,hv.poly.6b,0.16 min extension of hvpoly beyond gate
+r1179,x.22,Floating poly_float or poly_tie text not over poly
+r1180,x.22,poly marked with poly_float not floating
+r1181,x.22,Nets on poly is floating
+r1182,x.22,Metal on poly is texted as both tied and floating (IP Level)
+r1183,x.22,Floating li1_float or li1_tie text not over li1
+r1184,x.22,li1 marked with li1_float not floating
+r1185,x.22,Nets on li1 is floating
+r1186,x.22,Metal on li1 is texted as both tied and floating (IP Level)
+r1187,x.22,Floating m1_float or m1_tie text not over met1
+r1188,x.22,met1 marked with m1_float not floating
+r1189,x.22,Nets on met1 is floating
+r1190,x.22,Metal on met1 is texted as both tied and floating (IP Level)
+r1191,x.22,Floating m2_float or m2_tie text not over met2
+r1192,x.22,met2 marked with m2_float not floating
+r1193,x.22,Nets on met2 is floating
+r1194,x.22,Metal on met2 is texted as both tied and floating (IP Level)
+r1195,x.22,Floating m3_float or m3_tie text not over met3
+r1196,x.22,met3 marked with m3_float not floating
+r1197,x.22,Nets on met3 is floating
+r1198,x.22,Metal on met3 is texted as both tied and floating (IP Level)
+r1199,x.22,Floating m4_float or m4_tie text not over met4
+r1200,x.22,met4 marked with m4_float not floating
+r1201,x.22,Nets on met4 is floating
+r1202,x.22,Metal on met4 is texted as both tied and floating (IP Level)
+r1203,x.22,Floating m5_float or m5_tie text not over met5
+r1204,x.22,met5 marked with m5_float not floating
+r1205,x.22,Nets on met5 is floating
+r1206,x.22,Metal on met5 is texted as both tied and floating (IP Level)
+r1207,x.24,condiode label must be in isolated pwell
+r1208,pad.20,"met1 shielding pad, must not float"
+r1209,pad.20,"met1 shielding pad, must not connected to pad"
+r1210,m1.x.1,<70% metal density when 700x700 window 100% covered by mm1.waffledrop
+r1211,m1.x.1,<65% metal density when 700x700 window 80-100% covered by mm1.waffledrop
+r1212,m1.x.1,<60% metal density when 700x700 window 60-80% covered by mm1.waffledrop
+r1213,m1.x.1,<50% metal density when 700x700 window 50-60% covered by mm1.waffledrop
+r1214,m1.x.1,<40% metal density when 700x700 window 40-50% covered by mm1.waffledrop
+r1215,m1.x.1,<30% metal density when 700x700 window 30-40% covered by mm1.waffledrop
+r1216,m2.x.1,<70% metal density when 700x700 window 100% covered by mm2.waffledrop
+r1217,m2.x.1,<65% metal density when 700x700 window 80-100% covered by mm2.waffledrop
+r1218,m2.x.1,<60% metal density when 700x700 window 60-80% covered by mm2.waffledrop
+r1219,m2.x.1,<50% metal density when 700x700 window 50-60% covered by mm2.waffledrop
+r1220,m2.x.1,<40% metal density when 700x700 window 40-50% covered by mm2.waffledrop
+r1221,m2.x.1,<30% metal density when 700x700 window 30-40% covered by mm2.waffledrop
+r1222,m3.x.1,<70% metal density when 700x700 window 100% covered by mm3.waffledrop
+r1223,m3.x.1,<65% metal density when 700x700 window 80-100% covered by mm3.waffledrop
+r1224,m3.x.1,<60% metal density when 700x700 window 60-80% covered by mm3.waffledrop
+r1225,m3.x.1,<50% metal density when 700x700 window 50-60% covered by mm3.waffledrop
+r1226,m3.x.1,<40% metal density when 700x700 window 40-50% covered by mm3.waffledrop
+r1227,m3.x.1,<30% metal density when 700x700 window 30-40% covered by mm3.waffledrop
+r1228,m4.x.1,<70% metal density when 700x700 window 100% covered by mm4.waffledrop
+r1229,m4.x.1,<65% metal density when 700x700 window 80-100% covered by mm4.waffledrop
+r1230,m4.x.1,<60% metal density when 700x700 window 60-80% covered by mm4.waffledrop
+r1231,m4.x.1,<50% metal density when 700x700 window 50-60% covered by mm4.waffledrop
+r1232,m4.x.1,<40% metal density when 700x700 window 40-50% covered by mm4.waffledrop
+r1233,m4.x.1,<30% metal density when 700x700 window 30-40% covered by mm4.waffledrop
+r1234,metblk.1,0.14 min. spacing of met1 & met1Block
+r1235,metblk.1,met1 must not overlap met1Block
+r1236,metblk.3,0.145 min. spacing of met1Block & met1Routing
+r1237,metblk.1,0.14 min. spacing of met2 & met2Block
+r1238,metblk.1,met2 must not overlap met2Block
+r1239,metblk.3,0.145 min. spacing of met2Block & met2Routing
+r1240,metblk.1,0.3 min. spacing of met3 & met3Block
+r1241,metblk.1,met3 must not overlap met3Block
+r1242,metblk.3,0.305 min. spacing of met3Block & met3Routing
+r1243,metblk.1,0.3 min. spacing of met4 & met4Block
+r1244,metblk.1,met4 must not overlap met4Block
+r1245,metblk.3,0.305 min. spacing of met4Block & met4Routing
+r1246,metblk.1,1.6 min. spacing of met5 & met5Block
+r1247,metblk.1,met5 must not overlap met5Block
+r1248,metblk.3,1.605 min. spacing of met5Block & met5Routing
+r1249,metblk.2,0.17 min. spacing of li1 & li1Block
+r1250,metblk.2,li1 must not overlap li1Block
+r1251,metblk.4,0.17 min. spacing of li1Block & li1Routing
+r1252,metblk.6,prBoundary.boundary not allowed in layout
+r1253,metblk.7,poly.boundary not allowed in layout
+r1254,metblk.7,diff.boundary not allowed in layout
+r1255,metblk.7,tap.boundary not allowed in layout
+r1256,fomdmy.1,0.5 min. width of fomDummyDRC
+r1257,fomdmy.1a,max width of fom dummy 25.0
+r1258,fomdmy.2,0.4 min. spacing/notch of fomDummyDRC
+r1259,fomdmy.4,1 min. spacing of fomDummyDRC & SEALID
+r1260,fomdmy.4,fomDummyDRC must not overlap SEALID
+r1261,fomdmy.6,3.25 min. spacing of fomDummyDRC & fuse
+r1262,fomdmy.6,fomDummyDRC must not overlap fuse
+r1263,fomdmy.7,0.13 min. spacing of fomDummyDRC & nsdm
+r1264,fomdmy.7,fomDummyDRC must not overlap nsdm
+r1265,fomdmy.7,0.13 min. spacing of fomDummyDRC & psdm
+r1266,fomdmy.7,fomDummyDRC must not overlap psdm
+r1267,fomdmy.8,0.18 min. enclosure of fomDummyDRC by nwell
+r1268,fomdmy.9,0.34 min. spacing of fomDummyDRC & nwell
+r1269,fomdmy.10,0.43 min. enclosure of fomDummyDRC by HVnwell
+r1270,fomdmy.11,0.33 min. spacing of fomDummyDRC & HVnwell
+r1271,fomdmy.12,0.5 min. enclosure of fomDummyDRC by FRAMEID
+r1272,fomdmy.13,0.5 min. spacing of fomDummyDRC & dieCut
+r1273,rdl.1,10 min. width of rdl
+r1274,rdl.2,10 min. spacing/notch of rdl
+r1275,rdl.2,10 min. spacing/notch of rdl
+r1276,rdl.3,10.75 min. enclosure of pad by nonCSPRDL
+r1277,rdl.4,15 min. enclosure of rdl by SEALnoHoles_ORIGIN
+r1278,rdl.5,(rdl OR ccu1m.mk) in scribe must not overlap areaid.ft.
+r1279,rdl.6,19.66 min. spacing of nonCSPRDL & pad
+r1280,mf.1&2,metal4 fuse should be rectangular
+r1281,mf.1&2,0.8 min. width of metal4 fuse
+r1282,mf.1&2,0.8 max. width of metal4 fuse
+r1283,mf.1&2,7.2 min. length of metal4 fuse
+r1284,mf.1&2,7.2 max. length of metal4 fuse
+r1285,mf.3,2.75 min. spacing of target
+r1286,mf.5,0.83 max extension of met4 beyond fuse boundary
+r1287,mf.22,1.96 min. spacing of METxContact
+r1288,mf.6,3.295 min. spacing of target & met1
+r1289,mf.6,target must not overlap met1
+r1290,mf.7,3.295 min. spacing of target & li1
+r1291,mf.7,target must not overlap li1
+r1292,mf.8,2.655 min. spacing of target & poly
+r1293,mf.8,target must not overlap poly
+r1294,mf.9,2.635 min. spacing of target & tap
+r1295,mf.9,target must not overlap tap
+r1296,mf.10,3.245 min. spacing of target & diff
+r1297,mf.10,target must not overlap diff
+r1298,mf.11,3.315 min. spacing of target & nwell
+r1299,mf.11,target must not overlap nwell
+r1300,mf.19,3.295 min. spacing of target & met2
+r1301,mf.19,target must not overlap met2
+r1302,mf.12,mf.12: 2.40x0.50 size of a fuse_shield
+r1303,mf.4,3.295 min. spacing of target & METnotFUSE
+r1304,mf.13,2.195 min. spacing of target & fuseShield
+r1305,mf.14,max shield to target spacing
+r1306,mf.15a,fuseShield is allowed for non_isolated fuse edges ONLY
+r1307,mf.15b,fuseShield is required between peri metal and non isolated fuse edges
+r1308,mf.18,0.6 min&max space between fuse_shield and met4
+r1309,mf.20,only one fuse allowed per metal line
+r1310,mf.24,3.295 min. spacing of target & met5
+r1311,mf.24,target must not overlap met5
+r1312,pad.1,padPL pcells should be used for bondpad
+r1313,pad.1,padPL pcells should have text plastic to be used for bondpad
+r1314,pad.16,Hermetic package pads are not supported inthis flow
+r1315,pad.4/4a,2.7 min. enclosure of bondpadNormal by met5
+r1316,pad.5,Zero Spacing between lower level met4 ring and Advanced Bondpad
+r1317,pad.6,5 min. spacing of smallGroupingY & met5OutsidePad
+r1318,pad.7,10 min. spacing of largeGroupingY & met5OutsidePad
+r1319,pad.6,5 min. spacing of smallGroupingX & met5OutsidePad
+r1320,pad.7,10 min. spacing of largeGroupingX & met5OutsidePad
+r1321,pad.6,5 min. spacing of smallGroupingY & met4OutsidePad
+r1322,pad.7,10 min. spacing of largeGroupingY & met4OutsidePad
+r1323,pad.6,5 min. spacing of smallGroupingX & met4OutsidePad
+r1324,pad.7,10 min. spacing of largeGroupingX & met4OutsidePad
+r1325,pad.10,bondpadNormalNoprobe must not overlap met4
+r1326,pad.11,Bondpad should not have 90 degree corner
+r1327,pad.11,Bondpad should have 45 degree corner
+r1328,pad.11,Bondpad should have only 4 45 degree corner
+r1329,pad.11,Bondpad should have only 4 orthogonal edges
+r1330,pad.12,7.0 Min length of 45 degree bevel on Bond pad
+r1331,pad.13,8.8 Max length of 45 degree bevel on Bond pad
+r1332,pad.14,16.99 min. enclosure of anyPadPlastic by solid_seal
+r1333,pad.15,500.0 Max spacing between bondpad opening and edge of scribe line(outer end of seal ring)
+r1334,pad.17,1.5 min. spacing/notch of met1UndPadMetOnly
+r1335,pad.18,0.14 min width of met1 under pad metal
+r1336,pad.17,1.5 min. spacing/notch of met2UndPadMetOnly
+r1337,pad.18,0.14 min width of met2 under pad metal
+r1338,pad.17,1.5 min. spacing/notch of met3UndPadMetOnly
+r1339,pad.18,0.3 min width of met3 under pad metal
+r1340,pad.19,25 max width of met1 under pad metal
+r1341,pad.19,25 max width of met2 under pad metal
+r1342,pad.19,6 max width of met3 under pad metal
+r1343,pad.2.1,60 min width  of padPLFP in x direction
+r1344,pad.3.1,60 min length of padPLFP in y direction
+r1345,pad.4.1,60 min width  of padPLSTG in x direction
+r1346,pad.5.1,60 min length of padPLSTG in y direction
+r1347,pad.6.1,60 min width  of padPLHP in x direction
+r1348,pad.6.1,60 min length of padPLHP in y direction
+r1349,pad.6.1a,58 min width  of padPLHPcu in x direction
+r1350,pad.6.1b,60 min length of padPLHPcu in y direction
+r1351,pad.6.1a/b,58x60 min dimensions of padPLHPcu which are not within 50 of other pad
+r1352,pad.7.1,50 min width  of padPLWLBI in x direction
+r1353,pad.8.1,60 min length of padPLWLBI in y direction
+r1354,pad.2/3.1,bondpadCuPillarSz should be rectangular
+r1355,pad.2/3.1,39 min. width of bondpadCuPillarSz
+r1356,pad.2/3.1,39 max. length of bondpadCuPillarSz
+r1357,pad.1.2,8 min space of padPLFP in x direction to padPLFP/HP/STG/WLBI
+r1358,pad.2.2,15 min space of padPLHPorg in x direction to padPLHP/STG/WLBI
+r1359,pad.2.2a,7 min space of padPLHPcu in x direction to padPLHPcu/STG/WLBI
+r1360,pad.3.2,50 min space of padPLWLBI in x direction to padPLSTG/WLBI
+r1361,pad.4.2,30 min space of padPLSTG in x direction to padPLSTG
+r1362,pad.9.1,150.0um Max Width/Length of bond pad
+r1363,pad.6.2,39.8 min. spacing of padCenterSTGinDieXy
+r1364,pad.6.2,39.8 min. spacing of padCenterSTGinDieYy
+r1365,pad.5.2.4,9 min. spacing of padSTGinDieXsp & bondPadSTG
+r1366,pad.7.2.1,284 min space of padPLSTG in x direction to adjacent scribe
+r1367,pad.7.2.2,200 min space of padPLFP  in x direction to adjacent scribe
+r1368,pad.7.2.2,200 min space of padPLWLBI in x direction to adjacent scribe
+r1369,cupad.1,5 min. width of pad opening inside inductor
+r1370,cupad.2,0 min. enclosure of pad opening inside inductor by pmm
+r1371,cupad.2,pad opening inside inductor must be enclosed by pmm
+r1372,cupad.3,2.7 min. enclosure of pad opening inside inductor by met5
+r1373,cupad.3,pad opening inside inductor must be enclosed by met5
+r1374,cupad.4,10.75 min. enclosure of pmm  inside inductor by rdl
+r1375,cupad.4,pmm  inside inductor must be enclosed by rdl
+r1376,scribe.5,Wide diff >= 10.0x10.0um within 150.0 of scribe junction
+r1377,scribe.5,Wide poly >= 10.0x10.0um within 150.0 of scribe junction
+r1378,scribe.5,Wide li1 >= 10.0x10.0um within 150.0 of scribe junction
+r1379,scribe.5,Wide met1 >= 10.0x10.0um within 150.0 of scribe junction
+r1380,scribe.5,Wide met2 >= 10.0x10.0um within 150.0 of scribe junction
+r1381,scribe.5,Wide met3 >= 10.0x10.0um within 150.0 of scribe junction
+r1382,scribe.5,Wide mcon >= 10.0x10.0um within 150.0 of scribe junction
+r1383,scribe.5,Wide licon1 >= 10.0x10.0um within 150.0 of scribe junction
+r1384,scribe.5,Wide via >= 10.0x10.0um within 150.0 of scribe junction
+r1385,scribe.5,Wide via2 >= 10.0x10.0um within 150.0 of scribe junction
+r1386,scribe.5,Wide met4 >= 10.0x10.0um within 150.0 of scribe junction
+r1387,scribe.5,Wide met5 >= 10.0x10.0um within 150.0 of scribe junction
+r1388,scribe.5,Wide via3 >= 10.0x10.0um within 150.0 of scribe junction
+r1389,scribe.5,Wide via4 >= 10.0x10.0um within 150.0 of scribe junction
+r1390,scribe.5,Wide mm1mk >= 10.0x10.0um within 150.0 of scribe junction
+r1391,scribe.5,Wide mm2mk >= 10.0x10.0um within 150.0 of scribe junction
+r1392,scribe.5,Wide mm3mk >= 10.0x10.0um within 150.0 of scribe junction
+r1393,scribe.5,Wide p1mmk >= 10.0x10.0um within 150.0 of scribe junction
+r1394,scribe.5,Wide fommk >= 10.0x10.0um within 150.0 of scribe junction
+r1395,scribe.5,Wide ctm1mk >= 10.0x10.0um within 150.0 of scribe junction
+r1396,scribe.5,Wide licm1mk >= 10.0x10.0um within 150.0 of scribe junction
+r1397,scribe.5,Wide li1mmk >= 10.0x10.0um within 150.0 of scribe junction
+r1398,scribe.5,Wide vimmk >= 10.0x10.0um within 150.0 of scribe junction
+r1399,scribe.5,Wide vim2mk >= 10.0x10.0um within 150.0 of scribe junction
+r1400,scribe.5,Wide mm4mk >= 10.0x10.0um within 150.0 of scribe junction
+r1401,scribe.5,Wide mm5mk >= 10.0x10.0um within 150.0 of scribe junction
+r1402,scribe.5,Wide vim3mk >= 10.0x10.0um within 150.0 of scribe junction
+r1403,scribe.5,Wide vim4mk >= 10.0x10.0um within 150.0 of scribe junction
+r1404,scribe.6a,pad inside frame or moduleCut without text label
+r1405,scribe.6d,mconOrVia must not overlap EUTESTPAD
+r1406,scribe.6e,EUTESTPAD must be enclosed by areaid module cut AND areaid etest
+r1407,scribe.7,nwell drawn layer cannot straddle areaid:ModuleCut
+r1408,scribe.7,diff drawn layer cannot straddle areaid:ModuleCut
+r1409,scribe.7,dnwell drawn layer cannot straddle areaid:ModuleCut
+r1410,scribe.7,tap drawn layer cannot straddle areaid:ModuleCut
+r1411,scribe.7,lvtn drawn layer cannot straddle areaid:ModuleCut
+r1412,scribe.7,hvtp drawn layer cannot straddle areaid:ModuleCut
+r1413,scribe.7,hvi drawn layer cannot straddle areaid:ModuleCut
+r1414,scribe.7,tunm drawn layer cannot straddle areaid:ModuleCut
+r1415,scribe.7,poly drawn layer cannot straddle areaid:ModuleCut
+r1416,scribe.7,npc drawn layer cannot straddle areaid:ModuleCut
+r1417,scribe.7,nsdm drawn layer cannot straddle areaid:ModuleCut
+r1418,scribe.7,psdm drawn layer cannot straddle areaid:ModuleCut
+r1419,scribe.7,licon1 drawn layer cannot straddle areaid:ModuleCut
+r1420,scribe.7,li1 drawn layer cannot straddle areaid:ModuleCut
+r1421,scribe.7,mcon drawn layer cannot straddle areaid:ModuleCut
+r1422,scribe.7,met1 drawn layer cannot straddle areaid:ModuleCut
+r1423,scribe.7,via drawn layer cannot straddle areaid:ModuleCut
+r1424,scribe.7,met2 drawn layer cannot straddle areaid:ModuleCut
+r1425,scribe.7,vhvi drawn layer cannot straddle areaid:ModuleCut
+r1426,scribe.7,via2 drawn layer cannot straddle areaid:ModuleCut
+r1427,scribe.7,met3 drawn layer cannot straddle areaid:ModuleCut
+r1428,scribe.7,via3 drawn layer cannot straddle areaid:ModuleCut
+r1429,scribe.7,met4 drawn layer cannot straddle areaid:ModuleCut
+r1430,scribe.7,via4 drawn layer cannot straddle areaid:ModuleCut
+r1431,scribe.7,met5 drawn layer cannot straddle areaid:ModuleCut
+r1432,scribe.7,nsm drawn layer cannot straddle areaid:ModuleCut
+r1433,scribe.7,pad drawn layer cannot straddle areaid:ModuleCut
+r1434,scribe.7,ldntm drawn layer cannot straddle areaid:ModuleCut
+r1435,scribe.7,hvntm drawn layer cannot straddle areaid:ModuleCut
+r1436,scribe.7,pmm drawn layer cannot straddle areaid:ModuleCut
+r1437,scribe.7,pnp drawn layer cannot straddle areaid:ModuleCut
+r1438,scribe.7,capacitor drawn layer cannot straddle areaid:ModuleCut
+r1439,scribe.7,ncm drawn layer cannot straddle areaid:ModuleCut
+r1440,scribe.7,pmm2 drawn layer cannot straddle areaid:ModuleCut
+r1441,scribe.7,inductor drawn layer cannot straddle areaid:ModuleCut
+r1442,scribe.7,rdl drawn layer cannot straddle areaid:ModuleCut
+r1443,scribe.7,rpm drawn layer cannot straddle areaid:ModuleCut
+r1444,scribe.7,hvtr drawn layer cannot straddle areaid:ModuleCut
+r1445,scribe.7,ubm drawn layer cannot straddle areaid:ModuleCut
+r1446,scribe.7,bump drawn layer cannot straddle areaid:ModuleCut
+r1447,scribe.8,Etest-pad-67 and Etest-pad-35 should not exist in the same module
+r1448,scribe.9,Etest pad Width and Length is either 67.00 um or 35.00um
+r1449,scribe.10,Min/Max Spacing between Etest pad (67um*67um) with in same module should be 90.5um
+r1450,scribe.10,Min/MaxSpacing between Etest pad (67um*67um)with in same module should be 90.5um
+r1451,scribe.11,Min/Max Spacing between Etest pad (35um*35um) with in same module should be 55um
+r1452,scribe.11,Min/MaxSpacing between Etest pad (35um*35um)with in same module should be 55um
+r1453,scribe.12,7.5 min. enclosure of ETESTPAD by areaid module cut
+r1454,scribe.13,2.50um min. enclosure of Etest pad by met1
+r1455,scribe.13,2.5 min. enclosure of ETESTPAD_met1 by met1
+r1456,scribe.13,2.50um min. enclosure of Etest pad by met2
+r1457,scribe.13,2.5 min. enclosure of ETESTPAD_met2 by met2
+r1458,scribe.13,2.50um min. enclosure of Etest pad by met3
+r1459,scribe.13,2.5 min. enclosure of ETESTPAD_met3 by met3
+r1460,scribe.13,2.50um min. enclosure of Etest pad by met4
+r1461,scribe.13,2.5 min. enclosure of ETESTPAD_met4 by met4
+r1462,scribe.13,2.50um min. enclosure of Etest pad by met5
+r1463,scribe.13,2.5 min. enclosure of ETESTPAD_met5 by met5
+r1464,scribe.14,Minimum Utest pad Width and Length is 10um
+r1465,scribe.15,Min Spacing between Utest pad opening should be 15um
+r1466,scribe.16,Min Spacing between Utest pad and Etest pad opening should be 7um
+r1467,scribe.17,2.5 min. enclosure of UTESTPAD by met5
+r1468,scribe.18,Spacing of E-test pad opening to E-test pad opening in the same module must all be equal
+r1469,scribe.18,Spacing of E-test pad opening to E-test pad opening in the same module must all be equal
+r1470,scribe.19,76 min. width of realScribeLine
+r1471,scribe.20,Pad.dg is to be drawn from 3.0um from scribe edge to 13.0um from scribe edge
+r1472,scribe.21,"Scribe must not enclose pdm.dg nor pdm.mk except for etest pads, die pad rings"
+r1473,chvtpm.1,0.38 min. width of CLHVTPM
+r1474,chvtpm.2a,0.38 min. spacing/notch of CLHVTPM
+r1475,chvtpm.3,0 min. enclosure of ((LVnwell not overlapping Var_channel) NOT lvtn) by CLHVTPM
+r1476,chvtpm.4,0 min. enclosure of ((LVnwell overlapping Var_channel) AND hvtp) by CLHVTPM
+r1477,clvtnm.1,0.38 min. width of clvtnm in periphery
+r1478,clvtnm.2,0.38 min. spacing/notch of CLLVTNM
+r1479,cntm.2,0.7 min. spacing/notch of CLNTM
+r1480,cntm.1,0.84 min. width of CLNTM
+r1481,cntm.3,0 min. enclosure of nwell by CLNTM
+r1482,cntm.3,nwell must be enclosed by CLNTM
+r1483,cntm.4a,0 min. enclosure of hvitmp by CLNTM
+r1484,cntm.4a,hvitmp must be enclosed by CLNTM
+r1485,cntm.7,0 min. enclosure of ldntm by CLNTM
+r1486,cntm.7,ldntm must be enclosed by CLNTM
+r1487,chvntm.1,0.7 min. width of CLHVNTM
+r1488,chvntm.2a,0.7 min. spacing/notch of CLHVNTM
+r1489,chvntm.4,0.185 min. spacing of CLHVNTM & NDIFFnoHV
+r1490,chvntm.4,CLHVNTM must not overlap NDIFFnoHV
+r1491,chvntm.5,0.185 min. spacing of CLHVNTM & PDIFF_noENID
+r1492,chvntm.5,CLHVNTM must not overlap PDIFF_noENID
+r1493,chvntm.3,0.185 Min Enclosure of ndiff inside hvi by chvntm
+r1494,chvntm.6a,0.185 min. spacing of CLHVNTM & p+tap (except along the diff butting edge)
+r1495,chvntm.6a,CLHVNTM must not overlap ptap
+r1496,chvntm.6b,CLHVNTM must not overlap p+diff along diff butting edge (ESDnWellTap excluded)
+r1497,chvntm.7,ESDnWellTapHV must be enclosed by CLHVNTM
+s0,x.18,single mcon_NOTAreaidStdCellCore that can be doubled
+s1,x.18,single via_NOTAreaidStdCellCore that can be doubled
+s2,x.18,single via2_NOTAreaidStdCellCore that can be doubled
+s3,x.18,single via3_NOTAreaidStdCellCore that can be doubled
+s4,x.18,single via4_NOTAreaidStdCellCore that can be doubled
+s5,x.23f,ptap must not straddle localSub
+s6,x.27,partnum or partnum exclusion 'partnum_not_necessary' not present on chip
+s7,x.27,partnum*block pcell should be used instead of partnum* pcells
+s8,m2.3c,Crater: spacing matches between met2 areas with via2-to-SurfaceArea ratio >=0.05 and =< 0.032
+s9,x.22,Floating poly_float or poly_tie text not over poly
+s10,x.22,poly marked with poly_float not floating
+s11,x.22,Nets on poly is floating
+s12,x.22,Floating poly marked with poly_tie at chiplevel without connecting
+s13,x.22,Metal on poly is texted as both tied and floating (Chip level)
+s14,x.22,Floating li1_float or li1_tie text not over li1
+s15,x.22,li1 marked with li1_float not floating
+s16,x.22,Nets on li1 is floating
+s17,x.22,Floating li1 marked with li1_tie at chiplevel without connecting
+s18,x.22,Metal on li1 is texted as both tied and floating (Chip level)
+s19,x.22,Floating m1_float or m1_tie text not over met1
+s20,x.22,met1 marked with m1_float not floating
+s21,x.22,Nets on met1 is floating
+s22,x.22,Floating met1 marked with m1_tie at chiplevel without connecting
+s23,x.22,Metal on met1 is texted as both tied and floating (Chip level)
+s24,x.22,Floating m2_float or m2_tie text not over met2
+s25,x.22,met2 marked with m2_float not floating
+s26,x.22,Nets on met2 is floating
+s27,x.22,Floating met2 marked with m2_tie at chiplevel without connecting
+s28,x.22,Metal on met2 is texted as both tied and floating (Chip level)
+s29,x.22,Floating m3_float or m3_tie text not over met3
+s30,x.22,met3 marked with m3_float not floating
+s31,x.22,Nets on met3 is floating
+s32,x.22,Floating met3 marked with m3_tie at chiplevel without connecting
+s33,x.22,Metal on met3 is texted as both tied and floating (Chip level)
+s34,x.22,Floating m4_float or m4_tie text not over met4
+s35,x.22,met4 marked with m4_float not floating
+s36,x.22,Nets on met4 is floating
+s37,x.22,Floating met4 marked with m4_tie at chiplevel without connecting
+s38,x.22,Metal on met4 is texted as both tied and floating (Chip level)
+s39,x.22,Floating m5_float or m5_tie text not over met5
+s40,x.22,met5 marked with m5_float not floating
+s41,x.22,Nets on met5 is floating
+s42,x.22,Floating met5 marked with m5_tie at chiplevel without connecting
+s43,x.22,Metal on met5 is texted as both tied and floating (Chip level)
+s44,m1.x.1,<70% metal density when 700x700 window 100% covered by mm1.waffledrop
+s45,m1.x.1,<65% metal density when 700x700 window 80-100% covered by mm1.waffledrop
+s46,m1.x.1,<60% metal density when 700x700 window 60-80% covered by mm1.waffledrop
+s47,m1.x.1,<50% metal density when 700x700 window 50-60% covered by mm1.waffledrop
+s48,m1.x.1,<40% metal density when 700x700 window 40-50% covered by mm1.waffledrop
+s49,m1.x.1,<30% metal density when 700x700 window 30-40% covered by mm1.waffledrop
+s50,m2.x.1,<70% metal density when 700x700 window 100% covered by mm2.waffledrop
+s51,m2.x.1,<65% metal density when 700x700 window 80-100% covered by mm2.waffledrop
+s52,m2.x.1,<60% metal density when 700x700 window 60-80% covered by mm2.waffledrop
+s53,m2.x.1,<50% metal density when 700x700 window 50-60% covered by mm2.waffledrop
+s54,m2.x.1,<40% metal density when 700x700 window 40-50% covered by mm2.waffledrop
+s55,m2.x.1,<30% metal density when 700x700 window 30-40% covered by mm2.waffledrop
+s56,m3.x.1,<70% metal density when 700x700 window 100% covered by mm3.waffledrop
+s57,m3.x.1,<65% metal density when 700x700 window 80-100% covered by mm3.waffledrop
+s58,m3.x.1,<60% metal density when 700x700 window 60-80% covered by mm3.waffledrop
+s59,m3.x.1,<50% metal density when 700x700 window 50-60% covered by mm3.waffledrop
+s60,m3.x.1,<40% metal density when 700x700 window 40-50% covered by mm3.waffledrop
+s61,m3.x.1,<30% metal density when 700x700 window 30-40% covered by mm3.waffledrop
+s62,m4.x.1,<70% metal density when 700x700 window 100% covered by mm4.waffledrop
+s63,m4.x.1,<65% metal density when 700x700 window 80-100% covered by mm4.waffledrop
+s64,m4.x.1,<60% metal density when 700x700 window 60-80% covered by mm4.waffledrop
+s65,m4.x.1,<50% metal density when 700x700 window 50-60% covered by mm4.waffledrop
+s66,m4.x.1,<40% metal density when 700x700 window 40-50% covered by mm4.waffledrop
+s67,m4.x.1,<30% metal density when 700x700 window 30-40% covered by mm4.waffledrop
+s68,metblk.6,prBoundary.boundary not allowed in layout
+s69,metblk.7,poly.boundary not allowed in layout
+s70,metblk.7,diff.boundary not allowed in layout
+s71,metblk.7,tap.boundary not allowed in layout
+s72,chipint.1,areaid.ld not allowed within 50.0 um of ESDID
+s73,chipint.2,areaid.ij not allowed within 150.0 um of ESDID

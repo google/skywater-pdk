@@ -9,3 +9,4 @@ SkyWater SKY130 Process Design Rules
     rules/background
     rules/assumptions
     rules/periphery
+    rules/errors
