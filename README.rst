@@ -9,7 +9,7 @@ SkyWater Open Source PDK
    :alt: Travis Badge - https://travis-ci.org/google/skywater-pdk
    :target: https://travis-ci.org/google/skywater-pdk
 
-.. image:: https://readthedocs.org/projects/pip/badge/?version=latest&style=flat
+.. image:: https://readthedocs.org/projects/skywater-pdk/badge/?version=latest&style=flat
    :alt: ReadTheDocs Badge - https://skywater-pdk.rtfd.io
    :target: https://skywater-pdk.rtfd.io
 
