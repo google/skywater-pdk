@@ -8,6 +8,7 @@
     known_issues
 
     contributing
+    partners
 
     Python API <python-api/index>
 
