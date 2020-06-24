@@ -5,6 +5,8 @@
 
     Design Rules <rules>
 
+    contents
+
     versioning
     Current Status <status>
     known_issues
