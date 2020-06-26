@@ -19,8 +19,8 @@ A number of sections in the documentation still have pending TODO items. These w
 
 The current cell datasheets only include basic information about the cell. These datasheets will be continuously updated with new information as the generator is improved.
 
-PDK Contents
-------------
+PDK Contents Issues
+-------------------
 
 Tooling Compatibility
 ~~~~~~~~~~~~~~~~~~~~~

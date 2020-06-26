@@ -43,10 +43,6 @@ All sections are **lower case** and separated by an **underscore**. The sections
 
 - The :lib_name:`Library Name` is an optional short abbreviated name used when there are multiple libraries of a given type released from a single :lib_src:`library source`. If only one library of a given type is going to ever be released, this can be left out.
 
-
-.. include:: versioning.rst
-
-
 Creating New Libraries
 ----------------------
 
@@ -56,8 +52,12 @@ Third party developers are encourage to create new and interesting libraries for
  - TODO: Finish the criteria.
 
 
+.. _sky130-lib-primitives:
+
 :lib_type:`Primitive` Libraries
 -------------------------------
+
+.. _sky130-lib-primitives-foundry:
 
 :lib_src:`Foundry` provided
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,11 +71,15 @@ Third party developers are encourage to create new and interesting libraries for
     libraries/sky130_fd_pr_*/README
 
 
+.. _sky130-lib-standardcells:
+
 :lib_type:`Digital Standard Cell` Libraries
 -------------------------------------------
 
-:lib_src:`Foundry` provided
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _sky130-lib-standardcells-foundry:
+
+:lib_src:`Foundry` provided :lib_type:`Digital Standard Cell` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :glob:
@@ -84,9 +88,10 @@ Third party developers are encourage to create new and interesting libraries for
 
     libraries/sky130_fd_sc_*/README
 
+.. _sky130-lib-standardcells-thirdparty:
 
-:lib_src:`Third party` provided
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:lib_src:`Third party` provided :lib_type:`Digital Standard Cell` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
@@ -94,14 +99,17 @@ Third party developers are encourage to create new and interesting libraries for
 
     libraries/sky130_osu_sc/README
 
+.. _sky130-lib-buildspace:
 
 :lib_type:`Build Space` Libraries
 ---------------------------------
 
 The SKY130 currently offers two :lib_type:`build space` libraries. Build space libraries are designed to be used with technologies like memory compilers and built into larger macros. The provided libraries have specially crafted design rules to enable higher density compared to other libraries.
 
-:lib_src:`Foundry` provided
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _sky130-lib-buildspace-foundry:
+
+:lib_src:`Foundry` provided :lib_type:`Build Space` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :glob:
@@ -111,12 +119,15 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
 
     libraries/sky130_fd_sp_*/README
 
+.. _sky130-lib-io:
 
 :lib_type:`IO and Periphery` Libraries
 --------------------------------------
 
-:lib_src:`Foundry` provided
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _sky130-lib-io-foundry:
+
+:lib_src:`Foundry` provided :lib_type:`IO and Periphery` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
@@ -124,13 +135,14 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
 
     libraries/sky130_fd_io/README
 
+.. _sky130-lib-io-thirdparty:
 
-:lib_src:`Third party` provided
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+:lib_src:`Third party` provided :lib_type:`IO and Periphery` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 1
-    :name: sky130-lib-thirdparty-sc
+    :name: sky130-lib-thirdparty-io
 
     libraries/sky130_ef_io/README
 
