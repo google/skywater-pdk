@@ -1,0 +1,4 @@
+Name,Description,Flags,Value
+(m5.1),Min width of met5,,1.600
+(m5.2),Min spacing between two met5,,1.600
+(m5.3),via4 must  be enclosed by met5 by atleast,,0.310

@@ -1,0 +1,6 @@
+Name,Description,Flags,Value
+(hvtp.1),Min width of hvtp,,0.380
+(hvtp.2),Min spacing between hvtp to hvtp,,0.380
+(hvtp.3),Min enclosure of pfet by hvtp,P,0.180
+(hvtp.4),Min spacing between pfet and hvtp,P,0.180
+(hvtp.5),Min area of hvtp (um^2),,0.265

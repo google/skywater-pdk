@@ -1,0 +1,19 @@
+Name,Description,Flags,Value
+(m1.-),"Algorithm should flag errors, for met1, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm1 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.",RC,
+(m1.1),Width of metal1,,0.140
+(m1.2),Spacing of metal1 to metal1,,0.140
+(m1.3a),Min. spacing of features attached to or extending from huge_met1 for a distance of up to  0.280 um to metal1 (rule not checked over non-huge met1 features),,0.280
+(m1.3b),Min. spacing of huge_met1 to metal1 excluding features checked by m1.3a,,0.280
+(m1.4),Mcon must be enclosed by Met1 by at least …(Rule exempted for cell names documented in rule m1.4a),P,0.030
+(m1.4a),"Mcon must be enclosed by Met1 by at least (for cell names ""s8cell_ee_plus_sseln_a"", ""s8cell_ee_plus_sseln_b"", ""s8cell_ee_plus_sselp_a"", ""s8cell_ee_plus_sselp_b"", ""s8fpls_pl8"", and ""s8fs_cmux4_fm"")",P,0.005
+(m1.5),Mcon must be enclosed by Met1 on one of two adjacent sides by at least …,P AL,0.060
+(m1.6),Min metal 1 area [um2],,0.083
+(m1.7),Min area of metal1 holes [um2],,0.140
+(m1.pd.1),Min MM1_oxide_Pattern_density,RR AL,0.7
+(m1.pd.2a),Rule m1.pd.1 has to be checked by dividing the chip into square regions of width and length equal to …,A AL,700
+(m1.pd.2b),Rule m1.pd.1 has to be checked by dividing the chip into steps of …,A AL,70
+(m1.11),Max width of metal1after slotting,CU NC,4.000
+(m1.12),Add slots and remove vias and contacts if met1 wider than…..,CU,3.200
+(m1.13),Max pattern density (PD) of met1,CU,0.77
+(m1.14),Met1 PD window size,CU,50.000
+(m1.14a),Met1 PD window step,CU,25.000

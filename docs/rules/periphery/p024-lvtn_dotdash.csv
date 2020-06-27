@@ -1,0 +1,10 @@
+Name,Description,Flags,Value
+(lvtn.1a),Min width of lvtn,,0.380
+(lvtn.2),Min space lvtn to lvtn,,0.380
+(lvtn.3a),Min spacing of lvtn to gate. Rule exempted inside UHVI.,P,0.180
+(lvtn.3b),Min spacing of lvtn to pfet along the S/D direction,P,0.235
+(lvtn.4b),Min enclosure of gate by lvtn. Rule exempted inside UHVI.,P,0.180
+(lvtn.9),"Min spacing, no overlap, between lvtn and hvtp",,0.380
+(lvtn.10),Min enclosure of lvtn by (nwell not overlapping Var_channel) (exclude coincident edges),,0.380
+(lvtn.12),Min spacing between lvtn and (nwell inside :drc_tag:`areaid.ce`),,0.380
+(lvtn.13),Min area of lvtn (um^2),,0.265

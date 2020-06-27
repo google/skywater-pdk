@@ -1,0 +1,73 @@
+Material Thicknesses,,,Value (um),,Variable name
+field oxide (above silicon surface) ... underneath poly,,,0.07,,FOXSTEP
+"min. etch and fill capability for isolation, licon, and met1",,,0.15,,DEFC
+min. etch and fill capability for mcon,,,0.14,,CEFC
+min. etch and fill capability for via,,,0.18,,VEFC
+poly cap after SPE,,,0.2,,OVGTTH
+poly thickness,,,0.18,,POLYTH
+oxide spacer ,,,0.05,,SpThickn
+Pre-LI ILD thickness,,,0.5,,ILDTHICKN
+Licon1 etch angle (deg),,,10,,LICETANG
+Standard Licon bottom CD,,,0.08,,LBCD
+Mcon enclosure by Li,,,0,,mconLiEnclosure
+Via1 slope,,,0.02,,Via1Slope
+Oxide Bias for MM1,,,0.6,,BiasMM1
+Oxide Bias for MM2,,,0.6,,BiasMM2
+Oxide Bias for MM3,,,1.15,,BiasMM3
+Oxide Bias for MM4,,,1.15,,BiasMM4
+LI1 thickness for antenna ratio calculations,,,0.1,,LiThick
+Metal 1 thickness for antenna ratio calculations (S8D*),,,0.35,,Met1Thick
+Metal 2 thickness for antenna ratio calculations (S8D*),,,0.35,,Met2Thick
+Inductor thickness for antenna ratio calculation (S8D*),,,4,,IndmThick
+Metal 3 thickness for antenna ratio calculation  (S8Q/SP8Q),,,0.8,,Met3thick_q
+Metal4 thickness for antenna ratio calculation (S8Q*/SP8Q),,,2,,Met4Thick_q
+Metal 3 thickness for antenna ratio calculation  (S8P*/SP8P*),,,0.8,,Met3thick_p
+Metal4 thickness for antenna ratio calculation (S8P*/SP8P*),,,0.8,,Met4Thick_p
+Metal5 thickness for antenna ratio calculation (S8P*/SP8P* with 2um thick metal),,,2,,Met5Thick_p
+Metal5 thickness for antenna ratio calculation (S8P*/SP8P* with 1.2um thick metal),,,1.2,,Met5Thickp_12
+Metal 2 thickness for antenna ratio calculations (SP8T/S8T*),,,0.35,,Met2_Qthick
+Metal 3 thickness for antenna ratio calculations (S8T* other than S8TM*),,,0.85,,Met3_Qthick
+Metal 3 thickness for antenna ratio calculations (S8TM* flow),,,2,,Met3_TMthick
+Metal 3 thickness for antenna ratio calculations (SP8T flow),,,0.8,,Met3_SP8Tthick
+Photoresist thickness,,,1.14,,PRTHICKN
+Photoresist thickness for HV Tip Implants,,,0.3,,PrThickImplant
+Min width of tip implant opening,,,0.1,,minTip_impW
+NTM shadowing,,,0.16,,ntmShadowing
+HVNTM shadowing,,,0.232,,hvntmShadowing
+HVPTM shadowing,,,0.089,,hvptmShadowing
+pseudo-shadowing,,,0.045,,pseudoShadowing
+Channel length for low Vt PMOS,,,0.35,,lvtpmos_poly
+Width of the Low Leakage gate on each side of LowVt Pmos connected to power rails (requirement based on exp data),,,0.28,,LvtEnc_forPowerRail
+CD tolerance for PDM (3s),,,1,,PdmCD_tol
+Min process bias 3s tolerance,,,0.032,,PHTOL
+Min process bias 3s tolerance for poly,,,0.02,,PHP1TOL
+Minimum Space and Overlap,,,Value (um),,Variable name
+Minimum mcon overlap onto LI for reproducible contact resistance,,,0.12,,TCONOVLP 
+Dogbone PR decay length (SRS 8/4/99),,,0.2,,DBPRDEC
+Bowing of rectangular contact (per edge) -- seal ring sizing,,,0.015,,TBOWINGSEAL
+Waffling / Pattern Density,,,Value,,Variable name
+S8 average FOM PD (extractions from logic device),,,0.45,,FOMPDAVG
+Size of small PD extraction box for rough tolerance (um),,,700,,SMALLPDBOX
+Size of large PD extraction box for rough tolerance (um),,,2000,,LARGEPDBOX
+Min pattern density for oxide,,,0.75,,OxideMinPD
+Min MM* PD range,,,0.3,,MMPDrange
+FOM 700um box PD tolerance for CMP (SOI8 PCR2) for all technologies,,,0.15,,FOM700TOL
+Stepping box shift as a percent of box size,,,0.5,,BOXSHIFT
+Maximum metal waffle drop pattern density in the frame,,,0.55,,PD_FrameWP
+Window size for frame waffle drop PD check,,,100,,WP_PDWINDOW
+Step size for frame waffle drop PD check,,,10,,WP_PDSTEP
+Other,,,Value,,Variable name
+Poly resistor width and spacing to reduce CD variation (um),,,0.33,,POLYRCD
+Poly resistor width and spacing to reduce CD variation (um),,,0.48,,POLYRSPC
+Spacing between slotted_licons (Not applicable when the two edges L= 0.19um),,,0.51,,LICM1SLSP1
+Precision resistor width to accommodate 6 contacts across,,,2.03,,PRECRESW
+Li resistor width (to drop one Licon w/o dogbones),,,0.29,,LIRESCD
+Correction factor for spacing to a wide metal line,,,2,,BIGMF
+Min spacing for created dnwell to pnp.dg (more restrictive than dnwell.4 rule),,,5,,cdnwPnpSpc
+"Min spacing between nwell and deep nwell on separate nets (Taken from dnwell.3 from S4* TDR *N plus rounded up, IGK request.)",,,6,,nwellDnwellSpc
+Min space between deep nwells used as photo diode (um),,,5,,PDDnwSpc
+Min space between dnwell (used for photo diode and other deep nwell (um),,,5.3,,PDDnwSpc1
+Min/Max width of nwell inside deep nwell (for photo diodes),,,0.84,,PDNwmCD
+Min/Max enclosure of nwell by deep nwell (for photo diode),,,1.08,,PDNwmDnwEnc
+Min/Max width of tap inside deep nwell (for photo diode),,,0.41,,PDTapCD
+Min/Max enclosure of tap by nwell inside deep nwell (for photo diode),,,0.215,,PDTapNwmEnc

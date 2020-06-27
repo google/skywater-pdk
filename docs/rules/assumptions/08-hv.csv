@@ -1,0 +1,18 @@
+Layer / Design rule,CD,,space,,Comment
+Min HVNwell to any nwell space,,,2,,HVNwell_Nwell_SP
+Min HVDiff width,0.29,,,,HVDiff_CD
+Min HVDiff space,,,0.3,,HVDiff_SP
+Min HV Pmos gate width,0.5,,,,HVP_gate_CD
+Min space between HV poly,,,0.28,,HVPoly_SP
+Min HV Nmos gate width,0.37,,,,HVPoly_CD
+HV P+ Diff enclosure by Nwell,0.33,,,,HVPdiff_nwell_enc
+HV N+ diff space to Nwell,,,0.43,,HVNdiff_nwell_SP
+HV N+ tap enclosure by Nwell,0.33,,,,HVNtap_nwell_enc
+HV P+tap space to Nwell,,,0.43,,HVPtap_nwell_SP
+Photoresist tilted implant penetration,0.02,,,,HVPrPenetration
+Photoresist tilted implant blocking distance,0.013,,,,HVPrBlocking
+Min size of HVTip,0.1,,,,HVTipMinSize
+Extra CD tol for HVNTM to match Ram7 process,0.015,,,,HVNTMExtraCdTol
+Min HVDiff resistor width,0.29,,,,HVDiff_Res_CD
+High voltage n+-n+ or p+-p+,,,0.3,,HVDPTS15
+HV MOSFET channel length,0.5,,,,HVPCD

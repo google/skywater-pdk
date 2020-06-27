@@ -1,0 +1,7 @@
+Layer / Design rule,CD,,space,,Comment
+Min width of capacitor:dg,4.38,,,,VppWidth
+Max width of unit capacitor:dg,8.58,,,,VppMaxWidth
+Min spacing between two capacitor:dg ,1.5,,,,VppSpc
+Min spacing of capacitor:dg to li1 or met1 or met2 or nwell,1.5,,,,VppOtherSPc
+Min enclosure of capacitor by nwell,1.5,,,,VppNwmEnc
+Min spacing of pmm to (rdl NOT (pad.dg sized by 0.5)),,,19.16,,pmmRDLspc

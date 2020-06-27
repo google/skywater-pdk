@@ -19,8 +19,8 @@ A number of sections in the documentation still have pending TODO items. These w
 
 The current cell datasheets only include basic information about the cell. These datasheets will be continuously updated with new information as the generator is improved.
 
-PDK Contents
-------------
+PDK Contents Issues
+-------------------
 
 Tooling Compatibility
 ~~~~~~~~~~~~~~~~~~~~~
@@ -85,7 +85,7 @@ The SKY130 Oklahoma State University provided standard cells library is currentl
 The SKY130 Oklahoma State University provided standard cells library will be integrated at a future date (see `Issue #10 <https://github.com/google/skywater-pdk/issues/10>`_).
 
 :lib:`sky130_fd_sp_flash` - SKY130 Flash Build Space
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The flash build space is currently empty, only a placeholder is currently provided.
 

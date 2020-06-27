@@ -1,0 +1,31 @@
+Name,Description,Flags,Value
+(licon.1),Min and max L and W of licon (exempt licons inside prec_resistor),,0.170
+(licon.1b),Min and max width of licon inside prec_resistor,,0.190
+(licon.1c),Min and max length of licon inside prec_resistor,,2.000
+(licon.2),Spacing of licon to licon,P,0.170
+(licon.2b),Min spacing between two slotted_licon (when the both the edges are 0.19um in length),,0.350
+(licon.2c),Min spacing between two slotted_licon (except for rule licon.2b),,0.510
+(licon.2d),Min spacing between a slotted_licon and 0.17um square licon,,0.510
+(licon.3),Only min. square licons are allowed except die seal ring where licons are (licon CD)*L,,0.170 *L
+(licon.4),Licon1 must overlap li1 and (poly or diff or tap),,
+(licon.5a),Enclosure of licon by diff,P,0.040
+(licon.5b),Min space between tap_licon and diff-abutting tap edge,P,0.060
+(licon.5c),Enclosure of licon by diff on one of two adjacent sides,P,0.060
+(licon.6),Licon cannot straddle tap,P,
+(licon.7),Enclosure of licon by one of two adjacent edges of isolated tap,P,0.120
+(licon.8),Enclosure of poly_licon by poly,P,0.050
+(licon.8a),Enclosure of poly_licon by poly on one of two adjacent sides,P,0.080
+(licon.9),"Spacing, no overlap, between poly_licon and psdm; In SKY130DIA/SKY130TMA/SKY130PIR-10 flows, the rule is checked only between (poly_licon outside rpm) and psdm",P,0.110
+(licon.10),Spacing of licon on (tap AND (nwell NOT hvi)) to Var_channel,P,0.250
+(licon.11),"Spacing of licon on diff or tap to poly on diff (except for all FETs inside :drc_tag:`areaid.sc` and except s8spf-10r flow for 0.5um phv inside cell names ""s8fs_gwdlvx4"", ""s8fs_gwdlvx8"", ""s8fs_hvrsw_x4"", ""s8fs_hvrsw8"", ""s8fs_hvrsw264"", and ""s8fs_hvrsw520"" and for 0.15um nshort inside cell names ""s8fs_rdecdrv"", ""s8fs_rdec8"", ""s8fs_rdec32"", ""s8fs_rdec264"", ""s8fs_rdec520"")",P,0.055
+(licon.11a),Spacing of licon on diff or tap to poly on diff (for all FETs inside :drc_tag:`areaid.sc` except 0.15um phighvt),P,0.050
+(licon.11b),Spacing of licon on diff or tap to poly on diff (for 0.15um phighvt inside :drc_tag:`areaid.sc`),P,0.050
+(licon.11c),"Spacing of licon on diff or tap to poly on diff (for 0.5um phv inside cell names ""s8fs_gwdlvx4"", ""s8fs_gwdlvx8"", ""s8fs_hvrsw_x4"", ""s8fs_hvrsw8"", ""s8fs_hvrsw264"", and ""s8fs_hvrsw520"")",P,0.040
+(licon.11d),"Spacing of licon on diff or tap to poly on diff (for 0.15um nshort inside cell names ""s8fs_rdecdrv"", ""s8fs_rdec8"", ""s8fs_rdec32"", ""s8fs_rdec264"", ""s8fs_rdec520"")",P,0.045
+(licon.12),Max SD width without licon,NC,5.700
+(licon.13),Spacing (no overlap) of NPC to licon on diff or tap,P,0.090
+(licon.14),Spacing of poly_licon to diff or tap,P,0.190
+(licon.15),poly_licon must be enclosed by npc by…,P,0.100
+(licon.16),"Every source_diff and every tap must enclose at least one licon1, including the diff/tap straddling areaid:ce. \nRule exempted inside UHVI.",P,
+(licon.17),Licons may not overlap both poly and (diff or tap),,
+(licon.18),Npc must enclose poly_licon,,

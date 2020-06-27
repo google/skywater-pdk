@@ -1,0 +1,15 @@
+,,,Value (um),,Variable name
+Min. spac. of laser spot to diffused junction to ensure jct integrity,,,0.6,,XLASJUN
+Max. width of a metal fuse line that can be removed reliably,,,0.8,,FSW
+Min. L of met. fuse at which damage doesn't extend beyond ends,,,6.605,,FSLE
+Max. extension of met2 beyond fuse boundary,,,0.005,,FEXT
+Min. distance between laser spot and active junction,,,0.545,,LASJCT
+Standard contact bottom CD,,,0.09,,
+Positioning tolerance of laser spot (3 s),,,0.3,,LASMA
+Nominal effective laser spot diameter,,,3.5,,LASSPT
+Max. increase in spot diameter at max. distance from focus (3 s),,,0.9,,LASCDTOL
+Fuse melting radius,,,3.6,,MELTRAD
+Melting related crack size in ILD,,,0.36,,FUSECRACK
+Min space between fuse and any feature not connected to it,,,0.2,,MinFuseSpace
+Space between fuse and any unrelated layer,,,0.5,,SP_fuse_to_unrelated
+DC offset in some fuse rules,,,0.87,,LASDC1

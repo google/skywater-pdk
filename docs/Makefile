@@ -42,6 +42,13 @@ livehtml: | $(CONDA_ENV_PYTHON)
 
 .PHONY: help livehtml Makefile
 
+# Generate the rules/periphery-rules.rst from CSV files in rules/periphery/
+$(wildcard rules/periphery/*): | $(CONDA_ENV_PYTHON)
+	true
+
+rules/periphery-rules.rst: $(wildcard rules/periphery/*) | $(CONDA_ENV_PYTHON)
+	$(IN_CONDA_ENV) cd rules/periphery; ./periphery-split-csv.py > /dev/null
+
 # Various automated fixups that can be run
 fixup:
 	# Make sure it is SkyWater

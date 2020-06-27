@@ -27,8 +27,8 @@ File "metal_stack.ps" Page 1
 <path d="M643,923 L643,779 1619,779 1619,923 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
 <path d="M643,715 L643,571 1619,571 1619,715 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
 <path d="M659,491 L659,283 1571,283 1571,491 z" fill="#cbf3f3" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#cbf3f3" />
-<g transform="matrix(   1    0   -0    1 579  27)" fill="#000000" >
-<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">SkyWater Sky130A metal stack (not to scale!):</tspan>
+<g transform="matrix(   1    0   -0    1 950  27)" fill="#000000" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="0">(Diagram not to scale!)</tspan>
 </text></g>
 <path d="M443,1483 L1619,1483 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M931,1483 L931,1499 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />

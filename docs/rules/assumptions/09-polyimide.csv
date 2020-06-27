@@ -1,0 +1,13 @@
+Layer / Design rule,CD,,space,,Comment
+Enclosure of fuses by polyimide,12,,,,PimFuseEnc
+Enclosure of bondpad by polyimide (YUY-165),0.5,,,,PimPadEnc
+"Enclosure of pad:dg by PBO inside inductor capture pad, with DECA online monitoring",4.5,,,,PBOPadEnc
+Enclosure of pad:dg by PBO per standard DECA rules,7.5,,,,PBOPadEncDECA
+DECA PBO drawn-to-final process bias per side,0.5,,,,PBOProcBiasPerSide
+Polyimide CD tolerance,1,,,,PimCD_tol
+Min Pim width over pad openings,87,,,,PimOverPad_CD
+Polyimide slope (001-87400),,5.3,,,I_polyimide_slope
+Enclosure of polyimide by polymer tolerance,,7.7,,,Po_po_tol
+Min/Max enclosure of pad.dg inside M5RDL by pmm,0,,,,pmmM5RDLpadEnc
+Min spacing of pmm to (rdl NOT (pad.dg sized by 0.5)),,,19.16,,pmmRDLspc
+Enclosure of laser targets in the die by polyimide,30,,,,PimLaserEnc

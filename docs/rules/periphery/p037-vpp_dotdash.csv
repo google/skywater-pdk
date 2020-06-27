@@ -1,0 +1,18 @@
+Name,Description,Flags,Value
+(vpp.1),Min width of capacitor:dg,,1.430
+(vpp.1b),Max width of capacitor:dg; Rule not applicable for vpp_with_Met3Shield and vpp_with_LiShield and vpp_over_MOSCAP and vpp_with_Met5 and vpp_with_noLi,,11.350
+(vpp.1c),"Min/Max width of cell name ""s8rf_xcmvpp1p8x1p8_m3shield """,,3.880
+(vpp.3),"capacitor:dg must not overlap (tap or diff or poly); (one exception: Poly is allowed to overlap  vpp_with_Met3Shield and vpp_with_Met5PolyShield); (not applicable for vpp_over_Moscap or ""s8rf2_xcmvppx4_2xnhvnative10x4"" or vpp_with_LiShield)",,
+(vpp.4),capacitor:dg must not straddle (nwell or dnwell),,
+(vpp.5),Min spacing between (capacitor:dg edge and (poly or li1 or met1 or met2)) to (poly or li1 or met1 or met2) on separate nets (Exempt area of the error shape less than 2.25 (um^2) and run length less than 2.0um); Rule not applicable for vpp_with_Met3Shield and vpp_with_LiShield and vpp_over_MOSCAP and vpp_with_Met5 and vpp_with_noLi,,1.500
+(vpp.5a),Max pattern density of met3.dg over capacitor.dg (not applicable for vpp_with_Met3Shield and vpp_with_LiShield and vpp_over_MOSCAP and vpp_with_Met5),,0.25
+(vpp.5b),Max pattern density of met4.dg over capacitor.dg (not applicable for vpp_with_Met3Shield and vpp_with_Met5 and vpp_over_MOSCAP),,0.3
+(vpp.5c),"Max pattern density of met5.dg over capacitor.dg (not applicable for vpp_with_Met3Shield and vpp_with_Met5 and vpp_over_MOSCAP and vpp_with_noLi); (one exception: rules does apply to cell ""s8rf2_xcmvpp11p5x11p7_m1m4"" and ""s8rf2_xcmvpp_hd5_atlas*"")",,0.4
+(vpp.8),Min enclosure of capacitor:dg by nwell,,1.500
+(vpp.9),Min spacing of capacitor:dg to nwell (not applicable for vpp_over_MOSCAP),,1.500
+(vpp.10),vpp capacitors must not overlap; Rule checks for capacitor.dg overlapping more than one pwell pin,,
+(vpp.11),Min pattern density of (poly and diff) over capacitor.dg; (vpp_over_Moscap only),,0.87
+(vpp.12a),"Number of met4 shapes inside capacitor.dg of cell ""s8rf2_xcmvpp8p6x7p9_m3_lim5shield""  must overlap with size 2.01 x 2.01 (no other met4 shapes allowed)",,9.00
+(vpp.12b),"Number of met4 shapes inside capacitor.dg of cell ""s8rf2_xcmvpp11p5x11p7_m3_lim5shield""  must overlap with size 2.01 x 2.01 (no other met4 shapes allowed)",,16.00
+(vpp.12c),"Number of met4 shapes inside capacitor.dg of cell ""s8rf2_xcmvpp4p4x4p6_m3_lim5shield""  must overlap with size 1.5 x 1.5 (no other met4 shapes allowed)",,4.00
+(vpp.13),Min space of met1 to met1inside VPP capacitor,CU,0.160

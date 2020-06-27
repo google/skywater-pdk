@@ -1,0 +1,8 @@
+Name,Description,Flags,Value
+(extd.1),Difftap cannot straddle areaid:en,,
+(extd.2),DiffTap must have 2 or 3 coincident edges with areaid:en if enclosed by areaid:en,,
+(extd.3),Poly must not be entirely overlapping difftap in areaid:en,,
+(extd.4),"Only cell name ""s8rf_n20vhv1*"" is a valid cell name for n20vhv1 device  (Check in LVS as invalid device)",,N/A
+(extd.5),"Only cell name ""s8rf_n20vhviso1"" is a valid cell name for n20vhviso1 device  (Check in LVS as invalid device)",,N/A
+(extd.6),"Only cell name ""s8rf_p20vhv1"" is a valid cell name for p20vhv1 device  (Check in LVS as invalid device)",,N/A
+(extd.7),"Only cell name ""s8rf_n20nativevhv1*"" is a valid cell name for n20nativevhv1 device  (Check in LVS as invalid device)",,N/A

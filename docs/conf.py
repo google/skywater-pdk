@@ -120,7 +120,9 @@ exclude_patterns = [
     'env',
     'Thumbs.db',
     '.DS_Store',
+    # Files included in other rst files.
     'code-of-conduct.rst',
+    'rules/periphery-rules.rst',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
@@ -306,6 +308,7 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+
 # -- Extension configuration -------------------------------------------------
 
 # -- Options for todo extension ----------------------------------------------
@@ -362,6 +365,7 @@ def add_role(app, new_role_name):
 
 def setup(app):
     app.add_css_file('extra.css')
+    add_role(app, 'cell_name')
     add_role(app, 'lib_process')
     add_role(app, 'lib_src')
     add_role(app, 'lib_type')

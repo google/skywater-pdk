@@ -1,0 +1,20 @@
+Name,Description,Flags,Value
+(via2.X.1),Via2 connects met2 to met3 in the SKY130T*/SKY130P*/SP8Q/SP8P* flow and met2/capm to met3 in the SKY130DI* flow.,,
+(via2.1a),Min and max L and W of via2 (except for rule via2.1b/1c/1d/1e/1f),AL,0.200
+(via2.1b),"Three sizes of square Vias allowed inside areaid:mt: 0.280um, 1.2 um and 1.5 um",AL,N/A
+(via2.1c),Two sizes of square Vias allowed inside areaid:mt: 1.2 um and 1.5 um,AL,N/A
+(via2.1d),"Four sizes of square Vias allowed inside areaid:mt: 0.2um, 0.280um, 1.2 um and 1.5 um",AL,
+(via2.1e),"Three sizes of square Vias allowed inside areaid:mt: 0.8um, 1.2 um and 1.5 um",AL,N/A
+(via2.1f),Two sizes of square Vias allowed outside areaid:mt: 0.8um and 1.2 um,AL,N/A
+(via2.2),Spacing of via2 to via2,AL,0.200
+(via2.3),Only min. square via2s are allowed except die seal ring where via2s are (Via2 CD)*L,AL,0.2*L
+(via2.4),Via2 must be enclosed by Met2 by at least …,AL,0.040
+(via2.4a),"Inside :drc_tag:`areaid.mt`, 1.5 um Via2 must be enclosed by met2 by atleast",,0.140
+(via2.5),Via2 must be enclosed by Met2 on one of two adjacent sides by at least …,AL,0.085
+(via2.11),Min and max L and W of via2,CU,0.210
+(via2.12),Min spacing between via2's,CU,0.180
+(via2.13),Min spacing between via2 rows,CU,0.200
+(via2.14),Via2 must be enclosed by met2 by atleast,CU,0.035
+(via2.irdrop.1),"For 1 <= n <= 2 via2's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0
+(via2.irdrop.2),"For 3 <= n <= 4 via2's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6
+(via2.irdrop.3),"For 5 <= n <= 30 via2's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.79
