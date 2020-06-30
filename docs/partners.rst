@@ -4,22 +4,39 @@ Partners
 Open Source SkyWater PDK
 ========================
 
-.. image:: _static/logo/skywater-pdk-logo1.png
-    :align: center
-    :target: https://www.skywatertechnology.com/
-    :alt: Google + skywater logo
+.. rst-class:: align-center
+
+|google|_ |nbsp| |skywater|_
+
+.. |skywater| image:: _static/logo/skywater-logo.png
+    :width: 49%
+    :alt: Skywater logo
+
+.. _skywater: https://www.skywatertechnology.com/
 
 Open Source MPW Shuttle Program
 ===============================
 
-.. image:: _static/logo/google-efabless.png
-    :align: center
-    :scale: 90%
-    :target: https://www.efabless.com/
-    :alt: Google + efabless logo
+.. rst-class:: align-center
+
+|google|_ |nbsp| |efabless_big|_
+
+.. |efabless_big| image:: _static/logo/efabless_logo.png
+    :width: 49%
+    :alt: Efabless logo
+
+.. _efabless_big: https://www.efabless.com
+
+.. |google| image:: _static/logo/google-logo.png
+    :width: 49%
+    :alt: Google logo
+
+.. _google: https://www.google.com/
 
 Industry partners
 =================
+
+.. rst-class:: align-center
 
 |antmicro|_ |nbsp| |cheetah|_ |nbsp| |efabless|_
 
