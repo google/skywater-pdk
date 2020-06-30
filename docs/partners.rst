@@ -78,11 +78,11 @@ Academic partners
 
 .. _ohio: https://www.osu.edu/
 
-.. |cairo| image:: _static/logo/cairo_logo.png
-    :width: 7%
+.. |cairo| image:: _static/logo/auc_logo.png
+    :width: 20%
     :alt: University of Cairo logo
 
-.. _cairo: https://cu.edu.eg/Home
+.. _cairo: https://www.aucegypt.edu/index.php/
 
 .. |um| image:: _static/logo/um_logo.png
     :width: 11%
