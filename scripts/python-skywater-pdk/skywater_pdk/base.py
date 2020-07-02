@@ -329,7 +329,7 @@ class LibraryVersion:
         return cls(**kw)
 
     def as_tuple(self):
-        return (self.milestone, self.major, self.minor, self.commits, minor)
+        return (self.milestone, self.major, self.minor, self.commits, self.hash)
 
     @property
     def fullname(self):
