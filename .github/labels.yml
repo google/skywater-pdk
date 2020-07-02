@@ -175,29 +175,10 @@
 #  - Closed source tools:         76fcf3 (cyan)
 ##########################################################################
 
-- name: "tools-BAG"
-  description: "Issues with using the Berkeley Analog Generator (BAG) with the PDK."
-  color: "8ac6f7"
-
-- name: "tools-Cadence-Innovus"
-  description: "Issues with using Cadence Innovus with the PDK."
-  color: "76fcf3"
-
-- name: "tools-Cadence-Virtuoso"
-  description: "Issues with using Cadence Virtuoso with the PDK."
-  color: "76fcf3"
-
-- name: "tools-FASoC"
-  description: "Issues with using the Fully-Autonomous SoC Synthesis (FASoC) with the PDK."
-  color: "8ac6f7"
-
+# Fully open source tools.
 - name: "tools-Magic"
   description: "Issues with using Magic with the PDK."
   color: "054caa"
-
-- name: "tools-Mentor-Calibre"
-  description: "Issues with using Mentor Calibre with the PDK."
-  color: "76fcf3"
 
 - name: "tools-OpenRAM"
   description: "Issues with using OpenRAM with the PDK."
@@ -206,6 +187,32 @@
 - name: "tools-OpenROAD"
   description: "Issues with using OpenROAD with the PDK."
   color: "054caa"
+
+# Partially open or with closed source dependencies.
+- name: "tools-BAG"
+  description: "Issues with using the Berkeley Analog Generator (BAG) with the PDK."
+  color: "8ac6f7"
+
+- name: "tools-FASoC"
+  description: "Issues with using the Fully-Autonomous SoC Synthesis (FASoC) with the PDK."
+  color: "8ac6f7"
+
+# Closed source tools
+- name: "tools-Cadence-Innovus"
+  description: "Issues with using Cadence Innovus with the PDK."
+  color: "76fcf3"
+
+- name: "tools-Cadence-Virtuoso"
+  description: "Issues with using Cadence Virtuoso with the PDK."
+  color: "76fcf3"
+
+- name: "tools-Mentor-Calibre"
+  description: "Issues with using Mentor Calibre with the PDK."
+  color: "76fcf3"
+
+- name: "tools-Synopsys-PrimeTime"
+  description: "Issues with using Synopsys Primetime with the PDK."
+  color: "76fcf3"
 
 ##########################################################################
 # Labels related to type of GitHub issue
