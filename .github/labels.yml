@@ -1,10 +1,51 @@
+##########################################################################
+# Overall color scheme
+#
+# * purple -- File related labels
+# * green  -- Library labels
+# * blue   -- Tooling labels
+# * yellow -- ?
+# * orange -- ?
+# * black  -- ?
+##########################################################################
+
+# General categories
 - name: "documentation"
   description: "Improvements or additions to documentation"
-  color: "0075ca"
+  color: "0075ca" # Blue
 
 - name: "infrastructure"
   description: "Issues related with infrastructure like Travis-CI, Kokoro or other similar automated tooling."
-  color: "fef2c0"
+  color: "fef2c0" # off-white
+
+- name: "help-wanted"
+  description: "This issue is open to help from anyone who can work on it!"
+  color: "ffcf00" # Fluorescent Orange
+
+- name: "good-first-issue"
+  description: "This issue is suitable for a new person who has never contributed to the PDK before."
+  color: "5cafc4" # weird blue
+
+# Labels related to type of GitHub issue
+- name: "type-bug"
+  description: "Something isn't working"
+  color: "d73a4a" # red
+
+- name: "type-duplicate"
+  description: "This issue or pull request already exists"
+  color: "cfd3d7" # gray
+
+- name: "type-enhancement"
+  description: "New feature or request"
+  color: "a2eeef" # FIXME: blueish
+
+- name: "type-question"
+  description: "Further information is requested"
+  color: "d876e3" # pink
+
+- name: "type-todo"
+  description: "Item which references a specific open task which needs finishing."
+  color: "57dbba" # FIXME: blueish
 
 ##########################################################################
 # Labels related to files found in the repository
@@ -213,27 +254,3 @@
 - name: "tools-Synopsys-PrimeTime"
   description: "Issues with using Synopsys Primetime with the PDK."
   color: "76fcf3"
-
-##########################################################################
-# Labels related to type of GitHub issue
-##########################################################################
-
-- name: "type-bug"
-  description: "Something isn't working"
-  color: "d73a4a"
-
-- name: "type-duplicate"
-  description: "This issue or pull request already exists"
-  color: "cfd3d7"
-
-- name: "type-enhancement"
-  description: "New feature or request"
-  color: "a2eeef"
-
-- name: "type-question"
-  description: "Further information is requested"
-  color: "d876e3"
-
-- name: "type-todo"
-  description: "Item which references a specific open task which needs finishing."
-  color: "57dbba"
