@@ -254,3 +254,7 @@
 - name: "tools-Synopsys-PrimeTime"
   description: "Issues with using Synopsys Primetime with the PDK."
   color: "76fcf3"
+
+- name: "tools-Synopsys-DesignCompiler"
+  description: "Issues with using Synopsys Design Compiler with the PDK."
+  color: "76fcf3"
