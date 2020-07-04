@@ -32,6 +32,8 @@ from collections import defaultdict
 from typing import Tuple, List, Dict
 
 from . import sizes
+from .utils import sortable_extracted_numbers
+
 
 debug = False
 
@@ -346,30 +348,220 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
     print("")
 
 
-INDENT="    "
+# * The 'delay_model' should be the 1st attribute in the library
+# * The 'technology' should be the 1st attribute in the library
 
-# complex attribute -- (x,b)
+LIBERTY_ATTRIBUTE_ORDER = re.sub('/\\*[^*]*\\*/', '', """
+library (name_string) {
+    /* Library-Level Simple and Complex Attributes */
+    define (...,...,...) ;
+    technology (name_enum) ;
+    delay_model : "model" ;
+
+    bus_naming_style : "string" ;
+    date : "date" ;
+    comment : "string" ;
+
+    /* Unit definitions */
+    time_unit : "unit" ;
+    voltage_unit : "unit" ;
+    leakage_power_unit : "unit" ;
+    current_unit : "unit" ;
+    pulling_resistance_unit : "unit" ;
+    ..._unit : "unit" ;
+    /* FIXME: Should capacitive_load_unit always be last? */
+    capacitive_load_unit (value, unit) ;
+
+    /* FIXME: Why is define_cell_area here, while other defines are up above? */
+    define_cell_area (area_name, resource_type) ;
+
+    revision : float | string ;
+
+    /* Default Attributes and Values */
+    default_cell_leakage_power : float ;
+    default_fanout_load : float ;
+    default_inout_pin_cap : float ;
+    default_input_pin_cap : float ;
+    default_max_transition : float ;
+    default_output_pin_cap : float ;
+    default_... : ... ;
+
+    /* Scaling Factors Attributes and Values */
+    k_process_cell_fall ... ;
+    k_process_cell_rise ... ;
+    k_process_fall_propagation ... ;
+    k_process_fall_transition ... ;
+    k_process_rise_propagation ... ;
+    k_process_rise_transition ... ;
+    k_temp_cell_fall ... ;
+    k_temp_cell_rise ... ;
+    k_temp_fall_propagation ... ;
+    k_temp_fall_transition ... ;
+    k_temp_rise_propagation ... ;
+    k_temp_rise_transition ... ;
+    k_volt_cell_fall ... ;
+    k_volt_cell_rise ... ;
+    k_volt_fall_propagation ... ;
+    k_volt_fall_transition ... ;
+    k_volt_rise_propagation ... ;
+    k_volt_rise_transition ... ;
+    k_... : ... ;
+
+    /* Library-Level Group Statements */
+    operating_conditions (name_string) {
+        ... operating conditions description ...
+    }
+    wire_load (name_string) {
+        ... wire load description ...
+    }
+    wire_load_selection (name_string) {
+        ... wire load selection criteria...
+    }
+    power_lut_template (namestring)  {
+        ... power lookup table template information...
+    }
+    lu_table_template (name_string) {
+        variable_1 : value_enum ;
+        variable_2 : value_enum ;
+        variable_3 : value_enum ;
+        index_1 ("float, ..., float");
+        index_2 ("float, ..., float");
+        index_3 ("float, ..., float");
+    }
+    normalized_driver_waveform (waveform_template_name) {
+        driver_waveform_name : string; /* Specifies the name of the driver waveform table */
+        index_1 ("float, ... float"); /* Specifies input net transition */
+        index_2 ("float, ... float"); /* Specifies normalized voltage */
+        values ("float, ... float", \ /* Specifies the time in library units */
+            ... , \\
+            "float, ... float");
+    }
+
+    /* Cell definitions */
+    cell (namestring2) {
+        ... cell description ...
+    }
+
+    ...
+
+    /* FIXME: What are these and why are they last */
+    type (namestring) {
+        ... type description ...
+    }
+    input_voltage (name_string) {
+        ... input voltage information ...
+    }
+    output_voltage (name_string) {
+        ... output voltage information ...
+    }
+}
+""")
+
 
 RE_LIBERTY_LIST = re.compile("(.*)_([0-9]+)")
+RE_NUMBERS = re.compile('([0-9]+)')
 
-def liberty_sort(k):
+
+def _lookup_attribute_pos(name):
+    # Pad with spaces so you don't get substring matches.
+    name = ' ' + name
+    if name.endswith('_'):
+        name = name + ' '
+    i = LIBERTY_ATTRIBUTE_ORDER.find(name)
+    if i != -1:
+        return float(i)
+    return None
+
+
+def liberty_attribute_order(attr_name):
     """
 
-    >>> liberty_sort("variable_1")
-    (1, 'variable')
-    >>> liberty_sort("index_3")
-    (3, 'index')
-    >>> liberty_sort("values") # doctest: +ELLIPSIS
-    (inf, 'values')
+    FIXME: Make these doctests less fragile...
+    >>> liberty_attribute_order("define")
+    (33.0, 0.0)
+
+    >>> liberty_attribute_order('voltage_map')
+    (inf, inf)
+
+    >>> liberty_attribute_order('slew_lower_threshold_pct_fall')
+    (inf, inf)
+
+    >>> liberty_attribute_order('time_unit')
+    (203.0, 0.0)
+    >>> liberty_attribute_order('random_unit')
+    (357.0, 0.0)
+    >>> liberty_attribute_order('capacitive_load_unit')
+    (386.0, 0.0)
+
+    >>> liberty_attribute_order('technology')
+    (60.0, 0.0)
+    >>> liberty_attribute_order('technology("cmos")')
+    (60.0, 0.0)
+
+    >>> liberty_attribute_order('delay_model')
+    (89.0, 0.0)
+
+    >>> liberty_attribute_order("cell")
+    (2282.0, 0.0)
+
+    >>> v1, v2 = "variable_1", "variable_2"
+    >>> i1, i2, i3, i4 = "index_1", "index_2", "index_3", "index_4"
+    >>> print('\\n'.join(sorted([v2, i1, v1, i2, i3, i4], key=liberty_attribute_order)))
+    variable_1
+    variable_2
+    index_1
+    index_2
+    index_3
+    index_4
+
+    >>> liberty_attribute_order("values")
+    (2182.0, 0.0)
+
+    >>> print('\\n'.join(sorted([
+    ...     'default_inout_pin_cap',
+    ...     'k_XXXX',
+    ...     'k_temp_cell_fall',
+    ...     'default_XXXX',
+    ... ], key=liberty_attribute_order)))
+    default_inout_pin_cap
+    default_XXXX
+    k_temp_cell_fall
+    k_XXXX
+
 
     """
-    m = RE_LIBERTY_LIST.match(k)
+    assert ':' not in attr_name, attr_name
+
+    m = RE_LIBERTY_LIST.match(attr_name)
     if m:
         k, n = m.group(1), m.group(2)
-        n = int(n)
-    else:
-        n = float('inf')
-    return n, k
+
+        i = _lookup_attribute_pos(k)
+        if not i:
+            i = float('inf')
+
+        return float(i), float(n)
+
+    lookup_name = attr_name
+    i = _lookup_attribute_pos(lookup_name)
+    if i:
+        return i, 0.0
+
+    if '(' in lookup_name:
+        lookup_name = lookup_name[:lookup_name.index('(')]
+
+    if 'default_' in attr_name:
+        lookup_name = 'default_...'
+    if '_unit' in attr_name:
+        lookup_name = '..._unit'
+    if 'k_' in attr_name:
+        lookup_name = 'k_...'
+
+    i = _lookup_attribute_pos(lookup_name)
+    if i:
+        return i, 0.0
+
+    return float('inf'), float('inf')
 
 
 def is_liberty_list(k):
@@ -424,6 +616,9 @@ def liberty_float(f):
         while len(s) < WIDTH:
             s += '0'
     return s
+
+
+INDENT="    "
 
 
 def liberty_composite(k, v, i=tuple()):
@@ -522,88 +717,91 @@ def liberty_list(k, v, i=tuple()):
     return o
 
 
-def liberty_dict(dtype, dvalue, data, i=tuple()):
+def liberty_dict(dtype, dvalue, data, indent=tuple()):
     assert isinstance(data, dict), (dtype, dvalue, data)
     o = []
+
     if dvalue:
         dbits = dvalue.split(",")
         for j, d in enumerate(dbits):
             if '"' in d:
-                assert d.startswith('"'), (dvalue, dbits, i)
-                assert d.endswith('"'), (dvalue, dbits, i)
+                assert d.startswith('"'), (dvalue, dbits, indent)
+                assert d.endswith('"'), (dvalue, dbits, indent)
                 dbits[j] = d[1:-1]
         dvalue = ','.join('"%s"' % d.strip() for d in dbits)
-    o.append('%s%s (%s) {' % (INDENT*len(i), dtype, dvalue))
+    o.append('%s%s (%s) {' % (INDENT*len(indent), dtype, dvalue))
 
-    i_n = list(i)+[(dtype, dvalue)]
+    # Sort the attributes
+    def attr_sort_key(item):
+        k, v = item
+        if " " in k:
+            ktype, kvalue = k.split(" ", 1)
+            sortable_kv = sortable_extracted_numbers(kvalue)
+        else:
+            ktype = k
+            kvalue = ""
+            sortable_kv = tuple()
 
-    # Output the attribute defines first
-    if 'define' in data:
-        for d in sorted(data['define'], key=lambda d: d['group_name']+'.'+d['attribute_name']):
-            o.append('%sdefine(%s,%s,%s);' % (INDENT*len(i_n), d['attribute_name'], d['group_name'], d['attribute_type']))
-        o.append('')
+        if ktype == "comp_attribute":
+            sortable_kt = liberty_attribute_order(kvalue)
+        else:
+            sortable_kt = liberty_attribute_order(ktype)
 
-        del data['define']
+        return sortable_kt, ktype, sortable_kv, kvalue, k, v
+
+    di = [attr_sort_key(i) for i in data.items()]
+    di.sort()
+    if debug:
+        for sk, kt, skv, kv, k, v in di:
+            print(str(indent), "%4.0f %4.0f -- " % sk, "%-40s" % kt, '%-40r' % kv, str(v)[:40], '...')
 
     # Output all the attributes
-    def attr_sort_key(a):
-        k, v = a
-        if " " in k:
-            ktype, kvalue = k.split(" ", 1)
-        else:
-            ktype = k
-            kvalue = ""
+    for _, ktype, _, kvalue, k, v in di:
+        indent_n = list(indent)+[k]
 
-        if ktype == "comp_attribute":
-            ktype = kvalue
-            kvalue = None
+        if ktype == 'define':
+            for d in sorted(data['define'], key=lambda d: d['group_name']+'.'+d['attribute_name']):
+                o.append('%sdefine(%s,%s,%s);' % (
+                    INDENT*len(indent_n),
+                    d['attribute_name'],
+                    d['group_name'],
+                    d['attribute_type']),
+                )
 
-        kn, ktype = liberty_sort(ktype)
-
-        return (kn, ktype, kvalue)
-
-    for k, v in sorted(data.items(), key=attr_sort_key):
-
-        if " " in k:
-            ktype, kvalue = k.split(" ", 1)
-        else:
-            ktype = k
-            kvalue = ""
-
-        if ktype == "comp_attribute":
-            o.extend(liberty_composite(kvalue, v, i_n))
+        elif ktype == "comp_attribute":
+            o.extend(liberty_composite(kvalue, v, indent_n))
 
         elif isinstance(v, dict):
             assert isinstance(v, dict), (dtype, dvalue, k, v)
-            o.extend(liberty_dict(ktype, kvalue, v, i_n))
+            o.extend(liberty_dict(ktype, kvalue, v, indent_n))
 
         elif isinstance(v, list):
             assert len(v) > 0, (dtype, dvalue, k, v)
             if isinstance(v[0], dict):
-                def k(o):
+                def sk(o):
                     return o.items()
 
-                for l in sorted(v, key=k):
-                    o.extend(liberty_dict(ktype, kvalue, l, i_n))
+                for l in sorted(v, key=sk):
+                    o.extend(liberty_dict(ktype, kvalue, l, indent_n))
 
-            elif is_liberty_list(k):
-                o.extend(liberty_list(k, v, i_n))
+            elif is_liberty_list(ktype):
+                o.extend(liberty_list(ktype, v, indent_n))
 
-            elif "clk_width" == k:
+            elif "clk_width" == ktype:
                 for l in sorted(v):
-                    o.append("%s%s : %s;" % (INDENT*len(i_n), k, l))
+                    o.append("%s%s : %s;" % (INDENT*len(indent_n), k, l))
 
             else:
-                raise ValueError("Unknown %s: %r\n%s" % (k, v, i_n))
+                raise ValueError("Unknown %s: %r\n%s" % (k, v, indent_n))
 
         else:
             if isinstance(v, str):
                 v = '"%s"' % v
             elif isinstance(v, (float,int)):
                 v = liberty_float(v)
-            o.append("%s%s : %s;" % (INDENT*len(i_n), k, v))
+            o.append("%s%s : %s;" % (INDENT*len(indent_n), k, v))
 
-    o.append("%s}" % (INDENT*len(i)))
+    o.append("%s}" % (INDENT*len(indent)))
     return o
 
 
@@ -693,5 +891,4 @@ def main():
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-
     sys.exit(main())

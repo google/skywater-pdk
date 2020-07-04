@@ -21,6 +21,7 @@ import dataclasses
 import dataclasses_json
 import functools
 import random
+import re
 import sys
 
 from dataclasses import dataclass
@@ -227,6 +228,64 @@ class OrderedFlag(Flag):
         return NotImplemented
     def __hash__(self):
         return hash(self._name_)
+
+
+def extract_numbers(s):
+    """Create tuple with sequences of numbers converted to ints.
+
+    >>> extract_numbers("pwr_template13x10")
+    ('pwr_template', 13, 'x', 10)
+    >>> extract_numbers("vio_10_10_1")
+    ('vio_', 10, '_', 10, '_', 1)
+    """
+    bits = []
+    for m in re.finditer("([^0-9]*)([0-9]*)", s):
+        if m.group(1):
+            bits.append(m.group(1))
+        if m.group(2):
+            bits.append(int(m.group(2)))
+    return tuple(bits)
+
+
+def sortable_extracted_numbers(s):
+    """Create output which is sortable by numeric values in string.
+
+    >>> sortable_extracted_numbers("pwr_template13x10")
+    ('pwr_template', '0000000013', 'x', '0000000010')
+    >>> sortable_extracted_numbers("vio_10_10_1")
+    ('vio_', '0000000010', '_', '0000000010', '_', '0000000001')
+
+    >>> l = ['a1', 'a2b2', 'a10b10', 'b2', 'a8b50', 'a10b1']
+    >>> l.sort()
+    >>> print('\\n'.join(l))
+    a1
+    a10b1
+    a10b10
+    a2b2
+    a8b50
+    b2
+    >>> l.sort(key=sortable_extracted_numbers)
+    >>> print('\\n'.join(l))
+    a1
+    a2b2
+    a8b50
+    a10b1
+    a10b10
+    b2
+
+    """
+    zero_pad_str = '%010i'
+    bits = extract_numbers(s)
+    o = []
+
+    for b in bits:
+        if not isinstance(b, str):
+            assert isinstance(b, int), (b, bits)
+            assert len(str(b)) < len(zero_pad_str % 0)
+            b = zero_pad_str % b
+        o.append(b)
+    return tuple(o)
+
 
 
 if __name__ == "__main__":
