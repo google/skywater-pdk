@@ -59,6 +59,7 @@ lint-python:
 
 
 check: check-licenses
+	lint-python
 	@true
 
 all: README.rst
