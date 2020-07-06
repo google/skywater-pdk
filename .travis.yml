@@ -14,7 +14,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-language: minimal
+os linux
+dist: focal
+language: shell
 
 git:
   submodules: false
