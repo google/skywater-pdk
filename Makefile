@@ -59,4 +59,25 @@ check: check-licenses
 all: README.rst
 	@true
 
+
+LIBRARIES = $(sort $(notdir $(wildcard libraries/sky130_*_sc_*)))
+
+$(LIBRARIES): | $(CONDA_ENV_PYTHON)
+	@$(IN_CONDA_ENV) for V in libraries/$@/*; do \
+		python -m skywater_pdk.liberty $$V; \
+		python -m skywater_pdk.liberty $$V all; \
+		python -m skywater_pdk.liberty $$V all --ccsnoise; \
+	done
+
+sky130_fd_sc_ms-leakage: | $(CONDA_ENV_PYTHON)
+	 @$(IN_CONDA_ENV) for V in libraries/sky130_fd_sc_ms/*; do \
+		python -m skywater_pdk.liberty $$V all --leakage; \
+	done
+
+sky130_fd_sc_ms: sky130_fd_sc_ms-leakage
+
+timing: $(LIBRARIES) | $(CONDA_ENV_PYTHON)
+	@true
+
+
 .PHONY: all

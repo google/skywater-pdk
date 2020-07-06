@@ -12,6 +12,14 @@ skywater\_pdk.base module
    :undoc-members:
    :show-inheritance:
 
+skywater\_pdk.corners module
+----------------------------
+
+.. automodule:: skywater_pdk.corners
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 skywater\_pdk.sizes module
 ---------------------------
 
