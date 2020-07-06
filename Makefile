@@ -52,6 +52,11 @@ check-licenses:
 
 .PHONY: check-licenses
 
+lint-python:
+	@python3 -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+.PHONY: lint-python
+
 
 check: check-licenses
 	@true
