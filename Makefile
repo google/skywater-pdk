@@ -53,7 +53,7 @@ check-licenses:
 .PHONY: check-licenses
 
 lint-python:
-	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	$(IN_CONDA_ENV) flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
 .PHONY: lint-python
 
