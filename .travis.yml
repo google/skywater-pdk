@@ -23,8 +23,10 @@ git:
 install:
  - git describe
  - make env
+ - python3 -m pip install flake8
 
 script:
+ - make lint-python
  - source .github/travis/common.sh
  - rm -f README.rst && make README.rst
  - .github/travis/git-check.sh
