@@ -23,12 +23,14 @@ git:
   depth: false
 
 install:
- - git describe
- - make env
- - python3 -m pip install flake8
+  - git describe
+  - python3 -m pip install flake8
+
+before_script:
+  - make lint-python
+  - make env
 
 script:
- - make lint-python
- - source .github/travis/common.sh
- - rm -f README.rst && make README.rst
- - .github/travis/git-check.sh
+  - source .github/travis/common.sh
+  - rm -f README.rst && make README.rst
+  - .github/travis/git-check.sh
