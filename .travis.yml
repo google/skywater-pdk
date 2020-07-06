@@ -14,23 +14,17 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-os: linux
-dist: focal
-language: shell
+language: minimal
 
 git:
   submodules: false
   depth: false
 
 install:
-  - git describe
-  - python3 -m pip install flake8
-
-before_script:
-  - make lint-python
-  - make env
+ - git describe
+ - make env
 
 script:
-  - source .github/travis/common.sh
-  - rm -f README.rst && make README.rst
-  - .github/travis/git-check.sh
+ - source .github/travis/common.sh
+ - rm -f README.rst && make README.rst
+ - .github/travis/git-check.sh
