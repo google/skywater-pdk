@@ -182,7 +182,7 @@
   color: "c5d53c"
 
 - name: "lib-sky130_osu_sc"
-  description: "Issues with the IO and periphery cells provided by Oklahoma State University."
+  description: "Issues with the digital standard cells provided by Oklahoma State University."
   color: "004e6f"
 
 # Build spaces
