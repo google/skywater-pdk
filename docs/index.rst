@@ -14,6 +14,7 @@
     analog
     digital
     sim
+    verification
 
     Python API <python-api/index>
 
