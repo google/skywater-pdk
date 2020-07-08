@@ -16,6 +16,7 @@
 
     Python API <python-api/index>
 
+    glossary
 
 Welcome to SkyWater SKY130 PDK's documentation!
 ===============================================
@@ -40,6 +41,7 @@ Current Status - |current-status|
 Indices and tables
 ==================
 
+* :ref:`glossary`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
