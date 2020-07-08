@@ -3,20 +3,28 @@
 .. toctree::
     :hidden:
 
-    Design Rules <rules>
-
-    contents
-
     versioning
     Current Status <status>
     known_issues
 
-    contributing
-    partners
+    Design Rules <rules>
+
+    contents
+
+    analog
+    digital
+    sim
 
     Python API <python-api/index>
 
+    previous
     glossary
+
+    contributing
+    partners
+
+
+
 
 Welcome to SkyWater SKY130 PDK's documentation!
 ===============================================
