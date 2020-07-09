@@ -3,18 +3,28 @@
 .. toctree::
     :hidden:
 
-    Design Rules <rules>
-
-    contents
-
     versioning
     Current Status <status>
     known_issues
 
+    Design Rules <rules>
+
+    contents
+
+    analog
+    digital
+    sim
+    verification
+
+    Python API <python-api/index>
+
+    previous
+    glossary
+
     contributing
     partners
 
-    Python API <python-api/index>
+
 
 
 Welcome to SkyWater SKY130 PDK's documentation!
@@ -40,6 +50,7 @@ Current Status - |current-status|
 Indices and tables
 ==================
 
+* :ref:`glossary`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
