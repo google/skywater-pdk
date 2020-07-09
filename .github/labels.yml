@@ -69,6 +69,10 @@
   description: "Issues related to Library Exchange Format (LEF) files."
   color: "d61dae"
 
+- name: "files-layout-tlef"
+  description: "Issues related to Technology Library Exchange Format (TLEF) files."
+  color: "d61dae"
+
 - name: "files-model-behavioral-verilog"
   description: "Issues related to the Verilog behavioural models."
   color: "d61dae"
