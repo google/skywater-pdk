@@ -50,6 +50,13 @@ lib-sky130_osu_sc:              ["sky130_osu_sc"]
 
 # scripts-documentation
 scripts-python:                 ["*.py"]
+scripts-python-liberty:         ["liberty.py", "corners.py"]
+scripts-python-verilog:
+ - "skywater_pdk/verilog"  # Script itself
+ - "*.blackbox.v"          # Generated blackbox files
+ - "*.symbol.v"            # Generated symbol files
+ - "*.tb.v"                # Generated test bench
+ - "*_[0-9].v"             # Generated strength driver wrappers
 
 # tools-BAG
 # tools-Cadence-Innovus
