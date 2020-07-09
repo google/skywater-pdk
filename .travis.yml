@@ -14,7 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-language: minimal
+language: shell
 
 git:
   submodules: false
@@ -25,6 +25,7 @@ install:
  - make env
 
 script:
+ - make lint-python
  - source .github/travis/common.sh
  - rm -f README.rst && make README.rst
  - .github/travis/git-check.sh
