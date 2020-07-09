@@ -52,8 +52,13 @@ check-licenses:
 
 .PHONY: check-licenses
 
+lint-python:
+	$(IN_CONDA_ENV) flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-check: check-licenses
+.PHONY: lint-python
+
+
+check: check-licenses lint-python
 	@true
 
 all: README.rst
