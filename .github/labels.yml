@@ -210,6 +210,14 @@
   description: "Issues with the Python scripts provided as part of the PDK."
   color: "5648a8"
 
+- name: "scripts-python-liberty"
+  description: "Issues with the Python script which generates the liberty timing files."
+  color: "5648a8"
+
+- name: "scripts-python-verilog"
+  description: "Issues with the Python script which creates the generated Verilog files."
+  color: "5648a8"
+
 ##########################################################################
 # Labels related to tools
 #
