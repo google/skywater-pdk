@@ -810,7 +810,7 @@ def liberty_dict(dtype, dvalue, data, indent=tuple()):
 
             elif "clk_width" == ktype:
                 for l in sorted(v):
-                    o.append("%s%s : %s;" % (INDENT*len(indent_n), k, l))
+                    o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, l))
 
             else:
                 raise ValueError("Unknown %s: %r\n%s" % (k, v, indent_n))
