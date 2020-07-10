@@ -773,8 +773,16 @@ def liberty_dict(dtype, dvalue, data, indent=tuple()):
     di = [attr_sort_key(i) for i in data.items()]
     di.sort()
     if debug:
+        print(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
+        print("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
         for sk, kt, skv, kv, k, v in di:
-            print(str(indent), "%4.0f %4.0f -- " % sk, "%-40s" % kt, '%-40r' % kv, str(v)[:40], '...')
+            print(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
+            sv = str(v)
+            print(sv[:40], end=" ")
+            if len(sv) > 40:
+                print('...', end=" ")
+            print()
+
 
     # Output all the attributes
     for _, ktype, _, kvalue, k, v in di:
