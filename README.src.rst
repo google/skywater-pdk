@@ -56,7 +56,7 @@ The SKY130 Process node technology stack consists of;
 * HV extended-drain NMOS and PMOS
 
 
-The `SKY130 Process Node`_ has is a extremely flexible offering, including many normally *optional* features as standard (feature like the local interconnect, SONOS functionality, MiM capacitors and more). This provides the designer with a **wide range** of flexibility in design choices.
+The `SKY130 Process Node`_ is an extremely flexible offering, including many normally *optional* features as standard (features like the local interconnect, SONOS functionality, MiM capacitors, and more). This provides the designer with a **wide range** of flexibility in design choices.
 
 If your needs extend beyond the standard included functionality in the `SKY130 Process Node`_, please see `Contacting SkyWater`_ as they specializes in enabling production volume of process customization include `the addition of specialized materials like Nb, Ge, V2O5, Carbon Nanotubes <https://www.skywatertechnology.com/technology/>`_. Google and SkyWater continuing to explore new options to be included in the `SkyWater Open Source PDK`_ and `SKY130 Process Node`_ that enable new innovative solutions to traditional design problems.
 
