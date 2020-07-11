@@ -69,14 +69,18 @@ LIBRARIES = $(sort $(notdir $(wildcard libraries/sky130_*_sc_*)))
 
 $(LIBRARIES): | $(CONDA_ENV_PYTHON)
 	@$(IN_CONDA_ENV) for V in libraries/$@/*; do \
-		python -m skywater_pdk.liberty $$V; \
-		python -m skywater_pdk.liberty $$V all; \
-		python -m skywater_pdk.liberty $$V all --ccsnoise; \
+		if [ -d "$$V/cells" ]; then \
+			python -m skywater_pdk.liberty $$V; \
+			python -m skywater_pdk.liberty $$V all; \
+			python -m skywater_pdk.liberty $$V all --ccsnoise; \
+		fi \
 	done
 
 sky130_fd_sc_ms-leakage: | $(CONDA_ENV_PYTHON)
 	 @$(IN_CONDA_ENV) for V in libraries/sky130_fd_sc_ms/*; do \
-		python -m skywater_pdk.liberty $$V all --leakage; \
+		if [ -d "$$V/cells" ]; then \
+			python -m skywater_pdk.liberty $$V all --leakage; \
+		fi \
 	done
 
 sky130_fd_sc_ms: sky130_fd_sc_ms-leakage
