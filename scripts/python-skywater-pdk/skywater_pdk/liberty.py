@@ -706,8 +706,8 @@ def liberty_list(k, v, i=tuple()):
         for l in v:
             o.append('%s"%s", \\' % (INDENT*(len(i)+1), join(l)))
 
-        o[1] = o[0]+o[1]
-        o.pop(0)
+        o0 = o.pop(0)
+        o[0] = o0+o[0].lstrip()
 
         o[-1] = o[-1][:-3] + ');'
     else:
