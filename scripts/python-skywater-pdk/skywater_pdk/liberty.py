@@ -257,7 +257,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
     return libname0, corners, all_cells
 
 
-def remove_ccsnoise(data):
+def remove_ccsnoise(data, cellname):
     for k, v in list(data.items()):
         if "ccsn_" in k:
             del data[k]
@@ -271,19 +271,32 @@ def remove_ccsnoise(data):
         if "input_voltage" in pin_data:
             del pin_data["input_voltage"]
 
+        ccsn_keys = set()
+        for pk in pin_data:
+            if not pk.startswith("ccsn_"):
+                continue
+            ccsn_keys.add(pk)
+
+        for pk in ccsn_keys:
+            if debug:
+                print("{:20s} - {:15s}: Removing {}".format(cellname, k, pk))
+            del pin_data[pk]
+
         if "timing" not in pin_data:
             continue
         pin_timing = pin_data["timing"]
 
-        for t in pin_timing:
+        for i,t in enumerate(pin_timing):
             ccsn_keys = set()
-            for k in t:
-                if not k.startswith("ccsn_"):
+            for tk in t:
+                if not tk.startswith("ccsn_"):
                     continue
-                ccsn_keys.add(k)
+                ccsn_keys.add(tk)
 
-            for k in ccsn_keys:
-                del t[k]
+            for tk in ccsn_keys:
+                if debug:
+                    print("{:20s} - {:15s}.timing[{:3d}]: Removing {}".format(cellname, k, i, tk))
+                del t[tk]
 
 
 def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
@@ -320,7 +333,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
 
     # Remove the ccsnoise if it exists
     if ocorner_type != TimingType.ccsnoise:
-        remove_ccsnoise(common_data)
+        remove_ccsnoise(common_data, "library")
 
     output = liberty_dict("library", lib+"__"+corner, common_data)
     assert output[-1] == '}', output
@@ -336,7 +349,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
 
         # Remove the ccsnoise if it exists
         if ocorner_type != TimingType.ccsnoise:
-            remove_ccsnoise(cell_data)
+            remove_ccsnoise(cell_data, cell_with_size)
 
         top_write([''])
         top_write(liberty_dict("cell", "%s__%s" % (lib, cell_with_size), cell_data, [cell_with_size]))
