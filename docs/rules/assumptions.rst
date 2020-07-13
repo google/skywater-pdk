@@ -8,6 +8,8 @@ Process Stack Diagram
    :width: 100%
    :alt: SkyWater SKY130 Process Stack
 
+Details about the layers can be found in :ref:`SkyWater GDS Layers Information` page.
+
 General
 -------
 
