@@ -2,6 +2,8 @@ documentation:                  ["*.rst", "docs"]
 
 files-definition:               ["definition.json"]
 
+files-layout-gds:               ["*Makefile"]
+
 files-layout-gds:               ["*.gds"]
 files-layout-lef-magic:         ["*.magic.lef"]
 files-layout-lef:               ["*.lef"]

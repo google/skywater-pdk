@@ -53,6 +53,10 @@
 # File related labels are colored purple: d61dae
 ##########################################################################
 
+- name: "files-build"
+  description: "Issues related to the Makefiles / build infrastructure."
+  color: "d61dae"
+
 - name: "files-definition"
   description: "Issues related to the definition.json provided for each cell."
   color: "d61dae"
