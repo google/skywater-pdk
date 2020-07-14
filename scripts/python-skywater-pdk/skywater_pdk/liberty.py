@@ -843,8 +843,16 @@ def main():
             help="Include power leakage in file output.",
             action='store_true',
             default=False)
+    parser.add_argument(
+            "--debug",
+            help="Include verbose debug output on the console.",
+            action='store_true',
+            default=False)
 
     args = parser.parse_args()
+    if args.debug:
+        global debug
+        debug = True
 
     libdir = args.library_path[0]
 
