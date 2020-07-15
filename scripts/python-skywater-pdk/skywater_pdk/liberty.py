@@ -257,46 +257,54 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
     return libname0, corners, all_cells
 
 
-def remove_ccsnoise(data, cellname):
-    for k, v in list(data.items()):
+def remove_ccsnoise_from_timing(data, dataname):
+    assert "timing" in data, (dataname, data.keys(), data)
+
+    timing = data["timing"]
+
+    if isinstance(timing, list):
+        for i, t in enumerate(timing):
+            assert isinstance(t, dict), (dataname, i, t)
+            remove_ccsnoise_from_dict(t, "{}.timing[{:3d}]".format(dataname, i))
+    elif isinstance(timing, dict):
+        remove_ccsnoise_from_dict(timing, dataname+".timing")
+    else:
+        assert False, (dataname, type(timing), timing)
+
+
+def remove_ccsnoise_from_dict(data, dataname):
+    if "timing" in data:
+        remove_ccsnoise_from_timing(data, dataname)
+
+    ccsn_keys = set()
+    for k in data:
         if "ccsn_" in k:
-            del data[k]
-            continue
+            ccsn_keys.add(k)
 
-        if not k.startswith("pin "):
-            continue
+    for k in ccsn_keys:
+        if debug:
+            print("{:s}: Removing {}".format(dataname, k))
+        del data[k]
 
-        pin_data = data[k]
 
-        if "input_voltage" in pin_data:
-            del pin_data["input_voltage"]
 
-        ccsn_keys = set()
-        for pk in pin_data:
-            if not pk.startswith("ccsn_"):
-                continue
-            ccsn_keys.add(pk)
+def remove_ccsnoise_from_cell(data, cellname):
+    remove_ccsnoise_from_dict(data, cellname)
 
-        for pk in ccsn_keys:
-            if debug:
-                print("{:20s} - {:15s}: Removing {}".format(cellname, k, pk))
-            del pin_data[pk]
+    for k, v in list(data.items()):
+        if k.startswith("pin "):
+            pin_data = data[k]
+            if "input_voltage" in pin_data:
+                del pin_data["input_voltage"]
 
-        if "timing" not in pin_data:
-            continue
-        pin_timing = pin_data["timing"]
+            remove_ccsnoise_from_dict(pin_data, "{}.{}".format(cellname, k))
 
-        for i,t in enumerate(pin_timing):
-            ccsn_keys = set()
-            for tk in t:
-                if not tk.startswith("ccsn_"):
-                    continue
-                ccsn_keys.add(tk)
+        if k.startswith("bus"):
+            bus_data = data[k]
+            remove_ccsnoise_from_dict(bus_data, "{}.{}".format(cellname, k))
 
-            for tk in ccsn_keys:
-                if debug:
-                    print("{:20s} - {:15s}.timing[{:3d}]: Removing {}".format(cellname, k, i, tk))
-                del t[tk]
+
+remove_ccsnoise_from_library = remove_ccsnoise_from_dict
 
 
 def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
@@ -333,7 +341,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
 
     # Remove the ccsnoise if it exists
     if ocorner_type != TimingType.ccsnoise:
-        remove_ccsnoise(common_data, "library")
+        remove_ccsnoise_from_library(common_data, "library")
 
     output = liberty_dict("library", lib+"__"+corner, common_data)
     assert output[-1] == '}', output
@@ -349,7 +357,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
 
         # Remove the ccsnoise if it exists
         if ocorner_type != TimingType.ccsnoise:
-            remove_ccsnoise(cell_data, cell_with_size)
+            remove_ccsnoise_from_cell(cell_data, cell_with_size)
 
         top_write([''])
         top_write(liberty_dict("cell", "%s__%s" % (lib, cell_with_size), cell_data, [cell_with_size]))
