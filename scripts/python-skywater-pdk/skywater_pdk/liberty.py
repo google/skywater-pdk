@@ -343,7 +343,8 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
     if ocorner_type != TimingType.ccsnoise:
         remove_ccsnoise_from_library(common_data, "library")
 
-    output = liberty_dict("library", lib+"__"+corner, common_data)
+    attribute_types = {}
+    output = liberty_dict("library", lib+"__"+corner, common_data, attribute_types)
     assert output[-1] == '}', output
     top_write(output[:-1])
 
@@ -360,7 +361,13 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
             remove_ccsnoise_from_cell(cell_data, cell_with_size)
 
         top_write([''])
-        top_write(liberty_dict("cell", "%s__%s" % (lib, cell_with_size), cell_data, [cell_with_size]))
+        top_write(liberty_dict(
+            "cell",
+            "%s__%s" % (lib, cell_with_size),
+            cell_data,
+            [cell_with_size],
+            attribute_types,
+        ))
 
     top_write([''])
     top_write(['}'])
@@ -602,6 +609,135 @@ def is_liberty_list(k):
     return k in ('variable', 'index', 'values')
 
 
+def liberty_guess(o):
+    """
+
+    >>> liberty_guess('hello')  # doctest: +ELLIPSIS
+    <function liberty_str at ...>
+    >>> liberty_guess(1.0)      # doctest: +ELLIPSIS
+    <function liberty_float at ...>
+    >>> liberty_guess(1)        # doctest: +ELLIPSIS
+    <function liberty_float at ...>
+    >>> liberty_guess(None)
+    Traceback (most recent call last):
+        ...
+    ValueError: None has unguessable type: <class 'NoneType'>
+
+    """
+    if isinstance(o, str):
+        return liberty_str
+    elif isinstance(o, (float,int)):
+        return liberty_float
+    else:
+        raise ValueError("%r has unguessable type: %s" % (o, type(o)))
+
+
+def liberty_bool(b):
+    """
+
+    >>> liberty_bool(True)
+    'true'
+    >>> liberty_bool(False)
+    'false'
+    >>> liberty_bool(1.0)
+    'true'
+    >>> liberty_bool(1.5)
+    Traceback (most recent call last):
+        ...
+    ValueError: 1.5 is not a bool
+
+    >>> liberty_bool(0.0)
+    'false'
+    >>> liberty_bool(0)
+    'false'
+    >>> liberty_bool(1)
+    'true'
+    >>> liberty_bool("error")
+    Traceback (most recent call last):
+        ...
+    ValueError: 'error' is not a bool
+
+    """
+    try:
+        b2 = bool(b)
+    except ValueError:
+        b2 = None
+
+    if b2 != b:
+        raise ValueError("%r is not a bool" % b)
+
+    return {True: 'true', False: 'false'}[b]
+
+
+def liberty_str(s):
+    """
+
+    >>> liberty_str("hello")
+    '"hello"'
+
+    >>> liberty_str('he"llo')
+    Traceback (most recent call last):
+        ...
+    ValueError: '"' is not allow in the string: 'he"llo'
+
+    >>> liberty_str(1.0)
+    '"1.0000000000"'
+
+    >>> liberty_str(1)
+    '"1.0000000000"'
+
+    >>> liberty_str([])
+    Traceback (most recent call last):
+        ...
+    ValueError: [] is not a string
+
+    >>> liberty_str(True)
+    Traceback (most recent call last):
+        ...
+    ValueError: True is not a string
+
+    """
+    try:
+        if isinstance(s, (int, float)):
+            s = liberty_float(s)
+    except ValueError:
+        pass
+
+    if not isinstance(s, str):
+        raise ValueError("%r is not a string" % s)
+
+    if '"' in s:
+        raise ValueError("'\"' is not allow in the string: %r" % s)
+
+    return '"'+s+'"'
+
+
+def liberty_int(f):
+    """
+
+    >>> liberty_int(1.0)
+    1
+    >>> liberty_int(1.5)
+    Traceback (most recent call last):
+        ...
+    ValueError: 1.5 is not an int
+
+    >>> liberty_int("error")
+    Traceback (most recent call last):
+        ...
+    ValueError: 'error' is not an int
+
+    """
+    try:
+        f2 = int(f)
+    except ValueError as e:
+        f2 = None
+
+    if f2 is None or f2 != f:
+        raise ValueError("%r is not an int" % f)
+    return int(f)
+
+
 def liberty_float(f):
     """
 
@@ -617,7 +753,42 @@ def liberty_float(f):
     >>> liberty_float(1)
     '1.0000000000'
 
+    >>> liberty_float(True)
+    Traceback (most recent call last):
+        ...
+    ValueError: True is not a float
+
+    >>> liberty_float(False)
+    Traceback (most recent call last):
+        ...
+    ValueError: False is not a float
+
+    >>> liberty_float(0)
+    '0.0000000000'
+
+    >>> liberty_float(None)
+    Traceback (most recent call last):
+        ...
+    ValueError: None is not a float
+
+    >>> liberty_float('hello')
+    Traceback (most recent call last):
+        ...
+    ValueError: 'hello' is not a float
+
+
     """
+    try:
+        f2 = float(f)
+    except (ValueError, TypeError):
+        f2 = None
+
+    if isinstance(f, bool):
+        f2 = None
+
+    if f is None or f2 != f:
+        raise ValueError("%r is not a float" % f)
+
     WIDTH = len(str(0.0083333333))
 
     s = json.dumps(f)
@@ -637,6 +808,14 @@ def liberty_float(f):
         while len(s) < WIDTH:
             s += '0'
     return s
+
+
+LIBERTY_ATTRIBUTE_TYPES = {
+    'boolean':  liberty_bool,
+    'string':   liberty_str,
+    'int':      liberty_int,
+    'float':    liberty_float,
+}
 
 
 INDENT="    "
@@ -738,8 +917,42 @@ def liberty_list(k, v, i=tuple()):
     return o
 
 
-def liberty_dict(dtype, dvalue, data, indent=tuple()):
+def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
+
+    """
+
+    >>> def g(a, b, c):
+    ...     return {"group_name": a, "attribute_name":b, "attribute_type": c}
+    >>> d = {'float': 1.0, "str": "str"}
+    >>> print('\\n'.join(liberty_dict("library", "test", d)))
+    library ("test") {
+        float : 1.0000000000;
+        str : "str";
+    }
+    >>> d['define'] = [g("cell", "float", "string")]
+    >>> print('\\n'.join(liberty_dict("library", "test", d)))
+    library ("test") {
+        define(float,cell,string);
+        float : 1.0000000000;
+        str : "str";
+    }
+    >>> d['define'] = [g("library", "float", "string")]
+    >>> print('\\n'.join(liberty_dict("library", "test", d)))
+    library ("test") {
+        define(float,library,string);
+        float : "1.0000000000";
+        str : "str";
+    }
+
+    """
+
+
     assert isinstance(data, dict), (dtype, dvalue, data)
+
+    if attribute_types is None:
+        attribute_types = {}
+    assert isinstance(attribute_types, dict), (dtype, dvalue, attribute_types)
+
     o = []
 
     if dvalue:
@@ -773,28 +986,47 @@ def liberty_dict(dtype, dvalue, data, indent=tuple()):
     di = [attr_sort_key(i) for i in data.items()]
     di.sort()
     if debug:
+        print(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
+        print("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
         for sk, kt, skv, kv, k, v in di:
-            print(str(indent), "%4.0f %4.0f -- " % sk, "%-40s" % kt, '%-40r' % kv, str(v)[:40], '...')
+            print(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
+            sv = str(v)
+            print(sv[:40], end=" ")
+            if len(sv) > 40:
+                print('...', end=" ")
+            print()
+
 
     # Output all the attributes
+    if dtype not in attribute_types:
+        dtype_attribute_types = {}
+        attribute_types[dtype] = dtype_attribute_types
+    dtype_attribute_types = attribute_types[dtype]
+
     for _, ktype, _, kvalue, k, v in di:
         indent_n = list(indent)+[k]
 
         if ktype == 'define':
             for d in sorted(data['define'], key=lambda d: d['group_name']+'.'+d['attribute_name']):
+
+                aname = d['attribute_name']
+                gname = d['group_name']
+                atype = d['attribute_type']
+
                 o.append('%sdefine(%s,%s,%s);' % (
-                    INDENT*len(indent_n),
-                    d['attribute_name'],
-                    d['group_name'],
-                    d['attribute_type']),
-                )
+                    INDENT*len(indent_n), aname, gname, atype))
+
+                assert atype in LIBERTY_ATTRIBUTE_TYPES, (atype, d)
+                if gname not in attribute_types:
+                    attribute_types[gname] = {}
+                attribute_types[gname][aname] = LIBERTY_ATTRIBUTE_TYPES[atype]
 
         elif ktype == "comp_attribute":
             o.extend(liberty_composite(kvalue, v, indent_n))
 
         elif isinstance(v, dict):
             assert isinstance(v, dict), (dtype, dvalue, k, v)
-            o.extend(liberty_dict(ktype, kvalue, v, indent_n))
+            o.extend(liberty_dict(ktype, kvalue, v, indent_n, attribute_types))
 
         elif isinstance(v, list):
             assert len(v) > 0, (dtype, dvalue, k, v)
@@ -803,24 +1035,25 @@ def liberty_dict(dtype, dvalue, data, indent=tuple()):
                     return o.items()
 
                 for l in sorted(v, key=sk):
-                    o.extend(liberty_dict(ktype, kvalue, l, indent_n))
+                    o.extend(liberty_dict(ktype, kvalue, l, indent_n, attribute_types))
 
             elif is_liberty_list(ktype):
                 o.extend(liberty_list(ktype, v, indent_n))
 
             elif "clk_width" == ktype:
                 for l in sorted(v):
-                    o.append("%s%s : %s;" % (INDENT*len(indent_n), k, l))
+                    o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, l))
 
             else:
                 raise ValueError("Unknown %s: %r\n%s" % (k, v, indent_n))
 
         else:
-            if isinstance(v, str):
-                v = '"%s"' % v
-            elif isinstance(v, (float,int)):
-                v = liberty_float(v)
-            o.append("%s%s : %s;" % (INDENT*len(indent_n), k, v))
+            if ktype in dtype_attribute_types:
+                liberty_out = dtype_attribute_types[ktype]
+            else:
+                liberty_out = liberty_guess(v)
+            ov = liberty_out(v)
+            o.append("%s%s : %s;" % (INDENT*len(indent_n), k, ov))
 
     o.append("%s}" % (INDENT*len(indent)))
     return o
