@@ -292,14 +292,16 @@ def remove_ccsnoise_from_cell(data, cellname):
     remove_ccsnoise_from_dict(data, cellname)
 
     for k, v in list(data.items()):
-        if not k.startswith("pin "):
-            continue
+        if k.startswith("pin "):
+            pin_data = data[k]
+            if "input_voltage" in pin_data:
+                del pin_data["input_voltage"]
 
-        pin_data = data[k]
-        if "input_voltage" in pin_data:
-            del pin_data["input_voltage"]
+            remove_ccsnoise_from_dict(pin_data, "{}.{}".format(cellname, k))
 
-        remove_ccsnoise_from_dict(pin_data, "{}.{}".format(cellname, k))
+        if k.startswith("bus"):
+            bus_data = data[k]
+            remove_ccsnoise_from_dict(bus_data, "{}.{}".format(cellname, k))
 
 
 remove_ccsnoise_from_library = remove_ccsnoise_from_dict
