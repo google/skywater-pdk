@@ -1,0 +1,7 @@
+Interlayer fringe capacitance (downward direction) (aF/um)	Poly	Local interconnect	Metal1	Metal2	Metal3	Metal4
+Local interconnect	51.846					
+Metal1	46.724	59.496				
+Metal2	41.222	46.277	67.045			
+Metal3	43.531	46.708	54.814	69.846		
+Metal4	38.105	39.709	42.563	46.382	70.522	
+Metal5	39.908	41.147	43.188	45.592	54.152	82.819

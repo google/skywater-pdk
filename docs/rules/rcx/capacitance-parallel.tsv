@@ -1,0 +1,7 @@
+Interlayer parallel plate capacitance (aF/um^2)	Local interconnect	Metal1	Metal2	Metal3	Metal4	Metal5
+Poly	94.1644	44.8056	24.4968	16.0552	10.0131	7.2085
+Local interconnect		114.1970	37.5647	20.7915	11.6705	8.0265
+Metal1			133.8610	34.5350	15.0275	9.4789
+Metal2				86.1861	20.3321	11.3410
+Metal3					84.0346	19.6269
+Metal4						68.3252
