@@ -21,7 +21,7 @@ include scripts/make/conda.mk
 
 README.rst: README.src.rst docs/status.rst Makefile | $(CONDA_ENV_PYTHON)
 	@rm -f README.rst
-	$(IN_CONDA_ENV) rst_include include --source README.src.rst \
+	$(IN_CONDA_ENV) rst_include include README.src.rst - \
 		| sed \
 			-e's@|TAG_VERSION|@$(TAG_VERSION)@g' \
 			-e's@:ref:`Versioning Information`@`Versioning Information <docs/versioning.rst>`_@g' \
