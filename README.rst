@@ -35,8 +35,6 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
 
 .. |current-status| replace:: **Experimental Preview**
 
-.. include:: common.inc
-
 Current Status -- |current-status|
 ==================================
 
