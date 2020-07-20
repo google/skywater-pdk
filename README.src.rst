@@ -33,7 +33,6 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
    :target: https://github.com/google/skywater-pdk
    :width: 80%
 
-.. include:: docs/common.inc
 .. include:: docs/status.rst
 
 See both the :ref:`Known Issues` section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
