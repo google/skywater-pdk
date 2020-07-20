@@ -1149,5 +1149,7 @@ def main():
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
+    fail, _ = doctest.testmod()
+    if fail > 0:
+        sys.exit(1)
     sys.exit(main())
