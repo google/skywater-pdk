@@ -26,6 +26,10 @@
   description: "This issue is suitable for a new person who has never contributed to the PDK before."
   color: "5cafc4" # weird blue
 
+- name: "in-progress"
+  description: "This issue has someone already working on solving it and has made substantial progress."
+  color: "ff0010" # bright red
+
 # Labels related to type of GitHub issue
 - name: "type-bug"
   description: "Something isn't working"
