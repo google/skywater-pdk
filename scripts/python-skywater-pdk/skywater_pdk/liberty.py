@@ -1038,6 +1038,9 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
             elif is_liberty_list(ktype):
                 o.extend(liberty_list(ktype, v, indent_n))
 
+            elif "table" == ktype:
+                o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, ",".join(v)))
+
             elif "clk_width" == ktype:
                 for l in sorted(v):
                     o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, l))
