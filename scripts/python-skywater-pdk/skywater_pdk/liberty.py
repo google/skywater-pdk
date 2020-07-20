@@ -918,7 +918,6 @@ def liberty_list(k, v, i=tuple()):
 
 
 def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
-
     """
 
     >>> def g(a, b, c):
@@ -945,8 +944,6 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
     }
 
     """
-
-
     assert isinstance(data, dict), (dtype, dvalue, data)
 
     if attribute_types is None:
