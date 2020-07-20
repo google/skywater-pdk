@@ -965,8 +965,9 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
     # Sort the attributes
     def attr_sort_key(item):
         k, v = item
-        if " " in k:
-            ktype, kvalue = k.split(" ", 1)
+
+        if "," in k:
+            ktype, kvalue = k.split(",", 1)
             sortable_kv = sortable_extracted_numbers(kvalue)
         else:
             ktype = k
@@ -1042,7 +1043,7 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
                     o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, l))
 
             else:
-                raise ValueError("Unknown %s: %r\n%s" % (k, v, indent_n))
+                raise ValueError("Unknown %s: %r\n%s" % ((ktype, kvalue, k), v, indent_n))
 
         else:
             if ktype in dtype_attribute_types:
