@@ -918,7 +918,6 @@ def liberty_list(k, v, i=tuple()):
 
 
 def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
-
     """
 
     >>> def g(a, b, c):
@@ -945,8 +944,6 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
     }
 
     """
-
-
     assert isinstance(data, dict), (dtype, dvalue, data)
 
     if attribute_types is None:
@@ -968,8 +965,9 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
     # Sort the attributes
     def attr_sort_key(item):
         k, v = item
-        if " " in k:
-            ktype, kvalue = k.split(" ", 1)
+
+        if "," in k:
+            ktype, kvalue = k.split(",", 1)
             sortable_kv = sortable_extracted_numbers(kvalue)
         else:
             ktype = k
@@ -1040,12 +1038,15 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
             elif is_liberty_list(ktype):
                 o.extend(liberty_list(ktype, v, indent_n))
 
+            elif "table" == ktype:
+                o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, ",".join(v)))
+
             elif "clk_width" == ktype:
                 for l in sorted(v):
                     o.append('%s%s : "%s";' % (INDENT*len(indent_n), k, l))
 
             else:
-                raise ValueError("Unknown %s: %r\n%s" % (k, v, indent_n))
+                raise ValueError("Unknown %s: %r\n%s" % ((ktype, kvalue, k), v, indent_n))
 
         else:
             if ktype in dtype_attribute_types:
@@ -1152,5 +1153,7 @@ def main():
 
 if __name__ == "__main__":
     import doctest
-    doctest.testmod()
+    fail, _ = doctest.testmod()
+    if fail > 0:
+        sys.exit(1)
     sys.exit(main())
