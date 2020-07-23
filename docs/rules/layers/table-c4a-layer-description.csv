@@ -1,0 +1,25 @@
+waffle_chip      ,icfb ver 5.0,icfb ver 5.1
+drawing          ,dg,drw
+pin              ,pn,pin
+boundary         ,by,bnd
+net              ,nt,net
+res              ,rs,res
+label            ,ll,lbl
+cut              ,ct,cut
+short            ,st,sho
+pin              ,pn,pin
+gate             ,ge,gat
+probe            ,pe,pro
+blockage         ,be,blo
+model            ,ml,mod
+optionX (X = 1…n),oX (X = 1..n),opt*(X=1..n)
+fuse             ,fe,fus
+mask             ,mk,mas*
+maskAdd          ,md,mas*
+maskDrop         ,mp,mas*
+waffleAdd1       ,w1,waffleAdd1
+waffleAdd2       ,w2,waffleAdd2
+waffleDrop       ,wp,waf
+error            ,er,err
+warning          ,wg,wng
+dummy            ,dy,dmy
