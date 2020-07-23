@@ -436,6 +436,19 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
     msg_info()
 
 
+def deps(library_dir, lib, corner, ocorner_type, icorner_type, cells, output_directory):
+    output_directory_prefix = None if output_directory else "timing"
+    output_directory = output_directory if output_directory else library_dir
+    top_out_path     = os.path.join(output_directory, top_liberty_file(lib, corner, ocorner_type, output_directory_prefix))
+    common_data_path = os.path.join(output_directory, output_directory_prefix, "{}__common.lib.json".format(lib))
+    top_data_path    = os.path.join(output_directory, top_corner_file(lib, corner, icorner_type, output_directory_prefix))
+    cell_paths_lst = [
+        os.path.join(library_dir, cell_corner_file(lib, cell_with_size, corner, icorner_type))
+            for cell_with_size in cells
+    ]
+    print(f"{top_out_path:s} {top_out_path.replace('.lib','.d'):s}: {common_data_path:s} {top_data_path:s} {' '.join(cell_paths_lst):s}")
+
+
 # * The 'delay_model' should be the 1st attribute in the library
 # * The 'technology' should be the 1st attribute in the library
 
@@ -1159,6 +1172,12 @@ def main():
             help="List buildable target liberty files",
             action='store_true',
             default=False)
+    parser.add_argument(
+            "--gen-deps",
+            help="Generate dependency file",
+            action='store_true',
+            default=False)
+
     args = parser.parse_args()
     if args.debug:
         global debug
@@ -1219,6 +1238,10 @@ def main():
                         print(libdir.joinpath(top_liberty_file(lib, k, t)))
             return retcode
 
+    if not args.gen_deps:
+        msg_info("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
+        msg_info()
+
     for corner in args.corner:
         input_corner_type, corner_cells = corners[corner]
         if output_corner_type not in input_corner_type:
@@ -1230,11 +1253,19 @@ def main():
         else:
             input_corner_type = output_corner_type
 
-        generate(
-            libdir, lib,
-            corner, output_corner_type, input_corner_type,
-            corner_cells, args.output_directory
-        )
+        if args.gen_deps:
+            deps(
+                libdir, lib,
+                corner, output_corner_type, input_corner_type,
+                corner_cells, args.output_directory,
+            )
+        else:
+            generate(
+                libdir, lib,
+                corner, output_corner_type, input_corner_type,
+                corner_cells, args.output_directory,
+            )
+
     return 0
 
 
