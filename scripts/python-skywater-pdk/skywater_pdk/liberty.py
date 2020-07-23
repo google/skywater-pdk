@@ -41,6 +41,20 @@ debug = False
 
 LOG2_10 = log2(10)
 
+def msg_debug(*args, **kwargs):
+    if debug:
+        kwargs['file'] = sys.stderr
+        print("[d]", *args if args else "", **kwargs)
+
+def msg_info( *args, **kwargs):
+    kwargs['file'] = sys.stderr
+    print("[+]" if args else "", *args, **kwargs)
+
+def msg_err( *args, **kwargs):
+    kwargs['file'] = sys.stderr
+    print("[!]" if args else "", *args, **kwargs)
+
+
 class TimingType(enum.IntFlag):
     """
 
@@ -248,7 +262,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
         if not missing:
             continue
 
-        print("Missing", ", ".join(missing), "from", corner, corner_types)
+        msg_err("Missing", ", ".join(missing), "from", corner, corner_types)
 
     return libname0, corners, all_cells
 
@@ -257,7 +271,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
             fname = cell_corner_file(libname0, cell_with_size, corner, corner_type)
             fpath = os.path.join(library_dir, fname)
             if not os.path.exists(fpath) and debug:
-                print("Missing", (fpath, corner, corner_type, corner_types))
+                msg_err("Missing", (fpath, corner, corner_type, corner_types))
 
     timing_dir = os.path.join(library_dir, "timing")
     assert os.path.exists(timing_dir), timing_dir
@@ -266,7 +280,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
             fname = top_corner_file(libname0, corner, corner_type)
             fpath = os.path.join(library_dir, fname)
             if not os.path.exists(fpath) and debug:
-                print("Missing", (fpath, corner, corner_type, corner_types))
+                msg_err("Missing", (fpath, corner, corner_type, corner_types))
 
     return libname0, corners, all_cells
 
@@ -297,7 +311,7 @@ def remove_ccsnoise_from_dict(data, dataname):
 
     for k in ccsn_keys:
         if debug:
-            print("{:s}: Removing {}".format(dataname, k))
+            msg_info("{:s}: Removing {}".format(dataname, k))
         del data[k]
 
 
@@ -332,7 +346,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
         print("\n".join(lines), file=top_fout)
 
     otype_str = "({} from {})".format(ocorner_type.name, icorner_type.names())
-    print("Starting to write", top_fpath, otype_str, flush=True)
+    msg_info("Starting to write", top_fpath, otype_str)
 
     common_data = {}
 
@@ -352,7 +366,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
         assert isinstance(d, dict)
         for k, v in d.items():
             if k in common_data:
-                print("Overwriting", k, "with", v, "(existing value of", common_data[k], ")")
+                msg_info("Overwriting", k, "with", v, "(existing value of", common_data[k], ")")
             common_data[k] = v
 
     # Remove the ccsnoise if it exists
@@ -388,8 +402,8 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
     top_write([''])
     top_write(['}'])
     top_fout.close()
-    print("   Finish writing", top_fpath, flush=True)
-    print("")
+    msg_info("   Finish writing", top_fpath)
+    msg_info()
 
 
 # * The 'delay_model' should be the 1st attribute in the library
@@ -997,16 +1011,16 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
 
     di = [attr_sort_key(i) for i in data.items()]
     di.sort()
-    if debug:
-        print(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
-        print("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
-        for sk, kt, skv, kv, k, v in di:
-            print(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
-            sv = str(v)
-            print(sv[:40], end=" ")
-            if len(sv) > 40:
-                print('...', end=" ")
-            print()
+
+    msg_debug(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
+    msg_debug("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
+    for sk, kt, skv, kv, k, v in di:
+        msg_debug(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
+        sv = str(v)
+        msg_debug(sv[:40], end=" ")
+        if len(sv) > 40:
+            msg_debug('...', end=" ")
+        msg_debug()
 
 
     # Output all the attributes
@@ -1135,26 +1149,26 @@ def main():
         for acorner in args.corner:
             if acorner in corners:
                 continue
-            print()
-            print("Unknown corner:", acorner)
+            msg_err()
+            msg_err("Unknown corner:", acorner)
             retcode = 1
         if retcode != 0:
             args.corner.clear()
 
     if not args.corner:
-        print()
-        print("Available corners for", lib+":")
+        msg_info()
+        msg_info("Available corners for", lib+":")
         for k, v in sorted(corners.items()):
-            print("  -", k, v[0].describe())
-        print()
+            msg_info("  -", k, v[0].describe())
+        msg_info()
         return retcode
+    msg_info("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
+    msg_info()
 
-    print("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
-    print()
     for corner in args.corner:
         input_corner_type, corner_cells = corners[corner]
         if output_corner_type not in input_corner_type:
-            print("Corner", corner, "doesn't support", output_corner_type, "(only {})".format(input_corner_type))
+            msg_err("Corner", corner, "doesn't support", output_corner_type, "(only {})".format(input_corner_type))
             return 1
 
         if output_corner_type == TimingType.basic and TimingType.ccsnoise in input_corner_type:
