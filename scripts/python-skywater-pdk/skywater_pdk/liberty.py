@@ -1154,6 +1154,11 @@ def main():
             help="Sets the parent directory of the liberty files",
             default="")
 
+    parser.add_argument(
+            "--list-targets",
+            help="List buildable target liberty files",
+            action='store_true',
+            default=False)
     args = parser.parse_args()
     if args.debug:
         global debug
@@ -1200,14 +1205,19 @@ def main():
             args.corner.clear()
 
     if not args.corner:
-        msg_info()
-        msg_info("Available corners for", lib+":")
-        for k, v in sorted(corners.items()):
-            msg_info("  -", k, v[0].describe())
-        msg_info()
-        return retcode
-    msg_info("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
-    msg_info()
+        if not args.list_targets:
+            msg_info()
+            msg_info("Available corners for", lib+":")
+            for k, v in sorted(corners.items()):
+                msg_info("  -", k, v[0].describe())
+            msg_info()
+            return retcode
+        else:
+            for k, v in sorted(corners.items()):
+                for t in TimingType:
+                    if t in v[0]:
+                        print(libdir.joinpath(top_liberty_file(lib, k, t)))
+            return retcode
 
     for corner in args.corner:
         input_corner_type, corner_cells = corners[corner]
