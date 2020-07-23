@@ -194,6 +194,36 @@ def top_corner_file(libname, corner, corner_type: TimingType, directory_prefix =
           corner_type=corner_type.file)
 
 
+def top_liberty_file(libname, corner, corner_type: TimingType, directory_prefix = "timing"):
+    """
+
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.ccsnoise)
+    'timing/sky130_fd_sc_hd__ff_100C_1v65_ccsnoise.lib'
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic)
+    'timing/sky130_fd_sc_hd__ff_100C_1v65.lib'
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic, "")
+    'sky130_fd_sc_hd__ff_100C_1v65.lib'
+
+    """
+    return top_corner_file(libname, corner, corner_type, directory_prefix).replace('.lib.json', '.lib')
+
+
+def top_liberty_file_split(fname):
+    """
+    Splits a fully specified top liberty file name into library / corner / corner_type
+
+    >>> top_liberty_file_split('timing/sky130_fd_sc_hd__ff_100C_1v65_ccsnoise.lib')
+    ('sky130_fd_sc_hd', 'ff_100C_1v65', <TimingType.ccsnoise: 3>)
+    >>> top_liberty_file_split('timing/sky130_fd_sc_hd__ff_100C_1v65.lib')
+    ('sky130_fd_sc_hd', 'ff_100C_1v65', <TimingType.basic: 1>)
+
+    """
+    m = re.match('(.*)__(.*)\.lib', os.path.basename(fname))
+    if m is None:
+        return None
+    return ( m.group(1), *TimingType.parse(m.group(2)) )
+
+
 def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
     """Collect the available timing information in corners.
 
@@ -337,7 +367,7 @@ remove_ccsnoise_from_library = remove_ccsnoise_from_dict
 
 def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output_directory):
     output_directory_prefix = None if output_directory else "timing"
-    top_fname = top_corner_file(lib, corner, ocorner_type, output_directory_prefix).replace('.lib.json', '.lib')
+    top_fname = top_liberty_file(lib, corner, ocorner_type, output_directory_prefix)
     output_directory = output_directory if output_directory else library_dir
     top_fpath = os.path.join(output_directory, top_fname)
 
@@ -1133,14 +1163,28 @@ def main():
 
     retcode = 0
 
-    lib, corners, all_cells = collect(libdir)
+    if libdir.is_dir():
+        # libdir is a directory, collect available corners and process specified ones
+        if args.ccsnoise:
+            output_corner_type = TimingType.ccsnoise
+        elif args.leakage:
+            output_corner_type = TimingType.leakage
+        else:
+            output_corner_type = TimingType.basic
 
-    if args.ccsnoise:
-        output_corner_type = TimingType.ccsnoise
-    elif args.leakage:
-        output_corner_type = TimingType.leakage
+    elif libdir.suffix == '.lib':
+        # libdir is directly the liberty target file to generate, derive params from it
+        s = top_liberty_file_split(libdir.name)
+
+        libdir = libdir.parents[1]
+        args.corner = [ s[1] ]
+        output_corner_type = s[2]
+
     else:
-        output_corner_type = TimingType.basic
+        msg_err("Invalid library path (neither source directory or liberty library target")
+        return 1
+
+    lib, corners, all_cells = collect(libdir)
 
     if args.corner == ['all']:
         args.corner = list(sorted(k for k, (v0, v1) in corners.items() if output_corner_type in v0))
