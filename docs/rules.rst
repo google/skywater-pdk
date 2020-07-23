@@ -8,6 +8,13 @@ SkyWater SKY130 Process Design Rules
 
     rules/background
     rules/masks
+
     rules/assumptions
+
+    rules/layers
+
+    rules/summary
+
     rules/periphery
+
     rules/errors
