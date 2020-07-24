@@ -1,0 +1,21 @@
+Node Type,Originates HV?,Propagates HV?,Becomes HV? (when HV Propagates to this node),Notes
+Deep N-Well,No,N/A,N/A,"[#f1]_ [#f7]_"
+P-Well,No,N/A,N/A,"[#f1]_ [#f7]_"
+P-Well Resistor,No,No,Yes,[#f2]_
+N-Well,No,N/A,N/A,"[#f1]_ [#f7]_"
+waffle_chip,No,Yes,Yes,
+P+ Diffusion,No,Yes,Yes,
+N+ Diffusion Resistor,No,No,Yes,[#f3]_
+P+ Diffusion Resistor,No,No,Yes,[#f3]_
+HV Diffusion,Yes,Yes,Yes,
+Diodes,No,Yes,Yes,[#f3]_
+Poly,No,Yes,Yes,
+Poly Resistor,No,No,Yes,[#f4]_
+GATE,No,No,No,
+HvFET_gate (GATE abutting hv Diff),No,No,Yes,[#f5]_
+Licon1,No,Yes,N/A,[#f6]_
+Li1,No,Yes,N/A,[#f6]_
+Mcon,No,Yes,N/A,[#f6]_
+Met1,No,Yes,N/A,[#f6]_
+Via,No,Yes,N/A,[#f6]_
+Met2,No,Yes,N/A,[#f6]_
