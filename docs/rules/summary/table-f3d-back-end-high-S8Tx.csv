@@ -1,0 +1,10 @@
+Layer,CD,licon,,li1,,mcon,,metal1,,via,,metal2,,via2,,metal3,
+Parameter,width,spc,enc,spc,enc,spc,enc,spc,enc,spc,enc,spc,enc,spc,enc,spc,enc
+li1,0.170,undefined,0.000,0.170,X,X,X,X,X,X,X,X,X,X,X,X,X
+mcon,0.170,-,-,-,0.000,0.190,X,X,X,X,X,X,X,X,X,X,X
+metal1,0.140,-,-,-,-,-,0.03/ 0.06,0.140,X,X,X,X,X,X,X,X,X
+via,0.150,-,-,-,-,-,-,-,0.055 / 0.085,0.170,X,X,X,X,X,X,X
+metal2,0.140,-,-,-,-,-,-,-,-,-,0.055,0.140,X,X,X,X,X
+via2,0.280,-,-,-,-,-,-,-,-,-,-,-,0.190,1.200,X,X,X
+metal3,2.500,-,-,-,-,-,-,-,-,-,-,-,-,-,0.310,2.500,X
+,All enclosures in tables are nominal and do not apply to butting edges or corners.,,,,,,,,,,,,,,,,

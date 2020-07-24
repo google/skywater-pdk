@@ -1,0 +1,7 @@
+Layer,CD,nwell,,diff,,tap,,poly,,lvom,,Manual,,,,,
+Parameter,width,spc,enc,spc,enc,spc,enc,spc,enc,spc,enc,merge ?,,,,,
+hnwell,0.840,2.000,X,X,X,X,X,X,X,X,X,Yes,,,,,
+hvi,0.600,0.700,-,0.180,0.180,0.180,0.180,-,-,0.700,X,Yes,,,,,
+hdiff,0.290,0.430,0.330,0.300,X,X,X,X,X,X,X,-,,,,,
+htap,0.150,0.430,0.330,,-,0.270,X,X,X,X,X,-,,,,,
+HV poly,0.500,-,-,0.075,-,0.055,-,0.210,X,-,-,-,,,,,

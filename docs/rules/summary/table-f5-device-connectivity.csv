@@ -1,0 +1,7 @@
+Devices,LVS,Latch up,,Soft,,,,,,,,,,,,,
+Transistors,open,open,,open,,,,,,,,,,,,,
+resistor,open,open,,open,,,,,,,,,,,,,
+diode,open,open,,open,,,,,,,,,,,,,
+pnp,open,open,,open,,,,,,,,,,,,,
+Inductor,open,short,,open,,,,,,,,,,,,,
+capacitors,open,open,,open,,,,,,,,,,,,,
