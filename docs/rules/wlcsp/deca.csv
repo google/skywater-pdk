@@ -1,0 +1,31 @@
+(cpbo.-.-),1st polyimide (mask),,
+,Function: Opens over the pad openings; Allows RDL layer to connect to top metal,,
+wlcsp.1,Min cpbo diameter over bond pad passivation opening,,20.00
+wlcsp.2,Min bond pad passivation opening to create cpbo,,35.00
+wlcsp.3,Min enclosure of cpbo over bond pad by pad:dg,,7.50
+(rdl.-),Re-distribution,,
+,Function: Re-distribution layer connects the top metal from the customer to the bumps,,
+x.1,"Polymer 1 via and RDL1 capture pad should be designed as large as possible. The shape can be a circle, octagon, oblong, or a square with rounded corners. The via is not required to be centered within the passivation opening. Any offset is acceptable as long as the minimum overlap design rules are met",,exempt x.3a
+x.2,"Fillet or “teardrop” is required between the trace and the RDL1 UBM capture pad to reduce stress and avoid 90°or acute angles which can cause over etching. If room permits, the fillet width shall be 90% of the RDL 1 UBM capture pad diameter and set back from pad shall be the same as the trace width.",,add teardrop
+x.3,"Trace width and spacing shall be made equal and maximized where possible for optimized manufacturability, reliability and improved electrical performance (minimum width and spacing shall be limited to a localized area).",,Best practice
+wlcsp.1,Min rdl pad diameter over bond pad,,40.00
+wlcsp.2,Min spacing between rdl and rdl larger than 30 um by 30 um and a run length > 60um,,15.00
+wlcsp.3,cpbo (with max width of 30x30  must be enclosed by rdl by at least ,,10.00
+(cpmm2.-.-),2nd polyimide,,
+,Function: 2nd polyimide layer acts as a via between RDL and  UBM,,
+x.1,Capture pads are identified by (rdl and bump) enclosing pmm2,,
+wlcsp.1,"Min spacing, no overlap, between cpbo and cpi2 on different nets",,25.00
+wlcsp.2,Min enclosure of cpbo by cpmm2 (no straddle),,15.00
+wlcsp.3,Min cpmm2 pad diameter,,155.00
+wlcsp.4,Min diameter of rdl capture pad under cpmm2,,235.00
+wlcsp.5,Min enclosure of rdl by cpmm2,,15.00
+wlcsp.6,Minimum remaining fraction (polymer 2) size of full via size\nAdd a radius or chamfer on sharp corners of truncated 2nd polyimide via and corresponding RDL capture pad.,,0.5
+(ubm.-.-),Under bump metal,,
+,Function: Layer added underneath the bump balls,,
+1,Min width of ubm (for parallel opposite edges),,215.00
+2,pmm2 must be enclosed by ubm by atleast,,15.00
+3,Min spacing between center of ubm and outer edge of the seal ring,,250.00
+(bump.-.-),Bump balls for WLCSP,,
+,Function: WLCSP bump balls,,
+1,Min width of bump (for parallel opposite edges),,264.00
+2,Min/Max pitch spacing between bump (center to center w/2x snapGrid tolerance),,400.00

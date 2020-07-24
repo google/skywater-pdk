@@ -1,0 +1,31 @@
+Allowed pitch,,Supported flows,,Allowed pitch,
+400 um,500 um, s8p-5r\ns8p-10r*\ns8pf-10r*\ns8pfn-20r*\ns8p12-10r*\ns8spf-10r*,,400 um,500 um
+(pi1.-.-),(pi1_500.-.-),1st polyimide layer for WLCSP,,,
+,,Function: Opens over the pad openings; Allows RDL layer to connect to top metal,,,
+1,1,Min width of pi1 (for parallel opposite edges),,35.00,35.00
+2,2,Min spacing between pi1,,20.00,20.00
+3,3,pi1 must be enclosed by pad by atleast,,7.50,7.50
+(rdl.-),(rdl_500.-),Re-distribution layer,,,
+,,Function: Re-distribution layer connects the top metal from the customer to the bumps,,,
+1,1,Min width of rdl (for parallel opposite edges),,10.00,10.00
+2,2,min spacing between two rdl,,10.00,10.00
+3,3,pi1 must be enclosed by rdl by atleast,,10.00,10.00
+(pi2.-.-),(pi2_500.-.-),2nd polyimide layer for WLCSP,,,
+,,Function: 2nd polyimide layer acts as a via between RDL and UBM,,,
+1,1,Min width of pi2 (for parallel opposite edges),,170.00,220.00
+3,3,"Min spacing, no overlap, between pi1 and pi2",,25.00,25.00
+(ubm.-.-),(ubm_500.-.-),Under bump metal,,,
+,,Function: Layer added underneath the bump balls,,,
+1,1,Min width of ubm (for parallel opposite edges),,215.00,250.00
+3,3,pi2 must be enclosed by ubm by atleast,,15.00,15.00
+4,4,ubm must be enclosed by rdl by atleast,,10.00,10.00
+5,5,"Min spacing, no overlap, between pi1 and ubm",,10.00,10.00
+6,6,Min spacing between center of ubm and outer edge of the seal ring,,155.00,195.00
+(bump.-.-),(bump_500.-.-),Bump balls for WLCSP,,,
+,,Function: WLCSP bump balls,,,
+1,1,Min width of bump (for parallel opposite edges),,261.00,310.00
+2,2,Min/Max pitch spacing between bump (center to center),,400.00,500.00
+2a,2a,Min/Max pitch spacing between bump (center to center) across the scribe,NC,400.00,500.00
+3,3,Min spacing between bump and outer edge of the seal ring,,25.00,25.00
+4,4,Min size of Chip_extent overlapping bump.dg,,750 X 1000,1000 X 1000
+5,5,Max size of Chip_extent overlapping bump.dg,,6800 X 6800,6800 X 6800

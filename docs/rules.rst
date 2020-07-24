@@ -16,6 +16,7 @@ SkyWater SKY130 Process Design Rules
     rules/summary
 
     rules/periphery
+    rules/wlcsp
     rules/hv
 
     rules/errors
