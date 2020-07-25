@@ -148,6 +148,7 @@ Summary of High Voltage Propagation
 .. csv-table:: Table 1. Truth table for high voltage generation, propagation and retention.
    :file: hv/table-1.csv
    :header-rows: 1
+   :stub-columns: 1
 
 .. include:: hv/table-1-key.rst
 

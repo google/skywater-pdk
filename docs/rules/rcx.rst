@@ -10,6 +10,7 @@ The CAD columns indicate sheets and contacts that are parasitics included in the
 .. csv-table:: Parasitic Extraction Table
    :file: rcx/rcx-all.csv
    :header-rows: 2
+   :stub-columns: 1
 
 
 .. note:: The models includes M1/M2 capacitance. As a result of RCX extraction limitation M1/M2 routing over the varactor will have no capacitance extraction.
@@ -34,6 +35,7 @@ Resistance Rules
 .. csv-table:: Table of resistance rules
    :file: rcx/resistance.csv
    :header-rows: 2
+   :stub-columns: 1
 
 
 Capacitance Rules
@@ -44,6 +46,7 @@ Capacitance Rules
 .. csv-table:: Table of capacitance rules
    :file: rcx/capacitance.csv
    :header-rows: 2
+   :stub-columns: 1
 
 
 Discrepencies

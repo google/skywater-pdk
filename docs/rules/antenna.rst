@@ -21,6 +21,7 @@ Definitions
 .. csv-table:: Antenna Rules Definitions
    :file: antenna/definitions.csv
    :header-rows: 1
+   :stub-columns: 1
 
 Antenna rule numbers depend on the connection to the following devices:
 
@@ -61,19 +62,24 @@ Tables
 .. csv-table:: Table Ia.  Antenna rules (S8D*)
    :file: antenna/table-Ia-antenna-rules-s8d.csv
    :header-rows: 1
+   :stub-columns: 1
 
 .. csv-table:: Table Ib. Antenna rules (S8TNV-5R)
    :file: antenna/table-Ib-antenna-rules-s8tnv-5r.csv
    :header-rows: 1
+   :stub-columns: 1
 
 .. csv-table:: Table Ic. Antenna rules (S8TM-5R*/S8TMC-5R*/S8TMA-5R*)
    :file: antenna/table-Ic-antenna-rules-s8tm.csv
    :header-rows: 1
+   :stub-columns: 1
 
 .. csv-table:: Table Ie. Antenna rules (S8P-5R/SP8P-5R/S8P-10R*)
    :file: antenna/table-Ie-antenna-rules-s8p.csv
    :header-rows: 1
+   :stub-columns: 1
 
 .. csv-table:: Table Ig. Antenna rules (S8P12-10R*/S8PIR-10R/S8PF-10R*)
    :file: antenna/table-Ig-antenna-rules-s8p12.csv
    :header-rows: 1
+   :stub-columns: 1

@@ -11,4 +11,5 @@ are marked.
 .. csv-table:: Table - Masks
    :file: masks.csv
    :header-rows: 1
+   :stub-columns: 1
    :widths: 70, 20, 10
