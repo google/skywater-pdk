@@ -1,0 +1,1759 @@
+%!PS-Adobe-3.0
+%%Title: metal_stack.ps
+%%Creator: XCircuit v0.0 rev-145403803
+%%CreationDate: Wed Jun 17 12:42:51 2020
+%%Pages: 7
+%%BoundingBox: 0 0 612 792
+%%DocumentNeededResources: font Times-Roman Times-RomanISO Symbol 
+%%EndComments
+%%BeginProlog
+%
+%  PostScript prolog for output from xcircuit
+%  Version: 3.9
+%
+%  Electrical circuit (and otherwise general) drawing program
+%
+%  Written by Tim Edwards 8/5/93--4/12/16  (tim@opencircuitdesign.com)
+%  The Johns Hopkins University (1993-2004)
+%  MultiGiG, Inc. (2004-2012)
+%  Open Circuit Design (2012-2016)
+%
+%%BeginResource: procset XCIRCproc 3.9 1
+%
+% supporting definitions --- these are the primary xcircuit types.
+
+/XCIRCsave save def
+/topmat matrix currentmatrix def
+
+/fontslant { /slant exch def [1 0 slant 1 0 0] 
+    exch findfont exch makefont dup length dict /ndict exch def
+    { 1 index /FID ne { ndict 3 1 roll put } { pop pop } ifelse } forall
+    ndict definefont pop} def
+/ul { count 0 gt { dup type /stringtype eq showflag 1 eq and { gsave 
+   currentpoint topmat setmatrix 0 0 moveto 2 index stringwidth pop (_)
+   false charpath flattenpath pathbbox grestore exch pop 1 index
+   sub setlinewidth exch pop currentpoint 3 -1 roll add moveto 0
+   rlineto stroke moveto } if } if } def
+/ol { count 0 gt { dup type /stringtype eq showflag 1 eq and { gsave gsave
+   currentpoint topmat setmatrix 2 index stringwidth pop 3 index
+   true charpath flattenpath pathbbox grestore exch pop
+   exch pop topmat setmatrix (_) true charpath pathbbox grestore
+   exch pop 1 index sub setlinewidth exch pop currentpoint
+   exch 4 1 roll exch sub add moveto pop 0 rlineto stroke
+   moveto } if } if } def
+/stW { gsave currentpoint newpath moveto true charpath flattenpath
+	pathbbox pop exch pop sub grestore } def
+/Ts {mark Tabs aload pop counttomark 1 add array astore /Tabs exch def Tabs
+	0 currentpoint pop put} def
+/Tbn {mark Tabs aload pop counttomark dup 2 add 1 roll cleartomark 1 sub} def
+/Tb { 0 1 Tbn {Tabs exch get dup currentpoint pop lt
+	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
+/Tf { Tbn -1 0 {Tabs exch get dup currentpoint pop gt
+	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
+/qS { (aa) stW (a a) stW sub 4 div 0 Kn } def
+/hS { qS qS } def
+/pspc 0 def
+/cf0 { scalefont setfont } bind def
+/Kn { dup kY add /kY exch def rmoveto } bind def
+/ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
+	0.33 mul neg Kn} def
+/Ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
+	0.67 mul Kn } def
+/ns { 0 kY neg Kn /kY 0 def /fscale 1.0 def xfont0 1.0 cf0 } def
+/MR { /twidth exch def } def
+/CRx { } def
+/CR { ns 0 /Bline Bline fscale0 neg add def Bline moveto CRx } def
+/cf { dup type /realtype ne {1.0} if exch findfont exch kY 0 eq
+	{ 40 mul dup /fscale0 exch def cf0 /xfont0 currentfont def}
+	{fscale0 mul fscale mul cf0} ifelse } def
+/ctmk { counttomark dup 2 add -1 roll pop } bind def
+/label { gsave translate 0 0 moveto dup scale neg
+	/rotval exch def /twidth 100000 def /just exch def just 128 and
+	0 gt {/mshow {pop} def} {/mshow {show} def} ifelse just 16 and 0
+	gt {gsave rotval rotate 0 1 dtransform gsave pagemat setmatrix
+	idtransform exch grestore 1 0 dtransform gsave pagemat setmatrix
+	idtransform exch grestore dup abs 1e-9 lt {pop mul 0 gt} {3 1 roll
+	pop pop 0 lt} ifelse grestore {-1 /rotval rotval neg def /just just
+	dup 3 and 1 ne {3 xor} if def} {1} ifelse exch -1e-9 lt {-1 /rotval
+	rotval neg def /just just dup 12 and 4 ne {12 xor} if def} {1}
+	ifelse scale } if /showflag 0 def /fspc pspc def /Bline 0 def
+	/numlines 0 def /padding 0 array def /Tabs 0 array def
+	/fscale 1.0 def /kY 0 def gsave /CRx { linewid padding
+	aload pop numlines 1 add dup /numlines exch def array astore
+	/padding exch def /linewid 0 def } def dup 1 add copy dup 1 0
+	dtransform exch atan rotate {exch dup type /stringtype eq {gsave dup
+	gsave newpath 0 0 moveto true charpath flattenpath pathbbox pop exch
+	pop exch pop grestore currentpoint pop add dup /linewid exch def twidth
+	ge {grestore CR exch 1 add dup 2 add {CR} exch 1 roll exch} {grestore}
+	ifelse true charpath flattenpath} {dup type /arraytype eq {exec} {12
+	string cvs true charpath flattenpath} ifelse} ifelse} repeat
+	CRx /CRx {padding aload pop just 1280 and 0 gt {blockwid exch sub just
+	1024 and 0 gt {0.5 mul} if} {pop 0} ifelse 0 rmoveto numlines 1 sub
+	dup /numlines exch def array astore /padding exch def} def exch pop
+	pathbbox grestore 4 copy pop exch pop exch sub /blockwid exch def
+	3 -1 roll pop 3 1 roll just 1 and 0 gt {just 2 and
+	0 gt {exch pop neg fspc sub} {exch sub 0.5 mul neg} ifelse} {pop neg
+	fspc add} ifelse exch Bline exch just 4 and 0 gt {just 8 and 0 gt
+	{exch pop neg fspc sub} {add 0.5 mul neg} ifelse} {pop neg fspc add}
+	ifelse rotval rotate Kn currentpoint translate /showflag 1 def /Bline
+	0 def /Tabs 0 array def /fscale 1.0 def /kY 0 def CRx {dup type
+	/stringtype eq {mshow} {dup type /arraytype eq {exec} {12 string cvs
+	mshow} ifelse} ifelse} repeat grestore endclip} def
+/pinlabel { 4 index 32 and 0 ne hlevel 0 eq or { /pspc 10 def label
+	/pspc 0 def } { pop pop pop pop pop {pop} repeat } ifelse } def
+/pinglobal { pinlabel } def
+/infolabel { pinlabel } def
+/graphic { gsave 4 index cvx exec /DataSource get resetfile translate 0 0
+	moveto neg rotate dup scale cvx exec image grestore endclip} def
+
+/scb { setrgbcolor } bind def  /sce { defColor aload pop scb } bind def
+/cRedef {/defColor currentcolor 3 array astore def} def
+/begingate {dup type /dicttype ne {1 dict} if begin	% default params
+	dup type /dicttype ne {1 dict} if begin		% instanced params
+	/hlevel hlevel 1 add def /defColor currentcolor sce 3 array astore
+	def gsave sce dup type /nametype eq { pop } if translate 0 0 moveto
+	neg rotate dup type /nametype eq not { dup abs currentlinewidth exch
+	div setlinewidth } { pop } ifelse dup abs scale clipped 1 and 1 eq
+	{/clipped clipped 1 add def} if} bind def
+/endgate { /hlevel hlevel 1 sub def grestore defColor aload pop cRedef
+	scb end end endclip} bind def
+
+/hlevel 0 def
+/endclip {clipped 1 and 1 eq {grestore /clipped clipped 1 sub def} if} def
+/tmpa [1 0 0 1 0 0] def
+/gar {8 8 true tmpa {<c0 c0 00 00 0c 0c 00 00>} imagemask} bind
+{8 8 true tmpa {<30 70 60 02 03 07 06 20>} imagemask} bind
+{8 8 true tmpa {<0c 1e 1e 0c c0 e1 e1 c0>} imagemask} bind
+{8 8 true tmpa {<0f 0f 0f 0f f0 f0 f0 f0>} imagemask} bind
+{8 8 true tmpa {<3f f3 e1 e1 f3 3f 1e 1e>} imagemask} bind
+{8 8 true tmpa {<df cf 8f 9f fd fc f8 f9>} imagemask} bind
+{8 8 true tmpa {<ff 3f 3f ff ff f3 f3 ff>} imagemask} bind 7 array astore def
+/ppaint { gsave clip tmpa dup setmatrix pathbbox neg exch neg 4 2 roll
+  neg 4 -1 roll 2 copy gt {exch} if 8 div ceiling 8 mul 4 2 roll neg 2 copy
+  gt {exch} if 8 div ceiling 8 mul 3 -1 roll -8 5 -1 roll
+  { 3 index exch 5 exch put dup -8 3 index { 3 index
+  exch 4 exch put 3 index exec } for } for pop pop pop pop grestore } bind def
+/setstyles {
+  currentlinewidth mul setlinewidth /style exch def style 2048 and 0 gt
+  clipped 1 and 0 eq and {clip newpath /clipped clipped 1 add def} {
+  style 1 and 0 gt not {closepath} if
+  style 1024 and 0 gt {2 setlinecap 0 setlinejoin} if
+  style 2 and 0 gt {currentlinewidth 4 mul dup 2 array astore 0 setdash} if
+  style 4 and 0 gt {0.5 currentlinewidth 4 mul 2 array astore 0 setdash} if
+  gsave style 16 and 0 gt { style 224 and -5 bitshift style 256 and 0 gt {
+  7 exch sub 8 div dup 1 exch sub currentrgbcolor 3 array astore
+  {3 copy mul add 4 1 roll pop} forall pop pop setrgbcolor eofill}
+  {dup 7 lt {gar exch get ppaint} {pop eofill} ifelse} ifelse}
+  {style 256 and 0 gt {1 setgray eofill} if} ifelse grestore style 8 and 0 gt 
+  style 512 eq or {newpath} {stroke} ifelse grestore endclip} ifelse} def     
+
+/addtoy {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll add
+	4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
+/addtoy1 {1 exch addtoy pop} def
+/addtoy3 {3 exch addtoy pop} def
+/addtoy4 {4 exch addtoy pop} def
+/addtox {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll 3 -1 roll
+	add exch 4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
+/addtox1 {1 exch addtox pop} def
+/addtox3 {3 exch addtox pop} def
+/addtox4 {4 exch addtox pop} def
+/polygon { gsave /num exch def moveto num 1 sub {lineto} repeat setstyles } def
+/xcarc   { gsave newpath arc setstyles } def
+/elb { matrix currentmatrix 7 -1 roll 7 -1 roll translate 5 1 roll 4 -1 roll
+	3 index div 1 scale } def
+/ele { 0 4 1 roll 0 4 1 roll } bind def
+/ellipse { gsave elb newpath ele arc setmatrix setstyles } def
+/pellip  { elb ele arc setmatrix } def
+/nellip  { elb ele arcn setmatrix } def
+/spline  { gsave moveto curveto setstyles } def
+/polyc   { {lineto} repeat } bind def
+/beginpath { gsave moveto } bind def
+/endpath { setstyles } bind def
+/bop	 { 1 setlinecap 2 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
+	/clipped 0 def} def
+/psinsertion {/PSobj save def /showpage {} def /setpagedevice {pop} def bop
+	rotate translate dup scale} def
+/end_insert {PSobj restore} def
+/setpagemat {/pagemat matrix currentmatrix def} def
+/inchscale  {setpagemat 0.375 mul dup scale} def
+/cmscale    {setpagemat 0.35433071 mul dup scale} def
+
+%%EndResource
+%%EndProlog
+/Times-Roman findfont dup length dict begin
+{1 index /FID ne {def} {pop pop} ifelse} forall
+/Encoding ISOLatin1Encoding def currentdict end
+/Times-RomanISO exch definefont pop
+
+% XCircuit output starts here.
+
+%%BeginSetup
+
+/generic::arrowhead {
+% nonetwork
+begingate
+8 -28 beginpath
+3 -18 3 -15 0 0 curveto
+-3 -15 -3 -18 -8 -28 curveto
+-2 -26 2 -26 8 -28 curveto
+249 
+1.000 endpath
+endgate
+} def
+
+
+%%EndSetup
+
+%%Page: metal_stack 1
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 1376 1320 translate
+
+0.796 0.953 0.953 scb
+496 1.000 -304 480 -304 496 -168 496 -168 480 4 polygon
+0.800 0.800 0.800 scb
+496 1.000 -296 288 -296 320 -200 320 -200 288 4 polygon
+496 1.000 -288 496 -288 544 -192 544 -192 496 4 polygon
+496 1.000 -368 -336 -368 -288 -272 -288 -272 -336 4 polygon
+496 1.000 -48 -256 -48 -176 48 -176 48 -256 4 polygon
+496 1.000 -48 -96 -48 -32 48 -32 48 -96 4 polygon
+496 1.000 -48 48 -48 112 48 112 48 48 4 polygon
+496 1.000 -48 256 -48 320 48 320 48 256 4 polygon
+496 1.000 -48 464 -48 544 112 544 112 464 4 polygon
+496 1.000 -48 -448 -48 -288 48 -288 48 -448 4 polygon
+0.984 0.996 0.765 scb
+-640 -448 beginpath
+-640 -512 1 polyc
+-640 -530 -626 -544 -608 -544 curveto
+368 -544 1 
+polyc
+386 -544 400 -530 400 -512 curveto
+400 -448 1 polyc
+497 1.000 endpath
+0.980 0.792 0.541 scb
+-192 -448 beginpath
+-192 -464 1 polyc
+-192 -482 -178 -496 -160 -496 curveto
+320 -496 1 
+polyc
+338 -496 352 -482 352 -464 curveto
+352 -448 1 polyc
+497 1.000 endpath
+1.000 0.753 0.796 scb
+496 1.000 -400 -400 -400 -336 -240 -336 -240 -400 4 polygon
+496 1.000 112 -432 112 -368 320 -368 320 -432 4 polygon
+0.812 0.996 0.812 scb
+496 1.000 -480 -288 -480 -256 432 -256 432 -288 4 polygon
+0.796 0.953 0.953 scb
+496 1.000 -480 -176 -480 -96 464 -96 464 -176 4 polygon
+496 1.000 -480 -32 -480 48 464 48 464 -32 4 polygon
+496 1.000 -480 112 -480 256 496 256 496 112 4 polygon
+496 1.000 -480 320 -480 464 496 464 496 320 4 polygon
+496 1.000 -464 544 -464 752 448 752 448 544 4 polygon
+sce
+(SkyWater Sky130A metal stack \(not to scale!\):) {/Times-Roman cf} 2 16 0.000 
+1.000 -544 1008 label
+1 1.000 -680 -448 496 -448 2 polygon
+1 1.000 -192 -448 -192 -464 2 polygon
+1 1.000 352 -448 352 -464 2 polygon
+1 1.000 -160 -464 32 180.000 270.000 xcarc
+1 1.000 -160 -496 320 -496 2 polygon
+1 1.000 320 -464 32 -90.000 0.000 xcarc
+1 1.000 -640 -448 -640 -512 2 polygon
+1 1.000 400 -448 400 -512 2 polygon
+1 1.000 -608 -544 368 -544 2 polygon
+1 1.000 -608 -512 32 180.000 270.000 xcarc
+1 1.000 368 -512 32 -90.000 0.000 xcarc
+(diffusion) {/Times-Roman cf} 2 16 0.000 0.700 -48 -480 label
+(nwell) {/Times-Roman cf} 2 16 0.000 0.700 -304 -496 label
+0 1.000 112 -432 112 -368 320 -368 320 -432 4 polygon
+(gate) {CR} (polysilicon) {/Times-Roman cf} 4 1045 0.000 0.700 224 -400 label
+0 1.000 -48 -448 -48 -288 48 -288 48 -448 4 polygon
+(licon) {/Times-Roman cf} 2 21 0.000 0.700 0 -376 label
+0 1.000 -480 -288 -480 -256 432 -256 432 -288 4 polygon
+(li) {/Times-Roman cf} 2 21 0.000 0.700 0 -272 label
+0 1.000 -480 -176 -480 -96 464 -96 464 -176 4 polygon
+(metal1) {/Times-Roman cf} 2 17 0.000 0.700 0 -144 label
+0 1.000 -480 -32 -480 48 464 48 464 -32 4 polygon
+(metal2) {/Times-Roman cf} 2 17 0.000 0.700 0 0 label
+0 1.000 -480 112 -480 256 496 256 496 112 4 polygon
+(metal3) {/Times-Roman cf} 2 17 0.000 0.700 0 176 label
+0 1.000 -480 320 -480 464 496 464 496 320 4 polygon
+(metal4) {/Times-Roman cf} 2 17 0.000 0.700 0 384 label
+0 1.000 -464 544 -464 752 448 752 448 544 4 polygon
+(metal5) {/Times-Roman cf} 2 17 0.000 0.700 0 640 label
+0 1.000 -48 -256 -48 -176 48 -176 48 -256 4 polygon
+(mcon) {/Times-Roman cf} 2 21 0.000 0.700 0 -224 label
+(licon) {/Times-Roman cf} 2 17 0.000 0.700 -320 -320 label
+0 1.000 -48 -96 -48 -32 48 -32 48 -96 4 polygon
+0 1.000 -48 48 -48 112 48 112 48 48 4 polygon
+0 1.000 -48 256 -48 320 48 320 48 256 4 polygon
+0 1.000 -48 464 -48 544 112 544 112 464 4 polygon
+(via1) {/Times-Roman cf} 2 21 0.000 0.700 0 -64 label
+(via2) {/Times-Roman cf} 2 21 0.000 0.700 0 80 label
+(via3) {/Times-Roman cf} 2 21 0.000 0.700 0 288 label
+(via4) {/Times-Roman cf} 2 21 0.000 0.700 32 496 label
+1 1.000 -384 848 -384 896 2 polygon
+1 1.000 400 848 400 896 2 polygon
+1 1.000 432 928 672 928 2 polygon
+1 1.000 -416 928 -896 928 2 polygon
+1 1.000 -416 896 32 0.000 90.000 xcarc
+1 1.000 432 896 32 90.000 180.000 xcarc
+(glass cut) {/Times-Roman cf} 2 17 0.000 0.700 32 880 label
+0.000 0.000 1.000 scb
+(PI1 K=2.94) {/Times-Roman cf} 2 17 0.000 0.700 -648 696 label
+0.600 0.600 0.600 scb
+1 1.000 592 -448 704 -448 2 polygon
+1 1.000 416 -496 704 -496 2 polygon
+sce
+1.000 0.000 672 -496 generic::arrowhead
+-1.000 180.000 672 -448 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.12) {/Times-Roman cf} 5 17 0.000 0.700 672 
+-480 label
+0.600 0.600 0.600 scb
+1 1.000 384 -432 624 -432 2 polygon
+1 1.000 384 -368 624 -368 2 polygon
+sce
+1 1.000 560 -368 560 -320 2 polygon
+1 1.000 560 -432 560 -480 2 polygon
+1.000 0.000 560 -432 generic::arrowhead
+-1.000 180.000 560 -368 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.18) {/Times-Roman cf} 5 21 0.000 0.700 592 
+-400 label
+0.600 0.600 0.600 scb
+1 1.000 512 -288 608 -288 2 polygon
+1 1.000 440 -256 608 -256 2 polygon
+sce
+1 1.000 592 -256 592 -208 2 polygon
+1 1.000 592 -288 592 -336 2 polygon
+1.000 0.000 592 -288 generic::arrowhead
+-1.000 180.000 592 -256 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.1) {/Times-Roman cf} 5 20 0.000 0.700 624 
+-272 label
+0.600 0.600 0.600 scb
+1 1.000 512 -176 608 -176 2 polygon
+1 1.000 512 -96 608 -96 2 polygon
+sce
+1.000 0.000 592 -96 generic::arrowhead
+-1.000 180.000 592 -176 generic::arrowhead
+1 1.000 592 -176 592 -96 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.36) {/Times-Roman cf} 5 16 0.000 0.700 624 
+-144 label
+0.600 0.600 0.600 scb
+1 1.000 512 -32 608 -32 2 polygon
+1 1.000 512 48 608 48 2 polygon
+sce
+1.000 0.000 592 48 generic::arrowhead
+-1.000 180.000 592 -32 generic::arrowhead
+1 1.000 592 -32 592 48 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.36) {/Times-Roman cf} 5 16 0.000 0.700 624 
+0 label
+0.600 0.600 0.600 scb
+1 1.000 512 112 608 112 2 polygon
+1 1.000 512 256 608 256 2 polygon
+sce
+1.000 0.000 592 256 generic::arrowhead
+-1.000 180.000 592 112 generic::arrowhead
+1 1.000 592 112 592 256 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.845) {/Times-Roman cf} 5 16 0.000 0.700 
+624 176 label
+0.600 0.600 0.600 scb
+1 1.000 512 320 608 320 2 polygon
+1 1.000 512 464 608 464 2 polygon
+sce
+1.000 0.000 592 464 generic::arrowhead
+-1.000 180.000 592 320 generic::arrowhead
+1 1.000 592 320 592 464 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.845) {/Times-Roman cf} 5 16 0.000 0.700 
+624 384 label
+0.600 0.600 0.600 scb
+1 1.000 512 544 608 544 2 polygon
+1 1.000 512 752 624 752 2 polygon
+sce
+1.000 0.000 560 752 generic::arrowhead
+-1.000 180.000 560 544 generic::arrowhead
+1 1.000 560 544 560 752 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (1.26) {/Times-Roman cf} 5 16 0.000 0.700 592 
+640 label
+1 1.000 672 -448 672 -384 2 polygon
+1 1.000 672 -496 672 -560 2 polygon
+0 1.000 -400 -400 -400 -336 -240 -336 -240 -400 4 polygon
+(field poly) {/Times-Roman cf} 2 21 0.000 0.700 -320 -368 label
+0.600 0.600 0.600 scb
+1 1.000 -696 -448 -1072 -448 2 polygon
+1 1.000 -736 -400 -824 -400 2 polygon
+sce
+1 1.000 -752 -448 -752 -512 2 polygon
+1.000 0.000 -752 -448 generic::arrowhead
+1 1.000 -752 -400 -752 -352 2 polygon
+-1.000 180.000 -752 -400 generic::arrowhead
+0.600 0.600 0.600 scb
+1 1.000 -768 -288 -872 -288 2 polygon
+sce
+1 1.000 -848 -448 -848 -384 2 polygon
+1.000 0.000 -848 -288 generic::arrowhead
+-1.000 180.000 -848 -448 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.3262) {/Times-Roman cf} 5 17 0.000 0.700 
+-760 -432 label
+(\265m) {/Times-RomanISO cf} {hS} (0.9361) {/Times-Roman cf} 5 23 0.000 0.700 
+-776 -368 label
+0.600 0.600 0.600 scb
+1 1.000 -768 -176 -984 -176 2 polygon
+sce
+1 1.000 -848 -352 -848 -288 2 polygon
+1 1.000 -976 -448 -976 -256 2 polygon
+1 1.000 -976 -216 -976 -176 2 polygon
+-1.000 180.000 -976 -448 generic::arrowhead
+1.000 0.000 -976 -176 generic::arrowhead
+(\265m) {hS} {/Times-RomanISO cf} (1.3761) {/Times-Roman cf} 5 17 0.000 0.700 
+-928 -248 label
+0.600 0.600 0.600 scb
+1 1.000 -768 -32 -1000 -32 2 polygon
+sce
+1 1.000 -992 -80 -992 -32 2 polygon
+1.000 0.000 -992 -32 generic::arrowhead
+(\265m) {hS} {/Times-RomanISO cf} (2.0061) {/Times-Roman cf} 5 17 0.000 0.700 
+-936 -112 label
+0.600 0.600 0.600 scb
+1 1.000 -768 112 -1016 112 2 polygon
+sce
+1 1.000 -1008 64 -1008 112 2 polygon
+1.000 0.000 -1008 112 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (2.7861) {/Times-Roman cf} 5 17 0.000 0.700 
+-952 32 label
+0.600 0.600 0.600 scb
+1 1.000 -768 320 -1032 320 2 polygon
+sce
+1 1.000 -1024 256 -1024 320 2 polygon
+1.000 0.000 -1024 320 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (4.0211) {/Times-Roman cf} 5 17 0.000 0.700 
+-968 224 label
+0.600 0.600 0.600 scb
+1 1.000 -824 544 -1048 544 2 polygon
+sce
+1 1.000 -1040 464 -1040 544 2 polygon
+1.000 0.000 -1040 544 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (5.3711) {/Times-Roman cf} 5 17 0.000 0.700 
+-984 432 label
+0.800 0.800 0.800 scb
+1 1.000 -912 928 -1088 928 2 polygon
+sce
+1 1.000 -1056 816 -1056 928 2 polygon
+1.000 0.000 -1056 928 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (11.8834) {/Times-Roman cf} 5 17 0.000 0.700 
+-1016 784 label
+0.600 0.600 0.600 scb
+3 1.000 -720 -400 -448 -400 2 polygon
+0.000 0.000 1.000 scb
+(FOX K=3.9) {/Times-Roman cf} 2 19 0.000 0.700 -536 -432 label
+sce
+(p-substrate) {/Times-Roman cf} 2 16 0.000 0.700 448 -528 label
+0.000 0.000 1.000 scb
+(PSG K=3.9) {/Times-Roman cf} 2 23 0.000 0.700 -600 -344 label
+(LINT K=7.3) {/Times-Roman cf} 2 23 0.000 0.700 408 -240 label
+0.600 0.600 0.600 scb
+3 1.000 -480 -288 -760 -288 2 polygon
+0.000 0.000 1.000 scb
+(NILD2 K=4.05) {/Times-Roman cf} 2 23 0.000 0.700 -576 -216 label
+0.600 0.600 0.600 scb
+3 1.000 -752 -176 -480 -176 2 polygon
+3 1.000 -752 -32 -480 -32 2 polygon
+3 1.000 -752 112 -480 112 2 polygon
+3 1.000 -752 320 -480 320 2 polygon
+3 1.000 -808 544 -488 544 2 polygon
+0.000 0.000 1.000 scb
+(NILD3_C K=3.5) {/Times-Roman cf} 2 19 0.000 0.700 440 -80 label
+(NILD4 K=4.2) {/Times-Roman cf} 2 19 0.000 0.700 -576 24 label
+(NILD5 K=4.1) {/Times-Roman cf} 2 19 0.000 0.700 -576 200 label
+(NILD6 K=4.0) {/Times-Roman cf} 2 19 0.000 0.700 -576 408 label
+(NILD3 K=4.5) {/Times-Roman cf} 2 19 0.000 0.700 -576 -120 label
+(NILD4_C K=3.5) {/Times-Roman cf} 2 19 0.000 0.700 440 64 label
+(TOPOX K=3.9) {/Times-Roman cf} 2 19 0.000 0.700 304 784 label
+sce
+(0.0) {/Times-Roman cf} 2 23 0.000 0.700 -1088 -448 label
+1 1.000 -432 -224 -432 -272 2 polygon
+1.000 0.000 -432 -224 generic::arrowhead
+-1.000 180.000 -432 -176 generic::arrowhead
+1.000 0.000 -448 -32 generic::arrowhead
+-1.000 180.000 -448 -96 generic::arrowhead
+1 1.000 -448 -32 -448 -96 2 polygon
+1.000 0.000 -448 112 generic::arrowhead
+-1.000 180.000 -448 48 generic::arrowhead
+1 1.000 -448 112 -448 48 2 polygon
+1.000 0.000 -448 320 generic::arrowhead
+-1.000 180.000 -448 256 generic::arrowhead
+1 1.000 -448 320 -448 256 2 polygon
+1.000 0.000 -448 544 generic::arrowhead
+-1.000 180.000 -448 464 generic::arrowhead
+1 1.000 -448 544 -448 464 2 polygon
+1.000 0.000 -192 928 generic::arrowhead
+-1.000 180.000 -192 752 generic::arrowhead
+1 1.000 -192 928 -192 752 2 polygon
+0.600 0.600 0.600 scb
+1 1.000 -384 928 -160 928 2 polygon
+sce
+(\265m) {hS} {/Times-RomanISO cf} (0.265) {/Times-Roman cf} 5 20 0.000 0.700 
+-472 -200 label
+0 1.000 -368 -336 -368 -288 -272 -288 -272 -336 4 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.27) {/Times-Roman cf} 5 20 0.000 0.700 
+-432 -64 label
+(\265m) {hS} {/Times-RomanISO cf} (0.42) {/Times-Roman cf} 5 20 0.000 0.700 
+-432 80 label
+(\265m) {hS} {/Times-RomanISO cf} (0.39) {/Times-Roman cf} 5 20 0.000 0.700 
+-432 288 label
+(\265m) {hS} {/Times-RomanISO cf} (0.505) {/Times-Roman cf} 5 20 0.000 0.700 
+-432 504 label
+(\265m) {hS} {/Times-RomanISO cf} (5.2523) {/Times-Roman cf} 5 20 0.000 0.700 
+-176 824 label
+0.000 0.000 1.000 scb
+(IOX K=3.9) {/Times-Roman cf} 2 23 0.000 0.700 272 -312 label
+(SPNIT K=7.5) {/Times-Roman cf} 2 23 0.000 0.700 304 -352 label
+sce
+0 1.000 320 -432 320 -368 336 -368 336 -432 4 polygon
+1 1.000 336 -432 368 -432 368 -336 64 -336 64 -432 5 polygon
+0 1.000 464 -176 464 -96 496 -96 496 -176 4 polygon
+0 1.000 464 -32 464 48 496 48 496 -32 4 polygon
+0 1.000 -240 -400 -240 -336 -224 -336 -224 -400 4 polygon
+1 1.000 -224 -400 -192 -400 -192 -304 3 polygon
+1 1.000 -400 -400 -416 -400 -416 -336 -400 -336 4 polygon
+1 1.000 -416 -400 -448 -400 -448 -304 3 polygon
+1 1.000 -448 -304 -368 -304 2 polygon
+1 1.000 -192 -304 -272 -304 2 polygon
+1 1.000 64 -432 96 -432 2 polygon
+0 1.000 96 -432 96 -368 112 -368 112 -432 4 polygon
+0.600 0.600 0.600 scb
+1 1.000 384 -336 512 -336 2 polygon
+sce
+(\265m) {/Times-RomanISO cf} {hS} (0.121) {/Times-Roman cf} 5 20 0.000 0.700 
+400 -352 label
+0.600 0.600 0.600 scb
+1 1.000 448 80 464 80 480 32 3 polygon
+1 1.000 448 -72 464 -72 480 -120 3 polygon
+1 1.000 328 -376 312 -312 280 -312 3 polygon
+sce
+1.000 0.000 416 -368 generic::arrowhead
+1 1.000 416 -368 416 -408 2 polygon
+-1.000 180.000 416 -336 generic::arrowhead
+1 1.000 416 -336 416 -296 2 polygon
+0.600 0.600 0.600 scb
+3 1.000 -192 -400 -48 -400 2 polygon
+sce
+(\265m) {/Times-RomanISO cf} {hS} (0.6099) {/Times-Roman cf} 5 23 0.000 0.700 
+-64 -352 label
+1 1.000 -128 -336 -128 -288 2 polygon
+1 1.000 -128 -368 -128 -400 2 polygon
+-1.000 180.000 -128 -400 generic::arrowhead
+1.000 0.000 -128 -288 generic::arrowhead
+1 1.000 464 -264 464 -224 48 -224 3 polygon
+0.600 0.600 0.600 scb
+1 1.000 -144 -224 -208 -224 2 polygon
+sce
+-1.000 180.000 -176 -224 generic::arrowhead
+1.000 0.000 -176 -256 generic::arrowhead
+1 1.000 -176 -256 -176 -304 2 polygon
+1 1.000 -176 -224 -176 -184 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.075) {/Times-Roman cf} 5 21 0.000 0.700 
+-176 -240 label
+1 1.000 464 -264 496 -264 2 polygon
+1 1.000 496 -288 432 -288 2 polygon
+1 1.000 -544 -256 -512 -256 -512 -224 -48 -224 4 polygon
+0.600 0.600 0.600 scb
+3 1.000 -552 -256 -760 -256 2 polygon
+0.000 0.000 1.000 scb
+(LINT K=7.3) {/Times-Roman cf} 2 23 0.000 0.700 -600 -272 label
+0.600 0.600 0.600 scb
+1 1.000 -768 -256 -920 -256 2 polygon
+sce
+1 1.000 -904 -304 -904 -256 2 polygon
+1.000 0.000 -904 -256 generic::arrowhead
+-1.000 180.000 -904 -448 generic::arrowhead
+1 1.000 -904 -448 -904 -344 2 polygon
+(\265m) {/Times-RomanISO cf} {hS} (1.0111) {/Times-Roman cf} 5 23 0.000 0.700 
+-856 -320 label
+1 1.000 -432 -176 -432 -128 2 polygon
+1 1.000 -368 752 -368 776 -480 776 -480 544 4 polygon
+1 1.000 352 752 352 776 464 776 3 polygon
+1 1.000 464 776 464 544 448 544 3 polygon
+0.600 0.600 0.600 scb
+1 1.000 512 776 624 776 2 polygon
+sce
+1 1.000 616 712 616 752 2 polygon
+1 1.000 616 776 616 856 2 polygon
+1.000 0.000 616 752 generic::arrowhead
+-1.000 180.000 616 776 generic::arrowhead
+(\265m) {hS} {/Times-RomanISO cf} (0.09) {/Times-Roman cf} 5 16 0.000 0.700 640 
+752 label
+0.600 0.600 0.600 scb
+1 1.000 312 792 344 792 368 760 3 polygon
+0.000 0.000 1.000 scb
+(TOPNIT K=7.5) {/Times-Roman cf} 2 19 0.000 0.700 -544 560 label
+sce
+1 1.000 -552 592 -512 592 -512 848 -368 848 -368 776 5 polygon
+1 1.000 352 776 352 848 488 848 488 600 496 600 5 polygon
+1 1.000 464 544 496 544 2 polygon
+0.600 0.600 0.600 scb
+3 1.000 -552 592 -832 592 2 polygon
+sce
+1 1.000 -824 544 -824 472 2 polygon
+1 1.000 -824 592 -824 656 2 polygon
+-1.000 180.000 -824 592 generic::arrowhead
+1.000 0.000 -824 544 generic::arrowhead
+1 1.000 -480 544 -464 544 2 polygon
+0.600 0.600 0.600 scb
+1 1.000 -352 848 -264 848 2 polygon
+1 1.000 -360 776 -264 776 2 polygon
+sce
+1 1.000 -328 776 -328 848 2 polygon
+1.000 0.000 -328 848 generic::arrowhead
+-1.000 180.000 -328 776 generic::arrowhead
+(\265m) {hS} {/Times-RomanISO cf} (0.54) {/Times-Roman cf} 5 20 0.000 0.700 
+-312 808 label
+(\265m) {/Times-RomanISO cf} {hS} (0.3777) {/Times-Roman cf} 5 17 0.000 0.700 
+-824 560 label
+1 1.000 -784 784 -784 928 2 polygon
+-1.000 180.000 -784 592 generic::arrowhead
+1.000 0.000 -784 928 generic::arrowhead
+1 1.000 -784 592 -784 736 2 polygon
+(\265m) {/Times-RomanISO cf} {hS} (6.1346) {/Times-Roman cf} 5 17 0.000 0.700 
+-760 752 label
+-1.000 180.000 -992 -448 generic::arrowhead
+1 1.000 -992 -448 -992 -120 2 polygon
+-1.000 180.000 -1008 -448 generic::arrowhead
+1 1.000 -1008 -448 -1008 24 2 polygon
+-1.000 180.000 -1024 -448 generic::arrowhead
+1 1.000 -1024 -448 -1024 216 2 polygon
+-1.000 180.000 -1040 -448 generic::arrowhead
+1 1.000 -1040 -448 -1040 416 2 polygon
+1 1.000 -1056 -448 -1056 776 2 polygon
+-1.000 180.000 -1056 -448 generic::arrowhead
+0 1.000 -304 480 -304 496 -168 496 -168 480 4 polygon
+0 1.000 -288 496 -288 544 -192 544 -192 496 4 polygon
+0 1.000 -296 288 -296 320 -200 320 -200 288 4 polygon
+0.796 0.953 0.953 scb
+496 1.000 -312 272 -312 288 -176 288 -176 272 4 polygon
+sce
+0 1.000 -312 272 -312 288 -176 288 -176 272 4 polygon
+(cap2m) {/Times-Roman cf} 2 16 0.000 0.700 -152 480 label
+(via4) {/Times-Roman cf} 2 21 0.000 0.700 -240 520 label
+(via3) {/Times-Roman cf} 2 21 0.000 0.700 -248 304 label
+(capm) {/Times-Roman cf} 2 16 0.000 0.700 -160 272 label
+0.600 0.600 0.600 scb
+1 1.000 -432 -336 -520 -336 2 polygon
+sce
+-1.000 180.000 -496 -288 generic::arrowhead
+1 1.000 -496 -240 -496 -288 2 polygon
+1.000 0.000 -496 -336 generic::arrowhead
+1 1.000 -496 -336 -496 -384 2 polygon
+(\265m) {hS} {/Times-RomanISO cf} (0.4299) {/Times-Roman cf} 5 21 0.000 0.700 
+-520 -312 label
+0.400 0.400 0.400 scb
+1 1.000 -448 -416 -448 -592 2 polygon
+1 1.000 -416 -416 -416 -624 2 polygon
+1 1.000 -400 -416 -400 -624 2 polygon
+sce
+1 1.000 -560 672 -512 672 2 polygon
+1 1.000 -480 672 -384 672 2 polygon
+1 1.000 -528 624 -480 624 2 polygon
+1 1.000 -464 624 -384 624 2 polygon
+1.000 90.000 -512 672 generic::arrowhead
+1.000 90.000 -480 624 generic::arrowhead
+-1.000 270.000 -464 624 generic::arrowhead
+-1.000 270.000 -480 672 generic::arrowhead
+-1.000 270.000 -416 -576 generic::arrowhead
+1.000 90.000 -448 -576 generic::arrowhead
+1.000 90.000 -416 -608 generic::arrowhead
+-1.000 270.000 -400 -608 generic::arrowhead
+1 1.000 -480 -608 -416 -608 2 polygon
+1 1.000 -400 -608 -320 -608 2 polygon
+1 1.000 -416 -576 -320 -576 2 polygon
+1 1.000 -448 -576 -512 -576 2 polygon
+1 1.000 544 0 496 0 2 polygon
+1 1.000 464 0 384 0 2 polygon
+1.000 90.000 464 0 generic::arrowhead
+-1.000 270.000 496 0 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.006) {/Times-Roman cf} 5 20 0.000 0.700 
+-296 -608 label
+(\265m) {/Times-RomanISO cf} {hS} (0.0431) {/Times-Roman cf} 5 20 0.000 0.700 
+-296 -576 label
+(\265m) {/Times-RomanISO cf} {hS} (0.4223) {/Times-Roman cf} 5 20 0.000 0.700 
+-376 672 label
+(\265m) {/Times-RomanISO cf} {hS} (0.070) {/Times-Roman cf} 5 20 0.000 0.700 
+-376 624 label
+(\265m) {/Times-RomanISO cf} {hS} (0.030) {/Times-Roman cf} 5 23 0.000 0.700 
+376 0 label
+1 1.000 464 -144 384 -144 2 polygon
+1.000 90.000 464 -144 generic::arrowhead
+(\265m) {/Times-RomanISO cf} {hS} (0.030) {/Times-Roman cf} 5 23 360.000 0.700 
+376 -144 label
+1 1.000 544 -144 496 -144 2 polygon
+-1.000 270.000 496 -144 generic::arrowhead
+0.600 0.600 0.600 scb
+1 1.000 432 -248 432 -192 2 polygon
+1 1.000 464 -216 464 -192 2 polygon
+sce
+1.000 90.000 432 -200 generic::arrowhead
+-1.000 270.000 464 -200 generic::arrowhead
+1 1.000 544 -200 464 -200 2 polygon
+1 1.000 432 -200 384 -200 2 polygon
+(\265m) {/Times-RomanISO cf} {hS} (0.075) {/Times-Roman cf} 5 23 0.000 0.700 
+368 -200 label
+pgsave restore showpage
+
+%%Page: captables 2
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+1.0000 inchscale
+2.6000 setlinewidth 861 1371 translate
+
+0.647 0.165 0.165 scb
+(SkyWater sky130A capacitance tables) {/Times-Roman cf} 2 16 0.000 1.000 -1056 
+1280 label
+sce
+1 1.000 -1056 1264 768 1264 2 polygon
+0.000 0.000 1.000 scb
+(n-well) {/Times-Roman cf} 2 28 0.000 1.000 -1056 436 label
+(substrate) {/Times-Roman cf} 2 28 0.000 1.000 -1056 388 label
+(diffusion) {/Times-Roman cf} 2 28 0.000 1.000 -1056 484 label
+(poly \(field\)) {/Times-Roman cf} 2 28 0.000 1.000 -1054 580 label
+(li) {/Times-Roman cf} 2 28 0.000 1.000 -1056 676 label
+(metal1) {/Times-Roman cf} 2 28 0.000 1.000 -1056 772 label
+(metal2) {/Times-Roman cf} 2 28 0.000 1.000 -1056 868 label
+(metal3) {/Times-Roman cf} 2 28 0.000 1.000 -1056 964 label
+(metal4) {/Times-Roman cf} 2 28 0.000 1.000 -1056 1060 label
+(poly) {/Times-Roman cf} 2 19 0.000 1.000 224 1136 label
+(li) {/Times-Roman cf} 2 19 0.000 1.000 32 1136 label
+(metal1) {/Times-Roman cf} 2 19 0.000 1.000 -80 1136 label
+(metal2) {/Times-Roman cf} 2 19 0.000 1.000 -240 1136 label
+(metal3) {/Times-Roman cf} 2 19 0.000 1.000 -400 1136 label
+(metal4) {/Times-Roman cf} 2 19 0.000 1.000 -560 1136 label
+(metal5) {/Times-Roman cf} 2 19 0.000 1.000 -720 1136 label
+sce
+1 1.000 304 432 -864 432 2 polygon
+1 1.000 304 528 -864 528 2 polygon
+1 1.000 128 624 -864 624 2 polygon
+1 1.000 -48 720 -864 720 2 polygon
+1 1.000 -208 816 -864 816 2 polygon
+1 1.000 -368 912 -864 912 2 polygon
+1 1.000 -528 1008 -864 1008 2 polygon
+1 1.000 -688 1104 -864 1104 2 polygon
+0.180 0.545 0.341 scb
+(Inter-layer distances \(microns\)) {/Times-Roman cf} 2 16 0.000 1.000 -1056 
+1216 label
+sce
+(0.3262) {/Times-Roman cf} 2 21 0.000 1.000 224 480 label
+(0.9361) {/Times-Roman cf} 2 21 0.000 1.000 48 480 label
+(1.3761) {/Times-Roman cf} 2 21 0.000 1.000 -128 480 label
+(2.0061) {/Times-Roman cf} 2 21 0.000 1.000 -288 480 label
+(4.0211) {/Times-Roman cf} 2 21 0.000 1.000 -608 480 label
+(2.7861) {/Times-Roman cf} 2 21 0.000 1.000 -448 480 label
+(5.3711) {/Times-Roman cf} 2 21 0.000 1.000 -768 480 label
+(0.4299) {/Times-Roman cf} 2 21 0.000 1.000 48 576 label
+(0.27) {/Times-Roman cf} 2 21 0.000 1.000 -288 768 label
+(0.42) {/Times-Roman cf} 2 21 0.000 1.000 -448 864 label
+(0.39) {/Times-Roman cf} 2 21 0.000 1.000 -608 960 label
+(0.505) {/Times-Roman cf} 2 21 0.000 1.000 -768 1056 label
+1 1.000 -864 1104 -864 432 2 polygon
+1 1.000 304 528 304 432 2 polygon
+1 1.000 128 624 128 432 2 polygon
+1 1.000 -48 720 -48 432 2 polygon
+1 1.000 -208 816 -208 432 2 polygon
+1 1.000 -368 912 -368 432 2 polygon
+1 1.000 -528 1008 -528 432 2 polygon
+1 1.000 -688 1104 -688 432 2 polygon
+(1.74) {/Times-Roman cf} 2 21 0.000 1.000 -768 960 label
+(3.005) {/Times-Roman cf} 2 21 0.000 1.000 -768 864 label
+(3.635) {/Times-Roman cf} 2 21 0.000 1.000 -768 768 label
+(4.335) {/Times-Roman cf} 2 21 0.000 1.000 -768 672 label
+(4.8649) {/Times-Roman cf} 2 21 0.000 1.000 -768 576 label
+(1.655) {/Times-Roman cf} 2 21 0.000 1.000 -608 864 label
+(2.285) {/Times-Roman cf} 2 21 0.000 1.000 -608 768 label
+(2.985) {/Times-Roman cf} 2 21 0.000 1.000 -608 672 label
+(3.5149) {/Times-Roman cf} 2 21 0.000 1.000 -608 576 label
+(1.05) {/Times-Roman cf} 2 21 0.000 1.000 -448 768 label
+(1.75) {/Times-Roman cf} 2 21 0.000 1.000 -448 672 label
+(2.2799) {/Times-Roman cf} 2 21 0.000 1.000 -448 576 label
+(0.97) {/Times-Roman cf} 2 21 0.000 1.000 -288 672 label
+(1.4999) {/Times-Roman cf} 2 21 0.000 1.000 -288 576 label
+(0.34) {/Times-Roman cf} 2 21 0.000 1.000 -128 672 label
+(0.8699) {/Times-Roman cf} 2 21 0.000 1.000 -128 576 label
+0.180 0.545 0.341 scb
+(Inter-layer capacitances) {/Times-Roman cf} 2 16 0.000 1.000 -1056 240 label
+sce
+(\)) {ns} (2) {Ss} (\265m) {/Times-RomanISO cf} (\(final values in aF/) 
+{/Times-Roman cf} 8 16 0.000 1.000 -640 240 label
+(70.1307) {/Times-Roman cf} 2 16 0.000 1.000 -784 48 label
+(20.4659) {/Times-Roman cf} 2 16 0.000 1.000 -784 -48 label
+(93.0805) {/Times-Roman cf} 2 16 0.000 1.000 -528 -48 label
+(22.0677) {/Times-Roman cf} 2 16 0.000 1.000 -544 -144 label
+(88.5400) {/Times-Roman cf} 2 16 0.000 1.000 -304 -144 label
+(147.5667) {/Times-Roman cf} 2 16 0.000 1.000 -80 -240 label
+(92.872) {/Times-Roman cf} 2 16 0.000 1.000 432 -432 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 416 -528 label
+(105.8571) {/Times-Roman cf} 2 16 0.000 1.000 672 -528 label
+(11.9856) {/Times-Roman cf} 2 16 0.000 1.000 -784 -144 label
+(10.0109) {/Times-Roman cf} 2 16 0.000 1.000 -784 -240 label
+(16.1884) {/Times-Roman cf} 2 16 0.000 1.000 -544 -240 label
+(36.0337) {/Times-Roman cf} 2 16 0.000 1.000 -304 -240 label
+(8.5302) {/Times-Roman cf} 2 16 0.000 1.000 -768 -336 label
+(12.640) {/Times-Roman cf} 2 16 0.000 1.000 -544 -336 label
+(22.177) {/Times-Roman cf} 2 16 0.000 1.000 -304 -336 label
+(7.6460) {/Times-Roman cf} 2 16 0.000 1.000 -768 -432 label
+(10.791) {/Times-Roman cf} 2 16 0.000 1.000 -544 -432 label
+(17.051) {/Times-Roman cf} 2 16 0.000 1.000 -304 -432 label
+(6.7968) {/Times-Roman cf} 2 16 0.000 1.000 -768 -528 label
+(9.1734) {/Times-Roman cf} 2 16 0.000 1.000 -528 -528 label
+(13.335) {/Times-Roman cf} 2 16 0.000 1.000 -304 -528 label
+(18.514) {/Times-Roman cf} 2 16 0.000 1.000 -64 -528 label
+(26.009) {/Times-Roman cf} 2 16 0.000 1.000 176 -528 label
+(45.235) {/Times-Roman cf} 2 16 0.000 1.000 176 -432 label
+(26.544) {/Times-Roman cf} 2 16 0.000 1.000 -64 -432 label
+(41.466) {/Times-Roman cf} 2 16 0.000 1.000 -64 -336 label
+(116.96) {/Times-Roman cf} 2 16 0.000 1.000 176 -336 label
+0.000 0.000 1.000 scb
+(n-well) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -556 label
+(substrate) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -604 label
+(diffusion) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -508 label
+(poly \(field\)) {/Times-Roman cf} 2 28 0.000 1.000 -1038 -412 label
+(li) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -316 label
+(metal1) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -220 label
+(metal2) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -124 label
+(metal3) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -28 label
+(metal4) {/Times-Roman cf} 2 28 0.000 1.000 -1040 68 label
+(poly) {/Times-Roman cf} 2 19 0.000 1.000 800 144 label
+(li) {/Times-Roman cf} 2 19 0.000 1.000 496 144 label
+(metal1) {/Times-Roman cf} 2 19 0.000 1.000 320 144 label
+(metal2) {/Times-Roman cf} 2 19 0.000 1.000 80 144 label
+(metal3) {/Times-Roman cf} 2 19 0.000 1.000 -160 144 label
+(metal4) {/Times-Roman cf} 2 19 0.000 1.000 -416 144 label
+(metal5) {/Times-Roman cf} 2 19 0.000 1.000 -688 144 label
+sce
+1 1.000 864 -560 -848 -560 2 polygon
+1 1.000 864 -464 -848 -464 2 polygon
+1 1.000 624 -368 -848 -368 2 polygon
+1 1.000 368 -272 -848 -272 2 polygon
+1 1.000 128 -176 -848 -176 2 polygon
+1 1.000 -112 -80 -848 -80 2 polygon
+1 1.000 -352 16 -848 16 2 polygon
+1 1.000 -592 112 -848 112 2 polygon
+1 1.000 -848 112 -848 -560 2 polygon
+1 1.000 864 -464 864 -560 2 polygon
+1 1.000 624 -368 624 -560 2 polygon
+1 1.000 368 -272 368 -560 2 polygon
+1 1.000 128 -176 128 -560 2 polygon
+1 1.000 -112 -80 -112 -560 2 polygon
+1 1.000 -352 16 -352 -560 2 polygon
+1 1.000 -592 112 -592 -560 2 polygon
+{ns} (\2616) {/Times-Roman cf} {Ss} (, so divide by 1.0e) {ns} (2) {Ss} (\265m) 
+{/Times-RomanISO cf} (Note: LEF CPERSQDIST is in pF/) {/Times-Roman cf} 12 16 
+0.000 1.000 -128 240 label
+0.000 0.000 1.000 scb
+(n-well) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1532 label
+(substrate) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1580 label
+(diffusion) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1484 label
+(poly \(field\)) {/Times-Roman cf} 2 28 0.000 1.000 -1038 -1388 label
+(li) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1292 label
+(metal1) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1196 label
+(metal2) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1100 label
+(metal3) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -1004 label
+(metal4) {/Times-Roman cf} 2 28 0.000 1.000 -1040 -908 label
+(poly) {/Times-Roman cf} 2 19 0.000 1.000 800 -832 label
+(li) {/Times-Roman cf} 2 19 0.000 1.000 496 -832 label
+(metal1) {/Times-Roman cf} 2 19 0.000 1.000 320 -832 label
+(metal2) {/Times-Roman cf} 2 19 0.000 1.000 80 -832 label
+(metal3) {/Times-Roman cf} 2 19 0.000 1.000 -160 -832 label
+(metal4) {/Times-Roman cf} 2 19 0.000 1.000 -416 -832 label
+(metal5) {/Times-Roman cf} 2 19 0.000 1.000 -688 -832 label
+sce
+1 1.000 864 -1536 -848 -1536 2 polygon
+1 1.000 864 -1440 -848 -1440 2 polygon
+1 1.000 624 -1344 -848 -1344 2 polygon
+1 1.000 368 -1248 -848 -1248 2 polygon
+1 1.000 128 -1152 -848 -1152 2 polygon
+1 1.000 -112 -1056 -848 -1056 2 polygon
+1 1.000 -352 -960 -848 -960 2 polygon
+1 1.000 -592 -864 -848 -864 2 polygon
+1 1.000 -848 -864 -848 -1536 2 polygon
+1 1.000 864 -1440 864 -1536 2 polygon
+1 1.000 624 -1344 624 -1536 2 polygon
+1 1.000 368 -1248 368 -1536 2 polygon
+1 1.000 128 -1152 128 -1536 2 polygon
+1 1.000 -112 -1056 -112 -1536 2 polygon
+1 1.000 -352 -960 -352 -1536 2 polygon
+1 1.000 -592 -864 -592 -1536 2 polygon
+0.180 0.545 0.341 scb
+(Fringe capacitances) {/Times-Roman cf} 2 16 0.000 1.000 -1040 -720 label
+sce
+(\265m\)) {/Times-RomanISO cf} (\(values in aF/) {/Times-Roman cf} 4 16 0.000 
+1.000 -624 -720 label
+{ns} (\2616) {/Times-Roman cf} {Ss} (\265m, so divide by 1.0e) 
+{/Times-RomanISO cf} (Note: LEF EDGECAPACITANCE is in pF/) {/Times-Roman cf} 8 
+16 0.000 1.000 -112 -720 label
+(102.25) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1504 label
+(99.483) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1504 label
+(116.62) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1504 label
+(94.529) {/Times-Roman cf} 2 16 0.000 1.000 -48 -1504 label
+(106.39) {/Times-Roman cf} 2 16 0.000 1.000 192 -1504 label
+(72.763) {/Times-Roman cf} 2 16 0.000 1.000 432 -1504 label
+(141.68) {/Times-Roman cf} 2 16 0.000 1.000 688 -1504 label
+(109.36) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1408 label
+(109.04) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1408 label
+(135.42) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1408 label
+(115.79) {/Times-Roman cf} 2 16 0.000 1.000 -48 -1408 label
+(152.95) {/Times-Roman cf} 2 16 0.000 1.000 192 -1408 label
+(120.86) {/Times-Roman cf} 2 16 0.000 1.000 432 -1408 label
+(113.11) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1312 label
+(114.74) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1312 label
+(150.89) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1312 label
+(137.79) {/Times-Roman cf} 2 16 0.000 1.000 -48 -1312 label
+(249.97) {/Times-Roman cf} 2 16 0.000 1.000 192 -1312 label
+(119.67) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1216 label
+(125.83) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1216 label
+(191.73) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1216 label
+(273.21) {/Times-Roman cf} 2 16 0.000 1.000 -48 -1216 label
+(129.16) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1120 label
+(144.86) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1120 label
+(341.14) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1120 label
+(168.89) {/Times-Roman cf} 2 16 0.000 1.000 -784 -1024 label
+(351.52) {/Times-Roman cf} 2 16 0.000 1.000 -528 -1024 label
+(378.01) {/Times-Roman cf} 2 16 0.000 1.000 -784 -928 label
+0.180 0.545 0.341 scb
+(Sidewall capacitances) {/Times-Roman cf} 2 16 0.000 1.000 -1040 -1696 label
+sce
+(\265m\)) {/Times-RomanISO cf} (\(values in aF/) {/Times-Roman cf} 4 16 0.000 
+1.000 -624 -1696 label
+0.000 0.000 1.000 scb
+(poly) {/Times-Roman cf} 2 19 0.000 1.000 784 -1776 label
+(li) {/Times-Roman cf} 2 19 0.000 1.000 480 -1776 label
+(metal1) {/Times-Roman cf} 2 19 0.000 1.000 304 -1776 label
+(metal2) {/Times-Roman cf} 2 19 0.000 1.000 64 -1776 label
+(metal3) {/Times-Roman cf} 2 19 0.000 1.000 -176 -1776 label
+(metal4) {/Times-Roman cf} 2 19 0.000 1.000 -432 -1776 label
+(metal5) {/Times-Roman cf} 2 19 0.000 1.000 -704 -1776 label
+sce
+1 1.000 864 -1824 -848 -1824 2 polygon
+1 1.000 -848 -1920 -848 -1824 2 polygon
+1 1.000 864 -1920 864 -1824 2 polygon
+1 1.000 624 -1920 624 -1824 2 polygon
+1 1.000 368 -1920 368 -1824 2 polygon
+1 1.000 128 -1920 128 -1824 2 polygon
+1 1.000 -112 -1920 -112 -1824 2 polygon
+1 1.000 -352 -1920 -352 -1824 2 polygon
+1 1.000 -592 -1920 -592 -1824 2 polygon
+1 1.000 864 -1920 -848 -1920 2 polygon
+(77.267) {/Times-Roman cf} 2 21 0.000 1.000 -736 -1872 label
+(29.9265) {/Times-Roman cf} 2 21 0.000 1.000 -480 -1872 label
+(30.675) {/Times-Roman cf} 2 21 0.000 1.000 -240 -1872 label
+(13.387) {/Times-Roman cf} 2 21 0.000 1.000 0 -1872 label
+(14.343) {/Times-Roman cf} 2 21 0.000 1.000 240 -1872 label
+(3.937) {/Times-Roman cf} 2 21 0.000 1.000 496 -1872 label
+(6.710) {/Times-Roman cf} 2 21 0.000 1.000 736 -1872 label
+0.820 0.039 0.859 scb
+0 1.000 112 -1936 112 -256 384 -256 384 -1936 4 polygon
+pgsave restore showpage
+
+%%Page: worksheet1 3
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 822 1572 translate
+
+0.180 0.545 0.341 scb
+(Inter-layer capacitances worksheet) {/Times-Roman cf} 2 16 0.000 1.000 -1072 
+1024 label
+sce
+(metal5 to metal4:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 912 label
+(0.505) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 848 label
+(metal5 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 784 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 720 label
+(0.39) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 672 label
+(metal5 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 608 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 544 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 496 label
+(0.42) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -992 448 label
+(metal5 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 384 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 320 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 272 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -992 224 label
+(0.27) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -992 176 label
+(metal5 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 112 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 48 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 0 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -992 -48 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -992 -96 label
+(0.265) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -992 -144 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -992 -192 label
+(metal5 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -1056 -256 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 -320 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 -368 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -992 -416 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -992 -464 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -992 -512 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -992 -560 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -992 -608 label
+(metal5 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -1056 -736 label
+(1.35) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.0) {/Times-Roman cf} 13 16 0.000 1.000 -992 -800 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -992 -848 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -992 -896 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -992 -944 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -992 -992 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -992 -1040 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -992 -1088 label
+(metal4 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -624 784 label
+(0.39) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 720 label
+(metal4 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -624 608 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 544 label
+(0.42) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -544 496 label
+(metal4 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -624 384 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 320 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -544 272 label
+(0.27) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -544 224 label
+(metal4 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -624 112 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 48 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -544 0 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -544 -48 label
+(0.265) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -544 -96 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -544 -144 label
+(metal4 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -608 -256 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 -320 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -544 -368 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -544 -416 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -544 -464 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -544 -512 label
+(metal4 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -608 -736 label
+(1.235) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.1) {/Times-Roman cf} 13 16 0.000 1.000 -544 -800 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -544 -848 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -544 -896 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -544 -944 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -544 -992 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -544 -1040 label
+(metal3 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -176 608 label
+(0.42) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -96 544 label
+(metal3 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -176 384 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -96 320 label
+(0.27) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -96 272 label
+(metal3 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -176 112 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -96 48 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -96 0 label
+(0.265) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -96 -48 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -96 -96 label
+(metal3 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -160 -256 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -96 -320 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -96 -368 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -96 -416 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -96 -464 label
+(metal3 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -160 -736 label
+(0.78) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.2) {/Times-Roman cf} 13 16 0.000 1.000 -96 -800 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 -96 -848 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 -96 -896 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 -96 -944 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -96 -992 label
+(metal2 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 240 384 label
+(0.27) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 320 320 label
+(metal2 to li:) {/Times-Roman cf} 2 16 0.000 1.000 240 112 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 320 48 label
+(0.265) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 320 0 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 320 -48 label
+(metal2 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 256 -256 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 320 -320 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 320 -368 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 320 -416 label
+(metal2 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 256 -736 label
+(0.63) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.5) {/Times-Roman cf} 13 16 0.000 1.000 320 -800 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 320 -848 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 320 -896 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 320 -944 label
+(metal1 to li:) {/Times-Roman cf} 2 16 0.000 1.000 672 112 label
+(0.265) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 752 48 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 752 0 label
+(metal1 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 688 -256 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 752 -320 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 752 -368 label
+(metal1 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 688 -736 label
+(0.365) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(4.05) {/Times-Roman cf} 13 16 0.000 1.000 752 -800 label
+(0.075) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.3) {/Times-Roman cf} 13 16 0.000 1.000 752 -848 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 752 -896 label
+(li to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 1104 -256 label
+(li to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1104 -736 label
+(0.9361) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 1168 -800 label
+(poly to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1456 -736 label
+(0.3262) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 1520 -800 label
+(\(series capacitors, top to bottom\)) {/Times-Roman cf} 2 16 0.000 1.000 -464 
+1024 label
+0.647 0.165 0.165 scb
+(SkyWater sky130A capacitance tables) {/Times-Roman cf} 2 16 0.000 1.000 -1072 
+1080 label
+sce
+1 1.000 -1080 1064 1784 1064 2 polygon
+( \(used in magic tech file extract section\)) {ns} (2) {Ss} (\265m) 
+{/Times-RomanISO cf} (8.854 to get result in aF/) {/Times-Roman cf} ( = ) {ns} 
+(0) {ss} (e) {/Symbol cf} (Use ) {/Times-Roman cf} 16 16 0.000 1.000 -1024 
+-1192 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 -992 -656 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -544 -560 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 -544 -608 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 -96 -512 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 -96 -560 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 320 -464 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 320 -512 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 752 -416 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 752 -464 label
+(0.3089) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(3.9) {/Times-Roman cf} 13 16 0.000 1.000 1104 -320 label
+(0.1210) {hS} {hS} ( /) {ns} (0) {ss} {/Times-Roman cf} (e) {/Symbol cf} {hS} 
+(7.5) {/Times-Roman cf} 13 16 0.000 1.000 1104 -368 label
+pgsave restore showpage
+
+%%Page: worksheet2 4
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 814 1600 translate
+
+0.180 0.545 0.341 scb
+(Inter-layer capacitances worksheet) {/Times-Roman cf} 2 16 0.000 1.000 -1072 
+992 label
+sce
+(metal5 to metal4:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 880 label
+(metal5 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 752 label
+(metal5 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 576 label
+(metal5 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 352 label
+(147.5667) {/Times-Roman cf} 2 16 0.000 1.000 -992 144 label
+(metal5 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -1072 80 label
+(metal5 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -1056 -288 label
+(metal5 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -1056 -768 label
+(metal4 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -624 752 label
+(metal4 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -624 576 label
+(metal4 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -624 352 label
+(metal4 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -624 80 label
+(metal4 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -608 -288 label
+(metal4 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -608 -768 label
+(metal3 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -176 576 label
+(metal3 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -176 352 label
+(metal3 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -176 80 label
+(metal3 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -160 -288 label
+(metal3 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -160 -768 label
+(metal2 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 256 352 label
+(metal2 to li:) {/Times-Roman cf} 2 16 0.000 1.000 256 80 label
+(metal2 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 272 -288 label
+(metal2 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 272 -768 label
+(metal1 to li:) {/Times-Roman cf} 2 16 0.000 1.000 688 80 label
+(metal1 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 704 -288 label
+(metal1 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 704 -768 label
+(li to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 1112 -288 label
+(li to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1112 -768 label
+(poly to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1464 -768 label
+(\(series capacitors, top to bottom\)) {/Times-Roman cf} 2 16 0.000 1.000 -464 
+992 label
+(70.1307) {/Times-Roman cf} 2 16 0.000 1.000 -992 816 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 688 label
+(93.0805) {/Times-Roman cf} 2 16 0.000 1.000 -992 640 label
+(93.0805) {/Times-Roman cf} 2 16 0.000 1.000 -544 688 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 512 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -992 464 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -544 512 label
+(88.5400) {/Times-Roman cf} 2 16 0.000 1.000 -992 416 label
+(88.5400) {/Times-Roman cf} 2 16 0.000 1.000 -544 464 label
+(88.5400) {/Times-Roman cf} 2 16 0.000 1.000 -96 512 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 288 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 16 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 -352 label
+(26.2341) {/Times-Roman cf} 2 16 0.000 1.000 -992 -832 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -992 240 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -992 -32 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -992 -400 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -992 -880 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -544 -832 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -544 -352 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -544 16 label
+(29.3938) {/Times-Roman cf} 2 16 0.000 1.000 -544 288 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -992 192 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -544 240 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -96 288 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -992 -80 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -544 -32 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -96 16 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -992 -448 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -544 -400 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -96 -352 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -992 -928 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -544 -880 label
+(47.6754) {/Times-Roman cf} 2 16 0.000 1.000 -96 -832 label
+(147.5667) {/Times-Roman cf} 2 16 0.000 1.000 -544 192 label
+(147.5667) {/Times-Roman cf} 2 16 0.000 1.000 -96 240 label
+(147.5667) {/Times-Roman cf} 2 16 0.000 1.000 336 288 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -992 -128 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -544 -80 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -96 -32 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 336 16 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -992 -496 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -544 -448 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -96 -400 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 336 -352 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -992 -976 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -544 -928 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 -96 -880 label
+(64.2429) {/Times-Roman cf} 2 16 0.000 1.000 336 -832 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -992 -224 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -544 -176 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -96 -128 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 336 -80 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 768 -32 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -992 -592 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -544 -544 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -96 -496 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 336 -448 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 768 -400 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -992 -1072 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -544 -1024 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 -96 -976 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 336 -928 label
+(861.7893) {/Times-Roman cf} 2 16 0.000 1.000 768 -880 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 -992 -1120 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 -544 -1072 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 -96 -1024 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 336 -976 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 768 -928 label
+(\) to get final interlayer capacitor value.) {ns} (N) {ss} ( + ... + 1/C) {ns} 
+(1) {ss} ( + 1/C) {ns} (0) {ss} ( = 1/C) {ns} (tot) {ss} 
+(Add these in parallel combination \(1/C) {/Times-Roman cf} 18 16 0.000 1.000 
+-992 -1216 label
+(36.8877) {/Times-Roman cf} 2 16 0.000 1.000 1184 -832 label
+(105.8571) {/Times-Roman cf} 2 16 0.000 1.000 1520 -832 label
+1 1.000 -1072 1032 1792 1032 2 polygon
+0.647 0.165 0.165 scb
+(SkyWater sky130A capacitance tables) {/Times-Roman cf} 2 16 0.000 1.000 -1064 
+1048 label
+sce
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 -992 -640 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 -992 -688 label
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 -544 -592 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 -544 -640 label
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 -96 -544 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 -96 -592 label
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 336 -496 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 336 -544 label
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 768 -448 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 768 -496 label
+(111.7900) {/Times-Roman cf} 2 16 0.000 1.000 1184 -352 label
+(548.8000) {/Times-Roman cf} 2 16 0.000 1.000 1184 -400 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -992 -1024 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -544 -976 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -96 -928 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 336 -880 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 768 -832 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -992 -544 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -544 -496 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 -96 -448 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 336 -400 label
+(98.243) {/Times-Roman cf} 2 16 0.000 1.000 768 -352 label
+(135.320) {/Times-Roman cf} 2 16 0.000 1.000 -992 -176 label
+(135.320) {/Times-Roman cf} 2 16 0.000 1.000 -544 -128 label
+(135.320) {/Times-Roman cf} 2 16 0.000 1.000 -96 -80 label
+(135.320) {/Times-Roman cf} 2 16 0.000 1.000 336 -32 label
+(135.320) {/Times-Roman cf} 2 16 0.000 1.000 768 16 label
+pgsave restore showpage
+
+%%Page: worksheet3 5
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 1277 1656 translate
+
+0.647 0.165 0.165 scb
+(Interlayer \(fringe\) capacitance worksheet:) {/Times-Roman cf} 2 16 0.000 
+1.000 -1280 896 label
+sce
+( = ) {ns} (fringe) {ss} (Simple fringe capacitance equation used:  C) 
+{/Times-Roman cf} 6 16 0.000 1.000 -1280 800 label
+1 1.000 -456 808 -344 808 2 polygon
+(K) {ns} (0) {ss} (pe) {/Symbol cf} (2) {/Times-Roman cf} 8 17 0.000 1.000 -408 
+824 label
+(log\(h/t\)) {/Times-Roman cf} 2 29 0.000 1.000 -392 792 label
+(where h is the distance between layers and t is the sidewall thickness.) 
+{/Times-Roman cf} 2 16 0.000 1.000 -224 800 label
+(Use geometric mean for K \(instead of doing series capacitor additions\).) 
+{/Times-Roman cf} 2 16 0.000 1.000 -1288 680 label
+( = 2\(3.14159\)\(8.854\) = 55.631) {ns} (0) {ss} (pe) {/Symbol cf} (2) 
+{/Times-Roman cf} 8 16 0.000 1.000 -216 744 label
+( \(5-3\) = \(1.35/1.74\) * 4.0 + \(0.39/1.74\) * 4.1 = 4.0224) {ns} (eff) {ss} 
+(K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 560 label
+
+( \(5-2\) = \(1.35/3.005\) * 4.0 + \(1.235/3.005\) * 4.1 + \(0.42/3.005\) * 4.2 = 4.0691) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 512 label
+
+( \(5-1\) = \(1.35/3.635\) * 4.0 + \(1.235/3.635\) * 4.1 + \(0.78/3.635\) * 4.2 + \(0.27/3.635\) * 4.5 = 4.114) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 464 label
+
+( \(5-li\) = \(1.35/4.335\) * 4.0 + \(1.235/4.335\) * 4.1 + \(0.78/4.335\) * 4.2 + \(0.63/4.335\) * 4.5 + \(0.265/4.335\)  * 4.05 + \(0.075/4.335\) * 7.3 = 4.1973) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 416 label
+
+(+ \(0.075/4.8649\) * 7.3 + \(0.3089/4.8649\) * 3.9 + \(0.121/4.8649\) * 7.5 = 4.2575) 
+{CR} 
+( \(5-poly\) = \(1.35/4.8649\) * 4.0 + \(1.235/4.8649\) * 4.1 + \(0.78/4.8649\) * 4.2 + \(0.63/4.8649\) * 4.5 + \(0.365/4.8649\) * 4.05) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 8 16 0.000 1.000 -1280 320 label
+(+ \(0.075/5.3711\) * 7.3 + \(0.9361/5.3711\) * 3.9 = 4.1427) {CR} 
+( \(5-sub\) = \(1.35/5.3711\) * 4.0 + \(1.235/5.3711\) * 4.1 + \(0.78/5.3711\) * 4.2 + \(0.63/5.3711\) * 4.5 + \(0.365/5.3711\) * 4.05) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 8 16 0.000 1.000 -1280 224 label
+( \(4-3\) = 4.1 ) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 
+128 label
+( \(4-2\) = \(1.235/1.655\) * 4.1 + \(0.42/1.655\) * 4.2 = 4.1254) {ns} (eff) 
+{ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 80 label
+
+( \(4-1\) = \(1.235/2.285\) * 4.1 + \(0.78/2.285\) * 4.2 + \(0.27/2.285\) * 4.5 = 4.1814) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 32 label
+
+( \(4-li\) = \(1.235/2.985\) * 4.1 + \(0.78/2.985\) * 4.2 + \(0.63/2.985\) * 4.5 + \(0.265/2.985\)  * 4.05 + \(0.075/2.985\) * 7.3 = 4.2865) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -16 label
+
+(+ \(0.075/3.5149\) * 7.3 + \(0.3089/3.5149\) * 3.9 + \(0.121/3.5149\) * 7.5 = 4.3564) 
+{CR} 
+( \(4-poly\) = \(1.235/3.5149\) + \(0.78/3.5149\) * 4.2 + \(0.63/3.5149\) * 4.5 + \(0.365/3.5149\) * 4.05) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 8 16 0.000 1.000 -1280 -112 label
+(+ \(0.075/4.0211\) * 7.3 + \(0.9361/4.0211\) * 3.9 = 4.1907) {CR} 
+( \(4-sub\) = \(1.235/4.0211\) * 4.1 + \(0.78/4.0211\) * 4.2 + \(0.63/4.0211\) * 4.5 + \(0.365/4.0211\) * 4.05) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 8 16 0.000 1.000 -1280 -208 label
+( \(5-4\) = 4.0) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 
+608 label
+( \(3-2\) = 4.2) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 
+-288 label
+( \(3-1\) = \(0.78/1.05\) * 4.2 + \(0.27/1.05\) * 4.5 = 4.2771 ) {ns} (eff) 
+{ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -336 label
+
+( \(3-li\) = \(0.78/1.75\) * 4.2 + \(0.63/1.75\) * 4.5 + \(0.265/1.75\)  * 4.05 + \(0.075/1.75\) * 7.3 = 4.4181) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -384 label
+
+(+ \(0.075/2.2799\) * 7.3 + \(0.3089/2.2799\) * 3.9 + \(0.121/2.2799\) * 7.5 = 4.4954) 
+{CR} 
+( \(3-poly\) = \(0.78/2.2799\) * 4.2 + \(0.63/2.2799\) * 4.5 + \(0.365/2.2799\) * 4.05) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 8 16 0.000 1.000 -1280 -480 label
+
+( \(3-sub\) = \(0.78/2.7861\) * 4.2 + \(0.63/2.7861\) * 4.5 + \(0.365/2.7861\) * 4.05 + \(0.075/2.7861\) * 7.3 + \(0.9361/2.7861\) * 3.9 = 4.2308) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -528 label
+( \(2-1\) = 4.5) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 
+-608 label
+
+( \(2-li\) = \(0.63/0.97\) * 4.5 + \(0.265/0.97\)  * 4.05 + \(0.075/0.97\) * 7.3 = 4.5936) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -656 label
+
+( \(2-poly\) = \(0.63/1.4999\) * 4.5 + \(0.365/1.4999\) * 4.05 + \(0.075/1.4999\) * 7.3 + \(0.3089/1.4999\) * 3.9 + \(0.121/1.4999\) * 7.5 = 4.6489) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -704 label
+
+( \(2-sub\) = \(0.63/2.0061\) * 4.5 + \(0.365/2.0061\) * 4.05 + \(0.075/2.0061\) * 7.3 + \(0.9361/2.0061\) * 3.9 = 4.2428) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -752 label
+( \(1-li\) = \(0.265/0.34\)  * 4.05 + \(0.075/0.34\) * 7.3 = 4.7669) {ns} (eff) 
+{ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -832 label
+
+( \(1-poly\) = \(0.265/0.7699\) + \(0.075/0.7699\) * 7.3 + \(0.3089/0.7699\) * 3.9 + \(0.121/0.7699\) * 7.5 = 4.8486) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -880 label
+
+( \(1-sub\) = \(0.365/1.3761\) * 4.05 + \(0.075/1.3761\) * 7.3 + \(0.9361/1.3761\) * 3.9 = 4.1251) 
+{ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -928 label
+( \(li-poly\) = \(0.3089/0.4299\) * 3.9 + \(0.121/0.4299\) * 7.5 = 4.9133) {ns} 
+(eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 -1280 -1024 label
+( \(li-sub\) = 3.9) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 
+-1280 -1072 label
+( \(poly-sub\) = 3.9) {ns} (eff) {ss} (K) {/Times-Roman cf} 6 16 0.000 1.000 
+-1280 -1152 label
+1 1.000 -1280 192 1008 192 2 polygon
+1 1.000 -1280 -240 1008 -240 2 polygon
+1 1.000 -1280 -560 1008 -560 2 polygon
+1 1.000 -1280 -784 1008 -784 2 polygon
+1 1.000 -1280 -960 1008 -960 2 polygon
+1 1.000 -1280 -1104 1008 -1104 2 polygon
+1 1.000 -1280 -1184 1008 -1184 2 polygon
+1 1.000 -1280 656 1008 656 2 polygon
+pgsave restore showpage
+
+%%Page: worksheet4 6
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 939 1793 translate
+
+0.000 0.000 1.000 scb
+(metal5 to metal4:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 896 label
+(metal5 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 720 label
+(metal4 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -832 720 label
+(metal5 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 544 label
+(metal4 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -832 544 label
+(metal3 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -384 544 label
+(metal5 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 352 label
+(metal4 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -832 352 label
+(metal3 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -384 352 label
+(metal2 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 48 352 label
+(metal5 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 160 label
+(metal4 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -832 160 label
+(metal3 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -384 160 label
+(metal2 to li:) {/Times-Roman cf} 2 16 0.000 1.000 48 160 label
+(metal1 to li:) {/Times-Roman cf} 2 16 0.000 1.000 480 160 label
+(metal5 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 -64 label
+(metal4 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -832 -64 label
+(metal3 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -384 -64 label
+(metal2 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 48 -64 label
+(metal1 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 480 -64 label
+(li to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 896 -64 label
+(metal5 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 -272 label
+(metal4 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -832 -272 label
+(metal3 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -384 -272 label
+(metal2 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 48 -272 label
+(metal1 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 480 -272 label
+(li to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 896 -272 label
+(poly to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1248 -272 label
+sce
+
+(\(Note: K value of 4.0 is inaccurate due to TOPNIT and PI1 surrounding metal5\)) 
+{/Times-Roman cf} 2 16 0.000 1.000 -864 896 label
+(55.631 * 4.0) {/Times-Roman cf} 2 16 0.000 1.000 -1248 848 label
+1 1.000 -1264 832 -1024 832 2 polygon
+(log\(1 + 2\2640.505/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1152 800 label
+(55.631 * 4.0224) {/Times-Roman cf} 2 16 0.000 1.000 -1264 672 label
+1 1.000 -1264 656 -1024 656 2 polygon
+(log\(1 + 2\2641.74/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1136 624 label
+(55.631 * 4.0691) {/Times-Roman cf} 2 16 0.000 1.000 -1264 496 label
+1 1.000 -1264 480 -1024 480 2 polygon
+(log\(1 + 2\2643.005/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1136 448 label
+(55.631 * 4.114) {/Times-Roman cf} 2 16 0.000 1.000 -1264 304 label
+1 1.000 -1264 288 -1024 288 2 polygon
+(log\(1 + 2\2643.635/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1136 256 label
+(55.631 * 4.1973) {/Times-Roman cf} 2 16 0.000 1.000 -1264 112 label
+1 1.000 -1264 96 -1024 96 2 polygon
+(log\(1 + 2\2644.335/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1136 64 label
+(55.631 * 4.2575) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -112 label
+1 1.000 -1264 -128 -1024 -128 2 polygon
+(log\(1 + 2\2644.8649/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1136 -160 
+label
+(55.631 * 4.1427) {/Times-Roman cf} 2 16 0.000 1.000 -1248 -320 label
+1 1.000 -1248 -336 -1008 -336 2 polygon
+(log\(1 + 2\2645.3711/1.26\)) {/Times-Roman cf} 2 21 0.000 1.000 -1120 -368 
+label
+(55.631 * 4.1) {/Times-Roman cf} 2 16 0.000 1.000 -832 672 label
+1 1.000 -832 656 -592 656 2 polygon
+(log\(1 + 2\2640.39/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -704 624 label
+1 1.000 -832 480 -592 480 2 polygon
+(log\(1 + 2\2641.655/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -704 448 label
+(55.631 * 4.1254) {/Times-Roman cf} 2 16 0.000 1.000 -832 496 label
+1 1.000 -832 288 -592 288 2 polygon
+(log\(1 + 2\2642.285/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -704 256 label
+(55.631 * 4.2865) {/Times-Roman cf} 2 16 0.000 1.000 -832 112 label
+1 1.000 -832 96 -592 96 2 polygon
+(log\(1 + 2\2642.985/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -704 64 label
+(55.631 * 4.3564) {/Times-Roman cf} 2 16 0.000 1.000 -832 -112 label
+1 1.000 -832 -128 -592 -128 2 polygon
+(log\(1 + 2\2643.5149/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -704 -160 
+label
+(55.631 * 4.1907) {/Times-Roman cf} 2 16 0.000 1.000 -816 -320 label
+1 1.000 -816 -336 -576 -336 2 polygon
+(log\(1 + 2\2644.0211/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -688 -368 
+label
+(55.631 * 4.1814) {/Times-Roman cf} 2 16 0.000 1.000 -832 304 label
+(55.631 * 4.2308) {/Times-Roman cf} 2 16 0.000 1.000 -352 -320 label
+1 1.000 -352 -336 -112 -336 2 polygon
+(log\(1 + 2\2642.7861/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -224 -368 
+label
+(55.631 * 4.4954) {/Times-Roman cf} 2 16 0.000 1.000 -368 -112 label
+1 1.000 -368 -128 -128 -128 2 polygon
+(log\(1 + 2\2642.2799/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -240 -160 
+label
+1 1.000 -368 96 -128 96 2 polygon
+(log\(1 + 2\2641.75/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -240 64 label
+(55.631 * 4.4181) {/Times-Roman cf} 2 16 0.000 1.000 -368 112 label
+1 1.000 -368 288 -128 288 2 polygon
+(log\(1 + 2\2641.05/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -240 256 label
+(55.631 * 4.2771) {/Times-Roman cf} 2 16 0.000 1.000 -368 304 label
+1 1.000 -368 480 -128 480 2 polygon
+(log\(1 + 2\2640.42/0.854\)) {/Times-Roman cf} 2 21 0.000 1.000 -240 448 label
+(55.631 * 4.2) {/Times-Roman cf} 2 16 0.000 1.000 -368 496 label
+1 1.000 48 288 288 288 2 polygon
+(log\(1 + 2\2640.27/0.36\)) {/Times-Roman cf} 2 21 0.000 1.000 176 256 label
+(55.631 * 4.5) {/Times-Roman cf} 2 16 0.000 1.000 48 304 label
+1 1.000 48 96 288 96 2 polygon
+(log\(1 + 2\2640.97/0.36\)) {/Times-Roman cf} 2 21 360.000 1.000 176 64 label
+(55.631 * 4.5936) {/Times-Roman cf} 2 16 0.000 1.000 48 112 label
+(55.631 * 4.6489) {/Times-Roman cf} 2 16 0.000 1.000 48 -112 label
+1 1.000 48 -128 288 -128 2 polygon
+(log\(1 + 2\2641.4999/0.36\)) {/Times-Roman cf} 2 21 0.000 1.000 176 -160 label
+(55.631 * 4.2428) {/Times-Roman cf} 2 16 0.000 1.000 64 -320 label
+1 1.000 64 -336 304 -336 2 polygon
+(log\(1 + 2\2642.0061/0.36\)) {/Times-Roman cf} 2 21 0.000 1.000 192 -368 label
+(55.631 * 4.1251) {/Times-Roman cf} 2 16 0.000 1.000 512 -320 label
+1 1.000 512 -336 752 -336 2 polygon
+(log\(1 + 2\2641.3761/0.36\)) {/Times-Roman cf} 2 21 0.000 1.000 640 -368 label
+(55.631 * 4.8486) {/Times-Roman cf} 2 16 0.000 1.000 496 -112 label
+1 1.000 496 -128 736 -128 2 polygon
+(log\(1 + 2\2640.8699/0.36\)) {/Times-Roman cf} 2 21 0.000 1.000 624 -160 label
+(log\(1 + 2\2640.34/0.36\)) {/Times-Roman cf} 2 21 360.000 1.000 624 64 label
+(55.631 * 4.7669) {/Times-Roman cf} 2 16 0.000 1.000 496 112 label
+1 1.000 496 96 736 96 2 polygon
+(55.631 * 3.9) {/Times-Roman cf} 2 16 0.000 1.000 896 -320 label
+1 1.000 896 -336 1136 -336 2 polygon
+(log\(1 + 2\2640.9361/0.1\)) {/Times-Roman cf} 2 21 0.000 1.000 1024 -368 label
+(55.631 * 4.9133) {/Times-Roman cf} 2 16 0.000 1.000 880 -112 label
+1 1.000 880 -128 1120 -128 2 polygon
+(log\(1 + 2\2640.4299/0.1\)) {/Times-Roman cf} 2 21 0.000 1.000 1008 -160 label
+(55.631 * 3.9) {/Times-Roman cf} 2 16 0.000 1.000 1280 -320 label
+1 1.000 1280 -336 1520 -336 2 polygon
+(log\(1 + 2\2640.3262/0.18\)) {/Times-Roman cf} 2 21 0.000 1.000 1408 -368 
+label
+1 1.000 -1344 -496 1760 -496 2 polygon
+0.000 0.000 1.000 scb
+(metal5 to metal4:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -592 label
+(metal5 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -768 label
+(metal4 to metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -768 label
+(metal5 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -944 label
+(metal4 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -944 label
+(metal3 to metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -368 -944 label
+(metal5 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -1136 label
+(metal4 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -1136 label
+(metal3 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -368 -1136 label
+(metal2 to metal1:) {/Times-Roman cf} 2 16 0.000 1.000 80 -1136 label
+(metal5 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -1328 label
+(metal4 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -1328 label
+(metal3 to li:) {/Times-Roman cf} 2 16 0.000 1.000 -368 -1328 label
+(metal2 to li:) {/Times-Roman cf} 2 16 0.000 1.000 80 -1328 label
+(metal1 to li:) {/Times-Roman cf} 2 16 0.000 1.000 512 -1328 label
+(metal5 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -1536 label
+(metal4 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -1536 label
+(metal3 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 -368 -1536 label
+(metal2 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 80 -1536 label
+(metal1 to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 512 -1536 label
+(li to field poly:) {/Times-Roman cf} 2 16 0.000 1.000 912 -1536 label
+(metal5 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -1264 -1744 label
+(metal4 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -816 -1744 label
+(metal3 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 -368 -1744 label
+(metal2 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 80 -1744 label
+(metal1 to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 512 -1744 label
+(li to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 912 -1744 label
+(poly to diff/well/sub:) {/Times-Roman cf} 2 16 0.000 1.000 1264 -1744 label
+sce
+
+(\(Note: K value of 4.0 is inaccurate due to TOPNIT and PI1 surrounding metal5\)) 
+{/Times-Roman cf} 2 16 0.000 1.000 -848 -592 label
+0.647 0.165 0.165 scb
+(Interlayer \(fringe\) capacitance worksheet \(continued from last page\):) 
+{/Times-Roman cf} 2 16 0.000 1.000 -1280 1280 label
+sce
+( = ) {ns} (fringe) {ss} (Simple fringe capacitance equation used:  C) 
+{/Times-Roman cf} 6 16 0.000 1.000 -1280 1184 label
+1 1.000 -448 1184 -272 1184 2 polygon
+(K) {ns} (0) {ss} (pe) {/Symbol cf} (2) {/Times-Roman cf} 8 17 0.000 1.000 -368 
+1200 label
+(log\(1 + 2h/t\)) {/Times-Roman cf} 2 29 0.000 1.000 -352 1168 label
+(where h is the distance between layers and t is the sidewall thickness.) 
+{/Times-Roman cf} 2 16 0.000 1.000 -192 1184 label
+( = 2\(3.14159\)\(8.854\) = 55.631) {ns} (0) {ss} (pe) {/Symbol cf} (2) 
+{/Times-Roman cf} 8 16 0.000 1.000 -176 1120 label
+1 1.000 -1296 960 1824 960 2 polygon
+
+(match, although there are also more complicated expressions \(all are ultimately approximations to the exact field equation solutions\).) 
+{CR} 
+(Note that all \(?\) texts seem to use "log\(h/t\)" which is entirely nonsensical as it implies negative fringe capacitance for h < t.  The above expression is a better) 
+{/Times-Roman cf} 4 16 0.000 1.000 -1280 1008 label
+(378.01) {/Times-Roman cf} 2 16 0.000 1.000 -1184 -688 label
+(168.89) {/Times-Roman cf} 2 16 0.000 1.000 -1184 -864 label
+(129.16) {/Times-Roman cf} 2 16 0.000 1.000 -1184 -1056 label
+(119.67) {/Times-Roman cf} 2 16 0.000 1.000 -1168 -1232 label
+(109.36) {/Times-Roman cf} 2 16 0.000 1.000 -1168 -1648 label
+(102.25) {/Times-Roman cf} 2 16 0.000 1.000 -1168 -1840 label
+(113.11) {/Times-Roman cf} 2 16 0.000 1.000 -1168 -1440 label
+(351.52) {/Times-Roman cf} 2 16 0.000 1.000 -720 -864 label
+(144.86) {/Times-Roman cf} 2 16 0.000 1.000 -720 -1056 label
+(125.83) {/Times-Roman cf} 2 16 0.000 1.000 -720 -1232 label
+(109.04) {/Times-Roman cf} 2 16 0.000 1.000 -720 -1632 label
+(114.74) {/Times-Roman cf} 2 16 0.000 1.000 -704 -1440 label
+(341.14) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1040 label
+(191.73) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1232 label
+(150.89) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1440 label
+(273.21) {/Times-Roman cf} 2 16 0.000 1.000 128 -1248 label
+(99.483) {/Times-Roman cf} 2 16 0.000 1.000 -704 -1840 label
+(135.42) {/Times-Roman cf} 2 16 0.000 1.000 -288 -1632 label
+(116.62) {/Times-Roman cf} 2 16 0.000 1.000 -272 -1824 label
+(137.79) {/Times-Roman cf} 2 16 0.000 1.000 128 -1440 label
+(115.79) {/Times-Roman cf} 2 16 0.000 1.000 128 -1632 label
+(94.529) {/Times-Roman cf} 2 16 0.000 1.000 144 -1824 label
+(249.97) {/Times-Roman cf} 2 16 0.000 1.000 544 -1440 label
+(152.95) {/Times-Roman cf} 2 16 0.000 1.000 560 -1632 label
+(106.39) {/Times-Roman cf} 2 16 0.000 1.000 576 -1824 label
+(120.86) {/Times-Roman cf} 2 16 0.000 1.000 960 -1632 label
+(72.763) {/Times-Roman cf} 2 16 0.000 1.000 976 -1824 label
+(141.68) {/Times-Roman cf} 2 16 0.000 1.000 1312 -1824 label
+pgsave restore showpage
+
+%%Page: worksheet5 7
+%%PageOrientation: Portrait
+%%PageBoundingBox: 0 0 612 792
+/pgsave save def bop
+% 32.00 8.00 gridspace
+0.6922 inchscale
+2.6000 setlinewidth 1412 988 translate
+
+(Sidewall capacitance worksheet:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 896 
+label
+
+(\265m separation.  For an answer in units per micron, assume 1\265m length as well.) 
+{/Times-RomanISO cf} (Capacitance \(in magic\251s tech file\) is measured at 1) 
+{/Times-Roman cf} 4 16 0.000 1.000 -1280 832 label
+{ns} (0) {ss} (e) {/Symbol cf} ( = K ) {ns} (ox) {ss} 
+(Capacitance is then just the usual equation,  C) {/Times-Roman cf} 11 16 0.000 
+1.000 -1280 768 label
+( = 8.854) {ns} (0) {ss} (e) {/Symbol cf} (with ) {/Times-Roman cf} 8 16 0.000 
+1.000 -192 768 label
+(metal4:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 400 label
+(4.0 * 8.854 * 0.845  =  29.9265) {/Times-Roman cf} 2 16 360.000 1.000 -1088 
+400 label
+(  h) {/Times-Roman cf} 2 16 0.000 1.000 -416 768 label
+(and where h is the layer thickness.) {/Times-Roman cf} 2 16 0.000 1.000 128 
+768 label
+(h) {/Times-Roman cf} 2 16 0.000 1.000 -848 528 label
+(0) {ss} (e) {/Symbol cf} 4 16 0.000 1.000 -976 528 label
+(K) {/Times-Roman cf} 2 17 0.000 1.000 -1072 528 label
+(sidewall) {ss} (C) {/Times-Roman cf} 4 16 0.000 1.000 -704 528 label
+(metal5:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 448 label
+(metal3:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 352 label
+(metal2:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 304 label
+(metal1:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 256 label
+(li:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 208 label
+(poly:) {/Times-Roman cf} 2 16 0.000 1.000 -1280 160 label
+1 1.000 -1280 496 -320 496 2 polygon
+
+(For side-extending dielectric, use a pro-rated K \(values for horizontal thickness of these dielectrics not shown on the first page\).) 
+{/Times-Roman cf} 2 16 0.000 1.000 -1280 640 label
+(\265m\)) {/Times-RomanISO cf} (\(aF/) {/Times-Roman cf} 4 16 0.000 1.000 -560 
+528 label
+(4.1 * 8.854 * 0.845  =  30.675) {/Times-Roman cf} 2 16 360.000 1.000 -1088 352 
+label
+(4.2 * 8.854 * 0.36  =  13.387) {/Times-Roman cf} 2 16 360.000 1.000 -1088 304 
+label
+(4.5 * 8.854 * 0.36  =  14.343) {/Times-Roman cf} 2 16 360.000 1.000 -1088 256 
+label
+(6.926 * 8.854 * 1.26  =  77.267) {/Times-Roman cf} 2 16 360.000 1.000 -1088 
+448 label
+(2.94\) = 6.926) {hS} (\264) {hS} (\(0.07 + 0.4223\)\)) {hS} 
+(7.5\) + \(\(1 - 2) {hS} (\264) {hS} (0.4223) {hS} (\264) {hS} (3.9\) + \(2) 
+{hS} (\264) {hS} (0.07) {hS} (\264) {hS} ( = \(2) {ns} (eff) {ss} (K) 
+{/Times-Roman cf} 28 16 0.000 1.000 -448 448 label
+(4.05\) = 4.447) {hS} (\264) {hS} (\(0.061\)\)) {hS} (7.3\) + \(\(1 - 2) {hS} 
+(\264) {hS} (0.061) {hS} (\264) {hS} ( = \(2) {ns} (eff) {ss} (K) 
+{/Times-Roman cf} 20 16 0.000 1.000 -448 208 label
+(4.447 * 8.854 * 0.1  =  3.937) {/Times-Roman cf} 2 16 360.000 1.000 -1088 208 
+label
+(3.9\) = 4.210) {hS} (\264) {hS} (\(0.006 + 0.0431\)\)) {hS} 
+(7.5\) + \(\(1 - 2) {hS} (\264) {hS} (0.0431) {hS} (\264) {hS} (3.9\) + \(2) 
+{hS} (\264) {hS} (0.006) {hS} (\264) {hS} ( = \(2) {ns} (eff) {ss} (K) 
+{/Times-Roman cf} 28 16 0.000 1.000 -448 160 label
+(4.21 * 8.854 * 0.18  =  6.710) {/Times-Roman cf} 2 16 360.000 1.000 -1088 160 
+label
+pgsave restore showpage
+
+%%Trailer
+XCIRCsave restore
+%%EOF
