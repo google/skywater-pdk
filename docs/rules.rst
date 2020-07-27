@@ -23,4 +23,6 @@ SkyWater SKY130 Process Design Rules
 
     rules/rcx
 
+    rules/device-details
+
     rules/errors
