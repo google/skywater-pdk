@@ -1,0 +1,67 @@
+<?xml version="1.0" ?><svg height="29.959999mm" id="svg66" inkscape:version="0.92.3 (2405546, 2018-03-11)" preserveAspectRatio="xMidYMid" sodipodi:docname="60.svg" style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round" version="1.2" viewBox="0 0 5649.0003 2996" width="56.490002mm" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><metadata id="metadata70"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata><sodipodi:namedview bordercolor="#666666" borderopacity="1" gridtolerance="10" guidetolerance="10" id="namedview68" inkscape:current-layer="svg66" inkscape:cx="106.77164" inkscape:cy="56.617334" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="417" inkscape:window-maximized="0" inkscape:window-width="513" inkscape:window-x="-1" inkscape:window-y="-21" inkscape:zoom="0.22348485" objecttolerance="10" pagecolor="#ffffff" showgrid="false"/>
+ <defs class="ClipPathGroup" id="defs8">
+  <clipPath clipPathUnits="userSpaceOnUse" id="presentation_clip_path">
+   <rect height="27940" id="rect2" width="21590" x="0" y="0"/>
+  </clipPath>
+  <clipPath clipPathUnits="userSpaceOnUse" id="presentation_clip_path_shrink">
+   <rect height="27885" id="rect5" width="21547" x="21" y="27"/>
+  </clipPath>
+ </defs>
+ <defs class="TextShapeIndex" id="defs12">
+  <g id="g10" ooo:id-list="id3" ooo:slide="id1"/>
+ </defs>
+ <defs class="EmbeddedBulletChars" id="defs44">
+  <g id="bullet-char-template-57356" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 580,1141 1163,571 580,0 -4,571 Z" id="path14" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-57354" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 8,1128 H 1137 V 0 H 8 Z" id="path17" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-10146" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 174,0 602,739 174,1481 1456,739 Z M 1358,739 309,1346 659,739 Z" id="path20" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-10132" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 2015,739 1276,0 H 717 l 543,543 H 174 v 393 h 1086 l -543,545 h 557 z" id="path23" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-10007" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="m 0,-2 c -7,16 -16,29 -25,39 l 381,530 c -94,256 -141,385 -141,387 0,25 13,38 40,38 9,0 21,-2 34,-5 21,4 42,12 65,25 l 27,-13 111,-251 280,301 64,-25 24,25 c 21,-10 41,-24 62,-43 C 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 c 0,-27 -21,-55 -63,-84 l 16,-20 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 c -22,-34 -53,-51 -92,-51 -42,0 -63,17 -64,51 -7,9 -10,24 -10,44 0,9 1,19 2,30 z" id="path26" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-10004" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 c 0,78 14,145 41,201 34,71 87,106 158,106 53,0 88,-31 106,-94 l 23,-176 c 8,-64 28,-97 59,-98 l 735,706 c 11,11 33,17 66,17 42,0 63,-15 63,-46 V 965 c 0,-36 -10,-64 -30,-84 L 442,47 C 390,-6 338,-33 285,-33 Z" id="path29" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-9679" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 c 0,181 53,324 160,431 106,107 249,161 430,161 179,0 323,-54 432,-161 108,-107 162,-251 162,-431 0,-180 -54,-324 -162,-431 C 1136,54 992,0 813,0 Z" id="path32" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-8226" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="m 346,457 c -73,0 -137,26 -191,78 -54,51 -81,114 -81,188 0,73 27,136 81,188 54,52 118,78 191,78 73,0 134,-26 185,-79 51,-51 77,-114 77,-187 0,-75 -25,-137 -76,-188 -50,-52 -112,-78 -186,-78 z" id="path35" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-8211" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="M -4,459 H 1135 V 606 H -4 Z" id="path38" inkscape:connector-curvature="0"/>
+  </g>
+  <g id="bullet-char-template-61548" transform="matrix(4.8828125e-4,0,0,-4.8828125e-4,0,0)">
+   <path d="m 173,740 c 0,163 58,303 173,419 116,115 255,173 419,173 163,0 302,-58 418,-173 116,-116 174,-256 174,-419 0,-163 -58,-303 -174,-418 C 1067,206 928,148 765,148 601,148 462,206 346,322 231,437 173,577 173,740 Z" id="path41" inkscape:connector-curvature="0"/>
+  </g>
+ </defs>
+ <g id="g49" transform="translate(-7970,-12472)">
+  <g class="Master_Slide" id="id2">
+   <g class="Background" id="bg-id2"/>
+   <g class="BackgroundObjects" id="bo-id2"/>
+  </g>
+ </g>
+ <g class="SlideGroup" id="g64" transform="translate(-7970,-12472)">
+  <g id="g62">
+   <g id="container-id1">
+    <g class="Slide" clip-path="url(#presentation_clip_path)" id="id1">
+     <g class="Page" id="g58">
+      <g class="Graphic" id="g56">
+       <g id="id3">
+        <rect class="BoundingBox" height="2996" id="rect51" style="fill:none;stroke:none" width="5649" x="7970" y="12472"/>
+        <image height="2904" id="image53" preserveAspectRatio="none" transform="scale(1 -1)" width="5568" x="8035" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMkAAABpCAYAAACQ2gfrAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFBUlEQVR4nO3dW3KcMBCFYex4Q1lXtpOsKyuKk5oHUhSW6G5dj+D/niY2A0qNDpJQ2/7Ytre/G4Csj9kNANQREsBASAADIQEMhAQwEBLAQEgAAyEBDIQEMBASwEBIAAMhAQyEBDAQEsBASACDREg+N/+PtLxvbx1bAnwlERJAGSEBDIQEMBASwEBIAAMhAQyEBDAQEsBASACDREiSu+i/f2zb91/jGwOcSIQEUEZIAAMhAQyEBDAQEsBASAADIQEMhAQw6IXktYkICJkfknMo2GWHmPEhIRRffH7+2d7fv81uBjLGhWQPh3Aocp3V24lLj3u9tt57/P7r9fG9JW3xnKPk2DsaF5I9HIuOJLPv9nuQ9te7q3adv5fr7Fc3h8j17mr8dOscimNoRAMzolN4RpPI+3LnSX09dY5cW0rbubL5C/djMBYdZXBv80NytNAoc5y65L7ealSwjvHe3SPnjbbhzrRCcpYbZQQCE5mi1J631blRRjskR0zL/utxJ4+c72mBXSckR7lp2eCw9Jp2lE67Sl1NHZ8Uhpw1QyI0kswMSq3UI97cMee2Pck6IRFbk4x2tWDfX5ee0zrm6XRDMnC0sDqKxdPZSq4TmXahH62QTBotUuUeitdJjRytAs6IkTc/JDeZRvW6o+f2L1Jh8daN5b5+VZqSatdTuEPi/ZNt5p9rE1p0n7XY4+hxnVx5SO9rPykIVx5dBRypvG15zV2k+tY6vrQyOFVdHB2R7l5FTBVwRo/NupfS6lvr+NLK4Kt1Tm1l8F2qiKkCHiBSURvtRLkK4Ehl8Pl71jrHO9LcpYp4/sJdsNxE9UOMdDDvsfsxkfPWtGtF80NyJDDKWFMVr9SdOXecQgerqS7OnS9yLWVaITkTqwIe8aFedSCVIsSnbV5qh+So07Qs9YGPvMt51xQj2uS5w0f3UyLnULVOSI4aVgFHH5eWnjfaMc6bk57Hv9GNxavr1o5kte1QsmZIBizwc3P0Gt6K2nM4Xv++eixbss8xyh2qiN0hMXfSexNYk9Qq3e321mm16nypvZOac61OdyQReRy8qtpFfqoWbbWnUq1ohURktFB4ehPdD9lfR+XWMVeFjaWlLKuaH5LJwRg5Z45U1Obu5Ffvjy70j8flHhRYo0y0/szTPjWP/l3AIz+o1htyNcfnHi1HSlBKd+dXnK49ugoYed4p52odvsSjq4Aj+wGeqUik+tZbV3W+Zumx0YLDFp3fW+LTY++l5Yj16Cpg7872jN3v3gGcabX2zl+4C1YBW1KL6h7XSF3Ts5MfeVQbrQJuoaa9M8wPydGEUeb4AUU+qBFBgQatkJwNqgJWv5PtUnsU6m32yu2/pJSuZ0pph+So47RsxpRDwfnxr9L/PzK97G2dkByJ/C7gWkqdUpFKcNcMyUuj6Vfru2nvH3Y6Fz6WXq92wd+aQhhy1gpJ43VJj46SW9B7Sk+s2ilv+UruWBWR9iqMJvoh6bxg93w9WpoRKdmIlIJY52rxnt6dsbStM4OiG5JF1xlP16sq2PPIvde1dUPyQkCW43mEu9q1tUOCZfXYbPWes/W1CUlDyovlGW3rcc2SHweoRUgAAyEBDIQEMBASwEBIAINESJJ/au77z+Sx039JHh5HIiSAMkICGAgJYCAkgIGQAAZCAhgICWAgJICBkAAGiZCwiw5lEiEBlBESwEBIAAMhAQyEBDAQEsBASAADIQEM/wD+dEIYoj/FzQAAAABJRU5ErkJggg==" y="-15441"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

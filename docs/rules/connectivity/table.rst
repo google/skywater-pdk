@@ -1,0 +1,2 @@
+TODO: rules/connectivity/table
+==============================
