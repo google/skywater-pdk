@@ -111,6 +111,16 @@ The SkyWater Open Source PDK aims to contain comprehensive documentation about u
 
 We are excited to see additions to this documentation around using this design kit with new tools and design flows. Please see the `Contributing file <docs/contributing.rst>`_ for information on how to do this.
 
+To download or update to the 'latest' version of all standard cell libraries, and to regenerate the liberty files, clone this repository and run the following commands.
+
+```bash
+# Expect a large download! ~7GB at time of writing.
+SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+
+# Regenerate liberty files
+make timing
+```
+
 Support
 =======
 
