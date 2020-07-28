@@ -16,5 +16,6 @@ git+https://github.com/SymbiFlow/symbolator.git#egg=symbolator
 # vext.gi
 
 restructuredtext-lint
+rstdoc
 
 tabulate
