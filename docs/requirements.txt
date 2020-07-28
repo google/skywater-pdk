@@ -14,5 +14,6 @@ symbolator
 # vext.gi
 
 restructuredtext-lint
+rstdoc
 
 tabulate
