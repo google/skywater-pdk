@@ -320,8 +320,12 @@ todo_include_todos = True
 import re
 from docutils.parsers.rst import directives, roles, nodes
 
+def include_relative(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    pass
+
 
 LIB_REGEX = re.compile('sky130_(?P<lib_src>[^_\s]*)_(?P<lib_type>[^_\s]*)(_(?P<lib_name>[^_\s]*))?')
+CELL_REGEX = re.compile('sky130_(?P<lib_src>[^_\s]*)_(?P<lib_type>[^_\s]*)(_(?P<lib_name>[^_\s]*))?__(?P<cell_name>[^\s]*)')
 
 def lib_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Library name which gets colorized."""
@@ -355,6 +359,41 @@ def lib_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     return r, []
 
 
+def cell_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    """Cell name which gets colorized."""
+    m = CELL_REGEX.match(text)
+    if not m:
+        msg = inliner.reporter.error("Malformed cell name of "+repr(text), line=lineno)
+        prb = inliner.problematic(rawtext, rawtext, msg)
+        return [prb], [msg]
+    app = inliner.document.settings.env.app
+
+    #lib_process_role = roles.role('lib_src', inliner.language, lineno, inliner.reporter)
+    #lib_src_role = roles.role('lib_src', inliner.language, lineno, inliner.reporter)
+    #lib_type_role = roles.role('lib_src', inliner.language, lineno, inliner.reporter)
+    #lib_name_role = roles.role('lib_src', inliner.language, lineno, inliner.reporter)
+    lib_process = 'sky130'
+    lib_src = m.group('lib_src')
+    lib_type = m.group('lib_type')
+    lib_name = m.group('lib_name')
+    cell_name = m.group('cell_name')
+
+    r = [
+        nodes.inline(lib_process, lib_process, classes=['lib-process']),
+        nodes.inline('_', '_', options=options),
+        nodes.inline(lib_src, lib_src, classes=['lib-src']),
+        nodes.inline('_', '_', options=options),
+        nodes.inline(lib_type, lib_type, classes=['lib-type']),
+    ]
+    if lib_name:
+        r.append(nodes.inline('_', '_', options=options))
+        r.append(nodes.inline(lib_name, lib_name, classes=['lib-name']))
+    r.append(nodes.inline('__', '__', options=options))
+    r.append(nodes.inline(cell_name, cell_name, classes=['cell-name']))
+
+    return r, []
+
+
 def add_role(app, new_role_name):
     options = {
         'class': directives.class_option(new_role_name),
@@ -374,4 +413,7 @@ def setup(app):
     add_role(app, 'drc_tag')
     add_role(app, 'drc_flag')
     add_role(app, 'layer')
+    add_role(app, 'model')
+
     app.add_role('lib', lib_role)
+    app.add_role('cell', cell_role)
