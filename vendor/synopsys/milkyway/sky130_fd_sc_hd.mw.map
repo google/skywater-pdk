@@ -1,0 +1,29 @@
+;# <Milkyway data:datatype> <GDSII data> <datatype>                   #
+;# Basic/routing/connect
+;D	; licon1           drawing         66                   44
+D  1:0 66:44 ; licon1           drawing         66                   44
+D  2:0 67:20 ; li1              drawing         67                   20
+D  3:0 67:44 ; mcon             drawing         67                   44
+D  4:0 68:20 ; met1             drawing         68                   20
+D  5:0 68:44 ; via              drawing         68                   44
+D  6:0 69:20 ; met2             drawing         69                   20
+D  7:0 69:44 ; via2             drawing         69                   44
+D  8:0 70:20 ; met3             drawing         70                   20
+D  9:0 70:44 ; via3             drawing         70                   44
+D 10:0 71:20 ; met4             drawing         71                   20
+D 11:0 71:44 ; via4             drawing         71                   44
+D 12:0 72:20 ; met5             drawing         72                   20
+D 13:0 66:20 ; poly             drawing         67                   20
+D 14:0 65:20 ; diff             drawing         67                   20
+D 15:0 64:20 ; nwell			drawing         67                   20
+;# Text layers
+T  2 67:5 ; li1 	text	67	5
+T  4 68:5 ; met1	text	68	5
+T  6 69:5 ; met2	text	69	5
+T  8 70:5 ; met3	text	70	5
+T 10 71:5 ; met4	text	71	5
+T 12 72:5 ; met5	text	72	5
+T 15 64:5 ; nwell	text 	67  5
+T 16 64:59 ; pwell	text 	67  5
+A 16 122:16 ; pwell pin 122 16
+
