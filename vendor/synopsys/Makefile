@@ -20,8 +20,11 @@ sky130_%_mw: setup
 sky130_%: sky130_%_db sky130_%_mw setup
 	date > $@
 
+tluplus:
+	cd star_rcxt &&	grdgenxo -itf2TLUPlus -i skywater130.nominal.itf -o skywater130.nominal.tluplus |& tee $@.log
+
 clean: 
-	rm work/* setup *_mw *_db $(LIBRARIES)/$(LIB_NAME)/latest/db_nldm/* $(LIBRARIES)/$(LIB_NAME)/latest/mw -rf
+	rm work setup *_mw *_db $(LIBRARIES)/$(LIB_NAME)/latest/db_nldm/* $(LIBRARIES)/$(LIB_NAME)/latest/mw -rf
 
 all: sky130_fd_sc_hd 
 # TODO:
