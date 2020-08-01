@@ -686,14 +686,14 @@ The cross-section of the 20V NMOS zero-VT FET is shown below.
 .. |cross-section-20v-nmos-zero-vt-fet| image:: device-details/fet-nmos-20v-zero-vt/cross-section-20v-nmos-zero-vt-fet.svg
 
 
-3.0V and 5.0V native NMOS FET
------------------------------
+3.0V native NMOS FET
+--------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__ntvnative`, :model:`sky130_fd_pr_base__nhvnative`
+-  Model Name: :model:`sky130_fd_pr_base__ntvnative`
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__ntvnative`
 
@@ -704,36 +704,28 @@ Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__n
 Details
 ~~~~~~~
 
-Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__nhvnative`
-
--  V\ :sub:`DS` = 0 to 5.5V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = +0.3 to -5.5V
-
-Details
-~~~~~~~
-
 The native device is constructed by blocking out all VT implants.
 
-The model and EDR (e-test) parameters are compared below. Note that the minimum gate length for 3V operation is 0.5 µm, whereas the 5V device has minimum gate length of 0.9 µm.
+The model and EDR (e-test) parameters are compared below. Note that the minimum gate length for 3V operation is 0.5 µm.
 
 
-.. include:: device-details/fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+.. include:: device-details/fet-nmos-3v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
 
 
 
-The symbols for the :model:`sky130_fd_pr_base__ntvnative` and :model:`sky130_fd_pr_base__nhvnative` devices are shown below.
+The symbols for the :model:`sky130_fd_pr_base__ntvnative` devices are shown below.
 
-|symbol-3v0-and-5v0-native-nmos-fet-ntvnative| |symbol-3v0-and-5v0-native-nmos-fet-nhvnative|
+|symbol-3v0-native-nmos-fet-ntvnative|
 
-The cross-section of the native devices is shown below. Note that the only differences between the nvtnative and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+The cross-section of the native devices is shown below.
+
 
 |cross-section-3v0-and-5v0-native-nmos-fet|
 
-.. |symbol-3v0-and-5v0-native-nmos-fet-ntvnative| image:: device-details/fet-nmos-3v0-and-5v0-native/symbol-3v0-and-5v0-native-nmos-fet-ntvnative.svg
-.. |symbol-3v0-and-5v0-native-nmos-fet-nhvnative| image:: device-details/fet-nmos-3v0-and-5v0-native/symbol-3v0-and-5v0-native-nmos-fet-nhvnative.svg
-.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-3v0-and-5v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
+.. |symbol-3v0-native-nmos-fet-ntvnative| image:: device-details/fet-nmos-3v0-native/symbol-3v0-nmos-fet-ntvnative.svg
+.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-3v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
 
+.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
 
 5.0V/10.5V NMOS FET
 -------------------
@@ -770,6 +762,48 @@ The cross-section of the 5.0/10.5 V NMOS FET is shown below.
 
 .. |symbol-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/symbol-5v0-10v5-nmos-fet.svg
 .. |cross-section-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/cross-section-5v0-10v5-nmos-fet.svg
+
+
+5.0V native NMOS FET
+--------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfet`
+-  Model Name: :model:`sky130_fd_pr_base__nhvnative`
+
+Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__nhvnative`
+
+-  V\ :sub:`DS` = 0 to 5.5V
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = +0.3 to -5.5V
+
+Details
+~~~~~~~
+
+The native device is constructed by blocking out all VT implants.
+
+The model and EDR (e-test) parameters are compared below.
+
+The 5V device has minimum gate length of 0.9 µm.
+
+
+.. include:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+
+
+The symbols for the :model:`sky130_fd_pr_base__nhvnative` devices are shown below.
+
+|symbol-5v0-native-nmos-fet-nhvnative|
+
+The cross-section of the native devices is shown below.
+
+.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+
+|cross-section-3v0-and-5v0-native-nmos-fet|
+
+.. |symbol-5v0-native-nmos-fet-nhvnative| image:: device-details/fet-nmos-5v0-native/symbol-5v0-native-nmos-fet-nhvnative.svg
+.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
 
 
 NMOS ESD FET
