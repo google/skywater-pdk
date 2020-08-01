@@ -2,7 +2,9 @@
 
 import re
 import os
+import sys
 from pathlib import Path
+from pprint import pformat
 
 
 RE_IMAGE = re.compile('.. (.*) image:: (.*)')
@@ -11,7 +13,17 @@ RE_INCLUDE = re.compile('.. include:: (.*)')
 print('Device Details')
 print('==============')
 print()
-for fname in sorted(Path('.').rglob('index.rst')):
+
+def r(m):
+    n = m.group(0)
+    while len(n) < 10:
+        n = '0'+n
+    return n
+
+def k(s):
+    return re.sub('([0-9.V/]*)', r, str(s))
+
+for fname in sorted(Path('.').rglob('index.rst'), key=k):
 
     with open(fname) as f:
         data = f.read()

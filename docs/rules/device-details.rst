@@ -407,81 +407,48 @@ Symbols for the diodes are shown below
 .. |symbol-diode-17| image:: device-details/diodes/symbol-diode-17.svg
 
 
-11V/16V NMOS FET
-----------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__nvhv`
-
-Operating Voltages where SPICE models are valid, subject to SOA limitations:
-
--  V\ :sub:`DS` = 0 to +16V (V:sub:`GS` = 0)
--  V\ :sub:`DS` = 0 to +11V (V:sub:`GS` > 0)
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-nmos-11v-16v/fet-nmos-11v-16v-table0.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__nvhv` (11V/16V NMOS FET) is shown below:
-
-|symbol-11v-16v-nmos-fet|
-
-The cross-section of the 11V/16VV NMOS FET is shown below.
-
-|cross-section-11v-16v-nmos-fet|
-
-.. |symbol-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/symbol-11v-16v-nmos-fet.svg
-.. |cross-section-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/cross-section-11v-16v-nmos-fet.svg
-
-
-1.8V NMOS FET
--------------
+NMOS ESD FET
+------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nshort`
+-  Model Name: :model:`sky130_fd_pr_base__nshortesd`, :model:`sky130_fd_pr_base__nhvesd`, :model:`sky130_fd_pr_base__nhvesdnative`
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.95V
--  V\ :sub:`GS` = 0 to 1.95V
--  V\ :sub:`BS` = +0.3 to -1.95V
+-  V\ :sub:`DS` = 0 to 11.0V (nhv\*), 0 to 1.95V (nshort\*)
+-  V\ :sub:`GS` = 0 to 5.0V (nhv\*), 0 to 1.95V (nshort\*)
+-  V\ :sub:`BS` = 0 to -5.5V, (nhv), +0.3 to -5.5V (nhvnative), 0 to -1.95V (nshort\*)
 
 Details
 ~~~~~~~
 
-Major model output parameters are shown below and compared against the EDR (e-test) specs.
+The ESD FET’s differ from the regular NMOS devices in several aspects, most notably:
+
+-  Increased isolation spacing from contacts to surrounding STI
+-  Increased drain contact-to-gate spacing
+-  Placement of n-well under the drain contacts
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-1v8/fet-nmos-1v8-table0.rst
+.. include:: device-details/fet-nmos-esd/fet-nmos-esd-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__nshort` (1.8V NMOS FET) is shown below:
+The symbols of the :model:`sky130_fd_pr_base__nhvesd` and :model:`sky130_fd_pr_base__nhvesdnative` (ESD NMOS FET) are shown below:
 
-|symbol-1v8-nmos-fet|
+|symbol-nmos-esd-fet-nhvesd| |symbol-nmos-esd-fet-nhvesdnative|
 
-The cross-section of the NMOS FET is shown below:
+The cross-section of the ESD NMOS FET is shown below.
 
-|cross-section-1v8-nmos-fet|
+|cross-section-nmos-esd-fet|
 
-The device shows the p-well inside of a deep n-well, but it can be made either with or without the DNW under the p-well
-
-.. |symbol-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/symbol-1v8-nmos-fet.svg
-.. |cross-section-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/cross-section-1v8-nmos-fet.svg
+.. |symbol-nmos-esd-fet-nhvesd| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesd.svg
+.. |symbol-nmos-esd-fet-nhvesdnative| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesdnative.svg
+.. |cross-section-nmos-esd-fet| image:: device-details/fet-nmos-esd/cross-section-nmos-esd-fet.svg
 
 
 1.8V low-VT NMOS FET
@@ -526,6 +493,203 @@ The cross-section of the low-VT NMOS FET is shown below. The cross-section is id
 
 .. |symbol-1v8-low-vt-nmos-fet| image:: device-details/fet-nmos-1v8-low-vt/symbol-1v8-low-vt-nmos-fet.svg
 .. |cross-section-1v8-low-vt-nmos-fet| image:: device-details/fet-nmos-1v8-low-vt/cross-section-1v8-low-vt-nmos-fet.svg
+
+
+1.8V NMOS FET
+-------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfet`
+-  Model Name: :model:`sky130_fd_pr_base__nshort`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to 1.95V
+-  V\ :sub:`GS` = 0 to 1.95V
+-  V\ :sub:`BS` = +0.3 to -1.95V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs.
+
+
+.. include:: device-details/fet-nmos-1v8/fet-nmos-1v8-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr_base__nshort` (1.8V NMOS FET) is shown below:
+
+|symbol-1v8-nmos-fet|
+
+The cross-section of the NMOS FET is shown below:
+
+|cross-section-1v8-nmos-fet|
+
+The device shows the p-well inside of a deep n-well, but it can be made either with or without the DNW under the p-well
+
+.. |symbol-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/symbol-1v8-nmos-fet.svg
+.. |cross-section-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/cross-section-1v8-nmos-fet.svg
+
+
+3.0V native NMOS FET
+--------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfet`
+-  Model Name: :model:`sky130_fd_pr_base__ntvnative`
+
+Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__ntvnative`
+
+-  V\ :sub:`DS` = 0 to 3.3V
+-  V\ :sub:`GS` = 0 to 3.3V
+-  V\ :sub:`BS` = 0 to -3.3V
+
+Details
+~~~~~~~
+
+The native device is constructed by blocking out all VT implants.
+
+The model and EDR (e-test) parameters are compared below. Note that the minimum gate length for 3V operation is 0.5 µm.
+
+
+.. include:: device-details/fet-nmos-3v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+
+
+
+The symbols for the :model:`sky130_fd_pr_base__ntvnative` devices are shown below.
+
+|symbol-3v0-native-nmos-fet-ntvnative|
+
+The cross-section of the native devices is shown below.
+
+
+|cross-section-3v0-and-5v0-native-nmos-fet|
+
+.. |symbol-3v0-native-nmos-fet-ntvnative| image:: device-details/fet-nmos-3v0-native/symbol-3v0-nmos-fet-ntvnative.svg
+.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-3v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
+
+.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+
+5.0V native NMOS FET
+--------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfet`
+-  Model Name: :model:`sky130_fd_pr_base__nhvnative`
+
+Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__nhvnative`
+
+-  V\ :sub:`DS` = 0 to 5.5V
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = +0.3 to -5.5V
+
+Details
+~~~~~~~
+
+The native device is constructed by blocking out all VT implants.
+
+The model and EDR (e-test) parameters are compared below.
+
+The 5V device has minimum gate length of 0.9 µm.
+
+
+.. include:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+
+
+The symbols for the :model:`sky130_fd_pr_base__nhvnative` devices are shown below.
+
+|symbol-5v0-native-nmos-fet-nhvnative|
+
+The cross-section of the native devices is shown below.
+
+.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+
+|cross-section-3v0-and-5v0-native-nmos-fet|
+
+.. |symbol-5v0-native-nmos-fet-nhvnative| image:: device-details/fet-nmos-5v0-native/symbol-5v0-native-nmos-fet-nhvnative.svg
+.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
+
+
+5.0V/10.5V NMOS FET
+-------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfet`
+-  Model Name: :model:`sky130_fd_pr_base__nhv`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to 11.0V
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = 0 to -5.5V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/fet-nmos-5v0-10v5/fet-nmos-5v0-10v5-table0.rst
+
+
+
+The symbols of the :model:`sky130_fd_pr_base__nhv` (5.0/10.5 V NMOS FET) is shown below:
+
+|symbol-5v0-10v5-nmos-fet|
+
+The cross-section of the 5.0/10.5 V NMOS FET is shown below.
+
+|cross-section-5v0-10v5-nmos-fet|
+
+.. |symbol-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/symbol-5v0-10v5-nmos-fet.svg
+.. |cross-section-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/cross-section-5v0-10v5-nmos-fet.svg
+
+
+11V/16V NMOS FET
+----------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
+-  Model Name: :model:`sky130_fd_pr_base__nvhv`
+
+Operating Voltages where SPICE models are valid, subject to SOA limitations:
+
+-  V\ :sub:`DS` = 0 to +16V (V:sub:`GS` = 0)
+-  V\ :sub:`DS` = 0 to +11V (V:sub:`GS` > 0)
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = 0 to -2.0V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/fet-nmos-11v-16v/fet-nmos-11v-16v-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr_base__nvhv` (11V/16V NMOS FET) is shown below:
+
+|symbol-11v-16v-nmos-fet|
+
+The cross-section of the 11V/16VV NMOS FET is shown below.
+
+|cross-section-11v-16v-nmos-fet|
+
+.. |symbol-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/symbol-11v-16v-nmos-fet.svg
+.. |cross-section-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/cross-section-11v-16v-nmos-fet.svg
 
 
 20V NMOS FET
@@ -686,252 +850,6 @@ The cross-section of the 20V NMOS zero-VT FET is shown below.
 .. |cross-section-20v-nmos-zero-vt-fet| image:: device-details/fet-nmos-20v-zero-vt/cross-section-20v-nmos-zero-vt-fet.svg
 
 
-3.0V native NMOS FET
---------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__ntvnative`
-
-Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__ntvnative`
-
--  V\ :sub:`DS` = 0 to 3.3V
--  V\ :sub:`GS` = 0 to 3.3V
--  V\ :sub:`BS` = 0 to -3.3V
-
-Details
-~~~~~~~
-
-The native device is constructed by blocking out all VT implants.
-
-The model and EDR (e-test) parameters are compared below. Note that the minimum gate length for 3V operation is 0.5 µm.
-
-
-.. include:: device-details/fet-nmos-3v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
-
-
-
-The symbols for the :model:`sky130_fd_pr_base__ntvnative` devices are shown below.
-
-|symbol-3v0-native-nmos-fet-ntvnative|
-
-The cross-section of the native devices is shown below.
-
-
-|cross-section-3v0-and-5v0-native-nmos-fet|
-
-.. |symbol-3v0-native-nmos-fet-ntvnative| image:: device-details/fet-nmos-3v0-native/symbol-3v0-nmos-fet-ntvnative.svg
-.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-3v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
-
-.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
-
-5.0V/10.5V NMOS FET
--------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nhv`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to 11.0V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -5.5V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-nmos-5v0-10v5/fet-nmos-5v0-10v5-table0.rst
-
-
-
-The symbols of the :model:`sky130_fd_pr_base__nhv` (5.0/10.5 V NMOS FET) is shown below:
-
-|symbol-5v0-10v5-nmos-fet|
-
-The cross-section of the 5.0/10.5 V NMOS FET is shown below.
-
-|cross-section-5v0-10v5-nmos-fet|
-
-.. |symbol-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/symbol-5v0-10v5-nmos-fet.svg
-.. |cross-section-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/cross-section-5v0-10v5-nmos-fet.svg
-
-
-5.0V native NMOS FET
---------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nhvnative`
-
-Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__nhvnative`
-
--  V\ :sub:`DS` = 0 to 5.5V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = +0.3 to -5.5V
-
-Details
-~~~~~~~
-
-The native device is constructed by blocking out all VT implants.
-
-The model and EDR (e-test) parameters are compared below.
-
-The 5V device has minimum gate length of 0.9 µm.
-
-
-.. include:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
-
-
-The symbols for the :model:`sky130_fd_pr_base__nhvnative` devices are shown below.
-
-|symbol-5v0-native-nmos-fet-nhvnative|
-
-The cross-section of the native devices is shown below.
-
-.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
-
-|cross-section-3v0-and-5v0-native-nmos-fet|
-
-.. |symbol-5v0-native-nmos-fet-nhvnative| image:: device-details/fet-nmos-5v0-native/symbol-5v0-native-nmos-fet-nhvnative.svg
-.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
-
-
-NMOS ESD FET
-------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nshortesd`, :model:`sky130_fd_pr_base__nhvesd`, :model:`sky130_fd_pr_base__nhvesdnative`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to 11.0V (nhv\*), 0 to 1.95V (nshort\*)
--  V\ :sub:`GS` = 0 to 5.0V (nhv\*), 0 to 1.95V (nshort\*)
--  V\ :sub:`BS` = 0 to -5.5V, (nhv), +0.3 to -5.5V (nhvnative), 0 to -1.95V (nshort\*)
-
-Details
-~~~~~~~
-
-The ESD FET’s differ from the regular NMOS devices in several aspects, most notably:
-
--  Increased isolation spacing from contacts to surrounding STI
--  Increased drain contact-to-gate spacing
--  Placement of n-well under the drain contacts
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-nmos-esd/fet-nmos-esd-table0.rst
-
-
-
-The symbols of the :model:`sky130_fd_pr_base__nhvesd` and :model:`sky130_fd_pr_base__nhvesdnative` (ESD NMOS FET) are shown below:
-
-|symbol-nmos-esd-fet-nhvesd| |symbol-nmos-esd-fet-nhvesdnative|
-
-The cross-section of the ESD NMOS FET is shown below.
-
-|cross-section-nmos-esd-fet|
-
-.. |symbol-nmos-esd-fet-nhvesd| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesd.svg
-.. |symbol-nmos-esd-fet-nhvesdnative| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesdnative.svg
-.. |cross-section-nmos-esd-fet| image:: device-details/fet-nmos-esd/cross-section-nmos-esd-fet.svg
-
-
-10V/16V PMOS FET
-----------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
--  Model Name: :model:`sky130_fd_pr_base__pvhv`
-
-Operating Voltages where SPICE models are valid, subject to SOA limitations:
-
--  V\ :sub:`DS` = 0 to -16V (V:sub:`GS` = 0)
--  V\ :sub:`DS` = 0 to -10V (V:sub:`GS` < 0)
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +2.0V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-pmos-10v-16v/fet-pmos-10v-16v-table0.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__pvhv` (10V/16V PMOS FET) is shown below:
-
-|symbol-10v-16v-pmos-fet|
-
-The cross-section of the 10V/16V PMOS FET is shown below.
-
-|cross-section-10v-16v-pmos-fet|
-
-.. |symbol-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/symbol-10v-16v-pmos-fet.svg
-.. |cross-section-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/cross-section-10v-16v-pmos-fet.svg
-
-
-1.8V PMOS FET
--------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name: :model:`sky130_fd_pr_base__pshort`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs.
-
-
-.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table0.rst
-
-
-
-Inverter Gate Delays using nshort/:model:`sky130_fd_pr_base__pshort` device combinations:
-
-
-.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table1.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__pshort` (1.8V PMOS FET) is shown below:
-
-|symbol-1v8-pmos-fet|
-
-The cross-section of the PMOS FET is shown below:
-
-|cross-section-1v8-pmos-fet|
-
-.. |symbol-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/symbol-1v8-pmos-fet.svg
-.. |cross-section-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/cross-section-1v8-pmos-fet.svg
-
-
 1.8V high-VT PMOS FET
 ---------------------
 
@@ -1020,48 +938,48 @@ The cross-section of the low-VT PMOS FET is shown below. The cross-section is id
 .. |cross-section-1v8-low-vt-pmos-fet| image:: device-details/fet-pmos-1v8-low-vt/cross-section-1v8-low-vt-pmos-fet.svg
 
 
-20V PMOS FET
-------------
+1.8V PMOS FET
+-------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
--  Model Name: :model:`sky130_fd_pr_base__p20vhv1`
+-  Cell Name: :cell:`sky130_fd_pr_base__pfet`
+-  Model Name: :model:`sky130_fd_pr_base__pshort`
 
-Operating Voltages where SPICE models are valid, subject to SOA limitations:
+Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -22V
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +2.0V
+-  V\ :sub:`DS` = 0 to -1.95V
+-  V\ :sub:`GS` = 0 to -1.95V
+-  V\ :sub:`BS` = -0.1 to +1.95V
 
 Details
 ~~~~~~~
 
-The 20V NMOS FET has similar construction to the 11V/16V NMOS FET, with several differences:
-
--  Longer drift region
--  Longer poly gate
--  Larger W/L
--  Devices placed in pairs (drain in middle, sources on outside)
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
+Major model output parameters are shown below and compared against the EDR (e-test) specs.
 
 
-.. include:: device-details/fet-pmos-20v/fet-pmos-20v-table0.rst
+.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__p20vhv1` (20V PMOS FET) is shown below.
+Inverter Gate Delays using nshort/:model:`sky130_fd_pr_base__pshort` device combinations:
 
-|symbol-20v-pmos-fet|
 
-The cross-section of the 20V PMOS FET is shown below.
+.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table1.rst
 
-|cross-section-20v-pmos-fet|
 
-.. |symbol-20v-pmos-fet| image:: device-details/fet-pmos-20v/symbol-20v-pmos-fet.svg
-.. |cross-section-20v-pmos-fet| image:: device-details/fet-pmos-20v/cross-section-20v-pmos-fet.svg
+
+The symbol of the :model:`sky130_fd_pr_base__pshort` (1.8V PMOS FET) is shown below:
+
+|symbol-1v8-pmos-fet|
+
+The cross-section of the PMOS FET is shown below:
+
+|cross-section-1v8-pmos-fet|
+
+.. |symbol-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/symbol-1v8-pmos-fet.svg
+.. |cross-section-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/cross-section-1v8-pmos-fet.svg
 
 
 5.0V/10.5V PMOS FET
@@ -1107,6 +1025,88 @@ The cross-section of the 5.0V PMOS FET is shown below.
 .. |symbol-5v0-10v5-pmos-fet-phv| image:: device-details/fet-pmos-5v0-10v5/symbol-5v0-10v5-pmos-fet-phv.svg
 .. |symbol-5v0-10v5-pmos-fet-pvhesd| image:: device-details/fet-pmos-5v0-10v5/symbol-5v0-10v5-pmos-fet-pvhesd.svg
 .. |cross-section-5v0-10v5-pmos-fet| image:: device-details/fet-pmos-5v0-10v5/cross-section-5v0-10v5-pmos-fet.svg
+
+
+10V/16V PMOS FET
+----------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
+-  Model Name: :model:`sky130_fd_pr_base__pvhv`
+
+Operating Voltages where SPICE models are valid, subject to SOA limitations:
+
+-  V\ :sub:`DS` = 0 to -16V (V:sub:`GS` = 0)
+-  V\ :sub:`DS` = 0 to -10V (V:sub:`GS` < 0)
+-  V\ :sub:`GS` = 0 to -5.5V
+-  V\ :sub:`BS` = 0 to +2.0V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/fet-pmos-10v-16v/fet-pmos-10v-16v-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr_base__pvhv` (10V/16V PMOS FET) is shown below:
+
+|symbol-10v-16v-pmos-fet|
+
+The cross-section of the 10V/16V PMOS FET is shown below.
+
+|cross-section-10v-16v-pmos-fet|
+
+.. |symbol-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/symbol-10v-16v-pmos-fet.svg
+.. |cross-section-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/cross-section-10v-16v-pmos-fet.svg
+
+
+20V PMOS FET
+------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
+-  Model Name: :model:`sky130_fd_pr_base__p20vhv1`
+
+Operating Voltages where SPICE models are valid, subject to SOA limitations:
+
+-  V\ :sub:`DS` = 0 to -22V
+-  V\ :sub:`GS` = 0 to -5.5V
+-  V\ :sub:`BS` = 0 to +2.0V
+
+Details
+~~~~~~~
+
+The 20V NMOS FET has similar construction to the 11V/16V NMOS FET, with several differences:
+
+-  Longer drift region
+-  Longer poly gate
+-  Larger W/L
+-  Devices placed in pairs (drain in middle, sources on outside)
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/fet-pmos-20v/fet-pmos-20v-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr_base__p20vhv1` (20V PMOS FET) is shown below.
+
+|symbol-20v-pmos-fet|
+
+The cross-section of the 20V PMOS FET is shown below.
+
+|cross-section-20v-pmos-fet|
+
+.. |symbol-20v-pmos-fet| image:: device-details/fet-pmos-20v/symbol-20v-pmos-fet.svg
+.. |cross-section-20v-pmos-fet| image:: device-details/fet-pmos-20v/cross-section-20v-pmos-fet.svg
 
 
 Generic Resistors
