@@ -9,8 +9,8 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.95V
--  V\ :sub:`GS` = 0 to 1.95V
+-  V\ :sub:`DS` = 0 to -1.95V
+-  V\ :sub:`GS` = 0 to -1.95V
 -  V\ :sub:`BS` = -0.1 to +1.95V
 
 Details
