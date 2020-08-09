@@ -4,7 +4,6 @@ Glossary
 .. Companies
 
 .. glossary::
-
     SkyWater
     SkyWater Technology
       `SkyWater Technology <https://www.SkyWatertechnology.com/>`_
@@ -18,21 +17,41 @@ Glossary
 
     Mentor
     Mentor Graphics
-      `Mentor, a Siemens Business is a US-based electronic design automation (EDA) multinational corporation for electrical engineering and electronics. <https://en.wikipedia.org/wiki/Mentor_Graphics>`
+      `Mentor, a Siemens Business <https://en.wikipedia.org/wiki/Mentor_Graphics>`_
+      is a US-based electronic design automation (EDA) multinational
+      corporation for electrical engineering and electronics. 
 
     OSU
        Oklahoma State University
+       
+    VSD
+    VLSI System Design
+      `VLSI System Design <https://www.vlsisystemdesign.com/>`_
 
 .. Acronyms
 
 .. glossary::
-
     sc
     Standard Cell
         The basic building blocks of digital circuit design.
 
     ce
         Memory Core
+
+    Antenna Rule Violations
+        During manufacturing, a static charge can build up on the currently-
+        topmost metal layer, and destroy the chip if there is no path to the
+        substrate for this charge to bleed off during layer deposition. The
+        Antenna Rule ensures that each metal layer has a route to diffusion.
+    
+    CIF
+    Caltech Intermediate Form
+        From the 1990's, the CIF format has largely been replaced by the GDS
+        format.
+        
+    CCS
+    ECSM
+       Current Source Models
 
     DRC
     Design Rule Check
@@ -41,35 +60,17 @@ Glossary
        physical layout of a particular chip layout satisfies a series of
        required parameters called design rules.
 
+    ESD
+    Electro-Static Discharge (protection from)
+       Circuit elements, especially on I/O pins, intended to protect the circuit
+       from the effects of `electrostatic discharge <https://en.wikipedia.org/wiki/Electrostatic_discharge/>`_.
+
     LVS
     Layout Verse Schematic
        Layout Versus Schematic (LVS) verification is the process of determining
        whether a particular integrated circuit layout corresponds to the
        original :ref:`schematic` or :ref:`circuit diagram` of the design.
 
-    PEX
-    Parasitic Extraction
-       Parasitic extraction is calculation of the parasitic effects in both the
-       designed devices and the required wiring interconnects of an electronic
-       circuit. This includes all parasitic components (often called parasitic
-       devices) including parasitic;
-
-        * capacitances,
-        * resistances, and
-        * inductances.
-
-    NLDM
-      Non-Linear Delay Model
-
-    CCS
-    ECSM
-      Current Source Models
-
-
-    CIF
-    Caltech Intermediate Form
-        From the 1990's, the CIF format has largely been replaced by the GDS
-        format.
     MiM
     MIM
     MiM caps
@@ -97,13 +98,53 @@ Glossary
 
         The capacitance of MoM caps is capacitance of the metal sidewalls which
         is significantly lower than that provided MiM caps.
+    
+    NLDM
+      Non-Linear Delay Model
 
+    OPHW
+    OPen HardWare
+       The movement to produce inspectable and modifiable computer hardware
+       designs.
+    
+    PEX
+    Parasitic Extraction
+       Parasitic extraction is calculation of the parasitic effects in both the
+       designed devices and the required wiring interconnects of an electronic
+       circuit. This includes all parasitic components (often called parasitic
+       devices) including parasitic;
+
+        * capacitances,
+        * resistances, and
+        * inductances.
+
+    PNR
+    Place aNd Route
+       The process of laying out the standard design cells on the 2D plane of the
+       chip and connecting their corresponding inputs and outputs. Theoretically
+       equivalent to the "Travelling Salesman Problem," and therefore the subject
+       of much research.
+    
+    STA
+    Static Timing Analysis
+       Analysing the timing of a circuit from some level of the design. Contrast
+       with performing the timing analysis on actual hardware.
+
+    RTL
+    Register Transfer Language
+       A source code format that describes the transitions that hardware
+       registers take at the register transfer level, such as Verilog or VHDL.
+
+    VLSI
+    Very Large Scale Integration
+       Producing an integrated circuit in the million+ transistor scale, with
+       multiple functions on the same chip (such as compute, memory, ROM, and
+       power regulation).
 
 
 .. File formats
 
 .. glossary::
-
     .lef
     LEF
     Library Exchange Format
@@ -128,7 +169,6 @@ Glossary
 .. Tools
 
 .. glossary::
-
     Mentor Calibre
       The Calibre® product suite developed by :term:`Mentor Graphics`. Heavily
       used for IC Verification and Signoff.
@@ -142,6 +182,13 @@ Glossary
     OpenRoad
       The digital design flow developed by
       `The OpenRoad Project <https://theopenroadproject.org/>`_
+      
+    qflow
+      `qflow <http://opencircuitdesign.com/qflow/>`_
+      Named after Steve Beccue of MultiGIG.
+      
+    yosys
+      `Yosys Open SYnthesis Suite <http://www.clifford.at/yosys/>`_
 
 
 .. Terms specific to this documentation
