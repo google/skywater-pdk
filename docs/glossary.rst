@@ -4,9 +4,6 @@ Glossary
 .. Companies
 
 .. glossary::
-    Companies
-    #########
-
     SkyWater
     SkyWater Technology
       `SkyWater Technology <https://www.SkyWatertechnology.com/>`_
@@ -34,9 +31,6 @@ Glossary
 .. Acronyms
 
 .. glossary::
-    Acronyms
-    #########
-
     sc
     Standard Cell
         The basic building blocks of digital circuit design.
@@ -151,9 +145,6 @@ Glossary
 .. File formats
 
 .. glossary::
-    File formats
-    #########
-
     .lef
     LEF
     Library Exchange Format
@@ -178,9 +169,6 @@ Glossary
 .. Tools
 
 .. glossary::
-    Tools
-    #########
-
     Mentor Calibre
       The Calibre® product suite developed by :term:`Mentor Graphics`. Heavily
       used for IC Verification and Signoff.
