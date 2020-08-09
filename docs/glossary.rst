@@ -4,6 +4,8 @@ Glossary
 .. Companies
 
 .. glossary::
+    Companies
+    #########
 
     SkyWater
     SkyWater Technology
@@ -32,6 +34,8 @@ Glossary
 .. Acronyms
 
 .. glossary::
+    Acronyms
+    #########
 
     sc
     Standard Cell
@@ -40,6 +44,12 @@ Glossary
     ce
         Memory Core
 
+    Antenna Rule Violations
+        During manufacturing, a static charge can build up on the currently-
+        topmost metal layer, and destroy the chip if there is no path to the
+        substrate for this charge to bleed off during layer deposition. The
+        Antenna Rule ensures that each metal layer has a route to diffusion.
+    
     CIF
     Caltech Intermediate Form
         From the 1990's, the CIF format has largely been replaced by the GDS
@@ -47,7 +57,7 @@ Glossary
         
     CCS
     ECSM
-      Current Source Models
+       Current Source Models
 
     DRC
     Design Rule Check
@@ -141,6 +151,8 @@ Glossary
 .. File formats
 
 .. glossary::
+    File formats
+    #########
 
     .lef
     LEF
@@ -166,6 +178,8 @@ Glossary
 .. Tools
 
 .. glossary::
+    Tools
+    #########
 
     Mentor Calibre
       The Calibre® product suite developed by :term:`Mentor Graphics`. Heavily
