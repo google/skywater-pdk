@@ -113,13 +113,13 @@ We are excited to see additions to this documentation around using this design k
 
 To download or update to the 'latest' version of all standard cell libraries, and to regenerate the liberty files, clone this repository and run the following commands.
 
-```bash
-# Expect a large download! ~7GB at time of writing.
-SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+.. code:: bash
 
-# Regenerate liberty files
-make timing
-```
+   # Expect a large download! ~7GB at time of writing.
+   SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+
+   # Regenerate liberty files
+   make timing
 
 Support
 =======
