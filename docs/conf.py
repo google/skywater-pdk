@@ -127,6 +127,7 @@ exclude_patterns = [
     'rules/summary/*-key.rst',
     'rules/layers/*-key.rst',
     'rules/hv/*-key.rst',
+    '**/cell-list.rst',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
