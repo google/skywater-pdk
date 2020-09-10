@@ -2,7 +2,7 @@ ROOT = $(realpath .)
 LIBRARIES = $(ROOT)/../../libraries
 SCRIPTS = $(ROOT)/scripts
 LIB_NAME = $(subst _db,,$@)
-LIB_NAME = $(subst _mw,,$@)
+MW_LIB_NAME = $(subst _mw,,$@)
 LC_OPTIONS = -x 'set target_lib $(LIBRARIES)/$(LIB_NAME)/latest; set target_lib_name $(LIB_NAME)'
 
 setup:
@@ -13,7 +13,7 @@ sky130_%_db: setup
 	date > $@
 
 sky130_%_mw: setup
-	cd work && echo  'set target_lib_dir $(LIBRARIES)/$(LIB_NAME)/latest; set target_lib_name $(LIB_NAME)' >> setup.tcl
+	cd work && echo  'set target_lib_dir $(LIBRARIES)/$(MW_LIB_NAME)/latest; set target_lib_name $(LIB_NAME)' >> setup.tcl
 	cd work && Milkyway -nogui -file $(SCRIPTS)/mw.tcl |& tee mw_$@.log
 	date > $@
 
