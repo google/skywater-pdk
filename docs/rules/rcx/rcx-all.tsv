@@ -1,0 +1,25 @@
+Name	Description	Model Structure		Modeled RX		Actual CAD RX		RX Discrepancy	Modeled CX	Actual CX	CX Discrepancy
+			Notes	Contacts	Sheets	Contacts	Sheets		Sheet	Sheet	
+	All Periphery FETs	mXXXX d g s b w l m ad as pd ps nrd nrs		none	diff(min)	licon/mcon/vias	diff(ext)/poly/li/m1/m2-m3	none	poly/licon/li	li/m1/m2-m3	li-negligible
+	20V NDEFETs NONISO	xXXXX d g s b w l m ad as pd ps nrd nrs		none	diff(min)/licon	mcon/vias	diff(ext)/poly/li/m1/m2-m3	none	poly/licon/li	li/m1/m2-m3	li-negligible
+	20V NDEFETs ISO	xXXXX d g s b w l m ad as pd ps nrd nrs		none	diff(min)/licon	mcon/vias	diff(ext)/poly/li/m1/m2-m3	none	poly/licon/li/sky130_fd_pr__model__parasitic__diode_ps2dn	li/m1/m2-m3	li-negligible
+	20V PDEFETs	xXXXX d g s b w l m ad as pd ps nrd nrs		none	diff(min)/licon	mcon/vias	diff(ext)/poly/li/m1/m2-m3	none	poly/licon/li	li/m1/m2-m3/sky130_fd_pr__model__parasitic__diode_ps2dn__hv	li-negligible
+	Cell FETs	NOT EXTRACTED FROM LAYOUT		N/A	N/A	N/A	N/A	N/A	N/A	N/A	N/A
+	All Diodes	dXXXX n1 n2 area pj		licon	diff	licon/mcon/vias	poly/li/m1/m2-m3	licon-negligible	Junction	li/m1/m2-m3	none
+	RF ESD Diodes	xesd_XXXX n1 n2 area pj		licon/mcon/via	li/m1/m2	via2	m3	none	li/m1/m2	m3	none
+pnp_05v5	Parasitic PNP	qXXXX nc nb ne ns sky130_fd_pr__pnp_05v5_W0p68L0p68 m		licon/mcon	diff/li	mcon/vias	li/m1/m2-m3	li/mcon-neglible	na	li/m1/m2-m3	none
+	Parasitic PNP (5X)	qXXXX nc nb ne ns sky130_fd_pr__pnp_05v5_W3p40L3p40 m		licon/mcon	diff/li	mcon/vias	li/m1/m2-m3	li/mcon-neglible	na	li/m1/m2-m3	none
+npn_05v0	Parasitic NPN	qXXXX nc nb ne ns sky130_fd_pr__npn_05v5 m		licon/mcon	diff/li	mcon/vias	li/m1/m2-m3	li/mcon-neglible	na	li/m1/m2-m3	none
+res_generic_XXX	Non-precision Resistors	rXXXX a b l w m		none	sheet layer	licon/mcon/vias	none (no sheet resistance where sheet layer & res id layer intersect)	none	none	junction/li/m1/m2-m3	parasitic capacitance to substrate (tool limitation)
+res_iso_pw	Isolated Pwell Resistor	xXXXX pwres r0 r1 b l w m		licon/mcon	pwell/li	vias	m1/m2-m3	none	none	junction/m1/m2-m3	li-negligible
+res_high_XXX	Precision poly resistor	xXXXXX hrpoly_X_X r0 r1 b l w m		licon/mcon	poly/li	via	m1/m2-m3	none	poly-sub	m1/m2-m3	li-negligible
+cap_mim_XXXX	MIM Capacitor (2-terminal)	xXXXX sky130_fd_pr__cap_mim_m3_2 c0 c1 w l m		via2	m3	N/A	poly/li/m1/m2	m2 (of the device) -negligible	capm-m2	li/m1/m2-m3	routing layers underneath device
+cap_mim_XXXX	MIM Capacitor (3-terminal)	xXXXX sky130_fd_pr__model__cap_mim c0 c1 b w l m		via2	m3	N/A	poly/li/m1/m2	m2 (of the device) -negligible	m2-sub/capm-m2	(1) Carea of M2-sub (non-overlap CAPM w/ 0.14um upsize) (2) M3 Cap by 1 snap grid width	none
+cap_vpp_XXXX	Vertical Parallel Plate Cap	xXXXX sky130_fd_pr__cap_vpp_XXXXX c0 c1 b m	No special RCX implementation for VPP required since black-box LVS will be used	mcon/via	li/m1/m2	none (black box LVS)	none (black box LVS)	none	li/mcon//m1/via/m2	none (black box LVS)	Parasitic capacitance to routing above
+cap_vpp_XXXX	Vertical Parallel Plate Cap over MOSCAP	xXXXX sky130_fd_pr__cap_vpp_XXXXX c0 c1 b m		mcon/via	li/m1/m2	none (black box LVS)	none (black box LVS)	none	li/mcon//m1/via/m2	none (black box LVS)	Parasitic capacitance to routing above
+cap_vpp_XXXX	4-terminal Vertical Parallel Plate Cap (M3 Shielded)	xXXXXX sky130_fd_pr__cap_vpp_XXXX c0 c1 b term4 m=		licon/mcon/via	poly/li/m1/m2	via3/via4	m3/m4/m5	none	poly/licon/li/mcon/m1/via/m2/m3	m3-substrate (not m3-m2), neighboring metal to VPP metal	none
+cap_vpp_XXXX	4-terminal Vertical Parallel Plate Cap (M5 Shielded)	xXXXXX sky130_fd_pr__cap_vpp_XXXX c0 c1 b term4 m=		licon/mcon/via/via2/via3	poly/li/m1/m2/m3/m4	via4	m5	none	poly/licon/li/mcon/m1/via/m2/m3/m4/m5	neighboring metal to VPP metal	none
+cap_vpp_XXXX	3-terminal Vertical Parallel Plate Cap	xXXXXX sky130_fd_pr__cap_vpp_XXXX c0 c1 b m= xXXXXX sky130_fd_pr__cap_vpp_XXXX c0 c1 b m=		mcon/via	li/m1/m2	via2/via3/via4	m3/m4/m5	none	li/mcon/m1/via/m2	neighboring metal to VPP metal	Parasitic capacitance to routing above
+cap_vpp_XXXX	3-terminal Vertical Parallel Plate Cap	xXXXXX sky130_fd_pr__cap_vpp_XXXX c0 c1 b m=		mcon/via/via2	li/m1/m2/m3	via3/via4	m4/m5	none	li/mcon/m1/via/m2/via2/m3	neighboring metal to VPP metal	none
+cap_var_XXXX	Varactor	xXXXXX sky130_fd_pr__cap_var_XXXX c0 c1 b l w m		licon/mcon/via	diff/poly/li/m1/m2	via2	m3	none	poly/li/m1/m2	nwdiodemodel/m3*	none
+	Inductor	xXXXXX xindXXXX t1 t2 body	No special RCX implementation for inductor required since black-box LVS will be used	via	m2/Cu	Nothing extracted within inductor.dg layer		none	m2/via/Cu	Nothing extracted within inductor.dg layer	none
