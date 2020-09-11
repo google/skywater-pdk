@@ -53,12 +53,12 @@ top_padVia,Via2 for S8D*,,,Rules
 top_plate,capm:dg,,,Rules
 Var_channel,poly AND tap AND (nwell NOT hvi) NOT areaid.ce,,,Rules
 VaracTap,Tap overlapping Var_channel,,,Rules
-vpp_with_noLi,"vpp with cell names:  s8rf2_xcmvpp3, s8rf2_xcmvpp4, s8rf2_xcmvpp5, s8rf2_xcmvpp4p4x4p6_m1m2, s8rf2_xcmvpp11p5x11p7_m1m2, s8rf2_xcmvpp11p5x11p7_m1m4, s8rf2_xcmvpp11p5x11p7_m1m4m5shield",,,Rules
-vpp_with_Met3Shield,"vpp with cell names: s8rf_xcmvpp1p8x1p8_m3shield, s8rf_xcmvpp4p4x4p6_m3shield, s8rf_xcmvpp8p6x7p9_m3shield, s8rf_xcmvpp11p5x11p7_m3shield",,,Rules
-vpp_with_LiShield,vpp with cell names: s8rf*_li*shield,,,Rules
-vpp_over_MOSCAP,"vpp with cell names: s8rf_xcmvpp2 when over nhvnative W/L=10x4, s8rf_xcmvpp2_nwell when over phv/pshort/phighvt/plowvt W/L=5x4",,,Rules
-vpp_with_Met5PolyShield,"vpp with cell names: s8rf2_xcmvpp11p5x11p7_polym5shield, s8rf2_xcmvpp11p5x11p7_polym4shield, s8rf2_xcmvpp2x4_2xnhvnative10x4, s8rf2_xcmvpp6p8x6p1_polym4shield, s8rf2_xcmvpp11p5x11p7_polym50p4shield, s8rf2_xcmvpp_hd5_*",,,Rules
-vpp_with_Met5,"vpp with cell names: s8rf2_xcmvpp11p5x11p7_m5shield, s8rf2_xcmvpp11p5x11p7_polym5shield, s8rf2_xcmvpp11p5x11p7_lim5shield, s8rf2_xcmvpp8p6x7p9_m3_lim5shield, s8rf2_xcmvpp2x4_2xnhvnative10x4, s8rf2_xcmvpp11p5x11p7_m4shield, s8rf2_xcmvpp11p5x11p7_polym4shield, s8rf2_xcmvpp6p8x6p1_polym4shield, s8rf2_xcmvpp6p8x6p1_lim4shield, s8rf2_xcmvpp11p5x11p7_m3_lim5shield,  s8rf2_xcmvpp4p4x4p6_m3_lim5shield, s8rf2_xcmvpp11p5x11p7_m1m4m5shield, s8rf2_xcmvpp11p5x11p7_m1m4\ns8rf2_xcmvpp11p5x11p7_polym50p4shield, s8rf2_xcmvpp_hd5_*",,,Rules
+vpp_with_noLi,vpp with cell names:  FIXME,,,Rules
+vpp_with_Met3Shield,vpp with cell names: FIXME,,,Rules
+vpp_with_LiShield,vpp with cell names: FIXME,,,Rules
+vpp_over_MOSCAP,"vpp with cell names: FIXME when over nhvnative W/L=10x4, FIXME when over phv/pshort/phighvt/plowvt W/L=5x4",,,Rules
+vpp_with_Met5PolyShield,vpp with cell names: FIXME,,,Rules
+vpp_with_Met5,vpp with cell names: FIXME,,,Rules
 cp1m_HV,cp1m AND Hvi,,,Rules (HV)
 de_nFet_drain,((isolated tap) AND areaid.en) overlapping nwell,,,Rules (HV)
 de_nFET_gate,deFET_gate overlapping (diff NOT dnwell),,,Rules (HV)
