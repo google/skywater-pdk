@@ -58,7 +58,6 @@ Capacitance Rules
 .. csv-table:: Table of capacitance rules
    :file: rcx/capacitance-rules.csv
    :stub-columns: 1
-   :delim: U+0009
 
 
 Capacitance Values
