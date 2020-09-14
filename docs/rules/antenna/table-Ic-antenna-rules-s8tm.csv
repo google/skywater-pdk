@@ -1,0 +1,25 @@
+Table Ic. Antenna rules (S8TM-5R*/S8TMC-5R*/S8TMA-5R*),,,,,,
+,Antenna ratios,Area checked: H/V,FLT,MAX_EGAR,,
+(ar_q.-.-),,,,Max EA/A w/o diode,K,Diode bonus
+,,,,,,
+.poly.1,Poly (poly perimeter area/gate area),Vertical,0.180,50,n/a,n/a
+.licon.1,Licon (licon1 area/gate area),Horizontal,,3,n/a,n/a
+.li.1,LI (LI perimeter area/gate area),Vertical,0.100,75,450,n/a
+.mcon.1,Mcon (mcon area/gate area),Horizontal,,3,18,n/a
+.met1.1,Met1 (met1 perimeter area/gate area),Vertical,0.350,400,400,2200
+.via.1,Via (via area/gate area),Horizontal,,6,36,n/a
+.met2.1,Met2 (met2 perimeter area/gate area),Vertical,0.350,400,400,2200
+.via2.1,Via2 (via2 area/gate area),Horizontal,,6,36,n/a
+.met3.1,Met3 (met3 perimeter area/gate area),Vertical,2.000,400,400,2200
+.ar.1,Antenna rules not checked for features connected to a pAntennaShort,,,,,
+Design limitations due to antenna rules (FET gate = 1um2).,,w/o diode,,with 1um2 diode,,
+,,,,,,
+"Max length of Poly (approx, assumes min width)",,135,,n/a,,
+Max number of Licons,,103,,n/a,,
+"Max length of LI (approx, assumes min width)",,370,,2620,,
+Max number of Mcon,,103,,726,,
+"Max length of Met1 (approx, assumes min width)",,570,,4280,,
+Max number of Via,,266,,1866,,
+"Max length of Met2 (approx, assumes min width)",,570,,4280,,
+Max number of Via2,,9,,65,,
+"Max length of Met3 (approx, assumes min width)",,95,,740,,

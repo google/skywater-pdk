@@ -1,0 +1,123 @@
+Name,Defining algorithm,,,Used in …
+AR_met2_A,Net Area Ratio of met2 not connected to via  and of via2 >=0.05  [Equation: (AREA(via2))/(2 * AREA(met2NotConnVia) + PERIMETER(met2NotConnVia) * 0.35)],,,Rules
+AR_met2_B,"Net Area Ratio of met2GroundOrFloat, via, and via2 <=0.032 [Equation: (AREA(via2))/(2 * AREA(met2GroundOrFloatVia) + PERIMETER(met2GroundOrFloatVia) * 0.35)]",,,Rules
+bondPad,pad:dg OUTSIDE areaid:ft,,,Rules
+bottom_plate,(capm:dg AND met2:dg) sized by capm.3; Exclude all capm sharing same metal2 plate,,,Rules
+Capacitor,Capm enclosing at least one via2,,,Rules
+Chip_extent,Holes (areaid:sl ) OR areaid.sl,,,Rules
+Diecut_pmm,areaid.dt NOT (cfom.wp OR cp1m.wp OR cmm1.wp OR cmm2.wp),,,Rules
+drain_diffusion,(diff NOT poly in nwell or  pwell) not abutting tap in the same well or abutting tap in the opposite well,,,Rules
+dummy_capacitor,Capm not overlapping via2,,,Rules
+dummy_poly,"poly overlapping text ""dummy_poly"" (written using text.dg)",,,Rules
+ESD_nwell_tap,"n+ tap coincident with nwell such that n+ tap and nwell are completely surrounded by and abutting n+ diff on all edges, within areaid:ed   ",,,Rules
+fomDmy_keepout_1, (diff.dg OR tap.dg OR poly.dg OR pwell resistor OR pad OR cfom.dg OR cfom.mk OR PhotoArray OR cp1m.mk),,,Rules
+floating_met*,met*.dg not connected to diffusion or tap through met(*+1) or met(*-1) and their respecitve vias and contacts,,,Rules
+fom_waffles,"fom.mk with dimensions (um x um): 0.5 x 0.5, 1.5 x 1.5, 2.5 x 2.5 and 4.08 x 4.08",,,Rules
+gated_npn,cell name:  s8rf_npn_1x1_2p0_HV,,,Rules
+huge_metX,Metal X geometry wider and longer than 3.000um,,,Rules
+hugePad,pad.mk with width > 100um,,,Rules
+iso_pwell,(NOT nwell) AND dnwell,,,Rules
+isolated_tap,tap that does not abut diff,,,Rules
+laser_target,cell *lazX_* and *lazY_* OUTSIDE areaid:ft,,,Rules
+LVnwell,nwell NOT hvi,,,Rules
+LVTN_Gate,Gate overlapping  lvtn,,,Rules
+met2GroundOrFloat,met2 connected to ptap or met2 not connected to difftap\n,,,Rules
+met2GroundOrFloatVia,met2GroundOrFloat interacting with via2 >2,,,Rules
+N+_diff,Diff NOT  Nwell,,,Rules
+N+_tap,Tap AND Nwell,,,Rules
+nsdmHoles,Hole( nsdm ),,,Rules
+NSM_keepout,nsm.dg OR nsm.mk,,,Rules
+nwell_all,nwell OR extension of cnwm beyond  nwell edge straddling de_nFet_source by cnwm.3f (45 degree edges are retained for the NVHV device nwell);  Rule cnwm.3f applies only to GSMC flows,,,Rules
+P+_diff,Diff AND Nwell,,,Rules
+P+_tap,Tap NOT  Nwell,,,Rules
+Pattern_density,(diff_tap area) / PD window (as specified in the rule section),,,Rules
+photoDiode,deep nwell overlapping areaid.po. Die+frame utility will use the mask data of dnwell in the implementation of this definition,,,Rules
+poly_licon1,Any licon1 that does not overlap ((diff or tap) NOT  poly),,,Rules
+poly_waffles,"p1m.mk with dimensions (um x um): 0.48 x 0.48, 0.54 x 0.54 and 0.72 x 0.72",,,Rules
+prec_resistor,rpm AND (poly overlapping poly.rs) AND psdm,,,Rules
+prec_resistor_terminal,prec_resistor AND li,,,Rules
+psdmHoles,Hole( psdm ),,,Rules
+pwell,NOT nwell (default substrate area),,,Rules
+pwres_terminal,P+tap abutting pwell.rs,,,Rules
+pnp_emitter,diff AND pnp.dg AND psdm,,,Rules
+routing_terminal,metX.pin sized inside of metX.drawing by 1/2 * metalX min width; Similar defintion applies to Li1 layer,,,Rules
+scribe_line,areaid:ft NOT areaid:dt,,,Rules
+slotted_licon,licon1.dg of size 0.19um x 2.0um,,,Rules
+slotted_licon_edge1,2.0um edge of the slotted_licon,,,Rules
+source_diffusion,(diff NOT  poly in nwell or  pwell) abutting tap in same well,,,Rules
+tap_licon,Tap AND Licon1,,,Rules
+tap_notPoly,tap NOT  poly,,,Rules
+top_indmMetal,met3 for S8D*,,,Rules
+top_metal,met3.dg OR mm3.mk (for S8T*/SP8TEE-5R); met3.dg OR indm.mk (for S8D*); met4.dg OR mm4.mk  (for SP8Q/S8Q*); met5.dg OR mm5.mk  (for SP8P*/S8P*),,,Rules
+top_padVia,Via2 for S8D*,,,Rules
+top_plate,capm:dg,,,Rules
+Var_channel,poly AND tap AND (nwell NOT hvi) NOT areaid.ce,,,Rules
+VaracTap,Tap overlapping Var_channel,,,Rules
+vpp_with_noLi,vpp with cell names:  FIXME,,,Rules
+vpp_with_Met3Shield,vpp with cell names: FIXME,,,Rules
+vpp_with_LiShield,vpp with cell names: FIXME,,,Rules
+vpp_over_MOSCAP,"vpp with cell names: FIXME when over nhvnative W/L=10x4, FIXME when over phv/pshort/phighvt/plowvt W/L=5x4",,,Rules
+vpp_with_Met5PolyShield,vpp with cell names: FIXME,,,Rules
+vpp_with_Met5,vpp with cell names: FIXME,,,Rules
+cp1m_HV,cp1m AND Hvi,,,Rules (HV)
+de_nFet_drain,((isolated tap) AND areaid.en) overlapping nwell,,,Rules (HV)
+de_nFET_gate,deFET_gate overlapping (diff NOT dnwell),,,Rules (HV)
+de_nFet_source,(diff AND areaid.en) overlapping de_nFET_gate,,,Rules (HV)
+de_pFet_drain,((isolated tap) AND areaid.en) not overlapping nwell,,,Rules (HV)
+de_pFET_gate,deFET_gate overlapping (diff AND dnwell),,,Rules (HV)
+de_pFet_source,(diff AND areaid.en) overlapping de_pFET_gate,,,Rules (HV)
+deFET_gate,"(poly AND areaid.en) not overlapping pwm ; For CAD flows that do not have pwm layer, it is (poly AND areaid.en)",,,Rules (HV)
+Hdiff,Diffusion AND Hvi,,,Rules (HV)
+Hgate,Hpoly AND diff,,,Rules (HV)
+Hnwell,Nwell AND Hvi,,,Rules (HV)
+Hpoly,Poly AND Hvi,,,Rules (HV)
+Htap,Tap AND  Hvi,,,Rules (HV)
+hv_source/drain,= (diff andNot poly) that overlaps diff.hv,,,Rules (HV)
+hvFET_gate,= FET_gate butting hv_source/drain,,,Rules (HV)
+hvPoly,= poly electrically connected to hv_source/drain,,,Rules (HV)
+HV_nwell,(nwell AND hvi) OR (nwell overlapping areaid.hl),,,Rules (HV)
+stack_hv_lv_diff,(diff And Hvi NOT  nwell) abutting (diff NOT  nwell),,,Rules (HV)
+SHVdiff,Diff And shvi,,,Rules (SHV)
+SHVGate,SHVPoly AND diff,,,Rules (SHV)
+SHVPoly,Poly OVERLAP shvi:dg,,,Rules (SHV)
+SHVSourceDrain,Diff And shvi NOT poly NOT diff:rs,,,Rules (SHV)
+VHVdiff,Diff And vhvi,,,Rules (VHV)
+VHVGate,VHVPoly AND diff,,,Rules (VHV)
+VHVPoly,Poly OVERLAP vhvi:dg,,,Rules (VHV)
+VHVSourceDrain,(Diff AND tap) And vhvi NOT poly NOT diff:rs,,,Rules (VHV)
+background,"Area where waffling grid is defined, sized to avoid waffle shift between runs",,,Waffles
+die,Holes (areaid:sl ),,,Waffles
+frame,( areaid.ft SIZE by -(max of s.2e/h)) NOT (OR areaid.dt SEALIDandHole),,,Waffles
+inductor_metal,(inductor:dg AND (met1 OR met2 OR met3)) size by 10 um [For all flows except S8PIR-10R]\ninductor.dg [for the S8PIR-10R flow],,,Waffles
+mm*_slot,mm* slots are defined as empty holes in metal that are located in (areaid.cr OR areaid.cd),,,Waffles
+nwellDnwellHoles,(inner HOLES of nwellAndDnwell). Die+frame utility will use the mask data of nwell and dnwell in the implementation of this definition,,,Waffles
+photoArray,(OR nwellAndDnwell nwellDnwellHoles) enclosing photoDiode. Die+frame utility will use the mask data of nwell and dnwell in the implementation of this definition,,,Waffles
+gate,poly AND diff,,,"pfet, nfet (LVS)"
+nfet,Gate NOT  nwell,,,"pfet, nfet (LVS)"
+pfet,Gate AND nwell,,,"pfet, nfet (LVS)"
+nDiode,Ndiff AND DiodeID,,,Diodes (LVS)
+Pdiff,diff AND nwell,,,Diodes (LVS)
+pDiode,Pdiff AND DiodeID,,,Diodes (LVS)
+diff_hole,Hole( diff ),,,ESD (LVS)
+diff_tap_nwell,tap_nwell INSIDE diff_hole,,,ESD (LVS)
+esd_diff_tap_nwell,ESDID AND diff_tap_nwell,,,ESD (LVS)
+Ndiff,diff NOT nwell,,,ESD (LVS)
+tap_nwell,tap INSIDE nwell,,,ESD (LVS)
+ESD_diffusion,A+B31ny diffusion or ESD_nwell_tap  connected directly or through a resistor to a Pad or to Vss/Vcc that is covered by areaid.ed and located within a double tap guardrings.,,,Latch up rules
+ESD_cascode_diffusion,Diffusion covered by areaid.ed between two minimum spaced poly gates and located within a pair of double tap guardrings. (There should be no licons on the diffusion.),,,Latch up rules
+ESD_diode,Any nwell (other than ESD_nwell_tap ) covered by areaid.ed and areaid.de that does not contain poly,,,Latch up rules
+ESD_FET,(any Pdiff covered by areaid:ed within a double tap guardrings) Or\nESD_NFET,,,Latch up rules
+ESD_NFET,(any Ndiff covered by areaid:ed abutting ESD_nwell_tap) Or (any Ndiff covered by areaid:ed abutting gate within 3.5um of ESD_nwell_tap) Or (any Ndiff abutting ESD_nwell_tap within areaid.ed) a double tap guardrings,,,Latch up rules
+I/O_or_Output_Pmos,ESD P+ diffusion overlapping poly and overlapping ESD source/drain diffusion connected to I/O or output net,,,Latch up rules
+I/O_Pmos_w/series_R,ESD PMOS connected to I/O or output net through series resistors,,,Latch up rules
+met_ESD_resistor,Metal resistor inside areaid:ed,,,Latch up rules
+Non_Vcc_nwell,Any nwell connected to any bias other than power supply,,,Latch up rules
+Nwell_area,Is determined using the following steps:\n(a) Grow pdiff by 1.5 mm\n(b) Merge\n(c) And Nwell:dg,,,Latch up rules
+Pwell_area,Is determined using the following steps:\n(a) Grow ndiff by 1.5 mm\n(b) Merge\n(c) NOT  Nwell:dg,,,Latch up rules
+Series_transistors,Merged diffusion determined by Nwell_area and Pwell_area,,,Latch up rules
+fuse:dg,"met2:fe for S8D*/S8TM*, met3.fe for S8TEE*/S8TNV/S8Q*/SP8TEE-5R/SP8Q*, met4.fe for S8P*/SP8P*",,,Fuse rules
+fuse_contact,(fuse_metal overlapping fuse:dg) NOT fuse:dg,,,Fuse rules
+fuse_metal,"met3 for S8TEE*/S8TNV/S8Q*/SP8TEE-5R/SP8Q*; met2 for S8D*/S8TM*, met4 for S8P*/SP8P*",,,Fuse rules
+fuse_shield,"Metal line (same metal level as fuse) between fuse and periphery, not overlapping contacts or vias, with specified dimensions",,,Fuse rules
+non-isolated fuse edge,Long edge of the fuse spaced to Met2/Met3/Met4  less than a specified amount,,,Fuse rules
+single_fuses,Fuses without neighboring fuses within specified distance,,,Fuse rules

@@ -8,4 +8,5 @@ criteria for GDS data.
 .. csv-table:: Table - Error Messages
    :file: errors.csv
    :header-rows: 1
+   :stub-columns: 1
    :widths: 10, 10, 80

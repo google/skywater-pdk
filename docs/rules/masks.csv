@@ -1,0 +1,52 @@
+Mask,Acronym,Used in SKY130
+Field Oxide,FOM,X
+Deep N-Well,DNM,X
+P-Well Block Mask,PWBM,
+P-Well Drain Extended ,PWDEM,
+N-Well*,NWM,X
+High Vt PCh*,HVTPM,X
+Low Vt Nch*,LVTNM,X
+HLow VT PCh Radio*,HVTRM,X
+N-Core Implant,NCM,
+Tunnel Mask,TUNM,X
+ONO Mask,ONOM,X
+Low Voltage Oxide,LVOM,X
+Resistor Protect,RPM,X
+Poly 1,P1M,X
+N-tip Implant,NTM,X
+High Volt. N-tip,HVNTM,X
+Lightly Doped N-tip,LDNTM,X
+Nitride Poly Cut,NPCM,X
+P+ Implant,PSDM,X
+N+ Implant,NSDM,X
+Local Intr Cont.1,LICM1,X
+Local Intrcnct 1,LI1M,X
+Contact,CTM1,X
+Open Frame Mask,OFM,
+Metal 1,MM1,X
+Via,VIM,X
+Capacitor MiM,CAPM,
+Metal 2,MM2,X
+Via 2-TNV,VIM2,
+Via 2-S8TM,VIM2,
+Via 2-PLM,VIM2,X
+Metal 3-TLM,MM3,
+Metal 3-S8TM,MM3,
+Metal 3-PLM,MM3,X
+Pad Via,VIPDM,
+Via3-PLM,VIM3,X
+Inductor-TLM,INDM,
+Metal 4,MM4,X
+Via4,VIM4,X
+Metal 5,MM5,X
+Nitride Seal Mask,NSM,X
+Pad (scribe protect),PDM,X
+Pad (scribe unprotect),PDM,
+Polyimide,PMM,
+Polyimide_ExtFab,PMM[E],
+Pad&Polyimide_ExtFab,PDMM[E],
+DECA PBO,PBO,X
+Cu Inductor/Redist.,CU1M,X
+Polyimide 2 (2),PMM2,X
+Under Bump Metal,UBM,
+Bumps,BUMP,

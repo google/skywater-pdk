@@ -1,0 +1,81 @@
+Category               	Name                                 	Used?	Layout Model and required schematic element	FOM	DNM	PWBM	PWDEM	NWM	HVTPM	LVTNM	NCM	TUNM	ONOM	LVOM	RPM	P1M	HVNTM	NTM	LDNTM	NPC	NSDM	PSDM	LICM1	LI1M	CAPM	MM1	MM2	MM3	MM5	CU1M	INDM	Drawn Route / Comments
+RESISTOR               	n diff resistor                      	res r	sky130_fd_pr__res_generic_nd                   	C	+	-	-	-	-	-	-	-	-	-	+	-	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+RESISTOR               	HV n diff resistor                   	res r	mrdn_hv                                    	C	+	-	-	-	-	-	-	-	-	C	+	-	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+RESISTOR               	p diff resistor                      	res r	sky130_fd_pr__res_generic_pd                   	C	+	-	-	C	C	-	C	-	-	-	+	-	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+RESISTOR               	p diff resistor NV                   	res r	sky130_fd_pr__res_generic_pd                   	C	+	-	-	C	C	-	C	-	-	-	+	-	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+RESISTOR               	HV p diff resistor                   	res r	mrdp_hv                                    	C	+	-	-	C	-	-	-	-	-	C	+	-	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+RESISTOR               	Isolated Pwell resistor              	respw	sky130_fd_pr__res_iso_pw                       	C	C	-	-	-	+	+	+	+	+	+	+	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+RESISTOR               	n+ poly resistor                     	res  	sky130_fd_pr__res_generic_po                   	-	+	-	-	+	-	-	-	+	+	+	-	C	+	+	+	-	+	+	+	+	+	+	+	+	+	+	+
+RESISTOR               	p+ poly resistor                     	res3 	xhrpoly_*_*                                	-	+	-	-	+	-	-	+	+	+	+	C	C	-	C	-	C	-	C	+	+	+	+	+	+	+	+	+
+RESISTOR               	li resistor                          	res  	sky130_fd_pr__res_generic_l1                   	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	-	C	+	+	+	+	+	+	+
+RESISTOR               	metal fuse_D                         	mrmX 	mrmX                                       	-	+	-	-	-	-	-	-	-	-	-	+	-	-	-	+	+	+	+	-	-	+	+	+	C	+	+	+	metX AND metX.fe
+RESISTOR               	metal fuse_T                         	mrmX 	mrmX                                       	-	+	-	-	-	-	-	-	-	-	-	+	-	-	-	+	+	+	+	-	-	+	+	C	+	+	+	+	metX AND metX.fe
+32 A CMOS              	nmos 1.8V                            	nfet 	sky130_fd_pr__nfet_01v8                        	C	+	-	-	-	-	-	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	pmos 1.8V                            	pfet 	sky130_fd_pr__pfet_01v8                        	C	+	-	-	C	C	-	C	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	pmos 1.8V NV                         	pfet 	sky130_fd_pr__pfet_01v8                        	C	+	-	-	C	C	-	C	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	Low Vt pmos 1.8V 32A                 	pfet 	sky130_fd_pr__pfet_01v8_lvt                    	C	+	-	-	C	-	C	-	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	High Vt pmos 1.8V 32A                	pfet 	sky130_fd_pr__pfet_01v8_hvt                    	C	+	-	-	C	C	C	C	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	High Vt pmos 1.8V 32A NV             	pfet 	sky130_fd_pr__pfet_01v8_hvt                    	C	+	-	-	C	C	C	C	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	Low Vt nmos 1.8V 32A                 	nfet 	sky130_fd_pr__nfet_01v8_lvt                    	C	+	-	-	-	-	C	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	nmos_core                            	nfet 	sky130_fd_pr__special_nfet_pass           	C	+	-	-	-	-	-	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	nmos_core                            	nfet 	sky130_fd_pr__special_nfet_latch               	C	+	-	-	-	-	-	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	nmos_core NV                         	nfet 	sky130_fd_pr__special_nfet_pass_lowleakage     	C	+	-	-	-	-	-	C	-	-	-	-	C	-	-	C	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	nmos_core NV                         	nfet 	sky130_fd_pr__special_nfet_latch_lowleakage   	C	+	-	-	-	-	-	C	-	-	-	-	C	-	-	C	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	pmos_core                            	pfet 	sky130_fd_pr__special_pfet_pass                	C	+	-	-	C	C	C	C	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	pmos_core NV                         	pfet 	sky130_fd_pr__special_pfet_pass_lowleakage     	C	+	-	-	C	C	C	-	-	-	-	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+32 A CMOS              	Low Vt nmos_core                     	     	                                           	C	+	-	-	-	-	C	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	Low Vt Varactor                      	capbn	sky130_fd_pr__cap_var_lvt                      	C	+	-	-	C	-	C	-	-	-	-	-	C	-	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	High Vt Varactor                     	capbn	sky130_fd_pr__cap_var_hvt                      	C	+	-	-	C	C	C	C	-	-	-	-	C	-	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+32 A CMOS              	HV varactor (floating gate)          	     	                                           	C	C	-	-	C	-	C	-	-	-	C	-	C	C	C	-	-	C	-	-	+	+	+	+	+	+	+	+
+SONOS (& SONOS Latch)	SONOS fet                            	nfet 	sky130_fd_bs_flash__special_sonosfet_original 	C	C	-	-	-	-	C	-	C	C	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+SONOS (& SONOS Latch)	SONOS fet                            	nfet 	sky130_fd_bs_flash__special_sonosfet_star	C	C	-	-	-	-	C	-	C	C	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+SONOS (& SONOS Latch)	NV SONOS fet                         	nfet 	nvssonos_p                                 	C	+	-	-	-	-	C	-	C	C	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+SONOS (& SONOS Latch)	NV SONOS fet                         	nfet 	nvssonos_e                                 	C	+	-	-	-	-	C	-	C	C	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	HV nmos 5/10.5V                      	nfet 	sky130_fd_pr__nfet_g5v0d10v5                   	C	+	-	-	-	-	-	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	HV pmos 5/10.5 V                     	pfet 	sky130_fd_pr__pfet_g5v0d10v5                   	C	+	-	-	C	-	-	-	-	-	C	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+110A CMOS              	Native nmos 5V                       	nfet 	sky130_fd_pr__nfet_05v0_nvt                    	C	+	-	-	-	-	C	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	Native nmos 3V                       	nfet 	sky130_fd_pr__nfet_03v3_nvt                    	C	+	-	-	-	-	C	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	Flash npass                          	nfet 	sky130_fd_pr__special_nfet_pass_flash          	C	+	-	-	-	-	-	-	-	-	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	Flash npass NV                       	nfet 	nvsrnpass                                  	C	+	-	-	-	-	-	-	-	-	C	-	C	-	C	C	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	VHV nmos 5/16V DE                    	nfet 	sky130_fd_pr__nfet_g5v0d16v0                   	C	-	-	-	C	-	-	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	VHV pmos 5/16V DE                    	pfet 	sky130_fd_pr__pfet_g5v0d16v0                   	C	C	-	-	C	-	-	-	-	-	C	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+
+110A CMOS              	UHV nmos 5/20V DE                    	nfete	                                           	C	C	C	-	C	-	C	-	-	-	C	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	UHV iso nmos 5/20V DE                	nfete	                                           	C	C	C	-	C	-	C	-	-	-	C	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	UHV Native nmos 5/20V DE             	TBA  	                                           	C	C	C	-	C	-	C	-	-	-	C	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	UHV Native iso nmos 5/20V DE         	nfete	                                           	C	C	C	-	C	-	C	-	-	-	C	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+
+110A CMOS              	UHV pmos 5/20V DE                    	pfete	                                           	C	C	C	C	C	-	C	-	-	-	C	-	C	-	-	-	-	-	C	+	+	+	+	+	+	+	+	+
+CAPACITOR              	MiM                                  	cmim3	sky130_fd_pr__model__cap_mim                   	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	C	+	C	+	+	+	+
+CAPACITOR              	VPP                                  	cap  	sky130_fd_pr__cap_vpp_XXXXXX                   	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	-	C	-	C	C	+	+	+	-
+CAPACITOR              	VPP (with met3 shield)               	vppca	                                           	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	-	C	-	C	C	C	+	+	-
+INDUCTOR               	Inductor                             	induc	sky130_fd_pr__ind                              	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	C
+INDUCTOR               	Cu Inductor                          	induc	sky130_fd_pr__ind                              	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	C	C	-
+INDUCTOR               	Balun Inductor                       	induc	sky130_fd_pr__ind                              	+	+	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	C	C	-
+DIODE                  	nDiode                               	lvsdi	sky130_fd_pr__diode_pw2nd_05v5                 	C	+	-	-	-	-	-	-	+	+	-	+	-	-	-	+	+	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	HV nDiode                            	lvsdi	sky130_fd_pr__diode_pw2nd_11v0                 	C	+	-	-	-	-	-	-	+	+	C	+	-	C	C	+	+	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	RF ESD HV nDiode                     	lvsdi	sky130_fd_pr__diode_pw2nd_11v0                 	C	-	-	-	-	-	-	-	+	+	C	+	-	C	C	+	+	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	RF ESD Deep Nwell nDiode             	lvsdi	                                           	C	C	-	-	-	-	-	-	+	+	C	+	-	C	C	+	+	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	pDiode                               	lvsdi	sky130_fd_pr__diode_pd2nw_05v5                 	C	+	-	-	C	C	-	C	+	+	-	+	-	-	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	pDiode NV                            	lvsdi	sky130_fd_pr__diode_pd2nw_05v5                 	C	+	-	-	C	C	-	C	+	+	-	+	-	-	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	HV pDiode                            	lvsdi	sky130_fd_pr__diode_pd2nw_11v0                 	C	+	-	-	C	-	-	-	+	+	C	+	-	-	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	RF ESD HV pDiode                     	lvsdi	sky130_fd_pr__diode_pd2nw_11v0                 	C	+	-	-	C	-	-	-	+	+	C	+	-	-	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	Photo Diode                          	lvsdi	dnwdiode                                   	C	C	-	-	C	C	-	C	-	-	-	-	-	-	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	Low Vt pdiode [#fb1]_                	diode	sky130_fd_pr__diode_pd2nw_05v5_lvt             	C	+	-	-	C	-	C	+	+	+	+	+	+	+	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	High Vt pDiode [#fb1]_               	diode	sky130_fd_pr__diode_pd2nw_05v5_hvt             	C	+	-	-	C	C	C	C	+	+	+	+	+	+	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	High Vt pDiode NV [#fb1]_            	diode	sky130_fd_pr__diode_pd2nw_05v5_hvt             	C	+	-	-	C	C	C	C	+	+	+	+	+	+	C	+	+	-	C	+	+	+	+	+	+	+	+	+
+DIODE                  	Low Vt nDiode [#fb1]_                	diode	sky130_fd_pr__diode_pw2nd_05v5_lvt             	C	+	-	-	+	+	C	+	+	+	+	+	+	+	-	+	+	C	-	+	+	+	+	+	+	+	+	+
+DIODE                  	NV SONOS Diode [#fb1]_               	diode	ndiode_nvs                                 	C	+	-	-	+	+	C	+	C	C	C	+	+	+	+	C	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	Native nDiode [#fb1]_                	diode	sky130_fd_pr__diode_pw2nd_05v5_nvt             	C	+	-	-	+	+	C	+	+	+	C	+	+	C	C	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	Nwell Diode [#fb1]_                  	diode	sky130_fd_pr__model__parasitic__diode_ps2nw    	+	-	-	-	C	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	RF Nwell Diode [#fb1]_               	diode	sky130_fd_pr__model__parasitic__diode_ps2nw    	+	-	-	-	C	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	Pwell-Deep Nwell Diode [#fb1]_       	diode	sky130_fd_pr__model__parasitic__diode_pw2dn    	+	C	-	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	RF ESD Pwell-Deep Nwell Diode [#fb1]_	diode	sky130_fd_pr__model__parasitic__diode_pw2dn    	+	C	-	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	RF Pwell-Deep Nwell Diode [#fb1]_    	diode	sky130_fd_pr__model__parasitic__diode_pw2dn    	+	C	-	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	Psub-Deep Nwell Diode [#fb1]_        	diode	sky130_fd_pr__model__parasitic__diode_ps2dn    	+	C	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	Psub-Deep Nwell Diode [#fb1]_        	diode	sky130_fd_pr__model__parasitic__diode_ps2dn    	+	C	C	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+DIODE                  	HV Pwell-Deep Nwell Diode [#fb1]_    	diode	dnwdiode_hvpw                              	+	C	-	-	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+	+
+PNP                    	Parasitic PNP                        	pnp4 	sky130_fd_pr__pnp_05v5_W0p68L0p68              	C	-	-	-	C	C	-	C	-	-	-	+	-	-	C	-	+	C	C	+	+	+	+	+	+	+	+	+	Layout provided by technology
+PNP                    	Parasitic NPN                        	pnp4 	sky130_fd_pr__npn_05v5                         	C	C	-	-	C	+	-	-	-	-	-	+	-	-	-	-	+	C	C	+	+	+	+	+	+	+	+	+	Layout provided by technology
+ESD transistor         	LV nESD transistor                   	nfet 	sky130_fd_pr__esd_nfet_01v8                    	C	+	-	-	-	-	-	-	-	-	-	-	C	-	-	-	-	C	-	+	+	+	+	+	+	+	+	+	NMOS with ESD_nwell_tap
+ESD transistor         	HV nESD transistor                   	nfet 	sky130_fd_pr__esd_nfet_g5v0d10v5               	C	+	-	-	-	-	-	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+	NMOS with ESD_nwell_tap
+ESD transistor         	HV Native nESD transistor            	     	                                           	C	+	-	-	-	-	C	-	-	-	C	-	C	C	C	-	-	C	-	+	+	+	+	+	+	+	+	+
+ESD transistor         	HV pESD transistor                   	pfet 	sky130_fd_pr__esd_pfet_g5v0d10v5               	C	+	-	-	C	-	-	-	-	-	C	-	C	-	C	-	-	-	C	+	+	+	+	+	+	+	+	+

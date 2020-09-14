@@ -1,0 +1,9 @@
+Symbol,Explanation,Unit
+PI,Perimeter of Interconnect,um
+FLT,Final Layer thickness,um
+W,Width of  MOS Transistor,um
+L,Length of  MOS Transistor,um
+A,Area of  MOS Transistor gate (= W x L),um2
+CA,Area of contact or via,um2
+SW,Sidewall area (= PI x FLT),um2
+EA,"Etched area (= CA for horizontal, = SW for vertical areas)",um2

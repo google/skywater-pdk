@@ -1,0 +1,25 @@
+Node Type,Originates VHV?,Propagates VHV?,Requires tagging with vhvi:dg (flags if not tagged when required)
+Deep N-Well,No,N/A,N/A
+P-Well,No,N/A,N/A
+P-Well Resistor,No,No [#f8]_ ,Yes
+N-Well,No,N/A,N/A
+LV Diffusion,No,Yes,Yes
+Diffusion Resistor,No,No [#f8]_ ,Yes
+HV Diffusion,No,Yes,Yes
+VHV ESD Diffusion,No,No,Yes
+VHVSourceDrain,Yes,No [#f9]_ ,Yes
+Diodes,No,Yes,Yes
+Poly,No,N/A,N/A
+Poly Resistor,No,No [#f8]_ ,Yes
+VHVPoly,Yes,Yes,Yes
+GATE,No,N/A,N/A
+de_pFET_gate,No,N/A,N/A
+de_nFET_gate,No,N/A,N/A
+Licon1,No,Yes,No
+Li1,No,Yes,No
+Mcon,No,Yes,No
+Met1,No,Yes,No
+Via,No,Yes,No
+Met2,No,Yes,No
+via2,No,Yes,No
+Met3,No,Yes,No
