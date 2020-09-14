@@ -79,4 +79,4 @@ areaid:ag{81:79},analog,areaid.ana,Used to identify analog circuits,All,Analog
 natfet.dg {124:21},DEFETs,natfet.dg,"Add TUNM for SONOS channel implants. See SPR 117559, SGL-529",All,DRC/CLDRC
 areaid:lw,Ultra High voltage id layer, ,Areaid low voltage: UHV box to put all HV/LV curcuits in,All,Analog
 "* To distinguish the layers, the full name of the layer needs to be turned on in the LSW window",,,,,
-"As the layers are displayed in LSW window in icfb version 5.0; For purpose layer displayed in version 5.1, pls refer table C3"
+"As the layers are displayed in LSW window in icfb version 5.0; For purpose layer displayed in version 5.1, pls refer table C3",,,,,
