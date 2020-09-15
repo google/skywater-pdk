@@ -35,7 +35,7 @@ Devices and Layout vs Schematic (LVS) Information
 
 .. csv-table:: Table F2b: Mask Generation table
    :file: layers/table-f2b-mask.tsv
-   :delim: "tab"
+   :delim: U+0009
    :header-rows: 1
    :stub-columns: 1
 
@@ -59,7 +59,7 @@ Device and Layout vs. Schematic
 
 .. csv-table:: Table F2a: Devices and Layout vs. Schematic (LVS)
    :file: layers/table-f2a-lvs.tsv
-   :delim: "tab"
+   :delim: U+0009
    :header-rows: 1
    :stub-columns: 1
 
