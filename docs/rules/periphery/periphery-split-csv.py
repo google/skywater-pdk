@@ -75,7 +75,7 @@ class RuleTable:
 
 
 data = [[]]
-for l in open('periphery.csv'):
+for l in open('periphery.csv', encoding='utf8'):
     if '.-)' in l:
         data.append([])
 
@@ -159,10 +159,13 @@ for d in data[1:]:
     rows = rows[i:]
 
     # Strip off the flags table
+    should_strip_flags = False
     for i, r in enumerate(rows):
         if r[0] == 'Use' and r[1] == 'Explanation':
+            should_strip_flags = True
             break
-    rows = rows[:i]
+    if should_strip_flags:
+        rows = rows[:i]
 
     # Join together description which span multiple rows.
     continued_index = []
