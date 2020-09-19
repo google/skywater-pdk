@@ -64,7 +64,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
-    'sphinxcontrib_verilog_diagrams',
+    'sphinxcontrib_hdl_diagrams',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -83,10 +83,10 @@ master_doc = 'index'
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if not on_rtd:
     html_context = {
-        "display_github": True,  # Integrate GitHub
-        "github_user": "mithro",  # Username
-        "github_repo": "python-sphinx-verilog",  # Repo name
-        "github_version": "master",  # Version
+        "display_github": True,         # Integrate GitHub
+        "github_user": "google",        # Username
+        "github_repo": "skywater-pdk",  # Repo name
+        "github_version": "master",     # Version
         "conf_py_path": "/doc/",
     }
 else:

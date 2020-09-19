@@ -4,11 +4,13 @@ docutils
 sphinx
 sphinx-autobuild
 
+# Verilog domain
+sphinx-verilog-domain
 # Verilog diagrams using Yosys + netlistsvg
-git+https://github.com/SymbiFlow/sphinxcontrib-verilog-diagrams.git#egg=sphinxcontrib-verilog-diagrams
+sphinxcontrib-hdl-diagrams
 
 # Module diagrams
-symbolator
+git+https://github.com/SymbiFlow/symbolator.git#egg=symbolator
 
 # pycairo
 # vext.gi
