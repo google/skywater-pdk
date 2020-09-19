@@ -3,3 +3,4 @@ Name,Description,Flags,Value
 (hvi.2a),Min spacing of Hvi to Hvi,P,0.700
 (hvi.2b),Manual merge if space is below minimum,,
 (hvi.4),Hvi must not overlap tunm,,
+(hvi.5),Min space between hvi and nwell (exclude coincident edges),,0.700

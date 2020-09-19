@@ -9,4 +9,5 @@ Nwells can merge over deep nwell if spacing too small (as in rule nwell.2)",TC,0
 (nwell.5b),nwell inside UHVI must not be on the same net as nwell outside UHVI,,N/A
 (nwell.6),Min enclosure of nwell hole by deep nwell outside UHVI,TC,1.030
 (nwell.7),"Min spacing between nwell and deep nwell on separate nets
-Spacing between nwell and deep nwell on the same net is set by the sum of the rules nwell.2 and nwell.5. By default, DRC run on a cell checks for the separate-net spacing, when nwell and deep nwell nets are separate within the cell hierarchy and are joined in the upper hierarchy. To allow net names to be joined and make the same-net rule applicable in this case, the ""joinNets"" switch should be turned on.",TC,4.500
+Spacing between nwell and deep nwell on the same net is set by the sum of the rules nwell.2 and nwell.5. By default, DRC run on a cell checks for the separate-net spacing, when nwell and deep nwell nets are separate within the cell hierarchy and are joined in the upper hierarchy. To allow net names to be joined and make the same-net rule applicable in this case, the ""joinNets"" switch should be turned on.
+waffle_chip",TC,4.500

@@ -6,3 +6,4 @@ Name,Description,Flags,Value
 (extd.5),"Only cell name ""s8rf_n20vhviso1"" is a valid cell name for n20vhviso1 device  (Check in LVS as invalid device)",,N/A
 (extd.6),"Only cell name ""s8rf_p20vhv1"" is a valid cell name for p20vhv1 device  (Check in LVS as invalid device)",,N/A
 (extd.7),"Only cell name ""s8rf_n20nativevhv1*"" is a valid cell name for n20nativevhv1 device  (Check in LVS as invalid device)",,N/A
+(extd.8),"Only cell name ""s8rf_n20zvtvhv1*"" is a valid cell name for n20zvtvhv1 device  (Check in LVS as invalid device)",,N/A

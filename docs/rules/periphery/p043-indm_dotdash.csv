@@ -2,3 +2,4 @@ Name,Description,Flags,Value
 (indm.1),Min width of top_indmMetal,,N/A
 (indm.2),Min spacing between two top_indmMetal,,N/A
 (indm.3),top_padVia must  be enclosed by top_indmMetal by atleast,,N/A
+(indm.4),Min area of top_indmMetal,,N/A

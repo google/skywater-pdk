@@ -17,3 +17,4 @@ Name,Description,Flags,Value
 (hv.poly.6a),Min extension of poly beyond hvFET_gate (exempt poly extending beyond diff along the S/D direction in a denmos/depmos),,0.160
 (hv.poly.6b),Extension of hv poly beyond FET_gate (including hvFET_gate; exempt poly extending beyond diff along the S/D direction in a denmos/depmos),,0.160
 (hv.poly.7),Minimum overlap of hv poly ring_FET and diff,,
+(hv.poly.8),Any poly gate abutting hv_source/drain becomes a hvFET_gate,,

@@ -1,2 +1,3 @@
 Name,Description,Flags,Value
 (hvpoly.13),Min width of poly over diff inside Hvi,P,0.500
+(hvpoly.14),(poly and diff) cannot straddle Hvi,,

@@ -2,3 +2,4 @@ Name,Description,Flags,Value
 (m5.1),Min width of met5,,1.600
 (m5.2),Min spacing between two met5,,1.600
 (m5.3),via4 must  be enclosed by met5 by atleast,,0.310
+(m5.4),"Min area of met5 (For all flows except SKY130PIR*/SKY130PF*, the rule is exempted for probe pads which are exactly 1.42um by 1.42um)",,4.000

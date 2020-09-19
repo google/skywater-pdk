@@ -4,3 +4,4 @@ Name,Description,Flags,Value
 (rdl.3),"Min enclosure of pad by rdl, except rdl interacting with bump",,10.750
 (rdl.4),Min spacing between rdl and outer edge of the seal ring,,15.000
 (rdl.5),(rdl OR ccu1m.mk) must not overlap :drc_tag:`areaid.ft`. Exempt the following from the check: (a)  blankings in the frame (rule uses :drc_tag:`areaid.dt` for exemption),,
+(rdl.6),"Min spacing of rdl to pad, except rdl interacting with bump",,19.660

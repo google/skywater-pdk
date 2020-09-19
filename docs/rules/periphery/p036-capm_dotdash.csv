@@ -10,3 +10,4 @@ Name,Description,Flags,Value
 (capm.8),"Min space, no overlap, between via and capm",,N/A
 (capm.10),"capm must not straddle nwell, diff, tap, poly, li1 and met1 (Rule exempted for capm overlapping capm_2t.dg)",TC,N/A
 (capm.11),Min spacing between capm to (met2 not overlapping capm),,N/A
+(capm.12),Max area of capm (um^2),,N/A

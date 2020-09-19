@@ -8,3 +8,4 @@ Name,Description,Flags,Value
 (lvtn.10),Min enclosure of lvtn by (nwell not overlapping Var_channel) (exclude coincident edges),,0.380
 (lvtn.12),Min spacing between lvtn and (nwell inside :drc_tag:`areaid.ce`),,0.380
 (lvtn.13),Min area of lvtn (um^2),,0.265
+(lvtn.14),Min area of lvtn Holes (um^2),,0.265

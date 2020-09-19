@@ -16,3 +16,4 @@ Name,Description,Flags,Value
 (vpp.12b),"Number of met4 shapes inside capacitor.dg of cell ""s8rf2_xcmvpp11p5x11p7_m3_lim5shield""  must overlap with size 2.01 x 2.01 (no other met4 shapes allowed)",,16.00
 (vpp.12c),"Number of met4 shapes inside capacitor.dg of cell ""s8rf2_xcmvpp4p4x4p6_m3_lim5shield""  must overlap with size 1.5 x 1.5 (no other met4 shapes allowed)",,4.00
 (vpp.13),Min space of met1 to met1inside VPP capacitor,CU,0.160
+(vpp.14),Min space of met2 to met2 inside VPP capacitor,CU,0.160

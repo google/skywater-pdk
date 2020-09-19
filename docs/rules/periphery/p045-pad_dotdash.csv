@@ -1,2 +1,3 @@
 Name,Description,Flags,Value
 (pad.2),Min spacing of pad:dg to pad:dg,,1.270
+(pad.3),Max area of hugePad NOT top_metal,,30000

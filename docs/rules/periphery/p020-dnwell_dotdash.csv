@@ -8,3 +8,4 @@ Name,Description,Flags,Value
 (dnwell.4),Dnwell can not overlap pnp:dg,,
 (dnwell.5),P+_diff can not straddle Dnwell,,
 (dnwell.6),RF NMOS must be enclosed by deep nwell (RF FETs are listed in $DESIGN/config/tech/model_set/calibre/fixed_layout_model_map of corresponding techs),,
+(dnwell.7),Dnwell can not straddle areaid:substratecut,,

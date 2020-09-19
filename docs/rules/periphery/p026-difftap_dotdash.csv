@@ -13,3 +13,4 @@ Name,Description,Flags,Value
 (difftap.10),Enclosure of (n+)  tap by N-well. Rule exempted inside UHVI.,NE P,0.180
 (difftap.11),Spacing of (p+) tap to  N-well. Rule exempted inside UHVI.,,0.130
 (difftap.12),ESD_nwell_tap is considered shorted to the abutting diff,NC,
+(difftap.13),Diffusion or the RF FETS in Table H5 is defined by Ldiff and Wdiff.,,

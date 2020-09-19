@@ -1,3 +1,4 @@
 Name,Description,Flags,Value
 (ulvt-.1),":drc_tag:`areaid.low_vt` must enclose dnw for the UHV dnw-psub diode texted ""condiodeHvPsub""",,NA
 (ulvt-.2),":drc_tag:`areaid.low_vt` must enclose pwbm.dg for the UHV dnw-psub diode texted ""condiodeHvPsub""",,NA
+(ulvt-.3),:drc_tag:`areaid.low_vt` can not straddle UHVI,,NA

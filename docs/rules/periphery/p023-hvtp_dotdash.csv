@@ -4,3 +4,4 @@ Name,Description,Flags,Value
 (hvtp.3),Min enclosure of pfet by hvtp,P,0.180
 (hvtp.4),Min spacing between pfet and hvtp,P,0.180
 (hvtp.5),Min area of hvtp (um^2),,0.265
+(hvtp.6),Min area of hvtp Holes (um^2),,0.265

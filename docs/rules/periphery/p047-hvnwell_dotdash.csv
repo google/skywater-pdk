@@ -2,3 +2,4 @@ Name,Description,Flags,Value
 (hvnwell.8),Min space between HV_nwell  and any nwell on different nets,,2.000
 (hvnwell.9),(Nwell overlapping hvi) must be enclosed by hvi,,
 (hvnwell.10),"LVnwell and HnWell should not be on the same net (for the purposes of this check, short the connectivity through resistors); Exempt HnWell with li nets tagged ""lv_net"" using text.dg and Hnwell connected to nwell overlapping :drc_tag:`areaid.hl`",TC,
+(hvnwell.11),"Nwell connected to the nets mentioned in the ""Power_Net_Hv"" field of the latcup GUI must be enclosed by hvi (exempt nwell inside :drc_tag:`areaid.hl`). Also for the purposes of this check, short the connectivity through resistors. The rule will be checked in the latchup run and exempted for cells ""s8tsg5_tx_ibias_gen"" and ""s8bbcnv_psoc3p_top_18"",  ""rainier_top, indus_top*"", ""rainier_top, manas_top, ccg3_top""",,

@@ -6,3 +6,4 @@ Name,Description,Flags,Value
 (tunm.5),(poly and diff) may not straddle tunm,,
 (tunm.6a),Tunm outside deep n-well is not allowed,TC,
 (tunm.7),Min tunm area,,0.672
+(tunm.8),tunm must be enclosed by :drc_tag:`areaid.ce`,,

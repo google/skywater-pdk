@@ -6,3 +6,4 @@ Name,Description,Flags,Value
 (li.3a.-),Spacing of LI to LI inside cells with names s8rf2_xcmvpp_hd5_*,P,0.140
 (li.5.-),Enclosure of licon by one of two adjacent LI sides,P,0.080
 (li.6.-),Min area of LI,P,0.0561
+(li.7.-),"Min LI resistor width (rule exempted within :drc_tag:`areaid.ed`; Inside :drc_tag:`areaid.ed`, min width of the li resistor is determined by rule li.1)",,0.290

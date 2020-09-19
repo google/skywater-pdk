@@ -13,3 +13,4 @@ Name,Description,Flags,Value
 (hvdifftap.23),Space between diff or tap outside Hvi and Hvi,P,0.180
 (hvdifftap.24),Spacing of nwell to N+ Hdiff (rule exempted inside UHVI),DE NE,0.430
 (hvdifftap.25),Min space of N+ Hdiff inside HVI across non-abutting P+_tap,NC,1.070
+(hvdifftap.26),Min spacing between pwbm to difftap outside UHVI,,N/A

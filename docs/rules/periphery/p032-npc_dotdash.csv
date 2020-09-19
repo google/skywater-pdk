@@ -3,3 +3,4 @@ Name,Description,Flags,Value
 (npc.2),Min spacing of NPC to NPC,,0.270
 (npc.3),Manual merge if less than minimum,,
 (npc.4),Spacing (no overlap) of NPC to Gate,,0.090
+(npc.5),Max enclosure of poly overlapping slotted_licon by npcm (merge between adjacent short edges of the slotted_licons if space < min),,0.095

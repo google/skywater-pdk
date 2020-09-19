@@ -6,3 +6,4 @@ Name,Description,Flags,Value
 (varac.5),Min enclosure of poly overlapping Var_channel by nwell,,0.150
 (varac.6),Min spacing between VaracTap and difftap,,0.270
 (varac.7),Nwell overlapping Var_channel must not overlap P+ diff,,
+(varac.8),Min enclosure of Var_channel by hvtp,,0.255
