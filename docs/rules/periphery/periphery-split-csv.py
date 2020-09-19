@@ -240,7 +240,7 @@ for d in data[1:]:
 
 PERIPHERY_RULES_FILE = os.path.join('..', 'periphery-rules.rst')
 
-rst = open(PERIPHERY_RULES_FILE, 'w')
+rst = open(PERIPHERY_RULES_FILE, 'w', encoding='utf8')
 
 rst.write("""\
 .. Do **not** modify this file it is generated from the periphery.csv file
@@ -312,7 +312,7 @@ for rt in rule_tables:
 
     rst.write('\n\n')
 
-    with open(rt.csv_fname, 'w', newline='') as f:
+    with open(rt.csv_fname, 'w', newline='', encoding='utf8') as f:
         w = csv.DictWriter(f, headers)
         w.writeheader()
         for r in rt.rules:
@@ -331,5 +331,5 @@ for rt in rule_tables:
 
 rst.close()
 
-with open(PERIPHERY_RULES_FILE) as f:
+with open(PERIPHERY_RULES_FILE, encoding='utf8') as f:
     print(f.read())
