@@ -72,7 +72,7 @@ Further data can be found in the `"SKY130 Stackup Capacitance Data" spreadsheet`
 Basic Capacitance - Fringe Downward
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fringe capacitances are a constant value per unit length and are an approximations. Determined by creating a layout with a 5um x 10um rectangle of each layer over or under a much larger rectangle of the other layer. The fringe capacitance computed from the total given minus the parallel plate capacitance.
+Fringe capacitances are a constant value per unit length and are approximations. Determined by creating a layout with a 5um x 10um rectangle of each layer over or under a much larger rectangle of the other layer. The fringe capacitance computed from the total given minus the parallel plate capacitance.
 
 "downward direction" means that the larger plate is below the 5um x 10um plate.
 
@@ -87,7 +87,7 @@ The layer in the first column is always the layer with the 5um x 10um plate.
 Basic Capacitance - Fringe Upward
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Fringe capacitances are a constant value per unit length and are an approximations. Determined by creating a layout with a 5um x 10um rectangle of each layer over or under a much larger rectangle of the other layer. The fringe capacitance computed from the total given minus the parallel plate capacitance.
+Fringe capacitances are a constant value per unit length and are approximations. Determined by creating a layout with a 5um x 10um rectangle of each layer over or under a much larger rectangle of the other layer. The fringe capacitance computed from the total given minus the parallel plate capacitance.
 
 "upward direction" means that the larger plate is above the 5um x 10um plate.
 
