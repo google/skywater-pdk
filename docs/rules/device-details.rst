@@ -1,113 +1,14 @@
 Device Details
 ==============
 
-Bipolar (NPN)
--------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__npn4`
--  Model Names: :model:`sky130_fd_pr_base__npnpar1x1`, :model:`sky130_fd_pr_base__npnpar1x2`, :model:`sky130_fd_pr_base__npn_1x1_2p0_hv`
-
-Operating regime where SPICE models are valid
-
--  \|V\ :sub:`CE`\ \| = 0 to 5.0V
--  \|V\ :sub:`BE`\ \| = 0 to 5.0V
--  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
-
-Details
-~~~~~~~
-
-The SKY130 process offers “free” NPN devices. The NPN uses the deep n-well as the collector. The device is not optimized, and must be used in the forward-active mode. The following sizes of NPN’s are available:
-
--  ungated device with emitter 1.0 x 1.0
--  ungated device with emitter 1.0 x 2.0
--  poly-gated version with octagonal emitter of A = 1.97 µm\ :sup:`2`
-
-The :model:`sky130_fd_pr_base__npn_1x1_2p0_hv` device has a poly gate placed between the emitter and base diffusions, to prevent carrier recombination at the STI edge and increase β. The poly gate is connected to the emitter terminal.
-
-Using this device must be done in conjunction with the correct guard rings, to avoid potential latchup issues with nearby circuitry. Reverse-active mode operation of the BJT’s are neither modeled nor permitted. E-test specs for the NPN devices are shown in the table below:
-
-
-.. include:: device-details/bipolar-npn/bipolar-npn-table0.rst
-
-
-
-Symbols for the npnpar are shown below
-
-|symbol-bipolar-npn-1| |symbol-bipolar-npn-2| |symbol-bipolar-npn-3|
-
-The cross-section of the :model:`sky130_fd_pr_base__npnpar1x1`/:model:`sky130_fd_pr_base__npnpar1x2` is shown below.
-
-|cross-section-bipolar-npnpar1x|
-
-The cross-section of the :model:`sky130_fd_pr_base__npn_1x1_2p0_hv` is shown below. The poly gate is tied to the emitter to prevent the parasitic MOSFET from turning on.
-
-|cross-section-bipolar-npn_1x1_2p0_hv|
-
-.. |symbol-bipolar-npn-1| image:: device-details/bipolar-npn/symbol-bipolar-npn-1.svg
-.. |symbol-bipolar-npn-2| image:: device-details/bipolar-npn/symbol-bipolar-npn-2.svg
-.. |symbol-bipolar-npn-3| image:: device-details/bipolar-npn/symbol-bipolar-npn-3.svg
-.. |cross-section-bipolar-npnpar1x| image:: device-details/bipolar-npn/cross-section-bipolar-npnpar1x.svg
-.. |cross-section-bipolar-npn_1x1_2p0_hv| image:: device-details/bipolar-npn/cross-section-bipolar-npn_1x1_2p0_hv.svg
-
-
-Bipolar (PNP)
--------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pnp4`
--  Model Names: :model:`sky130_fd_pr_base__pnppar`, :model:`sky130_fd_pr_base__pnppar5x`
-
-Operating regime where SPICE models are valid
-
--  \|V\ :sub:`CE`\ \| = 0 to 5.0V
--  \|V\ :sub:`BE`\ \| = 0 to 5.0V
--  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
-
-Details
-~~~~~~~
-
-The SKY130 process offer a “free” PNP device, which utilizes the substrate as the collector. This device is not independently optimized, and can be used in forward-active mode. The following sizes of PNP are available:
-
--  ungated device with emitter 0.68 x 0.68 (A=0.4624 µm\ :sup:`2`)
--  ungated device with emitter 3.4 x 3.4 (A=11.56 µm\ :sup:`2`)
-
-Using this device must be done in conjunction with the correct guard rings, to avoid potential latchup issues with nearby circuitry. Reverse-active mode operation of the BJT’s are neither modeled nor permitted.
-
-E-test specs for these devices are shown in the table below:
-
-
-.. include:: device-details/bipolar-pnp/bipolar-pnp-table0.rst
-
-
-
-Symbols for the :model:`sky130_fd_pr_base__pnppar` is shown below
-
-|symbol-bipolar-a| |symbol-bipolar-b|
-
-The cross-section of the pnp is shown below.
-
-No deep n-well exists in this device; the collector is the substrate.
-
-|cross-section-bipolar|
-
-.. |symbol-bipolar-a| image:: device-details/bipolar-pnp/symbol-bipolar-a.svg
-.. |symbol-bipolar-b| image:: device-details/bipolar-pnp/symbol-bipolar-b.svg
-.. |cross-section-bipolar| image:: device-details/bipolar-pnp/cross-section-bipolar.svg
-
-
 MiM Capacitor
 -------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__mimcap34`, :cell:`sky130_fd_pr_base__mimcap45`
--  Model Names: :model:`sky130_fd_pr_base__xcmimc`, :model:`sky130_fd_pr_base__xcmim2c`
+-  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3__base`, :cell:`sky130_fd_pr__cap_mim_m4__base`
+-  Model Names: :model:`sky130_fd_pr__model__cap_mim`, :model:`sky130_fd_pr__cap_mim_m4`
 
 Operating Voltages where SPICE models are valid
 
@@ -126,13 +27,13 @@ The constructions are identical, and the capacitors may be stacked to maximize t
 Electrical specs are listed below:
 
 
-.. include:: device-details/capacitors-mim/capacitors-mim-table0.rst
+.. include:: device-details/cap_mim/cap_mim-table0.rst
 
 
 
 The symbol for the MiM capacitor is shown below. Note that the cap model is a sub-circuit which accounts for the parasitic contact resistance and the parasitic capacitance from the bottom plate to substrate.
 
-|symbol-capacitor-mim|
+|symbol-cap_mim|
 
 Cell name
 
@@ -142,10 +43,54 @@ Calc capacitance
 
 The cross-section of the “stacked” MiM capacitor is shown below:
 
-|cross-section-capacitor-mim|
+|cross-section-cap_mim|
 
-.. |symbol-capacitor-mim| image:: device-details/capacitors-mim/symbol-capacitor-mim.svg
-.. |cross-section-capacitor-mim| image:: device-details/capacitors-mim/cross-section-capacitor-mim.svg
+.. |symbol-cap_mim| image:: device-details/cap_mim/symbol-cap_mim.svg
+.. |cross-section-cap_mim| image:: device-details/cap_mim/cross-section-cap_mim.svg
+
+
+Varactors
+---------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`capbn_b`
+-  Model Name: :model:`sky130_fd_pr__cap_var_lvt`, :model:`sky130_fd_pr__cap_var_hvt`
+-  Model Type: subcircuit
+
+Operating Voltages where SPICE models are valid
+
+-  \|V\ :sub:`0` – V\ :sub:`1`\ \| = 0 to 2.0V
+
+Details
+~~~~~~~
+
+The following devices are available; they are subcircuits with the N-well to P-substrate diodes built into the model:
+
+-  :model:`sky130_fd_pr__cap_var_lvt` - low VT PMOS device option
+-  :model:`sky130_fd_pr__cap_var_hvt` - high VT PMOS device option
+
+The varactors are used as tunable capacitors, major e-test parameters are listed below. Further details on the device models and their usage are in the SKY130 process Family Spice Models (002-21997), which can be obtained from SkyWater upon request.
+
+
+.. include:: device-details/cap_var/cap_var-table0.rst
+
+
+
+There is no equivalent varactor for 5V operation. The NHV or PHV devices should be connected as capacitors for use at 5V.
+
+The symbols for the varactors are shown below:
+
+|symbol-cap_var-a| |symbol-cap_var-b|
+
+The cross-section of the varactor is shown below:
+
+|cross-section-cap_var|
+
+.. |symbol-cap_var-a| image:: device-details/cap_var/symbol-cap_var-a.svg
+.. |symbol-cap_var-b| image:: device-details/cap_var/symbol-cap_var-b.svg
+.. |cross-section-cap_var| image:: device-details/cap_var/cross-section-cap_var.svg
 
 
 Vertical Parallel Plate (VPP) capacitors
@@ -154,11 +99,14 @@ Vertical Parallel Plate (VPP) capacitors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__cap_int3_vppcap`
--  Model Names: :model:`sky130_fd_pr_base__xcmvppXxY _{MMshield}`
+-  Cell Name: :cell:`sky130_fd_pr__cap_vpp_XXpXxYYpY_{MM}(_shield(SS)*)(_float(FF)*)(_(VVVV))`
+-  Model Names: :model:`sky130_fd_pr__cap_vpp_*`
 
    -  X and Y are size dimentions
-   -  {MMshield} refers to metal layer used as shield
+   -  MM refers to the layers which are used for the capacitance
+   -  SS refers to the layers which are used as shields (`noshield` when no shield is used)
+   -  FF refers to the layers which are floating.
+   -  VVVVV refers to the "variant" when there are multiple devices of the same configuration
 
 Operating Voltages where SPICE models are valid
 
@@ -169,187 +117,75 @@ Details
 
 The VPP caps utilize the tight spacings of the metal lines to create capacitors using the available metal layers. The fingers go in opposite directions to minimize alignment-related variability, and the capacitor sits on field oxide to minimize silicon capacitance effects. A schematic diagram of the layout is shown below:
 
-M3
+.. todo::
 
-**M2**
+    M3
 
-LI
+    **M2**
 
-M1
+    LI
 
-LAYOUT of M2, M3, M4
+    M1
 
-LAYOUT of LI and M1 (with POLY sheet)
+    LAYOUT of M2, M3, M4
 
-**POLY**
+    LAYOUT of LI and M1 (with POLY sheet)
 
-**M4**
+    **POLY**
 
-These capacitors are fixed-size, and they can be connected together to multiply the effective capacitance of a given node. There are multiple constructions under two different cell names:
+    **M4**
 
-cap\_int3—these are older versions, where stacked metal lines run parallel
+These capacitors are fixed-size, and they can be connected together to multiply the effective capacitance of a given node. There are two different constructions.
 
--  xcmvpp3 (M1 \|\| M2 only, 7.84 x 8.58)
--  xcmvpp4 (M1 \|\| M2 only, 4.38 x 4.59)
--  xcmvpp5 (M1 \|\| M2 only, 2.19 x 4.59)
--  xcmvpp4p4x4p6\_m1m2 (M1 :sub:`┴` M2, 4.4 x 4.6, 4 quadrants)
--  xcmvpp11p5x11p7\_m1m2 (M1 :sub:`┴` M2, 11.5 x 11.7, 4 quadrants)
--  xcmvpp\_hd5\_4x2
--  xcmvpp\_hd5\_atlas\_fingercap\_l5 (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 5.0)
--  xcmvpp\_hd5\_atlas\_fingercap2\_l5 (M1 \|\| M2 \|\| M3 \|\| M4, 2.85 x 5.0)
--  xcmvpp\_hd5\_atlas\_fingercap\_l10 (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 10.0)
--  xcmvpp\_hd5\_atlas\_fingercap\_l20 (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 20.0)
--  xcmvpp\_hd5\_atlas\_fingercap\_l40 (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 40.0)
+Parallel VPP Capacitors
+^^^^^^^^^^^^^^^^^^^^^^^
 
-The symbol for the cap\_int3 is shown below. The terminals c0 and c1 represent the two sides of the capacitor, with b as the body (sub or well).
+These are older versions, where stacked metal lines run parallel:
 
-|symbol-capacitor-vpp-cap_int3|
 
-cap\_int3
+-  :model:`sky130_fd_pr__cap_vpp_08p6x07p8_m1m2_noshield` (M1 \|\| M2 only, 7.84 x 8.58)
+-  :model:`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield_o2` (M1 \|\| M2 only, 4.38 x 4.59)
+-  :model:`sky130_fd_pr__cap_vpp_02p4x04p6_m1m2_noshield` (M1 \|\| M2 only, 2.19 x 4.59)
+-  :model:`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2_noshield` (M1 :sub:`┴` M2, 4.4 x 4.6, 4 quadrants)
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_m1m2_noshield` (M1 :sub:`┴` M2, 11.5 x 11.7, 4 quadrants)
+-  :model:`sky130_fd_pr__cap_vpp_44p7x23p1_pol1m1m2m3m4m5_noshield`
+-  :model:`sky130_fd_pr__cap_vpp_02p7x06p1_m1m2m3m4_shieldl1_fingercap` (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 5.0)
+-  :model:`sky130_fd_pr__cap_vpp_02p9x06p1_m1m2m3m4_shieldl1_fingercap2` (M1 \|\| M2 \|\| M3 \|\| M4, 2.85 x 5.0)
+-  :model:`sky130_fd_pr__cap_vpp_02p7x11p1_m1m2m3m4_shieldl1_fingercap` (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 10.0)
+-  :model:`sky130_fd_pr__cap_vpp_02p7x21p1_m1m2m3m4_shieldl1_fingercap` (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 20.0)
+-  :model:`sky130_fd_pr__cap_vpp_02p7x41p1_m1m2m3m4_shieldl1_fingercap` (M1 \|\| M2 \|\| M3 \|\| M4, 2.7 x 40.0)
 
-vppcap—newer versions, where stacked metal lines run perpendicular and there are shields on top and bottom
+The symbol for these capacitors is shown below. The terminals c0 and c1 represent the two sides of the capacitor, with b as the body (sub or well).
 
--  xcmvpp11p5x11p7\_m5shield (11.5x11.7, with M5 shield)
--  xcmvpp11p5x11p7\_polym5shield (11.5x11.7, with poly and M5 shield)
--  xcmvpp11p5x11p7\_lim5shield (11.5x11.7, with LI and M5 shield)
--  xcmvpp4p4x4p6\_m3\_lim5shield (4.4x4.6, M3 float, LI / M5 shield)
--  xcmvpp8p6x7p9\_m3\_lim5shield (8.6x7.9, M3 float, LI / M5 shield)
--  xcmvpp11p5x11p7\_m3\_lim5shield (11.5x11.7, M3 float, LI / M5 shield)
--  xcmvpp11p5x11p7\_m4shield (11.5x11.7, with M4 shield)
--  xcmvpp6p8x6p1\_polym4shield (6.8x6.1, with poly and M4 shield)
--  xcmvpp6p8x6p1\_lim4shield (6.8x6.1, with LI and M4 shield)
--  xcmvppx4x2xnhative10x4 (11.5x11.7, over 2 nhvnative of 10/4 each)
+|symbol-cap_vpp-parallel|
 
-The symbol for the vppcap is shown below. The terminals c0 and c1 are the two capacitor terminals, “top” represents the top shield and “sub” the bottom shield.
+Perpendicular VPP Capacitors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|symbol-capacitor-vpp-cap|
+These are newer versions, where stacked metal lines run perpendicular and there are shields on top and bottom:
+
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldm5` (11.5x11.7, with M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3m4_shieldpom5` (11.5x11.7, with poly and M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3m4_shieldl1m5` (11.5x11.7, with LI and M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_04p4x04p6_m1m2m3_shieldl1m5_floatm4` (4.4x4.6, M3 float, LI / M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_08p6x07p8_m1m2m3_shieldl1m5_floatm4` (8.6x7.9, M3 float, LI / M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_m1m2m3_shieldl1m5_floatm4` (11.5x11.7, M3 float, LI / M5 shield)
+-  :model:`sky130_fd_pr__cap_vpp_11p5x11p7_l1m1m2m3_shieldm4` (11.5x11.7, with M4 shield)
+-  :model:`sky130_fd_pr__cap_vpp_06p8x06p1_l1m1m2m3_shieldpom4` (6.8x6.1, with poly and M4 shield)
+-  :model:`sky130_fd_pr__cap_vpp_06p8x06p1_m1m2m3_shieldl1m4` (6.8x6.1, with LI and M4 shield)
+-  :model:`sky130_fd_pr__cap_vpp_11p3x11p8_l1m1m2m3m4_shieldm5` (11.5x11.7, over 2 :model:`sky130_fd_pr__nfet_05v0_nvt` of 10/4 each)
+
+The symbol for these capacitors is shown below. The terminals c0 and c1 are the two capacitor terminals, “top” represents the top shield and “sub” the bottom shield.
+
+|symbol-cap_vpp-perpendicular|
 
 The capacitors are fixed-size elements and must be used as-is; they can be used in multiples.
 
 
-.. include:: device-details/capacitors-vpp/capacitors-vpp-table0.rst
+.. include:: device-details/cap_vpp/cap_vpp-table0.rst
 
-
-
-This page intentionally left blank
-
-.. |symbol-capacitor-vpp-cap_int3| image:: device-details/capacitors-vpp/symbol-capacitor-vpp-cap_int3.svg
-.. |symbol-capacitor-vpp-cap| image:: device-details/capacitors-vpp/symbol-capacitor-vpp-cap.svg
-
-
-SONOS cells
------------
-
-The SKY130 process currently supports two SONOS flash memory cells:
-
--  The original cell is supported in the S8PFHD, S8PHRC and S8PFN-20 technology options, with operating temperatures from -55°C to +155°C
--  The “star” cell is supported in the S8PHIRS technology option. Its cell size is approximately 25% smaller than the original cell, but its temperature range is restricted to -40°C to +125°C.
-
-Spice models for the memory cells exist for multiple conditions:
-
-
-.. include:: device-details/cells-sonos/cells-sonos-table0.rst
-
-
-
-Program and Erase characteristics are described in more detail in the ***S8 Nonvolatile Technology Spec*** (001-08712), and summarized below:
-
-
-.. include:: device-details/cells-sonos/cells-sonos-table1.rst
-
-
-
-Endurance behavior is illustrated below (100K cycles guaranteed):
-
-|sonos-erase-program|
-
-Data retention behavior is shown below at 85C\ |sonos-data-retention|
-
-E-test parameters are summarized below for both original and star cells:
-
-
-.. include:: device-details/cells-sonos/cells-sonos-table2.rst
-
-
-
-The schematic for the 2-T SONOS memory cell is shown below:
-
-|schematic-sonos-cell|
-
-The cross-section of the 2-T SONOS cell is shown below.
-
-|cross-section-sonos-cell|
-
-.. |sonos-erase-program| image:: device-details/cells-sonos/sonos-erase-program.svg
-.. |sonos-data-retention| image:: device-details/cells-sonos/sonos-data-retention.svg
-.. |schematic-sonos-cell| image:: device-details/cells-sonos/schematic-sonos-cell.svg
-.. |cross-section-sonos-cell| image:: device-details/cells-sonos/cross-section-sonos-cell.svg
-
-
-SRAM cells
-----------
-
-The SKY130 process currently supports only single-port SRAM’s, which are contained in hard-IP libraries. These cells are constructed with smaller design rules (Table 9), along with OPC (optical proximity correction) techniques, to achieve small memory cells. Use of the memory cells or their devices outside the specific IP is prohibited. The schematic for the SRAM is shown below in Figure 10. This cell is available in the S8 IP offerings and is monitored at e-test through the use of “pinned out” devices within the specific arrays.
-
-|figure-10-schematics-of-the-single-port-sram|
-
-**Figure 10. Schematics of the Single Port SRAM.**
-
-A Dual-Port SRAM is currently being designed using a similar approach. Compilers for the SP and DP SRAM’s will be available end-2019.
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to 1.8V
--  V\ :sub:`GS` = 0 to 1.8V
--  V\ :sub:`BS` = 0 to -1.8V
-
-Details
-~~~~~~~
-
-N-pass FET (SRAM)
-^^^^^^^^^^^^^^^^^
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name (SRAM): :model:`sky130_fd_pr_base__npass.1`
-
-
-.. include:: device-details/cells-sram/cells-sram-table0.rst
-
-
-
-N-latch FET (SRAM)
-^^^^^^^^^^^^^^^^^^
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name (SRAM): :model:`sky130_fd_pr_base__npd.1`
-
-
-.. include:: device-details/cells-sram/cells-sram-table1.rst
-
-
-
-P-latch FET (SRAM)
-^^^^^^^^^^^^^^^^^^
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name (SRAM): :model:`sky130_fd_pr_base__ppu.1`
-
-
-.. include:: device-details/cells-sram/cells-sram-table2.rst
-
-
-
-.. |figure-10-schematics-of-the-single-port-sram| image:: device-details/cells-sram/figure-10-schematics-of-the-single-port-sram.svg
-
+.. |symbol-cap_vpp-parallel| image:: device-details/cap_vpp/symbol-cap_vpp-parallel.svg
+.. |symbol-cap_vpp-perpendicular| image:: device-details/cap_vpp/symbol-cap_vpp-perpendicular.svg
 
 Diodes
 ------
@@ -357,10 +193,10 @@ Diodes
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__diode`
--  Model Names: :model:`sky130_fd_pr_base__ndiode`, :model:`sky130_fd_pr_base__ndiode_h`, :model:`sky130_fd_pr_base__ndiode_native`, :model:`sky130_fd_pr_base__ndiode_lvt`, :model:`sky130_fd_pr_base__pdiode`, :model:`sky130_fd_pr_base__pdiode_h`, :model:`sky130_fd_pr_base__pdiode_hvt`, :model:`sky130_fd_pr_base__pdiode_lvt`, :model:`sky130_fd_pr_base__xnwdiode_rf`, :model:`sky130_fd_pr_base__xdnwdiode_pwell_rf`, :model:`sky130_fd_pr_base__dnwdiode_pw`, :model:`sky130_fd_pr_base__dnwdiode_psub`, :model:`sky130_fd_pr_base__dnwdiode_psub_victim`, :model:`sky130_fd_pr_base__dnwdiode_psub_aggressor`, :model:`sky130_fd_pr_base__nwdiode`, :model:`sky130_fd_pr_base__nwdiode_victim`, :model:`sky130_fd_pr_base__nwdiode_aggressor`, :model:`sky130_fd_pr_base__xesd_ndiode_h_X`, :model:`sky130_fd_pr_base__xesd_ndiode_h_dnwl_X`, :model:`sky130_fd_pr_base__xesd_pdiode_h_X (X = 100 or 200 or 300)`
--  Cell Name: :cell:`sky130_fd_pr_base__lvsdiode`
--  Model Names: :model:`sky130_fd_pr_base__ndiode`, :model:`sky130_fd_pr_base__ndiode_h`, :model:`sky130_fd_pr_base__pdiode`, :model:`sky130_fd_pr_base__pdiode_h`, :model:`sky130_fd_pr_base__dnwdiode_psub`, :model:`sky130_fd_pr_base__dnwdiode_psub_victim`, :model:`sky130_fd_pr_base__dnwdiode_psub_aggressor`, :model:`sky130_fd_pr_base__nwdiode_victim`, :model:`sky130_fd_pr_base__nwdiode_aggressor`, :model:`sky130_fd_pr_base__xesd_ndiode_h_X`, :model:`sky130_fd_pr_base__xesd_ndiode_h_dnwl_X`, :model:`sky130_fd_pr_base__xesd_pdiode_h_X (X = 100 or 200 or 300)`
+-  Cell Name: :cell:`diode`
+-  Model Names: :model:`sky130_fd_pr__diode_pw2nd_05v5`, :model:`sky130_fd_pr__diode_pw2nd_11v0`, :model:`sky130_fd_pr__diode_pw2nd_05v5_nvt`, :model:`sky130_fd_pr__diode_pw2nd_05v5_lvt`, :model:`sky130_fd_pr__diode_pd2nw_05v5`, :model:`sky130_fd_pr__diode_pd2nw_11v0`, :model:`sky130_fd_pr__diode_pd2nw_05v5_hvt`, :model:`sky130_fd_pr__diode_pd2nw_05v5_lvt`, :model:`sky130_fd_pr__model__parasitic__rf_diode_ps2nw`, :model:`sky130_fd_pr__model__parasitic__rf_diode_pw2dn`, :model:`sky130_fd_pr__model__parasitic__diode_pw2dn`, :model:`sky130_fd_pr__model__parasitic__diode_ps2dn`, :model:`dnwdiode_psub_victim`, :model:`dnwdiode_psub_aggressor`, :model:`sky130_fd_pr__model__parasitic__diode_ps2nw`, :model:`nwdiode_victim`, :model:`nwdiode_aggressor`, :model:`xesd_ndiode_h_X`, :model:`xesd_ndiode_h_dnwl_X`, :model:`xesd_pdiode_h_X (X = 100 or 200 or 300)`
+-  Cell Name: :cell:`lvsdiode`
+-  Model Names: :model:`sky130_fd_pr__diode_pw2nd_05v5`, :model:`sky130_fd_pr__diode_pw2nd_11v0`, :model:`sky130_fd_pr__diode_pd2nw_05v5`, :model:`sky130_fd_pr__diode_pd2nw_11v0`, :model:`sky130_fd_pr__model__parasitic__diode_ps2dn`, :model:`dnwdiode_psub_victim`, :model:`dnwdiode_psub_aggressor`, :model:`nwdiode_victim`, :model:`nwdiode_aggressor`, :model:`xesd_ndiode_h_X`, :model:`xesd_ndiode_h_dnwl_X`, :model:`xesd_pdiode_h_X (X = 100 or 200 or 300)`
 
 Operating regime where SPICE models are valid
 
@@ -376,17 +212,23 @@ Details
 
 Symbols for the diodes are shown below
 
-|symbol-diode-01|\ |symbol-diode-02|\ |symbol-diode-03|\ |symbol-diode-04|
-
-|symbol-diode-05| |symbol-diode-06| |symbol-diode-07| |symbol-diode-08|
-
-|symbol-diode-09| |symbol-diode-10| |symbol-diode-11|
-
-|symbol-diode-12| |symbol-diode-13|
-
-|symbol-diode-14| |symbol-diode-15|
-
-|symbol-diode-16| |symbol-diode-17|
+|symbol-diode-01|
+|symbol-diode-02|
+|symbol-diode-03|
+|symbol-diode-04|
+|symbol-diode-05|
+|symbol-diode-06|
+|symbol-diode-07|
+|symbol-diode-08|
+|symbol-diode-09|
+|symbol-diode-10|
+|symbol-diode-11|
+|symbol-diode-12|
+|symbol-diode-13|
+|symbol-diode-14|
+|symbol-diode-15|
+|symbol-diode-16|
+|symbol-diode-17|
 
 .. |symbol-diode-01| image:: device-details/diodes/symbol-diode-01.svg
 .. |symbol-diode-02| image:: device-details/diodes/symbol-diode-02.svg
@@ -413,14 +255,14 @@ NMOS ESD FET
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nshortesd`, :model:`sky130_fd_pr_base__nhvesd`, :model:`sky130_fd_pr_base__nhvesdnative`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__esd_nfet_01v8`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5_nvt`
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 11.0V (nhv\*), 0 to 1.95V (nshort\*)
--  V\ :sub:`GS` = 0 to 5.0V (nhv\*), 0 to 1.95V (nshort\*)
--  V\ :sub:`BS` = 0 to -5.5V, (nhv), +0.3 to -5.5V (nhvnative), 0 to -1.95V (nshort\*)
+-  V\ :sub:`DS` = 0 to 11.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
+-  V\ :sub:`GS` = 0 to 5.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
+-  V\ :sub:`BS` = 0 to -5.5V, (:model:`sky130_fd_pr__nfet_g5v0d10v5`), +0.3 to -5.5V (:model:`sky130_fd_pr__nfet_05v0_nvt`), 0 to -1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
 
 Details
 ~~~~~~~
@@ -434,21 +276,96 @@ The ESD FET’s differ from the regular NMOS devices in several aspects, most no
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-esd/fet-nmos-esd-table0.rst
+.. include:: device-details/esd_nfet/esd_nfet-table0.rst
 
 
 
-The symbols of the :model:`sky130_fd_pr_base__nhvesd` and :model:`sky130_fd_pr_base__nhvesdnative` (ESD NMOS FET) are shown below:
+The symbols of the :model:`sky130_fd_pr__esd_nfet_g5v0d10v5` and :model:`sky130_fd_pr__esd_nfet_g5v0d10v5_nvt` (ESD NMOS FET) are shown below:
 
-|symbol-nmos-esd-fet-nhvesd| |symbol-nmos-esd-fet-nhvesdnative|
+|symbol-esd_nfet_g5v0d10v5| |symbol-esd_nfet_g5v0d10v5_nvt|
 
 The cross-section of the ESD NMOS FET is shown below.
 
-|cross-section-nmos-esd-fet|
+|cross-section-esd_nfet|
 
-.. |symbol-nmos-esd-fet-nhvesd| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesd.svg
-.. |symbol-nmos-esd-fet-nhvesdnative| image:: device-details/fet-nmos-esd/symbol-nmos-esd-fet-nhvesdnative.svg
-.. |cross-section-nmos-esd-fet| image:: device-details/fet-nmos-esd/cross-section-nmos-esd-fet.svg
+.. |symbol-esd_nfet_g5v0d10v5| image:: device-details/esd_nfet/symbol-esd_nfet_g5v0d10v5.svg
+.. |symbol-esd_nfet_g5v0d10v5_nvt| image:: device-details/esd_nfet/symbol-esd_nfet_g5v0d10v5_nvt.svg
+.. |cross-section-esd_nfet| image:: device-details/esd_nfet/cross-section-esd_nfet.svg
+
+
+5.0V/10.5V NMOS FET
+-------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__nfet_g5v0d10v5`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to 11.0V
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = 0 to -5.5V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/nfet_g5v0d10v5/nfet_g5v0d10v5-table0.rst
+
+
+
+The symbols of the :model:`sky130_fd_pr__nfet_g5v0d10v5` (5.0/10.5 V NMOS FET) is shown below:
+
+|symbol-nfet_g5v0d10v5|
+
+The cross-section of the 5.0/10.5 V NMOS FET is shown below.
+
+|cross-section-nfet_g5v0d10v5|
+
+.. |symbol-nfet_g5v0d10v5| image:: device-details/nfet_g5v0d10v5/symbol-nfet_g5v0d10v5.svg
+.. |cross-section-nfet_g5v0d10v5| image:: device-details/nfet_g5v0d10v5/cross-section-nfet_g5v0d10v5.svg
+
+
+11V/16V NMOS FET
+----------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_g5v0d16v0`
+
+Operating Voltages where SPICE models are valid, subject to SOA limitations:
+
+-  V\ :sub:`DS` = 0 to +16V (V:sub:`GS` = 0)
+-  V\ :sub:`DS` = 0 to +11V (V:sub:`GS` > 0)
+-  V\ :sub:`GS` = 0 to 5.5V
+-  V\ :sub:`BS` = 0 to -2.0V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/nfet_g11v0d16v0/nfet_g11v0d16v0-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr__nfet_g5v0d16v0` (11V/16V NMOS FET) is shown below:
+
+|symbol-nfet_g11v0d16v0|
+
+The cross-section of the 11V/16VV NMOS FET is shown below.
+
+|cross-section-nfet_g11v0d16v0|
+
+.. |symbol-nfet_g11v0d16v0| image:: device-details/nfet_g11v0d16v0/symbol-nfet_g11v0d16v0.svg
+.. |cross-section-nfet_g11v0d16v0| image:: device-details/nfet_g11v0d16v0/cross-section-nfet_g11v0d16v0.svg
 
 
 1.8V low-VT NMOS FET
@@ -457,8 +374,8 @@ The cross-section of the ESD NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nlowvt`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__nfet_01v8_lvt`
 
 Operating Voltages where SPICE models are valid
 
@@ -472,27 +389,27 @@ Details
 Major model output parameters are shown below and compared against the EDR (e-test) specs.
 
 
-.. include:: device-details/fet-nmos-1v8-low-vt/fet-nmos-1v8-low-vt-table0.rst
+.. include:: device-details/nfet_01v8_lvt/nfet_01v8_lvt-table0.rst
 
 
 
-Inverter Gate Delays using :model:`sky130_fd_pr_base__nlowvt`/pshort device combinations:
+Inverter Gate Delays using :model:`sky130_fd_pr__nfet_01v8_lvt`/:model:`sky130_fd_pr__pfet_01v8` device combinations:
 
 
-.. include:: device-details/fet-nmos-1v8-low-vt/fet-nmos-1v8-low-vt-table1.rst
+.. include:: device-details/nfet_01v8_lvt/nfet_01v8_lvt-table1.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__nlowvt` (1.8V low-VT NMOS FET) is shown below:
+The symbol of the :model:`sky130_fd_pr__nfet_01v8_lvt` (1.8V low-VT NMOS FET) is shown below:
 
-|symbol-1v8-low-vt-nmos-fet|
+|symbol-nfet_01v8_lvt|
 
 The cross-section of the low-VT NMOS FET is shown below. The cross-section is identical to the std NMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
 
-|cross-section-1v8-low-vt-nmos-fet|
+|cross-section-nfet_01v8_lvt|
 
-.. |symbol-1v8-low-vt-nmos-fet| image:: device-details/fet-nmos-1v8-low-vt/symbol-1v8-low-vt-nmos-fet.svg
-.. |cross-section-1v8-low-vt-nmos-fet| image:: device-details/fet-nmos-1v8-low-vt/cross-section-1v8-low-vt-nmos-fet.svg
+.. |symbol-nfet_01v8_lvt| image:: device-details/nfet_01v8_lvt/symbol-nfet_01v8_lvt.svg
+.. |cross-section-nfet_01v8_lvt| image:: device-details/nfet_01v8_lvt/cross-section-nfet_01v8_lvt.svg
 
 
 1.8V NMOS FET
@@ -501,8 +418,8 @@ The cross-section of the low-VT NMOS FET is shown below. The cross-section is id
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nshort`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__nfet_01v8`
 
 Operating Voltages where SPICE models are valid
 
@@ -516,22 +433,22 @@ Details
 Major model output parameters are shown below and compared against the EDR (e-test) specs.
 
 
-.. include:: device-details/fet-nmos-1v8/fet-nmos-1v8-table0.rst
+.. include:: device-details/nfet_01v8/nfet_01v8-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__nshort` (1.8V NMOS FET) is shown below:
+The symbol of the :model:`sky130_fd_pr__nfet_01v8` (1.8V NMOS FET) is shown below:
 
-|symbol-1v8-nmos-fet|
+|symbol-nfet_01v8|
 
 The cross-section of the NMOS FET is shown below:
 
-|cross-section-1v8-nmos-fet|
+|cross-section-nfet_01v8|
 
 The device shows the p-well inside of a deep n-well, but it can be made either with or without the DNW under the p-well
 
-.. |symbol-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/symbol-1v8-nmos-fet.svg
-.. |cross-section-1v8-nmos-fet| image:: device-details/fet-nmos-1v8/cross-section-1v8-nmos-fet.svg
+.. |symbol-nfet_01v8| image:: device-details/nfet_01v8/symbol-nfet_01v8.svg
+.. |cross-section-nfet_01v8| image:: device-details/nfet_01v8/cross-section-nfet_01v8.svg
 
 
 3.0V native NMOS FET
@@ -540,10 +457,10 @@ The device shows the p-well inside of a deep n-well, but it can be made either w
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__ntvnative`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__nfet_03v3_nvt`
 
-Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__ntvnative`
+Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_03v3_nvt`
 
 -  V\ :sub:`DS` = 0 to 3.3V
 -  V\ :sub:`GS` = 0 to 3.3V
@@ -557,23 +474,23 @@ The native device is constructed by blocking out all VT implants.
 The model and EDR (e-test) parameters are compared below. Note that the minimum gate length for 3V operation is 0.5 µm.
 
 
-.. include:: device-details/fet-nmos-3v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+.. include:: device-details/nfet_03v3_nvt/../nfet_03v3_nvt-and-nfet_05v0_nvt/nfet_03v3_nvt-and-nfet_05v0_nvt-table0.rst
 
 
 
-The symbols for the :model:`sky130_fd_pr_base__ntvnative` devices are shown below.
+The symbols for the :model:`sky130_fd_pr__nfet_03v3_nvt` devices are shown below.
 
-|symbol-3v0-native-nmos-fet-ntvnative|
+|symbol-nfet_0v3v3_nvt|
 
 The cross-section of the native devices is shown below.
 
 
-|cross-section-3v0-and-5v0-native-nmos-fet|
+|cross-section-nfet_03v3_nvt|
 
-.. |symbol-3v0-native-nmos-fet-ntvnative| image:: device-details/fet-nmos-3v0-native/symbol-3v0-nmos-fet-ntvnative.svg
-.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-3v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
+.. |symbol-nfet_0v3v3_nvt| image:: device-details/nfet_03v3_nvt/symbol-nfet_03v3_nvt.svg
+.. |cross-section-nfet_03v3_nvt| image:: device-details/nfet_03v3_nvt/../nfet_03v3_nvt-and-nfet_05v0_nvt/cross-section-nfet_03v3_nvt-and-nfet_05v0_nvt.svg
 
-.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+.. note:: The only differences between the :model:`sky130_fd_pr__nfet_03v3_nvt` and :model:`sky130_fd_pr__nfet_05v0_nvt` devices are the minimum gate length and the VDS requirements.
 
 5.0V native NMOS FET
 --------------------
@@ -581,10 +498,10 @@ The cross-section of the native devices is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nhvnative`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__nfet_05v0_nvt`
 
-Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr_base__nhvnative`
+Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_05v0_nvt`
 
 -  V\ :sub:`DS` = 0 to 5.5V
 -  V\ :sub:`GS` = 0 to 5.5V
@@ -600,96 +517,21 @@ The model and EDR (e-test) parameters are compared below.
 The 5V device has minimum gate length of 0.9 µm.
 
 
-.. include:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/fet-nmos-3v0-and-5v0-native-table0.rst
+.. include:: device-details/nfet_05v0_nvt/../nfet_03v3_nvt-and-nfet_05v0_nvt/nfet_03v3_nvt-and-nfet_05v0_nvt-table0.rst
 
 
-The symbols for the :model:`sky130_fd_pr_base__nhvnative` devices are shown below.
+The symbols for the :model:`sky130_fd_pr__nfet_05v0_nvt` devices are shown below.
 
-|symbol-5v0-native-nmos-fet-nhvnative|
+|symbol-nfet_05v0_nvt|
 
 The cross-section of the native devices is shown below.
 
-.. note:: The only differences between the :model:`sky130_fd_pr_base__nvtnative` and :model:`sky130_fd_pr_base__nhvnative` devices are the minimum gate length and the VDS requirements.
+.. note:: The only differences between the :model:`sky130_fd_pr__nfet_03v3_nvt` and :model:`sky130_fd_pr__nfet_05v0_nvt` devices are the minimum gate length and the VDS requirements.
 
-|cross-section-3v0-and-5v0-native-nmos-fet|
+|cross-section-nfet_05v0_nvt|
 
-.. |symbol-5v0-native-nmos-fet-nhvnative| image:: device-details/fet-nmos-5v0-native/symbol-5v0-native-nmos-fet-nhvnative.svg
-.. |cross-section-3v0-and-5v0-native-nmos-fet| image:: device-details/fet-nmos-5v0-native/../fet-nmos-3v0-and-5v0-native/cross-section-3v0-and-5v0-native-nmos-fet.svg
-
-
-5.0V/10.5V NMOS FET
--------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfet`
--  Model Name: :model:`sky130_fd_pr_base__nhv`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to 11.0V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -5.5V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-nmos-5v0-10v5/fet-nmos-5v0-10v5-table0.rst
-
-
-
-The symbols of the :model:`sky130_fd_pr_base__nhv` (5.0/10.5 V NMOS FET) is shown below:
-
-|symbol-5v0-10v5-nmos-fet|
-
-The cross-section of the 5.0/10.5 V NMOS FET is shown below.
-
-|cross-section-5v0-10v5-nmos-fet|
-
-.. |symbol-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/symbol-5v0-10v5-nmos-fet.svg
-.. |cross-section-5v0-10v5-nmos-fet| image:: device-details/fet-nmos-5v0-10v5/cross-section-5v0-10v5-nmos-fet.svg
-
-
-11V/16V NMOS FET
-----------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__nvhv`
-
-Operating Voltages where SPICE models are valid, subject to SOA limitations:
-
--  V\ :sub:`DS` = 0 to +16V (V:sub:`GS` = 0)
--  V\ :sub:`DS` = 0 to +11V (V:sub:`GS` > 0)
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-nmos-11v-16v/fet-nmos-11v-16v-table0.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__nvhv` (11V/16V NMOS FET) is shown below:
-
-|symbol-11v-16v-nmos-fet|
-
-The cross-section of the 11V/16VV NMOS FET is shown below.
-
-|cross-section-11v-16v-nmos-fet|
-
-.. |symbol-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/symbol-11v-16v-nmos-fet.svg
-.. |cross-section-11v-16v-nmos-fet| image:: device-details/fet-nmos-11v-16v/cross-section-11v-16v-nmos-fet.svg
+.. |symbol-nfet_05v0_nvt| image:: device-details/nfet_05v0_nvt/symbol-nfet_05v0_nvt.svg
+.. |cross-section-nfet_05v0_nvt| image:: device-details/nfet_05v0_nvt/../nfet_03v3_nvt-and-nfet_05v0_nvt/cross-section-nfet_03v3_nvt-and-nfet_05v0_nvt.svg
 
 
 20V NMOS FET
@@ -698,8 +540,8 @@ The cross-section of the 11V/16VV NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__n20vhv1`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_20v0`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -720,20 +562,20 @@ The 20V NMOS FET has similar construction to the 11V/16V NMOS FET, with several 
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-20v/fet-nmos-20v-table0.rst
+.. include:: device-details/nfet_20v0/nfet_20v0-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__n20vhv1` (20V NMOS FET) is shown below.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0` (20V NMOS FET) is shown below.
 
-|symbol-20v-nmos-fet|
+|symbol-nfet_20v0|
 
 The cross-section of the 20V NMOS FET is shown below.
 
-|cross-section-20v-nmos-fet|
+|cross-section-nfet_20v0|
 
-.. |symbol-20v-nmos-fet| image:: device-details/fet-nmos-20v/symbol-20v-nmos-fet.svg
-.. |cross-section-20v-nmos-fet| image:: device-details/fet-nmos-20v/cross-section-20v-nmos-fet.svg
+.. |symbol-nfet_20v0| image:: device-details/nfet_20v0/symbol-nfet_20v0.svg
+.. |cross-section-nfet_20v0| image:: device-details/nfet_20v0/cross-section-nfet_20v0.svg
 
 
 20V isolated NMOS FET
@@ -742,8 +584,8 @@ The cross-section of the 20V NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__n20vhviso1`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_20v0_iso`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -759,20 +601,20 @@ The 20V isolated NMOS FET has the same construction as the 20V NMOS FET, but is 
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-20v-isolated/fet-nmos-20v-isolated-table0.rst
+.. include:: device-details/nfet_20v0_iso/nfet_20v0_iso-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__n20vhviso1` (20V isolated NMOS FET) is shown below.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_iso` (20V isolated NMOS FET) is shown below.
 
-|symbol-20v-isolated-nmos-fet|
+|symbol-nfet_20v0_iso|
 
 The cross-section of the 20V isolated NMOS FET is shown below.
 
-|cross-section-20v-isolated-nmos-fet|
+|cross-section-nfet_20v0_iso|
 
-.. |symbol-20v-isolated-nmos-fet| image:: device-details/fet-nmos-20v-isolated/symbol-20v-isolated-nmos-fet.svg
-.. |cross-section-20v-isolated-nmos-fet| image:: device-details/fet-nmos-20v-isolated/cross-section-20v-isolated-nmos-fet.svg
+.. |symbol-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/symbol-nfet_20v0_iso.svg
+.. |cross-section-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/cross-section-nfet_20v0_iso.svg
 
 
 20V native NMOS FET
@@ -781,8 +623,8 @@ The cross-section of the 20V isolated NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__n20nativevhv1`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_20v0_nvt`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -798,20 +640,20 @@ The 20V native NMOS FET is similar to the 20V isolated NMOS FET, but has all Vt 
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-20v-native/fet-nmos-20v-native-table0.rst
+.. include:: device-details/nfet_20v0_nvt/nfet_20v0_nvt-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__n20nativevhv1` (20V native NMOS FET) shown below.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_nvt` (20V native NMOS FET) shown below.
 
-|symbol-20v-native-nmos-fet|
+|symbol-nfet_20v0_nvt|
 
 The cross-section of the 20V native NMOS FET is shown below.
 
-|cross-section-20v-native-nmos-fet|
+|cross-section-nfet_20v0_nvt|
 
-.. |symbol-20v-native-nmos-fet| image:: device-details/fet-nmos-20v-native/symbol-20v-native-nmos-fet.svg
-.. |cross-section-20v-native-nmos-fet| image:: device-details/fet-nmos-20v-native/cross-section-20v-native-nmos-fet.svg
+.. |symbol-nfet_20v0_nvt| image:: device-details/nfet_20v0_nvt/symbol-nfet_20v0_nvt.svg
+.. |cross-section-nfet_20v0_nvt| image:: device-details/nfet_20v0_nvt/cross-section-nfet_20v0_nvt.svg
 
 
 20V NMOS zero-VT FET
@@ -820,8 +662,8 @@ The cross-section of the 20V native NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__nfetexd`
--  Model Name: :model:`sky130_fd_pr_base__n20zvtvhv1`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_20v0_zvt`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -837,149 +679,69 @@ The 20V NMOS zero-VT FET has p-well and all Vt implants blocked to achieve a zer
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-nmos-20v-zero-vt/fet-nmos-20v-zero-vt-table0.rst
+.. include:: device-details/nfet_20v0_zvt/nfet_20v0_zvt-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__n20zvtvhv1` (20V NMOS zero-VT FET) is still under development.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_zvt` (20V NMOS zero-VT FET) is still under development.
 
 The cross-section of the 20V NMOS zero-VT FET is shown below.
 
-|cross-section-20v-nmos-zero-vt-fet|
+|cross-section-nfet_20v0_zvt|
 
-.. |cross-section-20v-nmos-zero-vt-fet| image:: device-details/fet-nmos-20v-zero-vt/cross-section-20v-nmos-zero-vt-fet.svg
-
-
-1.8V high-VT PMOS FET
----------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name: :model:`sky130_fd_pr_base__phighvt`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
+.. |cross-section-nfet_20v0_zvt| image:: device-details/nfet_20v0_zvt/cross-section-nfet_20v0_zvt.svg
 
 
-.. include:: device-details/fet-pmos-1v8-high-vt/fet-pmos-1v8-high-vt-table0.rst
-
-
-
-Inverter Gate Delays using nshort/:model:`sky130_fd_pr_base__phighvt` device combinations:
-
-
-.. include:: device-details/fet-pmos-1v8-high-vt/fet-pmos-1v8-high-vt-table1.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__phighvt` (1.8V high-VT PMOS FET) is shown below:
-
-|symbol-1v8-high-vt-pmos-fet|
-
-The cross-section of the high-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the higher V\ :sub:`T`)
-
-|cross-section-1v8-high-vt-pmos-fet|
-
-.. |symbol-1v8-high-vt-pmos-fet| image:: device-details/fet-pmos-1v8-high-vt/symbol-1v8-high-vt-pmos-fet.svg
-.. |cross-section-1v8-high-vt-pmos-fet| image:: device-details/fet-pmos-1v8-high-vt/cross-section-1v8-high-vt-pmos-fet.svg
-
-
-1.8V low-VT PMOS FET
---------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name: :model:`sky130_fd_pr_base__plowvt`
-
-Operating Voltages where SPICE models are valid
-
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
-
-Details
-~~~~~~~
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/fet-pmos-1v8-low-vt/fet-pmos-1v8-low-vt-table0.rst
-
-
-
-Inverter Gate Delays using nlowvt/:model:`sky130_fd_pr_base__plowvt` device combinations:
-
-
-.. include:: device-details/fet-pmos-1v8-low-vt/fet-pmos-1v8-low-vt-table1.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr_base__plowvt` (1.8V low-VT PMOS FET) is shown below:
-
-|symbol-1v8-low-vt-pmos-fet|
-
-The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
-
-|cross-section-1v8-low-vt-pmos-fet|
-
-.. |symbol-1v8-low-vt-pmos-fet| image:: device-details/fet-pmos-1v8-low-vt/symbol-1v8-low-vt-pmos-fet.svg
-.. |cross-section-1v8-low-vt-pmos-fet| image:: device-details/fet-pmos-1v8-low-vt/cross-section-1v8-low-vt-pmos-fet.svg
-
-
-1.8V PMOS FET
+Bipolar (NPN)
 -------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name: :model:`sky130_fd_pr_base__pshort`
+-  Cell Name: :cell:`sky130_fd_pr__npn_05v5`
+-  Model Names: :model:`sky130_fd_pr__npn_05v5`, :model:`sky130_fd_pr__npn_11v0`
 
-Operating Voltages where SPICE models are valid
+Operating regime where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
+-  \|V\ :sub:`CE`\ \| = 0 to 5.0V
+-  \|V\ :sub:`BE`\ \| = 0 to 5.0V
+-  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
 
 Details
 ~~~~~~~
 
-Major model output parameters are shown below and compared against the EDR (e-test) specs.
+The SKY130 process offers “free” NPN devices. The NPN uses the deep n-well as the collector. The device is not optimized, and must be used in the forward-active mode. The following sizes of NPN’s are available:
+
+-  ungated device with emitter 1.0 x 1.0
+-  ungated device with emitter 1.0 x 2.0
+-  poly-gated version with octagonal emitter of A = 1.97 µm\ :sup:`2`
+
+The :model:`sky130_fd_pr__npn_11v0` device has a poly gate placed between the emitter and base diffusions, to prevent carrier recombination at the STI edge and increase β. The poly gate is connected to the emitter terminal.
+
+Using this device must be done in conjunction with the correct guard rings, to avoid potential latchup issues with nearby circuitry. Reverse-active mode operation of the BJT’s are neither modeled nor permitted. E-test specs for the NPN devices are shown in the table below:
 
 
-.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table0.rst
+.. include:: device-details/npn_05v0/npn_05v0-table0.rst
 
 
 
-Inverter Gate Delays using nshort/:model:`sky130_fd_pr_base__pshort` device combinations:
+Symbols for the :model:`sky130_fd_pr__npn_05v5` are shown below
 
+|symbol-npn_05v0-1| |symbol-npn_05v0-2| |symbol-npn_05v0-3|
 
-.. include:: device-details/fet-pmos-1v8/fet-pmos-1v8-table1.rst
+The cross-section of the :model:`sky130_fd_pr__npn_05v5` is shown below.
 
+|cross-section-npn_05v0|
 
+The cross-section of the :model:`sky130_fd_pr__npn_11v0` is shown below. The poly gate is tied to the emitter to prevent the parasitic MOSFET from turning on.
 
-The symbol of the :model:`sky130_fd_pr_base__pshort` (1.8V PMOS FET) is shown below:
+|cross-section-npn_11v0|
 
-|symbol-1v8-pmos-fet|
-
-The cross-section of the PMOS FET is shown below:
-
-|cross-section-1v8-pmos-fet|
-
-.. |symbol-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/symbol-1v8-pmos-fet.svg
-.. |cross-section-1v8-pmos-fet| image:: device-details/fet-pmos-1v8/cross-section-1v8-pmos-fet.svg
+.. |symbol-npn_05v0-1| image:: device-details/npn_05v0/symbol-npn_05v0-1.svg
+.. |symbol-npn_05v0-2| image:: device-details/npn_05v0/symbol-npn_05v0-2.svg
+.. |symbol-npn_05v0-3| image:: device-details/npn_05v0/symbol-npn_05v0-3.svg
+.. |cross-section-npn_05v0| image:: device-details/npn_05v0/cross-section-npn_05v0.svg
+.. |cross-section-npn_11v0| image:: device-details/npn_05v0/cross-section-npn_11v0.svg
 
 
 5.0V/10.5V PMOS FET
@@ -988,8 +750,8 @@ The cross-section of the PMOS FET is shown below:
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__pfet`
--  Model Name: :model:`sky130_fd_pr_base__phv`, :model:`sky130_fd_pr_base__phvesd`
+-  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__pfet_g5v0d10v5`, :model:`sky130_fd_pr__esd_pfet_g5v0d10v5`
 
 Operating Voltages where SPICE models are valid
 
@@ -1003,28 +765,28 @@ Details
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-pmos-5v0-10v5/fet-pmos-5v0-10v5-table0.rst
+.. include:: device-details/pfet_g5v0d10v5/pfet_g5v0d10v5-table0.rst
 
 
 
 Inverter gate delays are shown below:
 
 
-.. include:: device-details/fet-pmos-5v0-10v5/fet-pmos-5v0-10v5-table1.rst
+.. include:: device-details/pfet_g5v0d10v5/pfet_g5v0d10v5-table1.rst
 
 
 
-The symbols of the :model:`sky130_fd_pr_base__phv` and pvhesd (5.0V/10.5V PMOS FET) are shown below:
+The symbols of the :model:`sky130_fd_pr__pfet_g5v0d10v5` and :model:`sky130_fd_pr__esd_pfet_g5v0d10v5` (5.0V/10.5V PMOS FET) are shown below:
 
-|symbol-5v0-10v5-pmos-fet-phv| |symbol-5v0-10v5-pmos-fet-pvhesd|
+|symbol-pfet_g5v0d10v5| |symbol-esd_pfet_g5v0d10v5|
 
 The cross-section of the 5.0V PMOS FET is shown below.
 
-|cross-section-5v0-10v5-pmos-fet|
+|cross-section-pfet_g5v0d10v5|
 
-.. |symbol-5v0-10v5-pmos-fet-phv| image:: device-details/fet-pmos-5v0-10v5/symbol-5v0-10v5-pmos-fet-phv.svg
-.. |symbol-5v0-10v5-pmos-fet-pvhesd| image:: device-details/fet-pmos-5v0-10v5/symbol-5v0-10v5-pmos-fet-pvhesd.svg
-.. |cross-section-5v0-10v5-pmos-fet| image:: device-details/fet-pmos-5v0-10v5/cross-section-5v0-10v5-pmos-fet.svg
+.. |symbol-pfet_g5v0d10v5| image:: device-details/pfet_g5v0d10v5/symbol-pfet_g5v0d10v5.svg
+.. |symbol-esd_pfet_g5v0d10v5| image:: device-details/pfet_g5v0d10v5/symbol-esd_pfet_g5v0d10v5.svg
+.. |cross-section-pfet_g5v0d10v5| image:: device-details/pfet_g5v0d10v5/cross-section-pfet_g5v0d10v5.svg
 
 
 10V/16V PMOS FET
@@ -1033,8 +795,8 @@ The cross-section of the 5.0V PMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
--  Model Name: :model:`sky130_fd_pr_base__pvhv`
+-  Cell Name: :cell:`sky130_fd_pr__pfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__pfet_g5v0d16v0`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -1049,20 +811,152 @@ Details
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-pmos-10v-16v/fet-pmos-10v-16v-table0.rst
+.. include:: device-details/pfet_g5v0d16v0/pfet_g5v0d16v0-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__pvhv` (10V/16V PMOS FET) is shown below:
+The symbol of the :model:`sky130_fd_pr__pfet_g5v0d16v0` (10V/16V PMOS FET) is shown below:
 
-|symbol-10v-16v-pmos-fet|
+|symbol-pfet_g5v0d16v0|
 
 The cross-section of the 10V/16V PMOS FET is shown below.
 
-|cross-section-10v-16v-pmos-fet|
+|cross-section-pfet_g5v0d16v0|
 
-.. |symbol-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/symbol-10v-16v-pmos-fet.svg
-.. |cross-section-10v-16v-pmos-fet| image:: device-details/fet-pmos-10v-16v/cross-section-10v-16v-pmos-fet.svg
+.. |symbol-pfet_g5v0d16v0| image:: device-details/pfet_g5v0d16v0/symbol-pfet_g5v0d16v0.svg
+.. |cross-section-pfet_g5v0d16v0| image:: device-details/pfet_g5v0d16v0/cross-section-pfet_g5v0d16v0.svg
+
+
+1.8V high-VT PMOS FET
+---------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__pfet_01v8_hvt`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to -1.95V
+-  V\ :sub:`GS` = 0 to -1.95V
+-  V\ :sub:`BS` = -0.1 to +1.95V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/pfet_01v8_hvt/pfet_01v8_hvt-table0.rst
+
+
+
+Inverter Gate Delays using sky130_fd_pr__nfet_01v8/:model:`sky130_fd_pr__pfet_01v8_hvt` device combinations:
+
+
+.. include:: device-details/pfet_01v8_hvt/pfet_01v8_hvt-table1.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr__pfet_01v8_hvt` (1.8V high-VT PMOS FET) is shown below:
+
+|symbol-pfet_01v8_hvt|
+
+The cross-section of the high-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the higher V\ :sub:`T`)
+
+|cross-section-pfet_01v8_hvt|
+
+.. |symbol-pfet_01v8_hvt| image:: device-details/pfet_01v8_hvt/symbol-pfet_01v8_hvt.svg
+.. |cross-section-pfet_01v8_hvt| image:: device-details/pfet_01v8_hvt/cross-section-pfet_01v8_hvt.svg
+
+
+1.8V low-VT PMOS FET
+--------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__pfet_01v8_lvt`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to -1.95V
+-  V\ :sub:`GS` = 0 to -1.95V
+-  V\ :sub:`BS` = -0.1 to +1.95V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/pfet_01v8_lvt/pfet_01v8_lvt-table0.rst
+
+
+
+Inverter Gate Delays using sky130_fd_pr__nfet_01v8_lvt/:model:`sky130_fd_pr__pfet_01v8_lvt` device combinations:
+
+
+.. include:: device-details/pfet_01v8_lvt/pfet_01v8_lvt-table1.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr__pfet_01v8_lvt` (1.8V low-VT PMOS FET) is shown below:
+
+|symbol-pfet_01v8_lvt|
+
+The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
+
+|cross-section-pfet_01v8_lvt|
+
+.. |symbol-pfet_01v8_lvt| image:: device-details/pfet_01v8_lvt/symbol-pfet_01v8_lvt.svg
+.. |cross-section-pfet_01v8_lvt| image:: device-details/pfet_01v8_lvt/cross-section-pfet_01v8_lvt.svg
+
+
+1.8V PMOS FET
+-------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Model Name: :model:`sky130_fd_pr__pfet_01v8`
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to -1.95V
+-  V\ :sub:`GS` = 0 to -1.95V
+-  V\ :sub:`BS` = -0.1 to +1.95V
+
+Details
+~~~~~~~
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs.
+
+
+.. include:: device-details/pfet_01v8/pfet_01v8-table0.rst
+
+
+
+Inverter Gate Delays using sky130_fd_pr__nfet_01v8/:model:`sky130_fd_pr__pfet_01v8` device combinations:
+
+
+.. include:: device-details/pfet_01v8/pfet_01v8-table1.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr__pfet_01v8` (1.8V PMOS FET) is shown below:
+
+|symbol-pfet_01v8|
+
+The cross-section of the PMOS FET is shown below:
+
+|cross-section-pfet_01v8|
+
+.. |symbol-pfet_01v8| image:: device-details/pfet_01v8/symbol-pfet_01v8.svg
+.. |cross-section-pfet_01v8| image:: device-details/pfet_01v8/cross-section-pfet_01v8.svg
 
 
 20V PMOS FET
@@ -1071,8 +965,8 @@ The cross-section of the 10V/16V PMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__pfetexd`
--  Model Name: :model:`sky130_fd_pr_base__p20vhv1`
+-  Cell Name: :cell:`sky130_fd_pr__pfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__pfet_20v0`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -1093,20 +987,67 @@ The 20V NMOS FET has similar construction to the 11V/16V NMOS FET, with several 
 Major model output parameters are shown below and compared against the EDR (e-test) specs
 
 
-.. include:: device-details/fet-pmos-20v/fet-pmos-20v-table0.rst
+.. include:: device-details/pfet_20v0/pfet_20v0-table0.rst
 
 
 
-The symbol of the :model:`sky130_fd_pr_base__p20vhv1` (20V PMOS FET) is shown below.
+The symbol of the :model:`sky130_fd_pr__pfet_20v0` (20V PMOS FET) is shown below.
 
-|symbol-20v-pmos-fet|
+|symbol-pfet_20v0|
 
 The cross-section of the 20V PMOS FET is shown below.
 
-|cross-section-20v-pmos-fet|
+|cross-section-pfet_20v0|
 
-.. |symbol-20v-pmos-fet| image:: device-details/fet-pmos-20v/symbol-20v-pmos-fet.svg
-.. |cross-section-20v-pmos-fet| image:: device-details/fet-pmos-20v/cross-section-20v-pmos-fet.svg
+.. |symbol-pfet_20v0| image:: device-details/pfet_20v0/symbol-pfet_20v0.svg
+.. |cross-section-pfet_20v0| image:: device-details/pfet_20v0/cross-section-pfet_20v0.svg
+
+
+Bipolar (PNP)
+-------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__pnp_05v5`
+-  Model Names: :model:`sky130_fd_pr__pnp_05v5`, :model:`sky130_fd_pr__pnp_05v5`
+
+Operating regime where SPICE models are valid
+
+-  \|V\ :sub:`CE`\ \| = 0 to 5.0V
+-  \|V\ :sub:`BE`\ \| = 0 to 5.0V
+-  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
+
+Details
+~~~~~~~
+
+The SKY130 process offer a “free” PNP device, which utilizes the substrate as the collector. This device is not independently optimized, and can be used in forward-active mode. The following sizes of PNP are available:
+
+-  ungated device with emitter 0.68 x 0.68 (A=0.4624 µm\ :sup:`2`)
+-  ungated device with emitter 3.4 x 3.4 (A=11.56 µm\ :sup:`2`)
+
+Using this device must be done in conjunction with the correct guard rings, to avoid potential latchup issues with nearby circuitry. Reverse-active mode operation of the BJT’s are neither modeled nor permitted.
+
+E-test specs for these devices are shown in the table below:
+
+
+.. include:: device-details/pnp_05v0/pnp_05v0-table0.rst
+
+
+
+Symbols for the :model:`sky130_fd_pr__pnp_05v5` is shown below
+
+|symbol-pnp_05v0-a| |symbol-pnp_05v0-b|
+
+The cross-section of the :model:`sky130_fd_pr__pnp_05v5` is shown below.
+
+No deep n-well exists in this device; the collector is the substrate.
+
+|cross-section-pnp_05v0|
+
+.. |symbol-pnp_05v0-a| image:: device-details/pnp_05v0/symbol-pnp_05v0-a.svg
+.. |symbol-pnp_05v0-b| image:: device-details/pnp_05v0/symbol-pnp_05v0-b.svg
+.. |cross-section-pnp_05v0| image:: device-details/pnp_05v0/cross-section-pnp_05v0.svg
 
 
 Generic Resistors
@@ -1116,116 +1057,59 @@ Generic resistors are supported in the PDK but are not recommended for analog ap
 
 The following 3-terminal resistors are available, and have built-in diodes inside the models:
 
--  N+ diffusion (type “resn”, model mrdn)
--  P+ diffusion (type “resp”, model mrdp)
--  P-well (type “respw”, model xpwres)
+-  N+ diffusion (type “ :cell:`sky130_fd_pr__res_generic_nd` ”, model :model:`sky130_fd_pr__res_generic_nd` )
+-  P+ diffusion (type “ :cell:`sky130_fd_pr__res_generic_pd` ”, model :model:`sky130_fd_pr__res_generic_pd` )
+-  P-well (type “sky130_fd_pr__res_generic_pw”, model sky130_fd_pr__res_iso_pw)
 
-The following 2-terminal resistors are available (all type “res”):
+The following 2-terminal resistors are available:
 
--  N+ doped gate poly (mrp1)
--  Local interconnect (mrl1)
--  Metal-1 (mrm1)
--  Metal-2 (mrm2)
--  Metal-3 (mrm3)
--  Metal-4 (mrm4)
--  Metal-5 (mrm5)
+-  N+ doped gate poly (:model:`sky130_fd_pr__res_generic_po`)
+-  Local interconnect (:model:`sky130_fd_pr__res_generic_l1`)
+-  Metal-1 (:model:`sky130_fd_pr__res_generic_m1`)
+-  Metal-2 (:model:`sky130_fd_pr__res_generic_m2`)
+-  Metal-3 (:model:`sky130_fd_pr__res_generic_m3`)
+-  Metal-4 (:model:`sky130_fd_pr__res_generic_m4`)
+-  Metal-5 (:model:`sky130_fd_pr__res_generic_m5`)
 
 Specs for the generic resistors are shown below.
 
 
-.. include:: device-details/resistors-generic/resistors-generic-table0.rst
+.. include:: device-details/res_generic/res_generic-table0.rst
 
 
 
 Symbols for all resistors are shown below:
 
-|symbol-resistor-generic-resn| |symbol-resistor-generic-resp|
+|symbol-res_generic_nd| |symbol-res_generic_pd|
 
-resn resp
+:model:`sky130_fd_pr__res_generic_nd` :model:`sky130_fd_pr__res_generic_pd`
 
-|symbol-resistor-generic-respw| |symbol-resistor-generic-res-poly|
+|symbol-res_generic_pw| |symbol-res_generic_po|
 
-respw res (poly)
+:model:`sky130_fd_pr__res_generic_pw` :model:`sky130_fd_pr__res_generic_po`
 
-|symbol-resistor-generic-res-li1| |symbol-resistor-generic-res-met1|
+|symbol-res_generic_l1| |symbol-res_generic_m1|
 
-res (li1) res (met1)
+:model:`sky130_fd_pr__res_generic_l1` :model:`sky130_fd_pr__res_generic_m1`
 
-|symbol-resistor-generic-res-met2| |symbol-resistor-generic-res-met3|
+|symbol-res_generic_m2| |symbol-res_generic_m3|
 
-res (met2) res (met3)
+:model:`sky130_fd_pr__res_generic_m2` :model:`sky130_fd_pr__res_generic_m3`
 
-|symbol-resistor-generic-res-met4| |symbol-resistor-generic-res-met5|
+|symbol-res_generic_m4| |symbol-res_generic_m5|
 
-res (met4) res (met5)
+:model:`sky130_fd_pr__res_generic_m4` :model:`sky130_fd_pr__res_generic_m5`
 
-.. |symbol-resistor-generic-resn| image:: device-details/resistors-generic/symbol-resistor-generic-resn.svg
-.. |symbol-resistor-generic-resp| image:: device-details/resistors-generic/symbol-resistor-generic-resp.svg
-.. |symbol-resistor-generic-respw| image:: device-details/resistors-generic/symbol-resistor-generic-respw.svg
-.. |symbol-resistor-generic-res-poly| image:: device-details/resistors-generic/symbol-resistor-generic-res-poly.svg
-.. |symbol-resistor-generic-res-li1| image:: device-details/resistors-generic/symbol-resistor-generic-res-li1.svg
-.. |symbol-resistor-generic-res-met1| image:: device-details/resistors-generic/symbol-resistor-generic-res-met1.svg
-.. |symbol-resistor-generic-res-met2| image:: device-details/resistors-generic/symbol-resistor-generic-res-met2.svg
-.. |symbol-resistor-generic-res-met3| image:: device-details/resistors-generic/symbol-resistor-generic-res-met3.svg
-.. |symbol-resistor-generic-res-met4| image:: device-details/resistors-generic/symbol-resistor-generic-res-met4.svg
-.. |symbol-resistor-generic-res-met5| image:: device-details/resistors-generic/symbol-resistor-generic-res-met5.svg
-
-
-P- poly precision resistors
----------------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr_base__xuhrpoly_XpYY`, :cell:`sky130_fd_pr_base__xuhrpoly`
--  Model Type: subcircuit
-
-Operating ranges where SPICE models are valid
-
--  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
--  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
-
-Details
-~~~~~~~
-
-The resistors have 5 different fixed widths, plus a variable W/L option.
-
--  0.35 (0p35)
--  0.69 (0p69)
--  1.41 (1p41)
--  2.85 (2p83)
--  5.73 (5p73)
-
-They are modeled as subcircuits, using a conventional resistor model combined with the capacitance under the resistor, as well as matching parameters and temperature coefficients. The fixed-width resistors may only be used in the above configurations. Each resistor end is contacted using a slot licon. Length is variable and measured between the front ends of the slot licons.
-
-The resistors are modeled using the same equations as for the P+ poly resistors. In the case of the P- poly resistors, a separate implant is used to set the sheet resistance to 2000 ohm/sq.
-
-Fixed value resistors have the same layout footprints as their P+ poly counterparts. Electrical and e-test specs are still TBD, once sufficient silicon has been evaluated. More details on the use of the precision resistors, and their models, are in the document ***SKY130 process Family Device Models*** (002-21997), currently under development.
-
-The symbols for the 2000 ohm/sq precision resistors are shown below:
-
-|symbol-resistor-precision-2000ohm-xuhrpoly_0p35| |symbol-resistor-precision-2000ohm-xuhrpoly_0p69|
-
-xuhrpoly\_0p35 xuhrpoly\_0p69
-
-|symbol-resistor-precision-2000ohm-xuhrpoly_1p41| |symbol-resistor-precision-2000ohm-xuhrpoly_2p85|
-
-xuhrpoly\_1p41 xuhrpoly\_2p85
-
-|symbol-resistor-precision-2000ohm-xuhrpoly_5p73|
-
-xuhrpoly\_5p73
-
-A generic version of the poly resistor is also available, which permits user inputs for W and L, and connections in series or parallel.
-
-|symbol-resistor-precision-2000ohm-generic|
-
-.. |symbol-resistor-precision-2000ohm-xuhrpoly_0p35| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-xuhrpoly_0p35.svg
-.. |symbol-resistor-precision-2000ohm-xuhrpoly_0p69| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-xuhrpoly_0p69.svg
-.. |symbol-resistor-precision-2000ohm-xuhrpoly_1p41| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-xuhrpoly_1p41.svg
-.. |symbol-resistor-precision-2000ohm-xuhrpoly_2p85| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-xuhrpoly_2p85.svg
-.. |symbol-resistor-precision-2000ohm-xuhrpoly_5p73| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-xuhrpoly_5p73.svg
-.. |symbol-resistor-precision-2000ohm-generic| image:: device-details/resistors-pn-poly-precision/symbol-resistor-precision-2000ohm-generic.svg
+.. |symbol-res_generic_nd| image:: device-details/res_generic/symbol-res_generic_nd.svg
+.. |symbol-res_generic_pd| image:: device-details/res_generic/symbol-res_generic_pd.svg
+.. |symbol-res_generic_pw| image:: device-details/res_generic/symbol-res_generic_pw.svg
+.. |symbol-res_generic_po| image:: device-details/res_generic/symbol-res_generic_po.svg
+.. |symbol-res_generic_l1| image:: device-details/res_generic/symbol-res_generic_l1.svg
+.. |symbol-res_generic_m1| image:: device-details/res_generic/symbol-res_generic_m1.svg
+.. |symbol-res_generic_m2| image:: device-details/res_generic/symbol-res_generic_m2.svg
+.. |symbol-res_generic_m3| image:: device-details/res_generic/symbol-res_generic_m3.svg
+.. |symbol-res_generic_m4| image:: device-details/res_generic/symbol-res_generic_m4.svg
+.. |symbol-res_generic_m5| image:: device-details/res_generic/symbol-res_generic_m5.svg
 
 
 P+ poly precision resistors
@@ -1234,7 +1118,7 @@ P+ poly precision resistors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__xhrpoly_XpYY`, :cell:`sky130_fd_pr_base__xhrpoly`
+-  Cell Name: :cell:`res_high_po_XpXX`, :cell:`sky130_fd_pr__res_high_po`
 -  Model Type: subcircuit
 
 Operating ranges where SPICE models are valid
@@ -1263,12 +1147,12 @@ The fixed-width resistors are modeled using the equation
 
 A top-down schematic drawing of the precision resistor is shown below.
 
-|p-poly-precision-resistors|
+|res_high_po|
 
 In addition to the R\ :sub:`0` and R\ :sub:`1` values, several fixed-value resistors are measured at e-test, as shown in the table below:
 
 
-.. include:: device-details/resistors-pp-poly-precision/resistors-pp-poly-precision-table0.rst
+.. include:: device-details/res_high/res_high-table0.rst
 
 
 
@@ -1276,72 +1160,199 @@ More details on the use of the precision resistors, and their models, are in the
 
 The symbols for the 300 ohm/sq precision resistors are shown below:
 
-|symbol-resistor-precision-300ohm-xhrpoly_0p35| |symbol-resistor-precision-300ohm-xhrpoly_0p69|
+|symbol-res_high_po_0p35| |symbol-res_high_po_0p69|
 
-xhrpoly\_0p35 xhrpoly\_0p69
+:model:`sky130_fd_pr__res_high_po_0p35` :model:`sky130_fd_pr__res_high_po_0p69`
 
-|symbol-resistor-precision-300ohm-xhrpoly_1p41| |symbol-resistor-precision-300ohm-xhrpoly_2p85|
+|symbol-res_high_po_1p41| |symbol-res_high_po_2p85|
 
-xhrpoly\_1p41 xhrpoly\_2p85
+:model:`sky130_fd_pr__res_high_po_1p41` :model:`sky130_fd_pr__res_high_po_2p85`
 
-|symbol-resistor-precision-300ohm-xhrpoly_5p73|
+|symbol-res_high_po_5p73|
 
-xhrpoly\_5p73
+:model:`sky130_fd_pr__res_high_po_5p73`
 
 A generic version of the poly resistor is also available, which permits user inputs for W and L, and connections in series or parallel.
 
-|symbol-resistor-precision-300ohm-generic|
+|symbol-res_high_po|
 
-.. |p-poly-precision-resistors| image:: device-details/resistors-pp-poly-precision/p-poly-precision-resistors.svg
-.. |symbol-resistor-precision-300ohm-xhrpoly_0p35| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-xhrpoly_0p35.svg
-.. |symbol-resistor-precision-300ohm-xhrpoly_0p69| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-xhrpoly_0p69.svg
-.. |symbol-resistor-precision-300ohm-xhrpoly_1p41| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-xhrpoly_1p41.svg
-.. |symbol-resistor-precision-300ohm-xhrpoly_2p85| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-xhrpoly_2p85.svg
-.. |symbol-resistor-precision-300ohm-xhrpoly_5p73| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-xhrpoly_5p73.svg
-.. |symbol-resistor-precision-300ohm-generic| image:: device-details/resistors-pp-poly-precision/symbol-resistor-precision-300ohm-generic.svg
+.. |res_high_po| image:: device-details/res_high/res_high_po.svg
+.. |symbol-res_high_po_0p35| image:: device-details/res_high/symbol-res_high_po_0p35.svg
+.. |symbol-res_high_po_0p69| image:: device-details/res_high/symbol-res_high_po_0p69.svg
+.. |symbol-res_high_po_1p41| image:: device-details/res_high/symbol-res_high_po_1p41.svg
+.. |symbol-res_high_po_2p85| image:: device-details/res_high/symbol-res_high_po_2p85.svg
+.. |symbol-res_high_po_5p73| image:: device-details/res_high/symbol-res_high_po_5p73.svg
+.. |symbol-res_high_po| image:: device-details/res_high/symbol-res_high_po.svg
 
 
-Varactors
----------
+P- poly precision resistors
+---------------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr_base__capbn_b`
--  Model Name: :model:`sky130_fd_pr_base__xcnwvc`, :model:`sky130_fd_pr_base__xcnwvc2`
+-  Cell Name: :cell:`res_xhigh_po_XpXX`, :cell:`sky130_fd_pr__res_xhigh_po`
 -  Model Type: subcircuit
 
-Operating Voltages where SPICE models are valid
+Operating ranges where SPICE models are valid
 
--  \|V\ :sub:`0` – V\ :sub:`1`\ \| = 0 to 2.0V
+-  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
+-  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
 
 Details
 ~~~~~~~
 
-The following devices are available; they are subcircuits with the N-well to P-substrate diodes built into the model:
+The resistors have 5 different fixed widths, plus a variable W/L option.
 
--  xcnwvc—low VT PMOS device option
--  xcnwvc2—high VT PMOS device option
+-  0.35 (0p35)
+-  0.69 (0p69)
+-  1.41 (1p41)
+-  2.85 (2p83)
+-  5.73 (5p73)
 
-The varactors are used as tunable capacitors, major e-test parameters are listed below. Further details on the device models and their usage are in the SKY130 process Family Spice Models (002-21997), which can be obtained from SkyWater upon request.
+They are modeled as subcircuits, using a conventional resistor model combined with the capacitance under the resistor, as well as matching parameters and temperature coefficients. The fixed-width resistors may only be used in the above configurations. Each resistor end is contacted using a slot licon. Length is variable and measured between the front ends of the slot licons.
+
+The resistors are modeled using the same equations as for the P+ poly resistors. In the case of the P- poly resistors, a separate implant is used to set the sheet resistance to 2000 ohm/sq.
+
+Fixed value resistors have the same layout footprints as their P+ poly counterparts. Electrical and e-test specs are still TBD, once sufficient silicon has been evaluated. More details on the use of the precision resistors, and their models, are in the document ***SKY130 process Family Device Models*** (002-21997), currently under development.
+
+The symbols for the 2000 ohm/sq precision resistors are shown below:
+
+|symbol-res_xhigh_po_0p35| |symbol-res_xhigh_po_0p69|
+
+:model:`sky130_fd_pr__res_xhigh_po_0p35` :model:`sky130_fd_pr__res_xhigh_po_0p69`
+
+|symbol-res_xhigh_po_1p41| |symbol-res_xhigh_po_2p85|
+
+:model:`sky130_fd_pr__res_xhigh_po_1p41` :model:`sky130_fd_pr__res_xhigh_po_2p85`
+
+|symbol-res_xhigh_po_5p73|
+
+:model:`sky130_fd_pr__res_xhigh_po_5p73`
+
+A generic version of the poly resistor is also available, which permits user inputs for W and L, and connections in series or parallel.
+
+|symbol-res_xhigh_po|
+
+.. |symbol-res_xhigh_po_0p35| image:: device-details/res_xhigh/symbol-res_xhigh_po_0p35.svg
+.. |symbol-res_xhigh_po_0p69| image:: device-details/res_xhigh/symbol-res_xhigh_po_0p69.svg
+.. |symbol-res_xhigh_po_1p41| image:: device-details/res_xhigh/symbol-res_xhigh_po_1p41.svg
+.. |symbol-res_xhigh_po_2p85| image:: device-details/res_xhigh/symbol-res_xhigh_po_2p85.svg
+.. |symbol-res_xhigh_po_5p73| image:: device-details/res_xhigh/symbol-res_xhigh_po_5p73.svg
+.. |symbol-res_xhigh_po| image:: device-details/res_xhigh/symbol-res_xhigh_po.svg
 
 
-.. include:: device-details/varactors/varactors-table0.rst
+SONOS cells
+-----------
+
+The SKY130 process currently supports two SONOS flash memory cells:
+
+-  The original cell is supported in the S8PFHD, S8PHRC and S8PFN-20 technology options, with operating temperatures from -55°C to +155°C
+-  The “star” cell is supported in the S8PHIRS technology option. Its cell size is approximately 25% smaller than the original cell, but its temperature range is restricted to -40°C to +125°C.
+
+Spice models for the memory cells exist for multiple conditions:
+
+
+.. include:: device-details/special_sonosfet/special_sonosfet-table0.rst
 
 
 
-There is no equivalent varactor for 5V operation. The NHV or PHV devices should be connected as capacitors for use at 5V.
+Program and Erase characteristics are described in more detail in the ***S8 Nonvolatile Technology Spec*** (001-08712), and summarized below:
 
-The symbols for the varactors are shown below:
 
-|symbol-varactors-a| |symbol-varactors-b|
+.. include:: device-details/special_sonosfet/special_sonosfet-table1.rst
 
-The cross-section of the varactor is shown below:
 
-|cross-section-varactors|
 
-.. |symbol-varactors-a| image:: device-details/varactors/symbol-varactors-a.svg
-.. |symbol-varactors-b| image:: device-details/varactors/symbol-varactors-b.svg
-.. |cross-section-varactors| image:: device-details/varactors/cross-section-varactors.svg
+Endurance behavior is illustrated below (100K cycles guaranteed):
+
+|sonos-erase-program|
+
+Data retention behavior is shown below at 85C\ |sonos-data-retention|
+
+E-test parameters are summarized below for both original and star cells:
+
+
+.. include:: device-details/special_sonosfet/special_sonosfet-table2.rst
+
+
+
+The schematic for the 2-T SONOS memory cell is shown below:
+
+|schematic-sonos-cell|
+
+The cross-section of the 2-T SONOS cell is shown below.
+
+|cross-section-sonos-cell|
+
+.. |sonos-erase-program| image:: device-details/special_sonosfet/sonos-erase-program.svg
+.. |sonos-data-retention| image:: device-details/special_sonosfet/sonos-data-retention.svg
+.. |schematic-sonos-cell| image:: device-details/special_sonosfet/schematic-sonos-cell.svg
+.. |cross-section-sonos-cell| image:: device-details/special_sonosfet/cross-section-sonos-cell.svg
+
+
+SRAM cells
+----------
+
+The SKY130 process currently supports only single-port SRAM’s, which are contained in hard-IP libraries. These cells are constructed with smaller design rules (Table 9), along with OPC (optical proximity correction) techniques, to achieve small memory cells. Use of the memory cells or their devices outside the specific IP is prohibited. The schematic for the SRAM is shown below in Figure 10. This cell is available in the S8 IP offerings and is monitored at e-test through the use of “pinned out” devices within the specific arrays.
+
+|figure-10-schematics-of-the-single-port-sram|
+
+**Figure 10. Schematics of the Single Port SRAM.**
+
+A Dual-Port SRAM is currently being designed using a similar approach. Compilers for the SP and DP SRAM’s will be available end-2019.
+
+Operating Voltages where SPICE models are valid
+
+-  V\ :sub:`DS` = 0 to 1.8V
+-  V\ :sub:`GS` = 0 to 1.8V
+-  V\ :sub:`BS` = 0 to -1.8V
+
+Details
+~~~~~~~
+
+N-pass FET (SRAM)
+^^^^^^^^^^^^^^^^^
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name (SRAM): :model:`sky130_fd_pr__special_nfet_pass`
+
+
+.. include:: device-details/special_sram/special_sram-table0.rst
+
+
+
+N-latch FET (SRAM)
+^^^^^^^^^^^^^^^^^^
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Model Name (SRAM): :model:`sky130_fd_pr__special_nfet_latch`
+
+
+.. include:: device-details/special_sram/special_sram-table1.rst
+
+
+
+P-latch FET (SRAM)
+^^^^^^^^^^^^^^^^^^
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Model Name (SRAM): :model:`sky130_fd_pr__special_pfet_pass`
+
+
+.. include:: device-details/special_sram/special_sram-table2.rst
+
+
+
+.. |figure-10-schematics-of-the-single-port-sram| image:: device-details/special_sram/figure-10-schematics-of-the-single-port-sram.svg
 
 
