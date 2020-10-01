@@ -152,16 +152,8 @@
   color: "c5d53c"
 
 # Primitives
-- name: "lib-sky130_fd_pr_base"
+- name: "lib-sky130_fd_pr"
   description: "Issues with the base primitive cells provided by the SkyWater foundry."
-  color: "c5d53c"
-
-- name: "lib-sky130_fd_pr_rf"
-  description: "Issues with the rf primitive cells provided by the SkyWater foundry."
-  color: "c5d53c"
-
-- name: "lib-sky130_fd_pr_rf2"
-  description: "Issues with the rf2 primitive cells provided by the SkyWater foundry."
   color: "c5d53c"
 
 # Standard cells

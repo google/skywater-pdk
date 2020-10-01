@@ -49,6 +49,9 @@ $(wildcard rules/periphery/*): | $(CONDA_ENV_PYTHON)
 rules/periphery-rules.rst: $(wildcard rules/periphery/*) | $(CONDA_ENV_PYTHON)
 	$(IN_CONDA_ENV) cd rules/periphery; ./periphery-split-csv.py > /dev/null
 
+rules/device-details.rst: rules/device-details.py $(wildcard rules/device-details/*/index.rst) | $(CONDA_ENV_PYTHON)
+	$(IN_CONDA_ENV) cd rules; ./device-details.py > $(abspath $@)
+
 # Various automated fixups that can be run
 fixup:
 	# Make sure it is SkyWater

@@ -1,3 +1,55 @@
+# sky130_fd_pr
+[submodule "libraries/sky130_fd_pr/latest"]
+	path = libraries/sky130_fd_pr/latest
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = master
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.20.1"]
+	path = libraries/sky130_fd_pr/v0.20.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.20.1
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.20.0"]
+	path = libraries/sky130_fd_pr/v0.20.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.20.0
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.13.0"]
+	path = libraries/sky130_fd_pr/v0.13.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.13.0
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.12.1"]
+	path = libraries/sky130_fd_pr/v0.12.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.12.1
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.12.0"]
+	path = libraries/sky130_fd_pr/v0.12.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.12.0
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.11.0"]
+	path = libraries/sky130_fd_pr/v0.11.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.11.0
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.10.1"]
+	path = libraries/sky130_fd_pr/v0.10.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.10.1
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.10.0"]
+	path = libraries/sky130_fd_pr/v0.10.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.10.0
+	shallow = true
+[submodule "libraries/sky130_fd_pr/v0.0.9"]
+	path = libraries/sky130_fd_pr/v0.0.9
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+	branch = branch-0.0.9
+	shallow = true
+
 # sky130_fd_sc_hd
 [submodule "libraries/sky130_fd_sc_hd/latest"]
 	path = libraries/sky130_fd_sc_hd/latest
@@ -94,3 +146,30 @@
 	branch = branch-0.1.0
 	shallow = true
 	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_pr/0.0.9"]
+	path = libraries/sky130_fd_pr/0.0.9
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.10.0"]
+	path = libraries/sky130_fd_pr/0.10.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.10.1"]
+	path = libraries/sky130_fd_pr/0.10.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.11.0"]
+	path = libraries/sky130_fd_pr/0.11.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.12.0"]
+	path = libraries/sky130_fd_pr/0.12.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.12.1"]
+	path = libraries/sky130_fd_pr/0.12.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.13.0"]
+	path = libraries/sky130_fd_pr/0.13.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.20.0"]
+	path = libraries/sky130_fd_pr/0.20.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
+[submodule "libraries/sky130_fd_pr/0.20.1"]
+	path = libraries/sky130_fd_pr/0.20.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_pr.git
