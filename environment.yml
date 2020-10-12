@@ -19,7 +19,7 @@ channels:
 - conda-forge
 - defaults
 dependencies:
-- python
+- python=3.8
 - pip
 - yosys
 - netlistsvg
