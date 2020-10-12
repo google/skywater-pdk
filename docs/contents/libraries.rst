@@ -86,6 +86,7 @@ Third party developers are encourage to create new and interesting libraries for
     :maxdepth: 1
     :name: sky130-lib-foundry-sc
 
+    libraries/foundry-provided
     libraries/sky130_fd_sc_*/README
 
 .. _sky130-lib-standardcells-thirdparty:
