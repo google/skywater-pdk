@@ -1,13 +1,15 @@
 SkyWater Foundry Provided Standard Cell Libraries
 =================================================
 
-There are seven standard cell libraries provided directly by the SkyWater Technology foundry available for use on SKY30 designs, which differ in intended applications and come in three separate cell heights.
+There are seven standard cell libraries provided directly by the SkyWater Technology foundry available for use on SKY130 designs, which differ in intended applications and come in three separate cell heights.
 
 Libraries :lib:`sky130_fd_sc_hs` (high speed), :lib:`sky130_fd_sc_ms` (medium speed), :lib:`sky130_fd_sc_ls` (low speed), and :lib:`sky130_fd_sc_lp` (low power) are compatible in size, with a 0.48 x 3.33um site, equivalent to about 11 :layer:`met1` tracks.
 
 Libraries :lib:`sky130_fd_sc_hd` (high density) and :lib:`sky130_fd_sc_hdll` (high density, low leakage) contain standard cells that are smaller, utilizing a 0.46 x 2.72um site, equivalent to 9 :layer:`met1` tracks.
 
-The :lib:`sky130_fd_sc_hvl` (high voltage) library contains 5V devices and utilizes a 0.48 x 4.07um site, or 14 :layer:`met1` tracks. Supply voltage, FETs, and approximate cell counts for these libraries appear in the table below;
+The :lib:`sky130_fd_sc_hvl` (high voltage) library contains 5V devices and utilizes a 0.48 x 4.07um site, or 14 :layer:`met1` tracks.
+
+Supply voltage, FETs, and approximate cell counts for these libraries appear in the table below:
 
 +-----------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+---------------------------------+-------------------------------------+--------------------------------------+
 |                                   | :lib:`sky130_fd_sc_lp`              | :lib:`sky130_fd_sc_ls`              | :lib:`sky130_fd_sc_ms`              | :lib:`sky130_fd_sc_hs`              | :lib:`sky130_fd_sc_hd`          | :lib:`sky130_fd_sc_hdll`            | :lib:`sky130_fd_sc_hvl`              |
@@ -39,7 +41,7 @@ The :lib:`sky130_fd_sc_hvl` (high voltage) library contains 5V devices and utili
 | UDB custom cells                  |                                     | 21                                  | 17                                  |                                     |                                 |                                     |                                      |
 +-----------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+-------------------------------------+---------------------------------+-------------------------------------+--------------------------------------+
 
-The library uses 4 terminal transistors throughout. Individual cells do not have tap in them for the most part (there are a few exceptions). Instead, there are tap cells provided that allow for a staggered tap grid to be placed and connected to allow for body biasing, sleep mode support, and latchup protection.
+The libraries uses 4 terminal transistors throughout. Individual cells do not have tap in them for the most part (there are a few exceptions). Instead, there are tap cells provided that allow for a staggered tap grid to be placed and connected to allow for body biasing, sleep mode support, and latchup protection.
 
 The following sections will review the libraries in more detail, in terms of performance.
 
@@ -74,7 +76,7 @@ The following sections will review the libraries in more detail, in terms of per
 
 The :lib:`sky130_fd_sc_hd` library is designed for high density.
 
-Compared to :lib:`sky130_fd_sc_ls`, this library enables higher routed gated density, lower dynamic power consumption, and comparable timing and leakage power. As a trade-off it has lower drive strength and does not support any drop in replacement medium speed library.
+Compared to :lib:`sky130_fd_sc_ls`, this library enables higher routed gated density, lower dynamic power consumption, and comparable timing and leakage power. As a trade-off it has lower drive strength and does not support any drop in replacement medium or high speed library.
 
 -  :lib:`sky130_fd_sc_hd` includes clock-gating cells to reduce active power during non-sleep modes.
 
@@ -122,7 +124,7 @@ Raw gate density (number of :cell:`sky130_fd_sc_hdll__nand2_1` gates able to fit
 :lib:`sky130_fd_sc_hs` - Low Voltage (<2.0V), High Speed, Standard Cell Library
 -------------------------------------------------------------------------------
 
-:lib:`sky130_fd_sc_hs` library enables the implementation of low voltage high speed logic blocks in the S130 technology.
+:lib:`sky130_fd_sc_hs` library enables the implementation of low voltage high speed logic blocks in the SKY130 technology.
 
 :lib:`sky130_fd_sc_hs` cells are drop-in compatible with :lib:`sky130_fd_sc_ms`a or :lib:`sky130_fd_sc_ls` for the same function and drive strength. :lib:`sky130_fd_sc_hs` has the highest speed and the highest leakage of these.
 
@@ -212,7 +214,7 @@ The low to high level shifter cells are capable of shifting from 1.2v to 1.95v.
 :lib:`sky130_fd_sc_lp` - Low Voltage (<2.0V), Low Power, Standard Cell Library
 ------------------------------------------------------------------------------
 
-:lib:`sky130_fd_sc_lp` is the largest of the S130 standard cell libraries at nearly 750 cells. All logic cells are implemented with low voltage transistors and should be powered within the limits of those transistors. Specifically, the timing and power models are valid from 1.55V up to 2.0V.
+:lib:`sky130_fd_sc_lp` is the largest of the SKY130 standard cell libraries at nearly 750 cells. All logic cells are implemented with low voltage transistors and should be powered within the limits of those transistors. Specifically, the timing and power models are valid from 1.55V up to 2.0V.
 
 -  :lib:`sky130_fd_sc_lp` supports low leakage sleep mode via sleep transistors
 
@@ -238,15 +240,12 @@ The low to high level shifter cells are capable of shifting from 1.2v to 1.95v.
 
    -  Latches and flip-flops: 92
 
--  Timing and power parameters for this library appear in the table below:
-
-
 
 :lib:`sky130_fd_sc_hvl` - High Voltage (5V), Standard Cell Library
 ------------------------------------------------------------------
 
-The :lib:`sky130_fd_sc_hvl` library is the smallest of the S130 standard cell libraries, but is the one that enables 5V tolerant logic blocks. All logic cells are implemented with 5v tolerant transistors; timing and power models are valid from 1.65v to 5.5v. The low voltage to high voltage level shifter is functional shifting from 1.2v to 5.5v.
+The :lib:`sky130_fd_sc_hvl` library has the smallest cell count of the SKY130 standard cell libraries, but is the only one that enables 5V tolerant logic blocks. All logic cells are implemented with 5v tolerant transistors; timing and power models are valid from 1.65v to 5.5v. The low voltage to high voltage level shifter is functional shifting from 1.2v to 5.5v.
 
 Raw gate density (number of :cell:`sky130_fd_sc_hvl__nand2_1` gates able to fit in 1mm2) should be 170kGates/mm2.
 
-Routed should be >= 100kGates/mm2.Due to the gate length for these high voltage transistors, the actual gate density is lower than 170kGates/mm2. The size of a 2-input NAND gate in this library is actually 5 grids wide, whereas the 170k calculation is based on a gate that is 3 grids wide. With a 5 grid wide gate, the raw gate density is 102kGates/mm2.
+Routed should be >= 100kGates/mm2. Due to the gate length for these high voltage transistors, the actual gate density is lower than 170kGates/mm2. The size of a 2-input NAND gate in this library is actually 5 grids wide, whereas the 170k calculation is based on a gate that is 3 grids wide. With a 5 grid wide gate, the raw gate density is 102kGates/mm2.
