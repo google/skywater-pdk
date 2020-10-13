@@ -26,7 +26,7 @@ setup:
 
 $(LIB_NAME)_db: setup
 	cd work && lc_shell -f $(SCRIPTS)/lc.tcl $(LC_OPTIONS) |& tee $(LOGS)/lc_$@.log
-	! grep -q '^Error' $(LOGS)/lc_$@.log
+	#! grep -q '^Error' $(LOGS)/lc_$@.log
 	date > $@
 
 $(LIB_NAME)_mw: setup
