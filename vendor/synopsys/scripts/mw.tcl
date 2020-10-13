@@ -1,8 +1,16 @@
 source ./setup.tcl
-set lib_name ${target_lib_dir}/mw 
-set db_file ${target_lib_dir}/db_nldm/${target_lib_name}__ss_n40C_1v28.db
-set tech_file ../milkyway/${target_lib_name}.tf
-set layer_map ../milkyway/${target_lib_name}.mw.map
+
+set root ..
+source ${root}/scripts/util.tcl
+
+check_var target_lib_dir
+check_var target_lib_name
+check_var output_dir
+
+set lib_name ${output_dir}/mw 
+set db_file ${output_dir}/db_nldm/${target_lib_name}__ss_n40C_1v28.db
+set tech_file ${root}/milkyway/${target_lib_name}.tf
+set layer_map ${root}/milkyway/${target_lib_name}.mw.map
 
 set cells_dir ${target_lib_dir}/cells
 set cells [lmap cell_dir [glob -directory $cells_dir *] { file tail $cell_dir }]
@@ -85,9 +93,17 @@ update_mw_port_by_db \
 
 scheme auLoadCLF
 scheme setFormField "Load CLF File" "Load CLF File Without Timing Related Information" "1"
-scheme setFormField "Load CLF File" "CLF File Name" "../milkyway/${target_lib_name}.antenna.clf"
+scheme setFormField "Load CLF File" "CLF File Name" "${root}/milkyway/${target_lib_name}.antenna.clf"
 scheme setFormField "Load CLF File" "Library Name" "${lib_name}"
 scheme formOK "Load CLF File"
 
+# Export LEF
+file mkdir ${output_dir}/lef
+foreach_in_collection cell [get_mw_cels] {
+	set cname [get_attribute ${cell} name]
+        set lef_file ${output_dir}/lef/${cname}.lef
+        info_msg "Writing LEF: $lef_file"
+	write_lef -lib_name ${lib_name} -ignore_tech_info -output_cell ${cname} $lef_file 
+}
 close_mw_lib -save
 exit
