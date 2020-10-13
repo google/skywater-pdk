@@ -88,11 +88,11 @@ Layer		"li1" {
 		unitMinThickness		= 0.1
 		unitNomThickness		= 0.1
 		unitMaxThickness		= 0.1
-		fatTblDimension			= 1
-		fatTblThreshold			= (0)
+		fatTblDimension			= 2
+		fatTblThreshold			= (0,3.001) 
 		fatTblParallelLengthDimension	= 1
-		fatTblParallelLength		= (0)
-		fatTblSpacing			= (0.17)
+		fatTblParallelLength		= (0) 
+		fatTblSpacing			= (0.17, 0.34)  
 		minArea				= 0.0561
 }
 
@@ -139,8 +139,7 @@ Layer		"met1" {
 		fatTblThreshold			= (0,3.001)
 		fatTblParallelLengthDimension	= 1
 		fatTblParallelLength		= (0)
-		fatTblSpacing			= (0.14,
-						   0.28)
+		fatTblSpacing			= (0.14, 0.28)
 		minArea				= 0.083
 }
 
@@ -187,8 +186,7 @@ Layer		"met2" {
 		fatTblThreshold			= (0,3.001)
 		fatTblParallelLengthDimension	= 1
 		fatTblParallelLength		= (0)
-		fatTblSpacing			= (0.14,
-						   0.28)
+		fatTblSpacing			= (0.14, 0.28) 
 		minArea				= 0.0676
 }
 
@@ -235,8 +233,7 @@ Layer		"met3" {
 		fatTblThreshold			= (0,3.001)
 		fatTblParallelLengthDimension	= 1
 		fatTblParallelLength		= (0)
-		fatTblSpacing			= (0.3,
-						   0.4)
+		fatTblSpacing			= (0.3, 0.4) 
 		minArea				= 0.24
 }
 
@@ -283,8 +280,7 @@ Layer		"met4" {
 		fatTblThreshold			= (0,3.001)
 		fatTblParallelLengthDimension	= 1
 		fatTblParallelLength		= (0)
-		fatTblSpacing			= (0.3,
-						   0.4)
+		fatTblSpacing			= (0.3, 0.4) 
 		minArea				= 0.24
 }
 
@@ -327,11 +323,11 @@ Layer		"met5" {
 		unitMinThickness		= 1.2
 		unitNomThickness		= 1.2
 		unitMaxThickness		= 1.2
-		fatTblDimension			= 1
-		fatTblThreshold			= (0)
+		fatTblDimension			= 2
+		fatTblThreshold			= (0,3.001)
 		fatTblParallelLengthDimension	= 1
 		fatTblParallelLength		= (0)
-		fatTblSpacing			= (1.6)
+		fatTblSpacing			= (1.6, 3.2) 
 		minArea				= 4
 }
 
