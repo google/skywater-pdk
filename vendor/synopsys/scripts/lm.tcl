@@ -31,6 +31,7 @@ set_pvt_configuration -clear_filter all -add -name all -process_labels [list nom
 check_workspace -details all
 
 #return
-commit_workspace -force -output $ndm_file
+sh mkdir -p ${output_dir}/ndm
+commit_workspace -force -output ${output_dir}/ndm/$ndm_file
 
 exit
