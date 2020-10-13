@@ -70,7 +70,6 @@ Third party developers are encourage to create new and interesting libraries for
 
     libraries/sky130_fd_pr_*/README
 
-
 .. _sky130-lib-standardcells:
 
 :lib_type:`Digital Standard Cell` Libraries
