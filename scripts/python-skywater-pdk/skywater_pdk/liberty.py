@@ -151,19 +151,30 @@ def cell_corner_file(lib, cell_with_size, corner, corner_type: TimingType):
     return fname
 
 
-def top_corner_file(libname, corner, corner_type: TimingType):
+def top_corner_file(libname, corner, corner_type: TimingType, directory_prefix = "timing"):
     """
 
     >>> top_corner_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.ccsnoise)
     'timing/sky130_fd_sc_hd__ff_100C_1v65_ccsnoise.lib.json'
     >>> top_corner_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic)
     'timing/sky130_fd_sc_hd__ff_100C_1v65.lib.json'
+    >>> top_corner_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic, "")
+    'sky130_fd_sc_hd__ff_100C_1v65.lib.json'
 
     """
     assert corner_type.singular, (libname, corner, corner_type, corner_type.types())
-    return "timing/{libname}__{corner}{corner_type}.lib.json".format(
-        libname=libname,
-        corner=corner, corner_type=corner_type.file)
+
+    if directory_prefix:
+      return "{prefix}/{libname}__{corner}{corner_type}.lib.json".format(
+          libname=libname,
+          corner=corner,
+          corner_type=corner_type.file,
+          prefix = directory_prefix)
+
+    return "{libname}__{corner}{corner_type}.lib.json".format(
+          libname=libname,
+          corner=corner,
+          corner_type=corner_type.file)
 
 
 def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
@@ -307,9 +318,11 @@ def remove_ccsnoise_from_cell(data, cellname):
 remove_ccsnoise_from_library = remove_ccsnoise_from_dict
 
 
-def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells):
-    top_fname = top_corner_file(lib, corner, ocorner_type).replace('.lib.json', '.lib')
-    top_fpath = os.path.join(library_dir, top_fname)
+def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output_directory):
+    output_directory_prefix = None if output_directory else "timing"
+    top_fname = top_corner_file(lib, corner, ocorner_type, output_directory_prefix).replace('.lib.json', '.lib')
+    output_directory = output_directory if output_directory else library_dir
+    top_fpath = os.path.join(output_directory, top_fname)
 
     top_fout = open(top_fpath, "w")
     def top_write(lines):
@@ -1090,6 +1103,11 @@ def main():
             help="Include verbose debug output on the console.",
             action='store_true',
             default=False)
+    parser.add_argument(
+            "-o",
+            "--output_directory",
+            help="Sets the parent directory of the liberty files",
+            default="")
 
     args = parser.parse_args()
     if args.debug:
@@ -1146,7 +1164,7 @@ def main():
         generate(
             libdir, lib,
             corner, output_corner_type, input_corner_type,
-            corner_cells,
+            corner_cells, args.output_directory
         )
     return 0
 
