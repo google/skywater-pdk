@@ -321,7 +321,7 @@
      - 
 
 
-.. figure:: periphery\p018-x_dotdash.svg
+.. figure:: periphery/p018-x_dotdash.svg
     :width: 100%
     :align: center
 
@@ -382,7 +382,7 @@
      - 
 
 
-.. figure:: periphery\p020-dnwell_dotdash.svg
+.. figure:: periphery/p020-dnwell_dotdash.svg
     :width: 100%
     :align: center
 
@@ -442,7 +442,7 @@
      - 4.500
 
 
-.. figure:: periphery\p021-nwell_dotdash.svg
+.. figure:: periphery/p021-nwell_dotdash.svg
     :width: 100%
     :align: center
 
@@ -483,7 +483,7 @@
      - N/A
 
 
-.. figure:: periphery\p022-pwbm_dotdash.svg
+.. figure:: periphery/p022-pwbm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -528,7 +528,7 @@
      - N/A
 
 
-.. figure:: periphery\p022-pwdem_dotdash.svg
+.. figure:: periphery/p022-pwdem_dotdash.svg
     :width: 100%
     :align: center
 
@@ -573,7 +573,7 @@
      - 0.265
 
 
-.. figure:: periphery\p023-hvtp_dotdash.svg
+.. figure:: periphery/p023-hvtp_dotdash.svg
     :width: 100%
     :align: center
 
@@ -662,7 +662,7 @@
      - 0.265
 
 
-.. figure:: periphery\p024-lvtn_dotdash.svg
+.. figure:: periphery/p024-lvtn_dotdash.svg
     :width: 100%
     :align: center
 
@@ -727,7 +727,7 @@
      - 0.265
 
 
-.. figure:: periphery\p025-ncm_dotdash.svg
+.. figure:: periphery/p025-ncm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -808,7 +808,7 @@
      - 
 
 
-.. figure:: periphery\p026-difftap_dotdash.svg
+.. figure:: periphery/p026-difftap_dotdash.svg
     :width: 100%
     :align: center
 
@@ -861,7 +861,7 @@
      - 
 
 
-.. figure:: periphery\p027-tunm_dotdash.svg
+.. figure:: periphery/p027-tunm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -950,7 +950,7 @@
      - 
 
 
-.. figure:: periphery\p028-poly_dotdash.svg
+.. figure:: periphery/p028-poly_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1055,7 +1055,7 @@
      - N/A
 
 
-.. figure:: periphery\p029-rpm_dotdash.svg
+.. figure:: periphery/p029-rpm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1108,7 +1108,7 @@
      - 0.255
 
 
-.. figure:: periphery\p030-varac_dotdash.svg
+.. figure:: periphery/p030-varac_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1173,7 +1173,7 @@
      - 0.215
 
 
-.. figure:: periphery\p031-photo_dotdash.svg
+.. figure:: periphery/p031-photo_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1214,7 +1214,7 @@
      - 0.095
 
 
-.. figure:: periphery\p032-npc_dotdash.svg
+.. figure:: periphery/p032-npc_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1283,7 +1283,7 @@
      - 0.265
 
 
-.. figure:: periphery\p032-n_psd_dotdash.svg
+.. figure:: periphery/p032-n_psd_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1428,7 +1428,7 @@
      - 
 
 
-.. figure:: periphery\p034-licon_dotdash.svg
+.. figure:: periphery/p034-licon_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1481,7 +1481,7 @@
      - 0.290
 
 
-.. figure:: periphery\p035-li_dotdash_dotdash.svg
+.. figure:: periphery/p035-li_dotdash_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1530,7 +1530,7 @@
      - 0.7
 
 
-.. figure:: periphery\p035-ct_dotdash.svg
+.. figure:: periphery/p035-ct_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1599,7 +1599,7 @@
      - N/A
 
 
-.. figure:: periphery\p036-capm_dotdash.svg
+.. figure:: periphery/p036-capm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1692,7 +1692,7 @@
      - 0.160
 
 
-.. figure:: periphery\p037-vpp_dotdash.svg
+.. figure:: periphery/p037-vpp_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1789,7 +1789,7 @@
      - 0.030
 
 
-.. figure:: periphery\p038-m1_dotdash.svg
+.. figure:: periphery/p038-m1_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1886,7 +1886,7 @@
      - 0.037
 
 
-.. figure:: periphery\p039-via_dotdash.svg
+.. figure:: periphery/p039-via_dotdash.svg
     :width: 100%
     :align: center
 
@@ -1983,7 +1983,7 @@
      - 0.040
 
 
-.. figure:: periphery\p040-m2_dotdash.svg
+.. figure:: periphery/p040-m2_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2084,7 +2084,7 @@
      - 0.9
 
 
-.. figure:: periphery\p041-via2_dotdash.svg
+.. figure:: periphery/p041-via2_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2189,7 +2189,7 @@
      - 0.060
 
 
-.. figure:: periphery\p042-m3_dotdash.svg
+.. figure:: periphery/p042-m3_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2334,7 +2334,7 @@
      - N/A
 
 
-.. figure:: periphery\p043-indm_dotdash.svg
+.. figure:: periphery/p043-indm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2431,7 +2431,7 @@
      - 0.850
 
 
-.. figure:: periphery\p044-m4_dotdash.svg
+.. figure:: periphery/p044-m4_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2697,13 +2697,9 @@
      - Spacing (no overlapping) between fuse center and Metal5
      - 
      - 3.300
-   * - :drc_rule:`(mf.Section G2b: Rules for HV devices)`
-     - 
-     - 
-     - 
 
 
-.. figure:: periphery\p046-mf_dotdash.svg
+.. figure:: periphery/p046-mf_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2744,7 +2740,7 @@
      - 0.700
 
 
-.. figure:: periphery\p047-hvi_dotdash.svg
+.. figure:: periphery/p047-hvi_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2781,7 +2777,7 @@
      - 
 
 
-.. figure:: periphery\p047-hvnwell_dotdash.svg
+.. figure:: periphery/p047-hvnwell_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2862,7 +2858,7 @@
      - N/A
 
 
-.. figure:: periphery\p048-hvdifftap_dotdash.svg
+.. figure:: periphery/p048-hvdifftap_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2891,7 +2887,7 @@
      - 
 
 
-.. figure:: periphery\p049-hvpoly_dotdash.svg
+.. figure:: periphery/p049-hvpoly_dotdash.svg
     :width: 100%
     :align: center
 
@@ -2956,7 +2952,7 @@
      - 
 
 
-.. figure:: periphery\p049-hvntm_dotdash.svg
+.. figure:: periphery/p049-hvntm_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3037,7 +3033,7 @@
      - N/A
 
 
-.. figure:: periphery\p050-denmos_dotdash.svg
+.. figure:: periphery/p050-denmos_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3114,7 +3110,7 @@
      - N/A
 
 
-.. figure:: periphery\p051-depmos_dotdash.svg
+.. figure:: periphery/p051-depmos_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3167,7 +3163,7 @@
      - N/A
 
 
-.. figure:: periphery\p052-extd_dotdash.svg
+.. figure:: periphery/p052-extd_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3269,7 +3265,7 @@
      - 
 
 
-.. figure:: periphery\p054-hv_dotdash_dotdash.svg
+.. figure:: periphery/p054-hv_dotdash_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3494,7 +3490,7 @@
      - 
 
 
-.. figure:: periphery\p056-pwres_dotdash_dotdash.svg
+.. figure:: periphery/p056-pwres_dotdash_dotdash.svg
     :width: 100%
     :align: center
 
@@ -3531,7 +3527,7 @@
      - 
 
 
-.. figure:: periphery\p057-rfdiode_dotdash_dotdash.svg
+.. figure:: periphery/p057-rfdiode_dotdash_dotdash.svg
     :width: 100%
     :align: center
 

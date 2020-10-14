@@ -184,6 +184,8 @@ for d in data[1:]:
         assert c.strip() in ('', 'NA', 'N/A', previous_row[3]), (c, l, previous_row)
         if extra.strip() == '':
             continue
+        if rule_template == '(nwell.-)':
+            print("hello")
         previous_row[1] += '\n'+extra
 
     # Calculate the actual rule name.
