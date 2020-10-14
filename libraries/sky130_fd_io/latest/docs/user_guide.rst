@@ -204,11 +204,6 @@ The buffers support a power supply range of 1.71V to 5.5V.
 Block Architecture Overview
 ---------------------------
 
-The following sections describe each of the blocks in detail:
-
-.. contents:: :local:
-   :depth: 1
-
 Block Description
 ~~~~~~~~~~~~~~~~~
 
@@ -221,9 +216,24 @@ This :lib:`sky130_fd_io` library contained in this document covers different kin
 and a special I/O (:cell:`sky130_fd_io__sio`), a reference generator (:cell:`sky130_fd_io__refgen`) for providing voltage references to the :cell:`sky130_fd_io__sio` and Power and Ground (PG)
 cells that make up the I/O ring.
 
+The following sections describe each of the blocks in detail:
+
 A single table comparison of all features across different IO's is provided in :numref:`io features comparison`.
 
-.. io-common-features_
+
+*  I/O [1]_ Common Features, section :ref:`io-common-features`.
+*  :cell:`sky130_fd_io__gpio`, :cell:`sky130_fd_io__gpiosf` Additional Features, section :ref:`sky130_fd_io__gpio-additional-features`.
+*  :cell:`sky130_fd_io__gpiov2` Additional Features, section :ref:`sky130_fd_io__gpiov2-additional-features`.
+*  :cell:`sky130_fd_io__gpio_ovtv2` Additional Features, section :ref:`sky130_fd_io__gpio_ovtv2-additional-features`.
+*  :cell:`sky130_fd_io__sio` Additional Features, :ref:`sky130_fd_io__sio-additional-features`.
+*  :cell:`sky130_fd_io__refgen` Features, :ref:`sky130_fd_io__refgen-features`.
+*  PG pads (ESD), :ref:`pg-pads`.
+*  Overlay Cells, :ref:`overlay-cells`.
+*  Power Detectors, :ref:`power-detector`.
+
+
+
+.. _io-common-features:
 
 I/O\ [1]_ Common Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -468,6 +478,7 @@ The functionality is defined in :numref:`normal and hold modes`.
    - Latched means that the input and output enable are latched. This is the same functionality as mentioned in :numref:`io vil vih`.
    - Normal refers any mode other than Sleep modes
 
+.. _sky130_fd_io__gpio-additional-features:
 :cell:`sky130_fd_io__gpio` Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -617,6 +628,7 @@ This requires that primary SWD interface :cell:`sky130_fd_io__gpio` cells have t
 ``tie_hi_esd``).
 All other :cell:`sky130_fd_io__gpio` cells have their input buffers disabled while XRES is asserted (``enable_inp_h`` is ``tie_lo_esd``).
 
+.. _sky130_fd_io__gpiov2-additional-features:
 :cell:`sky130_fd_io__gpiov2` Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -733,7 +745,7 @@ Input Buffer selection for :cell:`sky130_fd_io__gpiov2` is explained below in :n
    |         |          |      |                   |                   |                     | * WPD Mode                |
    +---------+----------+------+-------------------+-------------------+---------------------+---------------------------+
 
-
+.. _sky130_fd_io__gpio_ovtv2-additional-features:
 :cell:`sky130_fd_io__gpio_ovtv2` Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -849,6 +861,7 @@ The input buffer in :cell:`sky130_fd_io__gpio_ovtv2` supports the following mode
    |       |          |      |              |                   |                                           | * WPD Mode    |
    +-------+----------+------+--------------+-------------------+-------------------------------------------+---------------+
 
+.. _sky130_fd_io__sio-additional-features:
 :cell:`sky130_fd_io__sio` Additional Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -960,6 +973,7 @@ Note: The ``voh_sel[2:0]`` combinations are found in the :numref:`voh sel`
 Notice that the input buffer and output buffer configurations can be selected independently.
 For example, the standard single-ended input buffer and the regulated output buffer can be selected.
 
+.. _sky130_fd_io__refgen-features:
 :cell:`sky130_fd_io__refgen` (Reference Generator) Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1212,6 +1226,7 @@ For example - when ``amux_a_l`` and ``amux_a_r`` are Independent, the mid-node o
 two amuxbus's.
 When connecting ``amux_a_l`` and ``amux_a_r`` care must be taken to disconnect the mid-node and then close the right and left switch.
 
+.. _pg-pads:
 PG pads (ESD)
 ~~~~~~~~~~~~~
 
@@ -1459,6 +1474,7 @@ Below are the truth tables for the TP1, TP2, TP3 pads:
    | Hi-Z | Hi-Z        |
    +------+-------------+
 
+.. _overlay-cells:
 Overlay Cells
 ~~~~~~~~~~~~~
 
@@ -1523,7 +1539,8 @@ There are two kinds of overlays that exist in the :lib:`sky130_fd_io` I/O librar
    | 11   | :cell:`sky130_fd_io__overlay_vssd_hvc`  | :cell:`sky130_fd_io__top_ground_hvc_wpad` | VSSD  power pad | HV ESD clamp     |
    +------+-----------------------------------------+-------------------------------------------+-----------------+------------------+
 
-Power detector
+.. _power-detector:
+Power Detector
 ~~~~~~~~~~~~~~
 
 This cell is developed to detect vddd and vddio power supplies and to level shift the hv control signals across vddio<->vddd voltage domains.
