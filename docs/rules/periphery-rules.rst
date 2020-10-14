@@ -2697,10 +2697,6 @@
      - Spacing (no overlapping) between fuse center and Metal5
      - 
      - 3.300
-   * - :drc_rule:`(mf.Section G2b: Rules for HV devices)`
-     - 
-     - 
-     - 
 
 
 .. figure:: periphery\p046-mf_dotdash.svg

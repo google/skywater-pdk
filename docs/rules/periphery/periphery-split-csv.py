@@ -167,6 +167,9 @@ for d in data[1:]:
     if should_strip_flags:
         rows = rows[:i]
 
+    # Remove rows with Section in the first column
+    rows = [r for r in rows if not r[0].startswith('Section ')]
+
     # Join together description which span multiple rows.
     continued_index = []
     for i, row in enumerate(rows):
