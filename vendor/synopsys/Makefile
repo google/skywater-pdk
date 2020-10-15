@@ -1,4 +1,4 @@
-LIBRARIES = /remote/cae1107/libraries/google-skywater/skywater-pdk/libraries
+LIBRARIES = ../../ 
 
 LIB_NAME = sky130_fd_sc_hd
 
