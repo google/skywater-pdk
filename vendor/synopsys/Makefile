@@ -1,4 +1,4 @@
-LIBRARIES = ../../ 
+LIBRARIES = ../../
 
 LIB_NAME = sky130_fd_sc_hd
 
