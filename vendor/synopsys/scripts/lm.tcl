@@ -14,7 +14,7 @@ set tech_file ${root}/milkyway/${target_lib_name}.tf
 set layer_map ${root}/milkyway/${target_lib_name}.mw.map
 
 set db_dir "${output_dir}/db_nldm"
-set lef_dir "${output_dir}/lef"
+set lef_dir "./lef"
 
 file mkdir ${output_dir}/ndm
 
@@ -39,7 +39,7 @@ foreach db_file [glob -directory ${db_dir} *.db] {
 }
 set_process -label nominal -number 1 -libraries *
 set_pvt_configuration -clear_filter all -add -name all -process_labels [list nominal] -process_numbers {1} -voltages {1.28 1.35 1.4 1.44 1.56 1.6 1.65 1.76 1.8 1.95} -temperatures {-40 25 100}
-check_workspace -details all
+check_workspace -details all -allow_missing
 
 commit_workspace -force -output $ndm_file
 
