@@ -98,10 +98,10 @@ scheme setFormField "Load CLF File" "Library Name" "${lib_name}"
 scheme formOK "Load CLF File"
 
 # Export LEF
-file mkdir ./lef
+file mkdir ${output_dir}/lef
 foreach_in_collection cell [get_mw_cels] {
 	set cname [get_attribute ${cell} name]
-        set lef_file ./lef/${cname}.lef
+        set lef_file ${output_dir}/lef/${cname}.lef
         info_msg "Writing LEF: $lef_file"
 	write_lef -lib_name ${lib_name} -ignore_tech_info -output_cell ${cname} $lef_file 
 }
