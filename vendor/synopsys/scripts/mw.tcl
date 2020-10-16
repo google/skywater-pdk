@@ -101,7 +101,7 @@ scheme formOK "Load CLF File"
 file mkdir ./lef
 foreach_in_collection cell [get_mw_cels] {
 	set cname [get_attribute ${cell} name]
-        set lef_file ${output_dir}/lef/${cname}.lef
+        set lef_file ./lef/${cname}.lef
         info_msg "Writing LEF: $lef_file"
 	write_lef -lib_name ${lib_name} -ignore_tech_info -output_cell ${cname} $lef_file 
 }
