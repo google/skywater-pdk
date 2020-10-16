@@ -16,9 +16,17 @@ def fix2(text):
     replace = r'\1VGND\2\n'
     return re.sub(find, replace, text)
 
+def fix3(text, pg_pin, pg_type):
+    find    = r'(pg_pin \(\"' + pg_pin + r'\"\) \{\s*\n(\s+)pg_type : \")backup_\w+(\";)\n'
+    replace = r'\1' + pg_type + r'\3' + '\n' + r'\2physical_connection : device_layer;\n'
+#    for m in re.findall(find, text):
+#        print(m)
+    return re.sub(find, replace, text)
 
 text = fix(text, 'VNB', 'nwell')
 text = fix(text, 'VPB', 'pwell')
 text = fix2(text)
+text = fix3(text, 'VNB', 'nwell')
+text = fix3(text, 'VPB', 'pwell')
 
 print(text)
