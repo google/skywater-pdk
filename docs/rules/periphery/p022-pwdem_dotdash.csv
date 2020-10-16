@@ -4,3 +4,4 @@ Name,Description,Flags,Value
 (pwdem.3),Min enclosure of pwdem:dg by pwbm.dg inside UHVI,,N/A
 (pwdem.4),pwdem.dg must be enclosed by UHVI,,N/A
 (pwdem.5),pwdem.dg inside UHVI must be enclosed by deep nwell,,N/A
+(pwdem.6),Min enclosure of pwdem:dg by deep nwell inside UHVI,,N/A

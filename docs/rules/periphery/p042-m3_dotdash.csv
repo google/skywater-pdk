@@ -19,3 +19,4 @@ Name,Description,Flags,Value
 (m3.13),Max pattern density (PD) of metal3,CU,0.77
 (m3.14),Met3 PD window size,CU,50.000
 (m3.14a),Met3 PD window step,CU,25.000
+(m3.15),Via2 must be enclosed by met3 by at least…,CU,0.060

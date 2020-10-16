@@ -75,7 +75,7 @@ class RuleTable:
 
 
 data = [[]]
-for l in open('periphery.csv'):
+for l in open('periphery.csv', encoding='utf8'):
     if '.-)' in l:
         data.append([])
 
@@ -159,10 +159,16 @@ for d in data[1:]:
     rows = rows[i:]
 
     # Strip off the flags table
+    should_strip_flags = False
     for i, r in enumerate(rows):
         if r[0] == 'Use' and r[1] == 'Explanation':
+            should_strip_flags = True
             break
-    rows = rows[:i]
+    if should_strip_flags:
+        rows = rows[:i]
+
+    # Remove rows with Section in the first column
+    rows = [r for r in rows if not r[0].startswith('Section ')]
 
     # Join together description which span multiple rows.
     continued_index = []
@@ -237,7 +243,7 @@ for d in data[1:]:
 
 PERIPHERY_RULES_FILE = os.path.join('..', 'periphery-rules.rst')
 
-rst = open(PERIPHERY_RULES_FILE, 'w')
+rst = open(PERIPHERY_RULES_FILE, 'w', encoding='utf8')
 
 rst.write("""\
 .. Do **not** modify this file it is generated from the periphery.csv file
@@ -309,7 +315,7 @@ for rt in rule_tables:
 
     rst.write('\n\n')
 
-    with open(rt.csv_fname, 'w', newline='') as f:
+    with open(rt.csv_fname, 'w', newline='', encoding='utf8') as f:
         w = csv.DictWriter(f, headers)
         w.writeheader()
         for r in rt.rules:
@@ -328,5 +334,5 @@ for rt in rule_tables:
 
 rst.close()
 
-with open(PERIPHERY_RULES_FILE) as f:
+with open(PERIPHERY_RULES_FILE, encoding='utf8') as f:
     print(f.read())

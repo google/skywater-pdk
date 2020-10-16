@@ -9,3 +9,4 @@ Name,Description,Flags,Value
 (ncm.5),"Min space, no overlap, between ncm and (LVTN_gate) OR (diff containing lvtn)",P,0.230
 (ncm.6),"Min space, no overlap, between ncm and nfet",P,0.200
 (ncm.7),Min area of ncm (um^2),,0.265
+(ncm.8),Min area of ncm Holes (um^2),,0.265

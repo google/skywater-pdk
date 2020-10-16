@@ -3,3 +3,4 @@ Name,Description,Flags,Value
 (pwbm.2),Min spacing between two pwbm.dg inside UHVI,,N/A
 (pwbm.3),Min enclosure of dnwell:dg by pwbm.dg inside UHVI (exempt pwbm hole inside dnwell),,N/A
 (pwbm.4),dnwell inside UHVI must be enclosed by pwbm (exempt pwbm hole inside dnwell),,N/A
+(pwbm.5),Min Space between two pwbm holes inside UHVI,,N/A

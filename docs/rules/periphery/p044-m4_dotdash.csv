@@ -17,3 +17,4 @@ Name,Description,Flags,Value
 (m4.14),Met4 PD window size,CU,50.000
 (m4.14a),Met4 PD window step,CU,25.000
 (m4.15),Via3 must be enclosed by met4 by at least…,CU,0.060
+(m4.16),Min enclosure of pad by met4,CU,0.850

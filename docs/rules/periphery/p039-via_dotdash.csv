@@ -17,3 +17,4 @@ Name,Description,Flags,Value
 (via.irdrop.2),"For 3 <= n <= 15 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6
 (via.irdrop.3),"For 16 <= n <= 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8
 (via.irdrop.4),"For n > 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.9
+(via.14a),0.180 um Via must be enclosed by 45 deg edges of Met1 by at least …,CU,0.037

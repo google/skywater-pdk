@@ -12,3 +12,4 @@ Name,Description,Flags,Value
 (vhvi.5.-),Vhvi:dg cannot straddle VHVSourceDrain,,
 (vhvi.6.-),Vhvi:dg overlapping VHVSourceDrain must not overlap poly,,
 (vhvi.7.-),Vhvi:dg cannot straddle VHVPoly,,
+(vhvi.8.-),"Min space between nwell tagged with vhvi:dg and deep nwell, nwell, or n+diff on a separate net (except for n+diff overlapping nwell tagged with vhvi:dg).",,11.240

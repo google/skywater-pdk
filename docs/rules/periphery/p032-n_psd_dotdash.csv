@@ -10,3 +10,4 @@ Name,Description,Flags,Value
 (n/ psd.9),"Diff and tap must be enclosed by their corresponding implant layers. Rule exempted for\n- diff inside ""advSeal_6um* OR cuPillarAdvSeal_6um*"" pcell for SKY130P*/SP8P*/SKY130DI-5R-CSMC flows\n- diff rings around the die at min total L>1000 um and W=0.3 um\n- gated_npn \n- :drc_tag:`areaid.zer`.",DE,
 (n/ psd.10a),Min area of Nsdm (um^2),,0.265
 (n/ psd.10b),Min area of Psdm (um^2),,0.255
+(n/ psd.11),Min area of n/psdmHoles (um^2),,0.265

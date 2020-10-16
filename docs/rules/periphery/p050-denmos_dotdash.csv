@@ -13,3 +13,4 @@ Name,Description,Flags,Value
 (denmos.11),Min spacing between p+ tap and (nwell overlapping de_nFet_drain),,0.860
 (denmos.12),Min spacing between nwells overlapping de_nFET_drain,,2.400
 (denmos.13),de_nFet_source must be enclosed by nsdm by,,0.130
+(denmos.14),nvhv FETs must be enclosed by :drc_tag:`areaid.mt`,,N/A

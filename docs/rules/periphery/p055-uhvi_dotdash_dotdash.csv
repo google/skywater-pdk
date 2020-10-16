@@ -8,3 +8,4 @@ Name,Description,Flags,Value
 (uhvi.7.-),natfet.dg must be enclosed by UHVI layer by at least,,N/A
 (uhvi.8.-),Minimum width of natfet.dg,,N/A
 (uhvi.9.-),Minimum Space spacing of natfet.dg,,N/A
+(uhvi.10.-),natfet.dg layer is not allowed,,N/A

@@ -29,3 +29,4 @@ Name,Description,Flags,Value
 (licon.16),"Every source_diff and every tap must enclose at least one licon1, including the diff/tap straddling areaid:ce. \nRule exempted inside UHVI.",P,
 (licon.17),Licons may not overlap both poly and (diff or tap),,
 (licon.18),Npc must enclose poly_licon,,
+(licon.19),poly of the HV varactor must not interact with licon,P,

@@ -17,3 +17,4 @@ Name,Description,Flags,Value
 (m1.13),Max pattern density (PD) of met1,CU,0.77
 (m1.14),Met1 PD window size,CU,50.000
 (m1.14a),Met1 PD window step,CU,25.000
+(m1.15),Mcon must be enclosed by met1 on one of two adjacent sides by at least …,CU,0.030

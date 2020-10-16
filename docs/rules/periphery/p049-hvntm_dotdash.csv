@@ -9,3 +9,4 @@ Name,Description,Flags,Value
 (hvntm.6b),"Space, no overlap, between p+_tap and hvntm along the diff-butting edge",P,0.000
 (hvntm.7),hvntm must enclose ESD_nwell_tap inside hvi by atleast,P,0.000
 (hvntm.9),Hvntm must not overlap :drc_tag:`areaid.ce`,,
+(hvntm.10),Hvntm must overlap hvi,,

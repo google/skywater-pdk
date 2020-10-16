@@ -6,3 +6,4 @@ Name,Description,Flags,Value
 (via4.irdrop.1),"For 1 <= n <= 4 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0
 (via4.irdrop.2),"For 5 <= n <= 10 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.2
 (via4.irdrop.3),"For 11 <= n <= 100 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.5
+(via4.irdrop.4),"For n > 100 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8

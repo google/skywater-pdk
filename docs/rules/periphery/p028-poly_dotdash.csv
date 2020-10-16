@@ -15,3 +15,4 @@ Name,Description,Flags,Value
 (poly.11),No 90 deg turns of poly on diff,,
 (poly.12),"(Poly NOT (nwell NOT hvi)) may not overlap tap; Rule exempted for cell name ""s8fgvr_n_fg2"" and gated_npn and inside UHVI.",P,
 (poly.15),Poly must not overlap diff:rs,,
+(poly.16),"Inside RF FETs defined in Table H5, poly cannot overlap poly across multiple adjacent instances",,

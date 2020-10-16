@@ -4,4 +4,5 @@ Name,Description,Flags,Value
 (rfdiode.3.-),":drc_tag:`areaid.re` must be coincident with innwer edge of the nwell ring for the rf pwell-deep nwell diode
 Allowed PNP layout
 Layout: pnppar
-Allowed NPN layout",,
+Allowed NPN layout
+Layout: npnpar1x1",,

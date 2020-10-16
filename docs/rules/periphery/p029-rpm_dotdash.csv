@@ -19,3 +19,4 @@ Name,Description,Flags,Value
 (rpm.8),poly must not straddle rpm,,
 (rpm.9),"Min space, no overlap, between prec_resistor and hvntm",,0.185
 (rpm.10),Min spacing of rpm to pwbm,,N/A
+(rpm.11),rpm should not overlap or straddle pwbm except cells\ns8usbpdv2_csa_top\ns8usbpdv2_20vconn_sw_300ma_ovp_ngate_unit\ns8usbpdv2_20vconn_sw_300ma_ovp\ns8usbpdv2_20sbu_sw_300ma_ovp,,N/A

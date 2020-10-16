@@ -5,3 +5,4 @@ Name,Description,Flags,Value
 (ct.4),Mcon must be enclosed by LI by at least …,P,0.000
 (ct.irdrop.1),"For 1 <= n <= 10 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.2
 (ct.irdrop.2),"For 11 <= n <= 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.3
+(ct.irdrop.3),"For n > 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.7

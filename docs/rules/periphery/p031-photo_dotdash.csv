@@ -9,3 +9,4 @@ Name,Description,Flags,Value
 (photo.8),Min/Max width of nwell inside photoDiode,,0.840
 (photo.9),Min/Max enclosure of nwell by photoDiode,,1.080
 (photo.10),Min/Max width of tap inside photoDiode,,0.410
+(photo.11),Min/Max enclosure of tap by nwell inside photoDiode,,0.215

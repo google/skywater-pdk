@@ -1,7 +1,7 @@
 .. Do **not** modify this file it is generated from the periphery.csv file
    found in the periphery directory using the
-   ./periphery/periphery-split-csv.py script.
-.. Instead run `make rules/periphery-rules.rst` in the ./docs directory.
+   ./periphery/periphery-split-csv.py script. Instead run `make
+   rules/periphery-rules.rst` in the ./docs directory.
 
 .. list-table::
    :header-rows: 1
@@ -376,6 +376,10 @@
      - RF NMOS must be enclosed by deep nwell (RF FETs are listed in $DESIGN/config/tech/model_set/calibre/fixed_layout_model_map of corresponding techs)
      - 
      - 
+   * - :drc_rule:`(dnwell.7)`
+     - Dnwell can not straddle areaid:substratecut
+     - 
+     - 
 
 
 .. figure:: periphery/p020-dnwell_dotdash.svg
@@ -433,6 +437,7 @@
    * - :drc_rule:`(nwell.7)`
      - Min spacing between nwell and deep nwell on separate nets
         Spacing between nwell and deep nwell on the same net is set by the sum of the rules nwell.2 and nwell.5. By default, DRC run on a cell checks for the separate-net spacing, when nwell and deep nwell nets are separate within the cell hierarchy and are joined in the upper hierarchy. To allow net names to be joined and make the same-net rule applicable in this case, the "joinNets" switch should be turned on.
+        waffle_chip
      - :drc_flag:`TC`
      - 4.500
 
@@ -470,6 +475,10 @@
      - N/A
    * - :drc_rule:`(pwbm.4)`
      - dnwell inside UHVI must be enclosed by pwbm (exempt pwbm hole inside dnwell)
+     - 
+     - N/A
+   * - :drc_rule:`(pwbm.5)`
+     - Min Space between two pwbm holes inside UHVI
      - 
      - N/A
 
@@ -513,6 +522,10 @@
      - pwdem.dg inside UHVI must be enclosed by deep nwell
      - 
      - N/A
+   * - :drc_rule:`(pwdem.6)`
+     - Min enclosure of pwdem:dg by deep nwell inside UHVI
+     - 
+     - N/A
 
 
 .. figure:: periphery/p022-pwdem_dotdash.svg
@@ -554,6 +567,10 @@
      - Min area of hvtp (um^2)
      - 
      - 0.265
+   * - :drc_rule:`(hvtp.6)`
+     - Min area of hvtp Holes (um^2)
+     - 
+     - 0.265
 
 
 .. figure:: periphery/p023-hvtp_dotdash.svg
@@ -583,6 +600,10 @@
      - Min spacing between hvtp to hvtr
      - 
      - 0.380
+   * - :drc_rule:`(hvtr.3)`
+     - Min enclosure of pfet by hvtr
+     - :drc_flag:`P`
+     - 0.180
 
 
 
@@ -633,6 +654,10 @@
      - 0.380
    * - :drc_rule:`(lvtn.13)`
      - Min area of lvtn (um^2)
+     - 
+     - 0.265
+   * - :drc_rule:`(lvtn.14)`
+     - Min area of lvtn Holes (um^2)
      - 
      - 0.265
 
@@ -694,6 +719,10 @@
      - 0.200
    * - :drc_rule:`(ncm.7)`
      - Min area of ncm (um^2)
+     - 
+     - 0.265
+   * - :drc_rule:`(ncm.8)`
+     - Min area of ncm Holes (um^2)
      - 
      - 0.265
 
@@ -773,6 +802,10 @@
      - ESD_nwell_tap is considered shorted to the abutting diff
      - :drc_flag:`NC`
      - 
+   * - :drc_rule:`(difftap.13)`
+     - Diffusion or the RF FETS in Table H5 is defined by Ldiff and Wdiff.
+     - 
+     - 
 
 
 .. figure:: periphery/p026-difftap_dotdash.svg
@@ -822,6 +855,10 @@
      - Min tunm area
      - 
      - 0.672
+   * - :drc_rule:`(tunm.8)`
+     - tunm must be enclosed by :drc_tag:`areaid.ce`
+     - 
+     - 
 
 
 .. figure:: periphery/p027-tunm_dotdash.svg
@@ -905,6 +942,10 @@
      - 
    * - :drc_rule:`(poly.15)`
      - Poly must not overlap diff:rs
+     - 
+     - 
+   * - :drc_rule:`(poly.16)`
+     - Inside RF FETs defined in Table H5, poly cannot overlap poly across multiple adjacent instances
      - 
      - 
 
@@ -1008,6 +1049,10 @@
      - Min spacing of rpm to pwbm
      - 
      - N/A
+   * - :drc_rule:`(rpm.11)`
+     - rpm should not overlap or straddle pwbm except cells\ns8usbpdv2_csa_top\ns8usbpdv2_20vconn_sw_300ma_ovp_ngate_unit\ns8usbpdv2_20vconn_sw_300ma_ovp\ns8usbpdv2_20sbu_sw_300ma_ovp
+     - 
+     - N/A
 
 
 .. figure:: periphery/p029-rpm_dotdash.svg
@@ -1057,6 +1102,10 @@
      - Nwell overlapping Var_channel must not overlap P+ diff
      - 
      - 
+   * - :drc_rule:`(varac.8)`
+     - Min enclosure of Var_channel by hvtp
+     - 
+     - 0.255
 
 
 .. figure:: periphery/p030-varac_dotdash.svg
@@ -1118,6 +1167,10 @@
      - Min/Max width of tap inside photoDiode
      - 
      - 0.410
+   * - :drc_rule:`(photo.11)`
+     - Min/Max enclosure of tap by nwell inside photoDiode
+     - 
+     - 0.215
 
 
 .. figure:: periphery/p031-photo_dotdash.svg
@@ -1155,6 +1208,10 @@
      - Spacing (no overlap) of NPC to Gate
      - 
      - 0.090
+   * - :drc_rule:`(npc.5)`
+     - Max enclosure of poly overlapping slotted_licon by npcm (merge between adjacent short edges of the slotted_licons if space < min)
+     - 
+     - 0.095
 
 
 .. figure:: periphery/p032-npc_dotdash.svg
@@ -1220,6 +1277,10 @@
      - Min area of Psdm (um^2)
      - 
      - 0.255
+   * - :drc_rule:`(n/ psd.11)`
+     - Min area of n/psdmHoles (um^2)
+     - 
+     - 0.265
 
 
 .. figure:: periphery/p032-n_psd_dotdash.svg
@@ -1361,6 +1422,10 @@
      - Npc must enclose poly_licon
      - 
      - 
+   * - :drc_rule:`(licon.19)`
+     - poly of the HV varactor must not interact with licon
+     - :drc_flag:`P`
+     - 
 
 
 .. figure:: periphery/p034-licon_dotdash.svg
@@ -1410,6 +1475,10 @@
      - Min area of LI
      - :drc_flag:`P`
      - 0.0561
+   * - :drc_rule:`(li.7.-)`
+     - Min LI resistor width (rule exempted within :drc_tag:`areaid.ed`; Inside :drc_tag:`areaid.ed`, min width of the li resistor is determined by rule li.1)
+     - 
+     - 0.290
 
 
 .. figure:: periphery/p035-li_dotdash_dotdash.svg
@@ -1455,6 +1524,10 @@
      - For 11 <= n <= 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
      - :drc_flag:`CU` :drc_flag:`IR`
      - 0.3
+   * - :drc_rule:`(ct.irdrop.3)`
+     - For n > 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
+     - :drc_flag:`CU` :drc_flag:`IR`
+     - 0.7
 
 
 .. figure:: periphery/p035-ct_dotdash.svg
@@ -1518,6 +1591,10 @@
      - N/A
    * - :drc_rule:`(capm.11)`
      - Min spacing between capm to (met2 not overlapping capm)
+     - 
+     - N/A
+   * - :drc_rule:`(capm.12)`
+     - Max area of capm (um^2)
      - 
      - N/A
 
@@ -1607,6 +1684,10 @@
      - 4.00
    * - :drc_rule:`(vpp.13)`
      - Min space of met1 to met1inside VPP capacitor
+     - :drc_flag:`CU`
+     - 0.160
+   * - :drc_rule:`(vpp.14)`
+     - Min space of met2 to met2 inside VPP capacitor
      - :drc_flag:`CU`
      - 0.160
 
@@ -1702,6 +1783,10 @@
      - Met1 PD window step
      - :drc_flag:`CU`
      - 25.000
+   * - :drc_rule:`(m1.15)`
+     - Mcon must be enclosed by met1 on one of two adjacent sides by at least …
+     - :drc_flag:`CU`
+     - 0.030
 
 
 .. figure:: periphery/p038-m1_dotdash.svg
@@ -1795,6 +1880,10 @@
      - For n > 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
      - :drc_flag:`CU` :drc_flag:`IR`
      - 0.9
+   * - :drc_rule:`(via.14a)`
+     - 0.180 um Via must be enclosed by 45 deg edges of Met1 by at least …
+     - :drc_flag:`CU`
+     - 0.037
 
 
 .. figure:: periphery/p039-via_dotdash.svg
@@ -1888,6 +1977,10 @@
      - Met2 PD window step
      - :drc_flag:`CU`
      - 25.000
+   * - :drc_rule:`(m2.15)`
+     - Via must be enclosed by met2 by at least…
+     - :drc_flag:`CU`
+     - 0.040
 
 
 .. figure:: periphery/p040-m2_dotdash.svg
@@ -1985,6 +2078,10 @@
      - For 5 <= n <= 30 via2's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
      - :drc_flag:`CU` :drc_flag:`IR`
      - 0.79
+   * - :drc_rule:`(via2.irdrop.4)`
+     - For n > 30 via2's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
+     - :drc_flag:`CU` :drc_flag:`IR`
+     - 0.9
 
 
 .. figure:: periphery/p041-via2_dotdash.svg
@@ -2086,6 +2183,10 @@
      - Met3 PD window step
      - :drc_flag:`CU`
      - 25.000
+   * - :drc_rule:`(m3.15)`
+     - Via2 must be enclosed by met3 by at least…
+     - :drc_flag:`CU`
+     - 0.060
 
 
 .. figure:: periphery/p042-m3_dotdash.svg
@@ -2159,6 +2260,10 @@
      - For 16 <= n <= 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
      - :drc_flag:`CU` :drc_flag:`IR`
      - 0.8
+   * - :drc_rule:`(via3.irdrop.4)`
+     - For n > 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
+     - :drc_flag:`CU` :drc_flag:`IR`
+     - 0.9
 
 
 
@@ -2191,6 +2296,10 @@
      - Min enclosure of diff.dg, tap.dg, fom.dy, cfom.dg, cfom.mk, poly.dg, p1m.mk, li1.dg, cli1m.mk, metX.dg (X=1 to 5) and cmmX.mk (X=1 to 5) by :drc_tag:`areaid.ft`. Exempt the following from the check: (a) cell name "s8Fab_crntic*"  (b)  blankings in the frame (rule uses :drc_tag:`areaid.dt` for exemption)
      - 
      - 3.000
+   * - :drc_rule:`(nsm.3b)`
+     - Min spacing between :drc_tag:`areaid.dt` to diff.dg, tap.dg, fom.dy, cfom.dg, cfom.mk, poly.dg, p1m.mk, li1.dg, cli1m.mk, metX.dg (X=1 to 5) and cmmX.mk (X=1 to 5). Exempt the following from the check: (a) blankings in the frame (rule uses :drc_tag:`areaid.dt` for exemption)
+     - 
+     - 3.000
 
 
 
@@ -2217,6 +2326,10 @@
      - N/A
    * - :drc_rule:`(indm.3)`
      - top_padVia must  be enclosed by top_indmMetal by atleast
+     - 
+     - N/A
+   * - :drc_rule:`(indm.4)`
+     - Min area of top_indmMetal
      - 
      - N/A
 
@@ -2312,6 +2425,10 @@
      - Via3 must be enclosed by met4 by at least…
      - :drc_flag:`CU`
      - 0.060
+   * - :drc_rule:`(m4.16)`
+     - Min enclosure of pad by met4
+     - :drc_flag:`CU`
+     - 0.850
 
 
 .. figure:: periphery/p044-m4_dotdash.svg
@@ -2361,6 +2478,10 @@
      - For 11 <= n <= 100 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
      - :drc_flag:`CU` :drc_flag:`IR`
      - 0.5
+   * - :drc_rule:`(via4.irdrop.4)`
+     - For n > 100 via4's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…
+     - :drc_flag:`CU` :drc_flag:`IR`
+     - 0.8
 
 
 
@@ -2389,6 +2510,10 @@
      - via4 must  be enclosed by met5 by atleast
      - 
      - 0.310
+   * - :drc_rule:`(m5.4)`
+     - Min area of met5 (For all flows except SKY130PIR*/SKY130PF*, the rule is exempted for probe pads which are exactly 1.42um by 1.42um)
+     - 
+     - 4.000
 
 
 
@@ -2409,6 +2534,10 @@
      - Min spacing of pad:dg to pad:dg
      - 
      - 1.270
+   * - :drc_rule:`(pad.3)`
+     - Max area of hugePad NOT top_metal
+     - 
+     - 30000
 
 
 
@@ -2445,6 +2574,10 @@
      - (rdl OR ccu1m.mk) must not overlap :drc_tag:`areaid.ft`. Exempt the following from the check: (a)  blankings in the frame (rule uses :drc_tag:`areaid.dt` for exemption)
      - 
      - 
+   * - :drc_rule:`(rdl.6)`
+     - Min spacing of rdl to pad, except rdl interacting with bump
+     - 
+     - 19.660
 
 
 
@@ -2601,6 +2734,10 @@
      - Hvi must not overlap tunm
      - 
      - 
+   * - :drc_rule:`(hvi.5)`
+     - Min space between hvi and nwell (exclude coincident edges)
+     - 
+     - 0.700
 
 
 .. figure:: periphery/p047-hvi_dotdash.svg
@@ -2612,11 +2749,7 @@
 :drc_rule:`(hvnwell.-)`
 -----------------------
 
-* All nwell connected to voltages greater than 1.8V must be enclosed by hvi
-* Nets connected to LV nwell or nwell overlapping hvi but connected to LV voltages (i.e 1.8V) should be tagged "lv_net" using text.dg
-* This tag should be only on Li layer
-
-.. list-table:: Function: Defines rules for HV nwell.
+.. list-table:: Function: Defines rules for HV nwell; All nwell connected to voltages greater than 1.8V must be enclosed by hvi; Nets connected to LV nwell or nwell overlapping hvi but connected to LV voltages (i.e 1.8V) should be tagged "lv_net" using text.dg; This tag should be only on Li layer
    :header-rows: 1
    :stub-columns: 1
    :width: 100%
@@ -2637,6 +2770,10 @@
    * - :drc_rule:`(hvnwell.10)`
      - LVnwell and HnWell should not be on the same net (for the purposes of this check, short the connectivity through resistors); Exempt HnWell with li nets tagged "lv_net" using text.dg and Hnwell connected to nwell overlapping :drc_tag:`areaid.hl`
      - :drc_flag:`TC`
+     - 
+   * - :drc_rule:`(hvnwell.11)`
+     - Nwell connected to the nets mentioned in the "Power_Net_Hv" field of the latcup GUI must be enclosed by hvi (exempt nwell inside :drc_tag:`areaid.hl`). Also for the purposes of this check, short the connectivity through resistors. The rule will be checked in the latchup run and exempted for cells "s8tsg5_tx_ibias_gen" and "s8bbcnv_psoc3p_top_18",  "rainier_top, indus_top*", "rainier_top, manas_top, ccg3_top"
+     - 
      - 
 
 
@@ -2715,6 +2852,10 @@
      - Min space of N+ Hdiff inside HVI across non-abutting P+_tap
      - :drc_flag:`NC`
      - 1.070
+   * - :drc_rule:`(hvdifftap.26)`
+     - Min spacing between pwbm to difftap outside UHVI
+     - 
+     - N/A
 
 
 .. figure:: periphery/p048-hvdifftap_dotdash.svg
@@ -2740,6 +2881,10 @@
      - Min width of poly over diff inside Hvi
      - :drc_flag:`P`
      - 0.500
+   * - :drc_rule:`(hvpoly.14)`
+     - (poly and diff) cannot straddle Hvi
+     - 
+     - 
 
 
 .. figure:: periphery/p049-hvpoly_dotdash.svg
@@ -2799,6 +2944,10 @@
      - 0.000
    * - :drc_rule:`(hvntm.9)`
      - Hvntm must not overlap :drc_tag:`areaid.ce`
+     - 
+     - 
+   * - :drc_rule:`(hvntm.10)`
+     - Hvntm must overlap hvi
      - 
      - 
 
@@ -2878,6 +3027,10 @@
      - de_nFet_source must be enclosed by nsdm by
      - 
      - 0.130
+   * - :drc_rule:`(denmos.14)`
+     - nvhv FETs must be enclosed by :drc_tag:`areaid.mt`
+     - 
+     - N/A
 
 
 .. figure:: periphery/p050-denmos_dotdash.svg
@@ -2951,6 +3104,10 @@
      - de_pFet_source must be enclosed by psdm by
      - 
      - 0.130
+   * - :drc_rule:`(depmos.13)`
+     - pvhv fets( except those with W/L = 5.0/0.66) must be enclosed by :drc_tag:`areaid.mt`
+     - 
+     - N/A
 
 
 .. figure:: periphery/p051-depmos_dotdash.svg
@@ -2998,6 +3155,10 @@
      - N/A
    * - :drc_rule:`(extd.7)`
      - Only cell name "s8rf_n20nativevhv1*" is a valid cell name for n20nativevhv1 device  (Check in LVS as invalid device)
+     - 
+     - N/A
+   * - :drc_rule:`(extd.8)`
+     - Only cell name "s8rf_n20zvtvhv1*" is a valid cell name for n20zvtvhv1 device  (Check in LVS as invalid device)
      - 
      - N/A
 
@@ -3098,6 +3259,10 @@
      - Minimum overlap of hv poly ring_FET and diff
      - 
      - 
+   * - :drc_rule:`(hv.poly.8)`
+     - Any poly gate abutting hv_source/drain becomes a hvFET_gate
+     - 
+     - 
 
 
 .. figure:: periphery/p054-hv_dotdash_dotdash.svg
@@ -3171,6 +3336,10 @@
      - Vhvi:dg cannot straddle VHVPoly
      - 
      - 
+   * - :drc_rule:`(vhvi.8.-)`
+     - Min space between nwell tagged with vhvi:dg and deep nwell, nwell, or n+diff on a separate net (except for n+diff overlapping nwell tagged with vhvi:dg).
+     - 
+     - 11.240
 
 
 
@@ -3223,6 +3392,10 @@
      - Minimum Space spacing of natfet.dg
      - 
      - N/A
+   * - :drc_rule:`(uhvi.10.-)`
+     - natfet.dg layer is not allowed
+     - 
+     - N/A
 
 
 
@@ -3245,6 +3418,10 @@
      - NA
    * - :drc_rule:`(ulvt-.2)`
      - :drc_tag:`areaid.low_vt` must enclose pwbm.dg for the UHV dnw-psub diode texted "condiodeHvPsub"
+     - 
+     - NA
+   * - :drc_rule:`(ulvt-.3)`
+     - :drc_tag:`areaid.low_vt` can not straddle UHVI
      - 
      - NA
 
@@ -3307,6 +3484,10 @@
      - The res layer must abut pwres_terminal on opposite and parallel edges
      - 
      - 
+   * - :drc_rule:`(pwres.11.-)`
+     - The res layer must abut nwell on opposite and parallel edges not checked in Rule pwres.10
+     - 
+     - 
 
 
 .. figure:: periphery/p056-pwres_dotdash_dotdash.svg
@@ -3341,6 +3522,7 @@
         Allowed PNP layout
         Layout: pnppar
         Allowed NPN layout
+        Layout: npnpar1x1
      - 
      - 
 

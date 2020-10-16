@@ -10,3 +10,4 @@ Name,Description,Flags,Value
 (pwres.8.-),Diff or poly is not allowed in the pwell resistor.,,
 (pwres.9.-),Nwell surrounding the pwell resistor must have a full ring of contacted tap strapped with metal.,,
 (pwres.10.-),The res layer must abut pwres_terminal on opposite and parallel edges,,
+(pwres.11.-),The res layer must abut nwell on opposite and parallel edges not checked in Rule pwres.10,,

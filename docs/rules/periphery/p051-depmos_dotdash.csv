@@ -12,3 +12,4 @@ Name,Description,Flags,Value
 (depmos.10),Min enclosure of de_pFet_drain by nwell hole,,0.860
 (depmos.11),Min spacing between n+ tap and (nwell hole enclosing de_pFET_drain),,0.660
 (depmos.12),de_pFet_source must be enclosed by psdm by,,0.130
+(depmos.13),pvhv fets( except those with W/L = 5.0/0.66) must be enclosed by :drc_tag:`areaid.mt`,,N/A
