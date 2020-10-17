@@ -54,7 +54,7 @@ $(DOWNLOADS_DIR):
 	mkdir -p $(DOWNLOADS_DIR)
 
 $(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh: | $(DOWNLOADS_DIR)
-	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-$(OSFLAG)-x86_64.sh -O $(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh --no-check-certificate
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-$(OSFLAG)-x86_64.sh -O $(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh
 	chmod a+x $(DOWNLOADS_DIR)/Miniconda3-latest-$(OSFLAG)-x86_64.sh
 
 $(CONDA_PKGS_DEP): $(CONDA_PYTHON)
