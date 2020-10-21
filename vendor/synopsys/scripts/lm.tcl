@@ -13,7 +13,7 @@ set tech_file ${root}/milkyway/${target_lib_name}.tf
 set layer_map ${root}/milkyway/${target_lib_name}.mw.map
 
 set db_dir "${output_dir}/db_nldm"
-set lef_dir "${output__dir}/lef"
+set lef_dir "${output_dir}/lef"
 
 file mkdir ${output_dir}/ndm
 
