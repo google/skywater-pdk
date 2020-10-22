@@ -27,7 +27,7 @@ set_app_options -name lib.workspace.keep_all_physical_cells -value true
 create_workspace -technology $tech_file ${target_lib_name}_ws
 
 foreach lef_file [glob -directory ${lef_dir} *.lef] {
-    read_lef ${lef_file} -library ${target_lib_name}
+    read_lef ${lef_file} -library ${target_lib_name} -cell_boundary by_cell_size
 }
 
 foreach db_file [glob -directory ${db_dir} *.db] {
