@@ -22,6 +22,7 @@
     glossary
 
     contributing
+    resources
     partners
 
 
