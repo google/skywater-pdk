@@ -34,7 +34,7 @@ All sections are **lower case** and separated by an **underscore**. The sections
   +--------------------------------+---------------------------------------+
   | Digital Standard Cells         | :lib_type:`sc`                        |
   +--------------------------------+---------------------------------------+
-  | Build Space (Flash, SRAM, etc) | :lib_type:`sp`                        |
+  | Build Space (Flash, SRAM, etc) | :lib_type:`bd`                        |
   +--------------------------------+---------------------------------------+
   | IO and Periphery               | :lib_type:`io`                        |
   +--------------------------------+---------------------------------------+
@@ -115,9 +115,9 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :glob:
     :maxdepth: 1
     :caption: Foundry provided Build Spaces
-    :name: sky130-lib-foundry-sp
+    :name: sky130-lib-foundry-bd
 
-    libraries/sky130_fd_sp_*/README
+    libraries/sky130_fd_bd_*/README
 
 .. _sky130-lib-io:
 
