@@ -36,9 +36,6 @@ foreach db_file [glob -directory ${db_dir} *.db] {
 set_process -label nominal -number 1 -libraries *
 set_pvt_configuration -clear_filter all -add -name all -process_labels [list nominal] -process_numbers {1} -voltages {1.28 1.35 1.4 1.44 1.56 1.6 1.65 1.76 1.8 1.95} -temperatures {-40 25 100}
 
-# LEF view needs some changes
-remove_lib_cell *isowell*
-
 check_workspace -details all
 commit_workspace -force -output $ndm_file
 

@@ -14,7 +14,6 @@ sky130_fd_sc_ls {0.48 3.33} \
 sky130_fd_sc_ms {0.48 3.33} \
 ]
 
-
 set lef_dir  ${PLACEROUTE_DIR}/lef
 set MW_LEF mw_lef
 # Sample db to updated port definitions
@@ -24,7 +23,7 @@ set layer_map ${COMMON_DIR}/skywater130.mw.map
 set cells_dir ${TARGET_LIB_DIR}/cells
 
 # Get list of cells
-set cells [lmap cell_dir [glob -directory $cells_dir *dfrbp*] { file tail $cell_dir }]
+set cells [lmap cell_dir [glob -directory $cells_dir *] { file tail $cell_dir }]
 file delete -force -- $MW_LEF
 
 # Create Milkyway Project and read all GDS with layer 81 as PR Bundary

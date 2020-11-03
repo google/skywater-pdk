@@ -12,4 +12,5 @@ work
 logs
 PlaceRoute/common/*.layers
 PlaceRoute/common/*.tluplus
-[Flow] Collected pre-compiled files in common directory
+*.log
+*_output.txt

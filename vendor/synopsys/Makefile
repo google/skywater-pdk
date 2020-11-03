@@ -10,6 +10,7 @@ mapFileName = skywater130.gds.layers
 PLACEROUTE_DIR = PlaceRoute/$(SCLIB)
 WORK_DIR = work/$(SCLIB)
 LOGS = logs/$(SCLIB)
+COPY_LEF = false
 
 COMMON_OPTIONS = " \
 set ROOT $(ROOT) \n\
@@ -43,7 +44,7 @@ techfile: setup gds_layers
 	# ./$(SCRIPTS)/fix_techfile.sh $(PLACEROUTE_DIR)/techfile/$(SCLIB)_icc.tf
 	date > $@
 
-gds_layers: setup
+gds_layers:
 	mkdir -p $(COMMON_DIR)
 	#  Copy map file and duplicate lines with "drawing,text"
 	sed -e "s/:/,/" $(ROOT)/docs/rules/gds_layers.csv | \
@@ -57,11 +58,11 @@ gds_layers: setup
 	sed -i -e "/.*,\s*,.*$$/d" -e "s/,/ /g" $(COMMON_DIR)/$(mapFileName)
 	date > $@
 
-tluplus: setup
+tluplus:
 	mkdir -p $(COMMON_DIR)
 	cd $(WORK_DIR) && grdgenxo -itf2TLUPlus \
 	-i $(ROOT)/$(COMMON_DIR)/skywater130.nominal.itf \
-	-o $(ROOT)/$(COMMON_DIR)/skywater130.nominal.tluplus |& tee $(LOGS)/$@.log
+	-o $(ROOT)/$(COMMON_DIR)/skywater130.nominal.tluplus |& tee ${ROOT}/$(LOGS)/$@.log
 	date > $@
 
 db: setup techfile
@@ -69,28 +70,27 @@ db: setup techfile
 	grep -q '^Error' ${ROOT}/$(LOGS)/lc_$@.log || true
 	date > $@
 
-lef: db
-	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
-	for Lfile in $$(ls $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef | sed '/magic/d' | sed '/isowell	/d'); do \
-	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/lef/$$(echo $$(basename $$Lfile) | sed "s/lef/snps.lef/"); \
-	done
-	date > $@
-
-gds: db
+gds: setup
 	mkdir -p $(PLACEROUTE_DIR)/gds && rm -rf $(PLACEROUTE_DIR)/gds/*
 	for Lfile in $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.gds; do \
 	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/gds/$$(echo $$(basename $$Lfile) | sed "s/gds/snps.gds/"); \
 	done
 	date > $@
 
-# Skipped : Use if original LEFs need modification
-# lef: db
-# 	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
-# 	# cd $(WORK_DIR) && Milkyway -nogui -file ${ROOT}/$(SCRIPTS)/mw.tcl |& tee ${ROOT}/$(LOGS)/mw_$@.log
-# 	# grep -q '^Error' ${ROOT}/$(LOGS)/mw_$@.log || true
-# 	cp $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef $(PLACEROUTE_DIR)/lef
-# 	rm $(PLACEROUTE_DIR)/lef/*.magic.lef
-# 	date > $@
+ifeq ($(COPY_LEF),true)
+lef: db
+	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
+	for Lfile in $$(ls $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef | sed '/magic/d' | sed '/isowell	/d'); do \
+	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/lef/$$(echo $$(basename $$Lfile) | sed "s/lef/snps.lef/"); \
+	done
+	date > $@
+else
+lef: db
+	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
+	cd $(WORK_DIR) && Milkyway -nogui -file ${ROOT}/$(SCRIPTS)/mw.tcl |& tee ${ROOT}/$(LOGS)/mw_$@.log
+	grep -q '^Error' ${ROOT}/$(LOGS)/mw_$@.log || true
+	date > $@
+endif
 
 ndm: db lef gds
 	cd $(WORK_DIR) && icc2_lm_shell -f ${ROOT}/$(SCRIPTS)/lm.tcl $(LM_OPTIONS) |& tee ${ROOT}/$(LOGS)/lm_$@.log
@@ -109,7 +109,7 @@ clean_all: clean
 	rm -rf $(LOGS)
 	rm -rf PlaceRoute/sky130_*
 
-all: ndm
+all: ndm tluplus gds_layers
 	date > $@
 
 sky130_fd_sc_hd:
