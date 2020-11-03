@@ -1,0 +1,15 @@
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+
+# Unignore makefiles
+!Makefile*
+PlaceRoute/sky130**
+work
+logs
+PlaceRoute/common/*.layers
+PlaceRoute/common/*.tluplus
+[Flow] Collected pre-compiled files in common directory
