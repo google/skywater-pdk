@@ -62,10 +62,9 @@ $(LIB_NAME)_db: setup
 	#! grep -q '^Error' $(LOGS)/lc_$@.log
 	date > $@
 
-$(LIB_NAME)_mw: setup
-	cd work && echo $(MW_OPTIONS) > setup.tcl
-	cd work && Milkyway -nogui -file $(SCRIPTS)/mw.tcl |& tee $(LOGS)/mw_$@.log
-	#! grep -q '^Error' $(LOGS)/mw_$@.log
+db: setup techfile
+	cd $(WORK_DIR) && lc_shell -f ${ROOT}/$(SCRIPTS)/lc.tcl $(LC_OPTIONS) |& tee ${ROOT}/$(LOGS)/lc_$@.log
+	grep -q '^Error' ${ROOT}/$(LOGS)/lc_$@.log || true
 	date > $@
 
 $(LIB_NAME)_ndm: $(LIB_NAME)_db $(LIB_NAME)_mw setup

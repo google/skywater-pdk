@@ -1,29 +1,34 @@
 ## Library compiler script
 
-set root ..
-source ${root}/scripts/util.tcl
+source ./setup.tcl
+source ${ROOT}/scripts/util.tcl
 
-check_var target_lib_dir
-check_var target_lib_name
-check_var output_dir
+check_var SCLIB
+check_var ROOT
+check_var TARGET_LIB_DIR
+check_var PLACEROUTE_DIR
 
-set lib_dir ${target_lib_dir}/timing
-set db_dir  ${output_dir}/db_nldm/
+set lib_dir ${TARGET_LIB_DIR}/timing
+set db_dir  ${PLACEROUTE_DIR}/db_nldm
+set fixed_lib_dir ${PLACEROUTE_DIR}/lib
+
+file mkdir $fixed_lib_dir
 
 set N 0
 set i 0
 set report {}
-foreach lib [glob -directory $lib_dir *.lib] {
+foreach lib [glob -directory $lib_dir *__tt_100C_1v80.lib] {
     info_msg "Reading lib: $lib"
     set lib_name [file rootname [file tail $lib]]
+
     ## fix wells:
-    set fix_dir fixed_libs
-    set fixed_lib ./$fix_dir/${lib_name}.lib
-    file mkdir $fix_dir
-    exec cat $lib | ${root}/scripts/fix_well_pg_type.py > $fixed_lib
+    set fixed_lib ./$fixed_lib_dir/${lib_name}.lib
+    exec cat $lib | ${ROOT}/scripts/fix_well_pg_type.py > $fixed_lib
     info_msg "Fixed lib: $fixed_lib"
+
     set lib $fixed_lib
     info_msg "Reading lib: $lib"
+
     read_lib $lib
     file mkdir $db_dir
     info_msg "Writing DB: ${db_dir}/${lib_name}.db"
@@ -34,7 +39,7 @@ foreach lib [glob -directory $lib_dir *.lib] {
     } {
         incr i
         append report " Error    $lib\n"
-    } 
+    }
     incr N
     #break
 }
