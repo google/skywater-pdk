@@ -36,6 +36,25 @@ setup_$(SCLIB):
 	rm -rf setup_sky130*
 	date > $@
 
+techfile: setup gds_layers
+	mkdir -p $(PLACEROUTE_DIR)/techfile
+	cd $(WORK_DIR) && Milkyway -galaxy -nogui -tcl -log read_lef.log -file ${ROOT}/${SCRIPTS}/techfile_convert.tcl |& tee ${ROOT}/$(LOGS)/tech_$@.log
+	chmod 755 ./$(SCRIPTS)/fix_techfile.sh
+	# ./$(SCRIPTS)/fix_techfile.sh $(PLACEROUTE_DIR)/techfile/$(SCLIB)_icc.tf
+	date > $@
+
+gds_layers: setup
+	mkdir -p $(COMMON_DIR)
+	#  Copy map file and duplicate lines with "drawing,text"
+	sed -e "s/:/,/" $(ROOT)/docs/rules/gds_layers.csv | \
+	sed -e "s/\(.*\)\"drawing, text\"\(.*\)/\1drawing \2\n\1text \2/" | \
+	sed -e "s/Layer name/#Layer name/" > $(COMMON_DIR)/$(mapFileName)
+	# Remove comments (5th column)
+	cut -d "," -f 1-4 $(COMMON_DIR)/$(mapFileName) | sponge $(COMMON_DIR)/$(mapFileName)
+	# Align columns
+	column -t -s, -o, $(COMMON_DIR)/$(mapFileName) | sponge $(COMMON_DIR)/$(mapFileName)
+	# Remove lines with empty data and remove comma
+	sed -i -e "/.*,\s*,.*$$/d" -e "s/,/ /g" $(COMMON_DIR)/$(mapFileName)
 	date > $@
 
 $(LIB_NAME)_db: setup
@@ -68,7 +87,7 @@ tech: techfile tluplus
 	date > $@
 
 clean:
-	rm -rfv setup* db lef ndm all techfile tluplus generate_map *.log *output.txt
+	rm -rfv setup* db lef ndm all techfile tluplus gds_layers *.log *output.txt
 	rm -rfv $(COMMON_DIR)/*.layers $(COMMON_DIR)/*.tluplus
 
 clean_all: clean
@@ -93,6 +112,3 @@ sky130_fd_sc_ls:
 
 sky130_fd_sc_ms:
 	$(MAKE) SCLIB=sky130_fd_sc_ms all
-
-# TODO:
-#all: sky130_fd_sc_hd sky130_fd_sc_hdll sky130_fd_sc_hs sky130_fd_sc_ls sky130_fd_sc_ms
