@@ -88,6 +88,9 @@ techfile: setup
 # 	rm $(PLACEROUTE_DIR)/lef/*.magic.lef
 # 	date > $@
 
+ndm: db lef gds
+	cd $(WORK_DIR) && icc2_lm_shell -f ${ROOT}/$(SCRIPTS)/lm.tcl $(LM_OPTIONS) |& tee ${ROOT}/$(LOGS)/lm_$@.log
+	grep -q '^Error' ${ROOT}/$(LOGS)/lm_$@.log || true
 	date > $@
 
 tech: techfile tluplus
