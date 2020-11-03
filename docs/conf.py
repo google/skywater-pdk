@@ -199,6 +199,7 @@ html_theme_options = {
 
     # Hide the symbiflow links
     'hide_symbiflow_links': True,
+    'license_url' : 'https://www.apache.org/licenses/LICENSE-2.0',
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
