@@ -57,9 +57,11 @@ gds_layers: setup
 	sed -i -e "/.*,\s*,.*$$/d" -e "s/,/ /g" $(COMMON_DIR)/$(mapFileName)
 	date > $@
 
-$(LIB_NAME)_db: setup
-	cd work && lc_shell -f $(SCRIPTS)/lc.tcl $(LC_OPTIONS) |& tee $(LOGS)/lc_$@.log
-	#! grep -q '^Error' $(LOGS)/lc_$@.log
+tluplus: setup
+	mkdir -p $(COMMON_DIR)
+	cd $(WORK_DIR) && grdgenxo -itf2TLUPlus \
+	-i $(ROOT)/$(COMMON_DIR)/skywater130.nominal.itf \
+	-o $(ROOT)/$(COMMON_DIR)/skywater130.nominal.tluplus |& tee $(LOGS)/$@.log
 	date > $@
 
 db: setup techfile
@@ -74,9 +76,11 @@ lef: db
 	done
 	date > $@
 
-techfile: setup
-	test -d $(TECH_DIR)/milkyway/ || mkdir $(TECH_DIR)/milkyway/
-	cp $(ROOT)/milkyway/sky130_fd_sc_hd.tf $(TECH_DIR)/milkyway/skywater130_fd_sc_hd.tf
+gds: db
+	mkdir -p $(PLACEROUTE_DIR)/gds && rm -rf $(PLACEROUTE_DIR)/gds/*
+	for Lfile in $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.gds; do \
+	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/gds/$$(echo $$(basename $$Lfile) | sed "s/gds/snps.gds/"); \
+	done
 	date > $@
 
 # Skipped : Use if original LEFs need modification
