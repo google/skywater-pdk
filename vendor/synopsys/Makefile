@@ -67,8 +67,11 @@ db: setup techfile
 	grep -q '^Error' ${ROOT}/$(LOGS)/lc_$@.log || true
 	date > $@
 
-$(LIB_NAME)_ndm: $(LIB_NAME)_db $(LIB_NAME)_mw setup
-	cd work && icc2_lm_shell -f $(SCRIPTS)/lm.tcl $(LM_OPTIONS) |& tee $(LOGS)/lm_$@.log
+lef: db
+	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
+	for Lfile in $$(ls $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef | sed '/magic/d' | sed '/isowell	/d'); do \
+	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/lef/$$(echo $$(basename $$Lfile) | sed "s/lef/snps.lef/"); \
+	done
 	date > $@
 
 techfile: setup
@@ -76,10 +79,15 @@ techfile: setup
 	cp $(ROOT)/milkyway/sky130_fd_sc_hd.tf $(TECH_DIR)/milkyway/skywater130_fd_sc_hd.tf
 	date > $@
 
-tluplus: setup
-	test -d $(TECH_DIR)/star_rcxt/ || mkdir $(TECH_DIR)/star_rcxt/
-	cp $(ROOT)/milkyway/skywater130.mw2itf.map $(TECH_DIR)/star_rcxt/
-	cd work && grdgenxo -itf2TLUPlus -i $(ROOT)/star_rcxt/skywater130.nominal.itf -o $(TECH_DIR)/star_rcxt/skywater130.nominal.tluplus |& tee $(LOGS)/$@.log
+# Skipped : Use if original LEFs need modification
+# lef: db
+# 	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
+# 	# cd $(WORK_DIR) && Milkyway -nogui -file ${ROOT}/$(SCRIPTS)/mw.tcl |& tee ${ROOT}/$(LOGS)/mw_$@.log
+# 	# grep -q '^Error' ${ROOT}/$(LOGS)/mw_$@.log || true
+# 	cp $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef $(PLACEROUTE_DIR)/lef
+# 	rm $(PLACEROUTE_DIR)/lef/*.magic.lef
+# 	date > $@
+
 	date > $@
 
 tech: techfile tluplus
