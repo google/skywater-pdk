@@ -23,7 +23,7 @@ foreach cell $cells {
         echo "Info-PE: reading GDS file: $gds"
         read_gds \
 			-cell_version overwrite_existing_cell \
-			-boundary_layer_map 236 \
+			-boundary_layer_map 81 \
 			-ignore_undefined_layer \
 			-lib_name $lib_name \
 			-layer_mapping $layer_map \
@@ -62,14 +62,30 @@ scheme setFormField "Set PR Boundary" "Width Value" "0.46"
 scheme setFormField "Set PR Boundary" "Bottom Offset" "0.000000"
 scheme setFormField "Set PR Boundary" "Bottom Boundary" "specify"
 scheme setFormField "Set PR Boundary" "Bottom From" "Origin (0,0)"
+scheme setFormField "Set PR Boundary" "Width" "specify"
+scheme setFormField "Set PR Boundary" "Width Value" "0.46"
 scheme setFormField "Set PR Boundary" "Multiple (2x, 3x)" "based on cell height"
+scheme setFormField "Set PR Boundary" "1st Layer Parallel To P/G Rail" "Metal2"
+scheme setFormField "Set PR Boundary" "1st Layer Perpendicular To P/G Rail" "Metal1"
 scheme formButton "Set PR Boundary" "analyze"
+#scheme formApply "Set PR Boundary"
 scheme formOk "Set PR Boundary"
+
+## Fix Physical Only Cells 
+#set phy_cells "tap_1 tap_2 tapvgnd_1 tapvgnd2_1 tapvpwrvgnd_1 fill_1 fill_2 fill_4 fill_8"
+#for cel $phy_cells {
+#	scheme setFormField "Set PR Boundary" "allOrN" "only"
+#	scheme setFormField "Set PR Boundary" "Cell Name" "sky130_fd_sc_hd__${cel}"
+#	scheme setFormField "Set PR Boundary" "Multiple (2x, 3x)" "all cells are single-height"
+#	scheme formApply "Set PR Boundary"
+#}
+#scheme formCancel "Set PR Boundary"
 
 scheme axgDefineWireTracks
 axgDefineWireTracks
 setFormField "Define Wire Track" "polyDir" "vertical"
 setFormField "Define Wire Track" "m1Dir" "vertical"
+setFormField "Define Wire Track" "M1 Offset" "0.23"
 setFormField "Define Wire Track" "M2 Offset" "0.17"
 setFormField "Define Wire Track" "m2Dir" "horizontal"
 setFormField "Define Wire Track" "m3Dir" "vertical"
