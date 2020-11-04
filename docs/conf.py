@@ -31,8 +31,9 @@
 import docutils
 import os
 import re
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('./_ext'))
 
 
 # -- Project information -----------------------------------------------------
@@ -65,6 +66,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinxcontrib_hdl_diagrams',
+    'cell_list',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

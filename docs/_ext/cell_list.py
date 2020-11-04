@@ -24,6 +24,10 @@ import pathlib
 import pprint
 import sys
 import textwrap
+from docutils import nodes
+from docutils.parsers.rst import Directive
+from docutils.statemachine import ViewList
+from sphinx.util.nodes import nested_parse_with_titles
 
 from typing import Tuple, List, Dict
 
@@ -91,7 +95,7 @@ def collect(library_dir) -> Tuple[str, List[str]]:
 
 
 def generate_rst(library_dir, library_name, cells):
-    """Generate the RST file containing basic information about cells
+    """Generate the RST paragraph containing basic information about cells
 
     Parameters
     ----------
@@ -106,15 +110,14 @@ def generate_rst(library_dir, library_name, cells):
 
     Returns
     -------
-    path: str
-        Path to generated file
+    paragraph: str
+        Generated paragraph
     """
 
     if not isinstance(library_dir, pathlib.Path):
         library_dir = pathlib.Path(library_dir)
 
-    file_name = "cell-list.rst"
-    cell_list_file = pathlib.Path(library_dir, file_name)
+    paragraph = ""
     cell_list = ""
 
     for cell in cells:
@@ -129,19 +132,42 @@ def generate_rst(library_dir, library_name, cells):
             )
 
     header = rst_header.format(libname = library_name)
-    try:
-        with(open(str(cell_list_file), "w")) as c:
-            c.write(rst_template.format(
+    paragraph = rst_template.format(
                 header_line = header,
                 header_underline = rst_header_line_char * len(header),
                 cell_list = cell_list
-            ))
-    except FileNotFoundError:
-        print(f"ERROR: Failed to create {str(cell_list_file)}", file=sys.stderr)
-        raise
+            )
+    return paragraph
 
-    return cell_list_file
+# --- Sphinx extension wrapper ---
 
+class CellList(Directive):
+
+    def run(self):
+        env = self.state.document.settings.env
+        dirname = env.docname.rpartition('/')[0]
+        libname, cells = collect(dirname)
+        paragraph = generate_rst(dirname, libname, cells)
+        # parse rst string to docutils nodes
+        rst = ViewList()
+        for i,line in enumerate(paragraph.split('\n')):
+            rst.append(line, libname+"-cell-list.rst", i+1) 
+        node = nodes.section()
+        node.document = self.state.document
+        nested_parse_with_titles(self.state, rst, node)
+        return node.children
+
+
+def setup(app):
+    app.add_directive("cell_list", CellList)
+
+    return {
+        'version': '0.1',
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
+
+# --- stand alone, command line operation ---
 
 def main():
     parser = argparse.ArgumentParser()
@@ -157,8 +183,16 @@ def main():
     print(f"Analysing {lib}")
     libname, cells = collect(lib)
     print(f"Library name: {libname}, found {len(cells)} cells")
-    file = generate_rst(lib, libname, cells)
-    print(f'Generated {file}')
+    paragraph = generate_rst(lib, libname, cells)
+    library_dir = pathlib.Path(lib)
+    cell_list_file = pathlib.Path(library_dir, "cell-list.rst")
+    try:
+        with(open(str(cell_list_file), "w")) as c:
+            c.write(paragraph)
+        print(f'Generated {cell_list_file}')
+    except FileNotFoundError:
+        print(f"ERROR: Failed to create {str(cell_list_file)}", file=sys.stderr)
+        raise
 
 
 if __name__ == "__main__":
