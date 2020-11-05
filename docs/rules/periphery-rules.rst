@@ -134,7 +134,9 @@
      - 
      - N/A
    * - :drc_rule:`(x.2)`
-     - Angles permitted on: diff except for:\n- diff inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell, \n- diff rings around the die at min total L>1000 um and W=0.3 um
+     - Angles permitted on: diff except for:
+         - diff inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell, 
+         - diff rings around the die at min total L>1000 um and W=0.3 um
      - 
      - n x 90
    * - :drc_rule:`(x.2)`
@@ -182,7 +184,9 @@
      - :drc_flag:`NC`
      - 
    * - :drc_rule:`(x.9)`
-     - Shapes on maskAdd or maskDrop layers ("serifs") are allowed in core only. Exempted are: \n- cfom md/mp inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell \n- diff rings around the die at min total L>1000 um and W=0.3 um, and PMM/PDMM inside areaid:sl
+     - Shapes on maskAdd or maskDrop layers ("serifs") are allowed in core only. Exempted are: 
+         - cfom md/mp inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell 
+         - diff rings around the die at min total L>1000 um and W=0.3 um, and PMM/PDMM inside areaid:sl
      - 
      - 
    * - :drc_rule:`(x.9)`
@@ -206,23 +210,26 @@
      - :drc_flag:`LVS`
      - 
    * - :drc_rule:`(x.\n12a\n12b\n12c)`
-     - To comply with the minimum spacing requirement for layer X in the frame:\n- Spacing of :drc_tag:`areaid.mt` to any non-ID layer\n- Enclosure of any non-ID layer by :drc_tag:`areaid.mt`\n- Rules exempted for cells with name "*_buildspace"
+     - To comply with the minimum spacing requirement for layer X in the frame:
+         - Spacing of :drc_tag:`areaid.mt` to any non-ID layer
+         - Enclosure of any non-ID layer by :drc_tag:`areaid.mt`
+         - Rules exempted for cells with name "*_buildspace"
      - :drc_flag:`F`
      - 
    * - :drc_rule:`(x.12d)`
-     - - Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met3.dg)
+     - Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met3.dg)
      - :drc_flag:`F`
      - N/A
    * - :drc_rule:`(x.12d)`
-     - - Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met5.dg)
+     - Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met5.dg)
      - :drc_flag:`F`
      - 
    * - :drc_rule:`(x.12e)`
-     - - Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met3.dg)
+     - Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met3.dg)
      - :drc_flag:`F`
      - N/A
    * - :drc_rule:`(x.12e)`
-     - - Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met5.dg)
+     - Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met5.dg)
      - :drc_flag:`F`
      - 
    * - :drc_rule:`(x.13)`
@@ -250,7 +257,8 @@
      - 
      - 
    * - :drc_rule:`(x.18)`
-     - Use redundant mcon, via, via2, via3 and via4 (Locations where additional vias/contacts can be added to existing single vias/contacts will be identified by this rule).\nSingle via under :drc_tag:`areaid.core` and :drc_tag:`areaid.standarc` are excluded from the single via check
+     - | Use redundant mcon, via, via2, via3 and via4 (Locations where additional vias/contacts can be added to existing single vias/contacts will be identified by this rule).
+       | Single via under :drc_tag:`areaid.core` and :drc_tag:`areaid.standarc` are excluded from the single via check
      - :drc_flag:`RR`
      - 
    * - :drc_rule:`(x.19)`
@@ -266,9 +274,13 @@
      - 
      - 
    * - :drc_rule:`(x.22)`
-     - No floating interconnects (poly, li1, met1-met5) or capm allowed; Rule flags interconnects with no path to poly, difftap or metal pins. Exempt floating layers can be excluded using poly_float, li1_float, m1_float, m2_float, m3_float, m4_float and m5_float text labels. Also flags an error if these text labels are placed on connected layers (not floating) and if the labels are not over the appropriate metal layer.  \nIf floating interconnects need to be connected at a higher level (Parent IP or Full chip), such floating interconnects can be exempted using poly_tie, li1_tie, m1_tie, m2_tie, m3_tie, m4_tie and m5_tie text labels.\nIt is the responsibility of the IP owner and chip/product owner to communicate and agree to the node each of these texted lines is connected to, if there is any risk to how a line is tied, and to what node.\nOnly metals outside :drc_tag:`areaid.stdcell` are checked.\n
-        The following are exempt from x.22 violations: _techCD_ , inductor.dg, modulecut, capacitors and s8blerf
-        The 'notPublicCell' switch will deactivate this rule
+     - | No floating interconnects (poly, li1, met1-met5) or capm allowed; Rule flags interconnects with no path to poly, difftap or metal pins. Exempt floating layers can be excluded using poly_float, li1_float, m1_float, m2_float, m3_float, m4_float and m5_float text labels. Also flags an error if these text labels are placed on connected layers (not floating) and if the labels are not over the appropriate metal layer.  
+       | If floating interconnects need to be connected at a higher level (Parent IP or Full chip), such floating interconnects can be exempted using poly_tie, li1_tie, m1_tie, m2_tie, m3_tie, m4_tie and m5_tie text labels.
+       | It is the responsibility of the IP owner and chip/product owner to communicate and agree to the node each of these texted lines is connected to, if there is any risk to how a line is tied, and to what node.
+       | Only metals outside :drc_tag:`areaid.stdcell` are checked.
+       | 
+       The following are exempt from x.22 violations: _techCD_ , inductor.dg, modulecut, capacitors and s8blerf
+       The 'notPublicCell' switch will deactivate this rule
      - :drc_flag:`RC`
      - 
    * - :drc_rule:`(x.23a)`
@@ -308,7 +320,8 @@
      - 
      - 
    * - :drc_rule:`(x.27)`
-     - If the sealring is present, then partnum is required.  To exempt the requirement, place text.dg saying "partnum_not_necessary".\n"partnum*block" pcell should be used instead of "partnum*" pcells
+     - | If the sealring is present, then partnum is required.  To exempt the requirement, place text.dg saying "partnum_not_necessary".
+       | "partnum*block" pcell should be used instead of "partnum*" pcells
      - :drc_flag:`RR`
      - N/A
    * - :drc_rule:`(x.28)`
@@ -419,7 +432,7 @@
      - 
    * - :drc_rule:`(nwell.5)`
      - Deep nwell must be enclosed by nwell by atleast... Exempted inside UHVI or :drc_tag:`areaid.lw`
-        Nwells can merge over deep nwell if spacing too small (as in rule nwell.2)
+       Nwells can merge over deep nwell if spacing too small (as in rule nwell.2)
      - :drc_flag:`TC`
      - 0.400
    * - :drc_rule:`(nwell.5a)`
@@ -436,8 +449,8 @@
      - 1.030
    * - :drc_rule:`(nwell.7)`
      - Min spacing between nwell and deep nwell on separate nets
-        Spacing between nwell and deep nwell on the same net is set by the sum of the rules nwell.2 and nwell.5. By default, DRC run on a cell checks for the separate-net spacing, when nwell and deep nwell nets are separate within the cell hierarchy and are joined in the upper hierarchy. To allow net names to be joined and make the same-net rule applicable in this case, the "joinNets" switch should be turned on.
-        waffle_chip
+       Spacing between nwell and deep nwell on the same net is set by the sum of the rules nwell.2 and nwell.5. By default, DRC run on a cell checks for the separate-net spacing, when nwell and deep nwell nets are separate within the cell hierarchy and are joined in the upper hierarchy. To allow net names to be joined and make the same-net rule applicable in this case, the "joinNets" switch should be turned on.
+       waffle_chip
      - :drc_flag:`TC`
      - 4.500
 
@@ -1050,7 +1063,11 @@
      - 
      - N/A
    * - :drc_rule:`(rpm.11)`
-     - rpm should not overlap or straddle pwbm except cells\ns8usbpdv2_csa_top\ns8usbpdv2_20vconn_sw_300ma_ovp_ngate_unit\ns8usbpdv2_20vconn_sw_300ma_ovp\ns8usbpdv2_20sbu_sw_300ma_ovp
+     - | rpm should not overlap or straddle pwbm except cells
+       | s8usbpdv2_csa_top
+       | s8usbpdv2_20vconn_sw_300ma_ovp_ngate_unit
+       | s8usbpdv2_20vconn_sw_300ma_ovp
+       | s8usbpdv2_20sbu_sw_300ma_ovp
      - 
      - N/A
 
@@ -1266,7 +1283,11 @@
      - :drc_flag:`DE`
      - 
    * - :drc_rule:`(n/ psd.9)`
-     - Diff and tap must be enclosed by their corresponding implant layers. Rule exempted for\n- diff inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell for SKY130P*/SP8P*/SKY130DI-5R-CSMC flows\n- diff rings around the die at min total L>1000 um and W=0.3 um\n- gated_npn \n- :drc_tag:`areaid.zer`.
+     - Diff and tap must be enclosed by their corresponding implant layers. Rule exempted for
+         - diff inside "advSeal_6um* OR cuPillarAdvSeal_6um*" pcell for SKY130P*/SP8P*/SKY130DI-5R-CSMC flows
+         - diff rings around the die at min total L>1000 um and W=0.3 um
+         - gated_npn 
+         - :drc_tag:`areaid.zer`.
      - :drc_flag:`DE`
      - 
    * - :drc_rule:`(n/ psd.10a)`
@@ -1411,7 +1432,8 @@
      - :drc_flag:`P`
      - 0.100
    * - :drc_rule:`(licon.16)`
-     - Every source_diff and every tap must enclose at least one licon1, including the diff/tap straddling areaid:ce. \nRule exempted inside UHVI.
+     - | Every source_diff and every tap must enclose at least one licon1, including the diff/tap straddling areaid:ce. 
+       | Rule exempted inside UHVI.
      - :drc_flag:`P`
      - 
    * - :drc_rule:`(licon.17)`
@@ -1712,7 +1734,14 @@
      - :drc_flag:`Flags`
      - Value
    * - :drc_rule:`(m1.-)`
-     - Algorithm should flag errors, for met1, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm1 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.
+     - | Algorithm should flag errors, for met1, if ANY of the following is true:
+       | An entire 700x700 window is covered by cmm1 waffleDrop, and metX PD < 70% for same window.
+       | 80-100% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 65% for same window.
+       | 60-80% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 60% for same window.
+       | 50-60% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 50% for same window.
+       | 40-50% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 40% for same window.
+       | 30-40% of 700x700 window is covered by cmm1 waffleDrop, and metX PD < 30% for same window.
+       | Exclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.
      - :drc_flag:`RC`
      - 
    * - :drc_rule:`(m1.1)`
@@ -1906,7 +1935,14 @@
      - :drc_flag:`Flags`
      - Value
    * - :drc_rule:`(m2.-)`
-     - Algorithm should flag errors, for met2, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm2 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.
+     - | Algorithm should flag errors, for met2, if ANY of the following is true:
+       | An entire 700x700 window is covered by cmm2 waffleDrop, and metX PD < 70% for same window.
+       | 80-100% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 65% for same window.
+       | 60-80% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 60% for same window.
+       | 50-60% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 50% for same window.
+       | 40-50% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 40% for same window.
+       | 30-40% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 30% for same window.
+       | Exclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.
      - :drc_flag:`RC`
      - 
    * - :drc_rule:`(m2.1)`
@@ -2104,7 +2140,14 @@
      - :drc_flag:`Flags`
      - Value
    * - :drc_rule:`(m3.-)`
-     - Algorithm should flag errors, for met3, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm3 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.
+     - | Algorithm should flag errors, for met3, if ANY of the following is true:
+       | An entire 700x700 window is covered by cmm3 waffleDrop, and metX PD < 70% for same window.
+       | 80-100% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 65% for same window.
+       | 60-80% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 60% for same window.
+       | 50-60% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 50% for same window.
+       | 40-50% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 40% for same window.
+       | 30-40% of 700x700 window is covered by cmm3 waffleDrop, and metX PD < 30% for same window.
+       | Exclude cells whose area is below 40Kum2. NOTE: Required for IP, Recommended for Chip-level.
      - :drc_flag:`RC`
      - 
    * - :drc_rule:`(m3.1)`
@@ -2354,7 +2397,14 @@
      - :drc_flag:`Flags`
      - Value
    * - :drc_rule:`(m4.-)`
-     - Algorithm should flag errors, for met4, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm4 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.
+     - | Algorithm should flag errors, for met4, if ANY of the following is true:
+       | An entire 700x700 window is covered by cmm4 waffleDrop, and metX PD < 70% for same window.
+       | 80-100% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 65% for same window.
+       | 60-80% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 60% for same window.
+       | 50-60% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 50% for same window.
+       | 40-50% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 40% for same window.
+       | 30-40% of 700x700 window is covered by cmm4 waffleDrop, and metX PD < 30% for same window.
+       | Exclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.
      - :drc_flag:`RC`
      - 
    * - :drc_rule:`(m4.1)`
@@ -3519,10 +3569,10 @@
      - 
    * - :drc_rule:`(rfdiode.3.-)`
      - :drc_tag:`areaid.re` must be coincident with innwer edge of the nwell ring for the rf pwell-deep nwell diode
-        Allowed PNP layout
-        Layout: pnppar
-        Allowed NPN layout
-        Layout: npnpar1x1
+       Allowed PNP layout
+       Layout: pnppar
+       Allowed NPN layout
+       Layout: npnpar1x1
      - 
      - 
 

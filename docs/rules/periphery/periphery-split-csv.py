@@ -305,7 +305,13 @@ for rt in rule_tables:
 
     for r in rt.rules:
         f = ' '.join(':drc_flag:`{}`'.format(f.name) for f in r.flags)
-        d = textwrap.indent(r.description, prefix='        ').strip()
+        if '\\n- ' in r.description: # bullet list description
+            r.description = r.description.replace('\\n- ','\n  - ')
+        elif '\\n' in r.description: # multi line description
+            r.description = '\n'.join( [ '| '+l for l in r.description.split('\\n') ] )
+        else:
+            r.description = r.description.lstrip(' -') # one item bullet list to text           
+        d = textwrap.indent(r.description, prefix='       ').strip()
         rst.write("""\
    * - :drc_rule:`{r.name}`
      - {d}
@@ -336,3 +342,4 @@ rst.close()
 
 with open(PERIPHERY_RULES_FILE, encoding='utf8') as f:
     print(f.read())
+
