@@ -3,7 +3,13 @@
 DOCSDIR := $(dir $(lastword $(MAKEFILE_LIST)))
 TOPDIR := $(realpath $(DOCSDIR)/..)
 
+ifndef NO_CONDA
 include $(TOPDIR)/scripts/make/conda.mk
+endif
+ifdef NO_CONDA
+IN_CONDA_ENV :=
+CONDA_ENV_PYTHON :=
+endif
 
 SHELL = /bin/bash
 
