@@ -1,4 +1,4 @@
-Name,Description,Flags,Value
-(hvtr.1),Min width of hvtr,,0.380
-(hvtr.2),Min spacing between hvtp to hvtr,,0.380
-(hvtr.3),Min enclosure of pfet by hvtr,P,0.180
+Name,Description,Flags,Value,Unit
+(hvtr.1),Min width of hvtr,,0.380,µm
+(hvtr.2),Min spacing between hvtp to hvtr,,0.380,µm
+(hvtr.3),Min enclosure of pfet by hvtr,P,0.180,µm

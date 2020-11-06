@@ -1,16 +1,16 @@
-Name,Description,Flags,Value
-(difftap.1),Width of diff or tap,P,0.150
-(difftap.2),"Minimum channel width (Diff And Poly) except for FETs inside :drc_tag:`areaid.sc`: Rule exempted in the SP8* flows only, for the cells listed in rule difftap.2a",P,0.420
-(difftap.2a),"Minimum channel width (Diff And Poly) for cell names ""s8cell_ee_plus_sseln_a"", ""s8cell_ee_plus_sseln_b"", ""s8cell_ee_plus_sselp_a"", ""s8cell_ee_plus_sselp_b"" , ""s8fpls_pl8"", ""s8fpls_rdrv4"" , ""s8fpls_rdrv4f"" and ""s8fpls_rdrv8""",P,NA
-(difftap.2b),Minimum channel width (Diff And Poly) for FETs inside :drc_tag:`areaid.sc`,P,0.360
-(difftap.3),"Spacing of diff to diff, tap to tap, or non-abutting diff to tap",,0.270
-(difftap.4),Min tap bound by one diffusion,,0.290
-(difftap.5),Min tap bound by two diffusions,P,0.400
-(difftap.6),Diff and tap are not allowed to extend beyond their abutting edge,,
-(difftap.7),Spacing of diff/tap abutting edge to a non-conciding diff or tap edge,NE,0.130
-(difftap.8),Enclosure of (p+) diffusion by N-well. Rule exempted inside UHVI.,DE NE P,0.180
-(difftap.9),Spacing of (n+) diffusion to N-well outside UHVI,DE NE P,0.340
-(difftap.10),Enclosure of (n+)  tap by N-well. Rule exempted inside UHVI.,NE P,0.180
-(difftap.11),Spacing of (p+) tap to  N-well. Rule exempted inside UHVI.,,0.130
-(difftap.12),ESD_nwell_tap is considered shorted to the abutting diff,NC,
-(difftap.13),Diffusion or the RF FETS in Table H5 is defined by Ldiff and Wdiff.,,
+Name,Description,Flags,Value,Unit
+(difftap.1),Width of diff or tap,P,0.150,µm
+(difftap.2),"Minimum channel width (Diff And Poly) except for FETs inside :drc_tag:`areaid.sc`: Rule exempted in the SP8* flows only, for the cells listed in rule difftap.2a",P,0.420,µm
+(difftap.2a),"Minimum channel width (Diff And Poly) for cell names ""s8cell_ee_plus_sseln_a"", ""s8cell_ee_plus_sseln_b"", ""s8cell_ee_plus_sselp_a"", ""s8cell_ee_plus_sselp_b"" , ""s8fpls_pl8"", ""s8fpls_rdrv4"" , ""s8fpls_rdrv4f"" and ""s8fpls_rdrv8""",P,NA,µm
+(difftap.2b),Minimum channel width (Diff And Poly) for FETs inside :drc_tag:`areaid.sc`,P,0.360,µm
+(difftap.3),"Spacing of diff to diff, tap to tap, or non-abutting diff to tap",,0.270,µm
+(difftap.4),Min tap bound by one diffusion,,0.290,
+(difftap.5),Min tap bound by two diffusions,P,0.400,
+(difftap.6),Diff and tap are not allowed to extend beyond their abutting edge,,,
+(difftap.7),Spacing of diff/tap abutting edge to a non-conciding diff or tap edge,NE,0.130,µm
+(difftap.8),Enclosure of (p+) diffusion by N-well. Rule exempted inside UHVI.,DE NE P,0.180,µm
+(difftap.9),Spacing of (n+) diffusion to N-well outside UHVI,DE NE P,0.340,µm
+(difftap.10),Enclosure of (n+)  tap by N-well. Rule exempted inside UHVI.,NE P,0.180,µm
+(difftap.11),Spacing of (p+) tap to  N-well. Rule exempted inside UHVI.,,0.130,µm
+(difftap.12),ESD_nwell_tap is considered shorted to the abutting diff,NC,,
+(difftap.13),Diffusion or the RF FETS in Table H5 is defined by Ldiff and Wdiff.,,,

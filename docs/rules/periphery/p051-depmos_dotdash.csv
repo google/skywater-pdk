@@ -1,15 +1,15 @@
-Name,Description,Flags,Value
-(depmos.1),Min width of de_pFet_gate,,1.050
-(depmos.2),Min width of de_pFet_source not overlapping poly,,0.280
-(depmos.3),Min width of de_pFet_source overlapping poly,,0.920
-(depmos.4),Min width of the de_pFet_drain,,0.170
-(depmos.5),Min/Max extension of de_pFet_source beyond nwell,,0.260
-(depmos.6),Min/Max spacing between de_pFet_drain and de_pFet_source,,1.190
-(depmos.7),Min channel width for de_pFet_gate,,5.000
-(depmos.8),90 degree angles are not permitted for nwell hole overlapping de_pFET_drain,,
-(depmos.9a),"All bevels on nwell hole are 45 degree, 0.43 um from corners",NC,
-(depmos.9b),"All bevels on de_pFet_drain are 45 degree, 0.05 um from corners",NC,
-(depmos.10),Min enclosure of de_pFet_drain by nwell hole,,0.860
-(depmos.11),Min spacing between n+ tap and (nwell hole enclosing de_pFET_drain),,0.660
-(depmos.12),de_pFet_source must be enclosed by psdm by,,0.130
-(depmos.13),pvhv fets( except those with W/L = 5.0/0.66) must be enclosed by :drc_tag:`areaid.mt`,,N/A
+Name,Description,Flags,Value,Unit
+(depmos.1),Min width of de_pFet_gate,,1.050,µm
+(depmos.2),Min width of de_pFet_source not overlapping poly,,0.280,µm
+(depmos.3),Min width of de_pFet_source overlapping poly,,0.920,µm
+(depmos.4),Min width of the de_pFet_drain,,0.170,µm
+(depmos.5),Min/Max extension of de_pFet_source beyond nwell,,0.260,
+(depmos.6),Min/Max spacing between de_pFet_drain and de_pFet_source,,1.190,µm
+(depmos.7),Min channel width for de_pFet_gate,,5.000,µm
+(depmos.8),90 degree angles are not permitted for nwell hole overlapping de_pFET_drain,,,
+(depmos.9a),"All bevels on nwell hole are 45 degree, 0.43 µm from corners",NC,,µm
+(depmos.9b),"All bevels on de_pFet_drain are 45 degree, 0.05 µm from corners",NC,,µm
+(depmos.10),Min enclosure of de_pFet_drain by nwell hole,,0.860,µm
+(depmos.11),Min spacing between n+ tap and (nwell hole enclosing de_pFET_drain),,0.660,µm
+(depmos.12),de_pFet_source must be enclosed by psdm by,,0.130,µm
+(depmos.13),pvhv fets( except those with W/L = 5.0/0.66) must be enclosed by :drc_tag:`areaid.mt`,,N/A,N/A

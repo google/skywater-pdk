@@ -1,12 +1,12 @@
-Name,Description,Flags,Value
-(photo.1),Rules dnwell.3 and nwell.5 are exempted for photoDiode,,
-(photo.2),Min/Max width of photoDiode,,3.000
-(photo.3),Min spacing between photoDiode,,5.000
-(photo.4),Min spacing between photoDiode and deep nwell,,5.300
-(photo.5),photoDiode edges must be coincident with :drc_tag:`areaid.po`,,
-(photo.6),photoDiode must be enclosed by dnwell ring,,
-(photo.7),photoDiode must be enclosed by p+ tap ring,,
-(photo.8),Min/Max width of nwell inside photoDiode,,0.840
-(photo.9),Min/Max enclosure of nwell by photoDiode,,1.080
-(photo.10),Min/Max width of tap inside photoDiode,,0.410
-(photo.11),Min/Max enclosure of tap by nwell inside photoDiode,,0.215
+Name,Description,Flags,Value,Unit
+(photo.1),Rules dnwell.3 and nwell.5 are exempted for photoDiode,,,
+(photo.2),Min/Max width of photoDiode,,3.000,µm
+(photo.3),Min spacing between photoDiode,,5.000,µm
+(photo.4),Min spacing between photoDiode and deep nwell,,5.300,µm
+(photo.5),photoDiode edges must be coincident with :drc_tag:`areaid.po`,,,
+(photo.6),photoDiode must be enclosed by dnwell ring,,,
+(photo.7),photoDiode must be enclosed by p+ tap ring,,,
+(photo.8),Min/Max width of nwell inside photoDiode,,0.840,µm
+(photo.9),Min/Max enclosure of nwell by photoDiode,,1.080,µm
+(photo.10),Min/Max width of tap inside photoDiode,,0.410,µm
+(photo.11),Min/Max enclosure of tap by nwell inside photoDiode,,0.215,µm

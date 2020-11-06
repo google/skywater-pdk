@@ -1,9 +1,9 @@
-Name,Description,Flags,Value
-(tunm.1),Min width of tunm,,0.410
-(tunm.2),Min spacing of tunm to tunm,,0.500
-(tunm.3),Extension of tunm beyond (poly and diff),,0.095
-(tunm.4),Min spacing of tunm to (poly and diff) outside tunm,,0.095
-(tunm.5),(poly and diff) may not straddle tunm,,
-(tunm.6a),Tunm outside deep n-well is not allowed,TC,
-(tunm.7),Min tunm area,,0.672
-(tunm.8),tunm must be enclosed by :drc_tag:`areaid.ce`,,
+Name,Description,Flags,Value,Unit
+(tunm.1),Min width of tunm,,0.410,µm
+(tunm.2),Min spacing of tunm to tunm,,0.500,µm
+(tunm.3),Extension of tunm beyond (poly and diff),,0.095,
+(tunm.4),Min spacing of tunm to (poly and diff) outside tunm,,0.095,µm
+(tunm.5),(poly and diff) may not straddle tunm,,,
+(tunm.6a),Tunm outside deep n-well is not allowed,TC,,
+(tunm.7),Min tunm area,,0.672,µm²
+(tunm.8),tunm must be enclosed by :drc_tag:`areaid.ce`,,,

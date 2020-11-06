@@ -1,11 +1,11 @@
-Name,Description,Flags,Value
-(uhvi.1.-),diff/tap can not straddle UHVI,,N/A
-(uhvi.2.-),poly can not straddle UHVI,,N/A
-(uhvi.3.-),pwbm.dg must be enclosed by UHVI (exempt inside :drc_tag:`areaid.lw`),,N/A
-(uhvi.4.-),dnw.dg can not straddle UHVI,,N/A
-(uhvi.5.-),UHVI must enclose :drc_tag:`areaid.ext`,,N/A
-(uhvi.6.-),UHVI must enclose dnwell,,N/A
-(uhvi.7.-),natfet.dg must be enclosed by UHVI layer by at least,,N/A
-(uhvi.8.-),Minimum width of natfet.dg,,N/A
-(uhvi.9.-),Minimum Space spacing of natfet.dg,,N/A
-(uhvi.10.-),natfet.dg layer is not allowed,,N/A
+Name,Description,Flags,Value,Unit
+(uhvi.1.-),diff/tap can not straddle UHVI,,N/A,N/A
+(uhvi.2.-),poly can not straddle UHVI,,N/A,N/A
+(uhvi.3.-),pwbm.dg must be enclosed by UHVI (exempt inside :drc_tag:`areaid.lw`),,N/A,N/A
+(uhvi.4.-),dnw.dg can not straddle UHVI,,N/A,N/A
+(uhvi.5.-),UHVI must enclose :drc_tag:`areaid.ext`,,N/A,N/A
+(uhvi.6.-),UHVI must enclose dnwell,,N/A,N/A
+(uhvi.7.-),natfet.dg must be enclosed by UHVI layer by at least,,N/A,N/A
+(uhvi.8.-),Minimum width of natfet.dg,,N/A,N/A
+(uhvi.9.-),Minimum Space spacing of natfet.dg,,N/A,N/A
+(uhvi.10.-),natfet.dg layer is not allowed,,N/A,N/A

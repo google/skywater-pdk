@@ -1,20 +1,27 @@
-Name,Description,Flags,Value
-(m2.-),"Algorithm should flag errors, for met2, if ANY of the following is true:\nAn entire 700x700 window is covered by cmm2 waffleDrop, and metX PD < 70% for same window.\n80-100% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 65% for same window.\n60-80% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 60% for same window.\n50-60% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 50% for same window.\n40-50% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 40% for same window.\n30-40% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 30% for same window.\nExclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.",RC,
-(m2.1),Width of metal 2,,0.140
-(m2.2),Spacing of metal 2 to metal 2,,0.140
-(m2.3a),Min. spacing of features attached to or extending from huge_met2 for a distance of up to  0.280 um to metal2 (rule not checked over non-huge met2 features),,0.280
-(m2.3b),Min. spacing of huge_met2 to metal2 excluding features checked by m2.3a,,0.280
-(m2.3c),"Min spacing between floating_met2 with AR_met2_A >= 0.05 and AR_met2_B =< 0.032, outside areaid:sc must be greater than",RR,0.145
-(m2.4),Via must be enclosed by Met2 by at least …,P AL,0.055
-(m2.5),Via must be enclosed by Met2 on one of two adjacent sides by at least …,AL,0.085
-(m2.6),Min metal2 area [um2],,0.0676
-(m2.7),Min area of metal2 holes [um2],,0.140
-(m2.pd.1),Min MM2_oxide_Pattern_density,RR,0.7
-(m2.pd.2a),Rule m2.pd.1 has to be checked by dividing the chip into square regions of width and length equal to …,A,700
-(m2.pd.2b),Rule m2.pd.1 has to be checked by dividing the chip into steps of …,A,70
-(m2.11),Max width of metal2,CU,4.000
-(m2.12),Add slots and remove vias and contacts if met2 wider than…..,CU,3.200
-(m2.13),Max pattern density (PD) of metal2,CU,0.77
-(m2.14),Met2 PD window size,CU,50.000
-(m2.14a),Met2 PD window step,CU,25.000
-(m2.15),Via must be enclosed by met2 by at least…,CU,0.040
+Name,Description,Flags,Value,Unit
+(m2.-),"| Algorithm should flag errors, for met2, if ANY of the following is true:
+| An entire 700x700 window is covered by cmm2 waffleDrop, and metX PD < 70% for same window.
+| 80-100% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 65% for same window.
+| 60-80% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 60% for same window.
+| 50-60% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 50% for same window.
+| 40-50% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 40% for same window.
+| 30-40% of 700x700 window is covered by cmm2 waffleDrop, and metX PD < 30% for same window.
+| Exclude cells whose area is below 40Kum2. Required for IP, Recommended for Chip-level.",RC,,
+(m2.1),Width of metal 2,,0.140,µm
+(m2.2),Spacing of metal 2 to metal 2,,0.140,µm
+(m2.3a),Min. spacing of features attached to or extending from huge_met2 for a distance of up to  0.280 µm to metal2 (rule not checked over non-huge met2 features),,0.280,µm
+(m2.3b),Min. spacing of huge_met2 to metal2 excluding features checked by m2.3a,,0.280,µm
+(m2.3c),"Min spacing between floating_met2 with AR_met2_A >= 0.05 and AR_met2_B =< 0.032, outside areaid:sc must be greater than",RR,0.145,µm
+(m2.4),Via must be enclosed by Met2 by at least …,P AL,0.055,µm
+(m2.5),Via must be enclosed by Met2 on one of two adjacent sides by at least …,AL,0.085,µm
+(m2.6),Min metal2 area,,0.0676,µm²
+(m2.7),Min area of metal2 holes,,0.140,µm²
+(m2.pd.1),Min MM2_oxide_Pattern_density,RR,0.7,\-
+(m2.pd.2a),Rule m2.pd.1 has to be checked by dividing the chip into square regions of width and length equal to …,A,700,µm
+(m2.pd.2b),Rule m2.pd.1 has to be checked by dividing the chip into steps of …,A,70,
+(m2.11),Max width of metal2,CU,4.000,µm
+(m2.12),Add slots and remove vias and contacts if met2 wider than…..,CU,3.200,
+(m2.13),Max pattern density (PD) of metal2,CU,0.77,\-
+(m2.14),Met2 PD window size,CU,50.000,µm
+(m2.14a),Met2 PD window step,CU,25.000,µm
+(m2.15),Via must be enclosed by met2 by at least…,CU,0.040,µm

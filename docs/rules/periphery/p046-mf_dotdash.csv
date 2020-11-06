@@ -1,25 +1,25 @@
-Name,Description,Flags,Value
-(mf.1),Min. and max width of fuse,,0.800
-(mf.2),Length of fuse,,7.200
-(mf.3),Spacing between centers of adjacent fuses,,2.760
-(mf.4),Spacing between center of fuse and fuse_metal (fuse shields are exempted),,3.300
-(mf.5),Max. extension of fuse_metal beyond fuse boundary,,0.830
-(mf.6),Spacing (no overlapping) between fuse center and Metal1,,3.300
-(mf.7),Spacing (no overlapping) between fuse center and LI,,3.300
-(mf.8),Spacing (no overlapping) between fuse center and poly,,2.660
-(mf.9),Spacing (no overlapping) between fuse center and tap,,2.640
-(mf.10),Spacing (no overlapping) between fuse center and diff,,3.250
-(mf.11),Spacing (no overlapping) between fuse center and nwell,,3.320
-(mf.12),Size of  fuse_shield,,0.5x2.4
-(mf.13),Min. spacing of center of fuse to fuse_shield,,2.200
-(mf.14),Max. spacing of center of fuse to fuse_shield,,3.300
-(mf.15),"Fuse_shields are only placed between periphery metal (i.e., without fuse:dg) and non-isolated edges of fuse as defined by mf.16",,
-(mf.16),The edge of a fuse is considered non-isolated if wider than or equal to mf.2 and spaced to fuse_metal by less than …,,4.000
-(mf.17),Offset between fuse_shields center and fuse center,NC,0.000
-(mf.18),Min and max space between fuse_shield and fuse_metal (opposite edges). Rule checked within 1 gridpoint.,,0.600
-(mf.19),Spacing (no overlapping) between fuse center and Metal2,,3.300
-(mf.20),Only one fuse per metal line allowed,,
-(mf.21),"Min spacing , no overlap, between metal3 and fuse center",,3.300
-(mf.22),Min spacing between fuse_contact to fuse_contact,,1.960
-(mf.23),Spacing (no overlapping) between fuse center and Metal4,,N/A
-(mf.24),Spacing (no overlapping) between fuse center and Metal5,,3.300
+Name,Description,Flags,Value,Unit
+(mf.1),Min. and max width of fuse,,0.800,µm
+(mf.2),Length of fuse,,7.200,µm
+(mf.3),Spacing between centers of adjacent fuses,,2.760,µm
+(mf.4),Spacing between center of fuse and fuse_metal (fuse shields are exempted),,3.300,µm
+(mf.5),Max. extension of fuse_metal beyond fuse boundary,,0.830,
+(mf.6),Spacing (no overlapping) between fuse center and Metal1,,3.300,µm
+(mf.7),Spacing (no overlapping) between fuse center and LI,,3.300,µm
+(mf.8),Spacing (no overlapping) between fuse center and poly,,2.660,µm
+(mf.9),Spacing (no overlapping) between fuse center and tap,,2.640,µm
+(mf.10),Spacing (no overlapping) between fuse center and diff,,3.250,µm
+(mf.11),Spacing (no overlapping) between fuse center and nwell,,3.320,µm
+(mf.12),Size of  fuse_shield,,0.5x2.4,µm
+(mf.13),Min. spacing of center of fuse to fuse_shield,,2.200,µm
+(mf.14),Max. spacing of center of fuse to fuse_shield,,3.300,µm
+(mf.15),"Fuse_shields are only placed between periphery metal (i.e., without fuse:dg) and non-isolated edges of fuse as defined by mf.16",,,
+(mf.16),The edge of a fuse is considered non-isolated if wider than or equal to mf.2 and spaced to fuse_metal by less than …,,4.000,
+(mf.17),Offset between fuse_shields center and fuse center,NC,0.000,
+(mf.18),Min and max space between fuse_shield and fuse_metal (opposite edges). Rule checked within 1 gridpoint.,,0.600,µm
+(mf.19),Spacing (no overlapping) between fuse center and Metal2,,3.300,µm
+(mf.20),Only one fuse per metal line allowed,,,
+(mf.21),"Min spacing , no overlap, between metal3 and fuse center",,3.300,µm
+(mf.22),Min spacing between fuse_contact to fuse_contact,,1.960,µm
+(mf.23),Spacing (no overlapping) between fuse center and Metal4,,N/A,N/A
+(mf.24),Spacing (no overlapping) between fuse center and Metal5,,3.300,µm

@@ -1,20 +1,20 @@
-Name,Description,Flags,Value
-(via.1a),Min and max L and W of via outside :drc_tag:`areaid.mt`,AL,0.150
-(via.1b),"Three sizes of square Vias allowed inside areaid:mt: 0.150um, 0.230um and 0.280um",AL,
-(via.2),Spacing of via to via,AL,0.170
-(via.3),Only min. square vias are allowed except die seal ring where vias are (Via CD)*L,,0.2*L
-(via.4a),0.150 um Via must be enclosed by Met1 by at least …,,0.055
-(via.4b),"Inside :drc_tag:`areaid.mt`, 0.230 um Via must be enclosed by met1 by atleast",AL,0.030
-(via.4c),"Inside :drc_tag:`areaid.mt`, 0.280 um Via must be enclosed by met1 by atleast",AL,0.000
-(via.5a),0.150 um Via must be enclosed by Met1 on one of two adjacent sides by at least …,,0.085
-(via.5b),"Inside :drc_tag:`areaid.mt`, 0.230 um Via must be enclosed by met1 on one of two adjacent sides by at least …",AL,0.060
-(via.5c),"Inside :drc_tag:`areaid.mt`, 0.280 um Via must be enclosed by met1 on one of two adjacent sides by at least …",AL,0.000
-(via.11),Min and max L and W of via outside :drc_tag:`areaid.mt`,CU,0.180
-(via.12),Min spacing between vias,CU,0.130
-(via.13),Max of 5 vias within …,CU,0.350
-(via.14),0.180 um Via must be enclosed by parallel edges of Met1 by at least …,CU,0.040
-(via.irdrop.1),"For 1 <= n <= 2 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0
-(via.irdrop.2),"For 3 <= n <= 15 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6
-(via.irdrop.3),"For 16 <= n <= 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8
-(via.irdrop.4),"For n > 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.9
-(via.14a),0.180 um Via must be enclosed by 45 deg edges of Met1 by at least …,CU,0.037
+Name,Description,Flags,Value,Unit
+(via.1a),Min and max L and W of via outside :drc_tag:`areaid.mt`,AL,0.150,µm
+(via.1b),"Three sizes of square Vias allowed inside areaid:mt: 0.150um, 0.230um and 0.280um",AL,,
+(via.2),Spacing of via to via,AL,0.170,µm
+(via.3),Only min. square vias are allowed except die seal ring where vias are (Via CD)*L,,0.2*L,
+(via.4a),0.150 µm Via must be enclosed by Met1 by at least …,,0.055,µm
+(via.4b),"Inside :drc_tag:`areaid.mt`, 0.230 µm Via must be enclosed by met1 by atleast",AL,0.030,µm
+(via.4c),"Inside :drc_tag:`areaid.mt`, 0.280 µm Via must be enclosed by met1 by atleast",AL,0.000,µm
+(via.5a),0.150 µm Via must be enclosed by Met1 on one of two adjacent sides by at least …,,0.085,µm
+(via.5b),"Inside :drc_tag:`areaid.mt`, 0.230 µm Via must be enclosed by met1 on one of two adjacent sides by at least …",AL,0.060,µm
+(via.5c),"Inside :drc_tag:`areaid.mt`, 0.280 µm Via must be enclosed by met1 on one of two adjacent sides by at least …",AL,0.000,µm
+(via.11),Min and max L and W of via outside :drc_tag:`areaid.mt`,CU,0.180,µm
+(via.12),Min spacing between vias,CU,0.130,µm
+(via.13),Max of 5 vias within …,CU,0.350,µm
+(via.14),0.180 µm Via must be enclosed by parallel edges of Met1 by at least …,CU,0.040,µm
+(via.irdrop.1),"For 1 <= n <= 2 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0,µm
+(via.irdrop.2),"For 3 <= n <= 15 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6,µm
+(via.irdrop.3),"For 16 <= n <= 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8,µm
+(via.irdrop.4),"For n > 30 vias on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.9,µm
+(via.14a),0.180 µm Via must be enclosed by 45 deg edges of Met1 by at least …,CU,0.037,deg µm

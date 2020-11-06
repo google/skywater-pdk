@@ -1,11 +1,11 @@
-Name,Description,Flags,Value
-(dnwell.2),Min width of deep nwell,,3.000
-(dnwell.3),Min spacing between deep nwells. Rule exempt inside UHVI.,,6.300
-(dnwell.3a),Min spacing between deep nwells on same net inside UHVI.,,N/A
-(dnwell.3b),Min spacing between deep-nwells inside UHVI and deep-nwell outside UHVI,,N/A
-(dnwell.3c),Min spacing between deep-nwells inside UHVI and nwell outsideUHVI,,N/A
-(dnwell.3d),Min spacing between deep-nwells inside UHVI on different nets,,N/A
-(dnwell.4),Dnwell can not overlap pnp:dg,,
-(dnwell.5),P+_diff can not straddle Dnwell,,
-(dnwell.6),RF NMOS must be enclosed by deep nwell (RF FETs are listed in $DESIGN/config/tech/model_set/calibre/fixed_layout_model_map of corresponding techs),,
-(dnwell.7),Dnwell can not straddle areaid:substratecut,,
+Name,Description,Flags,Value,Unit
+(dnwell.2),Min width of deep nwell,,3.000,µm
+(dnwell.3),Min spacing between deep nwells. Rule exempt inside UHVI.,,6.300,µm
+(dnwell.3a),Min spacing between deep nwells on same net inside UHVI.,,N/A,N/A
+(dnwell.3b),Min spacing between deep-nwells inside UHVI and deep-nwell outside UHVI,,N/A,N/A
+(dnwell.3c),Min spacing between deep-nwells inside UHVI and nwell outsideUHVI,,N/A,N/A
+(dnwell.3d),Min spacing between deep-nwells inside UHVI on different nets,,N/A,N/A
+(dnwell.4),Dnwell can not overlap pnp:dg,,,
+(dnwell.5),P+_diff can not straddle Dnwell,,,
+(dnwell.6),RF NMOS must be enclosed by deep nwell (RF FETs are listed in $DESIGN/config/tech/model_set/calibre/fixed_layout_model_map of corresponding techs),,,
+(dnwell.7),Dnwell can not straddle areaid:substratecut,,,

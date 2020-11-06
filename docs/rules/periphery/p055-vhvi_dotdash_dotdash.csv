@@ -1,15 +1,15 @@
-Name,Description,Flags,Value
-(vhvi.vhv.1),Terminals operating at nominal 12V (maximum 16V) bias must be tagged as Very-High-Voltage (VHV) using vhvi:dg layer,NC,
-(vhvi.vhv.2),A source or drain of a drain-extended device can be tagged by vhvi:dg. A device with either source or drain (not both) tagged with vhvi:dg serves as a VHV propagation stopper,NC,
-(vhvi.vhv.3),Any feature connected to VHVSourceDrain becomes a very-high-voltage feature,NC,
-(vhvi.vhv.4),Any feature connected to VHVPoly becomes a very-high-voltage feature,NC,
-(vhvi.vhv.5),"Diffusion that is not a part of a drain-extended device (i.e., diff not areaid:en) must not be on the same net as VHVSourceDrain. Only diffusion inside :drc_tag:`areaid.ed` and LV diffusion tagged with vhvi:dg are exempted.",,
-(vhvi.vhv.6),"Poly resistor can act as a VHV propagation stopper. For this, it should be tagged with text ""vhv_block""",NC,
-(vhvi.1.-),Min width of vhvi:dg,,0.020
-(vhvi.2.-),Vhvi:dg cannot overlap areaid:ce,,
-(vhvi.3.-),VHVGate must overlap hvi:dg,,
-(vhvi.4.-),Poly connected to the same net as a VHVSourceDrain must be tagged with vhvi:dg layer,,
-(vhvi.5.-),Vhvi:dg cannot straddle VHVSourceDrain,,
-(vhvi.6.-),Vhvi:dg overlapping VHVSourceDrain must not overlap poly,,
-(vhvi.7.-),Vhvi:dg cannot straddle VHVPoly,,
-(vhvi.8.-),"Min space between nwell tagged with vhvi:dg and deep nwell, nwell, or n+diff on a separate net (except for n+diff overlapping nwell tagged with vhvi:dg).",,11.240
+Name,Description,Flags,Value,Unit
+(vhvi.vhv.1),Terminals operating at nominal 12V (maximum 16V) bias must be tagged as Very-High-Voltage (VHV) using vhvi:dg layer,NC,,
+(vhvi.vhv.2),A source or drain of a drain-extended device can be tagged by vhvi:dg. A device with either source or drain (not both) tagged with vhvi:dg serves as a VHV propagation stopper,NC,,
+(vhvi.vhv.3),Any feature connected to VHVSourceDrain becomes a very-high-voltage feature,NC,,
+(vhvi.vhv.4),Any feature connected to VHVPoly becomes a very-high-voltage feature,NC,,
+(vhvi.vhv.5),"Diffusion that is not a part of a drain-extended device (i.e., diff not areaid:en) must not be on the same net as VHVSourceDrain. Only diffusion inside :drc_tag:`areaid.ed` and LV diffusion tagged with vhvi:dg are exempted.",,,
+(vhvi.vhv.6),"Poly resistor can act as a VHV propagation stopper. For this, it should be tagged with text ""vhv_block""",NC,,
+(vhvi.1.-),Min width of vhvi:dg,,0.020,µm
+(vhvi.2.-),Vhvi:dg cannot overlap areaid:ce,,,
+(vhvi.3.-),VHVGate must overlap hvi:dg,,,
+(vhvi.4.-),Poly connected to the same net as a VHVSourceDrain must be tagged with vhvi:dg layer,,,
+(vhvi.5.-),Vhvi:dg cannot straddle VHVSourceDrain,,,
+(vhvi.6.-),Vhvi:dg overlapping VHVSourceDrain must not overlap poly,,,
+(vhvi.7.-),Vhvi:dg cannot straddle VHVPoly,,,
+(vhvi.8.-),"Min space between nwell tagged with vhvi:dg and deep nwell, nwell, or n+diff on a separate net (except for n+diff overlapping nwell tagged with vhvi:dg).",,11.240,µm

@@ -1,18 +1,18 @@
-Name,Description,Flags,Value
-(poly.X.1),All FETs would be checked for W/Ls as documented in spec 001-02735  (Exempt FETs that are pruned; exempt for W/L's inside :drc_tag:`areaid.sc` and inside cell name scs8*decap* and listed in the MRGA as a decap only W/L),,
-(poly.X.1a),Min & max dummy_poly L is equal to min L allowed for corresponding device type (exempt rule for dummy_poly in cells listed on Table H3),,
-(poly.1a),Width of poly,,0.150
-(poly.1b),Min channel length (poly width) for pfet overlapping lvtn (exempt rule for dummy_poly in cells listed on Table H3),,0.350
-(poly.2),Spacing of poly to poly except for poly.c2 and poly.c3; Exempt cell: sr_bltd_eq where it is same as poly.c2,,0.210
-(poly.3),Min poly resistor width,,0.330
-(poly.4),Spacing of poly on field to diff (parallel edges only),P,0.075
-(poly.5),Spacing of poly on field to tap,P,0.055
-(poly.6),Spacing of poly on diff to abutting tap (min source),P,0.300
-(poly.7),Extension of diff beyond poly (min drain),P,0.250
-(poly.8),Extension of poly beyond diffusion (endcap),P,0.130
-(poly.9),Poly resistor spacing to poly or spacing (no overlap) to diff/tap,,0.480
-(poly.10),Poly can't overlap inner corners of diff,,
-(poly.11),No 90 deg turns of poly on diff,,
-(poly.12),"(Poly NOT (nwell NOT hvi)) may not overlap tap; Rule exempted for cell name ""s8fgvr_n_fg2"" and gated_npn and inside UHVI.",P,
-(poly.15),Poly must not overlap diff:rs,,
-(poly.16),"Inside RF FETs defined in Table H5, poly cannot overlap poly across multiple adjacent instances",,
+Name,Description,Flags,Value,Unit
+(poly.X.1),All FETs would be checked for W/Ls as documented in spec 001-02735  (Exempt FETs that are pruned; exempt for W/L's inside :drc_tag:`areaid.sc` and inside cell name scs8*decap* and listed in the MRGA as a decap only W/L),,,
+(poly.X.1a),Min & max dummy_poly L is equal to min L allowed for corresponding device type (exempt rule for dummy_poly in cells listed on Table H3),,,
+(poly.1a),Width of poly,,0.150,µm
+(poly.1b),Min channel length (poly width) for pfet overlapping lvtn (exempt rule for dummy_poly in cells listed on Table H3),,0.350,µm
+(poly.2),Spacing of poly to poly except for poly.c2 and poly.c3; Exempt cell: sr_bltd_eq where it is same as poly.c2,,0.210,µm
+(poly.3),Min poly resistor width,,0.330,µm
+(poly.4),Spacing of poly on field to diff (parallel edges only),P,0.075,µm
+(poly.5),Spacing of poly on field to tap,P,0.055,µm
+(poly.6),Spacing of poly on diff to abutting tap (min source),P,0.300,µm
+(poly.7),Extension of diff beyond poly (min drain),P,0.250,
+(poly.8),Extension of poly beyond diffusion (endcap),P,0.130,
+(poly.9),Poly resistor spacing to poly or spacing (no overlap) to diff/tap,,0.480,µm
+(poly.10),Poly can't overlap inner corners of diff,,,
+(poly.11),No 90 deg turns of poly on diff,,,
+(poly.12),"(Poly NOT (nwell NOT hvi)) may not overlap tap; Rule exempted for cell name ""s8fgvr_n_fg2"" and gated_npn and inside UHVI.",P,,
+(poly.15),Poly must not overlap diff:rs,,,
+(poly.16),"Inside RF FETs defined in Table H5, poly cannot overlap poly across multiple adjacent instances",,,
