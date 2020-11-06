@@ -6,7 +6,6 @@
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75
 
    * - Use
@@ -114,7 +113,6 @@
 .. list-table:: Function: Defines General (FIXME)
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -346,7 +344,6 @@
 .. list-table:: Function: Define deep nwell for isolating pwell and noise immunity
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -407,7 +404,6 @@
 .. list-table:: Function: Define nwell implant regions
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -467,7 +463,6 @@
 .. list-table:: Function: Define p-well block
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -508,7 +503,6 @@
 .. list-table:: Function: Defines Pwdem (FIXME)
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -553,7 +547,6 @@
 .. list-table:: Function: Define Vt adjust implant region for high Vt LV PMOS; 
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -598,7 +591,6 @@
 .. list-table:: Function: Define low VT adjust implant region for pmedlvtrf; 
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -626,7 +618,6 @@
 .. list-table:: Function: Define regions to block Vt adjust implant for low Vt LV PMOS/NMOS, SONOS FETs and Native NMOS
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -687,7 +678,6 @@
 .. list-table:: Function: Define Vt adjust implant region for LV NMOS in the core of NVSRAM
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -752,7 +742,6 @@
 .. list-table:: Function: Defines active regions and contacts to substrate
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -833,7 +822,6 @@
 .. list-table:: Function: Defines SONOS FETs 
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -886,7 +874,6 @@
 .. list-table:: Function: Defines FET gates, interconnects and resistors
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -975,7 +962,6 @@
 .. list-table:: Function: Defines p+ poly resistors
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1084,7 +1070,6 @@
 .. list-table:: Function: Defines varactors
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1137,7 +1122,6 @@
 .. list-table:: Function: Photo diode for sensing light
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1202,7 +1186,6 @@
 .. list-table:: Function: Defines nitride openings to contact poly and Li1
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1243,7 +1226,6 @@
 .. list-table:: Function: Defines opening for N+/P+ implants
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1316,7 +1298,6 @@
 .. list-table:: Function: Defines contacts between poly/diff/tap and Li1
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1462,7 +1443,6 @@
 .. list-table:: Function: Defines local interconnect to diff/tap and poly
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1515,7 +1495,6 @@
 .. list-table:: Function: Defines contact between Li1 and met1
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1564,7 +1543,6 @@
 .. list-table:: Function: Defines MIM capacitor
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1633,7 +1611,6 @@
 .. list-table:: Function: Defines VPP capacitor
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1726,7 +1703,6 @@
 .. list-table:: Function: Defines first level of metal interconnects, buses etc;
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1830,7 +1806,6 @@
 .. list-table:: Function: Defines contact between met1  and met2
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -1927,7 +1902,6 @@
 .. list-table:: Function: Defines second level of metal interconnects, buses etc
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2031,7 +2005,6 @@
 .. list-table:: Function: Via2 connects met2 to met3 in the SKY130T*/SKY130P*/SP8Q/SP8P* flows and met2/capm to met3 in the SKY130DI* flow.
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2132,7 +2105,6 @@
 .. list-table:: Function: Defines third level of metal interconnects, buses etc
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2244,7 +2216,6 @@
 .. list-table:: Function: Via3 connects met3 to met4 in the SKY130Q*/SKY130P*/SP8Q/SP8P* flow 
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2316,7 +2287,6 @@
 .. list-table:: Function: Defines Nitride Seal Mask (FIXME)
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2352,7 +2322,6 @@
 .. list-table:: Function: Defines third level of metal interconnects, buses and inductor; top_indmMetal is met3 for SKY130D* flows; Similarly top_padVia is Via2 for SKY130D*
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2389,7 +2358,6 @@
 .. list-table:: Function: Defines Fourth level of metal interconnects;
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2493,7 +2461,6 @@
 .. list-table:: Function: Via4 connects met4 to met5 in the SKY130P*/SP8P* flow 
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2541,7 +2508,6 @@
 .. list-table:: Function: Defines Fifth level of metal interconnects;
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2573,7 +2539,6 @@
 .. list-table:: Function: Opens the passivation
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2597,7 +2562,6 @@
 .. list-table:: Function: Defines the Cu Inductor. Connects to met5 through the pad opening
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2644,7 +2608,6 @@
 .. list-table:: Function: Defines metal fuses
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2761,7 +2724,6 @@
 .. list-table:: Function: Defines thick oxide for high voltage devices
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2802,7 +2764,6 @@
 .. list-table:: Function: Defines rules for HV nwell; All nwell connected to voltages greater than 1.8V must be enclosed by hvi; Nets connected to LV nwell or nwell overlapping hvi but connected to LV voltages (i.e 1.8V) should be tagged "lv_net" using text.dg; This tag should be only on Li layer
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2839,7 +2800,6 @@
 .. list-table:: Function: Defines rules for HV diff/tap
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2920,7 +2880,6 @@
 .. list-table:: Function: Defines rules for HV poly
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -2949,7 +2908,6 @@
 .. list-table:: Function: Defines tip implants for the HV NMOS
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3014,7 +2972,6 @@
 .. list-table:: Function: Defines rules for the 16V Drain extended NMOS devices
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3095,7 +3052,6 @@
 .. list-table:: Function: Defines rules for the 16V Drain extended NMOS devices
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3172,7 +3128,6 @@
 .. list-table:: Function: Defines rules :drc_tag:`areaid.en`
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3230,7 +3185,6 @@
 .. list-table:: Function: Defines High Voltage Rules (FIXME)
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3327,7 +3281,6 @@
 .. list-table:: Function: Identify nets working between 12-16V
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3399,7 +3352,6 @@
 .. list-table:: Function: Identify nets working between 20V
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3455,7 +3407,6 @@
 .. list-table:: Function: Identify dnwdiodehv_Psub(BV~60V)
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3483,7 +3434,6 @@
 .. list-table:: Function: Identify pwell resistors
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`
@@ -3552,7 +3502,6 @@
 .. list-table:: Function: Identify RF diodes; Used for RCX
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - :drc_rule:`Name`

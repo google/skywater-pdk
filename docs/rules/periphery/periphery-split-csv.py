@@ -254,7 +254,6 @@ rst.write("""\
 .. list-table::
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75
 
    * - Use
@@ -296,7 +295,6 @@ for rt in rule_tables:
 .. list-table:: {rt.description}
    :header-rows: 1
    :stub-columns: 1
-   :width: 100%
    :widths: 10 75 5 10
 
    * - {h}
