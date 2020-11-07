@@ -1,3 +1,9 @@
+# See https://github.com/actions/labeler#common-examples for defining patterns.
+# The globs use "minimatch" syntax found at https://github.com/isaacs/minimatch
+#
+# WARNING: Due to this file being yaml, any string starting with `*` must be
+# wrapped in quotes.
+
 documentation:
  - "*.rst"
  - docs
