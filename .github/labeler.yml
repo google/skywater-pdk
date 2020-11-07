@@ -1,5 +1,5 @@
 documentation:
- - *.rst
+ - "*.rst"
  - docs
  - docs/*
  - docs/**/*
@@ -8,51 +8,51 @@ files-definition:
  - definition.json
 
 files-layout-gds:
- - *.gds
+ - "*.gds"
 files-layout-lef-magic:
- - *.magic.lef
+ - "*.magic.lef"
 files-layout-lef:
- - *.lef
+ - "*.lef"
 files-layout-tlef:
- - *.tlef
+ - "*.tlef"
 
 files-model-behavioral-verilog:
- - *.behavioral.v
+ - "*.behavioral.v"
 files-model-functional-verilog:
- - *.functional.v
+ - "*.functional.v"
 files-model-spice:
- - *.spice
+ - "*.spice"
 # files-model-verilog
 
 files-netlist-cdl:
- - *.cdl
+ - "*.cdl"
 files-netlist-tsv:
- - *.netlist.tsv
+ - "*.netlist.tsv"
 
 files-powerpins:
- - *.pp.*
+ - "*.pp.*"
 
 files-schematic-svg:
- - *.schematic.svg
+ - "*.schematic.svg"
 
 files-symbol-svg:
- - *.symbol.svg
+ - "*.symbol.svg"
 files-symbol-verilog:
- - *.symbol.v
+ - "*.symbol.v"
 
 files-timing-json:
- - *.lib.json
+ - "*.lib.json"
 # files-timing-liberty:
 #  - *.lib
 
 files-testbench-verilog:
- - *.tb.v
+ - "*.tb.v"
 
 infrastructure:
  - .github/*
  - .github/**/*
- - *travis*
- - *kokoro*
+ - "*travis*"
+ - "*kokoro*"
 
 lib-sky130_ef_io:
  - sky130_fd_ef_io
@@ -89,17 +89,17 @@ lib-sky130_osu_sc:
 
 # scripts-documentation
 scripts-python:
- - *.py
+ - "*.py"
 scripts-python-liberty:
  - liberty.py
  - corners.py
 scripts-python-verilog:
  - skywater_pdk/verilog/*    # Script itself
  - skywater_pdk/verilog/**/* # Script itself
- - *.blackbox.v              # Generated blackbox files
- - *.symbol.v                # Generated symbol files
- - *.tb.v                    # Generated test bench
- - *_[0-9].v                 # Generated strength driver wrappers
+ - "*.blackbox.v"            # Generated blackbox files
+ - "*.symbol.v"              # Generated symbol files
+ - "*.tb.v"                  # Generated test bench
+ - "*_[0-9].v"               # Generated strength driver wrappers
 
 # tools-BAG
 # tools-Cadence-Innovus
