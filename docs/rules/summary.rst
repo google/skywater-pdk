@@ -23,10 +23,12 @@ Manual merge means that features below min. space should be manually merged by d
    :header-rows: 1
    :stub-columns: 1
 
-.. csv-table:: Table F4: Connectivity of Drawn and Mask Layers (1)
+.. csv-table:: Table F4: Connectivity of Drawn and Mask Layers [#f1]_
    :file: summary/table-f4-connectivity-of-drawn-and-mask.csv
    :header-rows: 1
    :stub-columns: 1
+
+.. include:: summary/table-f4-key.rst
 
 .. csv-table:: Table F5: Device Connectivity Table
    :file: summary/table-f5-device-connectivity.csv
