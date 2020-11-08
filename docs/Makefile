@@ -1,15 +1,35 @@
-# Minimal makefile for Sphinx documentation
+# Copyright 2020 SkyWater PDK Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
 
-DOCSDIR := $(dir $(lastword $(MAKEFILE_LIST)))
-TOPDIR := $(realpath $(DOCSDIR)/..)
+# The top directory where environment will be created.
+DOCS_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+TOP_DIR := $(realpath $(DOCS_DIR)/..)
 
-ifndef NO_CONDA
-include $(TOPDIR)/scripts/make/conda.mk
-endif
-ifdef NO_CONDA
-IN_CONDA_ENV :=
-CONDA_ENV_PYTHON :=
-endif
+# A pip `requirements.txt` file.
+# https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format
+REQUIREMENTS_FILE := requirements.txt
+
+# A conda `environment.yml` file.
+# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+ENVIRONMENT_FILE := environment.yml
+
+$(TOP_DIR)/third_party/make-env/conda.mk: $(TOP_DIR)/.gitmodules
+	cd $(TOP_DIR); git submodule update --init third_party/make-env
+
+-include $(TOP_DIR)/third_party/make-env/conda.mk
 
 SHELL = /bin/bash
 
@@ -22,8 +42,8 @@ SPHINXOPTS      = -j $(CPU_CORES_2)
 SPHINXBUILD     = $(IN_CONDA_ENV) sphinx-build
 SPHINXAUTOBUILD = $(IN_CONDA_ENV) sphinx-autobuild
 SPHINXPROJ      = SkyWaterPDK
-SOURCEDIR       = $(DOCSDIR)
-BUILDDIR        = $(DOCSDIR)/_build
+SOURCEDIR       = $(DOCS_DIR)
+BUILDDIR        = $(DOCS_DIR)/_build
 
 # Put it first so that "make" without argument is like "make help".
 help: | $(CONDA_ENV_PYTHON)
@@ -75,10 +95,11 @@ echo: | $(CONDA_ENV_PYTHON)
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 .DEFAULT: | $(CONDA_ENV_PYTHON)
+	@make env
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 
-clean: clean-docs
+clean:: clean-docs
 
 
 clean-docs:

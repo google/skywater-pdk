@@ -13,22 +13,16 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
-
-# .readthedocs.yml
-# Read the Docs configuration file
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
-
-# Required
-version: 2
-
-# Build documentation in the docs/ directory with Sphinx
-sphinx:
-  configuration: docs/conf.py
-
-conda:
-  environment: docs/environment.yml
-
-submodules:
-  include:
-   - libraries/sky130_fd_io/latest
-  recursive: false
+name: skywater-pdk-docs
+channels:
+- symbiflow
+- conda-forge
+- defaults
+dependencies:
+- python=3.8
+- pip
+- yosys
+- netlistsvg
+# Packages installed from PyPI
+- pip:
+  - -r file:requirements.txt

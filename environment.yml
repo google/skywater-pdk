@@ -16,14 +16,10 @@
 name: skywater-pdk-scripts
 channels:
 - symbiflow
-- conda-forge
 - defaults
 dependencies:
 - python=3.8
 - pip
-- yosys
-- netlistsvg
 # Packages installed from PyPI
 - pip:
   - -r file:requirements.txt
-  - -r file:docs/requirements.txt
