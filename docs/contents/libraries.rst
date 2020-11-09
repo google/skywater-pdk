@@ -27,19 +27,21 @@ All sections are **lower case** and separated by an **underscore**. The sections
 
 - The :lib_type:`Library Type Abbreviation` is a short two letter abbreviation for the type of content found in the library. The table below shows the current list of :lib_type:`Library Type Abbreviations`;
 
-  +--------------------------------+---------------------------------------+
-  | Library Type                   | :lib_type:`Library Type Abbreviation` |
-  +================================+=======================================+
-  | Primitive Cells                | :lib_type:`pr`                        |
-  +--------------------------------+---------------------------------------+
-  | Digital Standard Cells         | :lib_type:`sc`                        |
-  +--------------------------------+---------------------------------------+
-  | Build Space (Flash, SRAM, etc) | :lib_type:`sp`                        |
-  +--------------------------------+---------------------------------------+
-  | IO and Periphery               | :lib_type:`io`                        |
-  +--------------------------------+---------------------------------------+
-  | Miscellaneous                  | :lib_type:`xx`                        |
-  +--------------------------------+---------------------------------------+
+  +----------------------------------------------------------------+---------------------------------------+
+  | Library Type                                                   | :lib_type:`Library Type Abbreviation` |
+  +================================================================+=======================================+
+  | Primitive Cells                                                | :lib_type:`pr`                        |
+  +----------------------------------------------------------------+---------------------------------------+
+  | Digital Standard Cells                                         | :lib_type:`sc`                        |
+  +----------------------------------------------------------------+---------------------------------------+
+  | Build Space (Flash, SRAM, etc)                                 | :lib_type:`bd`                        |
+  +----------------------------------------------------------------+---------------------------------------+
+  | IO and Periphery                                               | :lib_type:`io`                        |
+  +----------------------------------------------------------------+---------------------------------------+
+  | Prebuilt IP Blocks (Compiled SRAM macros, analog designs, etc) | :lib_type:`ip`                        |
+  +----------------------------------------------------------------+---------------------------------------+
+  | Miscellaneous                                                  | :lib_type:`xx`                        |
+  +----------------------------------------------------------------+---------------------------------------+
 
 - The :lib_name:`Library Name` is an optional short abbreviated name used when there are multiple libraries of a given type released from a single :lib_src:`library source`. If only one library of a given type is going to ever be released, this can be left out.
 
@@ -115,9 +117,9 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :glob:
     :maxdepth: 1
     :caption: Foundry provided Build Spaces
-    :name: sky130-lib-foundry-sp
+    :name: sky130-lib-foundry-bd
 
-    libraries/sky130_fd_sp_*/README
+    libraries/sky130_fd_bd_*/README
 
 .. _sky130-lib-io:
 
@@ -145,4 +147,24 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :name: sky130-lib-thirdparty-io
 
     libraries/sky130_ef_io/README
+
+.. _sky130-lib-ip:
+
+:lib_type:`IP` Libraries
+------------------------
+
+.. todo:: Add info here.
+
+.. _sky130-lib-buildspace-foundry:
+
+:lib_src:`Foundry` provided :lib_type:`IP` Libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+    :caption: Foundry provided IP libraries
+    :name: sky130-lib-foundry-ip
+
+    libraries/sky130_fd_ip_*/README
 

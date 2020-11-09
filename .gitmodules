@@ -156,3 +156,27 @@
 	branch = branch-0.1.0
 	shallow = true
 	fetchRecurseSubmodules = false
+
+# sky130_fd_bd_sram
+[submodule "libraries/sky130_fd_bd_sram/latest"]
+	path = libraries/sky130_fd_bd_sram/latest
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_bd_sram.git
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_bd_sram/v0.0.1"]
+	path = libraries/sky130_fd_bd_sram/v0.0.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_bd_sram.git
+	shallow = true
+	fetchRecurseSubmodules = false
+
+# sky130_openram_ip_sram
+[submodule "ip/sky130_openram_ip_sram/latest"]
+	path = ip/sky130_openram_ip_sram/latest
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/ip/sky130_openram_ip_sram
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "ip/sky130_openram_ip_sram/v0.0.1"]
+	path = ip/sky130_openram_ip_sram/v0.0.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/ip/sky130_openram_ip_sram
+	shallow = true
+	fetchRecurseSubmodules = false
