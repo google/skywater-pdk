@@ -9,7 +9,7 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  \|V\ :sub:`c0` – V\ :sub:`c1`\ \| = 0 to 5.0V
+-  :math:`|V_{c0} – V_{c1}| = 0` to 5.0V
 
 Details
 ~~~~~~~

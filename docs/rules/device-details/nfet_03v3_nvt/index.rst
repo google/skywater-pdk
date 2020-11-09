@@ -9,9 +9,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_03v3_nvt`
 
--  V\ :sub:`DS` = 0 to 3.3V
--  V\ :sub:`GS` = 0 to 3.3V
--  V\ :sub:`BS` = 0 to -3.3V
+-  :math:`V_{DS} = 0` to 3.3V
+-  :math:`V_{GS} = 0` to 3.3V
+-  :math:`V_{BS} = 0` to -3.3V
 
 Details
 ~~~~~~~

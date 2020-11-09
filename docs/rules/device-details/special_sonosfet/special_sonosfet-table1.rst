@@ -4,11 +4,11 @@
 
 
    * - Condition
-     - V\ :sub:`G`
-     - V\ :sub:`D`
-     - V\ :sub:`B`
-     - V\ :sub:`S`
-     - V\ :sub:`WL`
+     - :math:`V_G`
+     - :math:`V_D`
+     - :math:`V_B`
+     - :math:`V_S`
+     - :math:`V_{WL}`
      - Pulse
 
    * - Read
@@ -36,7 +36,7 @@
      - 6 ms
 
    * - VT meas
-     - I\ :sub:`D` = 2.05µA
+     - :math:`I_D = 2.05`\ µA
      - +1.1
      - 0
      - 0

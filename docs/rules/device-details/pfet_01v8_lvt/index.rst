@@ -9,9 +9,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
+-  :math:`V_{DS} = 0` to -1.95V
+-  :math:`V_{GS} = 0` to -1.95V
+-  :math:`V_{BS} = -0.1` to +1.95V
 
 Details
 ~~~~~~~
@@ -34,7 +34,7 @@ The symbol of the :model:`sky130_fd_pr__pfet_01v8_lvt` (1.8V low-VT PMOS FET) is
 
 |symbol-pfet_01v8_lvt|
 
-The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
+The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the :math:`V_T` adjust implants (to achieve the lower :math:`V_T`)
 
 |cross-section-pfet_01v8_lvt|
 

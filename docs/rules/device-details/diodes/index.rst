@@ -11,7 +11,7 @@ Spice Model Information
 
 Operating regime where SPICE models are valid
 
--  \|V\ :sub:`d0` – V\ :sub:`d1`\ \| = 0 to 5.0V
+-  :math:`|V_{d0} – V_{d1}| = 0` to 5.0V
 
 Details
 ~~~~~~~
