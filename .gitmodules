@@ -156,3 +156,41 @@
 	branch = branch-0.1.0
 	shallow = true
 	fetchRecurseSubmodules = false
+
+# sky130_fd_io
+[submodule "libraries/sky130_fd_io/latest"]
+	path = libraries/sky130_fd_io/latest
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = master
+	shallow = true
+	fetchRecurseSubmodules = true
+[submodule "libraries/sky130_fd_io/v0.2.1"]
+	path = libraries/sky130_fd_io/v0.2.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = branch-0.2.1
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_io/v0.2.0"]
+	path = libraries/sky130_fd_io/v0.2.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = branch-0.2.0
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_io/v0.1.0"]
+	path = libraries/sky130_fd_io/v0.1.0
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = branch-0.1.0
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_io/v0.0.2"]
+	path = libraries/sky130_fd_io/v0.0.2
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = branch-0.1.0
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_io/v0.0.1"]
+	path = libraries/sky130_fd_io/v0.0.1
+	url = https://foss-eda-tools.googlesource.com/skywater-pdk/libs/sky130_fd_io.git
+	branch = branch-0.0.1
+	shallow = true
+	fetchRecurseSubmodules = false
