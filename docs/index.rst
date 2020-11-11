@@ -51,7 +51,7 @@ Resources
 
 The latest SkyWater SKY130 PDK design resources can be downloaded from the following repositories:
 
-* `github.com/google/skywater-pdk <https://github.com/google/skywater-pdk>`_
+* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
 * `cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
 * `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
 
