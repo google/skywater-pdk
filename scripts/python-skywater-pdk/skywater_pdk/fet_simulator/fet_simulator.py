@@ -33,13 +33,18 @@ def create_test_circuit(fet_type, iparam, fet_L, fet_W, corner_path):
     # create the circuit
     c.V('gg', 1, c.gnd, 0@u_V)
     c.V('dd', 2, c.gnd, 1.8@u_V)
-    c.X('M1', fet_type, 2, 1, c.gnd, c.gnd, L=fet_L, W=fet_W, ad="'W*0.29'", pd="'2*(W+0.29)'", as_="'W*0.29'", ps="'2*(W+0.29)'", nrd="'0.29/W'", nrs="'0.29/W'", sa=0, sb=0, sd=0, nf=1, mult=1)
+    c.X('M1', fet_type, 2, 1, c.gnd, c.gnd, L=fet_L, W=fet_W, ad="'W*0.29'",
+        pd="'2*(W+0.29)'", as_="'W*0.29'", ps="'2*(W+0.29)'", nrd="'0.29/W'", 
+        nrs="'0.29/W'", sa=0, sb=0, sd=0, nf=1, mult=1
+    )
     return c 
 
 
 def run_sim(c, iparam, fet_W):
     sim = c.simulator()
-    sim.save_internal_parameters(iparam%'gm', iparam%'id', iparam%'gds', iparam%'cgg')
+    sim.save_internal_parameters(
+        iparam%'gm', iparam%'id', iparam%'gds', iparam%'cgg'
+    )
 
     # run the dc simulation
     an = sim.dc(Vgg=slice(0, 1.8, 0.01))
@@ -85,7 +90,15 @@ def read_bins(fname):
         return r
 
 
-def generate_fet_plots(fet_type, corner_path, bins_csv, outdir, outprefix, only_W=None, ext='png'):
+def generate_fet_plots(
+        fet_type,
+        corner_path,
+        bins_csv,
+        outdir,
+        outprefix,
+        only_W=None,
+        ext='png'):
+    print(f'[generate_fet_plots] {fet_type} {corner_path} {bins_csv} {outdir} {outprefix} {only_W}')
     iparam = f'@m.xm1.m{fet_type}[%s]'
     # fet_W and fet_L values here are only for initialization, they are
     # later changed in the for loop
