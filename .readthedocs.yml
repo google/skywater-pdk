@@ -27,3 +27,8 @@ sphinx:
 
 conda:
   environment: environment.yml
+
+submodules:
+  include:
+   - libraries/sky130_fd_io/latest
+  recursive: false
