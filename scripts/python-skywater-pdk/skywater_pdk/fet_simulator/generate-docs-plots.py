@@ -58,7 +58,7 @@ if __name__ == '__main__':
         ['pfet_01v8_lvt', 'pfet_01v8_lvt', None],
         # ['pfet_20v0', 'pfet_20v0', None], TODO some plot issues
         ['pfet_g5v0d10v5', 'pfet_g5v0d10v5', None],
-        ['pfet_g5v0d16v0', 'pfet_g5v0d16v0', None]
+        # ['pfet_g5v0d16v0', 'pfet_g5v0d16v0', None] TODO invalid bins.csv file
     ]
 
     for outdir, fetname, onlyw in fets:
