@@ -128,6 +128,7 @@ def generate_fet_plots(
         fg.tight_layout()
         fg.savefig(Path(outdir) / (outprefix + f'_{name}.{ext}'))
     f.close()
+    plt.close('all')
 
 
 if __name__ == '__main__':
