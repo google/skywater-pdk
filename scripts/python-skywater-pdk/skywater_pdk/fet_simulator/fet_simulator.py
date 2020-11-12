@@ -18,42 +18,48 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import PySpice.Logging.Logging as Logging
-logger = Logging.setup_logging()
 from PySpice.Spice.Netlist import Circuit
-from PySpice.Unit import *
+from PySpice.Unit import u_V
 import matplotlib.pyplot as plt
 from pathlib import Path
 import csv
 
+logger = Logging.setup_logging()
+
 
 def create_test_circuit(fet_type, iparam, fet_L, fet_W, corner_path):
-    c=Circuit('gm_id')
+    c = Circuit('gm_id')
     c.include(corner_path)
 
     # create the circuit
     c.V('gg', 1, c.gnd, 0@u_V)
     c.V('dd', 2, c.gnd, 1.8@u_V)
-    c.X('M1', fet_type, 2, 1, c.gnd, c.gnd, L=fet_L, W=fet_W, ad="'W*0.29'",
-        pd="'2*(W+0.29)'", as_="'W*0.29'", ps="'2*(W+0.29)'", nrd="'0.29/W'", 
+    c.X(
+        'M1', fet_type, 2, 1, c.gnd, c.gnd, L=fet_L, W=fet_W, ad="'W*0.29'",
+        pd="'2*(W+0.29)'", as_="'W*0.29'", ps="'2*(W+0.29)'", nrd="'0.29/W'",
         nrs="'0.29/W'", sa=0, sb=0, sd=0, nf=1, mult=1
     )
-    return c 
+    return c
 
 
 def run_sim(c, iparam, fet_W):
     sim = c.simulator()
     sim.save_internal_parameters(
-        iparam%'gm', iparam%'id', iparam%'gds', iparam%'cgg'
+        iparam % 'gm', iparam % 'id', iparam % 'gds', iparam % 'cgg'
     )
 
     # run the dc simulation
     an = sim.dc(Vgg=slice(0, 1.8, 0.01))
 
-    # calculate needed values..need as_ndarray() since most of these have None as the unit and that causes an error
-    gm_id = an.internal_parameters[iparam%'gm'].as_ndarray() / an.internal_parameters[iparam%'id'].as_ndarray()
-    ft = an.internal_parameters[iparam%'gm'].as_ndarray() / an.internal_parameters[iparam%'cgg'].as_ndarray()
-    id_W = an.internal_parameters[iparam%'id'].as_ndarray() / fet_W
-    gm_gds = an.internal_parameters[iparam%'gm'].as_ndarray() / an.internal_parameters[iparam%'gds'].as_ndarray()
+    # calculate needed values..need as_ndarray() since most of these have None
+    # as the unit and that causes an error
+    gm_id = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+             an.internal_parameters[iparam % 'id'].as_ndarray())
+    ft = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+          an.internal_parameters[iparam % 'cgg'].as_ndarray())
+    id_W = (an.internal_parameters[iparam % 'id'].as_ndarray() / fet_W)
+    gm_gds = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+              an.internal_parameters[iparam % 'gds'].as_ndarray())
 
     return gm_id, ft, id_W, gm_gds, an.nodes['v-sweep']
 
@@ -101,8 +107,9 @@ def generate_fet_plots(
         outdir,
         outprefix,
         only_W=None,
-        ext='png'):
-    print(f'[generate_fet_plots] {fet_type} {corner_path} {bins_csv} {outdir} {outprefix} {only_W}')
+        ext='svg'):
+    print(f'[generate_fet_plots] {fet_type} {corner_path} {bins_csv}' +
+          f'{outdir} {outprefix} {only_W}')
     iparam = f'@m.xm1.m{fet_type}[%s]'
     # fet_W and fet_L values here are only for initialization, they are
     # later changed in the for loop

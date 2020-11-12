@@ -48,7 +48,7 @@ if __name__ == '__main__':
         ['nfet_03v3_nvt-and-nfet_05v0_nvt', 'nfet_03v3_nvt', None],
         ['nfet_05v0_nvt', 'nfet_05v0_nvt', None],
         # ['nfet_20v0'], TODO provide
-        # ['nfet_20v0_iso', 'nfet_20v0_nvt_iso', None], TODO invalid bins.csv file
+        # ['nfet_20v0_iso', 'nfet_20v0_nvt_iso', None], TODO invalid bins.csv
         # ['nfet_20v0_nvt', 'nfet_20v0_nvt', None], TODO invalid bins.csv file
         # ['nfet_20v0_zvt', 'nfet_20v0_zvt', None], TODO invalid bins.csv file
         # ['nfet_g11v0d16v0'], TODO provide
@@ -65,8 +65,8 @@ if __name__ == '__main__':
         generate_fet_plots(
             f'sky130_fd_pr__{fetname}',
             typicalcorner,
-            args.fd_pr_dir / f'cells/{fetname}/sky130_fd_pr__{fetname}.bins.csv',
-            args.device_details_dir / outdir,
+            args.fd_pr_dir/f'cells/{fetname}/sky130_fd_pr__{fetname}.bins.csv',
+            args.device_details_dir/outdir,
             f'sim_{fetname}_',
             onlyw
         )
