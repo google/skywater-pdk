@@ -46,6 +46,14 @@ Current Status - |current-status|
 .. include:: status.rst
     :start-after: current_status_text
 
+Resources
+=========
+
+The latest SkyWater SKY130 PDK design resources can be downloaded from the following repositories:
+
+* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
+* `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
+* `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
 
 Indices and tables
 ==================
