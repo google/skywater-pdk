@@ -192,7 +192,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--ext',
         help='The image extension to use for figures',
-        default='png'
+        default='svg'
     )
     args = parser.parse_args()
 
