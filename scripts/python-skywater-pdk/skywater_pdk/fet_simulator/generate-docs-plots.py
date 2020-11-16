@@ -19,11 +19,13 @@
 
 import argparse
 from pathlib import Path
+import sys
 
 from fet_simulator import generate_fet_plots
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+
+def main(argv):
+    parser = argparse.ArgumentParser(prog=argv[0])
     parser.add_argument(
         'fd_pr_dir',
         help='Path to the particular version of the primitive library',
@@ -35,7 +37,7 @@ if __name__ == '__main__':
         type=Path
     )
 
-    args = parser.parse_args()
+    args = parser.parse_args(argv[1:])
 
     typicalcorner = args.fd_pr_dir / 'models/corners/tt.spice'
 
@@ -70,3 +72,8 @@ if __name__ == '__main__':
             f'sim_{fetname}_',
             onlyw
         )
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv))

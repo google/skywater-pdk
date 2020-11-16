@@ -24,6 +24,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import csv
 from collections import defaultdict
+import sys
 
 logger = Logging.setup_logging()
 
@@ -120,14 +121,14 @@ def generate_fet_plots(
     # fet_W and fet_L values here are only for initialization, they are
     # later changed in the for loop
     c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
-    
+
     bins = read_bins(bins_csv)
 
     bins_by_W = defaultdict(list)
     # group bins by W
     for line in bins:
         bins_by_W[line[2]].append(line)
-    
+
     Ws = only_W if only_W is not None else list(bins_by_W.keys())
 
     for W in Ws:
@@ -149,17 +150,18 @@ def generate_fet_plots(
             )
             fg.tight_layout()
             fg.savefig(
-                Path(outdir) / (outprefix + f'_{name}_W{str(W).replace(".", "_")}.{ext}'),
+                Path(outdir) / (
+                    outprefix + f'_{name}_W{str(W).replace(".", "_")}.{ext}'),
                 bbox_extra_artists=(lg,),
                 bbox_inches='tight'
             )
         plt.close('all')
 
 
-if __name__ == '__main__':
+def main(argv):
     import argparse
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog=argv[0])
     parser.add_argument(
         'fet_type',
         help='FET type to simulate'
@@ -194,7 +196,7 @@ if __name__ == '__main__':
         help='The image extension to use for figures',
         default='svg'
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv[1:])
 
     if args.outprefix is None:
         args.outprefix = args.fet_type
@@ -207,3 +209,9 @@ if __name__ == '__main__':
         args.outprefix,
         args.only_w,
         args.ext)
+
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv))
