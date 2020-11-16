@@ -42,6 +42,11 @@ def main(argv):
         help='Create directories for output when not present',
         action='store_true'
     )
+    parser.add_argument(
+        '--failed-inputs',
+        help='Path to files for which Symbolator failed to generate diagram',
+        type=Path
+    )
 
     args = parser.parse_args(argv[1:])
 
@@ -49,45 +54,49 @@ def main(argv):
 
     symbol_v_files = libraries_dir.rglob('*.symbol.v')
 
-    for symbol_v_file in symbol_v_files:
-        if args.libname and args.libname != symbol_v_file.parts[1]:
-            continue
-        if args.version and args.version != symbol_v_file.parts[2]:
-            continue
+    nc = contextlib.nullcontext()
 
-        print(f'===> {str(symbol_v_file)}')
-        libname = symbol_v_file.parts[1]
-        out_filename = (args.output_dir /
-                        symbol_v_file.resolve()
-                        .relative_to(libraries_dir.resolve()))
-        out_filename = out_filename.with_suffix('.svg')
-        out_dir = out_filename.parent
+    with open(args.failed_inputs, 'w') if args.failed_inputs else nc as err:
+        for symbol_v_file in symbol_v_files:
+            if args.libname and args.libname != symbol_v_file.parts[1]:
+                continue
+            if args.version and args.version != symbol_v_file.parts[2]:
+                continue
 
-        if not out_dir.exists():
-            if args.create_dirs:
-                out_dir.mkdir(parents=True)
-            else:
-                print(f'The output directory {str(out_dir)} is missing')
-                print('Run the script with --create-dirs to make directories')
-                return errno.ENOENT
+            print(f'===> {str(symbol_v_file)}')
+            libname = symbol_v_file.parts[1]
+            out_filename = (args.output_dir /
+                            symbol_v_file.resolve()
+                            .relative_to(libraries_dir.resolve()))
+            out_filename = out_filename.with_suffix('.svg')
+            out_dir = out_filename.parent
 
-        if out_filename.exists():
-            print(f'The {out_filename} already exists')
-            return errno.EEXIST
+            if not out_dir.exists():
+                if args.create_dirs:
+                    out_dir.mkdir(parents=True)
+                else:
+                    print(f'The output directory {str(out_dir)} is missing')
+                    print('Run the script with --create-dirs')
+                    return errno.ENOENT
 
-        arguments = (f'--libname {libname} --title -t -o {out_filename}' +
-                     f' --output-as-filename -i {str(symbol_v_file)}' +
-                     ' --format svg')
-        with redirect_argv(arguments.split(' ')):
-            try:
-                symbolator.main()
-            except Exception:
-                print(
-                    f'Failed to run: symbolator {arguments}',
-                    file=sys.stderr
-                )
-                print('Error message:\n', file=sys.stderr)
-                traceback.print_exc()
+            if out_filename.exists():
+                print(f'The {out_filename} already exists')
+                return errno.EEXIST
+
+            arguments = (f'--libname {libname} --title -t -o {out_filename}' +
+                         f' --output-as-filename -i {str(symbol_v_file)}' +
+                         ' --format svg')
+            with redirect_argv(arguments.split(' ')):
+                try:
+                    symbolator.main()
+                except Exception:
+                    print(
+                        f'Failed to run: symbolator {arguments}',
+                        file=sys.stderr
+                    )
+                    print('Error message:\n', file=sys.stderr)
+                    traceback.print_exc()
+                    err.write(f'{symbol_v_file}\n')
     return 0
 
 
