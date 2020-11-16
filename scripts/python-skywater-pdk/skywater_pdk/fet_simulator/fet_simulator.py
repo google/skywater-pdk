@@ -23,6 +23,7 @@ from PySpice.Unit import u_V
 import matplotlib.pyplot as plt
 from pathlib import Path
 import csv
+from collections import defaultdict
 
 logger = Logging.setup_logging()
 
@@ -64,22 +65,22 @@ def run_sim(c, iparam, fet_W):
     return gm_id, ft, id_W, gm_gds, an.nodes['v-sweep']
 
 
-def init_plots():
+def init_plots(fet_name, W):
     figs = [plt.figure(), plt.figure(), plt.figure(), plt.figure()]
     plts = [f.subplots() for f in figs]
-    figs[0].suptitle('Id/W vs gm/Id')
+    figs[0].suptitle(f'{fet_name} Id/W vs gm/Id (W = {W})')
     plts[0].set_xlabel("gm/Id")
     plts[0].set_ylabel("Id/W")
     plts[0].grid(True)
-    figs[1].suptitle('fT vs gm/Id')
+    figs[1].suptitle(f'{fet_name} fT vs gm/Id (W = {W})')
     plts[1].set_xlabel("gm/Id")
     plts[1].set_ylabel("f_T")
     plts[1].grid(True)
-    figs[2].suptitle('gm/gds vs gm/Id')
+    figs[2].suptitle(f'{fet_name} gm/gds vs gm/Id (W = {W})')
     plts[2].set_xlabel("gm/Id")
     plts[2].set_ylabel("gm/gds")
     plts[2].grid(True)
-    figs[3].suptitle('gm/Id vs Vgg')
+    figs[3].suptitle(f'{fet_name} gm/Id vs Vgg (W = {W})')
     plts[3].set_xlabel("Vgg")
     plts[3].set_ylabel("gm/Id")
     plts[3].grid(True)
@@ -97,7 +98,12 @@ def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
 def read_bins(fname):
     with open(fname, 'r') as f:
         r = csv.reader(f)
-        return r
+        # drop CSV header
+        next(r)
+        res = []
+        for line in r:
+            res.append(line)
+        return res
 
 
 def generate_fet_plots(
@@ -114,28 +120,40 @@ def generate_fet_plots(
     # fet_W and fet_L values here are only for initialization, they are
     # later changed in the for loop
     c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
-    f = open(bins_csv, 'r')
-    bins = csv.reader(f)
-    # skip header
-    next(bins)
+    
+    bins = read_bins(bins_csv)
 
-    figs, plts = init_plots()
-    for dev, bin, fet_W, fet_L in bins:
-        fet_W, fet_L = float(fet_W), float(fet_L)
-        if only_W is not None and fet_W not in only_W:
-            continue
-        c.element('XM1').parameters['W'] = fet_W
-        c.element('XM1').parameters['L'] = fet_L
-        gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
-        gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts)
+    bins_by_W = defaultdict(list)
+    # group bins by W
+    for line in bins:
+        bins_by_W[line[2]].append(line)
+    
+    Ws = only_W if only_W is not None else list(bins_by_W.keys())
 
-    figtitles = ['Id_w', 'fT', 'gm_gds', 'gm_id']
-    for fg, name in zip(figs, figtitles):
-        fg.legend()
-        fg.tight_layout()
-        fg.savefig(Path(outdir) / (outprefix + f'_{name}.{ext}'))
-    f.close()
-    plt.close('all')
+    for W in Ws:
+        figs, plts = init_plots(fet_type, W)
+        for dev, bin, fet_W, fet_L in bins_by_W[W]:
+            fet_W, fet_L = float(fet_W), float(fet_L)
+            if only_W is not None and fet_W not in only_W:
+                continue
+            c.element('XM1').parameters['W'] = fet_W
+            c.element('XM1').parameters['L'] = fet_L
+            gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
+            gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts)
+
+        figtitles = ['Id_w', 'fT', 'gm_gds', 'gm_id']
+        for fg, name in zip(figs, figtitles):
+            lg = fg.legend(
+                bbox_to_anchor=(1.05, 1),
+                loc='upper left'
+            )
+            fg.tight_layout()
+            fg.savefig(
+                Path(outdir) / (outprefix + f'_{name}_W{str(W).replace(".", "_")}.{ext}'),
+                bbox_extra_artists=(lg,),
+                bbox_inches='tight'
+            )
+        plt.close('all')
 
 
 if __name__ == '__main__':
