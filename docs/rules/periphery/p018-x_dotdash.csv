@@ -1,52 +1,65 @@
-Name,Description,Flags,Value
-(x.1a),"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2 must be on a grid of [mm]",,0.001
-(x.1b),Data for SKY130 layout and mask on all layers except those mentioned in 1a must be on a grid of [mm] (except inside Seal ring),,0.005
-(x.2),Angles permitted on: diff,,N/A
-(x.2),"Angles permitted on: diff except for:\n- diff inside ""advSeal_6um* OR cuPillarAdvSeal_6um*"" pcell, \n- diff rings around the die at min total L>1000 um and W=0.3 um",,n x 90
-(x.2),"Angles permitted on: tap (except inside :drc_tag:`areaid.en`), poly (except for ESD flare gates or gated_npn), li1(periphery), licon1, capm, mcon, via, via2. Anchors are exempted.",,n x 90
-(x.2),Angles permitted on: via3 and via4. Anchors are exempted.,,n x 90
-(x.2a),Analog circuits identified by :drc_tag:`areaid.analog` to use rectangular diff and tap geometries only; that are not to be merged into more complex shapes (T's or L's),,
-(x.2c),"45 degree angles allowed on diff, tap inside UHVI",,
-(x.3),Angles permitted on all other layers and in the seal ring for all the layers,,
-(x.3a),"Angles permitted on all other layers except WLCSP layers (pmm, rdl, pmm2, ubm and bump)",,n x 45
-(x.4),Electrical DR cover layout guidelines for electromigration,NC,
-(x.5),"All ""pin""polygons must be within the ""drawing"" polygons of the layer",AL,
-(x.6),All intra-layer separation checks will include a notch check,,
-(x.7),Mask layer line and space checks must be done on all layers (checked with s.x rules),NC,
-(x.8),"Use of areaid ""core"" layer (""coreid"") must be approved by technology",NC,
-(x.9),"Shapes on maskAdd or maskDrop layers (""serifs"") are allowed in core only. Exempted are: \n- cfom md/mp inside ""advSeal_6um* OR cuPillarAdvSeal_6um*"" pcell \n- diff rings around the die at min total L>1000 um and W=0.3 um, and PMM/PDMM inside areaid:sl",,
-(x.9),"Shapes on maskAdd or maskDrop layers (""serifs"") are allowed in core only. PMM/PDMM inside areaid:sl are excluded.",,N/A
-(x.10),"Res purpose layer for (diff, poly) cannot overlap licon1",,
-(x.11),Metal fuses are drawn in met2,LVS,N/A
-(x.11),Metal fuses are drawn in met3,LVS,N/A
-(x.11),Metal fuses are drawn in met4,LVS,
-(x.\n12a\n12b\n12c),"To comply with the minimum spacing requirement for layer X in the frame:\n- Spacing of :drc_tag:`areaid.mt` to any non-ID layer\n- Enclosure of any non-ID layer by :drc_tag:`areaid.mt`\n- Rules exempted for cells with name ""*_buildspace""",F,
-(x.12d),- Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met3.dg),F,N/A
-(x.12d),- Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met5.dg),F,
-(x.12e),- Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met3.dg),F,N/A
-(x.12e),- Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met5.dg),F,
-(x.13),Spacing between features located across areaid:ce is checked by …,,
-(x.14),Width of features straddling areaid:ce is checked by …,,
-(x.15a),"Drawn compatible, mask, and waffle-drop layers are allowed only inside areaid:mt (i.e., etest modules), or inside areaid:sl (i.e., between the outer and inner areaid:sl edges, but not in the die) or inside areaid:ft (i.e., frame, blankings). Exception: FOM/P1M/Metal waffle drop are allowed inside the die",P,
-(x.15b),"Rule X.15a exempted for cpmm.dg inside cellnames ""PadPLfp"", ""padPLhp"", ""padPLstg"" and ""padPLwlbi"" (for the SKY130di-5r-gsmc flow)",EXEMPT,
-(x.16),"Die must not overlap :drc_tag:`areaid.mt` (rule waived for test chips and exempted for cellnames ""*tech_CD_*"", ""*_techCD_*"", ""lazX_*"" or ""lazY_*"" )",,
-(x.17),"All labels must be within the ""drawing"" polygons of the layer; This check is enabled by using switch ""floating_labels""; Identifies floating labels which appear as warnings in LVS. Using this check would enable cleaner LVS run; Not a gate for tapeout",,
-(x.18),"Use redundant mcon, via, via2, via3 and via4 (Locations where additional vias/contacts can be added to existing single vias/contacts will be identified by this rule).\nSingle via under :drc_tag:`areaid.core` and :drc_tag:`areaid.standarc` are excluded from the single via check",RR,
-(x.19),"Lower left corner of the seal ring should be at origin i.e (0,0)",,
-(x.20),"Min spacing between pins on the same layer (center to center); Check enabled by switch ""IP_block""",,
-(x.21),prunde.dg is allowed only inside :drc_tag:`areaid.mt` or :drc_tag:`areaid.sc`,,
-(x.22),"No floating interconnects (poly, li1, met1-met5) or capm allowed; Rule flags interconnects with no path to poly, difftap or metal pins. Exempt floating layers can be excluded using poly_float, li1_float, m1_float, m2_float, m3_float, m4_float and m5_float text labels. Also flags an error if these text labels are placed on connected layers (not floating) and if the labels are not over the appropriate metal layer.  \nIf floating interconnects need to be connected at a higher level (Parent IP or Full chip), such floating interconnects can be exempted using poly_tie, li1_tie, m1_tie, m2_tie, m3_tie, m4_tie and m5_tie text labels.\nIt is the responsibility of the IP owner and chip/product owner to communicate and agree to the node each of these texted lines is connected to, if there is any risk to how a line is tied, and to what node.\nOnly metals outside :drc_tag:`areaid.stdcell` are checked.\n
+Name,Description,Flags,Value,Unit
+(x.1a),"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2 must be on a grid of mm",,0.001,mm
+(x.1b),Data for SKY130 layout and mask on all layers except those mentioned in 1a must be on a grid of mm (except inside Seal ring),,0.005,mm
+(x.2),Angles permitted on: diff,,N/A,N/A
+(x.2),"Angles permitted on: diff except for:
+  - diff inside ""advSeal_6µm* OR cuPillarAdvSeal_6µm*"" pcell, 
+  - diff rings around the die at min total L>1000 µm and W=0.3 µm",,n x 90,deg
+(x.2),"Angles permitted on: tap (except inside :drc_tag:`areaid.en`), poly (except for ESD flare gates or gated_npn), li1(periphery), licon1, capm, mcon, via, via2. Anchors are exempted.",,n x 90,deg
+(x.2),Angles permitted on: via3 and via4. Anchors are exempted.,,n x 90,deg
+(x.2a),Analog circuits identified by :drc_tag:`areaid.analog` to use rectangular diff and tap geometries only; that are not to be merged into more complex shapes (T's or L's),,,
+(x.2c),"45 degree angles allowed on diff, tap inside UHVI",,,
+(x.3),Angles permitted on all other layers and in the seal ring for all the layers,,,
+(x.3a),"Angles permitted on all other layers except WLCSP layers (pmm, rdl, pmm2, ubm and bump)",,n x 45,deg
+(x.4),Electrical DR cover layout guidelines for electromigration,NC,,
+(x.5),"All ""pin""polygons must be within the ""drawing"" polygons of the layer",AL,,
+(x.6),All intra-layer separation checks will include a notch check,,,
+(x.7),Mask layer line and space checks must be done on all layers (checked with s.x rules),NC,,
+(x.8),"Use of areaid ""core"" layer (""coreid"") must be approved by technology",NC,,
+(x.9),"Shapes on maskAdd or maskDrop layers (""serifs"") are allowed in core only. Exempted are: 
+  - cfom md/mp inside ""advSeal_6um* OR cuPillarAdvSeal_6um*"" pcell 
+  - diff rings around the die at min total L>1000 um and W=0.3 um, and PMM/PDMM inside areaid:sl",,,
+(x.9),"Shapes on maskAdd or maskDrop layers (""serifs"") are allowed in core only. PMM/PDMM inside areaid:sl are excluded.",,N/A,N/A
+(x.10),"Res purpose layer for (diff, poly) cannot overlap licon1",,,
+(x.11),Metal fuses are drawn in met2,LVS,N/A,N/A
+(x.11),Metal fuses are drawn in met3,LVS,N/A,N/A
+(x.11),Metal fuses are drawn in met4,LVS,,
+(x.\n12a\n12b\n12c),"To comply with the minimum spacing requirement for layer X in the frame:
+  - Spacing of :drc_tag:`areaid.mt` to any non-ID layer
+  - Enclosure of any non-ID layer by :drc_tag:`areaid.mt`
+  - Rules exempted for cells with name ""*_buildspace""",F,,
+(x.12d),Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met3.dg),F,N/A,N/A
+(x.12d),Spacing of :drc_tag:`areaid.mt` to huge_metX (Exempt met5.dg),F,,
+(x.12e),Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met3.dg),F,N/A,N/A
+(x.12e),Enclosure of huge_metX by :drc_tag:`areaid.mt` (Exempt met5.dg),F,,
+(x.13),Spacing between features located across areaid:ce is checked by …,,,
+(x.14),Width of features straddling areaid:ce is checked by …,,,
+(x.15a),"Drawn compatible, mask, and waffle-drop layers are allowed only inside areaid:mt (i.e., etest modules), or inside areaid:sl (i.e., between the outer and inner areaid:sl edges, but not in the die) or inside areaid:ft (i.e., frame, blankings). Exception: FOM/P1M/Metal waffle drop are allowed inside the die",P,,
+(x.15b),"Rule X.15a exempted for cpmm.dg inside cellnames ""PadPLfp"", ""padPLhp"", ""padPLstg"" and ""padPLwlbi"" (for the SKY130di-5r-gsmc flow)",EXEMPT,,
+(x.16),"Die must not overlap :drc_tag:`areaid.mt` (rule waived for test chips and exempted for cellnames ""*tech_CD_*"", ""*_techCD_*"", ""lazX_*"" or ""lazY_*"" )",,,
+(x.17),"All labels must be within the ""drawing"" polygons of the layer; This check is enabled by using switch ""floating_labels""; Identifies floating labels which appear as warnings in LVS. Using this check would enable cleaner LVS run; Not a gate for tapeout",,,
+(x.18),"| Use redundant mcon, via, via2, via3 and via4 (Locations where additional vias/contacts can be added to existing single vias/contacts will be identified by this rule).
+| Single via under :drc_tag:`areaid.core` and :drc_tag:`areaid.standarc` are excluded from the single via check",RR,,
+(x.19),"Lower left corner of the seal ring should be at origin i.e (0,0)",,,
+(x.20),"Min spacing between pins on the same layer (center to center); Check enabled by switch ""IP_block""",,,
+(x.21),prunde.dg is allowed only inside :drc_tag:`areaid.mt` or :drc_tag:`areaid.sc`,,,
+(x.22),"| No floating interconnects (poly, li1, met1-met5) or capm allowed; Rule flags interconnects with no path to poly, difftap or metal pins. Exempt floating layers can be excluded using poly_float, li1_float, m1_float, m2_float, m3_float, m4_float and m5_float text labels. Also flags an error if these text labels are placed on connected layers (not floating) and if the labels are not over the appropriate metal layer.  
+| If floating interconnects need to be connected at a higher level (Parent IP or Full chip), such floating interconnects can be exempted using poly_tie, li1_tie, m1_tie, m2_tie, m3_tie, m4_tie and m5_tie text labels.
+| It is the responsibility of the IP owner and chip/product owner to communicate and agree to the node each of these texted lines is connected to, if there is any risk to how a line is tied, and to what node.
+| Only metals outside :drc_tag:`areaid.stdcell` are checked.
+| 
 The following are exempt from x.22 violations: _techCD_ , inductor.dg, modulecut, capacitors and s8blerf
-The 'notPublicCell' switch will deactivate this rule",RC,
-(x.23a),:drc_tag:`areaid.sl` must not overlap diff,,N/A
-(x.23b),diff cannot straddle :drc_tag:`areaid.sl`,,
-(x.23c),":drc_tag:`areaid.sl` must not overlap tap, poly, li1 and metX",,
-(x.23d),":drc_tag:`areaid.sl` must not overlap tap, poly",,N/A
-(x.23e),"areaid:sl must not overlap li1 and metX for pcell ""advSeal_6um""",,N/A
-(x.23f),"areaid:SubstrateCut (:drc_tag:`areaid.st`, local_sub) must not straddle p+ tap",RR,
-(x.24),condiode label must be in iso_pwell,,
-(x.25),"pnp.dg must be only within cell name ""s8rf_pnp"", ""s8rf_pnp5x"" or ""s8tesd_iref_pnp"", ""stk14ecx_*""",,
-(x.26),"""advSeal_6um"" pcell must overlap diff",,
-(x.27),"If the sealring is present, then partnum is required.  To exempt the requirement, place text.dg saying ""partnum_not_necessary"".\n""partnum*block"" pcell should be used instead of ""partnum*"" pcells",RR,N/A
-(x.28),Min width of :drc_tag:`areaid.sl`,,N/A
-(x.29),nfet must be enclosed by dnwell. Rule is checked when switch nfet_in_dnwell is turned on.,,
+The 'notPublicCell' switch will deactivate this rule",RC,,
+(x.23a),:drc_tag:`areaid.sl` must not overlap diff,,N/A,N/A
+(x.23b),diff cannot straddle :drc_tag:`areaid.sl`,,,
+(x.23c),":drc_tag:`areaid.sl` must not overlap tap, poly, li1 and metX",,,
+(x.23d),":drc_tag:`areaid.sl` must not overlap tap, poly",,N/A,N/A
+(x.23e),"areaid:sl must not overlap li1 and metX for pcell ""advSeal_6um""",,N/A,N/A
+(x.23f),"areaid:SubstrateCut (:drc_tag:`areaid.st`, local_sub) must not straddle p+ tap",RR,,
+(x.24),condiode label must be in iso_pwell,,,
+(x.25),"pnp.dg must be only within cell name ""s8rf_pnp"", ""s8rf_pnp5x"" or ""s8tesd_iref_pnp"", ""stk14ecx_*""",,,
+(x.26),"""advSeal_6um"" pcell must overlap diff",,,
+(x.27),"| If the sealring is present, then partnum is required.  To exempt the requirement, place text.dg saying ""partnum_not_necessary"".
+| ""partnum*block"" pcell should be used instead of ""partnum*"" pcells",RR,N/A,N/A
+(x.28),Min width of :drc_tag:`areaid.sl`,,N/A,N/A
+(x.29),nfet must be enclosed by dnwell. Rule is checked when switch nfet_in_dnwell is turned on.,,,

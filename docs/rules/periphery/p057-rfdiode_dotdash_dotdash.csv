@@ -1,8 +1,8 @@
-Name,Description,Flags,Value
-(rfdiode.1.-),Only 90 degrees allowed for :drc_tag:`areaid.re`,,
-(rfdiode.2.-),:drc_tag:`areaid.re` must be coincident with nwell for the rf nwell diode,,
+Name,Description,Flags,Value,Unit
+(rfdiode.1.-),Only 90 degrees allowed for :drc_tag:`areaid.re`,,,
+(rfdiode.2.-),:drc_tag:`areaid.re` must be coincident with nwell for the rf nwell diode,,,
 (rfdiode.3.-),":drc_tag:`areaid.re` must be coincident with innwer edge of the nwell ring for the rf pwell-deep nwell diode
 Allowed PNP layout
 Layout: pnppar
 Allowed NPN layout
-Layout: npnpar1x1",,
+Layout: npnpar1x1",,,

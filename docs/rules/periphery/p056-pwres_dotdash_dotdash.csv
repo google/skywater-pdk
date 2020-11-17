@@ -1,13 +1,13 @@
-Name,Description,Flags,Value
-(pwres.1.-),Pwell resistor has to be enclosed by the res layer,NC,
-(pwres.2.-),Min/Max width of pwell resistor,,2.650
-(pwres.3.-),Min length of pwell resistor,,26.500
-(pwres.4.-),Max length of pwell resistor,,265.00
-(pwres.5.-),Min/Max spacing of tap inside the pwell resistor to nwell,,0.220
-(pwres.6.-),Min/Max width of tap inside the pwell resistor,,0.530
-(pwres.7a.-),Every pwres_terminal must enclose 12 licon1,,
-(pwres.7b.-),Every pwres_terminal must enclose 12 mcons if routed through metal1,,
-(pwres.8.-),Diff or poly is not allowed in the pwell resistor.,,
-(pwres.9.-),Nwell surrounding the pwell resistor must have a full ring of contacted tap strapped with metal.,,
-(pwres.10.-),The res layer must abut pwres_terminal on opposite and parallel edges,,
-(pwres.11.-),The res layer must abut nwell on opposite and parallel edges not checked in Rule pwres.10,,
+Name,Description,Flags,Value,Unit
+(pwres.1.-),Pwell resistor has to be enclosed by the res layer,NC,,
+(pwres.2.-),Min/Max width of pwell resistor,,2.650,µm
+(pwres.3.-),Min length of pwell resistor,,26.500,µm
+(pwres.4.-),Max length of pwell resistor,,265.00,µm
+(pwres.5.-),Min/Max spacing of tap inside the pwell resistor to nwell,,0.220,µm
+(pwres.6.-),Min/Max width of tap inside the pwell resistor,,0.530,µm
+(pwres.7a.-),Every pwres_terminal must enclose 12 licon1,,,
+(pwres.7b.-),Every pwres_terminal must enclose 12 mcons if routed through metal1,,,
+(pwres.8.-),Diff or poly is not allowed in the pwell resistor.,,,
+(pwres.9.-),Nwell surrounding the pwell resistor must have a full ring of contacted tap strapped with metal.,,,
+(pwres.10.-),The res layer must abut pwres_terminal on opposite and parallel edges,,,
+(pwres.11.-),The res layer must abut nwell on opposite and parallel edges not checked in Rule pwres.10,,,

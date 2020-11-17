@@ -1,7 +1,7 @@
-Name,Description,Flags,Value
-(pwdem.1),Min width of pwdem.dg,,N/A
-(pwdem.2),Min spacing between two pwdem.dg inside UHVI on same net,,N/A
-(pwdem.3),Min enclosure of pwdem:dg by pwbm.dg inside UHVI,,N/A
-(pwdem.4),pwdem.dg must be enclosed by UHVI,,N/A
-(pwdem.5),pwdem.dg inside UHVI must be enclosed by deep nwell,,N/A
-(pwdem.6),Min enclosure of pwdem:dg by deep nwell inside UHVI,,N/A
+Name,Description,Flags,Value,Unit
+(pwdem.1),Min width of pwdem.dg,,N/A,N/A
+(pwdem.2),Min spacing between two pwdem.dg inside UHVI on same net,,N/A,N/A
+(pwdem.3),Min enclosure of pwdem:dg by pwbm.dg inside UHVI,,N/A,N/A
+(pwdem.4),pwdem.dg must be enclosed by UHVI,,N/A,N/A
+(pwdem.5),pwdem.dg inside UHVI must be enclosed by deep nwell,,N/A,N/A
+(pwdem.6),Min enclosure of pwdem:dg by deep nwell inside UHVI,,N/A,N/A

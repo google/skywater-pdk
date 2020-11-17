@@ -1,8 +1,8 @@
-Name,Description,Flags,Value
-(ct.1),Min and max L and W of mcon,DNF,0.170
-(ct.2),Spacing of mcon to mcon,DNF,0.190
-(ct.3),Only min. square mcons are allowed except die seal ring where mcons are…,,0.170*L
-(ct.4),Mcon must be enclosed by LI by at least …,P,0.000
-(ct.irdrop.1),"For 1 <= n <= 10 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.2
-(ct.irdrop.2),"For 11 <= n <= 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.3
-(ct.irdrop.3),"For n > 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.7
+Name,Description,Flags,Value,Unit
+(ct.1),Min and max L and W of mcon,DNF,0.170,µm
+(ct.2),Spacing of mcon to mcon,DNF,0.190,µm
+(ct.3),Only min. square mcons are allowed except die seal ring where mcons are…,,0.170*L,
+(ct.4),Mcon must be enclosed by LI by at least …,P,0.000,µm
+(ct.irdrop.1),"For 1 <= n <= 10 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.2,µm
+(ct.irdrop.2),"For 11 <= n <= 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.3,µm
+(ct.irdrop.3),"For n > 100 contacts on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.7,µm

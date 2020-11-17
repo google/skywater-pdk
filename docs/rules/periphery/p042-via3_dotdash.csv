@@ -1,15 +1,15 @@
-Name,Description,Flags,Value
-(via3.1),Min and max L and W of via3 (except for rule via3.1a),AL,0.200
-(via3.1a),Two sizes of square via3 allowed inside :drc_tag:`areaid.mt`: 0.200um and 0.800um,AL,
-(via3.2),Spacing of via3 to via3,AL,0.200
-(via3.3),Only min. square via3s are allowed except die seal ring where via3s are (Via3 CD)*L,,0.2*L
-(via3.4),Via3 must be enclosed by Met3 by at least …,AL,0.060
-(via3.5),Via3 must be enclosed by Met3 on one of two adjacent sides by at least …,AL,0.090
-(via3.11),Min and max L and W of via3,CU,0.210
-(via3.12),Min spacing between via2's,CU,0.180
-(via3.13),Via3 must be enclosed by Met3 by at least …,CU,0.055
-(via3.14),Min spacing between via3 rows,CU,0.350
-(via3.irdrop.1),"For 1 <= n <= 2 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0
-(via3.irdrop.2),"For 3 <= n <= 15 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6
-(via3.irdrop.3),"For 16 <= n <= 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8
-(via3.irdrop.4),"For n > 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.9
+Name,Description,Flags,Value,Unit
+(via3.1),Min and max L and W of via3 (except for rule via3.1a),AL,0.200,µm
+(via3.1a),Two sizes of square via3 allowed inside :drc_tag:`areaid.mt`: 0.200um and 0.800um,AL,,
+(via3.2),Spacing of via3 to via3,AL,0.200,µm
+(via3.3),Only min. square via3s are allowed except die seal ring where via3s are (Via3 CD)*L,,0.2*L,
+(via3.4),Via3 must be enclosed by Met3 by at least …,AL,0.060,µm
+(via3.5),Via3 must be enclosed by Met3 on one of two adjacent sides by at least …,AL,0.090,µm
+(via3.11),Min and max L and W of via3,CU,0.210,µm
+(via3.12),Min spacing between via2's,CU,0.180,µm
+(via3.13),Via3 must be enclosed by Met3 by at least …,CU,0.055,µm
+(via3.14),Min spacing between via3 rows,CU,0.350,µm
+(via3.irdrop.1),"For 1 <= n <= 2 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.0,µm
+(via3.irdrop.2),"For 3 <= n <= 15 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.6,µm
+(via3.irdrop.3),"For 16 <= n <= 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.8,µm
+(via3.irdrop.4),"For n > 30 via3's on the same connector, mcon area pre- and post- Cu conversion must differ by no more than…",CU IR,0.9,µm

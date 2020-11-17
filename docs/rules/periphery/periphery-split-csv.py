@@ -55,7 +55,7 @@ class Rule:
     description: str = ''
     flags: Tuple[RuleFlags] = field(default_factory=tuple)
     value: str = ''
-
+    unit: str = ''
 
 @dataclass
 class RuleTable:
@@ -219,7 +219,7 @@ for d in data[1:]:
         rt.enabled = False
 
     for r in rows:
-        assert len(r) == 4, r
+        assert len(r) == 5, r
 
         if r[0] == 'Use' and r[1] == 'Explanation':
             break
@@ -233,6 +233,7 @@ for d in data[1:]:
             r[3] = ''
         rc.flags = tuple(flags)
         rc.value = r[3]
+        rc.unit  = r[4].strip()
         rt.rules.append(rc)
 
     if rule_tables:
@@ -288,14 +289,14 @@ for rt in rule_tables:
 
 """.format(textwrap.indent(rt.notes, prefix='    ')))
 
-    headers = ('Name', 'Description', 'Flags', 'Value')
-    headers_fmt = (':drc_rule:`Name`', 'Description', ':drc_flag:`Flags`', 'Value')
+    headers = ('Name', 'Description', 'Flags', 'Value', 'Unit')
+    headers_fmt = (':drc_rule:`Name`', 'Description', ':drc_flag:`Flags`', 'Value', 'Unit')
 
     rst.write("""\
 .. list-table:: {rt.description}
    :header-rows: 1
    :stub-columns: 1
-   :widths: 10 75 5 10
+   :widths: 9 73 6 6 6
 
    * - {h}
 """.format(rt=rt,h='\n     - '.join(headers_fmt)))
@@ -308,19 +309,20 @@ for rt in rule_tables:
         elif '\\n' in r.description: # multi line description
             r.description = '\n'.join( [ '| '+l for l in r.description.split('\\n') ] )
         else:
-            r.description = r.description.lstrip(' -') # one item bullet list to text           
+            r.description = r.description.lstrip(' -') # one item bullet list to text
         d = textwrap.indent(r.description, prefix='       ').strip()
         rst.write("""\
    * - :drc_rule:`{r.name}`
      - {d}
      - {f}
      - {r.value}
+     - {r.unit}
 """.format(r=r, d=d, f=f))
 
     rst.write('\n\n')
 
     with open(rt.csv_fname, 'w', newline='', encoding='utf8') as f:
-        w = csv.DictWriter(f, headers)
+        w = csv.DictWriter(f, headers, lineterminator='\n')
         w.writeheader()
         for r in rt.rules:
             d = {f: getattr(r, f.lower()) for f in headers}

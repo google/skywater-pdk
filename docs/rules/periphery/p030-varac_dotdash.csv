@@ -1,9 +1,9 @@
-Name,Description,Flags,Value
-(varac.1),Min channel length (poly width) of Var_channel,,0.180
-(varac.2),Min channel width (tap width) of Var_channel,,1.000
-(varac.3),Min spacing between hvtp to Var_channel,,0.180
-(varac.4),Min spacing of licon on tap to Var_channel,,0.250
-(varac.5),Min enclosure of poly overlapping Var_channel by nwell,,0.150
-(varac.6),Min spacing between VaracTap and difftap,,0.270
-(varac.7),Nwell overlapping Var_channel must not overlap P+ diff,,
-(varac.8),Min enclosure of Var_channel by hvtp,,0.255
+Name,Description,Flags,Value,Unit
+(varac.1),Min channel length (poly width) of Var_channel,,0.180,µm
+(varac.2),Min channel width (tap width) of Var_channel,,1.000,µm
+(varac.3),Min spacing between hvtp to Var_channel,,0.180,µm
+(varac.4),Min spacing of licon on tap to Var_channel,,0.250,µm
+(varac.5),Min enclosure of poly overlapping Var_channel by nwell,,0.150,µm
+(varac.6),Min spacing between VaracTap and difftap,,0.270,µm
+(varac.7),Nwell overlapping Var_channel must not overlap P+ diff,,,
+(varac.8),Min enclosure of Var_channel by hvtp,,0.255,µm
