@@ -47,6 +47,11 @@ def main(argv):
         help='Path to files for which Symbolator failed to generate diagram',
         type=Path
     )
+    parser.add_argument(
+        '--overwrite-existing',
+        help='If present, the script will overwrite existing symbol.svg files',
+        action='store_true'
+    )
 
     args = parser.parse_args(argv[1:])
 
@@ -79,7 +84,7 @@ def main(argv):
                     print('Run the script with --create-dirs')
                     return errno.ENOENT
 
-            if out_filename.exists():
+            if out_filename.exists() and not args.overwrite_existing:
                 print(f'The {out_filename} already exists')
                 return errno.EEXIST
 
