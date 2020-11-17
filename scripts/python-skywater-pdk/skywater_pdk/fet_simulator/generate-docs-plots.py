@@ -20,6 +20,8 @@
 import argparse
 from pathlib import Path
 import sys
+import contextlib
+import traceback
 
 from fet_simulator import generate_fet_plots
 
@@ -27,51 +29,82 @@ from fet_simulator import generate_fet_plots
 def main(argv):
     parser = argparse.ArgumentParser(prog=argv[0])
     parser.add_argument(
-        'fd_pr_dir',
-        help='Path to the particular version of the primitive library',
+        'libraries_dir',
+        help='Path to the libraries directory of skywater-pdk',
         type=Path
     )
     parser.add_argument(
-        'device_details_dir',
-        help='Path to the directory with device details to save images to',
+        'corner_file',
+        help='Path to the corner SPICE file',
+        type=Path
+    )
+    parser.add_argument(
+        'output_dir',
+        help='Path to the output directory',
+        type=Path
+    )
+    parser.add_argument(
+        '--libname',
+        help='Library name to generate the Symbolator diagrams for',
+        type=str
+    )
+    parser.add_argument(
+        '--version',
+        help='Version for which the Symbolator diagrams should be generated',
+        type=str
+    )
+    parser.add_argument(
+        '--create-dirs',
+        help='Create directories for output when not present',
+        action='store_true'
+    )
+    parser.add_argument(
+        '--failed-inputs',
+        help='Path to files for which Symbolator failed to generate diagram',
         type=Path
     )
 
     args = parser.parse_args(argv[1:])
 
-    typicalcorner = args.fd_pr_dir / 'models/corners/tt.spice'
+    fetbins = list(args.libraries_dir.rglob('*fet*bins.csv'))
 
-    fets = [
-        ['esd_nfet', 'esd_nfet_01v8', None],
-        ['nfet_01v8', 'nfet_01v8', None],
-        ['nfet_01v8_lvt', 'nfet_01v8_lvt', None],
-        ['nfet_03v3_nvt', 'nfet_03v3_nvt', None],
-        ['nfet_03v3_nvt-and-nfet_05v0_nvt', 'nfet_05v0_nvt', None],
-        ['nfet_03v3_nvt-and-nfet_05v0_nvt', 'nfet_03v3_nvt', None],
-        ['nfet_05v0_nvt', 'nfet_05v0_nvt', None],
-        # ['nfet_20v0'], TODO provide
-        # ['nfet_20v0_iso', 'nfet_20v0_nvt_iso', None], TODO invalid bins.csv
-        # ['nfet_20v0_nvt', 'nfet_20v0_nvt', None], TODO invalid bins.csv file
-        # ['nfet_20v0_zvt', 'nfet_20v0_zvt', None], TODO invalid bins.csv file
-        # ['nfet_g11v0d16v0'], TODO provide
-        ['nfet_g5v0d10v5', 'nfet_g5v0d10v5', None],
-        ['pfet_01v8', 'pfet_01v8', None],
-        ['pfet_01v8_hvt', 'pfet_01v8_hvt', None],
-        ['pfet_01v8_lvt', 'pfet_01v8_lvt', None],
-        # ['pfet_20v0', 'pfet_20v0', None], TODO some plot issues
-        ['pfet_g5v0d10v5', 'pfet_g5v0d10v5', None],
-        # ['pfet_g5v0d16v0', 'pfet_g5v0d16v0', None] TODO invalid bins.csv file
-    ]
+    nc = contextlib.nullcontext()
 
-    for outdir, fetname, onlyw in fets:
-        generate_fet_plots(
-            f'sky130_fd_pr__{fetname}',
-            typicalcorner,
-            args.fd_pr_dir/f'cells/{fetname}/sky130_fd_pr__{fetname}.bins.csv',
-            args.device_details_dir/outdir,
-            f'sim_{fetname}_',
-            onlyw
-        )
+    with open(args.failed_inputs, 'w') if args.failed_inputs else nc as err:
+        for fetbin in fetbins:
+            outdir = (args.output_dir /
+                       fetbin.resolve()
+                       .relative_to(args.libraries_dir.resolve()))
+            if args.libname and args.libname != outdir.parts[0]:
+                continue
+            if args.version and args.version != outdir.parts[1]:
+                continue
+            print(f'===> {str(fetbin)}')
+            try:
+                if not outdir.exists():
+                    if args.create_dirs:
+                        outdir.mkdir(parents=True)
+                    else:
+                        print('The output directory {str(outdir)} is missing')
+                        print('Run the script with --create-dirs')
+                        return errno.ENOENT
+
+                prefix = fetbin.name.replace('.bins.csv', '')
+                generate_fet_plots(
+                    args.corner_file,
+                    fetbin,
+                    outdir,
+                    f'{prefix}_',
+                    ext='sim.svg'
+                )
+            except Exception:
+                print(
+                    f'Failed to generate FET plot for {str(fetbin)}',
+                    file=sys.stderr
+                )
+                traceback.print_exc()
+                err.write(f'{fetbin}\n')
+
     return 0
 
 

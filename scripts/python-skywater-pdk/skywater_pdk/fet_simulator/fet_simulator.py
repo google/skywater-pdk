@@ -108,32 +108,35 @@ def read_bins(fname):
 
 
 def generate_fet_plots(
-        fet_type,
         corner_path,
         bins_csv,
         outdir,
         outprefix,
         only_W=None,
         ext='svg'):
-    print(f'[generate_fet_plots] {fet_type} {corner_path} {bins_csv}' +
+    print(f'[generate_fet_plots] {corner_path} {bins_csv}' +
           f'{outdir} {outprefix} {only_W}')
-    iparam = f'@m.xm1.m{fet_type}[%s]'
-    # fet_W and fet_L values here are only for initialization, they are
-    # later changed in the for loop
-    c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
 
     bins = read_bins(bins_csv)
 
     bins_by_W = defaultdict(list)
     # group bins by W
     for line in bins:
-        bins_by_W[line[2]].append(line)
+        bins_by_W[(line[0], float(line[2]))].append(line)
 
-    Ws = only_W if only_W is not None else list(bins_by_W.keys())
+    Ws = [key for key in bins_by_W.keys() if only_W is None or key[1] in only_W]
 
-    for W in Ws:
+    for fet_type, W in Ws:
+        if outprefix is None:
+            outprefix = fet_type
+        print(f'======> {fet_type}:  {W}')
+        iparam = f'@m.xm1.m{fet_type}[%s]'
+        # fet_W and fet_L values here are only for initialization, they are
+        # later changed in the for loop
+        c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
+
         figs, plts = init_plots(fet_type, W)
-        for dev, bin, fet_W, fet_L in bins_by_W[W]:
+        for dev, bin, fet_W, fet_L in bins_by_W[(fet_type, W)]:
             fet_W, fet_L = float(fet_W), float(fet_L)
             if only_W is not None and fet_W not in only_W:
                 continue
@@ -151,7 +154,7 @@ def generate_fet_plots(
             fg.tight_layout()
             fg.savefig(
                 Path(outdir) / (
-                    outprefix + f'_{name}_W{str(W).replace(".", "_")}.{ext}'),
+                    outprefix + f'_{fet_type}_{name}_W{str(W).replace(".", "_")}.{ext}'),
                 bbox_extra_artists=(lg,),
                 bbox_inches='tight'
             )
@@ -162,10 +165,6 @@ def main(argv):
     import argparse
 
     parser = argparse.ArgumentParser(prog=argv[0])
-    parser.add_argument(
-        'fet_type',
-        help='FET type to simulate'
-    )
     parser.add_argument(
         'corner_path',
         help='Path to corner SPICE file containing FET definition',
@@ -198,11 +197,7 @@ def main(argv):
     )
     args = parser.parse_args(argv[1:])
 
-    if args.outprefix is None:
-        args.outprefix = args.fet_type
-
     generate_fet_plots(
-        args.fet_type,
         args.corner_path,
         args.bins_csv,
         args.outdir,
