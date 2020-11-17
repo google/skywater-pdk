@@ -22,6 +22,7 @@ from pathlib import Path
 import sys
 import contextlib
 import traceback
+import errno
 
 from fet_simulator import generate_fet_plots
 
@@ -73,11 +74,13 @@ def main(argv):
     with open(args.failed_inputs, 'w') if args.failed_inputs else nc as err:
         for fetbin in fetbins:
             outdir = (args.output_dir /
-                       fetbin.resolve()
-                       .relative_to(args.libraries_dir.resolve()))
-            if args.libname and args.libname != outdir.parts[0]:
+                      fetbin.resolve()
+                      .relative_to(args.libraries_dir.resolve()))
+            library = outdir.relative_to(args.output_dir).parts[0]
+            ver = outdir.relative_to(args.output_dir).parts[1]
+            if args.libname and args.libname != library:
                 continue
-            if args.version and args.version != outdir.parts[1]:
+            if args.version and args.version != ver:
                 continue
             print(f'===> {str(fetbin)}')
             try:

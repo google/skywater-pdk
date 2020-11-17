@@ -96,6 +96,11 @@ def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
     plts[3].plot(vsweep, gm_id, label=f'W {fet_W} x L {fet_L}')
 
 
+def close_plots(figs):
+    for f in figs:
+        plt.close(f)
+
+
 def read_bins(fname):
     with open(fname, 'r') as f:
         r = csv.reader(f)
@@ -124,7 +129,8 @@ def generate_fet_plots(
     for line in bins:
         bins_by_W[(line[0], float(line[2]))].append(line)
 
-    Ws = [key for key in bins_by_W.keys() if only_W is None or key[1] in only_W]
+    Ws = [key for key in bins_by_W.keys()
+          if only_W is None or key[1] in only_W]
 
     for fet_type, W in Ws:
         if outprefix is None:
@@ -136,14 +142,18 @@ def generate_fet_plots(
         c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
 
         figs, plts = init_plots(fet_type, W)
-        for dev, bin, fet_W, fet_L in bins_by_W[(fet_type, W)]:
-            fet_W, fet_L = float(fet_W), float(fet_L)
-            if only_W is not None and fet_W not in only_W:
-                continue
-            c.element('XM1').parameters['W'] = fet_W
-            c.element('XM1').parameters['L'] = fet_L
-            gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
-            gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts)
+        try:
+            for dev, bin, fet_W, fet_L in bins_by_W[(fet_type, W)]:
+                fet_W, fet_L = float(fet_W), float(fet_L)
+                if only_W is not None and fet_W not in only_W:
+                    continue
+                c.element('XM1').parameters['W'] = fet_W
+                c.element('XM1').parameters['L'] = fet_L
+                gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
+                gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts)
+        except Exception:
+            close_plots(figs)
+            raise
 
         figtitles = ['Id_w', 'fT', 'gm_gds', 'gm_id']
         for fg, name in zip(figs, figtitles):
@@ -154,11 +164,12 @@ def generate_fet_plots(
             fg.tight_layout()
             fg.savefig(
                 Path(outdir) / (
-                    outprefix + f'_{fet_type}_{name}_W{str(W).replace(".", "_")}.{ext}'),
+                    outprefix +
+                    f'_{fet_type}_{name}_W{str(W).replace(".", "_")}.{ext}'),
                 bbox_extra_artists=(lg,),
                 bbox_inches='tight'
             )
-        plt.close('all')
+        close_plots(figs)
 
 
 def main(argv):
