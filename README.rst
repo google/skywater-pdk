@@ -55,6 +55,15 @@ To get notified about future new releases of the PDK, and other important news, 
 
 See both the `Known Issues <docs/known_issues.rst>`_ section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
 
+Resources
+=========
+
+The latest SkyWater SKY130 PDK design resources can be viewed at the following locations:
+
+* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
+* `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
+* `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
+
 SKY130 Process Node
 ===================
 

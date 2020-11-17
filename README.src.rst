@@ -37,6 +37,15 @@ The SkyWater Open Source PDK documentation can be found at <https://skywater-pdk
 
 See both the :ref:`Known Issues` section and the `SkyWater PDK GitHub issue list <https://github.com/google/skywater-pdk/issues>`_ to get more detailed information around currently known issues.
 
+Resources
+=========
+
+The latest SkyWater SKY130 PDK design resources can be viewed at the following locations:
+
+* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
+* `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
+* `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
+
 SKY130 Process Node
 ===================
 
