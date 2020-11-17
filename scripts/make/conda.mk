@@ -71,7 +71,7 @@ $(CONDA_ENV_PYTHON): $(ENVIRONMENT_FILE) $(REQUIREMENTS_FILE) | $(CONDA_PYTHON) 
 	$(IN_CONDA_ENV_BASE) conda env update --name $(CONDA_ENV_NAME) --file $(ENVIRONMENT_FILE)
 	touch $(CONDA_ENV_PYTHON)
 
-env: $(CONDA_ENV_PYTHON)
+env:: $(CONDA_ENV_PYTHON)
 	$(IN_CONDA_ENV) conda info
 
 .PHONY: env
@@ -81,12 +81,12 @@ enter: $(CONDA_ENV_PYTHON)
 
 .PHONY: enter
 
-clean:
+clean::
 	rm -rf env/conda
 
 .PHONY: clean
 
-dist-clean:
+dist-clean::
 	rm -rf conda
 
 .PHONY: dist-clean
