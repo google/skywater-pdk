@@ -74,7 +74,7 @@ def main(argv):
     with open(args.failed_inputs, 'w') if args.failed_inputs else nc as err:
         for fetbin in fetbins:
             outdir = (args.output_dir /
-                      fetbin.resolve()
+                      fetbin.parent.resolve()
                       .relative_to(args.libraries_dir.resolve()))
             library = outdir.relative_to(args.output_dir).parts[0]
             ver = outdir.relative_to(args.output_dir).parts[1]
