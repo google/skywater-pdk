@@ -100,7 +100,7 @@ def main(argv):
                     f'{prefix}_',
                     ext='sim.svg'
                 )
-            except Exception:
+            except (Exception, IndexError):
                 print(
                     f'Failed to generate FET plot for {str(fetbin)}',
                     file=sys.stderr
