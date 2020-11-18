@@ -108,6 +108,7 @@ def main(argv):
                 traceback.print_exc()
                 err.write(f'{fetbin}\n')
 
+    print('Finished generating FET plots')
     return 0
 
 
