@@ -19,20 +19,12 @@
 
 
 import sys
-import symbolator
 import argparse
 from pathlib import Path
 import errno
 import contextlib
 import traceback
-
-
-@contextlib.contextmanager
-def redirect_argv(args):
-    sys._argv = sys.argv
-    sys.argv = args
-    yield
-    sys.argv = sys._argv
+import subprocess
 
 
 def main(argv):
@@ -108,20 +100,23 @@ def main(argv):
                 print(f'The {out_filename} already exists')
                 return errno.EEXIST
 
-            arguments = (f'--libname {libname} --title -t -o {out_filename}' +
-                         f' --output-as-filename -i {str(symbol_v_file)}' +
-                         ' --format svg')
-            with redirect_argv(arguments.split(' ')):
-                try:
-                    symbolator.main()
-                except Exception:
-                    print(
-                        f'Failed to run: symbolator {arguments}',
-                        file=sys.stderr
-                    )
-                    print('Error message:\n', file=sys.stderr)
-                    traceback.print_exc()
-                    err.write(f'{symbol_v_file}\n')
+            program = ('symbolator' +
+                       f' --libname {libname} --title -t -o {out_filename}' +
+                       f' --output-as-filename -i {str(symbol_v_file)}' +
+                       ' --format svg')
+            res = subprocess.run(
+                program.split(' '),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT
+            )
+            if res.returncode != 0:
+                print(
+                    f'Failed to run: {program}',
+                    file=sys.stderr
+                )
+                print('STDOUT:\n', file=sys.stderr)
+                print(res.stdout.decode())
+                err.write(f'{symbol_v_file}\n')
     return 0
 
 
