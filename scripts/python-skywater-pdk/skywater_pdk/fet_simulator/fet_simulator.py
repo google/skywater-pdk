@@ -50,18 +50,26 @@ def run_sim(c, iparam, fet_W):
         iparam % 'gm', iparam % 'id', iparam % 'gds', iparam % 'cgg'
     )
 
-    # run the dc simulation
-    an = sim.dc(Vgg=slice(0, 1.8, 0.01))
+    try:
+        # run the dc simulation
+        an = sim.dc(Vgg=slice(0, 1.8, 0.01))
 
-    # calculate needed values..need as_ndarray() since most of these have None
-    # as the unit and that causes an error
-    gm_id = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
-             an.internal_parameters[iparam % 'id'].as_ndarray())
-    ft = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
-          an.internal_parameters[iparam % 'cgg'].as_ndarray())
-    id_W = (an.internal_parameters[iparam % 'id'].as_ndarray() / fet_W)
-    gm_gds = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
-              an.internal_parameters[iparam % 'gds'].as_ndarray())
+        # calculate needed values..need as_ndarray() since most of these have
+        # None as the unit and that causes an error
+        gm_id = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+                 an.internal_parameters[iparam % 'id'].as_ndarray())
+        ft = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+              an.internal_parameters[iparam % 'cgg'].as_ndarray())
+        id_W = (an.internal_parameters[iparam % 'id'].as_ndarray() / fet_W)
+        gm_gds = (an.internal_parameters[iparam % 'gm'].as_ndarray() /
+                  an.internal_parameters[iparam % 'gds'].as_ndarray())
+    except Exception:
+        sim.ngspice.destroy('all')
+        sim.ngspice.reset()
+        raise
+
+    sim.ngspice.destroy('all')
+    sim.ngspice.reset()
 
     return gm_id, ft, id_W, gm_gds, an.nodes['v-sweep']
 
