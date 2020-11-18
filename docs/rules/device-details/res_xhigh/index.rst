@@ -9,7 +9,7 @@ Spice Model Information
 
 Operating ranges where SPICE models are valid
 
--  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
+-  :math:`|V_{r0} – V_{r1}| = 0` to 5.0V
 -  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
 
 Details

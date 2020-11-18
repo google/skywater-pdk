@@ -9,9 +9,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to -22V
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +2.0V
+-  :math:`V_{DS} = 0` to -22V
+-  :math:`V_{GS} = 0` to -5.5V
+-  :math:`V_{BS} = 0` to +2.0V
 
 Details
 ~~~~~~~

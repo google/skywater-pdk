@@ -12,7 +12,7 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  \|V\ :sub:`c0` – V\ :sub:`c1`\ \| = 0 to 5.0V
+-  :math:`|V_{c0} – V_{c1}| = 0` to 5.0V
 
 Details
 ~~~~~~~
@@ -61,7 +61,7 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  \|V\ :sub:`0` – V\ :sub:`1`\ \| = 0 to 2.0V
+-  :math:`|V_0 – V_1| = 0` to 2.0V
 
 Details
 ~~~~~~~
@@ -110,7 +110,7 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  \|V\ :sub:`c0` – V\ :sub:`c1`\ \| = 0 to 5.5V
+-  :math:`|V_{c0} – V_{c1}| = 0` to 5.5V
 
 Details
 ~~~~~~~
@@ -200,7 +200,7 @@ Spice Model Information
 
 Operating regime where SPICE models are valid
 
--  \|V\ :sub:`d0` – V\ :sub:`d1`\ \| = 0 to 5.0V
+-  :math:`|V_{d0} – V_{d1}| = 0` to 5.0V
 
 Details
 ~~~~~~~
@@ -260,9 +260,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 11.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
--  V\ :sub:`GS` = 0 to 5.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
--  V\ :sub:`BS` = 0 to -5.5V, (:model:`sky130_fd_pr__nfet_g5v0d10v5`), +0.3 to -5.5V (:model:`sky130_fd_pr__nfet_05v0_nvt`), 0 to -1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
+-  :math:`V_{DS} = 0` to 11.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
+-  :math:`V_{GS} = 0` to 5.0V (:model:`sky130_fd_pr__nfet_g5v0d10v5*`), 0 to 1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
+-  :math:`V_{BS} = 0` to -5.5V, (:model:`sky130_fd_pr__nfet_g5v0d10v5`), +0.3 to -5.5V (:model:`sky130_fd_pr__nfet_05v0_nvt`), 0 to -1.95V (:model:`sky130_fd_pr__nfet_01v8*`)
 
 Details
 ~~~~~~~
@@ -304,9 +304,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 11.0V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -5.5V
+-  :math:`V_{DS} = 0` to 11.0V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -5.5V
 
 Details
 ~~~~~~~
@@ -341,10 +341,10 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to +16V (V:sub:`GS` = 0)
--  V\ :sub:`DS` = 0 to +11V (V:sub:`GS` > 0)
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
+-  :math:`V_{DS} = 0` to +16V (\ :math:`V_{GS} = 0`\ )
+-  :math:`V_{DS} = 0` to +11V (\ :math:`V_{GS} > 0`\ )
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
 
 Details
 ~~~~~~~
@@ -379,9 +379,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.95V
--  V\ :sub:`GS` = 0 to 1.95V
--  V\ :sub:`BS` = +0.3 to -1.95V
+-  :math:`V_{DS} = 0` to 1.95V
+-  :math:`V_{GS} = 0` to 1.95V
+-  :math:`V_{BS} = +0.3` to -1.95V
 
 Details
 ~~~~~~~
@@ -404,7 +404,7 @@ The symbol of the :model:`sky130_fd_pr__nfet_01v8_lvt` (1.8V low-VT NMOS FET) is
 
 |symbol-nfet_01v8_lvt|
 
-The cross-section of the low-VT NMOS FET is shown below. The cross-section is identical to the std NMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
+The cross-section of the low-VT NMOS FET is shown below. The cross-section is identical to the std NMOS FET except for the :math:`V_T` adjust implants (to achieve the lower :math:`V_T`)
 
 |cross-section-nfet_01v8_lvt|
 
@@ -423,9 +423,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.95V
--  V\ :sub:`GS` = 0 to 1.95V
--  V\ :sub:`BS` = +0.3 to -1.95V
+-  :math:`V_{DS} = 0` to 1.95V
+-  :math:`V_{GS} = 0` to 1.95V
+-  :math:`V_{BS} = +0.3` to -1.95V
 
 Details
 ~~~~~~~
@@ -462,9 +462,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_03v3_nvt`
 
--  V\ :sub:`DS` = 0 to 3.3V
--  V\ :sub:`GS` = 0 to 3.3V
--  V\ :sub:`BS` = 0 to -3.3V
+-  :math:`V_{DS} = 0` to 3.3V
+-  :math:`V_{GS} = 0` to 3.3V
+-  :math:`V_{BS} = 0` to -3.3V
 
 Details
 ~~~~~~~
@@ -503,9 +503,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_05v0_nvt`
 
--  V\ :sub:`DS` = 0 to 5.5V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = +0.3 to -5.5V
+-  :math:`V_{DS} = 0` to 5.5V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = +0.3` to -5.5V
 
 Details
 ~~~~~~~
@@ -545,9 +545,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to +22V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
+-  :math:`V_{DS} = 0` to +22V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
 
 Details
 ~~~~~~~
@@ -589,9 +589,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to +22V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
+-  :math:`V_{DS} = 0` to +22V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
 
 Details
 ~~~~~~~
@@ -628,9 +628,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to +22V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
+-  :math:`V_{DS} = 0` to +22V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
 
 Details
 ~~~~~~~
@@ -667,9 +667,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to +22V
--  V\ :sub:`GS` = 0 to 5.5V
--  V\ :sub:`BS` = 0 to -2.0V
+-  :math:`V_{DS} = 0` to +22V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
 
 Details
 ~~~~~~~
@@ -703,9 +703,9 @@ Spice Model Information
 
 Operating regime where SPICE models are valid
 
--  \|V\ :sub:`CE`\ \| = 0 to 5.0V
--  \|V\ :sub:`BE`\ \| = 0 to 5.0V
--  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
+-  :math:`|V_{CE}| = 0` to 5.0V
+-  :math:`|V_{BE}| = 0` to 5.0V
+-  :math:`I_{CE} = 0.01` to 10 µA/µm\ :sup:`2`
 
 Details
 ~~~~~~~
@@ -755,9 +755,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -11.0V
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +5.5V
+-  :math:`V_{DS} = 0` to -11.0V
+-  :math:`V_{GS} = 0` to -5.5V
+-  :math:`V_{BS} = 0` to +5.5V
 
 Details
 ~~~~~~~
@@ -800,10 +800,10 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to -16V (V:sub:`GS` = 0)
--  V\ :sub:`DS` = 0 to -10V (V:sub:`GS` < 0)
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +2.0V
+-  :math:`V_{DS} = 0` to -16V (\ :math:`V_{GS} = 0`\ )
+-  :math:`V_{DS} = 0` to -10V (\ :math:`V_{GS} < 0`\ )
+-  :math:`V_{GS} = 0` to -5.5V
+-  :math:`V_{BS} = 0` to +2.0V
 
 Details
 ~~~~~~~
@@ -838,9 +838,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
+-  :math:`V_{DS} = 0` to -1.95V
+-  :math:`V_{GS} = 0` to -1.95V
+-  :math:`V_{BS} = -0.1` to +1.95V
 
 Details
 ~~~~~~~
@@ -863,7 +863,7 @@ The symbol of the :model:`sky130_fd_pr__pfet_01v8_hvt` (1.8V high-VT PMOS FET) i
 
 |symbol-pfet_01v8_hvt|
 
-The cross-section of the high-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the higher V\ :sub:`T`)
+The cross-section of the high-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the :math:`V_T` adjust implants (to achieve the higher :math:`V_T`)
 
 |cross-section-pfet_01v8_hvt|
 
@@ -882,9 +882,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
+-  :math:`V_{DS} = 0` to -1.95V
+-  :math:`V_{GS} = 0` to -1.95V
+-  :math:`V_{BS} = -0.1` to +1.95V
 
 Details
 ~~~~~~~
@@ -907,7 +907,7 @@ The symbol of the :model:`sky130_fd_pr__pfet_01v8_lvt` (1.8V low-VT PMOS FET) is
 
 |symbol-pfet_01v8_lvt|
 
-The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the V\ :sub:`T` adjust implants (to achieve the lower V\ :sub:`T`)
+The cross-section of the low-VT PMOS FET is shown below. The cross-section is identical to the std PMOS FET except for the :math:`V_T` adjust implants (to achieve the lower :math:`V_T`)
 
 |cross-section-pfet_01v8_lvt|
 
@@ -926,9 +926,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to -1.95V
--  V\ :sub:`GS` = 0 to -1.95V
--  V\ :sub:`BS` = -0.1 to +1.95V
+-  :math:`V_{DS} = 0` to -1.95V
+-  :math:`V_{GS} = 0` to -1.95V
+-  :math:`V_{BS} = -0.1` to +1.95V
 
 Details
 ~~~~~~~
@@ -970,9 +970,9 @@ Spice Model Information
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
--  V\ :sub:`DS` = 0 to -22V
--  V\ :sub:`GS` = 0 to -5.5V
--  V\ :sub:`BS` = 0 to +2.0V
+-  :math:`V_{DS} = 0` to -22V
+-  :math:`V_{GS} = 0` to -5.5V
+-  :math:`V_{BS} = 0` to +2.0V
 
 Details
 ~~~~~~~
@@ -1014,9 +1014,9 @@ Spice Model Information
 
 Operating regime where SPICE models are valid
 
--  \|V\ :sub:`CE`\ \| = 0 to 5.0V
--  \|V\ :sub:`BE`\ \| = 0 to 5.0V
--  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
+-  :math:`|V_{CE}| = 0` to 5.0V
+-  :math:`|V_{BE}| = 0` to 5.0V
+-  :math:`I_{CE} = 0.01` to 10 µA/µm\ :sup:`2`
 
 Details
 ~~~~~~~
@@ -1123,7 +1123,7 @@ Spice Model Information
 
 Operating ranges where SPICE models are valid
 
--  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
+-  :math:`|V_{r0} – V_{r1}| = 0` to 5.0V
 -  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
 
 Details
@@ -1141,15 +1141,15 @@ They are modeled as subcircuits, using a conventional resistor model combined wi
 
 The fixed-width resistors are modeled using the equation
 
-*R\ :sub:`0`* = head/tail resistance [Ω] (dominated by the slot licons)
+*\ :math:`R_0`\ * = head/tail resistance [Ω] (dominated by the slot licons)
 
-*R\ :sub:`1`* = body resistance [Ω/µm] = R\ :sub:`SH`/W
+*\ :math:`R_1`\ * = body resistance [Ω/µm] = :math:`R_{SH}`/W
 
 A top-down schematic drawing of the precision resistor is shown below.
 
 |res_high_po|
 
-In addition to the R\ :sub:`0` and R\ :sub:`1` values, several fixed-value resistors are measured at e-test, as shown in the table below:
+In addition to the :math:`R_0` and :math:`R_1` values, several fixed-value resistors are measured at e-test, as shown in the table below:
 
 
 .. include:: device-details/res_high/res_high-table0.rst
@@ -1196,7 +1196,7 @@ Spice Model Information
 
 Operating ranges where SPICE models are valid
 
--  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
+-  :math:`|V_{r0} – V_{r1}| = 0` to 5.0V
 -  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
 
 Details
@@ -1304,9 +1304,9 @@ A Dual-Port SRAM is currently being designed using a similar approach. Compilers
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.8V
--  V\ :sub:`GS` = 0 to 1.8V
--  V\ :sub:`BS` = 0 to -1.8V
+-  :math:`V_{DS} = 0` to 1.8V
+-  :math:`V_{GS} = 0` to 1.8V
+-  :math:`V_{BS} = 0` to -1.8V
 
 Details
 ~~~~~~~

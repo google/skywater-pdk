@@ -11,9 +11,9 @@ A Dual-Port SRAM is currently being designed using a similar approach. Compilers
 
 Operating Voltages where SPICE models are valid
 
--  V\ :sub:`DS` = 0 to 1.8V
--  V\ :sub:`GS` = 0 to 1.8V
--  V\ :sub:`BS` = 0 to -1.8V
+-  :math:`V_{DS} = 0` to 1.8V
+-  :math:`V_{GS} = 0` to 1.8V
+-  :math:`V_{BS} = 0` to -1.8V
 
 Details
 ~~~~~~~

@@ -9,9 +9,9 @@ Spice Model Information
 
 Operating regime where SPICE models are valid
 
--  \|V\ :sub:`CE`\ \| = 0 to 5.0V
--  \|V\ :sub:`BE`\ \| = 0 to 5.0V
--  I\ :sub:`CE` = 0.01 to 10 µA/µm\ :sup:`2`
+-  :math:`|V_{CE}| = 0` to 5.0V
+-  :math:`|V_{BE}| = 0` to 5.0V
+-  :math:`I_{CE} = 0.01` to 10 µA/µm\ :sup:`2`
 
 Details
 ~~~~~~~

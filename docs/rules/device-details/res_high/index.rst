@@ -9,7 +9,7 @@ Spice Model Information
 
 Operating ranges where SPICE models are valid
 
--  \|V\ :sub:`r0` – V\ :sub:`r1`\ \| = 0 to 5.0V
+-  :math:`|V_{r0} – V_{r1}| = 0` to 5.0V
 -  Currents up to 500 µA/µm of width (preferred use ≤ 100 µA/µm)
 
 Details
@@ -27,15 +27,15 @@ They are modeled as subcircuits, using a conventional resistor model combined wi
 
 The fixed-width resistors are modeled using the equation
 
-*R\ :sub:`0`* = head/tail resistance [Ω] (dominated by the slot licons)
+*\ :math:`R_0`\ * = head/tail resistance [Ω] (dominated by the slot licons)
 
-*R\ :sub:`1`* = body resistance [Ω/µm] = R\ :sub:`SH`/W
+*\ :math:`R_1`\ * = body resistance [Ω/µm] = :math:`R_{SH}`/W
 
 A top-down schematic drawing of the precision resistor is shown below.
 
 |res_high_po|
 
-In addition to the R\ :sub:`0` and R\ :sub:`1` values, several fixed-value resistors are measured at e-test, as shown in the table below:
+In addition to the :math:`R_0` and :math:`R_1` values, several fixed-value resistors are measured at e-test, as shown in the table below:
 
 
 .. include:: res_high-table0.rst
