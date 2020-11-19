@@ -148,10 +148,25 @@ def AppendToReadme (celllistfile):
         with open(str(readmefile), "r") as f:
            for i, l in enumerate(f):    
             if i<5: old += l
-    
+
+    # get cell readme list
+    lscmd = 'ls -1a ' + str(celllistfile.parents[0])+"/cells/*/README.rst 2>/dev/null"
+    cellrdm = os.popen(lscmd).read().strip().split('\n')
+    cellrdm = [c.replace(str(celllistfile.parents[0])+'/','') for c in cellrdm]
+
     with open(str(readmefile), "w+") as f:
         f.write(old)
         tableinc = f'.. include:: {celllistfile.name}\n'
+
+        if len(cellrdm):
+            f.write('\n\n\n')
+            f.write('Cell descriptions\n')
+            f.write('-----------------\n\n')
+            f.write('.. toctree::\n\n')
+            for c in cellrdm: 
+                f.write(f'   {c}\n')
+            f.write('\n\n\n')          
+
         if not tableinc in old:
             f.write(tableinc)
 
