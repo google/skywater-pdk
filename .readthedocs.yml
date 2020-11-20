@@ -21,6 +21,8 @@
 # Required
 version: 2
 
+submodules:
+  include:
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
   configuration: docs/conf.py
@@ -31,4 +33,9 @@ conda:
 submodules:
   include:
    - libraries/sky130_fd_io/latest
+   - libraries/sky130_fd_sc_hd/latest
+   - libraries/sky130_fd_sc_hdll/latest
+   - libraries/sky130_fd_sc_hs/latest
+   - libraries/sky130_fd_sc_ls/latest
+   - libraries/sky130_fd_sc_ms/latest
   recursive: false
