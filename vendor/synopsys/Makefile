@@ -79,6 +79,12 @@ gds: setup
 	done
 	date > $@
 
+verilog: setup
+	rm -rf $(PLACEROUTE_DIR)/verilog && mkdir -p $(PLACEROUTE_DIR)/verilog
+	cp $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.v $(PLACEROUTE_DIR)/verilog/
+	sed -i "s/default_nettype none/default_nettype wire/" $(PLACEROUTE_DIR)/verilog/*
+	date > $@
+
 ifeq ($(COPY_LEF),true)
 lef: db
 	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
@@ -99,7 +105,7 @@ lef: db
 	date > $@
 endif
 
-ndm: db lef gds
+ndm: db lef gds verilog
 	cd $(WORK_DIR) && icc2_lm_shell -f ${ROOT}/$(SCRIPTS)/lm.tcl $(LM_OPTIONS) |& tee ${ROOT}/$(LOGS)/lm_$@.log
 	grep -q '^Error' ${ROOT}/$(LOGS)/lm_$@.log || true
 	date > $@
