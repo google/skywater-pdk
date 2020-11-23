@@ -10,7 +10,7 @@ mapFileName = skywater130.gds.layers
 PLACEROUTE_DIR = PlaceRoute/$(SCLIB)
 WORK_DIR = work/$(SCLIB)
 LOGS = logs/$(SCLIB)
-COPY_LEF = false
+COPY_LEF = true
 
 COMMON_OPTIONS = " \
 set ROOT $(ROOT) \n\
@@ -24,6 +24,8 @@ set COMMON_DIR $(ROOT)/$(COMMON_DIR)\
 LC_OPTIONS = ""
 LM_OPTIONS = ""
 MW_OPTIONS = ""
+
+.ONESHELL:
 
 setup: setup_$(SCLIB)
 	date > $@
@@ -80,8 +82,13 @@ gds: setup
 ifeq ($(COPY_LEF),true)
 lef: db
 	mkdir -p $(PLACEROUTE_DIR)/lef && rm -rf $(PLACEROUTE_DIR)/lef/*
+	WELL_CONN="\n  PIN VNB\n    DIRECTION INOUT ;\n    USE POWER ;\n  END VNB\n \
+			   \n  PIN VPB\n    DIRECTION INOUT ;\n    USE GROUND ;\n  END VPB\n";
 	for Lfile in $$(ls $(LIBRARIES)/$(SCLIB)/latest/cells/*/*.lef | sed '/magic/d' | sed '/isowell	/d'); do \
-	ln -s ../../../$$Lfile $(PLACEROUTE_DIR)/lef/$$(echo $$(basename $$Lfile) | sed "s/lef/snps.lef/"); \
+	targetLEFFile=$(PLACEROUTE_DIR)/lef/$$(echo $$(basename $$Lfile) | sed "s/lef/snps.lef/"); \
+	cp $$Lfile $$targetLEFFile; \
+	sed -i "s/OBS/$${WELL_CONN}  OBS/" $$targetLEFFile; \
+	sed -i "s/VERSION.*;/VERSION 5\.8 ;/" $$targetLEFFile; \
 	done
 	date > $@
 else
