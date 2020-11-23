@@ -21,13 +21,16 @@ jobs:
           pip3 install docutils sphinx
 
           SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+          git submodule foreach 'git checkout master'
           scripts/python-skywater-pdk/skywater_pdk/cell_list.py libraries/*/latest/
           scripts/python-skywater-pdk/skywater_pdk/cell-readme-generate.py libraries/*/latest/cells/*
+          git submodule foreach 'git add .'
+          export DAT=`date +"%Y-%m-%d %k:%M"`
 
-          find ./libraries -name cell-list.rst | tar -acf libs.tar -T -
-          find ./libraries -name README.rst | tar -rf libs.tar -T -
-          find ./libraries -wholename */cells/*.svg | tar -rf libs.tar -T -
-          gzip libs.tar
+          # TODO replace below with appropriate credentials
+          git config --global user.email "action@github.com"
+          git config --global user.name "Github Action"
+          git submodule foreach 'git commit -m "$DAT"'
 
       - uses: actions/upload-artifact@v2
         with:
