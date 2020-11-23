@@ -17,7 +17,7 @@ file mkdir $fixed_lib_dir
 set N 0
 set i 0
 set report {}
-foreach lib [glob -directory $lib_dir *__tt_100C_1v80.lib] {
+foreach lib [glob -directory $lib_dir *.lib] {
     info_msg "Reading lib: $lib"
     set lib_name [file rootname [file tail $lib]]
 
