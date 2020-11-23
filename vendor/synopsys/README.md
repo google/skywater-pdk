@@ -32,10 +32,11 @@ skywater-PDK
             └── $SC_LIB_NAME/
                 ├── -NDM        : Final NDM to use with SNPS flow
                 ├── -db_nldm    : Compiled DB files
-                ├── -.lib       : Fixed lib files
+                ├── -lib        : Fixed lib files
                 ├── -techfile   : .tf and supported files
-                ├── -lef        : Symbolic link of lef files
+                ├── -lef        : Modified/Regenerated LEF Files
                 ├── -gds        : Symbolic link of gds files
+                ├── -verilog    : Fixed verilog, if required
                 └── -others     : reserved
 ```
 
