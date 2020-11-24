@@ -132,6 +132,27 @@ def main(argv):
                     f'`{linkname} <{entry["Slides PDF link"]}>`__\n\n'
                 )
             out.write('\n')
+        out.write('LinkedIn Posts\n')
+        out.write('--------------\n')
+        out.write('\n')
+        for _, row in linkedin.iterrows():
+            out.write(f'* `{row["Title"]} <{row["Link"]}>`__\n')
+        out.write('\n')
+        out.write('Courses\n')
+        out.write('-------\n')
+        out.write('\n')
+        for _, row in courses.iterrows():
+            if row["Course"]:
+                out.write('\n')
+                out.write(f'{row["Course"]}\n')
+                out.write('~' * len(row["Course"]) + '\n')
+                out.write('\n')
+            if row["Link"]:
+                title = row['Link title'] if row['Link title'] else row['Link']
+                out.write(
+                    f'* `{title} <{row["Link"]}>`__\n'
+                )
+        out.write('\n')
     return 0
 
 
