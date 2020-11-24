@@ -29,7 +29,18 @@ import sys
 logger = Logging.setup_logging()
 
 
-def create_test_circuit(fet_type, iparam, fet_L, fet_W, corner_path):
+def create_test_circuit(fet_type, fet_L, fet_W, corner_path):
+    """
+    Creates a simple test circuit that contains only given FET.
+
+    Parameters
+    ----------
+    fet_type: name of the FET model
+    fet_L: FET length
+    fet_W: FET width
+    corner_path:
+        path to the spice corner file with model definitions and parameters
+    """
     c = Circuit('gm_id')
     c.include(corner_path)
 
@@ -45,6 +56,17 @@ def create_test_circuit(fet_type, iparam, fet_L, fet_W, corner_path):
 
 
 def run_sim(c, iparam, fet_W):
+    """
+    Runs simulation for a given circuit with FET cell.
+
+    Parameters
+    ----------
+    c: circuit to simulate
+    iparam:
+        template string for creating internal parameter names (gm, id, gds,
+        cgg) for a given FET
+    fet_W: FET width
+    """
     sim = c.simulator()
     sim.save_internal_parameters(
         iparam % 'gm', iparam % 'id', iparam % 'gds', iparam % 'cgg'
@@ -75,6 +97,14 @@ def run_sim(c, iparam, fet_W):
 
 
 def init_plots(fet_name, W):
+    """
+    Initializes plots for FET bins simulation.
+
+    Parameters
+    ----------
+    fet_name: name of the current FET cell
+    W: FET width
+    """
     figs = [plt.figure(), plt.figure(), plt.figure(), plt.figure()]
     plts = [f.subplots() for f in figs]
     figs[0].suptitle(f'{fet_name} Id/W vs gm/Id (W = {W})')
@@ -97,6 +127,20 @@ def init_plots(fet_name, W):
 
 
 def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
+    """
+    Generates plot lines for FET bins simulation parameters.
+
+    Parameters
+    ----------
+    gm_id: gm/Id values
+    id_W: Id/W values
+    ft: f_T values
+    gm_gds: gm/gds values
+    vsweep: v-sweep values
+    fet_W: FET width
+    fet_L: FET length
+    plts: plots on which plot lines should be drawn
+    """
     # plot some interesting things
     plts[0].plot(gm_id, id_W, label=f'W {fet_W} x L {fet_L}')
     plts[1].plot(gm_id, ft, label=f'W {fet_W} x L {fet_L}')
@@ -105,11 +149,17 @@ def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
 
 
 def close_plots(figs):
+    """
+    Closes plots.
+    """
     for f in figs:
         plt.close(f)
 
 
 def read_bins(fname):
+    """
+    Reads bins CSV file.
+    """
     with open(fname, 'r') as f:
         r = csv.reader(f)
         # drop CSV header
@@ -127,6 +177,18 @@ def generate_fet_plots(
         outprefix,
         only_W=None,
         ext='svg'):
+    """
+    Generates FET bins plots.
+
+    Parameters
+    ----------
+    corner_path: Path to FET model definitions and parameters
+    bins_csv: Path to the CSV file with bin parameters and FET model names
+    outdir: Directory where outputs should be stored
+    outprefix: Prefix for the output plot images
+    only_W: List of FET widths for which the plots should be generated
+    ext: extension for plot files
+    """
     print(f'[generate_fet_plots] {corner_path} {bins_csv}' +
           f'{outdir} {outprefix} {only_W}')
 
@@ -147,7 +209,7 @@ def generate_fet_plots(
         iparam = f'@m.xm1.m{fet_type}[%s]'
         # fet_W and fet_L values here are only for initialization, they are
         # later changed in the for loop
-        c = create_test_circuit(fet_type, iparam, 0.15, 1, corner_path)
+        c = create_test_circuit(fet_type, 0.15, 1, corner_path)
 
         figs, plts = init_plots(fet_type, W)
         try:
