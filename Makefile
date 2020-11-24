@@ -14,11 +14,25 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-include scripts/make/git.mk
-include scripts/make/conda.mk
+# The top directory where environment will be created.
+TOP_DIR := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+
+# A pip `requirements.txt` file.
+# https://pip.pypa.io/en/stable/reference/pip_install/#requirements-file-format
+REQUIREMENTS_FILE := requirements.txt
+
+# A conda `environment.yml` file.
+# https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+ENVIRONMENT_FILE := environment.yml
+
+$(TOP_DIR)/third_party/make-env/conda.mk: $(TOP_DIR)/.gitmodules
+	cd $(TOP_DIR); git submodule update --init third_party/make-env
+
+-include $(TOP_DIR)/third_party/make-env/conda.mk
 
 .DEFAULT_GOAL := all
 
+include $(TOP_DIR)/scripts/make/git.mk
 README.rst: README.src.rst docs/status.rst Makefile | $(CONDA_ENV_PYTHON)
 	@rm -f README.rst
 	$(IN_CONDA_ENV) rst_include include README.src.rst - \
@@ -52,7 +66,7 @@ check-licenses:
 
 .PHONY: check-licenses
 
-lint-python:
+lint-python: | $(CONDA_ENV_PYTHON)
 	$(IN_CONDA_ENV) flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
 .PHONY: lint-python

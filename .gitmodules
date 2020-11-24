@@ -1,3 +1,7 @@
+[submodule "third_party/make-env"]
+	path = third_party/make-env
+	url = https://github.com/SymbiFlow/make-env.git
+
 # sky130_fd_pr
 [submodule "libraries/sky130_fd_pr/latest"]
 	path = libraries/sky130_fd_pr/latest
