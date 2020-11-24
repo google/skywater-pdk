@@ -17,81 +17,71 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-import os
 import sys
-import pickle
 import argparse
 from pathlib import Path
-from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-from google.auth.transport.requests import Request
 import pandas as pd
 
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
-SAMPLE_SPREADSHEET_ID = '1tOU0N0qMeDFjTz9NrGz_-PBikgu2x2gDHezy2SlE9dA'
-
-
-def parse_news_articles(sheet):
-    DATA = 'News Articles!B2:D'
-    result = sheet.values().get(
-        spreadsheetId=SAMPLE_SPREADSHEET_ID,
-        range=DATA).execute()
-    values = result.get('values', [])
-    return pd.DataFrame.from_records(values[1:], columns=values[0])
+def parse_news_articles(filepath):
+    values = pd.read_excel(
+        filepath,
+        sheet_name='News Articles',
+        header=1,
+        usecols='B:D'
+    )
+    values = values.where(values.notnull(), None)
+    return values
 
 
-def parse_talk_series(sheet):
-    DATA = 'Talk Series!B2:M'
-    result = sheet.values().get(
-        spreadsheetId=SAMPLE_SPREADSHEET_ID,
-        range=DATA).execute()
-    values = result.get('values', [])
-    return pd.DataFrame.from_records(values[1:], columns=values[0])
+def parse_talk_series(filepath):
+    values = pd.read_excel(
+        filepath,
+        sheet_name='Talk Series',
+        header=1,
+        usecols='B:M'
+    )
+    values = values.where(values.notnull(), None)
+    return values
 
 
-def parse_conferences(sheet):
-    DATA = 'Conferences!B2:D'
-    result = sheet.values().get(
-        spreadsheetId=SAMPLE_SPREADSHEET_ID,
-        range=DATA).execute()
-    values = result.get('values', [])
-    return pd.DataFrame.from_records(values[1:], columns=values[0])
+def parse_conferences(filepath):
+    values = pd.read_excel(
+        filepath,
+        sheet_name='Conferences',
+        header=1,
+        usecols='B:D'
+    )
+    values = values.where(values.notnull(), None)
+    return values
 
 
 def main(argv):
     parser = argparse.ArgumentParser(prog=argv[0])
     parser.add_argument(
+        'input_xlsx',
+        help='The path to input XLSX file or GID to Google Spreadsheet',
+        type=Path
+    )
+    parser.add_argument(
         'output',
         help='The path to output RST file',
         type=Path
     )
+    parser.add_argument(
+        '--input-is-spreadsheet-id',
+        help='The input_xlsx argument holds public Google Spreadsheet ID',
+        action='store_true'
+    )
 
     args = parser.parse_args(argv[1:])
 
-    creds = None
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
-            creds = pickle.load(token)
-    if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json',
-                SCOPES
-            )
-            creds = flow.run_local_server(port=0)
-        with open('token.pickle', 'wb') as token:
-            pickle.dump(creds, token)
+    if args.input_is_spreadsheet_id:
+        args.input_xlsx = f'https://docs.google.com/spreadsheets/d/{args.input_xlsx}/export?format=xlsx'  # noqa: E501
 
-    service = build('sheets', 'v4', credentials=creds)
-
-    sheet = service.spreadsheets()
-
-    news_articles = parse_news_articles(sheet)
-    talk_series = parse_talk_series(sheet)
-    conferences = parse_conferences(sheet)
+    news_articles = parse_news_articles(args.input_xlsx)
+    talk_series = parse_talk_series(args.input_xlsx)
+    conferences = parse_conferences(args.input_xlsx)
 
     with open(args.output, 'w') as out:
         out.write('Further Resources\n')
@@ -116,7 +106,9 @@ def main(argv):
                 out.write(f'{row["Description"]}\n')
                 out.write('\n')
             if row["Related link"]:
-                out.write(f'* `{row["Related link"]} <{row["Related link"]}>`__\n')
+                out.write(
+                    f'* `{row["Related link"]} <{row["Related link"]}>`__\n'
+                )
         out.write('\n')
         out.write('Talk Series\n')
         out.write('-----------\n')
@@ -140,14 +132,25 @@ def main(argv):
             if entry["Talk details"]:
                 out.write(f'**Description**: {entry["Talk details"]}\n\n')
             if entry["Video link"]:
-                linkname = entry["Video"] if entry["Video"] else entry["Video link"]
-                out.write(f'**Video**: `{linkname} <entry["Video link"]>`__\n\n')
+                linkname = (entry["Video"] if entry["Video"]
+                            else entry["Video link"])
+                out.write(
+                    f'**Video**: `{linkname} <{entry["Video link"]}>`__\n\n'
+                )
             if entry["Slides PPTX link"]:
-                linkname = entry["Slides PPTX"] if entry["Slides PPTX"] else entry["Slides PPTX link"]
-                out.write(f'**Slides**: `{linkname} <entry["Slides PPTX link"]>`__\n\n')
+                linkname = (entry["Slides PPTX"] if entry["Slides PPTX"]
+                            else entry["Slides PPTX link"])
+                out.write(
+                    '**Slides**: ' +
+                    f'`{linkname} <{entry["Slides PPTX link"]}>`__\n\n'
+                )
             if entry["Slides PDF link"]:
-                linkname = entry["Slides PDF"] if entry["Slides PDF"] else entry["Slides PDF link"]
-                out.write(f'**Slides (PDF)**: `{linkname} <entry["Slides PDF link"]>`__\n\n')
+                linkname = (entry["Slides PDF"] if entry["Slides PDF"]
+                            else entry["Slides PDF link"])
+                out.write(
+                    '**Slides (PDF)**: ' +
+                    f'`{linkname} <{entry["Slides PDF link"]}>`__\n\n'
+                )
             out.write('\n')
     return 0
 
