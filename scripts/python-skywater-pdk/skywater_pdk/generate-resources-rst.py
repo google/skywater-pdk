@@ -21,13 +21,25 @@ import sys
 import argparse
 from pathlib import Path
 import pandas as pd
+import errno
 
 
-def parse_entries(filepath, sheet_name, cols):
+def parse_entries(filepath, sheet_name, cols=None):
+    """
+    Loads resources from spreadsheet to pandas frames.
+
+    Parameters
+    ----------
+    filepath:
+        path or URL to spreadsheet file (ODS requires odfpy package, XLSX
+        requires xlrd package)
+    sheet_name: name of the sheet to extract data from
+    cols: range of columns to extract from the sheet
+    """
     values = pd.read_excel(
         filepath,
         sheet_name=sheet_name,
-        header=1,
+        header=0,
         usecols=cols
     )
     values = values.where(values.notnull(), None)
@@ -37,31 +49,38 @@ def parse_entries(filepath, sheet_name, cols):
 def main(argv):
     parser = argparse.ArgumentParser(prog=argv[0])
     parser.add_argument(
-        'input_xlsx',
-        help='The path to input XLSX file or GID to Google Spreadsheet',
-        type=Path
-    )
-    parser.add_argument(
         'output',
         help='The path to output RST file',
         type=Path
     )
     parser.add_argument(
-        '--input-is-spreadsheet-id',
-        help='The input_xlsx argument holds public Google Spreadsheet ID',
+        '--spreadsheet-file',
+        help='The path to input spreadsheet file',
+        type=Path
+    )
+    parser.add_argument(
+        '--google-spreadsheet-id',
+        help='Google Spreadsheet ID of the document to process',
         action='store_true'
     )
 
     args = parser.parse_args(argv[1:])
 
-    if args.input_is_spreadsheet_id:
-        args.input_xlsx = f'https://docs.google.com/spreadsheets/d/{args.input_xlsx}/export?format=xlsx'  # noqa: E501
+    input_file = None
+    if args.spreadsheet_file:
+        input_file = args.spreadsheet_file
+    if args.google_spreadsheet_id:
+        input_file = f'https://docs.google.com/spreadsheets/d/{args.google_spreadsheet_id}/export?format=ods'  # noqa: E501
 
-    news_articles = parse_entries(args.input_xlsx, 'News Articles', 'B:D')
-    talk_series = parse_entries(args.input_xlsx, 'Talk Series', 'B:M')
-    conferences = parse_entries(args.input_xlsx, 'Conferences', 'B:D')
-    linkedin = parse_entries(args.input_xlsx, 'LinkedIn Posts', 'B:C')
-    courses = parse_entries(args.input_xlsx, 'Courses', 'B:D')
+    if input_file is None:
+        print('Input file is not provided')
+        return errno.ENOENT
+
+    news_articles = parse_entries(input_file, 'News Articles')
+    talk_series = parse_entries(input_file, 'Talk Series')
+    conferences = parse_entries(input_file, 'Conferences')
+    linkedin = parse_entries(input_file, 'LinkedIn Posts')
+    courses = parse_entries(input_file, 'Courses')
 
     with open(args.output, 'w') as out:
         out.write('Further Resources\n')
