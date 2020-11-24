@@ -4,6 +4,7 @@ flake8
 # previews.
 rst_include
 pandas
+odfpy
 
 # The Python API for the SkyWater PDK.
 -e scripts/python-skywater-pdk
