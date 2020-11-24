@@ -17,6 +17,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+import sys
 import os
 import re
 import subprocess
@@ -30,6 +31,14 @@ superdebug = True
 
 
 def _magic_tcl_header(ofile, gdsfile):
+    """
+    Adds a header to TCL file.
+
+    Parameters
+    ----------
+    ofile: output file stream
+    gdsfile: path to GDS file
+    """
     print('#!/bin/env wish',         file=ofile)
     print('drc off',                 file=ofile)
     print('scalegrid 1 2',           file=ofile)
@@ -45,6 +54,16 @@ def _magic_tcl_header(ofile, gdsfile):
 
 
 def run_magic(destdir, tcl_path, input_techfile, d="null"):
+    """
+    Runs magic to generate layout files.
+
+    Parameters
+    ----------
+    destdir: destination directory
+    tcl_path: path to input TCL file
+    input_techfile: path to the technology file
+    d: Workstation type, can be NULL, X11, OGL or XWIND
+    """
     cmd = [
         'magic',
         '-nowrapper',
@@ -107,6 +126,15 @@ def run_magic(destdir, tcl_path, input_techfile, d="null"):
 
 
 def convert_to_svg(input_gds, input_techfile, output=None):
+    """
+    Converts GDS file to a SVG layout image.
+
+    Parameters
+    ----------
+    input_gds: path to input GDS file
+    input_techfile: path to the technology file
+    output: optional path to the final SVG file
+    """
     input_gds = os.path.abspath(input_gds)
     input_techfile = os.path.abspath(input_techfile)
     destdir, gdsfile = os.path.split(input_gds)
@@ -168,6 +196,13 @@ def convert_to_svg(input_gds, input_techfile, output=None):
 
 
 def run_inkscape(args):
+    """
+    Run Inkscape with given arguments.
+
+    Parameters
+    ----------
+    args: List of arguments to be passed to Inkscape
+    """
     p = subprocess.Popen(["inkscape"] + args)
     try:
         p.wait(timeout=60)
@@ -183,8 +218,8 @@ def run_inkscape(args):
     return p.returncode
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
+def main(argv):
+    parser = argparse.ArgumentParser(argv[0])
     parser.add_argument(
         'input_gds',
         help="Path to the input .gds file"
@@ -197,5 +232,10 @@ if __name__ == '__main__':
         '--output-svg',
         help='Path to the output .svg file'
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv[1:])
     convert_to_svg(args.input_gds, args.input_tech, args.output_svg)
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main(sys.argv))
