@@ -4,6 +4,7 @@ on:
 
 jobs:
   triage:
+    name: "Updating labels"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@main
