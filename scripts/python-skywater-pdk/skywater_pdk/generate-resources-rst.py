@@ -23,34 +23,12 @@ from pathlib import Path
 import pandas as pd
 
 
-def parse_news_articles(filepath):
+def parse_entries(filepath, sheet_name, cols):
     values = pd.read_excel(
         filepath,
-        sheet_name='News Articles',
+        sheet_name=sheet_name,
         header=1,
-        usecols='B:D'
-    )
-    values = values.where(values.notnull(), None)
-    return values
-
-
-def parse_talk_series(filepath):
-    values = pd.read_excel(
-        filepath,
-        sheet_name='Talk Series',
-        header=1,
-        usecols='B:M'
-    )
-    values = values.where(values.notnull(), None)
-    return values
-
-
-def parse_conferences(filepath):
-    values = pd.read_excel(
-        filepath,
-        sheet_name='Conferences',
-        header=1,
-        usecols='B:D'
+        usecols=cols
     )
     values = values.where(values.notnull(), None)
     return values
@@ -79,9 +57,11 @@ def main(argv):
     if args.input_is_spreadsheet_id:
         args.input_xlsx = f'https://docs.google.com/spreadsheets/d/{args.input_xlsx}/export?format=xlsx'  # noqa: E501
 
-    news_articles = parse_news_articles(args.input_xlsx)
-    talk_series = parse_talk_series(args.input_xlsx)
-    conferences = parse_conferences(args.input_xlsx)
+    news_articles = parse_entries(args.input_xlsx, 'News Articles', 'B:D')
+    talk_series = parse_entries(args.input_xlsx, 'Talk Series', 'B:M')
+    conferences = parse_entries(args.input_xlsx, 'Conferences', 'B:D')
+    linkedin = parse_entries(args.input_xlsx, 'LinkedIn Posts', 'B:C')
+    courses = parse_entries(args.input_xlsx, 'Courses', 'B:D')
 
     with open(args.output, 'w') as out:
         out.write('Further Resources\n')
