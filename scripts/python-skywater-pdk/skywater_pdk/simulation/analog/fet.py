@@ -24,7 +24,12 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import csv
 from collections import defaultdict
+import os
 import sys
+
+sys.path.insert(0, os.path.abspath(__file__ + '/../../../../'))
+
+from skywater_pdk.base import Cell
 
 logger = Logging.setup_logging()
 
@@ -156,20 +161,6 @@ def close_plots(figures):
         plt.close(figure)
 
 
-def read_bins(fname):
-    """
-    Reads bins CSV file.
-    """
-    with open(fname, 'r') as f:
-        r = csv.reader(f)
-        # drop CSV header
-        next(r)
-        res = []
-        for line in r:
-            res.append(line)
-        return res
-
-
 def generate_fet_plots(
         corner_path,
         bins_csv,
@@ -192,12 +183,12 @@ def generate_fet_plots(
     print(f'[generate_fet_plots] {corner_path} {bins_csv}' +
           f'{outdir} {outprefix} {only_W}')
 
-    bins = read_bins(bins_csv)
+    bins = Cell.parse_bins(bins_csv)
 
     bins_by_W = defaultdict(list)
     # group bins by W
-    for line in bins:
-        bins_by_W[(line[0], float(line[2]))].append(line)
+    for fetbin in bins:
+        bins_by_W[(fetbin.device, fetbin.w)].append(fetbin)
 
     Ws = [key for key in bins_by_W.keys()
           if only_W is None or key[1] in only_W]
@@ -213,14 +204,13 @@ def generate_fet_plots(
 
         figures, plots = init_plots(fet_type, W)
         try:
-            for dev, bin, fet_W, fet_L in bins_by_W[(fet_type, W)]:
-                fet_W, fet_L = float(fet_W), float(fet_L)
-                if only_W is not None and fet_W not in only_W:
+            for fetbin in bins_by_W[(fet_type, W)]:
+                if only_W is not None and fetbin.w not in only_W:
                     continue
-                c.element('XM1').parameters['W'] = fet_W
-                c.element('XM1').parameters['L'] = fet_L
-                gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
-                gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plots)
+                c.element('XM1').parameters['W'] = fetbin.w
+                c.element('XM1').parameters['L'] = fetbin.l
+                gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fetbin.w)
+                gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fetbin.w, fetbin.l, plots)
         except Exception:
             close_plots(figures)
             raise
