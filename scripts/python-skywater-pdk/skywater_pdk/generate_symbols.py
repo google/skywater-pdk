@@ -56,7 +56,9 @@ def main(argv):
     )
     parser.add_argument(
         '--failed-inputs',
-        help='Path to files for which Symbolator failed to generate diagram',
+        help=('Path to an output file that will store list of files for ' +
+              'which the symbolator failed to create symbols'
+             ),
         type=Path
     )
     parser.add_argument(
