@@ -24,7 +24,7 @@ import contextlib
 import traceback
 import errno
 
-from fet_simulator import generate_fet_plots
+from fet import generate_fet_plots
 
 
 def main(argv):
@@ -88,7 +88,7 @@ def main(argv):
                     if args.create_dirs:
                         outdir.mkdir(parents=True)
                     else:
-                        print('The output directory {str(outdir)} is missing')
+                        print(f'The output directory {str(outdir)} is missing')
                         print('Run the script with --create-dirs')
                         return errno.ENOENT
 
@@ -106,7 +106,8 @@ def main(argv):
                     file=sys.stderr
                 )
                 traceback.print_exc()
-                err.write(f'{fetbin}\n')
+                if err:
+                    err.write(f'{fetbin}\n')
 
     print('Finished generating FET plots')
     return 0
