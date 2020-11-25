@@ -1,0 +1,36 @@
+name: Generate cells docs
+
+on:
+    push:
+    pull_request:
+
+jobs:
+
+  generate-cells:
+    runs-on: ubuntu-18.04
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Generate cells READMEs
+        run: |
+          sudo apt update
+          sudo apt install -y python3 python3-pip git tar gzip
+          pip3 install docutils sphinx
+
+          SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+          scripts/python-skywater-pdk/skywater_pdk/cell_list.py libraries/*/latest/
+          scripts/python-skywater-pdk/skywater_pdk/cell-readme-generate.py libraries/*/latest/cells/*
+
+          find ./libraries -name cell-list.rst | tar -acf libs.tar -T -
+          find ./libraries -name README.rst | tar -rf libs.tar -T -
+          find ./libraries -wholename */cells/*.svg | tar -rf libs.tar -T -
+          gzip libs.tar
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: cells-docs
+          path: libs.tar.gz
+
