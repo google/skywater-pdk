@@ -106,27 +106,27 @@ def init_plots(fet_name, W):
     W: FET width
     """
     figs = [plt.figure(), plt.figure(), plt.figure(), plt.figure()]
-    plts = [f.subplots() for f in figs]
+    plots = [f.subplots() for f in figs]
     figs[0].suptitle(f'{fet_name} Id/W vs gm/Id (W = {W})')
-    plts[0].set_xlabel("gm/Id")
-    plts[0].set_ylabel("Id/W")
-    plts[0].grid(True)
+    plots[0].set_xlabel("gm/Id")
+    plots[0].set_ylabel("Id/W")
+    plots[0].grid(True)
     figs[1].suptitle(f'{fet_name} fT vs gm/Id (W = {W})')
-    plts[1].set_xlabel("gm/Id")
-    plts[1].set_ylabel("f_T")
-    plts[1].grid(True)
+    plots[1].set_xlabel("gm/Id")
+    plots[1].set_ylabel("f_T")
+    plots[1].grid(True)
     figs[2].suptitle(f'{fet_name} gm/gds vs gm/Id (W = {W})')
-    plts[2].set_xlabel("gm/Id")
-    plts[2].set_ylabel("gm/gds")
-    plts[2].grid(True)
+    plots[2].set_xlabel("gm/Id")
+    plots[2].set_ylabel("gm/gds")
+    plots[2].grid(True)
     figs[3].suptitle(f'{fet_name} gm/Id vs Vgg (W = {W})')
-    plts[3].set_xlabel("Vgg")
-    plts[3].set_ylabel("gm/Id")
-    plts[3].grid(True)
-    return figs, plts
+    plots[3].set_xlabel("Vgg")
+    plots[3].set_ylabel("gm/Id")
+    plots[3].grid(True)
+    return figs, plots
 
 
-def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
+def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plots):
     """
     Generates plot lines for FET bins simulation parameters.
 
@@ -139,21 +139,21 @@ def gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts):
     vsweep: v-sweep values
     fet_W: FET width
     fet_L: FET length
-    plts: plots on which plot lines should be drawn
+    plots: plots on which plot lines should be drawn
     """
     # plot some interesting things
-    plts[0].plot(gm_id, id_W, label=f'W {fet_W} x L {fet_L}')
-    plts[1].plot(gm_id, ft, label=f'W {fet_W} x L {fet_L}')
-    plts[2].plot(gm_id, gm_gds, label=f'W {fet_W} x L {fet_L}')
-    plts[3].plot(vsweep, gm_id, label=f'W {fet_W} x L {fet_L}')
+    plots[0].plot(gm_id, id_W, label=f'W {fet_W} x L {fet_L}')
+    plots[1].plot(gm_id, ft, label=f'W {fet_W} x L {fet_L}')
+    plots[2].plot(gm_id, gm_gds, label=f'W {fet_W} x L {fet_L}')
+    plots[3].plot(vsweep, gm_id, label=f'W {fet_W} x L {fet_L}')
 
 
-def close_plots(figs):
+def close_plots(figures):
     """
     Closes plots.
     """
-    for f in figs:
-        plt.close(f)
+    for figure in figures:
+        plt.close(figure)
 
 
 def read_bins(fname):
@@ -211,7 +211,7 @@ def generate_fet_plots(
         # later changed in the for loop
         c = create_test_circuit(fet_type, 0.15, 1, corner_path)
 
-        figs, plts = init_plots(fet_type, W)
+        figures, plots = init_plots(fet_type, W)
         try:
             for dev, bin, fet_W, fet_L in bins_by_W[(fet_type, W)]:
                 fet_W, fet_L = float(fet_W), float(fet_L)
@@ -220,26 +220,26 @@ def generate_fet_plots(
                 c.element('XM1').parameters['W'] = fet_W
                 c.element('XM1').parameters['L'] = fet_L
                 gm_id, ft, id_W, gm_gds, vsweep = run_sim(c, iparam, fet_W)
-                gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plts)
+                gen_plots(gm_id, id_W, ft, gm_gds, vsweep, fet_W, fet_L, plots)
         except Exception:
-            close_plots(figs)
+            close_plots(figures)
             raise
 
         figtitles = ['Id_w', 'fT', 'gm_gds', 'gm_id']
-        for fg, name in zip(figs, figtitles):
-            lg = fg.legend(
+        for figure, name in zip(figures, figtitles):
+            lg = figure.legend(
                 bbox_to_anchor=(1.05, 1),
                 loc='upper left'
             )
-            fg.tight_layout()
-            fg.savefig(
+            figure.tight_layout()
+            figure.savefig(
                 Path(outdir) / (
                     outprefix +
                     f'_{fet_type}_{name}_W{str(W).replace(".", "_")}.{ext}'),
                 bbox_extra_artists=(lg,),
                 bbox_inches='tight'
             )
-        close_plots(figs)
+        close_plots(figures)
 
 
 def main(argv):
