@@ -23,7 +23,6 @@ import argparse
 from pathlib import Path
 import errno
 import contextlib
-import traceback
 import subprocess
 
 
@@ -58,7 +57,7 @@ def main(argv):
         '--failed-inputs',
         help=('Path to an output file that will store list of files for ' +
               'which the symbolator failed to create symbols'
-             ),
+              ),
         type=Path
     )
     parser.add_argument(
