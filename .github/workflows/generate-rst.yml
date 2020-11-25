@@ -31,4 +31,4 @@ jobs:
           # TODO replace below with appropriate credentials
           git config --global user.email "action@github.com"
           git config --global user.name "Github Action"
-          git submodule foreach 'git commit -m "$DAT"'
+          git submodule foreach 'git commit -m "$DAT" || true'
