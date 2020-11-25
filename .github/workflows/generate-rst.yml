@@ -23,8 +23,8 @@ jobs:
           source env/conda/bin/activate skywater-pdk-scripts
 
           git submodule foreach 'git checkout master'
-          scripts/python-skywater-pdk/skywater_pdk/cell_list.py libraries/*/latest/
-          scripts/python-skywater-pdk/skywater_pdk/cell_readme_generate.py libraries/*/latest/cells/*
+          scripts/python-skywater-pdk/skywater_pdk/cells/list.py libraries/*/latest/
+          scripts/python-skywater-pdk/skywater_pdk/cells/generate/readme.py libraries/*/latest/cells/*
           git submodule foreach 'git add .'
           export DAT=`date +"%Y-%m-%d %k:%M"`
 
