@@ -17,6 +17,14 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+
+"""Creates plots for FET characteristics for FET cells in Skywater libraries.
+
+This script scans for FET cells in the Skywater PDK libraries and generates
+the FET cells using methods from the fet submodule.
+"""
+
+
 import argparse
 from pathlib import Path
 import sys
@@ -28,7 +36,11 @@ from fet import generate_fet_plots
 
 
 def main(argv):
-    parser = argparse.ArgumentParser(prog=argv[0])
+    parser = argparse.ArgumentParser(
+        prog=argv[0],
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+        )
     parser.add_argument(
         'libraries_dir',
         help='Path to the libraries directory of skywater-pdk',
@@ -61,7 +73,9 @@ def main(argv):
     )
     parser.add_argument(
         '--failed-inputs',
-        help='Path to files for which Symbolator failed to generate diagram',
+        help=('Path to an output file which will store all input filenames ' +
+              'for which ngspice failed to simulate'
+              ),
         type=Path
     )
 

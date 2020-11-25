@@ -17,6 +17,19 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+
+"""Module for creating FET characteristics plots from bins.csv files.
+
+This module allows simulating FET cells and creating:
+
+* Id/W vs gm/Id
+* fT vs gm/Id
+* gm/gds vs gm/Id
+* gm/Id vs Vgg
+
+plots based on different FET length and width values from bins.csv file.
+"""
+
 import PySpice.Logging.Logging as Logging
 from PySpice.Spice.Netlist import Circuit
 from PySpice.Unit import u_V
@@ -235,7 +248,11 @@ def generate_fet_plots(
 def main(argv):
     import argparse
 
-    parser = argparse.ArgumentParser(prog=argv[0])
+    parser = argparse.ArgumentParser(
+        prog=argv[0],
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument(
         'corner_path',
         help='Path to corner SPICE file containing FET definition',
