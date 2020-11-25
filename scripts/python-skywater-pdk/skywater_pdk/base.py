@@ -22,12 +22,16 @@ import os
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from enum import Enum
-from typing import Optional, Union, Tuple
+from typing import Optional, Union, Tuple, List
+from collections import namedtuple
+from pathlib import Path
+import csv
 
 from .utils import comparable_to_none
 from .utils import dataclass_json_passthru_config as dj_pass_cfg
 
 
+FETBin = namedtuple('FETBin', ['device', 'bin', 'w', 'l'])
 LibraryOrCell = Union['Library', 'Cell']
 
 
@@ -546,6 +550,24 @@ class Cell:
         return "{}__{}".format(self.library.fullname, self.name)
 
     @classmethod
+    def parse_bins(cls, binsfile) -> List[FETBin]:
+        """
+        Parse bins.csv file.
+
+        Parameters
+        ----------
+        binsfile: path to the bins.csv file
+        """
+        with open(binsfile, 'r') as f:
+            reader = csv.reader(f)
+            next(reader)
+            res = []
+            for line in reader:
+                res.append(FETBin(line[0], int(line[1]), float(line[2]), float(line[3])))
+            return res
+
+
+    @classmethod
     def parse(cls, s):
         kw = {}
         if SEPERATOR in s:
@@ -553,7 +575,6 @@ class Cell:
             kw['library'] = Library.parse(library)
         kw['name'] = s
         return cls(**kw)
-
 
 
 if __name__ == "__main__":
