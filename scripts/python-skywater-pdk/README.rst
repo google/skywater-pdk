@@ -7,7 +7,7 @@ the SkyWater PDK.
 It includes tools for decoding things like file names into human readable
 descriptions.
 
-It also includes tools for combining files together.
+It also includes tools for combining files together and generating list of cells in libraries for the documentation.
 
 License
 =======
