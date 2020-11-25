@@ -50,7 +50,7 @@ rst_template ="""\
 
 
 cell_template = """\
-   * - {cell_name}
+   * - :doc:`{cell_name} <{link}>` 
      - {description}
      - {type}
      - {verilog_name}
@@ -128,7 +128,9 @@ def generate_rst(library_dir, library_name, cells):
                 #description = cell_json['description'].replace("\n", "\n       "),
                 description = textwrap.indent(cell_json['description'], '       ').lstrip(),
                 type = cell_json['type'],
-                verilog_name = cell_json['verilog_name']
+                verilog_name = cell_json['verilog_name'],
+                #link = str(cell.resolve()).rpartition('/')[0] + '/README'
+                link = 'cells/' + str(cell).rpartition('/')[0].rpartition('/')[2] + '/README'
             )
 
     header = rst_header.format(libname = library_name)
@@ -141,7 +143,7 @@ def generate_rst(library_dir, library_name, cells):
 
 
 def AppendToReadme (celllistfile):
-    ''' Prototype od lebrary README builder '''
+    ''' Prototype of library README builder '''
     readmefile = pathlib.Path(celllistfile.parents[0], 'README.rst')
     old = ''
     if readmefile.exists():
@@ -149,23 +151,9 @@ def AppendToReadme (celllistfile):
            for i, l in enumerate(f):    
             if i<5: old += l
 
-    # get cell readme list
-    lscmd = 'ls -1a ' + str(celllistfile.parents[0])+"/cells/*/README.rst 2>/dev/null"
-    cellrdm = os.popen(lscmd).read().strip().split('\n')
-    cellrdm = [c.replace(str(celllistfile.parents[0])+'/','') for c in cellrdm]
-
     with open(str(readmefile), "w+") as f:
         f.write(old)
         tableinc = f'.. include:: {celllistfile.name}\n'
-
-        if len(cellrdm):
-            f.write('\n\n\n')
-            f.write('Cell descriptions\n')
-            f.write('-----------------\n\n')
-            f.write('.. toctree::\n\n')
-            for c in cellrdm: 
-                f.write(f'   {c}\n')
-            f.write('\n\n\n')          
 
         if not tableinc in old:
             f.write(tableinc)
