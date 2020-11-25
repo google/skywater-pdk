@@ -20,6 +20,8 @@ jobs:
 
           make env
 
+          source env/conda/bin/activate skywater-pdk-scripts
+
           git submodule foreach 'git checkout master'
           scripts/python-skywater-pdk/skywater_pdk/cell_list.py libraries/*/latest/
           scripts/python-skywater-pdk/skywater_pdk/cell-readme-generate.py libraries/*/latest/cells/*
