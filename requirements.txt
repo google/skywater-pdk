@@ -5,6 +5,7 @@ flake8
 rst_include
 pandas
 odfpy
+Jinja2
 
 # The Python API for the SkyWater PDK.
 -e scripts/python-skywater-pdk
