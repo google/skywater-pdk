@@ -18,7 +18,7 @@ jobs:
         run: |
           SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
 
-          git submodule foreach 'git checkout master'
+          git submodule foreach 'git checkout master -q'
 
           make env
           source env/conda/bin/activate skywater-pdk-scripts
@@ -32,4 +32,4 @@ jobs:
           # TODO replace below with appropriate credentials
           git config --global user.email "action@github.com"
           git config --global user.name "Github Action"
-          git submodule foreach 'git commit -m "$DAT" || true'
+          git submodule foreach 'git commit -q -m "$DAT" || true'
