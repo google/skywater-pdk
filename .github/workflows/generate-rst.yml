@@ -18,13 +18,14 @@ jobs:
         run: |
           SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
 
-          make env
-
-          source env/conda/bin/activate skywater-pdk-scripts
-
           git submodule foreach 'git checkout master'
-          scripts/python-skywater-pdk/skywater_pdk/cells/list.py libraries/*/latest/
-          scripts/python-skywater-pdk/skywater_pdk/cells/generate/readme.py libraries/*/latest/cells/*
+
+          make env
+          source env/conda/bin/activate skywater-pdk-scripts
+          which python
+          python scripts/python-skywater-pdk/skywater_pdk/cells/list.py libraries/*/latest/
+          python scripts/python-skywater-pdk/skywater_pdk/cells/generate/readme.py libraries/*/latest/cells/*
+
           git submodule foreach 'git add .'
           export DAT=`date +"%Y-%m-%d %k:%M"`
 
