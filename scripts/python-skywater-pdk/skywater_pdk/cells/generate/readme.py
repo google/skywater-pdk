@@ -155,20 +155,10 @@ def process(cellpath):
 
 # --- Sphinx extension wrapper ----------------
 
-class GenerateCellReadme(Directive):
+def GenerateCellReadme (app, cellpath):
 
-    required_arguments = 1
-    has_content = False
-
-    def run(self):
-        env = self.state.document.settings.env
-        dirname = env.docname.rpartition('/')[0]
-        arg = self.arguments[0]
-        arg = dirname + '/' + arg
-
-        print (f'GenerateCellReadme: generating files...')
-
-        path = pathlib.Path(arg).expanduser()
+        print (f'GenerateCellReadme: generating files for {cellpath}')
+        path = pathlib.Path(cellpath).expanduser()
         parts = path.parts[1:] if path.is_absolute() else path.parts
         paths = pathlib.Path(path.root).glob(str(pathlib.Path("").joinpath(*parts)))
         paths = list(paths)    
@@ -184,15 +174,14 @@ class GenerateCellReadme(Directive):
                 errors +=1
         print (f'GenerateCellReadme: {len(cell_dirs)} files processed, {errors} errors.')
 
-        paragraph_node = nodes.paragraph()
-        return [paragraph_node]
-
 def setup(app):
-    app.add_directive("generate_cell_readme", GenerateCellReadme)
+    app.add_event("cells_generate_readme")
+    app.connect('cells_generate_readme', GenerateCellReadme)
 
     return {
         'version': '0.1',
         'parallel_read_safe': True,
+        'parallel_write_safe': True,
            }
 
 # ----------------------------------------------      

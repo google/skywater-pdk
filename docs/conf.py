@@ -419,3 +419,6 @@ def setup(app):
     app.add_role('lib', lib_role)
     app.add_role('cell', cell_role)
     app.add_role('model', cell_role)
+
+    app.emit("cells_generate_readme", 'contents/libraries/*/cells/*')
+
