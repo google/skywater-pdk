@@ -4,7 +4,7 @@ Varactors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`capbn_b`
+-  Cell Name: :cell:`sky130_fd_pr__cap_var`
 -  Model Name: :model:`sky130_fd_pr__cap_var_lvt`, :model:`sky130_fd_pr__cap_var_hvt`
 -  Model Type: subcircuit
 
