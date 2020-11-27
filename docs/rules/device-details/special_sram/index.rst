@@ -24,7 +24,7 @@ N-pass FET (SRAM)
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__special_nfet_pass`
 -  Model Name (SRAM): :model:`sky130_fd_pr__special_nfet_pass`
 
 
