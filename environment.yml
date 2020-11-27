@@ -22,7 +22,7 @@ dependencies:
 - pip
 - yosys
 - netlistsvg
-- verilog
+- iverilog
 # Packages installed from PyPI
 - pip:
   - -r file:requirements.txt
