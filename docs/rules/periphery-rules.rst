@@ -121,7 +121,7 @@
      - Value
      - Unit
    * - :drc_rule:`(x.1a)`
-     - p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2 must be on a grid of mm
+     - p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2, capm and cap2m must be on a grid of mm
      - 
      - 0.001
      - mm
@@ -1825,68 +1825,124 @@
    * - :drc_rule:`(capm.1)`
      - Min width of capm
      - 
-     - N/A
-     - N/A
+     - 1
+     - µm
    * - :drc_rule:`(capm.2a)`
      - Min spacing of capm to capm
      - 
-     - N/A
-     - N/A
+     - 0.84
+     - µm
    * - :drc_rule:`(capm.2b)`
      - Minimum spacing of capacitor bottom_plate to bottom plate
      - 
-     - N/A
-     - N/A
+     - 1.2
+     - µm
    * - :drc_rule:`(capm.3)`
-     - Minimum enclosure of capm (top_plate) by met2
+     - Minimum enclosure of capm (top_plate) by met3
      - 
-     - N/A
-     - N/A
+     - 0.14
+     - µm
    * - :drc_rule:`(capm.4)`
-     - Min enclosure of via2 by capm
+     - Min enclosure of via3 by capm
      - 
-     - N/A
-     - N/A
+     - 0.14
+     - µm
    * - :drc_rule:`(capm.5)`
-     - Min spacing between capm and via2
+     - Min spacing between capm and via3
      - 
-     - N/A
-     - N/A
+     - 0.14
+     - µm
    * - :drc_rule:`(capm.6)`
      - Maximum Aspect Ratio (Length/Width)
      - 
-     - N/A
-     - N/A
+     - 20
+     - 
    * - :drc_rule:`(capm.7)`
-     - Only rectangular capacitors are allowed
+     - Only rectangular or L-shaped capacitors allowed
      - 
-     - N/A
-     - N/A
+     - 
+     - 
    * - :drc_rule:`(capm.8)`
-     - Min space, no overlap, between via and capm
+     - Min space, no overlap, between via2 and capm
      - 
-     - N/A
-     - N/A
-   * - :drc_rule:`(capm.10)`
-     - capm must not straddle nwell, diff, tap, poly, li1 and met1 (Rule exempted for capm overlapping capm_2t.dg)
-     - :drc_flag:`TC`
-     - N/A
-     - N/A
+     - 0.14
+     - µm
    * - :drc_rule:`(capm.11)`
-     - Min spacing between capm to (met2 not overlapping capm)
+     - Min spacing between capm to (met3 not overlapping capm)
      - 
-     - N/A
-     - N/A
-   * - :drc_rule:`(capm.12)`
-     - Max area of capm (um^2)
-     - 
-     - N/A
-     - N/A
+     - 0.5
+     - µm
 
 
 .. figure:: periphery/p036-capm_dotdash.svg
     :width: 100%
     :align: center
+
+
+
+:drc_rule:`(cap2m.-)`
+---------------------
+
+.. list-table:: Function: Defines MIM capacitor
+   :header-rows: 1
+   :stub-columns: 1
+   :widths: 9 73 6 6 6
+
+   * - :drc_rule:`Name`
+     - Description
+     - :drc_flag:`Flags`
+     - Value
+     - Unit
+   * - :drc_rule:`(cap2m.1)`
+     - Min width of cap2m
+     - 
+     - 1
+     - µm
+   * - :drc_rule:`(cap2m.2a)`
+     - Min spacing of cap2m to cap2m
+     - 
+     - 0.84
+     - µm
+   * - :drc_rule:`(cap2m.2b)`
+     - Minimum spacing of capacitor bottom_plate to bottom plate
+     - 
+     - 1.2
+     - µm
+   * - :drc_rule:`(cap2m.3)`
+     - Minimum enclosure of cap2m (top_plate) by met4
+     - 
+     - 0.14
+     - µm
+   * - :drc_rule:`(cap2m.4)`
+     - Min enclosure of via4 by cap2m
+     - 
+     - 0.2
+     - µm
+   * - :drc_rule:`(cap2m.5)`
+     - Min spacing between cap2m and via3
+     - 
+     - 0.2
+     - µm
+   * - :drc_rule:`(cap2m.6)`
+     - Maximum Aspect Ratio (Length/Width)
+     - 
+     - 20
+     - 
+   * - :drc_rule:`(cap2m.7)`
+     - Only rectangular or L-shaped capacitors allowed
+     - 
+     - 
+     - 
+   * - :drc_rule:`(cap2m.8)`
+     - Min space, no overlap, between via3 and cap2m
+     - 
+     - 0.14
+     - µm
+   * - :drc_rule:`(cap2m.11)`
+     - Min spacing between cap2m to (met3 not overlapping cap2m)
+     - 
+     - 0.5
+     - µm
 
 
 
