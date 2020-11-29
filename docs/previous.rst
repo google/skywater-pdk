@@ -29,12 +29,8 @@ This section should also help people who have previously had access (under NDA) 
         process. It stood for the "8th generation" of the SONOS technology
         developed originally by Cypress.
 
-    :lib_process:`s8phrc`
     :lib_process:`s180`
         The name for using 180nm technology on the 130nm process.
-
-
-    :lib_process:`s8phirs`
 
     :lib_process:`s8pfhd`
         The base process.  5 metal layer backend stack, 16V devices, deep
