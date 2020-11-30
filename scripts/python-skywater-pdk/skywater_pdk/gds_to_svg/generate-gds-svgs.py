@@ -17,6 +17,10 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+"""
+Creates cell layouts for cells with GDS files in the skywater-pdk libraries.
+"""
+
 import argparse
 from pathlib import Path
 import sys
@@ -24,11 +28,15 @@ import contextlib
 import traceback
 import errno
 
-from gds_to_svg import convert_to_svg
+from gds_to_svg import convert_gds_to_svg
 
 
 def main(argv):
-    parser = argparse.ArgumentParser(prog=argv[0])
+    parser = argparse.ArgumentParser(
+        prog=argv[0],
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     parser.add_argument(
         'libraries_dir',
         help='Path to the libraries directory of skywater-pdk',
@@ -92,7 +100,7 @@ def main(argv):
                         print('Run the script with --create-dirs')
                         return errno.ENOENT
                 outfile = outdir / gdsfile.with_suffix('.svg').name
-                convert_to_svg(gdsfile, args.tech_file, outfile)
+                convert_gds_to_svg(gdsfile, args.tech_file, outfile)
             except Exception:
                 print(
                     f'Failed to generate cell layout for {str(gdsfile)}',
