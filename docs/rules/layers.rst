@@ -22,8 +22,8 @@ Auxiliary Layers
    :header-rows: 1
    :stub-columns: 1
 
-* To distinguish the layers, the full name of the layer needs to be turned on in the LSW window
-* As the layers are displayed in LSW window in icfb version 5.0. For purpose layer displayed in version 5.1, pls refer to table C3
+* To distinguish the layers, the full name of the layer needs to be turned on in the LSW window. 
+  As the layers are displayed in LSW window in icfb version 5.0. For purpose layer displayed in version 5.1, pls refer to table C3
 
 Devices and Layout vs Schematic (LVS) Information
 -------------------------------------------------
