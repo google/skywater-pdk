@@ -70,4 +70,8 @@ setup(
         'Bug Reports': 'https://github.com/google/skywater-pdk/issues',
         'Source': 'https://github.com/google/skywater-pdk/',
     },
+
+    package_data = {
+        'skywater_pdk': ['templates/resources.template.rst'],
+    },
 )

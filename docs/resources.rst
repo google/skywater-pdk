@@ -20,7 +20,7 @@ ICCAD 2020
 ~~~~~~~~~~
 
 **Conference Dates:** 2nd November 2020 to 5th November 2020
-    
+
 * `https://iccad.com/event_details?id=305-8-D <https://iccad.com/event_details?id=305-8-D>`__
 
 WOSET 2020
@@ -108,3 +108,4 @@ Courses
 
 * `VLSI Systems Design course main page <https://inst.eecs.berkeley.edu/~cs250/fa20/>`__
 * `Lab - Intro to OpenLane and Skywater 130 <https://inst.eecs.berkeley.edu/~cs250/fa20/labs/lab1/>`__
+
