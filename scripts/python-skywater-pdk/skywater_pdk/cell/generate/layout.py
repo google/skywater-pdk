@@ -21,14 +21,17 @@
 Creates cell layouts for cells with GDS files in the skywater-pdk libraries.
 """
 
+import sys
+import os
 import argparse
 from pathlib import Path
-import sys
 import contextlib
 import traceback
 import errno
 
-from gds_to_svg import convert_gds_to_svg
+sys.path.insert(0, os.path.abspath(__file__ + '../../..'))
+
+from skywater_pdk.gds_to_svg import convert_gds_to_svg  # noqa: E402
 
 
 def main(argv):
