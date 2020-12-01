@@ -28,7 +28,7 @@ import os
 import re
 import argparse
 
-sys.path.insert(0, os.path.abspath(__file__ + '..'))
+sys.path.insert(0, os.path.abspath(__file__ + '/../../'))
 
 from skywater_pdk.tools import magic, draw  # noqa: E402
 
