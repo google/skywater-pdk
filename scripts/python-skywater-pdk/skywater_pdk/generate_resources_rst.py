@@ -26,7 +26,7 @@ import errno
 from jinja2 import Template
 import importlib.resources as resources
 
-sys.path.insert(0, os.path.abspath(__file__ + '../'))
+sys.path.insert(0, os.path.abspath(__file__ + '/../../'))
 
 from skywater_pdk import templates
 
