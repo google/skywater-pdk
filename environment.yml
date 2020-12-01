@@ -18,6 +18,7 @@ channels:
 - symbiflow
 - defaults
 - LiteX-Hub
+- conda-forge
 dependencies:
 - python=3.8
 - pip
