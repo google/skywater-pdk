@@ -75,8 +75,11 @@ def readVCD (file):
                 currtag = 'body'    
                 vcd[currtag] = ''
 
-    if 'var' not in vcd or 'dumpvars' not in vcd:
-      raise SyntaxError("Invalid VCD file format")
+    if 'var' not in vcd:
+      raise SyntaxError("No variables recorded in VCD file")
+    if 'dumpvars' not in vcd:
+      print ("Warning: intial variable states undefined")
+      var['dumpvars'] = ''
 
     return vcd
 
@@ -213,9 +216,8 @@ def main():
                 svg.saveas(outfile)
         except KeyboardInterrupt:
             sys.exit(1)
-        except (AssertionError, FileNotFoundError, ChildProcessError) as ex:
-            eprint (f'Error: {type(ex).__name__}')
-            eprint (f'{ex.args}')
+        except (SyntaxError, AssertionError, FileNotFoundError, ChildProcessError) as ex:
+            eprint (f'{type(ex).__name__}: {", ".join(ex.args)}')
             errors +=1
     eprint (f'\n{len(infile)} files processed, {errors} errors.')
     return 0 if errors else 1

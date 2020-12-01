@@ -49,6 +49,8 @@ def write_vcd (cellpath, define_data, use_power_pins=False):
     testbedfile = os.path.join(cellpath, define_data['file_prefix'] + '.tb.v')
     assert os.path.exists(testbedfile), testbedfile
     insertppdefine = use_power_pins
+    insertdumpvars = True
+    insertfinish   = True
     prvline=''
     with open(tmptestbed,'w') as ttb:
         with open(testbedfile,'r') as tbf:
@@ -58,12 +60,17 @@ def write_vcd (cellpath, define_data, use_power_pins=False):
                     line = '`define USE_POWER_PINS\n' + line
                     insertppdefine = False 
                 # add dumpfile define                 
-                if prvline.strip(' \n\r')=='begin':
+                if insertdumpvars and prvline.strip(' \n\r')=='begin':
                     line = line[:-len(line.lstrip())] + \
                            '$dumpfile("' + outfile + '");\n' + \
                            line[:-len(line.lstrip())] + \
                            '$dumpvars(1,top);\n' + \
                            line
+                    insertdumpvars = False
+                # add finish command, to stop paraller threads
+                if insertfinish and line.strip(' \n\r')=='end' and not '$finish' in prvline:
+                    line = prvline[:-len(prvline.lstrip())] + '$finish;\n' + line
+                    insertfinish = False
                 # remove power pins from reg - optinal, but makes output more readable
                 if not use_power_pins:
                     for p in pp:
