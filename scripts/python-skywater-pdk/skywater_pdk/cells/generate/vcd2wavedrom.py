@@ -18,6 +18,7 @@ import sys
 import argparse
 import pathlib
 import wavedrom
+import re
 from contextlib import contextmanager
 
 
@@ -44,7 +45,7 @@ def file_or_stdout(file):
 
 
 def readVCD (file):
-    ''' Parses VCD file. 
+    ''' Parses VCD file.
 
     Args:
         file - path to a VCD file [pathlib.Path]
@@ -67,12 +68,12 @@ def readVCD (file):
             # tag, other than end
             if not line.startswith('$end'):
                 currtag = line.partition(' ')[0].lstrip('$').rstrip()
-                vcd[currtag] = vcd.setdefault(currtag, '') + line.partition(' ')[2].rpartition('$')[0]               
+                vcd[currtag] = vcd.setdefault(currtag, '') + line.partition(' ')[2].rpartition('$')[0]
             # line ends with end tag
                 if not vcd[currtag].endswith('\n'):
-                     vcd[currtag] += '\n'                          
+                     vcd[currtag] += '\n'
             if line.split()[-1]=='$end':
-                currtag = 'body'    
+                currtag = 'body'
                 vcd[currtag] = ''
 
     if 'var' not in vcd:
@@ -83,13 +84,39 @@ def readVCD (file):
 
     return vcd
 
-def parsetowavedrom (file, savetofile = False):
+
+def reduce_clock_sequences (wave) :
+    ''' Remove clock seqnces longer than 2 cycles
+        not accompanied by other signals changes
+
+    Parameters:
+        wave - dictionary 'signal'->['list of states'] [dict]
+    '''
+    for v in wave:
+        sig   = wave[v] # analized signal
+        other = [wave[i] for i in wave if i!=v] # list of other signals
+        other = [''.join(s) for s in zip(*other)]  # list of concatenated states
+        other = [len(s.replace('.','')) for s in other] # list of state changes count
+        sig   = [s if o==0 else ' ' for s,o in zip(sig,other)] # keep only when no changes in other
+        sig   = "".join(sig)
+        cuts  = []
+        for m in re.finditer("(10){2,}",sig):
+            cuts.append( (m.start()+1, m.end()-1) ) # area to be reduced, leave 1..0
+        cuts.reverse()
+        for cut in cuts:
+            for v,w in wave.items():              # reduce cuts from all signals
+                wave[v] = w[ :cut[0]] + w[cut[1]: ]
+
+    return wave
+
+
+def parsetowavedrom (file, savetofile = False, reduce_clock = False):
     ''' Reads and simplifies VCD waveform
         Generates wavedrom notation.
 
     Args:
         file - path to a VCD file [pathlib.Path]
-    
+
     '''
     varsubst = {} # var substitution
     reg    = []   # list of signals
@@ -117,21 +144,21 @@ def parsetowavedrom (file, savetofile = False):
 
     # set initial states
     event.append(0)
-    #default 
+    #default
     for v in reg+wire:
         wave[v] = ['x']
     #defined
-    for line in vcd['dumpvars'].split('\n'): 
+    for line in vcd['dumpvars'].split('\n'):
         if len(line)>=2:
             wave[ varsubst[line[1]] ] = [line[0]]
 
-    # parse wave body        
+    # parse wave body
     for line in vcd['body'].split('\n'):
         #timestamp line
         if line.startswith('#'):
             line = line.strip().lstrip('#')
             if not line.isnumeric():
-                raise SyntaxError("Invalid VCD timestamp")      
+                raise SyntaxError("Invalid VCD timestamp")
             event.append(int(line))
             for v in wave.keys():
                 wave[v].append('.')
@@ -139,11 +166,12 @@ def parsetowavedrom (file, savetofile = False):
         else :
             if len(line)>=2:
                 wave [ varsubst[line[1]] ][-1] = line[0]
-            
-    # TODO: add "double interval support"
+
+    if reduce_clock:
+        wave = reduce_clock_sequences(wave)
 
     signals  = []
-    for v in wave.keys():     
+    for v in wave.keys():
         fill    = ' ' * (max( [len(s) for s in wave.keys()] ) - len(v))
         wavestr = ''.join(wave[v])
         signals.append( signal_template.format( name = v, wave = wavestr, fill = fill ) )
@@ -151,15 +179,18 @@ def parsetowavedrom (file, savetofile = False):
 
     wavedrom = wavedrom_template.format ( signals = signals )
 
-    outfile = file.with_suffix(".wdr.json") if savetofile else None       
+    outfile = file.with_suffix(".wdr.json") if savetofile else None
     with file_or_stdout(outfile) as f:
         f.write(wavedrom)
-    
+
     return wavedrom
 
 def quoted_strings_wavedrom (wdr) :
     ''' Convert wavedrom script to more restrictive
         version of JSON with quoted keywords
+
+    Parameters:
+        wdr - wavedrom script [str]
     '''
     wdr = wdr.replace(' signal:',' "signal":')
     wdr = wdr.replace(' name:',' "name":')
@@ -191,6 +222,11 @@ def main():
             help="generate .svg image",
             action="store_true")
     parser.add_argument(
+            "-r",
+            "--reduceclk",
+            help="reduce clock sequences",
+            action="store_true")
+    parser.add_argument(
             "infile",
             help="VCD waveform file",
             type=pathlib.Path,
@@ -209,10 +245,10 @@ def main():
     errors = 0
     for f in infile:
         try:
-            wdr = parsetowavedrom(f, args.wavedrom)
+            wdr = parsetowavedrom(f, args.wavedrom, args.reduceclk)
             if args.savesvg:
                 svg = wavedrom.render( quoted_strings_wavedrom(wdr) )
-                outfile = f.with_suffix(".svg")  
+                outfile = f.with_suffix(".svg")
                 svg.saveas(outfile)
         except KeyboardInterrupt:
             sys.exit(1)
