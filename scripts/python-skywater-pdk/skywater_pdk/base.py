@@ -22,7 +22,8 @@ import os
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from enum import Enum
-from typing import Optional, Union, Tuple
+from typing import Optional, Union, Tuple, Iterator
+from pathlib import Path
 
 from .utils import comparable_to_none
 from .utils import dataclass_json_passthru_config as dj_pass_cfg
@@ -503,6 +504,71 @@ class Library:
         if bits:
             kw['name'] = bits.pop(0)
         return cls(**kw)
+
+    @classmethod
+    def get_libraries(cls, libroot : str) -> Iterator['Library']:
+        """
+        Lists libraries present in the libroot directory.
+
+        Parameters
+        ----------
+        libroot : str
+            Path to the Skywater PDK libraries
+
+        Yields
+        ------
+        Library : next library object
+        """
+        libroot = Path(libroot)
+        for libdir in libroot.iterdir():
+            if libdir.is_dir():
+                yield cls.parse(libdir.name)
+
+    def get_versions(self, libroot : str) -> Iterator['LibraryVersion']:
+        """
+        Lists versions of the library.
+
+        Parameters
+        ----------
+        libroot : str
+            Path to the Skywater PDK libraries.
+
+        Yields
+        ------
+        LibraryVersion : next version of the library
+        """
+        libdir = Path(libroot) / self.fullname
+        for version in libdir.iterdir():
+            if version.is_dir() and version.name != 'latest':
+                yield LibraryVersion.parse(version.name)
+
+    def get_cells(self, libroot) -> Iterator['Cell']:
+        """
+        Lists cells for the library.
+
+        If the version of the library is not specified, the cells for the
+        'latest' version are listed.
+
+        Parameters
+        ----------
+        libroot : str
+            Path to the Skywater PDK libraries.
+
+        Yields
+        ------
+        Cell : next cell in the library
+        """
+        libdir = Path(libroot) / self.fullname
+        version = 'latest'
+        if self.version:
+            version = f'v{self.version.fullname}'
+        libdir = libdir / version / 'cells'
+        assert libdir.is_dir()
+        for cell in libdir.iterdir():
+            if cell.is_dir():
+                cell = Cell.parse(cell.name)
+                cell.library = self
+                yield cell
 
 
 @dataclass_json
