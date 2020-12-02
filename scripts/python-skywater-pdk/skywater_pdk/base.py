@@ -518,6 +518,7 @@ class Library:
     type: LibraryType = dj_pass_cfg()
     name: str = ''
     version: Optional[LibraryVersion] = None
+    rootdir: str = ''
 
     @property
     def fullname(self):
@@ -530,7 +531,7 @@ class Library:
         return "_".join(output)
 
     @classmethod
-    def parse(cls, s):
+    def parse(cls, s, libroot=''):
         if SEPERATOR in s:
             raise ValueError(
                 "Found separator '__' in library name: {!r}".format(s))
@@ -546,10 +547,11 @@ class Library:
         kw['type'] = LibraryType.parse(bits.pop(0))
         if bits:
             kw['name'] = bits.pop(0)
+        kw['rootdir'] = libroot
         return cls(**kw)
 
     @classmethod
-    def get_libraries(cls, libroot : str) -> Iterator['Library']:
+    def get_libraries(cls, libroot : str = '') -> Iterator['Library']:
         """
         Lists libraries present in the libroot directory.
 
@@ -563,55 +565,46 @@ class Library:
         Library : next library object
         """
         libroot = Path(libroot)
+        assert libroot.is_dir()
         for libdir in libroot.iterdir():
             if libdir.is_dir():
-                yield cls.parse(libdir.name)
+                yield cls.parse(libdir.name, libroot)
 
-    def get_versions(self, libroot : str) -> Iterator['LibraryVersion']:
+    def get_versions(self) -> Iterator['LibraryVersion']:
         """
         Lists versions of the library.
-
-        Parameters
-        ----------
-        libroot : str
-            Path to the Skywater PDK libraries.
 
         Yields
         ------
         LibraryVersion : next version of the library
         """
-        libdir = Path(libroot) / self.fullname
+        libdir = Path(self.rootdir) / self.fullname
         for version in libdir.iterdir():
             if version.is_dir() and version.name != 'latest':
                 yield LibraryVersion.parse(version.name)
 
-    def get_cells(self, libroot) -> Iterator['Cell']:
+    def get_cells(self) -> Iterator['Cell']:
         """
         Lists cells for the library.
 
         If the version of the library is not specified, the cells for the
         'latest' version are listed.
 
-        Parameters
-        ----------
-        libroot : str
-            Path to the Skywater PDK libraries.
-
         Yields
         ------
         Cell : next cell in the library
         """
-        libdir = Path(libroot) / self.fullname
+        libdir = Path(self.rootdir) / self.fullname
         version = 'latest'
         if self.version:
             version = f'v{self.version.fullname}'
         libdir = libdir / version / 'cells'
-        assert libdir.is_dir()
-        for cell in libdir.iterdir():
-            if cell.is_dir():
-                cell = Cell.parse(cell.name)
-                cell.library = self
-                yield cell
+        if libdir.is_dir():
+            for cell in libdir.iterdir():
+                if cell.is_dir():
+                    cell = Cell.parse(cell.name)
+                    cell.library = self
+                    yield cell
 
 
 @dataclass_json
@@ -662,6 +655,23 @@ class Cell:
             kw['library'] = Library.parse(library)
         kw['name'] = s
         return cls(**kw)
+
+    def get_matching_files(self, pattern) -> Iterator[str]:
+        """
+        Yields files for a matching pattern for a given cell if present.
+
+        Parameters
+        ----------
+        pattern : str
+            The file pattern to look for
+
+        Yields
+        ------
+        str : path to files for a given cell
+        """
+        celldir = Path(convert_to_path(self, self.library.rootdir))
+        for filename in celldir.glob(pattern):
+            yield str(filename)
 
 
 if __name__ == "__main__":
