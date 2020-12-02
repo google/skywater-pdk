@@ -157,7 +157,6 @@ def parse_pathname(pathname):
         return lib, filename
 
 
-
 def parse_filename(pathname) -> Tuple[LibraryOrCell, Optional[str], Optional[str]]:
     """Extract library and module name from filename.
 
@@ -257,6 +256,50 @@ def parse_filename(pathname) -> Tuple[LibraryOrCell, Optional[str], Optional[str
 
     return (library, extra, extension)
 
+
+def convert_to_path(libraryorcell: LibraryOrCell, libdir : str):
+    """Create path to the library or cell from the objects
+
+    Parameters
+    ----------
+    libraryorcell : Library or Cell
+        Library or Cell information
+    libdir : str
+        Path to the root directory of the Skywater PDK libraries
+
+    Returns
+    -------
+    str : Path to the library (or cell) directory
+
+    See Also
+    --------
+    skywater_pdk.base.parse_pathname
+    skywater_pdk.base.Cell
+    skywater_pdk.base.Library
+
+    Examples
+    --------
+    
+    >>> lib = parse_pathname('libraries/sky130_fd_pr/v0.0.1')[0]
+    >>> convert_to_path(lib, 'libraries')
+    'libraries/sky130_fd_pr/v0.0.1'
+    >>> cell = parse_pathname('libraries/sky130_fd_pr/v0.20.1/cells/cap_mim_m3/sky130_fd_pr__cap_mim_m3_1.model.spice')[0]
+    >>> convert_to_path(cell, 'libraries')
+    'libraries/sky130_fd_pr/v0.20.1/cells/cap_mim_m3'
+    """
+    assert type(libraryorcell) is Library or type(libraryorcell) is Cell
+    libdir = Path(libdir)
+    if type(libraryorcell) is Library:
+        version = (f'v{libraryorcell.version.fullname}' 
+                   if libraryorcell.version else 'latest')
+        return str(libdir / libraryorcell.fullname / version)
+    if type(libraryorcell) is Cell:
+        library = libraryorcell.library
+        version = (f'v{library.version.fullname}'
+                   if library.version else 'latest')
+        libname = library.fullname
+        return str(libdir / libname / version / 'cells' / libraryorcell.name)
+        
 
 SEPERATOR = "__"
 
@@ -619,7 +662,6 @@ class Cell:
             kw['library'] = Library.parse(library)
         kw['name'] = s
         return cls(**kw)
-
 
 
 if __name__ == "__main__":
