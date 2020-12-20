@@ -31,12 +31,15 @@ from collections import defaultdict
 
 from typing import Tuple, List, Dict
 
+from math import frexp, log2
+
 from . import sizes
 from .utils import sortable_extracted_numbers
 
 
 debug = False
 
+LOG2_10 = log2(10)
 
 class TimingType(enum.IntFlag):
     """
@@ -792,36 +795,25 @@ def liberty_float(f):
 
     """
     try:
-        f2 = float(f)
+        r = float(f)
     except (ValueError, TypeError):
-        f2 = None
+        r = None
 
     if isinstance(f, bool):
-        f2 = None
+        r = None
 
-    if f is None or f2 != f:
+    if f is None or r != f:
         raise ValueError("%r is not a float" % f)
 
-    WIDTH = len(str(0.0083333333))
+    width = 11
 
-    s = json.dumps(f)
-    if 'e' in s:
-        a, b = s.split('e')
-        if '.' not in a:
-            a += '.'
-        while len(a)+len(b)+1 < WIDTH:
-            a += '0'
-        s = "%se%s" % (a, b)
-    elif '.' in s:
-        while len(s) < WIDTH:
-            s += '0'
+    mag = int(frexp(r)[1]/LOG2_10)
+    if mag > 9:
+        return f'%{width}e' % r
+    if mag < 0:
+        return f"%{width+1}.{width-1}f" % r
     else:
-        if len(s) < WIDTH:
-            s += '.'
-        while len(s) < WIDTH:
-            s += '0'
-    return s
-
+        return f"%{width+1}.{width-mag-1}f" % r
 
 LIBERTY_ATTRIBUTE_TYPES = {
     'boolean':  liberty_bool,
