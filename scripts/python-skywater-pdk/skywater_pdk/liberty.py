@@ -769,6 +769,15 @@ def liberty_float(f):
     >>> liberty_float(1)
     '1.0000000000'
 
+    >>> liberty_float(1e9)
+    '1000000000.0'
+
+    >>> liberty_float(1e10)
+    '1.000000e+10'
+
+    >>> liberty_float(1e15)
+    '1.000000e+15'
+
     >>> liberty_float(True)
     Traceback (most recent call last):
         ...
