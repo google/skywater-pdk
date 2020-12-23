@@ -7,8 +7,8 @@ MiM Capacitor
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3__base`, :cell:`sky130_fd_pr__cap_mim_m4__base`
--  Model Names: :model:`sky130_fd_pr__model__cap_mim`, :model:`sky130_fd_pr__cap_mim_m4`
+-  Cell Names: :cell:`sky130_fd_pr__cap_mim_m3`, :cell:`sky130_fd_pr__cap_mim_m4`
+-  Model Names: :model:`sky130_fd_pr__cap_mim_m3_1`, :model:`sky130_fd_pr__cap_mim_m3_2`
 
 Operating Voltages where SPICE models are valid
 
@@ -31,9 +31,9 @@ Electrical specs are listed below:
 
 
 
-The symbol for the MiM capacitor is shown below. Note that the cap model is a sub-circuit which accounts for the parasitic contact resistance and the parasitic capacitance from the bottom plate to substrate.
+The symbols for the MiM capacitors are shown below. Note that the cap model is a sub-circuit which accounts for the parasitic contact resistance and the parasitic capacitance from the bottom plate to substrate.
 
-|symbol-cap_mim|
+|symbol-cap_mim_m3| |symbol-cap_mim_m4|
 
 Cell name
 
@@ -45,7 +45,8 @@ The cross-section of the “stacked” MiM capacitor is shown below:
 
 |cross-section-cap_mim|
 
-.. |symbol-cap_mim| image:: device-details/cap_mim/symbol-cap_mim.svg
+.. |symbol-cap_mim_m3| image:: device-details/cap_mim/symbol-cap_mim_m3.svg
+.. |symbol-cap_mim_m4| image:: device-details/cap_mim/symbol-cap_mim_m4.svg
 .. |cross-section-cap_mim| image:: device-details/cap_mim/cross-section-cap_mim.svg
 
 
@@ -55,7 +56,7 @@ Varactors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`capbn_b`
+-  Cell Name: :cell:`sky130_fd_pr__cap_var_lvt`, :cell:`sky130_fd_pr__cap_var_hvt`
 -  Model Name: :model:`sky130_fd_pr__cap_var_lvt`, :model:`sky130_fd_pr__cap_var_hvt`
 -  Model Type: subcircuit
 
@@ -82,14 +83,14 @@ There is no equivalent varactor for 5V operation. The NHV or PHV devices should 
 
 The symbols for the varactors are shown below:
 
-|symbol-cap_var-a| |symbol-cap_var-b|
+|symbol-cap_var-lvt| |symbol-cap_var-hvt|
 
 The cross-section of the varactor is shown below:
 
 |cross-section-cap_var|
 
-.. |symbol-cap_var-a| image:: device-details/cap_var/symbol-cap_var-a.svg
-.. |symbol-cap_var-b| image:: device-details/cap_var/symbol-cap_var-b.svg
+.. |symbol-cap_var-lvt| image:: device-details/cap_var/symbol-cap_var-lvt.svg
+.. |symbol-cap_var-hvt| image:: device-details/cap_var/symbol-cap_var-hvt.svg
 .. |cross-section-cap_var| image:: device-details/cap_var/cross-section-cap_var.svg
 
 
@@ -683,12 +684,15 @@ Major model output parameters are shown below and compared against the EDR (e-te
 
 
 
-The symbol of the :model:`sky130_fd_pr__nfet_20v0_zvt` (20V NMOS zero-VT FET) is still under development.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_zvt` (20V NMOS zero-VT FET) is shown below.
+
+|symbol-nfet_20v0_zvt|
 
 The cross-section of the 20V NMOS zero-VT FET is shown below.
 
 |cross-section-nfet_20v0_zvt|
 
+.. |symbol-nfet_20v0_zvt| image:: device-details/nfet_20v0_zvt/symbol-nfet_20v0_zvt.svg
 .. |cross-section-nfet_20v0_zvt| image:: device-details/nfet_20v0_zvt/cross-section-nfet_20v0_zvt.svg
 
 

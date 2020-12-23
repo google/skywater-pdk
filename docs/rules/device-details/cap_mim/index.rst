@@ -4,8 +4,8 @@ MiM Capacitor
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3__base`, :cell:`sky130_fd_pr__cap_mim_m4__base`
--  Model Names: :model:`sky130_fd_pr__model__cap_mim`, :model:`sky130_fd_pr__cap_mim_m4`
+-  Cell Names: :cell:`sky130_fd_pr__cap_mim_m3`, :cell:`sky130_fd_pr__cap_mim_m4`
+-  Model Names: :model:`sky130_fd_pr__cap_mim_m3_1`, :model:`sky130_fd_pr__cap_mim_m3_2`
 
 Operating Voltages where SPICE models are valid
 
@@ -28,9 +28,9 @@ Electrical specs are listed below:
 
 
 
-The symbol for the MiM capacitor is shown below. Note that the cap model is a sub-circuit which accounts for the parasitic contact resistance and the parasitic capacitance from the bottom plate to substrate.
+The symbols for the MiM capacitors are shown below. Note that the cap model is a sub-circuit which accounts for the parasitic contact resistance and the parasitic capacitance from the bottom plate to substrate.
 
-|symbol-cap_mim|
+|symbol-cap_mim_m3| |symbol-cap_mim_m4|
 
 Cell name
 
@@ -42,6 +42,7 @@ The cross-section of the “stacked” MiM capacitor is shown below:
 
 |cross-section-cap_mim|
 
-.. |symbol-cap_mim| image:: symbol-cap_mim.svg
+.. |symbol-cap_mim_m3| image:: symbol-cap_mim_m3.svg
+.. |symbol-cap_mim_m4| image:: symbol-cap_mim_m4.svg
 .. |cross-section-cap_mim| image:: cross-section-cap_mim.svg
 
