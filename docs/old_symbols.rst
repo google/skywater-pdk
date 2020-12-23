@@ -7,9 +7,9 @@ This page should be deleted after PR review.
 
 |old_symbol-cap_mim_m4| |symbol-cap_mim_m4|
 
-|old_symbol-cap_var-hvt| |symbol-cap_var-hvt|
+|old_symbol-cap_var-hvt| |symbol-cap_var_hvt|
 
-|old_symbol-cap_var-lvt| |symbol-cap_var-lvt|
+|old_symbol-cap_var-lvt| |symbol-cap_var_lvt|
 
 |old_symbol-cap_vpp-parallel| |symbol-cap_vpp-parallel|
 
@@ -144,8 +144,8 @@ This page should be deleted after PR review.
 
 .. |symbol-cap_mim_m3| image:: rules/device-details/cap_mim/symbol-cap_mim_m3.svg
 .. |symbol-cap_mim_m4| image:: rules/device-details/cap_mim/symbol-cap_mim_m4.svg
-.. |symbol-cap_var-hvt| image:: rules/device-details/cap_var/symbol-cap_var-hvt.svg
-.. |symbol-cap_var-lvt| image:: rules/device-details/cap_var/symbol-cap_var-lvt.svg
+.. |symbol-cap_var_hvt| image:: rules/device-details/cap_var/symbol-cap_var_hvt.svg
+.. |symbol-cap_var_lvt| image:: rules/device-details/cap_var/symbol-cap_var_lvt.svg
 .. |symbol-cap_vpp-parallel| image:: rules/device-details/cap_vpp/symbol-cap_vpp-parallel.svg
 .. |symbol-cap_vpp-perpendicular| image:: rules/device-details/cap_vpp/symbol-cap_vpp-perpendicular.svg
 .. |symbol-diode-01| image:: rules/device-details/diodes/symbol-diode-01.svg

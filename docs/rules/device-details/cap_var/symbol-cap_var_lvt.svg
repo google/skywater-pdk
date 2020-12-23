@@ -157,27 +157,22 @@
 text {font-family: SansSerif;}
 </style>
 <rect x="0" y="0" width="300" height="150" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.96" />
-<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(59.5, 44.1648)" >M1</text>
-<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(108.75, 111.874)" >D</text>
-<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(108.75, 45.9537)" >S</text>
-<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(105, 70.6236)" >B</text>
-<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(48.1875, 70.6236)" >G</text>
-<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(120, 58.1466)" >pfet_g5v0d16v0</text>
-<text fill="#aaaa00"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(121.875, 106.04)" >1 x 5.0 / 0.66</text>
-<path class="l4" d="M105 30L105 48.75"/>
-<path class="l4" d="M105 101.25L105 120"/>
-<path class="l4" d="M86.25 101.25L105 101.25"/>
-<path class="l4" d="M93.75 48.75L105 48.75"/>
-<path class="l4" d="M86.25 41.25L86.25 108.75"/>
-<path class="l4" d="M78.75 86.25L86.25 86.25"/>
-<path class="l4" d="M78.75 97.5L86.25 97.5"/>
-<path class="l4" d="M45 75L56.25 75"/>
-<path class="l4" d="M93.75 45L86.25 48.75L93.75 52.5L93.75 45"/>
-<path class="l4" style="fill:none;" d="M71.25 97.5L71.25 52.5L78.75 52.5L78.75 97.5L71.25 97.5"/>
-<circle class="l4" cx="63.75" cy="75" r="7.5" style="fill:none;"/>
-<path class="l5" d="M97.5 71.25L105 75L97.5 78.75L97.5 71.25"/>
-<path class="l5" d="M101.25 116.25L108.75 116.25L108.75 123.75L101.25 123.75L101.25 116.25z"/>
-<path class="l5" d="M41.25 71.25L48.75 71.25L48.75 78.75L41.25 78.75L41.25 71.25z"/>
-<path class="l5" d="M101.25 26.25L108.75 26.25L108.75 33.75L101.25 33.75L101.25 26.25z"/>
-<path class="l5" d="M104.883 74.8828L105.117 74.8828L105.117 75.1172L104.883 75.1172L104.883 74.8828z"/>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(82.5, 44.3736)" >c0</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(82.5, 113.749)" >c1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 46.0398)" >C1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 91.0398)" >0.5 / 0.5 * 1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 68.5398)" >cap_var_lvt</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(60, 100.624)" >n+</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(22.5, 98.7486)" >b</text>
+<path class="l4" d="M75 78.75L75 120"/>
+<path class="l4" d="M75 30L75 67.5"/>
+<path class="l4" d="M60 67.5L90 67.5"/>
+<path class="l4" d="M52.5 105L75 105"/>
+<path class="l4" d="M15 105L37.5 105"/>
+<path class="l4" d="M52.5 90L52.5 120"/>
+<path class="l4" d="M52.5 105L37.5 90L37.5 120L52.5 105"/>
+<path class="l4" style="fill:none;" d="M90 82.5 A31.875 31.875 0 0 0 60 82.5"/>
+<path class="l5" d="M71.25 26.25L78.75 26.25L78.75 33.75L71.25 33.75L71.25 26.25z"/>
+<path class="l5" d="M71.25 116.25L78.75 116.25L78.75 123.75L71.25 123.75L71.25 116.25z"/>
+<path class="l5" d="M11.25 101.25L18.75 101.25L18.75 108.75L11.25 108.75L11.25 101.25z"/>
 </svg>

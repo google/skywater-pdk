@@ -83,14 +83,14 @@ There is no equivalent varactor for 5V operation. The NHV or PHV devices should 
 
 The symbols for the varactors are shown below:
 
-|symbol-cap_var-lvt| |symbol-cap_var-hvt|
+|symbol-cap_var_lvt| |symbol-cap_var_hvt|
 
 The cross-section of the varactor is shown below:
 
 |cross-section-cap_var|
 
-.. |symbol-cap_var-lvt| image:: device-details/cap_var/symbol-cap_var-lvt.svg
-.. |symbol-cap_var-hvt| image:: device-details/cap_var/symbol-cap_var-hvt.svg
+.. |symbol-cap_var_lvt| image:: device-details/cap_var/symbol-cap_var_lvt.svg
+.. |symbol-cap_var_hvt| image:: device-details/cap_var/symbol-cap_var_hvt.svg
 .. |cross-section-cap_var| image:: device-details/cap_var/cross-section-cap_var.svg
 
 
