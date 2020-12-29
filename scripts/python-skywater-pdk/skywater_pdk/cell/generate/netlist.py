@@ -18,6 +18,7 @@ import argparse
 import pathlib
 import glob
 import subprocess
+import re
 
 def outfile(cellpath, define_data, ftype='', extra='', exists=False):
     ''' Determines output file path and name.
@@ -46,22 +47,65 @@ def outfile(cellpath, define_data, ftype='', extra='', exists=False):
         assert os.path.exists(outpath), "Missing required:"+outpath
     return outpath
 
+def patch_netlist_json (infile, outfile):
+    ''' Patches yosys generated netlist json
+        to workaround netlistsvg compability issues.
+    Currently covered:
+        - convert unsupported pin direction 'inout' to 'output'
+        - convert unsupported High-Z connection ("z") to none ("x")
 
-def write_netlistsvg(cellpath, define_data):
+    Args:
+        infile  - input file   [str of pathlib.Path]
+        outfile - patched file [str of pathlib.Path]
+    '''
+
+    block_header    = '\s*"\w*"\:\s*\{'              #eg. "connections": {
+    unsupported_dir = '\s*"direction":\s*"inout"'  #eg. "direction": "input"
+    unsupported_con = '\s*"\w*":\s*\[\s*"z"\s*\]'        #eg. "A": [ "z" ]
+    json = ''
+    current_block = None
+
+    with open(str(infile),'r') as f:
+        for line in f:
+            if re.match (block_header, line):
+                current_block = line.partition(':')[0].strip(' "\n')
+            if re.match (unsupported_dir, line):
+                line = re.sub ( ':\s*"inout"', ': "output"', line)
+            if current_block =='connections' and re.match (unsupported_con, line):
+                line = re.sub ( '\[\s*"z"\s*\]', '[ "x" ]' , line, flags=re.IGNORECASE)
+            json +=line
+    with open(str(outfile),'w') as f:
+        f.write(json)
+
+
+def write_netlistsvg(cellpath, define_data, json_patching = False):
     ''' Generates netlistsvg for a given cell.
 
     Args:
         cellpath - path to a cell [str of pathlib.Path]
         define_data - cell definition data [dic]
+        json_patching - filter netlist for potential netlistsvg compablity issues
     '''
 
     netlist_json = os.path.join(cellpath, define_data['file_prefix']+'.json')
     if not os.path.exists(netlist_json):
         print("No netlist in", cellpath)
     assert os.path.exists(netlist_json), netlist_json
+
+    if json_patching: #correct netlistsvg parsing issues
+        netlist_json_fix = os.path.join(cellpath, define_data['file_prefix']+'.patched.json')
+        patch_netlist_json (netlist_json, netlist_json_fix)
+        netlist_json = netlist_json_fix
+
     outpath = outfile(cellpath, define_data, 'schematic')
     if subprocess.call(['netlistsvg', netlist_json, '-o', outpath]):
-      raise ChildProcessError("netlistsvg execution failed")
+        if json_patching:
+           os.remove(netlist_json_fix)
+        raise ChildProcessError("netlistsvg execution failed")
+
+    if json_patching:
+        pass
+        os.remove(netlist_json_fix)
 
 def process(cellpath):
     ''' Processes cell indicated by path.
@@ -80,7 +124,11 @@ def process(cellpath):
     define_data = json.load(open(define_json))
 
     if define_data['type'] == 'cell':
-        write_netlistsvg(cellpath, define_data)
+        try:
+            write_netlistsvg(cellpath, define_data)
+        except ChildProcessError:
+            print ("Netlistsvg error, retrying with json patch...")
+            write_netlistsvg(cellpath, define_data, json_patching=True)
 
     return
 
