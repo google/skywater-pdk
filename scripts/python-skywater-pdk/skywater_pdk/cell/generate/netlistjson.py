@@ -34,11 +34,10 @@ def write_netlistsvg(cellpath, define_data):
         print("No verilog file in", cellpath)
     assert os.path.exists(verilog), verilog
 
-    yosyscmd = ['yosys', '-p']
+    yosyscmd = ['yosys', '-D NO_PRIMITIVES', '-D UNIT_DELAY #1', '-p']
     yosyscmd.append ('prep -top ' + define_data['verilog_name'] + '; write_json ' + netlist_json)
     yosyscmd.append (verilog)
     if subprocess.call( yosyscmd ) :
-      print ('EERROR')
       yosyscmd[2] = '"' + yosyscmd[2] + '"'
       print (''.join(yosyscmd))
       raise ChildProcessError(define_data['file_prefix'],"yosys execution failed")
