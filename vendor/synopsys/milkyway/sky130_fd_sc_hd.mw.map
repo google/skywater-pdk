@@ -26,4 +26,10 @@ T 12 72:5 ; met5	text	72	5
 T 15 64:5 ; nwell	text 	67  5
 T 16 64:59 ; pwell	text 	67  5
 A 16 122:16 ; pwell pin 122 16
-
+;# Text & Data layers
+T  2 67:16 ; li1 	text	67	5
+T  4 68:16 ; met1	text	68	5
+T  6 69:16 ; met2	text	69	5
+T  8 70:16 ; met3	text	70	5
+T 10 71:16 ; met4	text	71	5
+T 12 72:16 ; met5	text	72	5
