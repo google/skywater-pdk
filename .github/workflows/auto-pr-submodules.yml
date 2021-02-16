@@ -9,7 +9,7 @@ on:
 
 jobs:
   createPullRequest:
-    if: ${{ contains(github.ref, 'master') }}
+    if: contains(github.ref, 'master')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
           commit-message: Update All Submodules to Remote Latest
           title: 'Update All Submodules to Remote Latest'
           branch: create-pull-request/submodules-auto-update
