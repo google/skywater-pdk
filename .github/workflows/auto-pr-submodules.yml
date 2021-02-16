@@ -13,9 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: submodules-init
-        uses: snickerbockers/submodules-init@v4
+        with:
+          submodules: 'true'
 
       - name: Update All Submodules to Remote Latest
         run: git submodule update --remote
@@ -24,7 +23,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Update All Submodules to remote latest
+          commit-message: Update All Submodules to Remote Latest
           title: 'Update All Submodules to Remote Latest'
           branch: create-pull-request/submodules-auto-update
           base: master
