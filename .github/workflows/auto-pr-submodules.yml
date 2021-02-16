@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+name: Update Submodules and Submit a PR
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push  only for the actions-test-branch branches
+  push:
+    branches:
+      - master
+    # Runs every day at midnight UTC
+    schedule:
+      - cron:  '0 0 * * *'
+
+jobs:
+  createPullRequest:
+    if: ${{ contains(github.ref, 'master') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: submodules-init
+        uses: snickerbockers/submodules-init@v4
+
+      - name: Update All Submodules to Remote Latest
+        run: git submodule update --remote
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update All Submodules to remote latest
+          title: 'Update All Submodules to Remote Latest'
+          branch: create-pull-request/submodules-auto-update
+          base: master
+          delete-branch: true
+          body: This PR is auto-generated to update all submodules for all libraries in this repository.
+          labels: update submodules, automated pr
+
