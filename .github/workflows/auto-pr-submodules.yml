@@ -21,11 +21,17 @@ jobs:
       - name: Export Body
         run: echo "BODY=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
 
+      - name: Export First 5 Digits of Commit Hash
+        run: echo "COMMIT_SHA_5=$(echo ${{ github.sha }} | awk '{print substr($0,0,5)}')" >> $GITHUB_ENV
+
+      - name: Export Title
+        run: echo "TITLE='Update Submodules to Remote Latest, triggered from commit ${{ env.COMMIT_SHA_5 }}'" >> $GITHUB_ENV
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ github.token }}
-          title: 'Update Submodules to Remote Latest'
+          title: ${{ env.TITLE }}
           branch: create-pull-request/submodules-auto-update
           base: master
           delete-branch: true
