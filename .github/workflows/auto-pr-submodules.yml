@@ -1,6 +1,7 @@
 name: Update Submodules and Submit a PR
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -13,21 +14,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: 'true'
 
-      - name: Update All Submodules to Remote Latest
-        run: git submodule update --remote
+      - name: Update Submodules to Remote Latest
+        run: python3 .github/scripts/google-skywater-pdk-roll.py -l libraries
+
+      - name: Export Body
+        run: echo "BODY=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ github.token }}
-          commit-message: Update All Submodules to Remote Latest
-          title: 'Update All Submodules to Remote Latest'
+          title: 'Update Submodules to Remote Latest'
           branch: create-pull-request/submodules-auto-update
           base: master
           delete-branch: true
-          body: This PR is auto-generated to update all submodules for all libraries in this repository.
+          body: ${{ env.BODY }}
           labels: update submodules, automated pr
 
