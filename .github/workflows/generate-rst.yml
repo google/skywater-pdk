@@ -1,0 +1,35 @@
+name: Generate cells docs
+
+on:
+    push:
+    pull_request:
+
+jobs:
+
+  generate-cells:
+    runs-on: ubuntu-18.04
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Generate cells READMEs
+        run: |
+          SUBMODULE_VERSION=latest make submodules -j3 || make submodules -j1
+
+          git submodule foreach 'git checkout master -q'
+
+          make env
+          source env/conda/bin/activate skywater-pdk-scripts
+          which python
+          python scripts/python-skywater-pdk/skywater_pdk/cells/list.py libraries/*/latest/
+          python scripts/python-skywater-pdk/skywater_pdk/cells/generate/readme.py libraries/*/latest/cells/*
+
+          git submodule foreach 'git add .'
+          export DAT=`date +"%Y-%m-%d %k:%M"`
+
+          # TODO replace below with appropriate credentials
+          git config --global user.email "action@github.com"
+          git config --global user.name "Github Action"
+          git submodule foreach 'git commit -q -m "$DAT" || true'
