@@ -4,8 +4,13 @@ on:
 
 jobs:
   triage:
+    name: "Updating labels"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@main
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
+branding:
+  icon: 'bookmark'
+  color: 'green'
