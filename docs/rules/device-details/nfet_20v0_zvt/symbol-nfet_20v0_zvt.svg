@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" version="1.1">
+<style type="text/css">
+.l0{
+  fill: #000000;
+  stroke: #000000;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l1{
+  fill: #00ccee;
+  stroke: #00ccee;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l2{
+  fill: none;
+  stroke: #3f3f3f;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l3{
+  fill: #cccccc; fill-opacity: 0.5;
+  stroke: #cccccc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l4{
+  fill: #88dd00;
+  stroke: #88dd00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l5{
+  fill: #bb2200;
+  stroke: #bb2200;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l6{
+  fill: #00ccee; fill-opacity: 0.5;
+  stroke: #00ccee;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l7{
+  fill: #ff0000; fill-opacity: 0.5;
+  stroke: #ff0000;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l8{
+  fill: #ffff00; fill-opacity: 0.5;
+  stroke: #ffff00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l9{
+  fill: #ffffff; fill-opacity: 0.5;
+  stroke: #ffffff;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l10{
+  fill: #ff00ff;
+  stroke: #ff00ff;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l11{
+  fill: #00ff00; fill-opacity: 0.5;
+  stroke: #00ff00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l12{
+  fill: #0000cc; fill-opacity: 0.5;
+  stroke: #0000cc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l13{
+  fill: #aaaa00; fill-opacity: 0.5;
+  stroke: #aaaa00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l14{
+  fill: none;
+  stroke: #aaccaa;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l15{
+  fill: #ff7777; fill-opacity: 0.5;
+  stroke: #ff7777;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l16{
+  fill: #bfff81; fill-opacity: 0.5;
+  stroke: #bfff81;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l17{
+  fill: none;
+  stroke: #00ffcc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l18{
+  fill: #ce0097; fill-opacity: 0.5;
+  stroke: #ce0097;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l19{
+  fill: none;
+  stroke: #d2d46b;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l20{
+  fill: none;
+  stroke: #ef6158;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l21{
+  fill: none;
+  stroke: #fdb200;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+text {font-family: SansSerif;}
+</style>
+<rect x="0" y="0" width="300" height="150" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.96" />
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(59.5, 44.1648)" >M1</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(108.75, 111.874)" >S</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(108.75, 45.9537)" >D</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(105, 70.6236)" >B</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(51, 70.6236)" >G</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(120, 58.1466)" >nfet_20v0_zvt</text>
+<text fill="#aaaa00"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(121.875, 106.04)" >1 x 20.0 / 0.5</text>
+<path class="l4" d="M105 30L105 48.75"/>
+<path class="l4" d="M105 101.25L105 120"/>
+<path class="l4" d="M88.125 48.75L105 48.75"/>
+<path class="l4" d="M88.125 101.25L97.5 101.25"/>
+<path class="l4" d="M88.125 41.25L88.125 108.75"/>
+<path class="l4" d="M78.75 52.5L88.125 52.5"/>
+<path class="l4" d="M78.75 67.5L88.125 67.5"/>
+<path class="l4" d="M78.75 61.875L88.125 61.875"/>
+<path class="l4" d="M45 75L71.25 75"/>
+<path class="l4" d="M78.75 60L80.625 61.875"/>
+<path class="l4" d="M86.25 61.875L88.125 60"/>
+<path class="l4" d="M86.25 52.5L88.125 54.375"/>
+<path class="l4" d="M78.75 54.375L80.625 52.5"/>
+<path class="l4" d="M86.25 54.375L86.7188 53.9062"/>
+<path class="l4" d="M80.1562 60.4688L80.625 60"/>
+<path class="l4" d="M80.1562 53.9062L80.625 54.375"/>
+<path class="l4" d="M86.25 60L86.7188 60.4688"/>
+<path class="l4" d="M97.5 97.5L105 101.25L97.5 105L97.5 97.5"/>
+<path class="l4" style="fill:none;" d="M71.25 97.5L71.25 52.5L78.75 52.5L78.75 97.5L71.25 97.5"/>
+<path class="l4" d="M81.5625 55.3125L85.3125 55.3125L85.3125 59.0625L81.5625 59.0625L81.5625 55.3125z"/>
+<path class="l5" d="M105 71.25L97.5 75L105 78.75L105 71.25"/>
+<path class="l5" d="M101.25 26.25L108.75 26.25L108.75 33.75L101.25 33.75L101.25 26.25z"/>
+<path class="l5" d="M41.25 71.25L48.75 71.25L48.75 78.75L41.25 78.75L41.25 71.25z"/>
+<path class="l5" d="M101.25 116.25L108.75 116.25L108.75 123.75L101.25 123.75L101.25 116.25z"/>
+<path class="l5" d="M104.883 74.8828L105.117 74.8828L105.117 75.1172L104.883 75.1172L104.883 74.8828z"/>
+</svg>

@@ -25,11 +25,14 @@ Major model output parameters are shown below and compared against the EDR (e-te
 
 
 
-The symbol of the :model:`sky130_fd_pr__nfet_20v0_zvt` (20V NMOS zero-VT FET) is still under development.
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_zvt` (20V NMOS zero-VT FET) is shown below.
+
+|symbol-nfet_20v0_zvt|
 
 The cross-section of the 20V NMOS zero-VT FET is shown below.
 
 |cross-section-nfet_20v0_zvt|
 
+.. |symbol-nfet_20v0_zvt| image:: symbol-nfet_20v0_zvt.svg
 .. |cross-section-nfet_20v0_zvt| image:: cross-section-nfet_20v0_zvt.svg
 
