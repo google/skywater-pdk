@@ -4,7 +4,7 @@ MiM Capacitor
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3__base`, :cell:`sky130_fd_pr__cap_mim_m4__base`
+-  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3`, :cell:`sky130_fd_pr__cap_mim_m4`
 -  Model Names: :model:`sky130_fd_pr__model__cap_mim`, :model:`sky130_fd_pr__cap_mim_m4`
 
 Operating Voltages where SPICE models are valid

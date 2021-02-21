@@ -7,7 +7,7 @@ MiM Capacitor
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3__base`, :cell:`sky130_fd_pr__cap_mim_m4__base`
+-  Cell Name: :cell:`sky130_fd_pr__cap_mim_m3`, :cell:`sky130_fd_pr__cap_mim_m4`
 -  Model Names: :model:`sky130_fd_pr__model__cap_mim`, :model:`sky130_fd_pr__cap_mim_m4`
 
 Operating Voltages where SPICE models are valid
@@ -55,7 +55,7 @@ Varactors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`capbn_b`
+-  Cell Name: :cell:`sky130_fd_pr__cap_var`
 -  Model Name: :model:`sky130_fd_pr__cap_var_lvt`, :model:`sky130_fd_pr__cap_var_hvt`
 -  Model Type: subcircuit
 
@@ -255,7 +255,7 @@ NMOS ESD FET
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__esd_nfet`
 -  Model Name: :model:`sky130_fd_pr__esd_nfet_01v8`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5_nvt`
 
 Operating Voltages where SPICE models are valid
@@ -299,7 +299,7 @@ The cross-section of the ESD NMOS FET is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_g5v0d10v5`
 -  Model Name: :model:`sky130_fd_pr__nfet_g5v0d10v5`
 
 Operating Voltages where SPICE models are valid
@@ -337,7 +337,7 @@ Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
--  Model Name: :model:`sky130_fd_pr__nfet_g5v0d16v0`
+-  Model Name: :model:`sky130_fd_pr__nfet_g11v0d16v0`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -457,7 +457,7 @@ The device shows the p-well inside of a deep n-well, but it can be made either w
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_03v3_nvt`
 -  Model Name: :model:`sky130_fd_pr__nfet_03v3_nvt`
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_03v3_nvt`
@@ -498,7 +498,7 @@ The cross-section of the native devices is shown below.
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_05v0_nvt`
 -  Model Name: :model:`sky130_fd_pr__nfet_05v0_nvt`
 
 Operating Voltages where SPICE models are valid for :model:`sky130_fd_pr__nfet_05v0_nvt`
@@ -750,7 +750,7 @@ The cross-section of the :model:`sky130_fd_pr__npn_11v0` is shown below. The pol
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__pfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__pfet_g5v0d10v5`
 -  Model Name: :model:`sky130_fd_pr__pfet_g5v0d10v5`, :model:`sky130_fd_pr__esd_pfet_g5v0d10v5`
 
 Operating Voltages where SPICE models are valid

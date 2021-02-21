@@ -4,7 +4,7 @@
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__nfet_g5v0d10v5`
 -  Model Name: :model:`sky130_fd_pr__nfet_g5v0d10v5`
 
 Operating Voltages where SPICE models are valid
