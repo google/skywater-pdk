@@ -1,57 +1,31 @@
-waffle_chip,icfb ver 5.0,icfb ver 5.1,,,
-drawing,dg,drw,,,
-pin            ,pn,pin,,,
-boundary       ,by,bnd,,,
-net            ,nt,net,,,
-res            ,rs,res,,,
-label          ,ll,lbl,,,
-cut            ,ct,cut,,,
-short          ,st,sho,,,
-pin            ,pn,pin,,,
-gate           ,ge,gat,,,
-probe          ,pe,pro,,,
-blockage,be,blo,,,
-model,ml,mod,,,
-optionX (X = 1…n),oX (X = 1..n),opt*(X=1..n),,,
-fuse,fe,fus,,,
-mask           ,mk,mas*,,,
-maskAdd        ,md,mas*,,,
-maskDrop       ,mp,mas*,,,
-waffleAdd1     ,w1,waffleAdd1,,,
-waffleAdd2     ,w2,waffleAdd2,,,
-waffleDrop     ,wp,waf,,,
-error          ,er,err,,,
-warning        ,wg,wng,,,
-dummy,dy,dmy,,,
-,,,,,
-Layout Data Name & GDSII No.,Brief description,icfb ver 5.1,"Identifies\n(See WOLF-41, SPR 95111 for more details)",Who,Use
+Layout Data Name & GDSII No.,Brief description,icfb ver 5.1,"Identifies (See WOLF-41, SPR 95111 for more details)",Who,Use
 areaid.sl{81:1},areaid sealring,areaid.sea,The area of the Seal ring,Tech,
 areaid.ww{81:13},areaid Waffle Window,areaid.waf,Used to prevent waffle shifting. When larger than areaid:sl re-defines the placement of waffles. ,Frame,CLDRC
 areaid.dn{81:50},areaid dead Zon,areaid.dea,“deadzone” area in the DieSealR pcell (Seal Ring) for metal stress relief rule checks,Tech,
-areaid.cr{81:51},areaid critCorner,areaid.cri*,For portions of layout that are not to be put in the critical side do to stress constraints. Should be used sparingly and only over the portion of the layout to remove DRC violations. Avoid using a blanket polygon over the entire layout. This layer is to be used instead of using the noCritSideReg verification option in Stress.\n“critical corner” area in the DieSealR pcell (Seal Ring) for metal stress relief rule checks,Tech,Stress
+areaid.cr{81:51},areaid critCorner,areaid.cri*,For portions of layout that are not to be put in the critical side do to stress constraints. Should be used sparingly and only over the portion of the layout to remove DRC violations. Avoid using a blanket polygon over the entire layout. This layer is to be used instead of using the noCritSideReg verification option in Stress. “critical corner” area in the DieSealR pcell (Seal Ring) for metal stress relief rule checks,Tech,Stress
 areaid.cd{81:52},areaid critSid,areaid.cri*,“criticalsid” area in the DieSealR pcell (Seal Ring) for metal stress relief rule checks,Tech,Stress
 areaid.ce{81:2},areaid core,areaid.cor,Memory core (memory cells and approved on-pitch only),Tech,DRC
 areaid.fe{81:3},areaid frame,areaid.fra*,Pads in the frame,Frame,DRC
 areaid.ed{81:19},areaid ESD,areaid.esd,ESD devices- Surrounds any diffusion or ESD nwell tap connected to a signal pad. (only over ESD devices with special poly/tap exemption rules per LFL),"ESD, Des",DRC
-areaid.dt{81:11},areaid die cut,areaid.die,"Location of the die within the frame used in frame builder \ngeneration to create blanking for die and other drop-ins. Also used in cldrc/drc for rules in frame to die edge (waffles, nsm, metals etc)",Frame,Tech
+areaid.dt{81:11},areaid die cut,areaid.die,"Location of the die within the frame used in frame builder generation to create blanking for die and other drop-ins. Also used in cldrc/drc for rules in frame to die edge (waffles, nsm, metals etc)",Frame,Tech
 areaid.mt{81:10},areaid module cut,areaid.mod,Location of e-test modules within the frame used in frame builder generation to create data in scribe lane(example: opaque/clear masks) and to mark location of cells (etest and fab)for frame reports. Also used in drc/cldrc for rules to cell edge.,Frame,Tech
 areaid.ft{81:12},areaid frameRect,areaid.fra*,Boundary of the frame used in frame builder generation to mark boundary of frame. Also used in cldrc/drc for rules to frame edge ,Frame,DRC/CLDRC
 areaid.de{81:23},areaid Diode,areaid.dio,The area occupied by diodes; Used to identify diodes during LVS,All,LVS
 areaid.sc{81:4},areaid standardc,areaid.sta,Cells in the standard cell library (over standard cell IP blocks only) .,Standard cell,DRC
-areaid.st{81:53},areaid SubstrateCut,areaid.sub,"Regions to be considered as isolated substrates (only to designate 2 different resistively connected substrate \nregions, >100um apart)","Tech, Des, ESD","Latch up, LVS, soft"
+areaid.st{81:53},areaid SubstrateCut,areaid.sub,"Regions to be considered as isolated substrates (only to designate 2 different resistively connected substrate regions, >100um apart)","Tech, Des, ESD","Latch up, LVS, soft"
 areaid.en{81:57},areaid extended drain,areaid.ext,Used to identify the extended drain devices ,"Tech, Des, ESD",LVS
 areaid.le{81:60},areaid LV Native,areaid.lvn,Used to identify the 3V Native NMOS versus 5V Native NMOS,"Tech, Des",LVS
 areaid.po{81:81},areaid photo ,areaid.pho,The areaid id is to identify the dnwell photo diode,"Tech, Des",DRC
 areaid.et{81:101},areaid etest,areaid.ete,Used in etest modules,Frame,DRC
-areaid.ld{81:14},areaid low tap density,areaid.low,"6um tap to diff rule will not be checked in this region\nDiffusion >6u from related tap, requiring >50u from sigPadDiff && sigPadMetNtr).\nShould be used sparingly and only over the portion of the layout to remove DRC violations. This layer is not to be used if a tapping solution can be found. This layer can only be used if there is low risk for latchup. This layer will be reviewed during PDQC.",All,DRC
-areaid.ns{81:15),areaid not-crtical side,areaid .not,"critSideReg stress rules will not be checked in this region\nCannot be placed in the critical side – uncommon, or where stress \nerrors can't be fixed)",All,DRC
-areaid.ij{81:17},areaid injection,areaid.inj,Identify all circuits that are susceptible to injection and ensure no signal-pad connected diffusion is within 100u.\n“areaid.inj” encloses any circuitry deemed sensitive (by design team) to injected substrate areaid.inj encloses any PVT compliant circuitry,All,DRC
-areaid.hl{81:63},areaid.hvnwell,areaid.hvn,"Identify nwell hooked to HV but containing FETs with thin oxide; \nPotential difference across the FET terminals is LV\nUsed over lv devices, operating in lv mode, placed in hv nwells, and should NOT have hvi",All,DRC
+areaid.ld{81:14},areaid low tap density,areaid.low,"6um tap to diff rule will not be checked in this region. Diffusion >6u from related tap, requiring >50u from sigPadDiff && sigPadMetNtr). Should be used sparingly and only over the portion of the layout to remove DRC violations. This layer is not to be used if a tapping solution can be found. This layer can only be used if there is low risk for latchup. This layer will be reviewed during PDQC.",All,DRC
+areaid.ns{81:15),areaid not-crtical side,areaid .not,"critSideReg stress rules will not be checked in this region. Cannot be placed in the critical side – uncommon, or where stress errors can't be fixed)",All,DRC
+areaid.ij{81:17},areaid injection,areaid.inj,Identify all circuits that are susceptible to injection and ensure no signal-pad connected diffusion is within 100u. “areaid.inj” encloses any circuitry deemed sensitive (by design team) to injected substrate areaid.inj encloses any PVT compliant circuitry,All,DRC
+areaid.hl{81:63},areaid.hvnwell,areaid.hvn,"Identify nwell hooked to HV but containing FETs with thin oxide; Potential difference across the FET terminals is LV. Used over lv devices, operating in lv mode, placed in hv nwells, and should NOT have hvi",All,DRC
 areaid.re{81:125},areaid rf diode,areaid.rfd,Defines rf diodes that need to be extracted with series resistance (memo GCZ-124/125),All,LVS
 areaid.rd{81:24},areaid.rdlprobepad,areaid.rdl,Ignore RDL keepouts when opening up PMM2 ,All,CLDRC
-areaid.sf{81:6},areaid sigPadDiff,,Identify all srdrn diffusions and tap which are intended to be \nconnected to signal pad (io Nets).  Goes over diffusions connected to a signal pad - including through a poly resistor,All,LATCHUP
+areaid.sf{81:6},areaid sigPadDiff,,Identify all srdrn diffusions and tap which are intended to be connected to signal pad (io Nets). Goes over diffusions connected to a signal pad - including through a poly resistor,All,LATCHUP
 areaid.sl{81:7},areaid.sigPadWell,,"Identify all nwells and pwells which are intended to be connected to signal pad (io Nets).  Goes over wells with tap connected to a signal pad, including through a poly resistor",All,LATCHUP
-areaid.sr{81:8},areaid sigPadMetNtr,,"Identify all srcdrn, tap, and wells which are intended to be \nmetallically connected to signal pad (io Nets) not through a resistor.  \nMust be used in unison with areaid.sigPadDifff or areaid.sigPadWell.\nUsed with one of the above 2 areaids, nodes metallically \nconnection to a sigPad (not through res)",All,LATCHUP
+areaid.sr{81:8},areaid sigPadMetNtr,,"Identify all srcdrn, tap, and wells which are intended to be metallically connected to signal pad (io Nets) not through a resistor. Must be used in unison with areaid.sigPadDifff or areaid.sigPadWell. Used with one of the above 2 areaids, nodes metallically connection to a sigPad (not through res)",All,LATCHUP
 inductor:dg{82:24},ID layer for inductor,,Inductors,"Tech, Des",DRC
 "t1,2,3 {82:26, 27, 28}",terminal labels for inductor,,Labels required by inductor terminals to be recognized as device,"Tech, Des",LVS
 poly:ml {66:83},poly device model,,Model name extraction,"Tech, Des, ESD",LVS
@@ -78,5 +52,3 @@ cypsbr.dg {51:44},No phaseshift allowed,cypsbr.dg,Phaseshift layer common to all
 areaid:ag{81:79},analog,areaid.ana,Used to identify analog circuits,All,Analog
 natfet.dg {124:21},DEFETs,natfet.dg,"Add TUNM for SONOS channel implants. See SPR 117559, SGL-529",All,DRC/CLDRC
 areaid:lw,Ultra High voltage id layer, ,Areaid low voltage: UHV box to put all HV/LV curcuits in,All,Analog
-"* To distinguish the layers, the full name of the layer needs to be turned on in the LSW window",,,,,
-"As the layers are displayed in LSW window in icfb version 5.0; For purpose layer displayed in version 5.1, pls refer table C3",,,,,
