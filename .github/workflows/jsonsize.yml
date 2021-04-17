@@ -1,0 +1,20 @@
+name: JSON size opt
+
+on:
+  push:
+
+jobs:
+
+  json:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - run: |
+        for d in ./libraries/*; do
+          git submodule update --init "$d"/latest
+        done
+
+    - run: ./jsonsize.py
