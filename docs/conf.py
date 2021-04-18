@@ -154,6 +154,10 @@ html_theme = "sphinx_symbiflow_theme"
 # documentation.
 #
 html_theme_options = {
+    "base_url": "https://skywater-pdk.readthedocs.io/",
+    "github_url": "https://github.com/google/skywater-pdk",
+    "repo_name": "SkyWater Open Source PDK",
+    "repo_type": "github",
     # Customize css colors.
     #
     # Primary colors:
@@ -170,6 +174,15 @@ html_theme_options = {
     # Hide the symbiflow links
     'hide_symbiflow_links': True,
     'license_url' : 'https://www.apache.org/licenses/LICENSE-2.0',
+
+    # skywater website
+    "nav_links": [
+        {
+            "href": "https://www.skywatertechnology.com/",
+            "internal": False,
+            "title": "SkyWater Technology",
+        },
+    ],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
