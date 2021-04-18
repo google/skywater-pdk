@@ -160,7 +160,7 @@ html_theme_options = {
     # red, pink, purple, deep-purple, indigo, blue, light-blue, cyan,
     # teal, green, light-green, lime, yellow, amber, orange, deep-orange,
     # brown, grey, blue-grey, white
-    'color_primary': 'green',
+    'color_primary': 'light-green',
 
     # Accent colors:
     # red, pink, purple, deep-purple, indigo, blue, light-blue, cyan,
