@@ -6,7 +6,7 @@
 [submodule "libraries/sky130_fd_pr/latest"]
 	path = libraries/sky130_fd_pr/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = false
 [submodule "libraries/sky130_fd_pr/v0.20.1"]
@@ -68,7 +68,7 @@
 [submodule "libraries/sky130_fd_sc_hd/latest"]
 	path = libraries/sky130_fd_sc_hd/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git
-	branch = master
+	branch = main
 	shallow = true
 [submodule "libraries/sky130_fd_sc_hd/v0.0.2"]
 	path = libraries/sky130_fd_sc_hd/v0.0.2
@@ -85,7 +85,7 @@
 [submodule "libraries/sky130_fd_sc_hdll/latest"]
 	path = libraries/sky130_fd_sc_hdll/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hdll.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_hdll/v0.1.1"]
@@ -105,7 +105,7 @@
 [submodule "libraries/sky130_fd_sc_hs/latest"]
 	path = libraries/sky130_fd_sc_hs/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hs.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_hs/v0.0.2"]
@@ -125,7 +125,7 @@
 [submodule "libraries/sky130_fd_sc_ms/latest"]
 	path = libraries/sky130_fd_sc_ms/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_ms.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_ms/v0.0.2"]
@@ -145,7 +145,7 @@
 [submodule "libraries/sky130_fd_sc_ls/latest"]
 	path = libraries/sky130_fd_sc_ls/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_ls.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_ls/v0.1.1"]
@@ -165,7 +165,7 @@
 [submodule "libraries/sky130_fd_sc_lp/latest"]
 	path = libraries/sky130_fd_sc_lp/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_lp.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_lp/v0.0.2"]
@@ -185,7 +185,7 @@
 [submodule "libraries/sky130_fd_sc_hvl/latest"]
 	path = libraries/sky130_fd_sc_hvl/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hvl.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_sc_hvl/v0.0.3"]
@@ -211,7 +211,7 @@
 [submodule "libraries/sky130_fd_io/latest"]
 	path = libraries/sky130_fd_io/latest
 	url = https://github.com/google/skywater-pdk-libs-sky130_fd_io.git
-	branch = master
+	branch = main
 	shallow = true
 	fetchRecurseSubmodules = true
 [submodule "libraries/sky130_fd_io/v0.2.1"]
