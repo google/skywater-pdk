@@ -15,11 +15,11 @@
 # SPDX-License-Identifier: Apache-2.0
 name: skywater-pdk-scripts
 channels:
-- symbiflow
-- defaults
+  - symbiflow
+  - defaults
 dependencies:
-- python=3.8
-- pip
-# Packages installed from PyPI
-- pip:
-  - -r file:requirements.txt
+  - python=3.8
+  - pip
+  # Packages installed from PyPI
+  - pip:
+    - -r file:requirements.txt
