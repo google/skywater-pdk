@@ -21,19 +21,24 @@ ifeq (,$(FULL_VERSION))
 $(error "Version value could not be determined. Make sure you fetch the tags.")
 endif
 
-submodules: libraries/sky130_fd_sc_hd/$(SUBMODULE_VERSION)/.git libraries/sky130_fd_sc_hdll/$(SUBMODULE_VERSION)/.git libraries/sky130_fd_sc_hs/$(SUBMODULE_VERSION)/.git libraries/sky130_fd_sc_ms/$(SUBMODULE_VERSION)/.git libraries/sky130_fd_sc_ls/$(SUBMODULE_VERSION)/.git
+LIBRARIES = $(sort $(notdir $(wildcard libraries/sky130_*)))
 
-libraries/sky130_fd_sc_hd/%/.git: .gitmodules
-	git submodule update --init $(@D)
+LIBS_DOT_GIT = $(addsuffix /$(SUBMODULE_VERSION)/.git,$(addprefix libraries/,$(LIBRARIES)))
 
-libraries/sky130_fd_sc_hdll/%/.git: .gitmodules
-	git submodule update --init $(@D)
+libraries-info:
+	@echo "The following libraries exist:"
+	@for L in $(LIBRARIES); do \
+		LD=libraries/$$L/$(SUBMODULE_VERSION); \
+		echo " * $$L"; \
+		echo "    $$(git submodule status $$LD)"; \
+	done
+	@echo $(LIBS_DOT_GIT)
 
-libraries/sky130_fd_sc_hs/%/.git: .gitmodules
-	git submodule update --init $(@D)
+submodules: $(LIBS_DOT_GIT)
 
-libraries/sky130_fd_sc_ms/%/.git: .gitmodules
-	git submodule update --init $(@D)
+define LIB_template
+libraries/$(1)/%/.git: .gitmodules
+	git submodule update --init $$(@D)
+endef
 
-libraries/sky130_fd_sc_ls/%/.git: .gitmodules
-	git submodule update --init $(@D)
+$(foreach lib,$(LIBRARIES), $(eval $(call LIB_template,$(lib))))
