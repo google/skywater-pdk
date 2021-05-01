@@ -146,3 +146,8 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
 
     libraries/sky130_ef_io/README
 
+.. toctree::
+    :maxdepth: 1
+    :name: Cells in libraries cross-index
+
+    cell-index

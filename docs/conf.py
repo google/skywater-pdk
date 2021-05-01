@@ -31,9 +31,9 @@
 import docutils
 import os
 import re
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+sys.path.insert(0, os.path.abspath('./_ext'))
 
 # -- Project information -----------------------------------------------------
 
@@ -65,6 +65,8 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinxcontrib_hdl_diagrams',
+    'skywater_pdk.cells.cross_index',
+    'skywater_pdk.cells.generate.readme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -420,3 +422,6 @@ def setup(app):
     app.add_role('lib', lib_role)
     app.add_role('cell', cell_role)
     app.add_role('model', cell_role)
+
+    app.emit("cells_generate_readme", 'contents/libraries/*/cells/*')
+
