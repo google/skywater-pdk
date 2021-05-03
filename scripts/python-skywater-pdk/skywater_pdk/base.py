@@ -22,7 +22,8 @@ import os
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
 from enum import Enum
-from typing import Optional, Union, Tuple
+from typing import Optional, Union, Tuple, Iterator
+from pathlib import Path
 
 from .utils import comparable_to_none
 from .utils import dataclass_json_passthru_config as dj_pass_cfg
@@ -156,7 +157,6 @@ def parse_pathname(pathname):
         return lib, filename
 
 
-
 def parse_filename(pathname) -> Tuple[LibraryOrCell, Optional[str], Optional[str]]:
     """Extract library and module name from filename.
 
@@ -256,6 +256,50 @@ def parse_filename(pathname) -> Tuple[LibraryOrCell, Optional[str], Optional[str
 
     return (library, extra, extension)
 
+
+def convert_to_path(libraryorcell: LibraryOrCell, libdir : str):
+    """Create path to the library or cell from the objects
+
+    Parameters
+    ----------
+    libraryorcell : Library or Cell
+        Library or Cell information
+    libdir : str
+        Path to the root directory of the Skywater PDK libraries
+
+    Returns
+    -------
+    str : Path to the library (or cell) directory
+
+    See Also
+    --------
+    skywater_pdk.base.parse_pathname
+    skywater_pdk.base.Cell
+    skywater_pdk.base.Library
+
+    Examples
+    --------
+    
+    >>> lib = parse_pathname('libraries/sky130_fd_pr/v0.0.1')[0]
+    >>> convert_to_path(lib, 'libraries')
+    'libraries/sky130_fd_pr/v0.0.1'
+    >>> cell = parse_pathname('libraries/sky130_fd_pr/v0.20.1/cells/cap_mim_m3/sky130_fd_pr__cap_mim_m3_1.model.spice')[0]
+    >>> convert_to_path(cell, 'libraries')
+    'libraries/sky130_fd_pr/v0.20.1/cells/cap_mim_m3'
+    """
+    assert type(libraryorcell) is Library or type(libraryorcell) is Cell
+    libdir = Path(libdir)
+    if type(libraryorcell) is Library:
+        version = (f'v{libraryorcell.version.fullname}' 
+                   if libraryorcell.version else 'latest')
+        return str(libdir / libraryorcell.fullname / version)
+    if type(libraryorcell) is Cell:
+        library = libraryorcell.library
+        version = (f'v{library.version.fullname}'
+                   if library.version else 'latest')
+        libname = library.fullname
+        return str(libdir / libname / version / 'cells' / libraryorcell.name)
+        
 
 SEPERATOR = "__"
 
@@ -474,6 +518,7 @@ class Library:
     type: LibraryType = dj_pass_cfg()
     name: str = ''
     version: Optional[LibraryVersion] = None
+    rootdir: str = ''
 
     @property
     def fullname(self):
@@ -486,7 +531,7 @@ class Library:
         return "_".join(output)
 
     @classmethod
-    def parse(cls, s):
+    def parse(cls, s, libroot=''):
         if SEPERATOR in s:
             raise ValueError(
                 "Found separator '__' in library name: {!r}".format(s))
@@ -502,7 +547,64 @@ class Library:
         kw['type'] = LibraryType.parse(bits.pop(0))
         if bits:
             kw['name'] = bits.pop(0)
+        kw['rootdir'] = libroot
         return cls(**kw)
+
+    @classmethod
+    def get_libraries(cls, libroot : str = '') -> Iterator['Library']:
+        """
+        Lists libraries present in the libroot directory.
+
+        Parameters
+        ----------
+        libroot : str
+            Path to the Skywater PDK libraries
+
+        Yields
+        ------
+        Library : next library object
+        """
+        libroot = Path(libroot)
+        assert libroot.is_dir()
+        for libdir in libroot.iterdir():
+            if libdir.is_dir():
+                yield cls.parse(libdir.name, libroot)
+
+    def get_versions(self) -> Iterator['LibraryVersion']:
+        """
+        Lists versions of the library.
+
+        Yields
+        ------
+        LibraryVersion : next version of the library
+        """
+        libdir = Path(self.rootdir) / self.fullname
+        for version in libdir.iterdir():
+            if version.is_dir() and version.name != 'latest':
+                yield LibraryVersion.parse(version.name)
+
+    def get_cells(self) -> Iterator['Cell']:
+        """
+        Lists cells for the library.
+
+        If the version of the library is not specified, the cells for the
+        'latest' version are listed.
+
+        Yields
+        ------
+        Cell : next cell in the library
+        """
+        libdir = Path(self.rootdir) / self.fullname
+        version = 'latest'
+        if self.version:
+            version = f'v{self.version.fullname}'
+        libdir = libdir / version / 'cells'
+        if libdir.is_dir():
+            for cell in libdir.iterdir():
+                if cell.is_dir():
+                    cell = Cell.parse(cell.name)
+                    cell.library = self
+                    yield cell
 
 
 @dataclass_json
@@ -554,6 +656,22 @@ class Cell:
         kw['name'] = s
         return cls(**kw)
 
+    def get_matching_files(self, pattern) -> Iterator[str]:
+        """
+        Yields files for a matching pattern for a given cell if present.
+
+        Parameters
+        ----------
+        pattern : str
+            The file pattern to look for
+
+        Yields
+        ------
+        str : path to files for a given cell
+        """
+        celldir = Path(convert_to_path(self, self.library.rootdir))
+        for filename in celldir.glob(pattern):
+            yield str(filename)
 
 
 if __name__ == "__main__":
