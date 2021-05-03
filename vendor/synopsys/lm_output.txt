@@ -1,0 +1,19 @@
+ 
+                              Library Manager (TM)
+
+                  Version R-2020.09 for linux64 - Sep 01, 2020
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+lm_shell> exit
+Maximum memory usage for this session: 63.54 MB
+CPU usage for this session:      4 seconds (  0.00 hours)
+Elapsed time for this session:     15 seconds (  0.00 hours)
+Thank you for using Library Manager.
+
