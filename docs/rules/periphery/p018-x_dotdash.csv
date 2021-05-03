@@ -1,5 +1,5 @@
 Name,Description,Flags,Value,Unit
-(x.1a),"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2 must be on a grid of mm",,0.001,mm
+(x.1a),"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2, capm and cap2m must be on a grid of mm",,0.001,mm
 (x.1b),Data for SKY130 layout and mask on all layers except those mentioned in 1a must be on a grid of mm (except inside Seal ring),,0.005,mm
 (x.2),Angles permitted on: diff,,N/A,N/A
 (x.2),"Angles permitted on: diff except for:

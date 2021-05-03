@@ -91,6 +91,7 @@ for l in open('periphery.csv', encoding='utf8'):
 no_pics = [
     'p024-hvtr_dotdash.svg',
     'p033-licon_dotdash.svg',
+    'p036-cap2m_dotdash.svg',
     'p042-via3_dotdash.svg',
     'p043-nsm_dotdash.svg',
     'p044-m5_dotdash.svg',

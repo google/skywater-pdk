@@ -5,7 +5,7 @@ Rule,Section G2: Design Rules for SKY130*,Use,
 , ,,
 (x.-),General,,
 ,,,
-1a,"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2 must be on a grid of mm",,0.001,mm
+1a,"p1m.md (OPC), DECA and AMKOR layers (pi1.dg, pmm.dg, rdl.dg, pi2.dg, ubm.dg, bump.dg) and mask data for p1m, met1, via, met2, capm and cap2m must be on a grid of mm",,0.001,mm
 1b,Data for SKY130 layout and mask on all layers except those mentioned in 1a must be on a grid of mm (except inside Seal ring),,0.005,mm
 2,Angles permitted on: diff,,N/A,N/A
  ,"Angles permitted on: diff except for:\n- diff inside ""advSeal_6µm* OR cuPillarAdvSeal_6µm*"" pcell, \n- diff rings around the die at min total L>1000 µm and W=0.3 µm",,n x 90,deg
@@ -742,18 +742,39 @@ irdrop.3,"For n > 100 contacts on the same connector, mcon area pre- and post- C
 (capm.-),MIM Capacitor (Capm),,sky130
 ,Function: Defines MIM capacitor,,
 ,,,
-1,Min width of capm,,N/A,N/A
-2a,Min spacing of capm to capm,,N/A,N/A
-2b,Minimum spacing of capacitor bottom_plate to bottom plate,,N/A,N/A
-3,Minimum enclosure of capm (top_plate) by met2,,N/A,N/A
-4,Min enclosure of via2 by capm,,N/A,N/A
-5,Min spacing between capm and via2,,N/A,N/A
-6,Maximum Aspect Ratio (Length/Width),,N/A,N/A
-7,Only rectangular capacitors are allowed,,N/A,N/A
-8,"Min space, no overlap, between via and capm",,N/A,N/A
-10,"capm must not straddle nwell, diff, tap, poly, li1 and met1 (Rule exempted for capm overlapping capm_2t.dg)",TC,N/A,N/A
-11,Min spacing between capm to (met2 not overlapping capm),,N/A,N/A
-12,Max area of capm (um^2),,N/A,N/A
+1,Min width of capm,,1,µm
+2a,Min spacing of capm to capm,,0.84,µm
+2b,Minimum spacing of capacitor bottom_plate to bottom plate,,1.2,µm
+3,Minimum enclosure of capm (top_plate) by met3,,0.14,µm
+4,Min enclosure of via3 by capm,,0.14,µm
+5,Min spacing between capm and via3,,0.14,µm
+6,Maximum Aspect Ratio (Length/Width),,20,
+7,Only rectangular or L-shaped capacitors allowed,,,
+8,"Min space, no overlap, between via2 and capm",,0.14,µm
+11,Min spacing between capm to (met3 not overlapping capm),,0.5,µm
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+(cap2m.-),MIM Capacitor (Cap2m),,sky130
+,Function: Defines MIM capacitor,,
+,,,
+1,Min width of cap2m,,1,µm
+2a,Min spacing of cap2m to cap2m,,0.84,µm
+2b,Minimum spacing of capacitor bottom_plate to bottom plate,,1.2,µm
+3,Minimum enclosure of cap2m (top_plate) by met4,,0.14,µm
+4,Min enclosure of via4 by cap2m,,0.2,µm
+5,Min spacing between cap2m and via3,,0.2,µm
+6,Maximum Aspect Ratio (Length/Width),,20,
+7,Only rectangular or L-shaped capacitors allowed,,,
+8,"Min space, no overlap, between via3 and cap2m",,0.14,µm
+11,Min spacing between cap2m to (met3 not overlapping cap2m),,0.5,µm
 ,,,
 ,,,
 ,,,
