@@ -22,4 +22,4 @@ dependencies:
 - pip
 # Packages installed from PyPI
 - pip:
-  - -r file:requirements.txt
+  - -r requirements.txt
