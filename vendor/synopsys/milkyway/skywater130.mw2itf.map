@@ -1,0 +1,14 @@
+conducting_layers
+	metal1	li1		
+	metal2	met1 	
+	metal3	met2 	
+	metal4	met3 	
+	metal5	met4 	
+	metal6	met5 	
+via_layers
+	licon1	licon
+	mcon	mcon	
+	via		via	
+	via2	via2	
+	via3	via3	
+	via4	via4	
