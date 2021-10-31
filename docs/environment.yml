@@ -16,7 +16,6 @@
 name: skywater-pdk-docs
 channels:
 - symbiflow
-- conda-forge
 - defaults
 dependencies:
 - python=3.8
