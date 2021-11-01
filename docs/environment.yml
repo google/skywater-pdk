@@ -25,3 +25,4 @@ dependencies:
 # Packages installed from PyPI
 - pip:
   - -r requirements.txt
+  - ../scripts/python-skywater-pdk
