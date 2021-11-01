@@ -149,11 +149,15 @@ pygments_style = None
 #
 html_theme = "sphinx_symbiflow_theme"
 
+html_logo = "_static/skywater-pdk-logo-top.png"
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 # https://sphinx-symbiflow-theme.readthedocs.io/en/latest/customization.html
 html_theme_options = {
+    'nav_title': 'SkyWater SKY130 PDK',
+
     'color_primary': 'light-green',
     'color_accent': 'teal',
 
