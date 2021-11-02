@@ -166,6 +166,7 @@ html_theme_options = {
     'repo_name': 'google/skywater-pdk',
 
     'globaltoc_depth': 4,
+    'globaltoc_collapse': False,
 
     # Hide the symbiflow links
     'hide_symbiflow_links': True,
