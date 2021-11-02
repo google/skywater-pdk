@@ -165,12 +165,6 @@ html_theme_options = {
     'github_url': 'https://github.com/google/skywater-pdk',
     'repo_name': 'google/skywater-pdk',
 
-#    'nav_links': [
-#        ('Home', 'index', False, 'home'),
-#        ("GitHub", "https://github.com/google/skywater-pdk", True, 'code'),
-#        ("SkyWater", "https://www.skywatertechnology.com/", True, 'link'),
-#    ],
-
     'globaltoc_depth': 4,
 
     # Hide the symbiflow links
