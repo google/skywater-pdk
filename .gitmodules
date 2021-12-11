@@ -160,7 +160,6 @@
 	branch = branch-0.1.0
 	shallow = true
 	fetchRecurseSubmodules = false
-
 # sky130_fd_sc_lp
 [submodule "libraries/sky130_fd_sc_lp/latest"]
 	path = libraries/sky130_fd_sc_lp/latest
@@ -244,3 +243,32 @@
 	branch = branch-0.0.1
 	shallow = true
 	fetchRecurseSubmodules = false
+#sky130_fd_pr_reram
+[submodule "libraries/sky130_fd_pr_reram/v0.0.9"]
+	path = libraries/sky130_fd_pr_reram/v0.0.9
+	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr_reram.git
+	branch = branch-0.0.9
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_pr_reram/v2.0.1"]
+	path = libraries/sky130_fd_pr_reram/v2.0.1
+	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr_reram.git
+	branch = branch-2.0.1
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_pr_reram/v2.0.2"]
+	path = libraries/sky130_fd_pr_reram/v2.0.2
+	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr_reram.git
+	branch = branch-2.0.2
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_pr_reram/v2.0.3"]
+	path = libraries/sky130_fd_pr_reram/v2.0.3
+	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr_reram.git
+	branch = branch-2.0.3
+	shallow = true
+	fetchRecurseSubmodules = false
+[submodule "libraries/sky130_fd_pr_reram/latest"]
+	path = libraries/sky130_fd_pr_reram/latest
+	url = https://github.com/google/skywater-pdk-libs-sky130_fd_pr_reram.git
+	branch = main
