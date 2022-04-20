@@ -71,9 +71,19 @@
 
 
 .. toctree::
+    :caption: Simulation
+    :name: sim
     :hidden:
 
-    sim
+    sim/index
+    With Cadence Spectre <sim/spectre>
+    With ngspice <sim/ngspice>
+    With your design flow? <analog/new>
+
+
+.. toctree::
+    :hidden:
+
     verification
 
     Python API <python-api/index>
