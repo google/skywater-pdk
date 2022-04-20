@@ -61,9 +61,18 @@
 
 
 .. toctree::
+    :caption: Digital Design
+    :name: digital
     :hidden:
 
-    digital
+    With Cadence Innovus <digital/innovus>
+    With OpenROAD <digital/openroad>
+    With your design flow? <digital/new>
+
+
+.. toctree::
+    :hidden:
+
     sim
     verification
 
