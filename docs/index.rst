@@ -1,8 +1,41 @@
 .. include:: common.inc
 
 
+Welcome to SkyWater SKY130 PDK's documentation!
+===============================================
+
+.. warning::
+    This documentation is currently a **work in progress**.
+
+.. image:: _static/skywater-pdk-logo.png
+    :align: center
+    :alt: SkyWater PDK Logo Image.
+
+
+Resources
+---------
+
+The latest SkyWater SKY130 PDK design resources can be downloaded from the following repositories:
+
+* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
+* `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
+* `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
+
+
+Indices and tables
+------------------
+
+* :ref:`glossary`
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+Table of contents
+-----------------
+
 .. toctree::
-    :hidden:
+    :maxdepth: -1
 
     versioning
     known_issues
@@ -11,8 +44,7 @@
 .. toctree::
     :caption: Process Design Rules
     :name: rules
-    :maxdepth: 2
-    :hidden:
+    :maxdepth: -1
 
     rules/background
     rules/masks
@@ -39,8 +71,7 @@
 .. toctree::
     :caption: PDK Contents
     :name: pdk-contents
-    :maxdepth: 4
-    :hidden:
+    :maxdepth: -1
 
     Libraries <contents/libraries>
     File Types <contents/file_types>
@@ -49,7 +80,7 @@
 .. toctree::
     :caption: Analog Design
     :name: analog
-    :hidden:
+    :maxdepth: -1
 
     With Cadence Virtuoso <analog/virtuoso>
     With MAGIC <analog/magic>
@@ -62,7 +93,7 @@
 .. toctree::
     :caption: Digital Design
     :name: digital
-    :hidden:
+    :maxdepth: -1
 
     With Cadence Innovus <digital/innovus>
     With OpenROAD <digital/openroad>
@@ -72,7 +103,7 @@
 .. toctree::
     :caption: Simulation
     :name: sim
-    :hidden:
+    :maxdepth: -1
 
     sim/index
     With Cadence Spectre <sim/spectre>
@@ -83,7 +114,7 @@
 .. toctree::
     :caption: Physical & Design Verification
     :name: verification
-    :hidden:
+    :maxdepth: -1
 
     verification/index
     Automated Design Rule (DRC) Checking <verification/drc>
@@ -100,7 +131,7 @@
 
 .. toctree::
     :caption: Appendix
-    :hidden:
+    :maxdepth: -1
 
     Python API <python-api/index>
 
@@ -111,33 +142,3 @@
     partners
 
     references
-
-
-Welcome to SkyWater SKY130 PDK's documentation!
-===============================================
-
-.. warning::
-    This documentation is currently a **work in progress**.
-
-.. image:: _static/skywater-pdk-logo.png
-    :align: center
-    :alt: SkyWater PDK Logo Image.
-
-
-Resources
-=========
-
-The latest SkyWater SKY130 PDK design resources can be downloaded from the following repositories:
-
-* `On Github @ google/skywater-pdk <https://github.com/google/skywater-pdk>`_
-* `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
-* `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
-
-
-Indices and tables
-==================
-
-* :ref:`glossary`
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
