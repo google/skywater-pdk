@@ -5,7 +5,6 @@
     :hidden:
 
     versioning
-    Current Status <status>
     known_issues
 
 
@@ -123,15 +122,6 @@ Welcome to SkyWater SKY130 PDK's documentation!
 .. image:: _static/skywater-pdk-logo.png
     :align: center
     :alt: SkyWater PDK Logo Image.
-
-
-.. _CurrentStatus:
-
-Current Status - |current-status|
-=================================
-
-.. include:: status.rst
-    :start-after: current_status_text
 
 
 Resources
