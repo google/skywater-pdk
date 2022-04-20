@@ -100,6 +100,7 @@
 
 
 .. toctree::
+    :caption: Appendix
     :hidden:
 
     Python API <python-api/index>
