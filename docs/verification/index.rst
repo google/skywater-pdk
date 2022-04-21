@@ -1,7 +1,7 @@
 Overview
 ========
 
-.. todo::
+.. TODO::
     The SkyWater SKY130 PDK provides automated physical and design rule checking decks.
 
     These verification rules provide;
@@ -18,13 +18,12 @@ Overview
      * :term:`Layout Verse Schematic` (:term`LVS`) Verification
      * :term:`Parasitic Extraction` (:term:`PEX`)
 
-TODO: Calibre Decks
--------------------
+.. TODO::
+    Calibre Decks
 
-Put stuff here.
+    Put stuff here.
 
-TODO: MAGIC Decks
------------------
+.. TODO::
+    MAGIC Decks
 
-Put stuff here.
-
+    Put stuff here.

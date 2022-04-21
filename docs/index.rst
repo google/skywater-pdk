@@ -106,16 +106,9 @@ Table of contents
     :maxdepth: -1
 
     verification/index
-    Automated Design Rule (DRC) Checking <verification/drc>
-    - With Mentor Calibre
-    - With MAGIC
-    - With Klayout
-    Layout Versus Schematic (LVS) Checking <verification/lvs>
-    - With Mentor Calibre
-    - With netgen
-    Parasitic Extraction (PEX) <verification/pex>
-    - With Calibre xRC
-    - With MAGIC
+    verification/drc/index
+    verification/lvs/index
+    verification/pex/index
 
 
 .. toctree::
