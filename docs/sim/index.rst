@@ -1,5 +1,5 @@
-Overview
-========
+Simulation
+##########
 
 The SkyWater SKY130 PDK provides two types of simulation models.
 :term:`Spectre models` for usage with :term:`Cadence Spectre` and :term:`Spice models` which are compatible with

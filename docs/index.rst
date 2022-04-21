@@ -67,26 +67,12 @@ Table of contents
 
 
 .. toctree::
-    :caption: Analog Design
+    :caption: Design and Simulation
     :name: analog
     :maxdepth: -1
 
     analog/index
-
-
-.. toctree::
-    :caption: Digital Design
-    :name: digital
-    :maxdepth: -1
-
     digital/index
-
-
-.. toctree::
-    :caption: Simulation
-    :name: sim
-    :maxdepth: -1
-
     sim/index
 
 
