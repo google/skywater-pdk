@@ -20,7 +20,6 @@ channels:
 dependencies:
 - python=3.8
 - pip
-- yosys
 - netlistsvg
 # Packages installed from PyPI
 - pip:
