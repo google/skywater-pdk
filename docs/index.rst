@@ -79,9 +79,7 @@ Table of contents
     :name: digital
     :maxdepth: -1
 
-    With Cadence Innovus <digital/innovus>
-    With OpenROAD <digital/openroad>
-    With your design flow? <digital/new>
+    digital/index
 
 
 .. toctree::
