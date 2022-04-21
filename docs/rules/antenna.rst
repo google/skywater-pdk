@@ -1,6 +1,3 @@
-Antenna Rules
-=============
-
 Antenna rules specify the maximum allowed ratio of interconnect area exposed to plasma etch to active gate poly area that is electrically connected to it when the interconnect is etched. Interconnect areas exposed to plasma etch are:
 
 * bottom areas of Licon, Mcon, Via, Via2

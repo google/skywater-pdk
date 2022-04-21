@@ -48,23 +48,12 @@ Table of contents
 
     rules/background
     rules/masks
-
     rules/assumptions
-
     rules/layers
-
-    rules/summary
-
-    rules/periphery
-    rules/wlcsp
-    rules/hv
-
-    rules/antenna
-
+    rules/index
+    rules/methodologies/index
     rules/rcx
-
     rules/device-details
-
     rules/errors
 
 
