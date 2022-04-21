@@ -5,5 +5,5 @@ PDK Contents
     :name: pdk-contents
     :maxdepth: 4
 
-    Libraries <contents/libraries>
+    Libraries <contents/libraries/index>
     File Types <contents/file_types>

@@ -7,7 +7,7 @@
     Current Status <status>
     known_issues
 
-    Design Rules <rules>
+    Design Rules <rules/index>
 
     contents
 

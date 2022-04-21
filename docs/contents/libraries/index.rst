@@ -68,7 +68,7 @@ Third party developers are encourage to create new and interesting libraries for
     :caption: Foundry provided Primitives
     :name: sky130-lib-foundry-primitives
 
-    libraries/sky130_fd_pr_*/README
+    sky130_fd_pr_*/README
 
 .. _sky130-lib-standardcells:
 
@@ -85,8 +85,8 @@ Third party developers are encourage to create new and interesting libraries for
     :maxdepth: 1
     :name: sky130-lib-foundry-sc
 
-    libraries/foundry-provided
-    libraries/sky130_fd_sc_*/README
+    foundry-provided
+    sky130_fd_sc_*/README
 
 .. _sky130-lib-standardcells-thirdparty:
 
@@ -97,7 +97,7 @@ Third party developers are encourage to create new and interesting libraries for
     :maxdepth: 1
     :name: sky130-lib-thirdparty-sc
 
-    libraries/sky130_osu_sc/README
+    sky130_osu_sc/README
 
 .. _sky130-lib-buildspace:
 
@@ -117,7 +117,7 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :caption: Foundry provided Build Spaces
     :name: sky130-lib-foundry-sp
 
-    libraries/sky130_fd_sp_*/README
+    sky130_fd_sp_*/README
 
 .. _sky130-lib-io:
 
@@ -133,7 +133,7 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :maxdepth: 1
     :name: sky130-lib-foundry-io
 
-    libraries/sky130_fd_io/README
+    sky130_fd_io/README
 
 .. _sky130-lib-io-thirdparty:
 
@@ -144,5 +144,4 @@ The SKY130 currently offers two :lib_type:`build space` libraries. Build space l
     :maxdepth: 1
     :name: sky130-lib-thirdparty-io
 
-    libraries/sky130_ef_io/README
-
+    sky130_ef_io/README
