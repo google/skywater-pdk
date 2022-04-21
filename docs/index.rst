@@ -95,9 +95,6 @@ Table of contents
     :maxdepth: -1
 
     sim/index
-    With Cadence Spectre <sim/spectre>
-    With ngspice <sim/ngspice>
-    With your design flow? <analog/new>
 
 
 .. toctree::
