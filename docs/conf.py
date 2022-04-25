@@ -65,7 +65,11 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinxcontrib_hdl_diagrams',
+    'sphinxcontrib.bibtex',
 ]
+
+bibtex_default_style = 'plain'
+bibtex_bibfiles = ['refs.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
