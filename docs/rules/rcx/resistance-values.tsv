@@ -6,18 +6,20 @@ Metal2	125
 Metal3	47
 Metal4	47
 Metal5	29
-Deep nwell	2200000
-Pwell (in deep nwell)	3050000
-Nwell	1700000
-N-diffusion	120000
-P-diffusion	197000
-HV N-diffusion	114000
-HV P-diffusion	191000
-XHR poly resistor	319800
-UHR poly resistor	2000000
-LICON contact	15000
-MCON contact	152000
-VIA	4500
-VIA2	3410
-VIA3	3410
-VIA4	380
+Deep nwell	2200000					
+Pwell (in deep nwell)	3050000					
+Nwell	1700000					
+N-diffusion	120000					
+P-diffusion	197000					
+HV N-diffusion	114000					
+HV P-diffusion	191000					
+XHR poly resistor	319800					
+UHR poly resistor	2000000					
+LICON contact (poly)	152000					
+LICON contact (ndiff)	185000					
+LICON contact (pdiff)	585000					
+MCON contact	9300					
+VIA	4500					
+VIA2	3410					
+VIA3	3410					
+VIA4	380					
