@@ -241,6 +241,10 @@
   description: "Issues with using OpenROAD with the PDK."
   color: "054caa"
 
+- name: "tools-ngspice"
+  description: "Issues with using Ngspice with the PDK."
+  color: "054caa"
+  
 # Partially open or with closed source dependencies.
 - name: "tools-BAG"
   description: "Issues with using the Berkeley Analog Generator (BAG) with the PDK."
