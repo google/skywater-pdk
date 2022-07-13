@@ -86,8 +86,8 @@ if not on_rtd:
         "display_github": True,         # Integrate GitHub
         "github_user": "google",        # Username
         "github_repo": "skywater-pdk",  # Repo name
-        "github_version": "master",     # Version
-        "conf_py_path": "/doc/",
+        "github_version": "main",       # Version
+        "conf_py_path": "/docs/",
     }
 else:
     docs_dir = os.path.abspath(os.path.dirname(__file__))
