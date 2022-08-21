@@ -3,6 +3,7 @@ git+https://github.com/SymbiFlow/sphinx_symbiflow_theme.git#egg=sphinx-symbiflow
 docutils
 sphinx
 sphinx-autobuild
+sphinxcontrib-bibtex
 
 # Verilog domain
 sphinx-verilog-domain
