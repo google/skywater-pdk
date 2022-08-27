@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="150" version="1.1">
+<style type="text/css">
+.l0{
+  fill: #000000;
+  stroke: #000000;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l1{
+  fill: #00ccee;
+  stroke: #00ccee;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l2{
+  fill: none;
+  stroke: #3f3f3f;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l3{
+  fill: #cccccc; fill-opacity: 0.5;
+  stroke: #cccccc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l4{
+  fill: #88dd00;
+  stroke: #88dd00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l5{
+  fill: #bb2200;
+  stroke: #bb2200;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l6{
+  fill: #00ccee; fill-opacity: 0.5;
+  stroke: #00ccee;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l7{
+  fill: #ff0000; fill-opacity: 0.5;
+  stroke: #ff0000;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l8{
+  fill: #ffff00; fill-opacity: 0.5;
+  stroke: #ffff00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l9{
+  fill: #ffffff; fill-opacity: 0.5;
+  stroke: #ffffff;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l10{
+  fill: #ff00ff;
+  stroke: #ff00ff;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l11{
+  fill: #00ff00; fill-opacity: 0.5;
+  stroke: #00ff00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l12{
+  fill: #0000cc; fill-opacity: 0.5;
+  stroke: #0000cc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l13{
+  fill: #aaaa00; fill-opacity: 0.5;
+  stroke: #aaaa00;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l14{
+  fill: none;
+  stroke: #aaccaa;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l15{
+  fill: #ff7777; fill-opacity: 0.5;
+  stroke: #ff7777;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l16{
+  fill: #bfff81; fill-opacity: 0.5;
+  stroke: #bfff81;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l17{
+  fill: none;
+  stroke: #00ffcc;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l18{
+  fill: #ce0097; fill-opacity: 0.5;
+  stroke: #ce0097;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l19{
+  fill: none;
+  stroke: #d2d46b;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l20{
+  fill: none;
+  stroke: #ef6158;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+.l21{
+  fill: none;
+  stroke: #fdb200;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width: 0.96;
+}
+text {font-family: SansSerif;}
+</style>
+<rect x="0" y="0" width="300" height="150" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="0.96" />
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(82.5, 44.3736)" >c0</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(82.5, 113.749)" >c1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 46.0398)" >C1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 91.0398)" >0.5 / 0.5 * 1</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="15.6" style="font-family:Sans Serif;" transform="translate(105, 68.5398)" >cap_var_lvt</text>
+<text fill="#cccccc"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(60, 100.624)" >n+</text>
+<text fill="#ff0000"  xml:space="preserve" font-size="11.7" style="font-family:Sans Serif;" transform="translate(22.5, 98.7486)" >b</text>
+<path class="l4" d="M75 78.75L75 120"/>
+<path class="l4" d="M75 30L75 67.5"/>
+<path class="l4" d="M60 67.5L90 67.5"/>
+<path class="l4" d="M52.5 105L75 105"/>
+<path class="l4" d="M15 105L37.5 105"/>
+<path class="l4" d="M52.5 90L52.5 120"/>
+<path class="l4" d="M52.5 105L37.5 90L37.5 120L52.5 105"/>
+<path class="l4" style="fill:none;" d="M90 82.5 A31.875 31.875 0 0 0 60 82.5"/>
+<path class="l5" d="M71.25 26.25L78.75 26.25L78.75 33.75L71.25 33.75L71.25 26.25z"/>
+<path class="l5" d="M71.25 116.25L78.75 116.25L78.75 123.75L71.25 123.75L71.25 116.25z"/>
+<path class="l5" d="M11.25 101.25L18.75 101.25L18.75 108.75L11.25 108.75L11.25 101.25z"/>
+</svg>

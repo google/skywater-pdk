@@ -4,7 +4,7 @@ Varactors
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`capbn_b`
+-  Cell Name: :cell:`sky130_fd_pr__cap_var_lvt`, :cell:`sky130_fd_pr__cap_var_hvt`
 -  Model Name: :model:`sky130_fd_pr__cap_var_lvt`, :model:`sky130_fd_pr__cap_var_hvt`
 -  Model Type: subcircuit
 
@@ -31,13 +31,13 @@ There is no equivalent varactor for 5V operation. The NHV or PHV devices should 
 
 The symbols for the varactors are shown below:
 
-|symbol-cap_var-a| |symbol-cap_var-b|
+|symbol-cap_var_lvt| |symbol-cap_var_hvt|
 
 The cross-section of the varactor is shown below:
 
 |cross-section-cap_var|
 
-.. |symbol-cap_var-a| image:: symbol-cap_var-a.svg
-.. |symbol-cap_var-b| image:: symbol-cap_var-b.svg
+.. |symbol-cap_var_lvt| image:: symbol-cap_var_lvt.svg
+.. |symbol-cap_var_hvt| image:: symbol-cap_var_hvt.svg
 .. |cross-section-cap_var| image:: cross-section-cap_var.svg
 
