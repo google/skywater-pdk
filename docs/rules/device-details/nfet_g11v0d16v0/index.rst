@@ -5,7 +5,7 @@ Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
--  Model Name: :model:`sky130_fd_pr__nfet_g5v0d16v0`
+-  Model Name: :model:`sky130_fd_pr__nfet_g11v0d16v0`
 
 Operating Voltages where SPICE models are valid, subject to SOA limitations:
 
@@ -24,7 +24,7 @@ Major model output parameters are shown below and compared against the EDR (e-te
 
 
 
-The symbol of the :model:`sky130_fd_pr__nfet_g5v0d16v0` (11V/16V NMOS FET) is shown below:
+The symbol of the :model:`sky130_fd_pr__nfet_g11v0d16v0` (11V/16V NMOS FET) is shown below:
 
 |symbol-nfet_g11v0d16v0|
 

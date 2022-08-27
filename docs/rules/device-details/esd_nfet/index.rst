@@ -4,7 +4,7 @@ NMOS ESD FET
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
 
--  Cell Name: :cell:`sky130_fd_pr__nfet_01v8`
+-  Cell Name: :cell:`sky130_fd_pr__esd_nfet`
 -  Model Name: :model:`sky130_fd_pr__esd_nfet_01v8`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5`, :model:`sky130_fd_pr__esd_nfet_g5v0d10v5_nvt`
 
 Operating Voltages where SPICE models are valid
