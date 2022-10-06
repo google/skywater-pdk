@@ -32,3 +32,6 @@ submodules:
   include:
    - libraries/sky130_fd_io/latest
   recursive: false
+
+formats:
+  - pdf

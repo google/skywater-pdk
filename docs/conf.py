@@ -61,6 +61,7 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
     'sphinx.ext.ifconfig',
+    'sphinx.ext.imgconverter',
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
@@ -295,6 +296,23 @@ numfig = True
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+latex_elements = {
+     'preamble': r'\DeclareUnicodeCharacter{03A9}{\ensuremath{\Omega}}' +
+                 r'\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}' +
+                 r'\DeclareUnicodeCharacter{2184}{\ensuremath{\supset}}' +
+                 r'\DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}' +
+                 r'\DeclareUnicodeCharacter{2228}{\ensuremath{\vee}}' +
+                 r'\DeclareUnicodeCharacter{22BB}{\ensuremath{\veebar}}' +
+                 r'\DeclareUnicodeCharacter{01C1}{\ensuremath{\parallel}}' +
+                 r'\DeclareUnicodeCharacter{2220}{\ensuremath{\angle}}' +
+                 r'\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}' +
+                 r'\DeclareUnicodeCharacter{25A1}{\ensuremath{\Box}}' +
+                 r'\DeclareUnicodeCharacter{F06D}{\ensuremath{\mu}}' +
+                 r'\DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}' +
+                 r'\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}' +
+                 r'\usepackage{pmboxdraw}' +
+                 r'\DeclareUnicodeCharacter{2534}{\textSFvii}'
+}
 
 import re
 from docutils.parsers.rst import directives, roles, nodes
