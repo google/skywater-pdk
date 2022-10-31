@@ -1,5 +1,5 @@
-Varactors
----------
+1.8V Accumulation-Mode MOS Varactors
+------------------------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
