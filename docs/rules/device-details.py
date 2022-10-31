@@ -29,9 +29,9 @@ device_list = [
 
     # 20V MOS
     "nfet_20v0",
-    "nfet_20v0_iso",
     "nfet_20v0_nvt",
     "nfet_20v0_zvt",
+    "nfet_20v0_iso",
     "pfet_20v0",
 
     # ESD MOS

@@ -216,7 +216,7 @@ The cross-section of the high-VT PMOS FET is shown below. The cross-section is i
 .. |cross-section-pfet_01v8_hvt| image:: device-details/pfet_01v8_hvt/cross-section-pfet_01v8_hvt.svg
 
 
-1.8V Accumulation-Mode MOS Varactors
+1.8V accumulation-mode MOS varactors
 ------------------------------------
 
 Spice Model Information
@@ -545,45 +545,6 @@ The cross-section of the 20V NMOS FET is shown below.
 .. |cross-section-nfet_20v0| image:: device-details/nfet_20v0/cross-section-nfet_20v0.svg
 
 
-20V isolated NMOS FET
----------------------
-
-Spice Model Information
-~~~~~~~~~~~~~~~~~~~~~~~
-
--  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
--  Model Name: :model:`sky130_fd_pr__nfet_20v0_iso`
-
-Operating Voltages where SPICE models are valid, subject to SOA limitations:
-
--  :math:`V_{DS} = 0` to +22V
--  :math:`V_{GS} = 0` to 5.5V
--  :math:`V_{BS} = 0` to -2.0V
-
-Details
-~~~~~~~
-
-The 20V isolated NMOS FET has the same construction as the 20V NMOS FET, but is built over a Deep N-well. This permits the p-well to be isolated from the substrate and permit “high-side” usage (where the PW body is held above ground).
-
-Major model output parameters are shown below and compared against the EDR (e-test) specs
-
-
-.. include:: device-details/nfet_20v0_iso/nfet_20v0_iso-table0.rst
-
-
-
-The symbol of the :model:`sky130_fd_pr__nfet_20v0_iso` (20V isolated NMOS FET) is shown below.
-
-|symbol-nfet_20v0_iso|
-
-The cross-section of the 20V isolated NMOS FET is shown below.
-
-|cross-section-nfet_20v0_iso|
-
-.. |symbol-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/symbol-nfet_20v0_iso.svg
-.. |cross-section-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/cross-section-nfet_20v0_iso.svg
-
-
 20V native NMOS FET
 -------------------
 
@@ -623,7 +584,7 @@ The cross-section of the 20V native NMOS FET is shown below.
 .. |cross-section-nfet_20v0_nvt| image:: device-details/nfet_20v0_nvt/cross-section-nfet_20v0_nvt.svg
 
 
-20V NMOS zero-VT FET
+20V zero-VT NMOS FET
 --------------------
 
 Spice Model Information
@@ -657,6 +618,45 @@ The cross-section of the 20V NMOS zero-VT FET is shown below.
 |cross-section-nfet_20v0_zvt|
 
 .. |cross-section-nfet_20v0_zvt| image:: device-details/nfet_20v0_zvt/cross-section-nfet_20v0_zvt.svg
+
+
+20V isolated NMOS FET
+---------------------
+
+Spice Model Information
+~~~~~~~~~~~~~~~~~~~~~~~
+
+-  Cell Name: :cell:`sky130_fd_pr__nfet_extenddrain`
+-  Model Name: :model:`sky130_fd_pr__nfet_20v0_iso`
+
+Operating Voltages where SPICE models are valid, subject to SOA limitations:
+
+-  :math:`V_{DS} = 0` to +22V
+-  :math:`V_{GS} = 0` to 5.5V
+-  :math:`V_{BS} = 0` to -2.0V
+
+Details
+~~~~~~~
+
+The 20V isolated NMOS FET has the same construction as the 20V NMOS FET, but is built over a Deep N-well. This permits the p-well to be isolated from the substrate and permit “high-side” usage (where the PW body is held above ground).
+
+Major model output parameters are shown below and compared against the EDR (e-test) specs
+
+
+.. include:: device-details/nfet_20v0_iso/nfet_20v0_iso-table0.rst
+
+
+
+The symbol of the :model:`sky130_fd_pr__nfet_20v0_iso` (20V isolated NMOS FET) is shown below.
+
+|symbol-nfet_20v0_iso|
+
+The cross-section of the 20V isolated NMOS FET is shown below.
+
+|cross-section-nfet_20v0_iso|
+
+.. |symbol-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/symbol-nfet_20v0_iso.svg
+.. |cross-section-nfet_20v0_iso| image:: device-details/nfet_20v0_iso/cross-section-nfet_20v0_iso.svg
 
 
 20V PMOS FET
@@ -703,7 +703,7 @@ The cross-section of the 20V PMOS FET is shown below.
 .. |cross-section-pfet_20v0| image:: device-details/pfet_20v0/cross-section-pfet_20v0.svg
 
 
-NMOS ESD FET
+ESD NMOS FET
 ------------
 
 Spice Model Information
@@ -809,8 +809,8 @@ Symbols for the diodes are shown below
 .. |symbol-diode-17| image:: device-details/diodes/symbol-diode-17.svg
 
 
-Bipolar (NPN)
--------------
+Bipolar NPN transistor
+----------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -861,8 +861,8 @@ The cross-section of the :model:`sky130_fd_pr__npn_11v0` is shown below. The pol
 .. |cross-section-npn_11v0| image:: device-details/npn_05v0/cross-section-npn_11v0.svg
 
 
-Bipolar (PNP)
--------------
+Bipolar PNP transistor
+----------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1022,7 +1022,7 @@ The cross-section of the 2-T SONOS cell is shown below.
 .. |cross-section-sonos-cell| image:: device-details/special_sonosfet/cross-section-sonos-cell.svg
 
 
-Generic Resistors
+Generic resistors
 -----------------
 
 Generic resistors are supported in the PDK but are not recommended for analog applications. Resistor values will be extracted from the layout as long as the resistor layer is utilized, for LVS against schematic elements.
@@ -1214,8 +1214,8 @@ A generic version of the poly resistor is also available, which permits user inp
 .. |symbol-res_xhigh_po| image:: device-details/res_xhigh/symbol-res_xhigh_po.svg
 
 
-MiM Capacitor
--------------
+MiM capacitors
+--------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
