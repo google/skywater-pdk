@@ -51,6 +51,10 @@
   description: "Item which references a specific open task which needs finishing."
   color: "57dbba" # FIXME: blueish
 
+- name: "type-blocker"
+  description: "Issue which is blocking a launch."
+  color: "ff0000" # Very Red
+
 ##########################################################################
 # Labels related to files found in the repository
 #
