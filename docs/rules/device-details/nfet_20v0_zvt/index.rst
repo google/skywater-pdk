@@ -1,4 +1,4 @@
-20V NMOS zero-VT FET
+20V zero-VT NMOS FET
 --------------------
 
 Spice Model Information

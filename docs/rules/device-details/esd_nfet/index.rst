@@ -1,4 +1,4 @@
-NMOS ESD FET
+ESD NMOS FET
 ------------
 
 Spice Model Information

@@ -1,5 +1,5 @@
-MiM Capacitor
--------------
+MiM capacitors
+--------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~
