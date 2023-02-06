@@ -17,9 +17,13 @@ name: skywater-pdk-scripts
 channels:
 - symbiflow
 - defaults
+- LiteX-Hub
+- conda-forge
 dependencies:
 - python=3.8
 - pip
+- magic
+
 # Packages installed from PyPI
 - pip:
   - -r requirements.txt
