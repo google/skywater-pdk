@@ -17,9 +17,11 @@ name: skywater-pdk-scripts
 channels:
 - symbiflow
 - defaults
+- conda-forge
 dependencies:
 - python=3.8
 - pip
+- ngspice
 # Packages installed from PyPI
 - pip:
   - -r requirements.txt
