@@ -1,0 +1,11 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; SKY130 .cdsinit
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+setShellEnvVar("PDK_HOME=$HOME/sky130_cds")
+envSetVal("layout" "xSnapSpacing" 'float 0.005)
+envSetVal("layout" "ySnapSpacing" 'float 0.005)
+setShellEnvVar("CDS_Netlisting_Mode=Analog")
+setShellEnvVar("CDS_AUTO_64BIT=ALL")

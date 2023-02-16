@@ -1,0 +1,371 @@
+
+# 
+process sky130 { 
+   background_dielectric_constant 1.0
+   temp_reference 30
+} 
+# Well declarations 
+well NWELL {} 
+well PWELL {} 
+ 
+# Diffusion Layers 
+diffusion P_SOURCE_DRAIN {
+   thickness    	 0.12 
+   resistivity  	 15 
+} 
+ 
+diffusion N_SOURCE_DRAIN {
+   thickness    	 0.12 
+   resistivity  	 15 
+} 
+ 
+# Conducting Layers 
+conductor Poly {
+   min_spacing  	 0.21 
+   min_width    	 0.15 
+   height       	 0.3262 
+   thickness    	 0.180 
+   resistivity  	 48.2 
+   temp_tc1     	 0.0008916 
+   temp_tc2     	 8.443e-07 
+   gate_forming_layer  	 true 
+   wire_edge_enlargement_r { 
+     wee_widths       0.15 
+     wee_spacings     0.21 
+     wee_adjustments -0.0280  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.15 
+     wee_spacings     0.21 
+     wee_adjustments  0.0  
+  } 
+} 
+ 
+conductor li1 {
+   min_spacing  	 0.17 
+   min_width    	 0.17 
+   height       	 0.9361 
+   thickness    	 0.100 
+   resistivity  	 12.8 
+   temp_tc1     	 0.0006045 
+   temp_tc2     	 -3.693e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths      0.17 
+     wee_spacings    0.17 
+     wee_adjustments 0.0085  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths      0.17 
+     wee_spacings    0.17 
+     wee_adjustments 0  
+  } 
+} 
+ 
+conductor met1 {
+   min_spacing  	 0.14 
+   min_width    	 0.14 
+   height       	 1.3761 
+   thickness    	 0.36 
+   resistivity  	 0.125 
+   temp_tc1     	 0.003179 
+   temp_tc2     	 3.094e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths       0.14 
+     wee_spacings     0.14 
+     wee_adjustments -0.0195  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.14 
+     wee_spacings     0.14 
+     wee_adjustments  0 
+  } 
+} 
+ 
+conductor met2 {
+   min_spacing  	 0.14 
+   min_width    	 0.14 
+   height       	 2.0061 
+   thickness    	 0.360 
+   resistivity  	 0.125 
+   temp_tc1     	 0.003161 
+   temp_tc2     	 -7.272e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths       0.14 
+     wee_spacings     0.14 
+     wee_adjustments -0.0195  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.14 
+     wee_spacings     0.14 
+     wee_adjustments  0  
+  } 
+} 
+ 
+conductor met3 {
+   min_spacing  	 0.30 
+   min_width    	 0.30 
+   height       	 2.7861 
+   thickness    	 0.845 
+   resistivity  	 0.047 
+   temp_tc1     	 0.003424 
+   temp_tc2     	 -7.739e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths       0.30 
+     wee_spacings     0.30 
+     wee_adjustments -0.0125  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.30 
+     wee_spacings     0.30 
+     wee_adjustments 0  
+  } 
+} 
+ 
+conductor met4 {
+   min_spacing  	 0.30 
+   min_width    	 0.30 
+   height       	 4.0211 
+   thickness    	 0.845 
+   resistivity  	 0.047 
+   temp_tc1     	 0.003424 
+   temp_tc2     	 -7.739e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths       0.30 
+     wee_spacings     0.30 
+     wee_adjustments -0.0125  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.30 
+     wee_spacings     0.30 
+     wee_adjustments 0  
+  } 
+} 
+ 
+conductor met5 {
+   min_spacing  	 1.60 
+   min_width    	 0.80 
+   height       	 5.3711 
+   thickness    	 1.260 
+   resistivity  	 0.0285 
+   temp_tc1     	 3.5e-3 
+   temp_tc2     	 -7.5e-07 
+   gate_forming_layer  	 false 
+   wire_edge_enlargement_r { 
+     wee_widths       0.80 
+     wee_spacings     1.60 
+     wee_adjustments -0.0450  
+  } 
+   wire_edge_enlargement_c { 
+     wee_widths       0.80 
+     wee_spacings     1.60 
+     wee_adjustments 0  
+  } 
+} 
+ 
+# dielectric Layers 
+dielectric   FOX {
+   conformal 		   FALSE 
+   height    		   0.0000 
+   thickness 		   0.3262 
+   dielectric_constant 	   3.9 
+} 
+ 
+dielectric   IOX {
+   conformal 		   TRUE 
+   expandedFrom 	   Poly
+   height    		   0.3262 
+   thickness 		   0.0000 
+   topThickness 	   0.0000 
+   sideExpand 		   0.0060 
+   dielectric_constant 	   3.9 
+} 
+ 
+dielectric   SPNIT {
+   conformal 		   TRUE 
+   expandedFrom 	   IOX
+   height    		   0.3262 
+   thickness 		   0.0000 
+   topThickness 	   0.1210 
+   sideExpand 		   0.0431 
+   dielectric_constant 	   7.5 
+} 
+ 
+dielectric   PSG {
+   conformal 		   FALSE 
+   height    		   0.3262 
+   thickness 		   0.6099 
+   dielectric_constant 	   3.9 
+} 
+ 
+dielectric   LINT {
+   conformal 		   TRUE 
+   expandedFrom 	   li1
+   height    		   0.9361 
+   thickness 		   0.0750 
+   topThickness 	   0.0750 
+   sideExpand 		   0.0610 
+   dielectric_constant 	   7.3 
+} 
+ 
+dielectric   NILD2 {
+   conformal 		   FALSE 
+   height    		   1.0111 
+   thickness 		   0.3650 
+   dielectric_constant 	   4.05 
+} 
+ 
+dielectric   NILD3_C {
+   conformal 		   TRUE 
+   expandedFrom 	   met1
+   height    		   1.3761 
+   thickness 		   0.0000 
+   topThickness 	   0.0000 
+   sideExpand 		   0.0300 
+   dielectric_constant 	   3.5 
+} 
+ 
+dielectric   NILD3 {
+   conformal 		   FALSE 
+   height    		   1.3761 
+   thickness 		   0.6300 
+   dielectric_constant 	   4.5 
+} 
+ 
+dielectric   NILD4_C {
+   conformal 		   TRUE 
+   expandedFrom 	   met2
+   height    		   2.0061 
+   thickness 		   0.0000 
+   topThickness 	   0.0000 
+   sideExpand 		   0.0300 
+   dielectric_constant 	   3.5 
+} 
+ 
+dielectric   NILD4 {
+   conformal 		   FALSE 
+   height    		   2.0061 
+   thickness 		   0.7800 
+   dielectric_constant 	   4.2 
+} 
+ 
+dielectric   NILD5 {
+   conformal 		   FALSE 
+   height    		   2.7861 
+   thickness 		   1.2350 
+   dielectric_constant 	   4.1 
+} 
+ 
+dielectric   NILD6 {
+   conformal 		   FALSE 
+   height    		   4.0211 
+   thickness 		   1.3500 
+   dielectric_constant 	   4.0 
+} 
+ 
+dielectric   TOPOX {
+   conformal 		   TRUE 
+   expandedFrom 	   met5
+   height    		   5.3711 
+   thickness 		   0.0000 
+   topThickness 	   0.0900 
+   sideExpand 		   0.0700 
+   dielectric_constant 	   3.9 
+} 
+ 
+dielectric   TOPNIT {
+   conformal 		   TRUE 
+   expandedFrom 	   TOPOX
+   height    		   5.3711 
+   thickness 		   0.3777 
+   topThickness 	   0.5400 
+   sideExpand 		   0.4223 
+   dielectric_constant 	   7.50 
+} 
+ 
+dielectric   PI1 {
+   conformal 		   FALSE 
+   height    		   5.7488 
+   thickness 		   6.1346 
+   dielectric_constant 	   2.94 
+} 
+ 
+dielectric   PI2 {
+   conformal 		   FALSE 
+   height    		  11.8834 
+   thickness 		   7.5000 
+   dielectric_constant 	   2.85 
+} 
+ 
+dielectric   MOLD {
+   conformal 		   FALSE 
+   height    		  19.3834 
+   thickness 		  40.0000 
+   dielectric_constant 	   3.6 
+} 
+ 
+# Connect Layers 
+via   CONT {
+   bottom_layer  	 P_SOURCE_DRAIN 
+   top_layer     	 li1 
+   contact_resistance  	 15 
+} 
+ 
+via   CONT {
+   bottom_layer  	 N_SOURCE_DRAIN 
+   top_layer     	 li1 
+   contact_resistance  	 15 
+} 
+
+via   via4 {
+   bottom_layer   	 met4 
+   top_layer      	 met5 
+   contact_resistance 0.38 
+   temp_tc1       	 0.00177 
+   temp_tc2       	 -1.6e-07 
+} 
+ 
+via   via3 {
+   bottom_layer   	 met3 
+   top_layer      	 met4 
+   contact_resistance 3.41 
+   temp_tc1       	 0.002366 
+   temp_tc2       	 -1.025e-05 
+} 
+ 
+via   via2 {
+   bottom_layer   	 met2 
+   top_layer      	 met3 
+   contact_resistance 3.41 
+   temp_tc1       	 0.002366 
+   temp_tc2       	 -1.025e-05 
+} 
+ 
+via   via {
+   bottom_layer   	 met1 
+   top_layer      	 met2 
+   contact_resistance 4.5 
+   temp_tc1       	 0.001081 
+   temp_tc2       	 -1.903e-07 
+} 
+ 
+via   mcon {
+   bottom_layer   	 li1 
+   top_layer      	 met1 
+   contact_resistance 9.3 
+   temp_tc1       	 0.001067 
+   temp_tc2       	 -5.324e-06 
+} 
+ 
+via   licon {
+   bottom_layer   	 Poly 
+   top_layer      	 li1 
+   contact_resistance 152 
+   temp_tc1       	 0.001249 
+   temp_tc2       	 -6.647e-06 
+} 
+ 

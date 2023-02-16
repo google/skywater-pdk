@@ -1,0 +1,86 @@
+********************************************************************************
+*** Pegasus DRC SUMMARY
+***
+Execute on Date/Time    : Wed Aug  3 11:44:13 2022
+Pegasus VERSION         : 20.40-p018 Fri Mar 12 21:11:23 PST 2021
+Rule Deck Path          : /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+Rule Deck Title         :
+Layout System           : GDSII
+Layout Path             : /home/jstine/Desktop/sky130_cds/pnr/.pegasus_82054/mult_seq.gds.gz
+Current Directory       : /home/jstine/Desktop/sky130_cds/pnr/.pegasus_82054
+User Name               : jstine
+Maximum Results         : 1000
+Maximum Result Vertices : 4096
+Layout Depth            : ALL
+Text Depth              : 0
+Summary File            : /home/jstine/Desktop/sky130_cds/pnr/mult_seq.pegasus.sum
+Geometry Flagging       : ACUTE = NO  ANGLED = NO  SKEW = NO  OFFGRID = NO
+                          NONSIMPLE POLYGON = NO  NONSIMPLE PATH = NO
+Keep Empty Checks       : YES
+Excluded Cells          : 
+Layout Primary Cell     : mult_seq
+ASCII DRC Error Report  : /home/jstine/Desktop/sky130_cds/pnr/mult_seq.pegasus.ascii
+DRC Results Database    :
+--------------------------------------------------------------------------------
+--- RUNNING TIME WARNINGS
+---
+--------------------------------------------------------------------------------
+--- ORIGINAL LAYER STATISTICS
+---
+LAYER nwell ................................ Total Original Geometry:         25 (       315)
+LAYER diff ................................. Total Original Geometry:         48 (       359)
+LAYER poly ................................. Total Original Geometry:        299 (      2602)
+LAYER li1 .................................. Total Original Geometry:        376 (      3369)
+LAYER mcon ................................. Total Original Geometry:        218 (      1865)
+LAYER met1 ................................. Total Original Geometry:        986 (      3843)
+LAYER via .................................. Total Original Geometry:          0 (         0)
+LAYER met2 ................................. Total Original Geometry:        700 (      1221)
+LAYER via2 ................................. Total Original Geometry:          2 (       105)
+LAYER met3 ................................. Total Original Geometry:        129 (       248)
+LAYER via3 ................................. Total Original Geometry:          1 (        17)
+LAYER met4 ................................. Total Original Geometry:         21 (        42)
+LAYER via4 ................................. Total Original Geometry:          1 (         6)
+LAYER met5 ................................. Total Original Geometry:          4 (         9)
+LAYER pad .................................. Total Original Geometry:          0 (         0)
+LAYER capacitor ............................ Total Original Geometry:          0 (         0)
+LAYER inductor ............................. Total Original Geometry:          0 (         0)
+--------------------------------------------------------------------------------
+--- WARNINGS FROM FLAG STATEMENT
+---
+--------------------------------------------------------------------------------
+--- RULECHECK RESULTS STATISTICS
+---
+RULECHECK R0_nwell_X1 .................................. Total Result          0 (         0)
+RULECHECK R10_via3_X1 .................................. Total Result          0 (         0)
+RULECHECK R11_met4_X1 .................................. Total Result          0 (         0)
+RULECHECK R12_via4_X1 .................................. Total Result          0 (         0)
+RULECHECK R13_met5_X1 .................................. Total Result          0 (         0)
+RULECHECK R14_pad_X1 ................................... Total Result          0 (         0)
+RULECHECK R15_cap_X1 ................................... Total Result          0 (         0)
+RULECHECK R16_ind_X1 ................................... Total Result          0 (         0)
+RULECHECK R17_nwell_X2 ................................. Total Result          0 (         0)
+RULECHECK R18_diff_X2 .................................. Total Result          0 (         0)
+RULECHECK R19_met1_X2 .................................. Total Result          0 (         0)
+RULECHECK R1_diff_X1 ................................... Total Result          0 (         0)
+RULECHECK R20_met2_X2 .................................. Total Result          0 (         0)
+RULECHECK R21_met3_X2 .................................. Total Result          0 (         0)
+RULECHECK R22_met4_X2 .................................. Total Result          0 (         0)
+RULECHECK R23_met5_X2 .................................. Total Result          0 (         0)
+RULECHECK R24_cap_X2 ................................... Total Result          0 (         0)
+RULECHECK R25_ind_X2 ................................... Total Result          0 (         0)
+RULECHECK R2_poly_X1 ................................... Total Result          0 (         0)
+RULECHECK R3_li1_X1 .................................... Total Result          0 (         0)
+RULECHECK R4_mcon_X1 ................................... Total Result          0 (         0)
+RULECHECK R5_met1_X1 ................................... Total Result          0 (         0)
+RULECHECK R6_via_X1 .................................... Total Result          0 (         0)
+RULECHECK R7_met2_X1 ................................... Total Result          0 (         0)
+RULECHECK R8_via2_X1 ................................... Total Result          0 (         0)
+RULECHECK R9_met3_X1 ................................... Total Result          0 (         0)
+--------------------------------------------------------------------------------
+--- SUMMARY
+---
+Total CPU Time                    : 1(s)
+Total Real Time                   : 2(s)
+Total Original Geometry           : 2810 (14001)
+Total DRC RuleChecks              : 26
+Total DRC Results                 : 0 (0)
