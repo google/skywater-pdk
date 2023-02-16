@@ -1,0 +1,13 @@
+
+
+###############################################################
+# Host ID: $info(host.name)
+# OS:      $info(host.distribution) $info(host.os) $info(host.osver) $info(host.machine)
+# CPU:     [expr $info(cpu.total) / $info(cpu.cpucores)] -- $info(cpu.modelname) @ $info(cpu.cpuMHz) MHz
+# MEM:     [size $info(mem.total)]
+# SWAP:    [size $info(mem.swap.total)]
+# TIME:    [clock format [clock seconds] -format "%H:%M:%S %Z"]
+# UPTIME:  $info(uptime.mon) month[singular $info(uptime.mon)], $info(uptime.wks) week[singular $info(uptime.wks)], $info(uptime.day) day[singular $info(uptime.day)], $info(uptime.hrs) hour[singular $info(uptime.hrs)], $info(uptime.min) minute[singular $info(uptime.min)], and $info(uptime.sec) second[singular $info(uptime.sec)]
+###############################################################
+
+

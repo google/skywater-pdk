@@ -1,0 +1,58 @@
+
+
+                               Foundation Flows
+                            ----------------------
+
+The scripts provided here are intended to be used by Cadence AEs as the starting 
+point for assisting customers in building an implementation environment for 
+Innovus.  They provide a working example containing guidelines and recomendations 
+for command sequences and options.  Some customization is expected as each customer 
+and design will have unique requirements. The goal was to capture a general methodology 
+from which to build upon.
+
+                ------------------------------------
+
+The foundation flows reside in the SCRIPTS directory (created by writeFlowTemplate).  
+This directory can be renamed and/or moved but the contents within the SCRIPTS
+directory must remian unchanged.  The scripts directory is accessed by the
+variable "vars(script_root) <path>" in the setup.tcl.
+
+The setup.tcl is the main input file to the foundation flow. It defines all 
+the input data required to run each of the foundation flows. 
+
+Additionally, an innovus_config.tcl must be created to  set flow variables, 
+desired command options, and optional plug-ins.  
+
+Finally, for LP/CPF flows, an additional config file (lp_config.tcl) can 
+optionally be used to help automate some low power related tasks.
+
+                ------------------------------------
+
+The TEMPLATES directory contains templates for all of these files which can
+be manually copied and edited:
+  
+	TEMPLATES/INNOVUS/setup.tcl
+	TEMPLATES/INNOVUS/innovus_config.tcl 
+	TEMPLATES/INNOVUS/lp_config.tcl 
+
+There is also a utility that can be used to generate these files based on 
+existing design data.  To generate, run Innovus, load an initial database, 
+and 'source SCRIPTS/gen_setup.tcl' or run the new command generateFFSetupFile.
+
+This will generate a *.auto.tcl files which can be reviewed/edited
+and then renamed. 
+
+                ------------------------------------
+
+The EXAMPLES directory contains some example configuation files as well as
+some sample plug-ins. Please  check README in the EXAMPLES  directory to run the example.
+
+                ------------------------------------
+
+To generate the foundation flow scripts based on your setup , do the following:
+
+	tclsh <path_to>/SCRIPTS/gen_flow.tcl -m <flat | hier > <steps>
+
+    where <steps> = single step, step range, or 'all'
+
+To execute the flow, run 'make <target>'

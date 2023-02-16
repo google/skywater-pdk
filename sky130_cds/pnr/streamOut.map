@@ -1,0 +1,70 @@
+li1		NET		67		20
+li1		SPNET		67		20
+li1		PIN		67		20
+li1		FILL		67		20
+li1		VIA		67		20
+li1		VIAFILL		67		20
+NAME		li1/PIN		67 		20
+NAME		li1/SPNET	67 		20
+
+met1		NET		68		20
+met1		SPNET		68		20
+met1		PIN		68		20
+met1		FILL		68		20
+met1		VIA		68		20
+met1		VIAFILL		68		20
+NAME		met1/PIN	68 		20
+NAME		met1/SPNET	68 		20
+
+met2		NET		69		20
+met2		SPNET		69		20
+met2		PIN		69		20
+met2		FILL		69		20
+met2		VIA		69		20
+met2		VIAFILL		69		20
+NAME		met2/PIN	69 		20
+NAME		met2/SPNET	69 		20
+
+met3		NET		70		20
+met3		SPNET		70		20
+met3		PIN		70		20
+met3		FILL		70		20
+met3		VIA		70		20
+met3		VIAFILL		70		20
+NAME		met3/PIN	70 		20
+NAME		met3/SPNET	70 		20
+
+met4		NET		71		20
+met4		SPNET		71		20
+met4		PIN		71		20
+met4		FILL		71		20
+met4		VIA		71		20
+met4		VIAFILL		71		20
+NAME		met4/PIN	71 		20
+NAME		met4/SPNET	71 		20
+
+met5		NET		72		20
+met5		SPNET		72		20
+met5		PIN		72		20
+met5		FILL		72		20
+met5		VIA		72		20
+met5		VIAFILL		72		20
+NAME		met5/PIN	72 		20
+NAME		met5/SPNET	72 		20
+
+mcon 		VIA		67		44
+mcon		VIAFILL		67		44
+
+via1 		VIA		68		44
+via1 		VIAFILL		68		44
+
+via2 		VIA		69		44
+via2 		VIAFILL		69		44
+
+via3 		VIA		70		44
+via3 		VIAFILL		70		44
+
+via4 		VIA		71		44
+via4 		VIAFILL		71		44
+
+

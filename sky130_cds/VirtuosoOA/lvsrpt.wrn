@@ -1,0 +1,7 @@
+Assura Errors & Warnings Search (PLEASE CAREFULLY REVIEW THESE MESSAGES)
+================================================================================
+WARNINGS & ERRORS found in Assura NVN Run Log file
+--------------------------------------------------------------------------------
+ ERROR (AVLVSNN-10134) : CDL parser encountered error in file '/home/jstine/Desktop/inv.sp' on line 19: unknown Cdl/Spice construct
+pX3_noxref noxref_5 A A PROBETYPE=1
+^^^^^^^^^^_________________________

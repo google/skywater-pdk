@@ -1,0 +1,174 @@
+script_root^directory^string^SCRIPTS^{valid directory}
+dbs_dir^directory^string^DBS^{valid directory}
+rpt_dir^directory^string^RPT^{valid directory}
+html_dir^directory^string^HTML^{valid directory}
+plug_dir^directory^string^PLUG^{valid directory}
+process^technology^string^90nm^{Valid range between 10nm and 250 nm}
+lef_files^technology^list^UNDEFINED^{lef files}
+netlist^design^string^UNDEFINED^{valid file name}
+design^design^string^UNDEFINED^{valid file name}
+fp_file^design^string^UNDEFINED^{valid file name}
+def_files^design^list^UNDEFINED^{valid file names}
+ilm_list^ilm^list^UNDEFINED^{ilms}
+<ilm>,ilm_dir^ilm^string^UNDEFINED^{ilm directory}
+<ilm>,lef_file^ilm^string^UNDEFINED^{lef file}
+power_nets^design^list^UNDEFINED^{net names}
+ground_nets^design^list^UNDEFINED^{net names}
+starting_dbs^design^string^UNDEFINED^{valid FE database}
+database_format^design^string^FE^{FE | OA}
+oa_ref_lib^design^string^UNDEFINED^{valid OA library}
+oa_design_lib^design^string^UNDEFINED^{valid OA library}
+oa_abstract_name^manufacturing^string^UNDEFINED^{valid view name}
+oa_layout_name^manufacturing^string^UNDEFINED^{valid view name}
+cts_spec^design^list^UNDEFINED^{cts spec files}
+cts_cells^clock^list^UNDEFINED^{clock cells}
+enable_ss^analysis^enum^FALSE^{pre_place |  pre_prects |  pre_postcts |  pre_postroute |  pre_postroute_si |  pre_signoff |  false}
+flow^flow^enum^default^{default |  pr_mmmc |  mmmc}
+enable_ocv^analysis^enum^pre_postroute^{false | pre_postcts | pre_postroute | pre_postroute_si | pre_signoff}
+library_sets^library^list^UNDEFINED^{library sets}
+<library_set>,si^library^list^UNDEFINED^{cdb files}
+<library_set>,timing^library^list^UNDEFINED^{library files}
+rc_corners^technology^list^UNDEFINED^{rc corners}
+<rc_corner>,T^technology^integer^125^{temperature}
+<rc_corner>,cap_table^technology^file^UNDEFINED^{cap table}
+<rc_corner>,qx_tech_file^technology^file^UNDEFINED^{technology file}
+<rc_corner>,pre_route_cap_factor^technology^FLOAT^1.00^{FLOAT}
+<rc_corner>,pre_route_clk_cap_factor^technology^FLOAT^1.00^{FLOAT}
+<rc_corner>,pre_route_clk_res_factor^technology^FLOAT^1.00^{FLOAT}
+<rc_corner>,pre_route_res_factor^technology^FLOAT^1.00^{FLOAT}
+<rc_corner>,post_route_cap_factor^technology^FLOAT TRIPLE^"1.00 1.00 1.00"^{FLOAT TRIPLET}
+<rc_corner>,post_route_clk_cap_factor^technology^FLOAT TRIPLE^"1.00 1.00 1.00"^{FLOAT TRIPLET}
+<rc_corner>,post_route_clk_res_factor^technology^FLOAT TRIPLE^"1.00 1.00 1.00"^{FLOAT TRIPLET}
+<rc_corner>,post_route_res_factor^technology^FLOAT TRIPLE^"1.00 1.00 1.00"^{FLOAT TRIPLET}
+<rc_corner>,post_route_xcap_factor^technology^FLOAT TRIPLE^"1.00 1.00 1.00"^{FLOAT TRIPLET}
+delay_corners^library^list^UNDEFINED^{delay corners}
+<delay_corner>,library_set^library^list^UNDEFINED^{valid library sets}
+<delay_corner>,rc_corner^technology^string^UNDEFINED^{valid delay corner}
+<delay_corner>,clock_cell_early^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,clock_cell_late^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,clock_net_early^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,clock_net_late^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,data_cell_early^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,data_cell_late^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,data_net_early^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,data_net_late^timing^FLOAT^UNDEFINED^{FLOAT}
+<delay_corner>,opcond^timing^string^UNDEFINED^{valid opcond name}
+<delay_corner>,opcond_library^timing^string^UNDEFINED^{valid library name}
+constraint_modes^design^list^UNDEFINED^{constraint modes}
+<constraint_mode>,pre_cts_sdc^design^list^UNDEFINED^{valid file names}
+<constraint_mode>,incr_cts_sdc^design^list^UNDEFINED^{valid file names}
+<constraint_mode>,post_cts_sdc^design^list^UNDEFINED^{valid file names}
+enable_cppr^analysis^enum^none^{none | setup | hold | both}
+analysis_views^library^list^UNDEFINED^{analysis views}
+hold_analysis_views^timing^list^UNDEFINED^{analysis views}
+setup_analysis_views^timing^list^UNDEFINED^{analysis views}
+<analysis_view>,constraint_mode^timing^string^UNDEFINED^{constraint mode}
+<analysis_view>,delay_corner^timing^string^UNDEFINED^{delay corner}
+default_hold_view^timing^string^UNDEFINED^{analysis view}
+default_setup_view^timing^string^UNDEFINED^{analysis view}
+active_hold_views^timing^list^UNDEFINED^{analysis views}
+active_setup_views^timing^list^UNDEFINED^{analysis views}
+power_analysis_view^power^string^{default setup view}^{analysis view}
+#cpf_file^design^string^UNDEFINED^{valid file name}
+cpf_keep_rows^design^boolean^FALSE^{TRUE | FALSE}
+cpf_power_domain^design^boolean^FALSE^{TRUE | FALSE}
+cpf_power_switch^design^boolean^FALSE^{TRUE | FALSE}
+cpf_isolation^design^boolean^FALSE^{TRUE | FALSE}
+cpf_state_retention^design^boolean^FALSE^{TRUE | FALSE}
+cpf_level_shifter^design^boolean^FALSE^{TRUE | FALSE}
+leakage_power_effort^design^boolean^UNDEFINED^{TRUE | FALSE}
+dynamic_power_effort^design^boolean^UNDEFINED^{TRUE | FALSE}
+report_power^power^boolean^FALSE^{TRUE | FALSE}
+activity_file^design^string^UNDEFINED^{activity file}
+activity_file_type^design^enum^TCF^{TCF |  VCD |  SAIF}
+welltaps^init^list^UNDEFINED^{welltap cells}
+welltaps,cell_interval^init^FLOAT^UNDEFINED^{microns}
+welltaps,max_gap^init^FLOAT^UNDEFINED^{microns}
+welltaps,row_offset^init^integer^UNDEFINED^{microns}
+welltaps,checkerboard^init^boolean^UNDEFINED^{TRUE | FALSE}
+jtag_cells^init^list^UNDEFINED^{jtag cells}
+jtag_rows^init^integer^UNDEFINED^{rows}
+in_place_opt^place^boolean^FALSE^{TRUE | FALSE}
+no_pre_place_opt^place^boolean^FALSE^{TRUE | FALSE}
+place_io_pins^place^boolean^FALSE^{TRUE | FALSE}
+tie_cells^place^list^UNDEFINED^{tie cells}
+tie_cells,max_distance^place^FLOAT^UNDEFINED^{FLOAT in microns}
+tie_cells,max_fanout^place^integer^UNDEFINED^{integer in microns}
+filler_cells^route^list^UNDEFINED^{filler cells}
+congestion_effort^init^enum^UNDEFINED^{low | medium | high}
+skew_buffers^clock^list^UNDEFINED^{clock cells}
+clock_gate_aware^clock^boolean^FALSE^{TRUE | FALSE}
+clock_gate_clone^clock^boolean^FALSE^{TRUE | FALSE}
+assign_buffer^init^boolean^FALSE^{TRUE | FALSE}
+high_timing_effort^init^boolean^FALSE^{TRUE | FALSE}
+dont_use_list^init^list^UNDEFINED^{dont use cells}
+use_list^init^list^UNDEFINED^{cells to use}
+critical_range^opt^FLOAT^UNDEFINED^{range between 0.0 and 1.0}
+useful_skew^opt^boolean^UNDEFINED^{TRUE | FALSE}
+preserve_assertions^opt^boolean^UNDEFINED^{TRUE | FALSE}
+resize_shifter_and_iso_insts^opt^boolean^UNDEFINED^{TRUE | FALSE}
+fix_hold^hold^boolean^TRUE^{TRUE | FALSE}
+fix_hold_ignore_ios^hold^boolean^FALSE^{TRUE | FALSE}
+fix_hold_allow_tns_degradation^hold^boolean^FALSE^{TRUE | FALSE}
+route_clock_nets^clock^boolean^TRUE^{TRUE | FALSE}
+clock_eco^clock^enum^none^{none | postcts | postroute | both}
+max_route_layer^technology^integer^UNDEFINED^{integer}
+generate_tracks^init^boolean^TRUE^{TRUE | FALSE}
+postroute_extraction_effort^route^enum^UNDEFINED^{low | medium | high}
+multicut_via_effort^route^enum^UNDEFINED^{low | medium | high}
+litho_driven_routing^route^boolean^FALSE^{TRUE | FALSE}
+postroute_spread_wires^route^boolean^FALSE^{TRUE | FALSE}
+delta_delay_threshold^noise^FLOAT^UNDEFINED^{FLOAT in nanoseconds}
+celtic_settings^noise^string^UNDEFINED^{valid celtic commands}
+coupling_c_thresh^noise^FLOAT^UNDEFINED^{FLOAT}
+relative_c_thresh^noise^FLOAT^UNDEFINED^{FLOAT}
+total_c_thresh^noise^FLOAT^UNDEFINED^{FLOAT}
+si_analysis_type^noise^enum^UNDEFINED^{default | pessimistic}
+signoff_extraction_effort^noise^enum^high^{none | low | high}
+metalfill^manufacturing^enum^FALSE^{pre_postroute |  pre_postroute_si |  pre_signoff |  false}
+metalfill_tcl^manufacturing^string^UNDEFINED^{valid file name}
+gds_files^manufacturing^list^UNDEFINED^{gds files}
+gds_map_file^manufacturing^string^UNDEFINED^{valid file names}
+local_cpus^multicpu^integer^1^{integer}
+remote_hosts^multicpu^integer^0^{integer}
+cpus_per_remote_host^multicpu^integer^1^{integer}
+always_source_tcl^plug-in^string^UNDEFINED^{valid file name}
+final_always_source_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_assign_pin_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_assign_pin_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_partition_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_partition_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_init_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_init_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_place_tcl^plug-in^string^UNDEFINED^{valid file name}
+place_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_place_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_cts_tcl^plug-in^string^UNDEFINED^{valid file name}
+cts_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_cts_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postcts_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postcts_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postcts_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postcts_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_prects_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_prects_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_route_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_route_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postroute_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postroute_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postroute_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postroute_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postroute_si_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postroute_si_hold_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_postroute_si_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_postroute_si_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_signoff_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_signoff_tcl^plug-in^string^UNDEFINED^{valid file name}
+pre_assemble_tcl^plug-in^string^UNDEFINED^{valid file name}
+post_assemble_tcl^plug-in^string^UNDEFINED^{valid file name}
+abort^flow^boolean^FALSE^{TRUE | FALSE}
+mail,to^flow^list^UNDEFINED^{email addresses}
+mail,steps^flow^list^UNDEFINED^{steps}
+#enable_pac^assembly^boolean^FALSE^{TRUE | FALSE}
+#partition_list^design^list^UNDEFINED^{design partitions}
+#<partition>,pac_mode^assembly^enum^read_only^{read_only | inteface | all | ilm}

@@ -1,0 +1,14 @@
+# File Created by James Stine at Fri Sep 16 15:14:51 2022
+# assisted by CdsLibEditor
+# Cadence libraries
+INCLUDE $CDS_IC/share/cdssetup/cds.lib
+DEFINE bmslib $CDS_IC/tools/dfII/samples/artist/bmslib
+DEFINE sky130 ./sky130
+
+# OSU Standard-Cell Libraries
+DEFINE sky130_osu_sc_t18 ./sky130_osu_sc_t18
+DEFINE sky130_osu_sc_t12 ./sky130_osu_sc_t12
+DEFINE sky130_osu_sc_t15 ./sky130_osu_sc_t15
+
+# Test Layout
+DEFINE test_sky130 ./test_sky130

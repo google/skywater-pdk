@@ -1,0 +1,11 @@
+innovus.logv*
+innovus.log*
+innovus.cmd*
+LOG
+DBS
+RPT
+FF
+timingReports
+mult_pad_via_layer*
+make
+checkDesign

@@ -1,0 +1,105 @@
+mult_seq 1000
+R0_nwell_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"nwell_X1: off 0.005 grid nwell vertex"
+R1_diff_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"diff_X1: off 0.005 grid diff vertex"
+R2_poly_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"poly_X1: off 0.005 grid poly vertex"
+R3_li1_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"li1_X1: off 0.005 grid li1 vertex"
+R4_mcon_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"mcon_X1: off 0.005 grid mcon vertex"
+R5_met1_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met1_X1: off 0.005 grid met1 vertex"
+R6_via_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"via_X1: off 0.005 grid via vertex"
+R7_met2_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met2_X1: off 0.005 grid met2 vertex"
+R8_via2_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"via2_X1: off 0.005 grid via2 vertex"
+R9_met3_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met3_X1: off 0.005 grid met3 vertex"
+R10_via3_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"via3_X1: off 0.005 grid via3 vertex"
+R11_met4_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met4_X1: off 0.005 grid met4 vertex"
+R12_via4_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"via4_X1: off 0.005 grid via4 vertex"
+R13_met5_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met5_X1: off 0.005 grid met5 vertex"
+R14_pad_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"pad_X1: off 0.005 grid pad vertex"
+R15_cap_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"cap_X1: off 0.005 grid capacitor vertex"
+R16_ind_X1
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"ind_X1: off 0.005 grid inductor vertex"
+R17_nwell_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"nwell_X2: non-octagonal nwell edge"
+R18_diff_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"diff_X2: non-octagonal diff edge"
+R19_met1_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met1_X2: non-octagonal met1 edge"
+R20_met2_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met2_X2: non-octagonal met2 edge"
+R21_met3_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met3_X2: non-octagonal met3 edge"
+R22_met4_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met4_X2: non-octagonal met4 edge"
+R23_met5_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"met5_X2: non-octagonal met5 edge"
+R24_cap_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"cap_X2: non-octagonal capacitor edge"
+R25_ind_X2
+0 0 2 Aug  3 11:44:14 2022
+Rule File Pathname: /home/jstine/Desktop/sky130_cds/pnr/sky130_drcRules.pvl
+"ind_X2: non-octagonal inductor edge"
