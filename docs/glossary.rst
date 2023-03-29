@@ -189,6 +189,10 @@ Glossary
       
     yosys
       `Yosys Open SYnthesis Suite <http://www.clifford.at/yosys/>`_
+      
+    eSim
+      _`eSim <https://esim.fossee.in/>`_, the OpenSource EDA tool developed by
+      `The FOSSEE Project, IIT Bombay <https://fossee.in/>`_
 
 
 .. Terms specific to this documentation
