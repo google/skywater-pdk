@@ -37,3 +37,6 @@ submodules:
    - libraries/sky130_fd_sc_ls/latest
    - libraries/sky130_fd_sc_ms/latest
   recursive: false
+
+formats:
+  - pdf

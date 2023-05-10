@@ -1,4 +1,5 @@
 Explanation of symbols:
+
 * ``-`` = Layer illegal for the device
 * ``+`` = Layer allowed to overlap
 * ``D`` = DRAWN indicates that a layer is drawn by Design.

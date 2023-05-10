@@ -1,5 +1,5 @@
-Summry of Key Periphery Rules
-=============================
+Summary of Key Periphery Rules
+==============================
 
 .. csv-table:: Table F3a: Front end layers (Low Voltage Devices)
    :file: summary/table-f3a-font-end-low-voltage.csv

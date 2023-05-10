@@ -61,13 +61,18 @@ extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.githubpages',
     'sphinx.ext.ifconfig',
+    'sphinx.ext.imgconverter',
     'sphinx.ext.mathjax',
     'sphinx.ext.napoleon',
     'sphinx.ext.todo',
     'sphinxcontrib_hdl_diagrams',
+    'sphinxcontrib.bibtex',
     'skywater_pdk.cells.cross_index',
     'skywater_pdk.cells.generate.readme',
 ]
+
+bibtex_default_style = 'plain'
+bibtex_bibfiles = ['refs.bib']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -88,8 +93,8 @@ if not on_rtd:
         "display_github": True,         # Integrate GitHub
         "github_user": "google",        # Username
         "github_repo": "skywater-pdk",  # Repo name
-        "github_version": "master",     # Version
-        "conf_py_path": "/doc/",
+        "github_version": "main",       # Version
+        "conf_py_path": "/docs/",
     }
 else:
     docs_dir = os.path.abspath(os.path.dirname(__file__))
@@ -126,6 +131,9 @@ exclude_patterns = [
     'code-of-conduct.rst',
     'rules/periphery-rules.rst',
     'rules/device-details/*/index.rst',
+    'rules/summary/*-key.rst',
+    'rules/layers/*-key.rst',
+    'rules/hv/*-key.rst',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
@@ -148,56 +156,24 @@ pygments_style = None
 #
 html_theme = "sphinx_symbiflow_theme"
 
+html_logo = "_static/skywater-pdk-logo-top.png"
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
+# https://sphinx-symbiflow-theme.readthedocs.io/en/latest/customization.html
 html_theme_options = {
-    # Specify a list of menu in Header.
-    # Tuples forms:
-    #  ('Name', 'external url or path of pages in the document', boolean, 'icon name')
-    #
-    # Third argument:
-    # True indicates an external link.
-    # False indicates path of pages in the document.
-    #
-    # Fourth argument:
-    # Specify the icon name.
-    # For details see link.
-    # https://material.io/icons/
-    'header_links': [
-        ('Home', 'index', False, 'home'),
-        ("GitHub", "https://github.com/google/skywater-pdk", True, 'code'),
-        ("SkyWater", "https://www.skywatertechnology.com/", True, 'link'),
-    ],
+    'nav_title': 'SkyWater SKY130 PDK',
 
-    # Customize css colors.
-    # For details see link.
-    # https://getmdl.io/customize/index.html
-    #
-    # Values: amber, blue, brown, cyan deep_orange, deep_purple, green, grey, indigo, light_blue,
-    #         light_green, lime, orange, pink, purple, red, teal, yellow(Default: indigo)
-    'primary_color': 'light_green',
-    # Values: Same as primary_color. (Default: pink)
-    'accent_color': 'teal',
+    'color_primary': 'light-green',
+    'color_accent': 'teal',
 
-    # Customize layout.
-    # For details see link.
-    # https://getmdl.io/components/index.html#layout-section
-    'fixed_drawer': True,
-    'fixed_header': True,
-    'header_waterfall': True,
-    'header_scroll': False,
+    # Set the repo location to get a badge with stats
+    'github_url': 'https://github.com/google/skywater-pdk',
+    'repo_name': 'google/skywater-pdk',
 
-    # Render title in header.
-    # Values: True, False (Default: False)
-    'show_header_title': False,
-    # Render title in drawer.
-    # Values: True, False (Default: True)
-    'show_drawer_title': True,
-    # Render footer.
-    # Values: True, False (Default: True)
-    'show_footer': True,
+    'globaltoc_depth': 4,
+    'globaltoc_collapse': False,
 
     # Hide the symbiflow links
     'hide_symbiflow_links': True,
@@ -322,6 +298,23 @@ numfig = True
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+latex_elements = {
+     'preamble': r'\DeclareUnicodeCharacter{03A9}{\ensuremath{\Omega}}' +
+                 r'\DeclareUnicodeCharacter{03BC}{\ensuremath{\mu}}' +
+                 r'\DeclareUnicodeCharacter{2184}{\ensuremath{\supset}}' +
+                 r'\DeclareUnicodeCharacter{2295}{\ensuremath{\oplus}}' +
+                 r'\DeclareUnicodeCharacter{2228}{\ensuremath{\vee}}' +
+                 r'\DeclareUnicodeCharacter{22BB}{\ensuremath{\veebar}}' +
+                 r'\DeclareUnicodeCharacter{01C1}{\ensuremath{\parallel}}' +
+                 r'\DeclareUnicodeCharacter{2220}{\ensuremath{\angle}}' +
+                 r'\DeclareUnicodeCharacter{2227}{\ensuremath{\wedge}}' +
+                 r'\DeclareUnicodeCharacter{25A1}{\ensuremath{\Box}}' +
+                 r'\DeclareUnicodeCharacter{F06D}{\ensuremath{\mu}}' +
+                 r'\DeclareUnicodeCharacter{03B2}{\ensuremath{\beta}}' +
+                 r'\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}' +
+                 r'\usepackage{pmboxdraw}' +
+                 r'\DeclareUnicodeCharacter{2534}{\textSFvii}'
+}
 
 import re
 from docutils.parsers.rst import directives, roles, nodes

@@ -20,6 +20,9 @@ channels:
 dependencies:
 - python=3.8
 - pip
+- yosys
+- netlistsvg
+- iverilog
 # Packages installed from PyPI
 - pip:
-  - -r file:requirements.txt
+  - -r requirements.txt

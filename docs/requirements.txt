@@ -1,8 +1,9 @@
-git+https://github.com/SymbiFlow/sphinx_materialdesign_theme.git#egg=sphinx-symbiflow-theme
+git+https://github.com/SymbiFlow/sphinx_symbiflow_theme.git#egg=sphinx-symbiflow-theme
 
 docutils
 sphinx
 sphinx-autobuild
+sphinxcontrib-bibtex
 
 # Verilog domain
 sphinx-verilog-domain
@@ -10,7 +11,7 @@ sphinx-verilog-domain
 sphinxcontrib-hdl-diagrams
 
 # Module diagrams
-git+https://github.com/SymbiFlow/symbolator.git#egg=symbolator
+#git+https://github.com/SymbiFlow/symbolator.git#egg=symbolator
 
 # pycairo
 # vext.gi

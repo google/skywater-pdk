@@ -1,4 +1,5 @@
 Explanation of symbols:
+
 * ``-`` = Layer not created for the device
 * ``+`` = Layer allowed to overlap
 * ``C`` = CREATED

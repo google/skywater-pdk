@@ -8,11 +8,11 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         name: Run Labeler
         if: success()
-        uses: crazy-max/ghaction-github-labeler@v3.1.0
+        uses: crazy-max/ghaction-github-labeler@v4.0.0
         with:
           yaml_file: .github/labels.yml
         env:

@@ -1,5 +1,5 @@
-Bipolar (NPN)
--------------
+Bipolar NPN transistor
+----------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -51,6 +51,10 @@
   description: "Item which references a specific open task which needs finishing."
   color: "57dbba" # FIXME: blueish
 
+- name: "type-blocker"
+  description: "Issue which is blocking a launch."
+  color: "ff0000" # Very Red
+
 ##########################################################################
 # Labels related to files found in the repository
 #
@@ -241,6 +245,10 @@
   description: "Issues with using OpenROAD with the PDK."
   color: "054caa"
 
+- name: "tools-ngspice"
+  description: "Issues with using Ngspice with the PDK."
+  color: "054caa"
+  
 # Partially open or with closed source dependencies.
 - name: "tools-BAG"
   description: "Issues with using the Berkeley Analog Generator (BAG) with the PDK."

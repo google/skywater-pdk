@@ -1,5 +1,5 @@
-Bipolar (PNP)
--------------
+Bipolar PNP transistor
+----------------------
 
 Spice Model Information
 ~~~~~~~~~~~~~~~~~~~~~~~

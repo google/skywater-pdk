@@ -1,4 +1,4 @@
-Generic Resistors
+Generic resistors
 -----------------
 
 Generic resistors are supported in the PDK but are not recommended for analog applications. Resistor values will be extracted from the layout as long as the resistor layer is utilized, for LVS against schematic elements.
