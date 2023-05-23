@@ -15,7 +15,7 @@
 # SPDX-License-Identifier: Apache-2.0
 name: skywater-pdk-scripts
 channels:
-- symbiflow
+- litex-hub
 - defaults
 dependencies:
 - python=3.8
