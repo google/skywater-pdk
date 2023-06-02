@@ -83,7 +83,7 @@ class TimingType(enum.IntFlag):
 
     def names(self):
         o = []
-        for t in TimingType:
+        for _, t in TimingType.__members__.items():
             if t in self:
                 o.append(t.name)
         return ", ".join(o)
@@ -123,7 +123,7 @@ class TimingType(enum.IntFlag):
 
     @property
     def types(self):
-        tt = set(t for t in TimingType if t in self)
+        tt = set(t for _, t in TimingType.__members__.items() if t in self)
         if TimingType.ccsnoise in tt:
             tt.remove(TimingType.basic)
         return list(tt)
