@@ -1,0 +1,420 @@
+
+incr_conn YES
+results_db -drc mult_seq.drc_errors.ascii -ascii
+
+/// Tolerance for round-off errors on skew edges
+tolerance 0.001
+
+/// Unused MaskLayers: (FOM DNM NWM HVTRM TUNM ONOM LVOM P1M NPCM LDNTM NSDM PSDM LICM1 LI1M CTM1 MM1 VIM MM2 VIM2 MM3 VIM3 MM4 VIM4 MM5 NSM PDM PBO RPM CU1M PMM2)
+layer_def nwell 1000
+layer_map 64 -datatype 20 1000 // nwell drawing
+
+layer_def diff 1001
+layer_map 65 -datatype 20 1001 // diff drawing
+
+layer_def poly 1008
+layer_map 66 -datatype 20 1008 // poly drawing
+
+layer_def licon1 1012
+layer_map 66 -datatype 44 1012 // licon1 drawing
+
+layer_def li1 1013
+layer_map 67 -datatype 20 1013 // li1 drawing
+
+layer_def mcon 1014
+layer_map 67 -datatype 44 1014 // mcon drawing
+
+layer_def met1 1015
+layer_map 68 -datatype 20 1015 // met1 drawing
+
+layer_def via 1016
+layer_map 68 -datatype 44 1016 // via drawing
+
+layer_def met2 1017
+layer_map 69 -datatype 20 1017 // met2 drawing
+
+layer_def via2 1019
+layer_map 69 -datatype 44 1019 // via2 drawing
+
+layer_def met3 1020
+layer_map 70 -datatype 20 1020 // met3 drawing
+
+layer_def via3 1021
+layer_map 70 -datatype 44 1021 // via3 drawing
+
+layer_def met4 1022
+layer_map 71 -datatype 20 1022 // met4 drawing
+
+layer_def via4 1023
+layer_map 71 -datatype 44 1023 // via4 drawing
+
+layer_def met5 1024
+layer_map 72 -datatype 20 1024 // met5 drawing
+
+layer_def pad 1026
+layer_map 76 -datatype 20 1026 // pad drawing
+
+layer_def capacitor 1031
+layer_map 82 -datatype 64 1031 // capacitor drawing
+
+layer_def inductor 1034
+layer_map 82 -datatype 24 1034 // inductor drawing
+
+layer_def polyGate 1074
+layer_map 66 -datatype 9 1074 // poly gate
+
+layer_def padText 1089
+layer_map 76 -texttype 5 1089 // pad label
+
+layer_def diffLabel 1090
+layer_map 65 -datatype 6 1090 // diff label
+
+layer_def nwellLabel 1092
+layer_map 64 -datatype 5 1092 // nwell label
+
+layer_def polyLabel 1093
+layer_map 66 -datatype 5 1093 // poly label
+
+layer_def met1Label 1094
+layer_map 68 -datatype 5 1094 // met1 label
+
+layer_def met2Label 1095
+layer_map 69 -datatype 5 1095 // met2 label
+
+layer_def met3Label 1096
+layer_map 70 -datatype 5 1096 // met3 label
+
+layer_def met4Label 1097
+layer_map 71 -datatype 5 1097 // met4 label
+
+layer_def met5Label 1098
+layer_map 72 -datatype 5 1098 // met5 label
+
+layer_def li1Block 1099
+layer_map 67 -datatype 10 1099 // li1 blockage
+
+layer_def met1Block 1100
+layer_map 68 -datatype 10 1100 // met1 blockage
+
+layer_def met2Block 1101
+layer_map 69 -datatype 10 1101 // met2 blockage
+
+layer_def met3Block 1102
+layer_map 70 -datatype 10 1102 // met3 blockage
+
+layer_def met4Block 1103
+layer_map 71 -datatype 10 1103 // met4 blockage
+
+layer_def met5Block 1104
+layer_map 72 -datatype 10 1104 // met5 blockage
+
+layer_def diffBndry 1106
+layer_map 65 -datatype 4 1106 // diff boundary
+
+layer_def mconBndry 1108
+layer_map 67 -datatype 60 1108 // mcon boundary
+
+layer_def polyBndry 1109
+layer_map 66 -datatype 4 1109 // poly boundary
+
+layer_def viaBndry 1110
+layer_map 68 -datatype 60 1110 // via boundary
+
+layer_def via2Bndry 1111
+layer_map 69 -datatype 60 1111 // via2 boundary
+
+layer_def via3Bndry 1112
+layer_map 70 -datatype 60 1112 // via3 boundary
+
+layer_def via4Bndry 1113
+layer_map 71 -datatype 60 1113 // via4 boundary
+
+layer_def li1tt 1114 1115 1116 1117
+layer_map 67 -texttype 20 1114 // li1 drawing
+layer_map 67 -texttype 5 1115 // li1 label
+layer_map 67 -texttype 23 1116 // li1 net
+layer_map 67 -texttype 16 1117 // li1 pin
+
+layer_def met1tt 1118 1119 1120 1121
+layer_map 68 -texttype 20 1118 // met1 drawing
+layer_map 68 -texttype 5 1119 // met1 label
+layer_map 68 -texttype 23 1120 // met1 net
+layer_map 68 -texttype 16 1121 // met1 pin
+
+layer_def met2tt 1122 1123 1124 1125
+layer_map 69 -texttype 20 1122 // met2 drawing
+layer_map 69 -texttype 5 1123 // met2 label
+layer_map 69 -texttype 23 1124 // met2 net
+layer_map 69 -texttype 16 1125 // met2 pin
+
+layer_def met3tt 1126 1127 1128 1129
+layer_map 70 -texttype 20 1126 // met3 drawing
+layer_map 70 -texttype 5 1127 // met3 label
+layer_map 70 -texttype 23 1128 // met3 net
+layer_map 70 -texttype 16 1129 // met3 pin
+
+layer_def met4tt 1130 1131 1132 1133
+layer_map 71 -texttype 20 1130 // met4 drawing
+layer_map 71 -texttype 5 1131 // met4 label
+layer_map 71 -texttype 23 1132 // met4 net
+layer_map 71 -texttype 16 1133 // met4 pin
+
+layer_def met5tt 1134 1135 1136 1137
+layer_map 72 -texttype 20 1134 // met5 drawing
+layer_map 72 -texttype 5 1135 // met5 label
+layer_map 72 -texttype 23 1136 // met5 net
+layer_map 72 -texttype 16 1137 // met5 pin
+
+layer_def polytt 1138 1139 1140 1141
+layer_map 66 -texttype 20 1138 // poly drawing
+layer_map 66 -texttype 5 1139 // poly label
+layer_map 66 -texttype 23 1140 // poly net
+layer_map 66 -texttype 16 1141 // poly pin
+
+layer_def difftt 1142 1143 1144 1145
+layer_map 65 -texttype 20 1142 // diff drawing
+layer_map 65 -texttype 6 1143 // diff label
+layer_map 65 -texttype 23 1144 // diff net
+layer_map 65 -texttype 16 1145 // diff pin
+
+layer_def poly_pin 1146
+layer_map 66 -datatype 16 1146 // poly pin
+
+layer_def li1_pin 1147
+layer_map 67 -datatype 16 1147 // li1 pin
+
+layer_def met1_pin 1148
+layer_map 68 -datatype 16 1148 // met1 pin
+
+layer_def met2_pin 1149
+layer_map 69 -datatype 16 1149 // met2 pin
+
+layer_def met3_pin 1150
+layer_map 70 -datatype 16 1150 // met3 pin
+
+layer_def met4_pin 1151
+layer_map 71 -datatype 16 1151 // met4 pin
+
+layer_def met5_pin 1152
+layer_map 72 -datatype 16 1152 // met5 pin
+
+layer_def nwellpt 1153
+layer_map 64 -texttype 16 1153 // nwell pin
+layer_map 64 -texttype 0 1153 // nwell pin
+
+layer_def polypt 1154
+layer_map 66 -texttype 16 1154 // poly pin
+layer_map 66 -texttype 0 1154 // poly pin
+
+layer_def li1pt 1155
+layer_map 67 -texttype 16 1155 // li1 pin
+layer_map 67 -texttype 0 1155 // li1 pin
+
+layer_def met1pt 1156
+layer_map 68 -texttype 16 1156 // met1 pin
+layer_map 68 -texttype 0 1156 // met1 pin
+
+layer_def met2pt 1157
+layer_map 69 -texttype 16 1157 // met2 pin
+layer_map 69 -texttype 0 1157 // met2 pin
+
+layer_def met3pt 1158
+layer_map 70 -texttype 16 1158 // met3 pin
+layer_map 70 -texttype 0 1158 // met3 pin
+
+layer_def met4pt 1159
+layer_map 71 -texttype 16 1159 // met4 pin
+layer_map 71 -texttype 0 1159 // met4 pin
+
+layer_def met5pt 1160
+layer_map 72 -texttype 16 1160 // met5 pin
+layer_map 72 -texttype 0 1160 // met5 pin
+
+layer_def padtt 1167 1089
+layer_map 76 -texttype 20 1167 // pad drawing
+   // 1089 -> pad label
+
+layer_def pad_pin 1168
+layer_map 76 -datatype 16 1168 // pad pin
+
+layer_def padpt 1169
+layer_map 76 -texttype 16 1169 // pad pin
+layer_map 76 -texttype 0 1169 // pad pin
+
+layer_def met5Pin 1152
+   // 1152 -> met5 pin
+
+layer_def met4Pin 1151
+   // 1151 -> met4 pin
+
+layer_def met3Pin 1150
+   // 1150 -> met3 pin
+
+layer_def met2Pin 1149
+   // 1149 -> met2 pin
+
+layer_def met1Pin 1148
+   // 1148 -> met1 pin
+
+layer_def li1Pin 1147
+   // 1147 -> li1 pin
+
+layer_def polyPin 1146
+   // 1146 -> poly pin
+
+layer_def diffPin 1222
+layer_map 65 -datatype 16 1222 // diff pin
+
+treat_non_baselayer_as_toplayer yes
+base_layer diff
+base_layer poly
+layer_def pwellLabel 1229
+layer_map 64 -datatype 59 1229 // pwell label
+
+layer_def pwelltt 1230
+layer_map 64 -texttype 59 1230 // pwell label
+
+layer_def pwell_pin 1231
+layer_map 122 -datatype 16 1231 // pwell pin
+
+layer_def pwellpt 1232
+layer_map 122 -texttype 16 1232 // pwell pin
+layer_map 122 -texttype 0 1232 // pwell pin
+
+copy inductor -outputlayer inductor_exempt
+and diff nwell -outputlayer PDIFF
+not diff nwell -outputlayer NDIFF
+not diff poly -outputlayer SRCDRN
+and poly diff -outputlayer POLYandDIFF
+copy POLYandDIFF -outputlayer GATE
+edge_boolean -inside GATE diff -outputlayer GATESIDE
+edge_boolean -coincident_only -inside GATE diff -outputlayer GATEEND
+//edge_boolean -coincident_only -outside diff tap -outputlayer diffTapEdge
+copy GATE -outputlayer MOSGATE
+copy MOSGATE -outputlayer EMOSGATE
+disconnect
+//and npc licon1 -outputlayer npccon
+//connect dnwell nwell
+//connect nwell tap -by NTAP
+//connect tap li1 -by licon1
+//connect poly li1 -by npccon
+connect li1 met1 -by mcon
+connect met1 met2 -by via
+connect met3 met2 -by via2
+connect met3 met4 -by via3
+connect met4 met5 -by via4
+connect met5 pad
+rule "R0_nwell_X1" {
+caption "nwell_X1: off 0.005 grid nwell vertex"
+offgrid nwell 5
+}
+rule "R1_diff_X1" {
+caption "diff_X1: off 0.005 grid diff vertex"
+offgrid diff 5
+}
+rule "R2_poly_X1" {
+caption "poly_X1: off 0.005 grid poly vertex"
+offgrid poly 5
+}
+rule "R3_li1_X1" {
+caption "li1_X1: off 0.005 grid li1 vertex"
+offgrid li1 5
+}
+rule "R4_mcon_X1" {
+caption "mcon_X1: off 0.005 grid mcon vertex"
+offgrid mcon 5
+}
+rule "R5_met1_X1" {
+caption "met1_X1: off 0.005 grid met1 vertex"
+offgrid met1 5
+}
+rule "R6_via_X1" {
+caption "via_X1: off 0.005 grid via vertex"
+offgrid via 5
+}
+rule "R7_met2_X1" {
+caption "met2_X1: off 0.005 grid met2 vertex"
+offgrid met2 5
+}
+rule "R8_via2_X1" {
+caption "via2_X1: off 0.005 grid via2 vertex"
+offgrid via2 5
+}
+rule "R9_met3_X1" {
+caption "met3_X1: off 0.005 grid met3 vertex"
+offgrid met3 5
+}
+rule "R10_via3_X1" {
+caption "via3_X1: off 0.005 grid via3 vertex"
+offgrid via3 5
+}
+rule "R11_met4_X1" {
+caption "met4_X1: off 0.005 grid met4 vertex"
+offgrid met4 5
+}
+rule "R12_via4_X1" {
+caption "via4_X1: off 0.005 grid via4 vertex"
+offgrid via4 5
+}
+rule "R13_met5_X1" {
+caption "met5_X1: off 0.005 grid met5 vertex"
+offgrid met5 5
+}
+rule "R14_pad_X1" {
+caption "pad_X1: off 0.005 grid pad vertex"
+offgrid pad 5
+}
+rule "R15_cap_X1" {
+caption "cap_X1: off 0.005 grid capacitor vertex"
+offgrid capacitor 5
+}
+rule "R16_ind_X1" {
+caption "ind_X1: off 0.005 grid inductor vertex"
+offgrid inductor 5
+}
+rule "R17_nwell_X2" {
+caption "nwell_X2: non-octagonal nwell edge"
+angle nwell -ltgt 0 45
+angle nwell -ltgt 45 90
+}
+rule "R18_diff_X2" {
+caption "diff_X2: non-octagonal diff edge"
+angle diff -ltgt 0 45
+angle diff -ltgt 45 90
+}
+rule "R19_met1_X2" {
+caption "met1_X2: non-octagonal met1 edge"
+angle met1 -ltgt 0 45
+angle met1 -ltgt 45 90
+}
+rule "R20_met2_X2" {
+caption "met2_X2: non-octagonal met2 edge"
+angle met2 -ltgt 0 45
+angle met2 -ltgt 45 90
+}
+rule "R21_met3_X2" {
+caption "met3_X2: non-octagonal met3 edge"
+angle met3 -ltgt 0 45
+angle met3 -ltgt 45 90
+}
+rule "R22_met4_X2" {
+caption "met4_X2: non-octagonal met4 edge"
+angle met4 -ltgt 0 45
+angle met4 -ltgt 45 90
+}
+rule "R23_met5_X2" {
+caption "met5_X2: non-octagonal met5 edge"
+angle met5 -ltgt 0 45
+angle met5 -ltgt 45 90
+}
+rule "R24_cap_X2" {
+caption "cap_X2: non-octagonal capacitor edge"
+angle capacitor -ltgt 0 45
+angle capacitor -ltgt 45 90
+}
+rule "R25_ind_X2" {
+caption "ind_X2: non-octagonal inductor edge"
+angle inductor -ltgt 0 45
+angle inductor -ltgt 45 90
+}
+

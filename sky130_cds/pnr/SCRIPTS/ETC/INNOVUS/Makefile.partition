@@ -1,0 +1,45 @@
+VERSION=17.10-p003_1
+VPATH=./make
+SLEEPTIME = 10
+
+REALTARGET=$(TARGET:single=$(FF_STOP))
+
+BLOCK_TARGETS = $(BLOCKS:=.$(REALTARGET))
+
+blocks: blocks_$(REALTARGET)
+
+blocks_$(REALTARGET): $(BLOCK_TARGETS)
+	@err=0 ;\
+    for b in $(BLOCKS) ; do \
+      echo "INFO: Waiting for block $$b completion...." ;\
+      while [ ! -r $$b/$(VPATH)/block_$(REALTARGET).DONE ] ; do sleep $(SLEEPTIME) ; done ; \
+      if [ -r $$b/$(VPATH)/block_$(REALTARGET).FAILED ] ; then \
+        echo "ERROR: Block $$b failed" ;\
+         /bin/cat $$b/$(VPATH)/block_$(REALTARGET).FAILED ; \
+         /bin/rm -f $$b/$(VPATH)/block_$(REALTARGET).DONE ; \
+        err=1 ; \
+      else \
+        echo "INFO: Block $$b Completed" ;\
+        /bin/cat $$b/$(VPATH)/block_$(REALTARGET).PASS ; \
+        /bin/touch $(VPATH)/$$b.$(REALTARGET) ; \
+      fi ;\
+    done ;\
+    if [ $$err = 0 ] ; then \
+      /bin/touch $(VPATH)/$@ ;\
+    fi ;\
+    exit $$err
+
+
+%.$(REALTARGET) :
+	@cd $* ; \
+      if [ -r $(VPATH)/.RUNNING ] ; then \
+        echo "INFO: Skipping block $* which seems to still be running (see `pwd`/make/.RUNNING)" ; \
+        /bin/head -1 $(VPATH)/.RUNNING ;\
+        exit 1 ;\
+      else \
+        echo "INFO: Processing block $*..." ;\
+        $(SUBMIT) $(MAKE) VPATH=$(VPATH) block_$(REALTARGET) TARGET=$(TARGET) ;\
+      fi
+
+$(BLOCKS): 
+	VPATH=$(VPATH); @$(MAKE) $@.$(REALTARGET)

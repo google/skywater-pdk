@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<Library DMSystem="oaDMFileSys">
+    <oaDMFileSys libReadOnly="No"
+                 origFileSystem="Unix"/>
+</Library>
