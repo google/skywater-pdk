@@ -41,6 +41,20 @@ debug = False
 
 LOG2_10 = log2(10)
 
+def msg_debug(*args, **kwargs):
+    if debug:
+        kwargs['file'] = sys.stderr
+        print("[d]", *args if args else "", **kwargs)
+
+def msg_info( *args, **kwargs):
+    kwargs['file'] = sys.stderr
+    print("[+]" if args else "", *args, **kwargs)
+
+def msg_err( *args, **kwargs):
+    kwargs['file'] = sys.stderr
+    print("[!]" if args else "", *args, **kwargs)
+
+
 class TimingType(enum.IntFlag):
     """
 
@@ -180,6 +194,36 @@ def top_corner_file(libname, corner, corner_type: TimingType, directory_prefix =
           corner_type=corner_type.file)
 
 
+def top_liberty_file(libname, corner, corner_type: TimingType, directory_prefix = "timing"):
+    """
+
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.ccsnoise)
+    'timing/sky130_fd_sc_hd__ff_100C_1v65_ccsnoise.lib'
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic)
+    'timing/sky130_fd_sc_hd__ff_100C_1v65.lib'
+    >>> top_liberty_file("sky130_fd_sc_hd", "ff_100C_1v65", TimingType.basic, "")
+    'sky130_fd_sc_hd__ff_100C_1v65.lib'
+
+    """
+    return top_corner_file(libname, corner, corner_type, directory_prefix).replace('.lib.json', '.lib')
+
+
+def top_liberty_file_split(fname):
+    """
+    Splits a fully specified top liberty file name into library / corner / corner_type
+
+    >>> top_liberty_file_split('timing/sky130_fd_sc_hd__ff_100C_1v65_ccsnoise.lib')
+    ('sky130_fd_sc_hd', 'ff_100C_1v65', <TimingType.ccsnoise: 3>)
+    >>> top_liberty_file_split('timing/sky130_fd_sc_hd__ff_100C_1v65.lib')
+    ('sky130_fd_sc_hd', 'ff_100C_1v65', <TimingType.basic: 1>)
+
+    """
+    m = re.match('(.*)__(.*)\.lib', os.path.basename(fname))
+    if m is None:
+        return None
+    return ( m.group(1), *TimingType.parse(m.group(2)) )
+
+
 def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
     """Collect the available timing information in corners.
 
@@ -248,7 +292,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
         if not missing:
             continue
 
-        print("Missing", ", ".join(missing), "from", corner, corner_types)
+        msg_err("Missing", ", ".join(missing), "from", corner, corner_types)
 
     return libname0, corners, all_cells
 
@@ -257,7 +301,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
             fname = cell_corner_file(libname0, cell_with_size, corner, corner_type)
             fpath = os.path.join(library_dir, fname)
             if not os.path.exists(fpath) and debug:
-                print("Missing", (fpath, corner, corner_type, corner_types))
+                msg_err("Missing", (fpath, corner, corner_type, corner_types))
 
     timing_dir = os.path.join(library_dir, "timing")
     assert os.path.exists(timing_dir), timing_dir
@@ -266,7 +310,7 @@ def collect(library_dir) -> Tuple[Dict[str, TimingType], List[str]]:
             fname = top_corner_file(libname0, corner, corner_type)
             fpath = os.path.join(library_dir, fname)
             if not os.path.exists(fpath) and debug:
-                print("Missing", (fpath, corner, corner_type, corner_types))
+                msg_err("Missing", (fpath, corner, corner_type, corner_types))
 
     return libname0, corners, all_cells
 
@@ -297,7 +341,7 @@ def remove_ccsnoise_from_dict(data, dataname):
 
     for k in ccsn_keys:
         if debug:
-            print("{:s}: Removing {}".format(dataname, k))
+            msg_info("{:s}: Removing {}".format(dataname, k))
         del data[k]
 
 
@@ -323,7 +367,7 @@ remove_ccsnoise_from_library = remove_ccsnoise_from_dict
 
 def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output_directory):
     output_directory_prefix = None if output_directory else "timing"
-    top_fname = top_corner_file(lib, corner, ocorner_type, output_directory_prefix).replace('.lib.json', '.lib')
+    top_fname = top_liberty_file(lib, corner, ocorner_type, output_directory_prefix)
     output_directory = output_directory if output_directory else library_dir
     top_fpath = os.path.join(output_directory, top_fname)
 
@@ -332,7 +376,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
         print("\n".join(lines), file=top_fout)
 
     otype_str = "({} from {})".format(ocorner_type.name, icorner_type.names())
-    print("Starting to write", top_fpath, otype_str, flush=True)
+    msg_info("Starting to write", top_fpath, otype_str)
 
     common_data = {}
 
@@ -352,7 +396,7 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
         assert isinstance(d, dict)
         for k, v in d.items():
             if k in common_data:
-                print("Overwriting", k, "with", v, "(existing value of", common_data[k], ")")
+                msg_info("Overwriting", k, "with", v, "(existing value of", common_data[k], ")")
             common_data[k] = v
 
     # Remove the ccsnoise if it exists
@@ -388,8 +432,21 @@ def generate(library_dir, lib, corner, ocorner_type, icorner_type, cells, output
     top_write([''])
     top_write(['}'])
     top_fout.close()
-    print("   Finish writing", top_fpath, flush=True)
-    print("")
+    msg_info("   Finish writing", top_fpath)
+    msg_info()
+
+
+def deps(library_dir, lib, corner, ocorner_type, icorner_type, cells, output_directory):
+    output_directory_prefix = None if output_directory else "timing"
+    output_directory = output_directory if output_directory else library_dir
+    top_out_path     = os.path.join(output_directory, top_liberty_file(lib, corner, ocorner_type, output_directory_prefix))
+    common_data_path = os.path.join(output_directory, output_directory_prefix, "{}__common.lib.json".format(lib))
+    top_data_path    = os.path.join(output_directory, top_corner_file(lib, corner, icorner_type, output_directory_prefix))
+    cell_paths_lst = [
+        os.path.join(library_dir, cell_corner_file(lib, cell_with_size, corner, icorner_type))
+            for cell_with_size in cells
+    ]
+    print(f"{top_out_path:s} {top_out_path.replace('.lib','.d'):s}: {common_data_path:s} {top_data_path:s} {' '.join(cell_paths_lst):s}")
 
 
 # * The 'delay_model' should be the 1st attribute in the library
@@ -997,16 +1054,16 @@ def liberty_dict(dtype, dvalue, data, indent=tuple(), attribute_types=None):
 
     di = [attr_sort_key(i) for i in data.items()]
     di.sort()
-    if debug:
-        print(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
-        print("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
-        for sk, kt, skv, kv, k, v in di:
-            print(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
-            sv = str(v)
-            print(sv[:40], end=" ")
-            if len(sv) > 40:
-                print('...', end=" ")
-            print()
+
+    msg_debug(" "*len(str(indent)), "s1   s2     ", "%-40s" % "ktype", '%-40r' % "kvalue", "value")
+    msg_debug("-"*len(str(indent)), "---- ----   ", "-"*40, "-"*40, "-"*44)
+    for sk, kt, skv, kv, k, v in di:
+        msg_debug(str(indent), "%4.0f %4.0f --" % sk, "%-40s" % kt, '%-40r' % kv, end=" ")
+        sv = str(v)
+        msg_debug(sv[:40], end=" ")
+        if len(sv) > 40:
+            msg_debug('...', end=" ")
+        msg_debug()
 
 
     # Output all the attributes
@@ -1110,6 +1167,17 @@ def main():
             help="Sets the parent directory of the liberty files",
             default="")
 
+    parser.add_argument(
+            "--list-targets",
+            help="List buildable target liberty files",
+            action='store_true',
+            default=False)
+    parser.add_argument(
+            "--gen-deps",
+            help="Generate dependency file",
+            action='store_true',
+            default=False)
+
     args = parser.parse_args()
     if args.debug:
         global debug
@@ -1119,14 +1187,28 @@ def main():
 
     retcode = 0
 
-    lib, corners, all_cells = collect(libdir)
+    if libdir.is_dir():
+        # libdir is a directory, collect available corners and process specified ones
+        if args.ccsnoise:
+            output_corner_type = TimingType.ccsnoise
+        elif args.leakage:
+            output_corner_type = TimingType.leakage
+        else:
+            output_corner_type = TimingType.basic
 
-    if args.ccsnoise:
-        output_corner_type = TimingType.ccsnoise
-    elif args.leakage:
-        output_corner_type = TimingType.leakage
+    elif libdir.suffix == '.lib':
+        # libdir is directly the liberty target file to generate, derive params from it
+        s = top_liberty_file_split(libdir.name)
+
+        libdir = libdir.parents[1]
+        args.corner = [ s[1] ]
+        output_corner_type = s[2]
+
     else:
-        output_corner_type = TimingType.basic
+        msg_err("Invalid library path (neither source directory or liberty library target")
+        return 1
+
+    lib, corners, all_cells = collect(libdir)
 
     if args.corner == ['all']:
         args.corner = list(sorted(k for k, (v0, v1) in corners.items() if output_corner_type in v0))
@@ -1135,26 +1217,35 @@ def main():
         for acorner in args.corner:
             if acorner in corners:
                 continue
-            print()
-            print("Unknown corner:", acorner)
+            msg_err()
+            msg_err("Unknown corner:", acorner)
             retcode = 1
         if retcode != 0:
             args.corner.clear()
 
     if not args.corner:
-        print()
-        print("Available corners for", lib+":")
-        for k, v in sorted(corners.items()):
-            print("  -", k, v[0].describe())
-        print()
-        return retcode
+        if not args.list_targets:
+            msg_info()
+            msg_info("Available corners for", lib+":")
+            for k, v in sorted(corners.items()):
+                msg_info("  -", k, v[0].describe())
+            msg_info()
+            return retcode
+        else:
+            for k, v in sorted(corners.items()):
+                for t in TimingType:
+                    if t in v[0]:
+                        print(libdir.joinpath(top_liberty_file(lib, k, t)))
+            return retcode
 
-    print("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
-    print()
+    if not args.gen_deps:
+        msg_info("Generating", output_corner_type.name, "liberty timing files for", lib, "at", ", ".join(args.corner))
+        msg_info()
+
     for corner in args.corner:
         input_corner_type, corner_cells = corners[corner]
         if output_corner_type not in input_corner_type:
-            print("Corner", corner, "doesn't support", output_corner_type, "(only {})".format(input_corner_type))
+            msg_err("Corner", corner, "doesn't support", output_corner_type, "(only {})".format(input_corner_type))
             return 1
 
         if output_corner_type == TimingType.basic and TimingType.ccsnoise in input_corner_type:
@@ -1162,11 +1253,19 @@ def main():
         else:
             input_corner_type = output_corner_type
 
-        generate(
-            libdir, lib,
-            corner, output_corner_type, input_corner_type,
-            corner_cells, args.output_directory
-        )
+        if args.gen_deps:
+            deps(
+                libdir, lib,
+                corner, output_corner_type, input_corner_type,
+                corner_cells, args.output_directory,
+            )
+        else:
+            generate(
+                libdir, lib,
+                corner, output_corner_type, input_corner_type,
+                corner_cells, args.output_directory,
+            )
+
     return 0
 
 

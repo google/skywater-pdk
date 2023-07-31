@@ -78,29 +78,30 @@ check: check-licenses lint-python
 all: README.rst
 	@true
 
+.PHONY: all
 
-SC_LIBS = $(sort $(notdir $(wildcard libraries/sky130_*_sc_*)))
 
-$(SC_LIBS): | $(CONDA_ENV_PYTHON)
-	@$(IN_CONDA_ENV) for V in libraries/$@/*; do \
-		if [ -d "$$V/cells" ]; then \
-			python -m skywater_pdk.liberty $$V; \
-			python -m skywater_pdk.liberty $$V all; \
-			python -m skywater_pdk.liberty $$V all --ccsnoise; \
-		fi \
-	done
-
-sky130_fd_sc_ms-leakage: | $(CONDA_ENV_PYTHON)
-	 @$(IN_CONDA_ENV) for V in libraries/sky130_fd_sc_ms/*; do \
-		if [ -d "$$V/cells" ]; then \
-			python -m skywater_pdk.liberty $$V all --leakage; \
-		fi \
-	done
-
-sky130_fd_sc_ms: sky130_fd_sc_ms-leakage
+SC_LIBS = $(foreach lib, $(dir $(wildcard libraries/*/*/timing)), $(shell $(IN_CONDA_ENV) python -m skywater_pdk.liberty --list-targets $(lib)))
 
 timing: $(SC_LIBS) | $(CONDA_ENV_PYTHON)
 	@true
 
+.PHONY: timing
 
-.PHONY: all
+libraries/%.lib:
+	@$(IN_CONDA_ENV) python -m skywater_pdk.liberty $@
+
+libraries/%.d:
+	@$(IN_CONDA_ENV) python -m skywater_pdk.liberty --gen-deps $(@:.d=.lib) > $@
+
+include $(SC_LIBS:.lib=.d)
+
+clean::
+	@rm -f $(SC_LIBS) $(SC_LIBS:.lib=.d)
+
+.PHONY: clean
+
+dist-clean::
+	@rm -f $(SC_LIBS) $(SC_LIBS:.lib=.d)
+
+.PHONY: dist-clean
