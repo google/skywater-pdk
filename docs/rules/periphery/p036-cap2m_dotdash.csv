@@ -1,0 +1,11 @@
+Name,Description,Flags,Value,Unit
+(cap2m.1),Min width of cap2m,,1,µm
+(cap2m.2a),Min spacing of cap2m to cap2m,,0.84,µm
+(cap2m.2b),Minimum spacing of capacitor bottom_plate to bottom plate,,1.2,µm
+(cap2m.3),Minimum enclosure of cap2m (top_plate) by met4,,0.14,µm
+(cap2m.4),Min enclosure of via4 by cap2m,,0.2,µm
+(cap2m.5),Min spacing between cap2m and via3,,0.2,µm
+(cap2m.6),Maximum Aspect Ratio (Length/Width),,20,
+(cap2m.7),Only rectangular or L-shaped capacitors allowed,,,
+(cap2m.8),"Min space, no overlap, between via3 and cap2m",,0.14,µm
+(cap2m.11),Min spacing between cap2m to (met3 not overlapping cap2m),,0.5,µm

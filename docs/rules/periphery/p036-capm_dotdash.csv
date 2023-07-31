@@ -1,13 +1,11 @@
 Name,Description,Flags,Value,Unit
-(capm.1),Min width of capm,,N/A,N/A
-(capm.2a),Min spacing of capm to capm,,N/A,N/A
-(capm.2b),Minimum spacing of capacitor bottom_plate to bottom plate,,N/A,N/A
-(capm.3),Minimum enclosure of capm (top_plate) by met2,,N/A,N/A
-(capm.4),Min enclosure of via2 by capm,,N/A,N/A
-(capm.5),Min spacing between capm and via2,,N/A,N/A
-(capm.6),Maximum Aspect Ratio (Length/Width),,N/A,N/A
-(capm.7),Only rectangular capacitors are allowed,,N/A,N/A
-(capm.8),"Min space, no overlap, between via and capm",,N/A,N/A
-(capm.10),"capm must not straddle nwell, diff, tap, poly, li1 and met1 (Rule exempted for capm overlapping capm_2t.dg)",TC,N/A,N/A
-(capm.11),Min spacing between capm to (met2 not overlapping capm),,N/A,N/A
-(capm.12),Max area of capm (um^2),,N/A,N/A
+(capm.1),Min width of capm,,1,µm
+(capm.2a),Min spacing of capm to capm,,0.84,µm
+(capm.2b),Minimum spacing of capacitor bottom_plate to bottom plate,,1.2,µm
+(capm.3),Minimum enclosure of capm (top_plate) by met3,,0.14,µm
+(capm.4),Min enclosure of via3 by capm,,0.14,µm
+(capm.5),Min spacing between capm and via3,,0.14,µm
+(capm.6),Maximum Aspect Ratio (Length/Width),,20,
+(capm.7),Only rectangular or L-shaped capacitors allowed,,,
+(capm.8),"Min space, no overlap, between via2 and capm",,0.14,µm
+(capm.11),Min spacing between capm to (met3 not overlapping capm),,0.5,µm
