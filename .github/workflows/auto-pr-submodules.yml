@@ -1,0 +1,40 @@
+name: Update Submodules and Submit a PR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    schedule:
+      - cron:  '0 0 * * *'
+
+jobs:
+  createPullRequest:
+    if: contains(github.ref, 'master')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update Submodules to Remote Latest
+        run: python3 .github/scripts/google-skywater-pdk-roll.py -l libraries
+
+      - name: Export Body
+        run: echo "BODY=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+
+      - name: Export First 5 Digits of Commit Hash
+        run: echo "COMMIT_SHA_5=$(echo ${{ github.sha }} | awk '{print substr($0,0,5)}')" >> $GITHUB_ENV
+
+      - name: Export Title
+        run: echo "TITLE='Update Submodules to Remote Latest, triggered from commit ${{ env.COMMIT_SHA_5 }}'" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ github.token }}
+          title: ${{ env.TITLE }}
+          branch: create-pull-request/submodules-auto-update
+          base: master
+          delete-branch: true
+          body: ${{ env.BODY }}
+          labels: update submodules, automated pr
+
