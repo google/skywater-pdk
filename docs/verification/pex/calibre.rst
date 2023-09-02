@@ -1,2 +1,0 @@
-TODO: verification/pex/calibre
-==============================

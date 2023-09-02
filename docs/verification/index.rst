@@ -1,23 +1,7 @@
-Physical & Design Verification
-==============================
+Overview
+========
 
-.. toctree::
-    :caption: Physical & Design Verification
-    :name: verification
-
-    Automated Design Rule (DRC) Checking <verification/drc>
-    - With Mentor Calibre
-    - With MAGIC
-    - With Klayout
-    Layout Versus Schematic (LVS) Checking <verification/lvs>
-    - With Mentor Calibre
-    - With netgen
-    Parasitic Extraction (PEX) <verification/pex>
-    - With Calibre xRC
-    - With MAGIC
-
-
-.. todo::
+.. TODO::
     The SkyWater SKY130 PDK provides automated physical and design rule checking decks.
 
     These verification rules provide;
@@ -34,13 +18,12 @@ Physical & Design Verification
      * :term:`Layout Verse Schematic` (:term`LVS`) Verification
      * :term:`Parasitic Extraction` (:term:`PEX`)
 
-TODO: Calibre Decks
--------------------
+.. TODO::
+    Calibre Decks
 
-Put stuff here.
+    Put stuff here.
 
-TODO: MAGIC Decks
------------------
+.. TODO::
+    MAGIC Decks
 
-Put stuff here.
-
+    Put stuff here.

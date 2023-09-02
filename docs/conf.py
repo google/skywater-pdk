@@ -172,9 +172,6 @@ html_theme_options = {
     'github_url': 'https://github.com/google/skywater-pdk',
     'repo_name': 'google/skywater-pdk',
 
-    'globaltoc_depth': 4,
-    'globaltoc_collapse': False,
-
     # Hide the symbiflow links
     'hide_symbiflow_links': True,
     'license_url' : 'https://www.apache.org/licenses/LICENSE-2.0',

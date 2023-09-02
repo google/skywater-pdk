@@ -1,3 +1,6 @@
+Rules
+#####
+
 Summary of Key Periphery Rules
 ==============================
 
@@ -34,3 +37,30 @@ Manual merge means that features below min. space should be manually merged by d
    :file: summary/table-f5-device-connectivity.csv
    :header-rows: 1
    :stub-columns: 1
+
+
+Periphery
+=========
+
+.. include:: periphery.rst
+
+
+WLCSP
+=====
+
+.. TODO: These should be formatted in the same way the periphery rules are.
+
+.. csv-table:: Amkor WLCSP
+   :file: wlcsp/amkor.csv
+   :header-rows: 1
+   :stub-columns: 1
+
+.. csv-table:: DECA WLCSP
+   :file: wlcsp/deca.csv
+   :header-rows: 1
+   :stub-columns: 1
+
+Antenna Rules
+=============
+
+.. include:: antenna.rst

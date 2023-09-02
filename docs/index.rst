@@ -1,31 +1,5 @@
 .. include:: common.inc
 
-.. toctree::
-    :hidden:
-
-    versioning
-    Current Status <status>
-    known_issues
-
-    Design Rules <rules>
-
-    contents
-
-    analog
-    digital
-    sim
-    verification
-
-    Python API <python-api/index>
-
-    previous
-    glossary
-
-    contributing
-    partners
-
-    references
-
 
 Welcome to SkyWater SKY130 PDK's documentation!
 ===============================================
@@ -38,16 +12,8 @@ Welcome to SkyWater SKY130 PDK's documentation!
     :alt: SkyWater PDK Logo Image.
 
 
-.. _CurrentStatus:
-
-Current Status - |current-status|
-=================================
-
-.. include:: status.rst
-    :start-after: current_status_text
-
 Resources
-=========
+---------
 
 The latest SkyWater SKY130 PDK design resources can be downloaded from the following repositories:
 
@@ -55,10 +21,82 @@ The latest SkyWater SKY130 PDK design resources can be downloaded from the follo
 * `Google CodeSearch interface @ https://cs.opensource.google/skywater-pdk <https://cs.opensource.google/skywater-pdk>`_
 * `foss-eda-tools.googlesource.com/skywater-pdk <https://foss-eda-tools.googlesource.com/skywater-pdk/>`_
 
+
 Indices and tables
-==================
+------------------
 
 * :ref:`glossary`
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+Table of contents
+-----------------
+
+.. toctree::
+    :maxdepth: -1
+
+    versioning
+    known_issues
+
+
+.. toctree::
+    :caption: Process Design Rules
+    :name: rules
+    :maxdepth: -1
+
+    rules/background
+    rules/masks
+    rules/assumptions
+    rules/layers
+    rules/index
+    rules/methodologies/index
+    rules/rcx
+    rules/device-details
+    rules/errors
+
+
+.. toctree::
+    :caption: PDK Contents
+    :name: pdk-contents
+    :maxdepth: -1
+
+    Libraries <contents/libraries>
+    File Types <contents/file_types>
+
+
+.. toctree::
+    :caption: Design and Simulation
+    :name: analog
+    :maxdepth: -1
+
+    analog/index
+    digital/index
+    sim/index
+
+
+.. toctree::
+    :caption: Physical & Design Verification
+    :name: verification
+    :maxdepth: -1
+
+    verification/index
+    verification/drc/index
+    verification/lvs/index
+    verification/pex/index
+
+
+.. toctree::
+    :caption: Appendix
+    :maxdepth: -1
+
+    Python API <python-api/index>
+
+    previous
+    glossary
+
+    contributing
+    partners
+
+    references
